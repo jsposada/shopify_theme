@@ -448,6 +448,7 @@
         "heading": "Cascos",
         "show_button": true,
         "text_btn": "Ver mas",
+        "button_collection": "cascos",
         "container": "container",
         "color_scheme": "",
         "collection": "cascos-promocion",

@@ -10,6 +10,12 @@
   assign show_heading_header = sst.show_heading_header
   assign heading = sst.heading
   assign linkBtn = sst.link_btn
+  if linkBtn == blank
+    assign linkBtn = sst.button_collection.url
+  endif
+  if linkBtn == blank
+    assign linkBtn = sst.collection.url
+  endif
 %}
 {%- capture style -%}
   --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px;
@@ -127,6 +133,16 @@
         "id": "text_btn",
         "label": "Text button",
         "default": "See more"
+      }, {
+        "type": "collection",
+        "id": "button_collection",
+        "label": "Button collection",
+        "info": "Optional. If empty, the button links to the product collection."
+      }, {
+        "type": "url",
+        "id": "link_btn",
+        "label": "Button link",
+        "info": "Optional. Overrides the button collection."
       }, {
         "type": "paragraph",
         "content": "----------------------------------------"
