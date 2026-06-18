@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "blog.json",
+  "context": {
+    "market": "cl"
+  },
+  "sections": {
+    "main": {
+      "blocks": {
+        "f515b67b-32aa-49a0-962e-f3ea3b33e4f7": {
+          "settings": {
+            "title": "Categorías "
+          }
+        },
+        "d30b4fd0-c64b-497f-a72c-ac5f25901f5c": {
+          "settings": {
+            "title": "Artículos Recientes "
+          }
+        },
+        "b01aaba6-5eea-448e-8264-e35e1f4a0286": {
+          "settings": {
+            "title": "Etiquetas "
+          }
+        }
+      }
+    }
+  }
+}

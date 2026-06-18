@@ -1,0 +1,297 @@
+<div class="tp-prd-form" style="--bg-buy-it-now: {{ block.settings.background_btn_buy_it_now }}">
+  <div {{ block.shopify_attributes }} class="mb-20 tp-buy-button">
+    {% if product.metafields.custom.external_affiliate %}
+      {% for button in shop.metaobjects.button.values %}
+        <a
+          href="{{ button.link | default: "#" }}"
+          target="_blank"
+          class="tp-btn tp-btn__primary n-hvr w-full">
+          {{ button.label | escape }}
+        </a>
+      {% endfor %}
+    {% else %}
+      {%- if product != blank -%}
+        {%- liquid
+          assign gift_card_recipient_feature_active = false
+          if block.settings.show_gift_card_recipient and product.gift_card?
+            assign gift_card_recipient_feature_active = true
+            assign type = 'gift_card'
+          elsif block.settings.show_custom_field
+            assign type = 'custom_field'
+          endif
+
+          assign show_dynamic_checkout = false
+          if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+            assign show_dynamic_checkout = true
+          endif
+
+           assign show_pickup_availability = false
+        if block.settings.show_pickup_availability and gift_card_recipient_feature_active == false
+          assign show_pickup_availability = true
+        endif
+        -%}
+        <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
+          {%- form 'product'
+            , product
+            , id: product_form_id
+            , class: 'form'
+            , novalidate: 'novalidate'
+            , data-type: 'add-to-cart-form'
+          -%}
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.selected_or_first_available_variant.id }}"
+              disabled
+              class="product-variant-id">
+            {% if input_quantity_sticky %}
+              <input
+                type="hidden"
+                name="quantity"
+                value="1"
+                class="input-quantity-sticky">
+            {% endif %}
+            {% if input_quantity %}
+              <input
+                type="hidden"
+                name="quantity"
+                value="1"
+                class="input-quantity-quick-view">
+            {% endif %}
+             {% comment %} {%- if gift_card_recipient_feature_active -%}
+              {%- render 'gift-card-recipient-form'
+                , product: product
+                , form: form
+                , section: section -%}
+            {%- endif -%}  {% endcomment %}
+            {% if block.settings.show_gift_card_recipient or block.settings.show_custom_field %}
+              {%- render 'gift-card-recipient-form'
+                  , product: product
+                  , form: form
+                  , type: type
+                  , block: block
+                  , section: section -%}
+            {% endif %}           
+            <div class="product-form__buttons">
+              {%- liquid
+                assign check_against_inventory = true
+                if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                  assign check_against_inventory = false
+                endif
+                if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                  assign quantity_rule_soldout = true
+                endif
+              -%}
+              <div class="product-form__buttons-wrap flex gap-10 mb-10 items-stretch">
+                <div
+                  id="Quantity-Form-{{ section.id }}"
+                  class="quantity-Form-{{ section.id }} product-form__input product-form__quantity"
+                  {{ block.shopify_attributes }}>
+                  {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+                  </label>
+                  <div class="product-form__input product-form__quantity h-full">
+                    <quantity-input class="tp-item__quantity quantity">
+                      <button
+                        class="tp-item__qty_btn quantity__button no-js-hidden"
+                        name="minus"
+                        type="button">
+                        <svg
+                          class="pointer-events-none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 16 16"
+                          fill="none">
+                          <path
+                            d="M4 8H12"
+                            stroke="#111111"
+                            stroke-linecap="round" />
+                        </svg>
+                      </button>
+                      <input
+                        class="quantity__input tp-item__qty_input fw-secondary"
+                        type="number"
+                        name="quantity"
+                        id="Quantity-{{ section.id }}"
+                        data-cart-quantity="{{ cart_qty }}"
+                        data-inventory="{{ product.selected_or_first_available_variant.inventory_quantity }}"
+                        data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                        data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                        max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                        {% endif %}
+                        step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        form="{{ product_form_id }}">
+                      <button
+                        class="tp-item__qty_btn quantity__button no-js-hidden"
+                        name="plus"
+                        type="button">
+                        <svg
+                          class="pointer-events-none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 16 16"
+                          fill="none">
+                          <path
+                            d="M3.99805 8.00016H11.9993M7.9987 12.0008V8.00016L7.9987 3.99951"
+                            stroke="#111111"
+                            stroke-linecap="round" />
+                        </svg>
+                      </button>
+                    </quantity-input>
+                  </div>
+                  <div class="quantity__rules caption no-js-hidden">
+                    {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
+                      <span class="divider">
+                        {{- 'products.product.quantity.multiples_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment -}}
+                      </span>
+                    {%- endif -%}
+                    {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
+                      <span class="divider">
+                        {{- 'products.product.quantity.minimum_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.min -}}
+                      </span>
+                    {%- endif -%}
+                    {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
+                      <span class="divider">
+                        {{- 'products.product.quantity.maximum_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.max -}}
+                      </span>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                {% if product.metafields.custom.proveedor.value == true %}
+                
+                  <a
+                    href="https://wa.me/56957709915?text={% if product.metafields.custom.mensaje_whatsapp %}{{ product.metafields.custom.mensaje_whatsapp }}{% else %}Hola, quiero saber cuándo estará disponible el producto{% endif %} {{ product.title }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="ProductWhatsAppButton-{{ section_id }}"
+                    class="product-form__submit button button--full-width tp-btn tp-btn__secondary mb-12 w-full"
+                    style="display:flex;align-items:center;justify-content:center;gap:8px;background-color:#25D366;color:#fff;border:none;border-radius:8px;text-decoration:none;"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
+                      <path d="M16.01 3.2C9.38 3.2 4 8.58 4 15.22c0 2.66.87 5.12 2.34 7.12L4 28.8l6.68-2.23c1.93 1.06 4.15 1.65 6.33 1.65 6.63 0 12.01-5.38 12.01-12.02 0-6.63-5.38-12-12.01-12zm.01 21.58c-2.04 0-4.02-.55-5.75-1.59l-.41-.24-3.96 1.32 1.3-4.08-.26-.42c-1.36-2.04-2.08-4.42-2.08-6.87 0-6.75 5.49-12.24 12.17-12.24 6.68 0 12.17 5.49 12.17 12.24-.01 6.76-5.5 12.24-12.18 12.24zm6.94-8.97c-.38-.19-2.27-1.12-2.63-1.25-.35-.13-.6-.19-.85.19-.25.38-.97 1.25-1.18 1.5-.22.25-.44.28-.81.09-.38-.19-1.59-.58-3.03-1.85-1.12-.99-1.88-2.21-2.1-2.58-.22-.38-.02-.58.16-.77.16-.16.38-.41.57-.63.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.09-.19-.84-2.04-1.15-2.79-.3-.72-.61-.62-.85-.63h-.72c-.25 0-.66.09-1.01.47-.35.38-1.33 1.3-1.33 3.16s1.36 3.67 1.55 3.93c.19.25 2.68 4.09 6.48 5.74.91.39 1.62.62 2.17.79.91.29 1.73.25 2.38.15.73-.11 2.27-.93 2.59-1.82.32-.9.32-1.66.22-1.82-.09-.16-.35-.25-.73-.44z"/>
+                    </svg>
+                    Consulta stock por Whatsapp
+                  </a>
+                {% else %}
+                  <button
+                    id="ProductSubmitButton-{{ section_id }}"
+                    type="submit"
+                    name="add"
+                    class="product-form__submit button button--full-width tp-btn tp-btn__secondary mb-12 w-full"
+                    disabled
+                  >
+                    {{ 'products.product.sold_out' | t }}
+                  </button>
+               {% endif %}
+                {% else %}
+
+                <button
+                      id="ProductSubmitButton-{{ section_id }}"
+                      type="submit"
+                      name="add"
+                      class="product-form__submit button button--full-width tp-btn tp-btn__secondary mb-12 w-full"
+                      {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                        disabled
+                      {% endif %}
+                    >
+                      <span class="product-form-btn-text pointer-events-none">
+                            {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                              {{ 'products.product.sold_out' | t }}
+                            {%- elsif product.selected_or_first_available_variant.available and product.selected_or_first_available_variant.inventory_quantity < 1 -%}
+                              {{ 'products.product.pre_order' | t }}
+                            {%- else -%}
+                              {{ 'products.product.add_to_cart' | t }}
+                        {%- endif -%}
+                      </span>
+
+                      <span class="tp-loading opacity-0 pointer-events-none" loader>
+                        {% render 'icon', icon_name: 'icon-loading', color: 'var(--base-color)' %}
+                      </span>
+                    </button>
+        
+                    <div
+                      flow="up"
+                      tooltip="{{ 'product_items.wishlist' | t }}"
+                      class="tp-prd-form__wishlist">
+                      {%- render 'button-wishlist'
+                        , product: product -%}
+                    </div>
+                    
+              </div>
+              
+              {%- if show_dynamic_checkout -%}
+                {% assign text_agree_terms_conditions = block.settings.text_agree_terms_conditions %}
+                {% if text_agree_terms_conditions != blank and block.settings.confirm_terms %}
+                  <div class="mb-8 agreetc-class rsmb-p">
+                    <input
+                      type="checkbox"
+                      class="agree_terms_conditions"
+                      id="agree_terms">
+                    <label for="agree_terms">
+                      {{ block.settings.text_agree_terms_conditions }}</label>
+                  </div>
+                {% endif %}
+                                {% if product.metafields.custom.proveedor.value and product.selected_or_first_available_variant.available == false or quantity_rule_soldout  %}
+                                    <span style="opacity:0.7; pointer-events:none;">
+                    {{ form | payment_button }}
+                  </span>
+                {% else %}
+                  {{ form | payment_button }}
+                {% endif %}
+                {%- endif -%}
+              {%- endif -%}
+              
+            </div>
+          {%- endform -%}
+        </product-form>
+      {%- else -%}
+        <div class="product-form">
+          <div class="product-form__buttons form">
+            <button
+              type="submit"
+              name="add"
+              class="product-form__submit button button--full-width button--primary"
+              disabled>
+              {{ 'products.product.sold_out' | t }}
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if show_pickup_availability -%}
+        {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+        {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+
+        <pickup-availability
+          class="product__pickup-availabilities no-js-hidden quick-add-hidden icon-unavailable"
+          {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+          available
+          {% endif %}
+          data-root-url="{{ routes.root_url }}"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          data-has-only-default-variant="{{ product.has_only_default_variant }}">
+          <template>
+            <pickup-availability-preview class="pickup-availability-preview">
+                {% render 'icon'
+              , icon_name: 'arrow-left' %}
+              <div class="pickup-availability-info">
+                <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+                <button class="pickup-availability-button link link--text underlined-link">
+                  {{ 'products.product.pickup_availability.refresh' | t }}
+                </button>
+              </div>
+            </pickup-availability-preview>
+          </template>
+        </pickup-availability>
+
+        <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+    {% endif %}
+  </div>
+</div>

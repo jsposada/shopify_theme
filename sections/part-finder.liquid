@@ -1,0 +1,699 @@
+{% schema %}
+{
+  "name": "Buscador de Partes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Encuentra repuestos para tu moto"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Selecciona tu moto y te mostramos las piezas compatibles"
+    },
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Colección de Destino",
+      "info": "Colección donde están tus repuestos (ej: 'Todos los repuestos')"
+    },
+    {
+      "type": "text",
+      "id": "storefront_token",
+      "label": "Storefront Access Token",
+      "info": "Tu token público de la Storefront API (ver instrucciones)"
+    },
+    {
+      "type": "text",
+      "id": "metaobject_type",
+      "label": "Tipo de Metaobjeto",
+      "default": "moto",
+      "info": "El 'type' de tu metaobjeto en Shopify (en minúsculas)"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Color de acento (botón)",
+      "default": "#E63946"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buscador de Partes"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="pf-wrapper" id="part-finder-section">
+  <div class="pf-inner page-width">
+
+    <div class="pf-header">
+      <h2 class="pf-title">{{ section.settings.title }}</h2>
+      <p class="pf-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="pf-card">
+      <!-- Paso 1: Marca -->
+      <div class="pf-step" data-step="1">
+        <div class="pf-step-number">1</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-make">Marca</label>
+          <div class="pf-select-wrap">
+            <select id="select-make" class="pf-select" disabled>
+              <option value="">Cargando...</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2: Modelo -->
+      <div class="pf-step" data-step="2">
+        <div class="pf-step-number">2</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-model">Modelo</label>
+          <div class="pf-select-wrap">
+            <select id="select-model" class="pf-select" disabled>
+              <option value="">— Selecciona Marca —</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3: Año -->
+      <div class="pf-step" data-step="3">
+        <div class="pf-step-number">3</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-year">Año</label>
+          <div class="pf-select-wrap">
+            <select id="select-year" class="pf-select" disabled>
+              <option value="">— Selecciona Modelo —</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 4: Cilindrada -->
+      <div class="pf-step" data-step="4">
+        <div class="pf-step-number">4</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-cc">Cilindrada</label>
+          <div class="pf-select-wrap">
+            <select id="select-cc" class="pf-select" disabled>
+              <option value="">— Selecciona Año —</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de búsqueda -->
+      <div class="pf-step pf-step--action">
+        <button id="btn-search" class="pf-btn" disabled>
+          <span class="pf-btn-text">BUSCAR REPUESTOS</span>
+          <span class="pf-btn-icon">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Estado de carga / error -->
+    <div id="pf-status" class="pf-status" style="display:none;"></div>
+
+  </div>
+</div>
+
+<style>
+  /* =============================================
+     PART FINDER — Estilos
+     Paleta: oscuro industrial + acento dinámico
+  ============================================= */
+  :root {
+    --pf-accent: {{ section.settings.accent_color }};
+    --pf-bg: #111214;
+    --pf-card: #1c1e22;
+    --pf-border: #2e3035;
+    --pf-text: #f0f0f0;
+    --pf-muted: #888;
+    --pf-step-size: 28px;
+    --pf-radius: 10px;
+    --pf-transition: 0.25s ease;
+  }
+
+  .pf-wrapper {
+    background: var(--pf-bg);
+    padding: 60px 0 70px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .pf-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header */
+  .pf-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .pf-title {
+    color: var(--pf-text);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  .pf-title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: var(--pf-accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+  .pf-subtitle {
+    color: var(--pf-muted);
+    font-size: 1rem;
+    margin: 10px 0 0;
+  }
+
+  /* Card */
+  .pf-card {
+    background: var(--pf-card);
+    border: 1px solid var(--pf-border);
+    border-radius: var(--pf-radius);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    align-items: end;
+  }
+
+  /* Steps */
+  .pf-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pf-step--action {
+    align-items: flex-end;
+  }
+
+  .pf-step-number {
+    width: var(--pf-step-size);
+    height: var(--pf-step-size);
+    min-width: var(--pf-step-size);
+    background: var(--pf-border);
+    color: var(--pf-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 22px; /* alineado con el select */
+    transition: background var(--pf-transition), color var(--pf-transition);
+  }
+
+  /* Cuando el step está activo (tiene valor) */
+  .pf-step.is-active .pf-step-number {
+    background: var(--pf-accent);
+    color: #fff;
+  }
+
+  .pf-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pf-label {
+    color: var(--pf-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .pf-select-wrap {
+    position: relative;
+  }
+  .pf-select {
+    width: 100%;
+    padding: 12px 36px 12px 14px;
+    background: #0d0f11;
+    border: 1px solid var(--pf-border);
+    border-radius: 6px;
+    color: var(--pf-text);
+    font-size: 0.95rem;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color var(--pf-transition), box-shadow var(--pf-transition);
+    outline: none;
+  }
+  .pf-select:focus {
+    border-color: var(--pf-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pf-accent) 20%, transparent);
+  }
+  .pf-select:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .pf-select option {
+    background: #1c1e22;
+    color: var(--pf-text);
+  }
+  .pf-select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pf-muted);
+    pointer-events: none;
+    font-size: 0.85rem;
+  }
+
+  /* Botón */
+  .pf-btn {
+    width: 100%;
+    padding: 13px 20px;
+    background: var(--pf-accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity var(--pf-transition), transform var(--pf-transition);
+  }
+  .pf-btn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+  .pf-btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  .pf-btn:disabled {
+    background: var(--pf-border);
+    color: var(--pf-muted);
+    cursor: not-allowed;
+    transform: none;
+  }
+  .pf-btn-icon {
+    font-size: 1.1rem;
+    transition: transform var(--pf-transition);
+  }
+  .pf-btn:hover:not(:disabled) .pf-btn-icon {
+    transform: translateX(4px);
+  }
+
+  /* Status */
+  .pf-status {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--pf-muted);
+  }
+  .pf-status.is-error {
+    color: #ff6b6b;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .pf-card {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+    .pf-step {
+      gap: 8px;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    // ─────────────────────────────────────────────
+    // CONFIGURACIÓN — Edita si es necesario
+    // ─────────────────────────────────────────────
+    const STOREFRONT_TOKEN = "{{ section.settings.storefront_token }}";
+    const METAOBJECT_TYPE  = "{{ section.settings.metaobject_type | default: 'moto' }}";
+    const API_URL          = "/api/2024-01/graphql.json";
+    const COLLECTION_URL   = "{{ collections[section.settings.target_collection].url | default: '/collections/all' }}";
+
+    // Keys de tus campos en Shopify (en minúsculas, exactamente como aparecen en la API)
+    const FIELD_MAKE  = "marca";
+    const FIELD_MODEL = "modelo";
+    const FIELD_YEAR  = "year";     // tipo: Entero
+    const FIELD_CC    = "cilindrada";
+
+    // ─────────────────────────────────────────────
+    // ELEMENTOS DEL DOM
+    // ─────────────────────────────────────────────
+    const selectMake  = document.getElementById('select-make');
+    const selectModel = document.getElementById('select-model');
+    const selectYear  = document.getElementById('select-year');
+    const selectCC    = document.getElementById('select-cc');
+    const btnSearch   = document.getElementById('btn-search');
+    const statusEl    = document.getElementById('pf-status');
+
+    const steps = document.querySelectorAll('.pf-step[data-step]');
+
+    // ─────────────────────────────────────────────
+    // ESTADO LOCAL
+    // ─────────────────────────────────────────────
+    let rawMotos = [];
+
+    // ─────────────────────────────────────────────
+    // HELPERS
+    // ─────────────────────────────────────────────
+    function showStatus(msg, isError = false) {
+      statusEl.textContent = msg;
+      statusEl.className = 'pf-status' + (isError ? ' is-error' : '');
+      statusEl.style.display = 'block';
+    }
+    function hideStatus() {
+      statusEl.style.display = 'none';
+    }
+
+    function setStepActive(stepNum) {
+      steps.forEach(s => {
+        const n = parseInt(s.dataset.step);
+        if (n && n <= stepNum) s.classList.add('is-active');
+        else s.classList.remove('is-active');
+      });
+    }
+
+    function resetSelect(el, placeholder) {
+      el.innerHTML = `<option value="">${placeholder}</option>`;
+      el.disabled = true;
+    }
+
+    function getToken() {
+      // Prioridad 1: Token configurado en el Schema del tema
+      if (STOREFRONT_TOKEN && STOREFRONT_TOKEN.trim().length > 10) return STOREFRONT_TOKEN.trim();
+      // Prioridad 2: Token expuesto por el tema (Dawn y algunos otros)
+      if (window.Shopify && window.Shopify.storefrontAccessToken) return window.Shopify.storefrontAccessToken;
+      return null;
+    }
+
+    // ─────────────────────────────────────────────
+    // GRAPHQL — Paginación automática (cursor-based)
+    // Soporta hasta 5,000 metaobjetos sin problema
+    // ─────────────────────────────────────────────
+    async function fetchAllMotos(token) {
+      let allNodes = [];
+      let hasNextPage = true;
+      let cursor = null;
+
+      while (hasNextPage) {
+        const afterClause = cursor ? `, after: "${cursor}"` : "";
+        const query = `
+          {
+            metaobjects(type: "${METAOBJECT_TYPE}", first: 250${afterClause}) {
+              pageInfo {
+                hasNextPage
+                endCursor
+              }
+              nodes {
+                id
+                handle
+                fields {
+                  key
+                  value
+                }
+              }
+            }
+          }
+        `;
+
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Storefront-Access-Token': token
+          },
+          body: JSON.stringify({ query })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const json = await response.json();
+
+        if (json.errors) {
+          throw new Error(json.errors.map(e => e.message).join(', '));
+        }
+
+        const data = json.data.metaobjects;
+        allNodes = allNodes.concat(data.nodes);
+        hasNextPage = data.pageInfo.hasNextPage;
+        cursor = data.pageInfo.endCursor;
+      }
+
+      return allNodes;
+    }
+
+    // ─────────────────────────────────────────────
+    // PROCESAR NODOS → Array limpio de objetos
+    // ─────────────────────────────────────────────
+    function parseMotos(nodes) {
+      return nodes.map(node => {
+        const fields = {};
+        node.fields.forEach(f => { fields[f.key] = f.value; });
+        return {
+          id:    node.id,           // gid://shopify/Metaobject/XXXXXXX
+          make:  fields[FIELD_MAKE]  || "",
+          model: fields[FIELD_MODEL] || "",
+          year:  parseInt(fields[FIELD_YEAR]) || 0,  // Entero
+          cc:    fields[FIELD_CC]    || ""
+        };
+      }).filter(m => m.make && m.model && m.year); // Filtra registros incompletos
+    }
+
+    // ─────────────────────────────────────────────
+    // POBLAR SELECTS
+    // ─────────────────────────────────────────────
+    function populateMakes() {
+      const makes = [...new Set(rawMotos.map(m => m.make))].sort();
+      selectMake.innerHTML = '<option value="">— Selecciona Marca —</option>';
+      makes.forEach(make => {
+        const opt = document.createElement('option');
+        opt.value = make;
+        opt.textContent = make;
+        selectMake.appendChild(opt);
+      });
+      selectMake.disabled = false;
+    }
+
+    function populateModels(make) {
+      const models = [...new Set(
+        rawMotos.filter(m => m.make === make).map(m => m.model)
+      )].sort();
+
+      selectModel.innerHTML = '<option value="">— Selecciona Modelo —</option>';
+      models.forEach(model => {
+        const opt = document.createElement('option');
+        opt.value = model;
+        opt.textContent = model;
+        selectModel.appendChild(opt);
+      });
+      selectModel.disabled = false;
+    }
+
+    function populateYears(make, model) {
+      const years = [...new Set(
+        rawMotos.filter(m => m.make === make && m.model === model).map(m => m.year)
+      )].sort((a, b) => b - a); // Descendente
+
+      selectYear.innerHTML = '<option value="">— Selecciona Año —</option>';
+      years.forEach(year => {
+        const opt = document.createElement('option');
+        opt.value = year;
+        opt.textContent = year;
+        selectYear.appendChild(opt);
+      });
+      selectYear.disabled = false;
+    }
+
+    function populateCC(make, model, year) {
+      // Filtramos y obtenemos las cilindradas únicas para esa combinación
+      const filtered = rawMotos.filter(m =>
+        m.make === make && m.model === model && m.year === parseInt(year)
+      );
+
+      const ccs = [...new Set(filtered.map(m => m.cc))].filter(Boolean).sort();
+
+      selectCC.innerHTML = '<option value="">— Selecciona Cilindrada —</option>';
+
+      if (ccs.length === 0) {
+        // Si no hay cilindradas distintas, usamos el primer ID disponible directamente
+        // y ponemos el botón activo sin requerir selección de CC
+        selectCC.innerHTML = '<option value="">Sin variantes de cilindrada</option>';
+        selectCC.disabled = true;
+        // Guardamos el ID del primer resultado en un data attribute del botón
+        if (filtered.length > 0) {
+          btnSearch.dataset.motoId = filtered[0].id;
+          btnSearch.disabled = false;
+        }
+        return;
+      }
+
+      ccs.forEach(cc => {
+        const opt = document.createElement('option');
+        opt.value = cc;
+        opt.textContent = cc;
+        selectCC.appendChild(opt);
+      });
+      selectCC.disabled = false;
+    }
+
+    // ─────────────────────────────────────────────
+    // INICIALIZAR — Fetch + Poblar
+    // ─────────────────────────────────────────────
+    async function init() {
+      const token = getToken();
+
+      if (!token) {
+        showStatus(
+          '⚠️ Token no configurado. Ve al Editor del Tema → Buscador de Partes → pega tu Storefront Access Token.',
+          true
+        );
+        selectMake.innerHTML = '<option value="">Token requerido</option>';
+        return;
+      }
+
+      showStatus('Cargando datos de motos...');
+
+      try {
+        const nodes = await fetchAllMotos(token);
+        rawMotos = parseMotos(nodes);
+
+        if (rawMotos.length === 0) {
+          showStatus(`⚠️ No se encontraron metaobjetos de tipo "${METAOBJECT_TYPE}". Verifica el tipo en la configuración.`, true);
+          return;
+        }
+
+        hideStatus();
+        populateMakes();
+        showStatus(`✓ ${rawMotos.length} motos cargadas correctamente.`);
+        setTimeout(hideStatus, 3000);
+
+      } catch (err) {
+        console.error('[Part Finder] Error:', err);
+        showStatus(`Error al cargar datos: ${err.message}. Revisa la consola (F12) para más detalles.`, true);
+        selectMake.innerHTML = '<option value="">Error de carga</option>';
+      }
+    }
+
+    // ─────────────────────────────────────────────
+    // EVENT LISTENERS
+    // ─────────────────────────────────────────────
+    selectMake.addEventListener('change', (e) => {
+      const val = e.target.value;
+      resetSelect(selectModel, '— Selecciona Modelo —');
+      resetSelect(selectYear, '— Selecciona Año —');
+      resetSelect(selectCC, '— Selecciona Cilindrada —');
+      btnSearch.disabled = true;
+      btnSearch.dataset.motoId = '';
+
+      if (val) {
+        setStepActive(1);
+        populateModels(val);
+      } else {
+        setStepActive(0);
+      }
+    });
+
+    selectModel.addEventListener('change', (e) => {
+      const val = e.target.value;
+      resetSelect(selectYear, '— Selecciona Año —');
+      resetSelect(selectCC, '— Selecciona Cilindrada —');
+      btnSearch.disabled = true;
+      btnSearch.dataset.motoId = '';
+
+      if (val) {
+        setStepActive(2);
+        populateYears(selectMake.value, val);
+      }
+    });
+
+    selectYear.addEventListener('change', (e) => {
+      const val = e.target.value;
+      resetSelect(selectCC, '— Selecciona Cilindrada —');
+      btnSearch.disabled = true;
+      btnSearch.dataset.motoId = '';
+
+      if (val) {
+        setStepActive(3);
+        populateCC(selectMake.value, selectModel.value, val);
+      }
+    });
+
+    selectCC.addEventListener('change', (e) => {
+      const cc = e.target.value;
+      btnSearch.disabled = true;
+      btnSearch.dataset.motoId = '';
+
+      if (!cc) return;
+
+      // Encontrar el metaobjeto exacto con make + model + year + cc
+      const match = rawMotos.find(m =>
+        m.make  === selectMake.value &&
+        m.model === selectModel.value &&
+        m.year  === parseInt(selectYear.value) &&
+        m.cc    === cc
+      );
+
+      if (match) {
+        btnSearch.dataset.motoId = match.id;
+        btnSearch.disabled = false;
+        setStepActive(4);
+      }
+    });
+
+    // ─────────────────────────────────────────────
+    // BÚSQUEDA — Redirige a la colección con filtro
+    // ─────────────────────────────────────────────
+    btnSearch.addEventListener('click', () => {
+      const motoId = btnSearch.dataset.motoId;
+      if (!motoId) return;
+
+      // El filtro de Shopify espera el GID codificado
+      // Estructura: ?filter.p.m.custom.NOMBRE_DEL_METAFIELD=ID
+      // IMPORTANTE: Cambia "compatibilidad" por el nombre de tu metafield en productos
+      const filterKey = "compatibilidad"; // ← Ajusta esto al nombre real de tu metafield en productos
+      const filterParam = `filter.p.m.custom.${filterKey}=${encodeURIComponent(motoId)}`;
+
+      window.location.href = `${COLLECTION_URL}?${filterParam}`;
+    });
+
+    // ─────────────────────────────────────────────
+    // ARRANCAR
+    // ─────────────────────────────────────────────
+    init();
+  });
+
+})();
+</script>

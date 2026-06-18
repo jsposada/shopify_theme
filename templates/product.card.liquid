@@ -1,0 +1,16 @@
+{% comment %} 
+  Shopify Wishlist
+  Recently product
+  Usage: 
+  - Replace the snippet name ('product-card') with your existing product card snippet 
+  - Pass the product object as a snippet variable named 'product' 
+{% endcomment %}
+{%- layout none -%}
+{% liquid
+  assign gst = settings
+  assign full_product = all_products[product.handle]
+  if full_product == nil
+    assign full_product = product
+  endif
+  render 'product-item-layout-1', card_product: full_product
+%}

@@ -1,0 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "column",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "reset_spacing": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner_with_text_dDpgEk": {
+      "type": "banner-with-text",
+      "blocks": {
+        "heading_zNbLea": {
+          "type": "heading",
+          "settings": {
+            "title": "La Historia de Nuestra Empresa: 10 Años Rodando Juntos",
+            "font_size_heading": "36",
+            "font_size_heading_tb": "36",
+            "font_size_heading_mb": "36"
+          }
+        },
+        "text_WMi8Fw": {
+          "type": "text",
+          "settings": {
+            "txt_content": "<p>Nuestra empresa comenzó como un sueño familiar hace 10 años en Chile, con una pequeña tienda dedicada a la venta de neumáticos para motos. Desde entonces, hemos crecido y evolucionado, ampliando nuestra oferta para incluir no solo neumáticos, sino también accesorios para motociclistas y una variedad de servicios de mecánica general. </p><p>El tubulizado, el vulcanizado, el cambio de aceite y frenos son solo algunas de las soluciones que ofrecemos para mantener tu moto en perfectas condiciones. La seguridad de nuestros clientes siempre ha sido nuestra prioridad, y nos comprometemos a seguir mejorando y creciendo junto a ellos.</p>"
+          }
+        },
+        "subheading_gcPE46": {
+          "type": "subheading",
+          "settings": {
+            "sub_title": "¿Por qué elegir nuestros servicios de mecánica para motos?"
+          }
+        },
+        "text_DfhMk8": {
+          "type": "text",
+          "settings": {
+            "txt_content": "<p>La seguridad y el rendimiento de una moto dependen en gran medida de su mantenimiento. En nuestra empresa, nos especializamos en ofrecer servicios de mecánica que aseguran que cada componente de tu moto funcione a la perfección. No solo solucionamos problemas, sino que prevenimos riesgos para que puedas seguir disfrutando del camino con la confianza de que tu moto está en las mejores manos.</p>"
+          }
+        },
+        "subheading_Cd7cMT": {
+          "type": "subheading",
+          "settings": {
+            "sub_title": "Accesorios para motociclistas: Equipamiento para viajar seguro"
+          }
+        },
+        "text_L98V9c": {
+          "type": "text",
+          "settings": {
+            "txt_content": "<p>El equipamiento adecuado no solo mejora la experiencia de conducción, sino que también puede salvar vidas. Ofrecemos una amplia gama de accesorios de alta calidad para motociclistas, que incluyen cascos, guantes, chaquetas y mucho más. Rodar seguro no es solo una opción, es una necesidad, y estamos aquí para ayudarte a cumplirla.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zNbLea",
+        "text_WMi8Fw",
+        "subheading_gcPE46",
+        "text_DfhMk8",
+        "subheading_Cd7cMT",
+        "text_L98V9c"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "background_container": false,
+        "bn_design": "text_column",
+        "image": "shopify://shop_images/sobre_nosotros.jpg",
+        "text_align": "text-left",
+        "row_gap_content": 20,
+        "container_content": "container",
+        "position_content": "left",
+        "content_below_image_mb": false,
+        "img_position": "right",
+        "text_position": "top",
+        "width_image": "50%",
+        "height_dk": 700,
+        "height_tb": 600,
+        "height_mb": 400,
+        "height_mb_auto": false,
+        "padding_top": 14,
+        "padding_bottom": 14,
+        "reset_spacing": false,
+        "margin_top": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "banner_with_text_dDpgEk"
+  ]
+}

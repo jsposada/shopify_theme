@@ -1,0 +1,627 @@
+{% schema %}
+{
+  "name": "Buscador de Neumáticos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Encuentra tu neumático"
+    },
+
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Colección de Destino",
+      "info": "Colección donde están tus neumáticos (ej: 'Todos los neumáticos')"
+    },
+    {
+      "type": "text",
+      "id": "storefront_token",
+      "label": "Storefront Access Token",
+      "info": "Tu token público de la Storefront API"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Color de acento (botón)",
+      "default": "#FF6600"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buscador de Neumáticos"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="pf-wrapper" id="tire-finder-section">
+  <div class="pf-inner page-width">
+
+    <div class="pf-header">
+      <h2 class="pf-title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="pf-card">
+      <!-- Paso 1: Ancho -->
+      <div class="pf-step" data-step="1">
+        <div class="pf-step-number">1</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-ancho">Ancho</label>
+          <div class="pf-select-wrap">
+            <select id="select-ancho" class="pf-select" disabled>
+              <option value="">Cargando...</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2: Aspecto (opcional) -->
+      <div class="pf-step" data-step="2">
+        <div class="pf-step-number">2</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-aspecto">Aspecto <span class="pf-optional">(opcional)</span></label>
+          <div class="pf-select-wrap">
+            <select id="select-aspecto" class="pf-select" disabled>
+              <option value="">— Cualquier aspecto —</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3: Aro (diámetro) -->
+      <div class="pf-step" data-step="3">
+        <div class="pf-step-number">3</div>
+        <div class="pf-field">
+          <label class="pf-label" for="select-aro">Aro</label>
+          <div class="pf-select-wrap">
+            <select id="select-aro" class="pf-select" disabled>
+              <option value="">— Selecciona Aro —</option>
+            </select>
+            <span class="pf-select-icon">▾</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de búsqueda -->
+      <div class="pf-step pf-step--action">
+        <button id="btn-search-tire" class="pf-btn" disabled>
+          <span class="pf-btn-text">BUSCAR NEUMÁTICOS</span>
+          <span class="pf-btn-icon">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Estado de carga / error -->
+    <div id="pf-status-tire" class="pf-status" style="display:none;"></div>
+
+  </div>
+</div>
+
+<style>
+  :root {
+    --pf-accent: {{ section.settings.accent_color }};
+    --pf-bg: #FFFFFF;
+    --pf-card: #FFFFFF;
+    --pf-border: #E3E3E3;
+    --pf-input-bg: #EFEFF2;
+    --pf-text: #1C1C1C;
+    --pf-muted: #666666;
+    --pf-step-size: 28px;
+    --pf-radius: 10px;
+    --pf-transition: 0.25s ease;
+  }
+
+  .pf-wrapper {
+    background: var(--pf-bg);
+    padding: 24px 0 28px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    border-top: 1px solid var(--pf-border);
+    border-bottom: 1px solid var(--pf-border);
+  }
+
+  .pf-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .pf-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .pf-title {
+    color: var(--pf-text);
+    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+  }
+  .pf-title::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 3px;
+    background: var(--pf-accent);
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+
+  .pf-card {
+    background: var(--pf-card);
+    border: 1px solid var(--pf-border);
+    border-radius: var(--pf-radius);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    align-items: end;
+  }
+
+  .pf-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pf-step--action {
+    align-items: flex-end;
+  }
+
+  .pf-step-number {
+    width: var(--pf-step-size);
+    height: var(--pf-step-size);
+    min-width: var(--pf-step-size);
+    background: var(--pf-input-bg);
+    color: var(--pf-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 22px;
+    transition: background var(--pf-transition), color var(--pf-transition);
+  }
+
+  .pf-step.is-active .pf-step-number {
+    background: var(--pf-accent);
+    color: #fff;
+  }
+
+  .pf-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pf-label {
+    color: var(--pf-muted);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .pf-optional {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.68rem;
+    opacity: 0.7;
+  }
+
+  .pf-select-wrap {
+    position: relative;
+  }
+  .pf-select {
+    width: 100%;
+    padding: 12px 36px 12px 14px;
+    background: var(--pf-input-bg);
+    border: 1px solid var(--pf-border);
+    border-radius: 6px;
+    color: var(--pf-text);
+    font-size: 1.2rem;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color var(--pf-transition), box-shadow var(--pf-transition);
+    outline: none;
+  }
+  .pf-select:focus {
+    border-color: var(--pf-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pf-accent) 20%, transparent);
+  }
+  .pf-select:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .pf-select option {
+    background: #FFFFFF;
+    color: var(--pf-text);
+  }
+  .pf-select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pf-muted);
+    pointer-events: none;
+    font-size: 0.85rem;
+  }
+
+  .pf-btn {
+    width: 100%;
+    padding: 13px 20px;
+    background: var(--pf-accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity var(--pf-transition), transform var(--pf-transition);
+  }
+  .pf-btn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+  .pf-btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  .pf-btn:disabled {
+    background: var(--pf-input-bg);
+    color: var(--pf-muted);
+    cursor: not-allowed;
+    transform: none;
+    border: 1px solid var(--pf-border);
+  }
+  .pf-btn-icon {
+    font-size: 1.1rem;
+    transition: transform var(--pf-transition);
+  }
+  .pf-btn:hover:not(:disabled) .pf-btn-icon {
+    transform: translateX(4px);
+  }
+
+  .pf-status {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--pf-muted);
+  }
+  .pf-status.is-error {
+    color: #FF6600;
+  }
+
+  @media (max-width: 640px) {
+    .pf-card {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+    .pf-step {
+      gap: 8px;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    // ─────────────────────────────────────────────
+    // CONFIGURACIÓN
+    // ─────────────────────────────────────────────
+    const STOREFRONT_TOKEN = "{{ section.settings.storefront_token }}";
+    const API_URL          = "/api/2024-01/graphql.json";
+    const COLLECTION_HANDLE = "{{ collections[section.settings.target_collection].handle | default: 'all' }}";
+    const COLLECTION_URL    = "{{ collections[section.settings.target_collection].url | default: '/collections/all' }}";
+
+    // Namespace y keys de los metacampos en los productos
+    // Ajusta el namespace si no es "custom"
+    const NAMESPACE_ANCHO   = "custom";   const KEY_ANCHO   = "ancho";
+    const NAMESPACE_ASPECTO = "custom";   const KEY_ASPECTO = "aspecto";
+    const NAMESPACE_ARO     = "custom";   const KEY_ARO     = "di_metro";  // custom.di_metro
+
+    // ─────────────────────────────────────────────
+    // ELEMENTOS DEL DOM
+    // ─────────────────────────────────────────────
+    const selectAncho   = document.getElementById('select-ancho');
+    const selectAspecto = document.getElementById('select-aspecto');
+    const selectAro     = document.getElementById('select-aro');
+    const btnSearch     = document.getElementById('btn-search-tire');
+    const statusEl      = document.getElementById('pf-status-tire');
+    const steps         = document.querySelectorAll('#tire-finder-section .pf-step[data-step]');
+
+    // ─────────────────────────────────────────────
+    // ESTADO LOCAL
+    // Lista de combinaciones únicas {ancho, aspecto, aro}
+    // extraídas de todos los productos de la colección
+    // ─────────────────────────────────────────────
+    let allCombinations = [];
+
+    // ─────────────────────────────────────────────
+    // HELPERS
+    // ─────────────────────────────────────────────
+    function showStatus(msg, isError = false) {
+      statusEl.textContent = msg;
+      statusEl.className = 'pf-status' + (isError ? ' is-error' : '');
+      statusEl.style.display = 'block';
+    }
+    function hideStatus() { statusEl.style.display = 'none'; }
+
+    function setStepActive(stepNum) {
+      steps.forEach(s => {
+        const n = parseInt(s.dataset.step);
+        if (n && n <= stepNum) s.classList.add('is-active');
+        else s.classList.remove('is-active');
+      });
+    }
+
+    function resetSelect(el, placeholder) {
+      el.innerHTML = `<option value="">${placeholder}</option>`;
+      el.disabled = true;
+    }
+
+    function sortNumeric(arr) {
+      return arr.slice().sort((a, b) => parseFloat(a) - parseFloat(b));
+    }
+
+    function getToken() {
+      if (STOREFRONT_TOKEN && STOREFRONT_TOKEN.trim().length > 10) return STOREFRONT_TOKEN.trim();
+      if (window.Shopify && window.Shopify.storefrontAccessToken) return window.Shopify.storefrontAccessToken;
+      return null;
+    }
+
+    // ─────────────────────────────────────────────
+    // GRAPHQL — Obtiene todos los productos de la colección
+    // con sus metacampos de ancho, aspecto y aro (di_metro)
+    // ─────────────────────────────────────────────
+    async function fetchAllProducts(token) {
+      let allProducts = [];
+      let hasNextPage = true;
+      let cursor = null;
+
+      while (hasNextPage) {
+        const afterClause = cursor ? `, after: "${cursor}"` : "";
+
+        const query = `
+          {
+            collection(handle: "${COLLECTION_HANDLE}") {
+              products(first: 250${afterClause}) {
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+                nodes {
+                  id
+                  title
+                  ancho: metafield(namespace: "${NAMESPACE_ANCHO}", key: "${KEY_ANCHO}") {
+                    value
+                  }
+                  aspecto: metafield(namespace: "${NAMESPACE_ASPECTO}", key: "${KEY_ASPECTO}") {
+                    value
+                  }
+                  aro: metafield(namespace: "${NAMESPACE_ARO}", key: "${KEY_ARO}") {
+                    value
+                  }
+                }
+              }
+            }
+          }
+        `;
+
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Storefront-Access-Token': token
+          },
+          body: JSON.stringify({ query })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const json = await response.json();
+
+        if (json.errors) {
+          throw new Error(json.errors.map(e => e.message).join(', '));
+        }
+
+        if (!json.data.collection) {
+          throw new Error('Colección no encontrada. Verifica el handle en la configuración.');
+        }
+
+        const productsData = json.data.collection.products;
+        allProducts = allProducts.concat(productsData.nodes);
+        hasNextPage = productsData.pageInfo.hasNextPage;
+        cursor = productsData.pageInfo.endCursor;
+      }
+
+      return allProducts;
+    }
+
+    // ─────────────────────────────────────────────
+    // PROCESAR PRODUCTOS → Combinaciones únicas
+    // Acepta productos con solo ancho + aro (medida americana)
+    // o con los 3 campos (medida métrica)
+    // ─────────────────────────────────────────────
+    function parseCombinations(products) {
+      const seen = new Set();
+      const combinations = [];
+
+      products.forEach(p => {
+        const ancho   = p.ancho?.value?.trim()   || "";
+        const aspecto = p.aspecto?.value?.trim() || ""; // puede estar vacío
+        const aro     = p.aro?.value?.trim()     || "";
+
+        // Mínimo requerido: ancho y aro
+        if (!ancho || !aro) return;
+
+        const key = `${ancho}|${aspecto}|${aro}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          combinations.push({ ancho, aspecto, aro });
+        }
+      });
+
+      return combinations;
+    }
+
+    // ─────────────────────────────────────────────
+    // REPOBLAR SELECTS — lógica inteligente:
+    // Cada select muestra solo las opciones compatibles
+    // con lo que hay seleccionado en los OTROS dos,
+    // pero nunca se deshabilita. El valor actual se
+    // conserva si sigue siendo válido.
+    // ─────────────────────────────────────────────
+    function repopulate(changedSelect) {
+      const ancho   = selectAncho.value;
+      const aspecto = selectAspecto.value;
+      const aro     = selectAro.value;
+
+      // Filtrar combinaciones según los campos que NO cambiaron
+      function filtered(ignoring) {
+        return allCombinations.filter(c => {
+          const matchAncho   = (ignoring === 'ancho'   || !ancho   || c.ancho === ancho);
+          const matchAspecto = (ignoring === 'aspecto' || !aspecto || c.aspecto === aspecto);
+          const matchAro     = (ignoring === 'aro'     || !aro     || c.aro === aro);
+          return matchAncho && matchAspecto && matchAro;
+        });
+      }
+
+      // Rebuilds a select preserving current value if still valid
+      function rebuild(el, values, placeholder, formatter) {
+        const current = el.value;
+        el.innerHTML = `<option value="">${placeholder}</option>`;
+        values.forEach(val => {
+          const opt = document.createElement('option');
+          opt.value = val;
+          opt.textContent = formatter ? formatter(val) : val;
+          el.appendChild(opt);
+        });
+        el.disabled = values.length === 0;
+        // Restore previous selection if still available
+        if (values.includes(current)) el.value = current;
+      }
+
+      // Recalcular cada select ignorando a sí mismo
+      if (changedSelect !== 'ancho') {
+        const src = changedSelect === null ? allCombinations : filtered('ancho');
+        const anchos = sortNumeric([...new Set(src.map(c => c.ancho))]);
+        rebuild(selectAncho, anchos, '— Selecciona Ancho —');
+      }
+
+      if (changedSelect !== 'aspecto') {
+        const src = changedSelect === null ? allCombinations : filtered('aspecto');
+        const aspectos = sortNumeric([...new Set(src.map(c => c.aspecto).filter(Boolean))]);
+        rebuild(selectAspecto, aspectos, '— Cualquier aspecto —');
+      }
+
+      if (changedSelect !== 'aro') {
+        const src = changedSelect === null ? allCombinations : filtered('aro');
+        const aros = sortNumeric([...new Set(src.map(c => c.aro))]);
+        rebuild(selectAro, aros, '— Selecciona Aro —');
+      }
+
+      // Botón e indicadores visuales
+      const a = selectAncho.value;
+      const r = selectAro.value;
+      btnSearch.disabled = !(a && r);
+
+      const active = [a ? 1 : 0, selectAspecto.value ? 2 : 0, r ? 3 : 0].filter(Boolean);
+      setStepActive(active.length ? Math.max(...active) : 0);
+    }
+
+    // Carga inicial — todos los selects con todos sus valores
+    function populateAll() {
+      repopulate(null); // null = no se está cambiando ninguno, mostrar todo
+    }
+
+    // ─────────────────────────────────────────────
+    // INICIALIZAR
+    // ─────────────────────────────────────────────
+    async function init() {
+      const token = getToken();
+
+      if (!token) {
+        showStatus('⚠️ Token no configurado. Ve al Editor del Tema → Buscador de Neumáticos → pega tu Storefront Access Token.', true);
+        selectAncho.innerHTML = '<option value="">Token requerido</option>';
+        return;
+      }
+
+      showStatus('Cargando medidas disponibles...');
+
+      try {
+        const products = await fetchAllProducts(token);
+        allCombinations = parseCombinations(products);
+
+        if (allCombinations.length === 0) {
+          showStatus('⚠️ No se encontraron productos con ancho y aro definidos. Verifica los metacampos.', true);
+          return;
+        }
+
+        hideStatus();
+        populateAll();
+        showStatus(`✓ ${allCombinations.length} combinaciones de medidas cargadas.`);
+        setTimeout(hideStatus, 3000);
+
+      } catch (err) {
+        console.error('[Tire Finder] Error:', err);
+        showStatus(`Error al cargar datos: ${err.message}. Revisa la consola (F12) para más detalles.`, true);
+        selectAncho.innerHTML = '<option value="">Error de carga</option>';
+      }
+    }
+
+    // ─────────────────────────────────────────────
+    // EVENT LISTENERS — cada select actualiza los otros
+    // ─────────────────────────────────────────────
+    selectAncho.addEventListener('change',   () => repopulate('ancho'));
+    selectAspecto.addEventListener('change', () => repopulate('aspecto'));
+    selectAro.addEventListener('change',     () => repopulate('aro'));
+
+    // ─────────────────────────────────────────────
+    // BÚSQUEDA — aplica solo los filtros con valor
+    // Ancho + Aro obligatorio, Aspecto opcional
+    // ─────────────────────────────────────────────
+    btnSearch.addEventListener('click', () => {
+      const ancho   = selectAncho.value;
+      const aspecto = selectAspecto.value;
+      const aro     = selectAro.value;
+
+      if (!ancho || !aro) return;
+
+      // Filtros de metacampos: ?filter.p.m.NAMESPACE.KEY=VALOR
+      // Solo se añade aspecto si el usuario lo seleccionó
+      const params = new URLSearchParams();
+      params.append(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`, ancho);
+      if (aspecto) {
+        params.append(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`, aspecto);
+      }
+      params.append(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`, aro);
+
+      window.location.href = `${COLLECTION_URL}?${params.toString()}`;
+    });
+
+    // ─────────────────────────────────────────────
+    // ARRANCAR
+    // ─────────────────────────────────────────────
+    init();
+  });
+
+})();
+</script>

@@ -1,0 +1,132 @@
+<!doctype html>
+{% assign rtl = settings.enable_rtl %}
+<html
+  class="no-js {% if settings.enable_loading_site %}tp-over-flow-hidden{% endif %} {% if rtl %}rtl{% endif %}"
+  lang="{{ request.locale.iso_code }}"
+  {% if rtl %}
+  dir="rtl"
+  {% endif %}>
+  <head>
+    <meta name="facebook-domain-verification" content="b3dl1z4ucjuapsl1mqoszjpweqg4dg" />
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TTT6HMPN');</script>
+<!-- End Google Tag Manager -->
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link
+      rel="preconnect"
+      href="https://fonts.shopifycdn.com"
+      crossorigin>
+    {%- if settings.favicon != blank -%}
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+    <title>
+      {{ page_title }}
+      {%- if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %}
+        &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {% render 'meta-tags' %}
+    {%- render 'scripts-tag' -%}
+    {{ content_for_header }}
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    {%- render 'head-assets' -%}
+  </head>
+
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTT6HMPN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    {% if settings.enable_loading_site %}
+      <div class="tp-loading-site">
+        <span class="loading-notification"></span>
+      </div>
+    {% endif %}
+    <div class="tp-close-overlay opacity-0 !block"></div>
+    {%- if settings.cart_type == 'drawer' and template != 'cart' -%}
+      {%- render 'cart-drawer' -%}
+      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {% comment %} {% sections 'header-group' %} {% endcomment %}
+    {% liquid
+      if settings.show_topbar
+        section 'top-bar'
+      endif
+      if settings.header_layout == 'h_layout1'
+        section 'header'
+      elsif settings.header_layout == 'h_layout2'
+        section 'header-layout-2'
+      endif
+    %}
+    <main
+      id="MainContent"
+      class="content-for-layout focus-none"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    {% liquid
+      if settings.footer_layout == 'layout_1'
+        section 'footer'
+      else
+        section 'footer-2'
+      endif
+      if settings.show_back_to_top
+        section 'back_top'
+      endif
+      section 'mobile-stickybar'
+      if settings.enable_expu
+        section 'exit-popup'
+      endif
+      render 'modal-newsletters-subscription'
+      render 'form-infor'
+      section 'custom-colors'
+    %}
+
+    {% if settings.enable_fake_order %}
+      <div class="footbar-fixed someone-purchased-fixed">
+        {% section 'someone-purchased' %}
+      </div>
+    {% endif %}
+    {% if settings.show_quick_view %}
+      {% render 'tp-modal-quickview' %}
+      <script src="{{ 'quick-view.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+    <div id="snackbar" class=""></div>
+    {% comment %} {% sections 'footer-group' %} {% endcomment %}
+    {%- if settings.enable_eu_cookie_bar_gdpr != blank -%}
+      {% render 'tp-cookie' %}
+      <script src="{{ 'tp-cookie.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {% render 'tool-demos' %}
+    {% if template.name == 'product' %}
+      {% render 'helmet-size-guide-dialog' %}
+    {% endif %}
+  </body>
+</html>

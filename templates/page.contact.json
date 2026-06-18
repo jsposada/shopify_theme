@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "column",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "main": {
+      "type": "contact",
+      "blocks": {
+        "6c394acc-1279-44fb-abbe-55fa5373016e": {
+          "type": "contact-info",
+          "settings": {
+            "title_info": "Información de contacto",
+            "number_phone": "<p>+569 5770 9915</p>",
+            "address": "<p>Avenida Pedro de Valdivia 5691 local 3, Macul, RM</p>",
+            "email": "<p>Hola@bikerz.cl</p>",
+            "show_social": true,
+            "title_form": "Póngase en contacto",
+            "show_form": true
+          }
+        },
+        "c362e2c0-c6c7-4947-a423-94987290ea0d": {
+          "type": "contact-map",
+          "settings": {
+            "iframe_address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.9793115394477!2d-70.6064284!3d-33.4758894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cfe47d2b4e41%3A0x85f2fea5c22243d1!2sAv.%20Pedro%20de%20Valdivia%205691%2C%207810107%20Macul%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1sen!2sco!4v1729110407259!5m2!1sen!2sco\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "6c394acc-1279-44fb-abbe-55fa5373016e",
+        "c362e2c0-c6c7-4947-a423-94987290ea0d"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "reset_spacing": false,
+        "padding_top": 58,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main"
+  ]
+}

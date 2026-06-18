@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "checkout": {
+      "tips": {
+        "title": "Propina para el repartidor",
+        "add_tip": "Añadir propina",
+        "description": "Agrega una propina para tu repartidor",
+        "message": ""
+      },
+      "general": {
+        "continue_to_shipping_method": "Continuar a los métodos de entrega",
+        "back_to_shipping_method": "Volver al método de entrega",
+        "edit_shipping_address": "Editar dirección de entrega",
+        "edit_shipping_method": "Editar método de entrega"
+      },
+      "review": {
+        "blocks": {
+          "shipping_address_title": "Entregar a"
+        }
+      },
+      "contact": {
+        "shipping_address_title": "Dirección de entrega"
+      },
+      "delivery_options": {
+        "shipping_address": "Dirección de entrega"
+      },
+      "order_summary": {
+        "free_shipping_discount_label": "Entrega gratuita",
+        "discount_requires_customer_notice": "Por favor, envía tu información de entrega para aplicar el código de descuento {{code}}",
+        "shipping_information_does_not_meet_discount_requirements_notice": "Tu información de entrega no cumple con los requisitos del código de descuento {{code}}",
+        "shipping_label": "Entrega"
+      },
+      "shipping": {
+        "shipping_method_title": "",
+        "delivery_title": "Entrega",
+        "waiting_on_rate_notice": "Por favor, espera mientras obtenemos las tarifas de entrega disponibles...",
+        "no_rates_for_cart_or_destination_notice": "No hay métodos de entrega disponibles para tu carrito o destino.",
+        "no_rates_for_country_notice": "No ofrecemos entrega a {{country}}.",
+        "please_enter_your_shipping_information_notice": "Por favor, introduce tu información de entrega"
+      },
+      "payment": {
+        "same_billing_address_label": "Igual que la dirección de entrega"
+      },
+      "shipping_errors": {
+        "shipping_method": "Tu carrito ha sido modificado y la tarifa de entrega que seleccionaste anteriormente ya no se aplica. Por favor, selecciona una nueva tarifa."
+      },
+      "thank_you": {
+        "shipping_information_title": "Información de entrega",
+        "shipping_address_title": "Dirección de entrega",
+        "shipping_method_title": "Método de entrega",
+        "marker": {
+          "shipping": "Dirección de entrega",
+          "current": "Ubicación de entrega actual"
+        },
+        "track_shipment": "Seguir entrega",
+        "confirmed_description_html": "Hemos aceptado tu pedido y lo estamos preparando. Se ha enviado un correo de confirmación a {{ email }}. Vuelve a esta página para recibir actualizaciones sobre el estado de tu entrega.",
+        "no_tracking_number": "No hay un número de seguimiento para esta entrega.",
+        "unfulfilled_items_title": "Preparándose para la entrega",
+        "unfulfilled_items_description": "Actualmente estamos preparando estos artículos para la entrega.",
+        "fulfillment": {
+          "unfulfilled_table_title": "Artículos que se están preparando para la entrega",
+          "fulfilled_table_title": "Artículos en esta entrega"
+        },
+        "login_title": "Iniciar sesión para ver todos los detalles de la entrega",
+        "failed_title": "No pudimos entregar tu pedido",
+        "delivered_description_html": "Tu pedido ha sido entregado a la dirección que proporcionaste. Si no lo has recibido o tienes algún otro problema, por favor {{ contact_us }}.",
+        "delivered_title": "Tu pedido ha sido entregado",
+        "attempted_delivery_description_html": "Se intentó entregar tu pedido pero no se pudo realizar la entrega. Por favor {{ contact_us }} para programar otro intento de entrega.",
+        "attempted_delivery_title": "Se intentó entregar tu pedido",
+        "out_for_delivery_description_html": "Tu pedido está en camino, espéralo hoy. Si todavía no lo has recibido en los próximos 2 días, por favor {{ contact_us }}.",
+        "out_for_delivery_title": "Tu pedido está en camino",
+        "in_transit_description": "Vuelve a esta página para recibir actualizaciones sobre el estado de tu entrega.",
+        "in_transit_title": "Tu pedido está en camino",
+        "confirmed_title": "Tu entrega está confirmada",
+        "order_updates_subscribe_to_email_notifications": "Recibe actualizaciones de entrega por correo electrónico",
+        "order_updates_subscribe_to_phone_notifications": "Recibe actualizaciones de entrega por correo electrónico o SMS",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Recibe actualizaciones de entrega por SMS"
+      }
+    },
+    "notices": {
+      "cart": {
+        "shipping_address_not_required": "Este carrito no requiere entrega",
+        "shipping_address_invalid": "Dirección de entrega no válida"
+      }
+    }
+  }
+}

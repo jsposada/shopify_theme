@@ -1,0 +1,694 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slide_ertLkK": {
+      "type": "slide",
+      "blocks": {
+        "slide_item_Mrnqcp": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/CASCO_NOLAN_N60-6_SPECIAL_BLANCO_O_NEGRO_ce025964-37bf-414d-90e2-10d364238f5d.png",
+            "image_link": "shopify://collections/cascos",
+            "image_mobile": "shopify://shop_images/CASCO_NOLAN_N60-6_SPECIAL_BLANCO_O_NEGRO.png",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "",
+            "discount": "",
+            "description_1": "",
+            "slide_url": "",
+            "label_btn": ""
+          }
+        },
+        "slide_item_4Y8mk4": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/REGALALE_SEGURIDAD_CASCO_NOLAN_34d2cb4a-bd9e-4000-8677-31acfd252ba8.png",
+            "image_link": "shopify://collections/cascos",
+            "image_mobile": "shopify://shop_images/REGALALE_SEGURIDAD_CASCO_NOLAN.png",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "",
+            "discount": "",
+            "description_1": "",
+            "slide_url": "",
+            "label_btn": ""
+          }
+        },
+        "slide_item_hWhain": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/REGALALE_UN_CASCO_EN_EL_DIA_DEL_PADRE_228c54f8-5811-4662-8ea2-74029dd23125.png",
+            "image_link": "shopify://collections/cascos",
+            "image_mobile": "shopify://shop_images/REGALALE_UN_CASCO_EN_EL_DIA_DEL_PADRE.png",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "",
+            "discount": "",
+            "description_1": "",
+            "slide_url": "",
+            "label_btn": ""
+          }
+        },
+        "slide_item_wj6tFF": {
+          "type": "slide_item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
+            "image_link": "shopify://collections/neumaticos",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "<p>El neumático exacto para tu ruta</p>",
+            "discount": "",
+            "description_1": "<p>Ingresa tu medida, marca o modelo abajo y rueda seguro hoy mismo.</p>",
+            "slide_url": "shopify://collections/neumaticos",
+            "label_btn": "Buscar mi neumático"
+          }
+        },
+        "slide_item_AEgRfW": {
+          "type": "slide_item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Cuidamos_tu_inversion_y_tu_camino_1.png",
+            "image_link": "shopify://pages/contacto",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "<h1>Cuidamos tu inversión y tu camino</h1>",
+            "discount": "",
+            "description_1": "<p>Mantenimiento preventivo e instalación experta.</p>",
+            "slide_url": "shopify://pages/contacto",
+            "label_btn": "Agendar en el Taller"
+          }
+        },
+        "slide_item_Xr6FYr": {
+          "type": "slide_item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Te_asesoramos_por_WhatsApp_1.png",
+            "image_link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "<p>Te asesoramos por WhatsApp</p>",
+            "discount": "",
+            "description_1": "<p>¿Dudas con la medida o el compuesto? </p><h5>Envíos a todo Chile.</h5>",
+            "slide_url": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
+            "label_btn": "Escríbenos al WhatsApp"
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_Mrnqcp",
+        "slide_item_4Y8mk4",
+        "slide_item_hWhain",
+        "slide_item_wj6tFF",
+        "slide_item_AEgRfW",
+        "slide_item_Xr6FYr"
+      ],
+      "custom_css": [
+        ".tp-btn__primary {border-radius: 20px 20px 20px 20px;}"
+      ],
+      "settings": {
+        "container": "full-width",
+        "color_scheme": "scheme-28542e60-85a8-4863-ba64-5029c9319dd9",
+        "show_navigation": false,
+        "show_pagination": true,
+        "loop": false,
+        "autoplay": true,
+        "autoplay_time": 7,
+        "position_dots": "bottom_center",
+        "dots_style": "default",
+        "color_dots": "#ffffff",
+        "slide_height": "custom-height",
+        "height_dk": 350,
+        "height_tb": 300,
+        "height_mb": 250,
+        "font_size_title": 28,
+        "font_size_sub_title": 16,
+        "font_size_description": 17,
+        "font_weight_title": 400,
+        "font_weight_sub_title": 300,
+        "font_weight_description": 300,
+        "type_button": "primary",
+        "reset_spacing": false
+      }
+    },
+    "tire_finder_yQeRC4": {
+      "type": "tire-finder",
+      "name": "Buscador de Neumáticos",
+      "settings": {
+        "title": "Encuentra tu neumático",
+        "target_collection": "neumaticos",
+        "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
+        "accent_color": "#ff6600"
+      }
+    },
+    "brand_pzpLjB": {
+      "type": "brand",
+      "blocks": {
+        "brand_item_fpJ8yg": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Xcelink_logo.png",
+            "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=XCELINK"
+          }
+        },
+        "brand_item_exCKer": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/ceat_logo.png",
+            "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=CEAT"
+          }
+        },
+        "brand_item_hPjqgi": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Neumaticos_de_moto_michelin.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MICHELIN"
+          }
+        },
+        "brand_item_9hiNir": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Maggion_neumaticos.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MAGGION"
+          }
+        },
+        "brand_item_kHKWRW": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Neumaticos_de_moto_dunlop_3bca03f2-07ed-4f97-aa2a-e42f4b235dca.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=DUNLOP"
+          }
+        },
+        "brand_item_f8hgEz": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Continental_neumaticos.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=CONTINENTAL"
+          }
+        },
+        "brand_item_eiEHyM": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Neumaticos_de_moto_rinaldi.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=RINALDI"
+          }
+        },
+        "brand_item_Cf9wdc": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Heidenau_neumaticos.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=HEIDENAU"
+          }
+        },
+        "brand_item_VB6Ddg": {
+          "type": "brand_item",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Neumaticos_de_moto_anlas.svg",
+            "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=ANLAS"
+          }
+        }
+      },
+      "block_order": [
+        "brand_item_fpJ8yg",
+        "brand_item_exCKer",
+        "brand_item_hPjqgi",
+        "brand_item_9hiNir",
+        "brand_item_kHKWRW",
+        "brand_item_f8hgEz",
+        "brand_item_eiEHyM",
+        "brand_item_Cf9wdc",
+        "brand_item_VB6Ddg"
+      ],
+      "custom_css": [
+        ".tp__responsive-image {border-radius: 12px 12px 12px 12px; border-style: solid; border-color: (86, 86, 86); border-width: 2px;}",
+        ".tp__responsive-image:hover {border-style: solid; border-color: #333333; border-width: 3px;}"
+      ],
+      "settings": {
+        "show_heading_header": false,
+        "heading": "Marcas de neumaticos para moto",
+        "description": "",
+        "text_alignment": "text-center",
+        "show_button": true,
+        "text_btn": "Explore Now",
+        "link_btn": "",
+        "container": "full-width",
+        "color_scheme": "background-1",
+        "style_layout": "slider",
+        "border_content": false,
+        "custom_column": 6,
+        "custom_column_tablet": 5,
+        "hover_effect": "hvr_zoom",
+        "image_ratio": "custom",
+        "custom_ratio": "21:9",
+        "autoplay": true,
+        "loop": true,
+        "show_arrow": false,
+        "show_bullet": true,
+        "padding_top": 35,
+        "padding_bottom": 31
+      }
+    },
+    "collection_list_AyqJ4z": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_item_qKEhjG": {
+          "type": "collection_item",
+          "settings": {
+            "heading": "Neumáticos",
+            "font_size_heading": 20,
+            "collection": "neumaticos",
+            "image": "shopify://shop_images/Tires.jpg"
+          }
+        },
+        "collection_item_pyBgHp": {
+          "type": "collection_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Repuestos",
+            "font_size_heading": 20,
+            "collection": "repuestos",
+            "image": "shopify://shop_images/Repuestos.jpg"
+          }
+        },
+        "collection_item_GQaYiq": {
+          "type": "collection_item",
+          "settings": {
+            "heading": "Cascos",
+            "font_size_heading": 20,
+            "collection": "cascos",
+            "image": "shopify://shop_images/Cascos.png"
+          }
+        },
+        "collection_item_VUWkVb": {
+          "type": "collection_item",
+          "settings": {
+            "heading": "Lubricantes",
+            "font_size_heading": 20,
+            "collection": "lubricantes",
+            "image": "shopify://shop_images/Lubricante.jpg"
+          }
+        },
+        "collection_item_amwXdH": {
+          "type": "collection_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Accesorios",
+            "font_size_heading": 20,
+            "collection": "accesorios-para-motos",
+            "image": "shopify://shop_images/Accesorios_8a722cfd-fa58-4b80-bfa7-a8cba4afc76f.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_qKEhjG",
+        "collection_item_pyBgHp",
+        "collection_item_GQaYiq",
+        "collection_item_VUWkVb",
+        "collection_item_amwXdH"
+      ],
+      "settings": {
+        "show_heading_header": true,
+        "heading": "CONOCE NUESTROS PRODUCTOS",
+        "description": "",
+        "text_alignment": "text-left",
+        "show_button": false,
+        "text_btn": "Ver más",
+        "link_btn": "shopify://collections",
+        "container": "container",
+        "color_scheme": "",
+        "style_layout": "slider",
+        "design_collection": "design-2",
+        "hover_effect": "hvr_zoom",
+        "images_style": "square",
+        "image_ratio": "3/4",
+        "custom_ratio": "21:9",
+        "custom_column": 3,
+        "column_gap": 30,
+        "autoplay": false,
+        "loop": false,
+        "show_arrow": false,
+        "show_bullet": false,
+        "custom_column_tablets": "3",
+        "custom_column_mobile": "2",
+        "height_item": "870",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "banner_with_text_CCJXJr": {
+      "type": "banner-with-text",
+      "blocks": {
+        "text_bRgyed": {
+          "type": "text",
+          "settings": {
+            "txt_content": "<p><em>En Bikerz, nos especializamos en </em><em><strong>neumáticos </strong></em><em>y </em>servicios de <em><strong>mantenimiento</strong></em> y <em><strong>reparación</strong></em> para garantizar que siempre estés listo para la carretera<em> con opciones para cada estilo de conducción. </em></p><p><em>Descubre nuestra selección de </em><em><strong>neumáticos </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Trail&filter.p.m.custom.uso=Mixto&filter.p.m.custom.uso=Trail\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Trail&filter.p.m.custom.uso=Mixto&filter.p.m.custom.uso=Trail\"><em><strong>Trail (Mixto)</strong></em></a><em><strong>, </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Chopper\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Chopper\"><em><strong>Chopper</strong></em></a><em><strong>, </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Scooter\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Scooter\"><em><strong>Scooter</strong></em></a><em><strong> y </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Sport&filter.p.m.custom.uso=Street\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Sport&filter.p.m.custom.uso=Street\"><em><strong>Sport (Street)</strong></em></a><em>, diseñados para ofrecer el mejor rendimiento en carretera y terrenos mixtos. Trabajamos con marcas reconocidas como </em><em><strong>Dunlop, Michelin y Rinaldi</strong></em><em>, asegurando </em><em><strong>calidad, seguridad y durabilidad</strong></em><em>.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bRgyed"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_scheme": "scheme-40ec7a9a-7096-4ed4-b20e-45698e7a9a31",
+        "background_container": false,
+        "bn_design": "text_overlay",
+        "image": "shopify://shop_images/Untitled_design.svg",
+        "text_align": "text-center",
+        "row_gap_content": 22,
+        "container_content": "full-width",
+        "position_content": "left",
+        "content_below_image_mb": false,
+        "img_position": "left",
+        "text_position": "center",
+        "width_image": "10%",
+        "height_dk": 200,
+        "height_tb": 300,
+        "height_mb": 300,
+        "height_mb_auto": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false,
+        "margin_top": 0
+      }
+    },
+    "product_tab_QLzGPL": {
+      "type": "product-tab",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "collection_list": [
+          "neumaticos",
+          "lubricantes",
+          "accesorios-para-motos"
+        ],
+        "limit_products": 8,
+        "columns_desktop": 4,
+        "columns_tablets": "1",
+        "columns_mobile": "1",
+        "text_button": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_slider_UFDnf9": {
+      "type": "product-slider",
+      "name": "Product Slider",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "Cascos",
+        "show_button": true,
+        "text_btn": "Ver mas",
+        "container": "container",
+        "color_scheme": "",
+        "collection": "cascos-promocion",
+        "limit_products": 8,
+        "sliders_perview": "5",
+        "autoplay": true,
+        "loop": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_countdown_TaexT7": {
+      "type": "product-countdown",
+      "blocks": {
+        "product_636KtX": {
+          "type": "product",
+          "settings": {
+            "product": "dunlop-sportmax-gpr300-160-60r17-69h",
+            "bn_end_time": "2026-06-30"
+          }
+        },
+        "product_gpxr8n": {
+          "type": "product",
+          "settings": {
+            "product": "dunlop-sportmax-gpr300-170-60r17-72w",
+            "bn_end_time": "2026-06-30"
+          }
+        },
+        "product_BJiQk4": {
+          "type": "product",
+          "settings": {
+            "product": "dunlop-sportmax-gpr300-110-70r17-54w",
+            "bn_end_time": "2026-06-30"
+          }
+        },
+        "product_46Neci": {
+          "type": "product",
+          "settings": {
+            "product": "dunlop-sportmax-gpr300-190-55r17-75w",
+            "bn_end_time": "2026-06-30"
+          }
+        }
+      },
+      "block_order": [
+        "product_636KtX",
+        "product_gpxr8n",
+        "product_BJiQk4",
+        "product_46Neci"
+      ],
+      "settings": {
+        "show_heading_header": true,
+        "heading": "OFERTAS DEL MES",
+        "description": "",
+        "text_alignment": "text-left",
+        "show_button": true,
+        "text_btn": "Ver más",
+        "link_btn": "shopify://collections/neumaticos",
+        "container": "container",
+        "color_scheme": "background-1",
+        "backgroud_box": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "banner_image_V9tdfK": {
+      "type": "banner-image",
+      "blocks": {
+        "image_banner_3dQRYY": {
+          "type": "image_banner",
+          "settings": {
+            "color_scheme": "",
+            "subtext": "Floor mats & liners",
+            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
+            "content": "",
+            "link": "shopify://collections/bike-parts",
+            "btn_content": "Shop now",
+            "open_link": "_blank",
+            "type_button": "underline"
+          }
+        },
+        "image_banner_KdWHgh": {
+          "type": "image_banner",
+          "settings": {
+            "color_scheme": "",
+            "subtext": "Floor mats & liners",
+            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
+            "content": "",
+            "link": "shopify://collections/bikes",
+            "btn_content": "Shop now",
+            "open_link": "_blank",
+            "type_button": "underline"
+          }
+        }
+      },
+      "block_order": [
+        "image_banner_3dQRYY",
+        "image_banner_KdWHgh"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_heading_header": false,
+        "heading": "Title",
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "columns_desktop": 2,
+        "card_banner_style": "card",
+        "image_ratio": "original",
+        "custom_ratio": "21:9",
+        "hover_effect": "hvr_zoom",
+        "design_banner": "text-overlay-image",
+        "text_position": "center",
+        "height_mobile": "custom_height",
+        "height_image_desktop": "300",
+        "height_image_tablet": "250",
+        "height_img_mobile": "250",
+        "text_align": "text-left",
+        "font_size_sub_heading": 16,
+        "font_weight_sub_heading": 500,
+        "font_size_heading": 30,
+        "font_weight_heading": 500,
+        "font_size_description": 16,
+        "font_weight_description": 500,
+        "columns_tablets": "2",
+        "columns_mobile": "1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "blocks_tCRLq6": {
+      "type": "_blocks",
+      "blocks": {
+        "reviews_maps_XXmKt8": {
+          "type": "reviews-maps",
+          "settings": {
+            "show_header": true,
+            "title": "Lo que dicen nuestros clientes",
+            "subtitle": "Reseñas verificadas de Google My Business",
+            "title_size": 36,
+            "subtitle_size": 16,
+            "show_overall_rating": true,
+            "overall_rating": "4.6",
+            "total_reviews": "169",
+            "review_1_name": "Franco Rodriguez Villegas",
+            "review_1_rating": 5,
+            "review_1_text": "Muy buena atencion",
+            "review_1_date": "Hace 6 días",
+            "review_2_name": "Yasna Soto",
+            "review_2_rating": 5,
+            "review_2_text": "Tuve una muy buena experiencia, llegué con uno de los neumáticos de mi moto pinchada y me atendieron súper bien, tienen un buen taller y me explicaron todos los pasos del arreglo. Mientras esperé, aproveche de trabajar en la sala de espera, tomándome un cafecito.\nDentro de poco volveré poq debo cambiar unos repuestos ,y me pareció un buen lugar , además que tienen una muy buena atención.",
+            "review_2_date": "Hace 1 semana",
+            "review_3_name": "marcelo arancibia guzman",
+            "review_3_rating": 5,
+            "review_3_text": "Excelente y grata atención...!!! 10/10",
+            "review_3_date": "Hace 3 semanas",
+            "show_cta": true,
+            "cta_text": "Ver todas las reseñas",
+            "cta_url": "https://share.google/Vk1dKErlG7bkxJ0fQ",
+            "text_alignment": "center",
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "grid_gap": 20,
+            "desktop_width_percent": 100,
+            "padding_top": 50,
+            "padding_bottom": 50,
+            "padding_horizontal": 20,
+            "header_spacing": 40,
+            "overall_spacing": 40,
+            "cta_spacing": 40,
+            "background_color": "#ffffff",
+            "title_color": "#1c1c1c",
+            "subtitle_color": "#666666",
+            "text_color": "#1c1c1c",
+            "star_color": "#ffb800",
+            "star_empty_color": "#e3e3e3",
+            "card_bg_color": "#ffffff",
+            "card_border_color": "#e3e3e3",
+            "card_border_width": 1,
+            "card_border_radius": 8,
+            "card_padding": 25,
+            "overall_bg_color": "#f5f5f5",
+            "avatar_bg_color": "#ff6600",
+            "avatar_text_color": "#ffffff",
+            "star_size": 20,
+            "button_bg_color": "#1c1c1c",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ff6600",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "reviews_maps_XXmKt8"
+      ],
+      "name": "Reseñas de Google",
+      "settings": {}
+    },
+    "blog_posts_7CRjke": {
+      "type": "blog-posts",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "Te puede interesar",
+        "show_button": true,
+        "text_btn": "Ver mas",
+        "container": "container",
+        "color_scheme": "",
+        "blog": "motos-chile",
+        "layout": "slider",
+        "num_post_show": 3,
+        "post_item_desktop": 3,
+        "column_gap": 30,
+        "autoplay": false,
+        "loop": false,
+        "show_arrow": true,
+        "reset_spacing": false,
+        "padding_top": 28,
+        "padding_bottom": 34
+      }
+    },
+    "17722487056dc7857d": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slide_ertLkK",
+    "tire_finder_yQeRC4",
+    "brand_pzpLjB",
+    "collection_list_AyqJ4z",
+    "banner_with_text_CCJXJr",
+    "product_tab_QLzGPL",
+    "product_slider_UFDnf9",
+    "product_countdown_TaexT7",
+    "banner_image_V9tdfK",
+    "blocks_tCRLq6",
+    "blog_posts_7CRjke",
+    "17722487056dc7857d"
+  ]
+}

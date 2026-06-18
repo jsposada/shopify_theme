@@ -1,0 +1,200 @@
+{{ 'product_coutdown.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign sst = section.settings
+  assign container = sst.container
+  assign collection = collections[sst.collection]
+  assign load_more_button_enable = sst.load_more_button_enable
+  assign button_label = sst.button_label
+  assign button_type = sst.button_type
+  assign button_action = sst.button_action
+%}
+{%- capture style -%}
+  --section-padding-top: {{ sst.padding_top }}px; 
+  --section-padding-bottom: {{ sst.padding_bottom }}px;
+  {% if sst.gap_item != blank %}
+    --grid-desktop-horizontal-spacing: {{ sst.gap_item }}px;
+    --grid-mobile-horizontal-spacing: {{ sst.gap_item }}px;
+    {% if sst.gap_item >= 10 %}
+      --grid-mobile-horizontal-spacing: {{ sst.gap_item | divided_by: 2 }}px;
+    {% endif %}
+  {% endif %}
+{%- endcapture -%}
+
+<div class="tp-prd-cd  section-py {% unless sst.backgroud_box  %} color-{{ sst.color_scheme }} gradient {% endunless %} {% if sst.reset_spacing == false %}section-mb{% endif %}" style="{{ style | strip | strip_newlines }}">
+  <div class="{{ container }}">
+    <div class="tp-prd-cd__inner {% if sst.backgroud_box %} color-{{ sst.color_scheme }} gradient p-30 {% endif %}">
+      {% render 'section-header'
+        , sst: sst
+        , linkBtn: sst.link_btn %}
+      <div class="tp-prd-cd__content">
+        <div class="tp-grid tp-grid--2-col-desktop">
+          {% for block in section.blocks %}
+            {% liquid
+              assign bst = block.settings
+              assign product = bst.product
+            %}
+            <div class="tp-grid__item">
+              {% render 'product-item-horizontal'
+                , card_product: product
+                , show_coutdown: true
+                , show_stock: false
+                , bn_end_time: bst.bn_end_time
+                , show_sale_review: true
+                , show_action: false
+              %}
+            </div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product CountDown",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section header"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_heading_header",
+        "label": "Show \"Section header\"",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p></p>"
+      }, {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "default": "text-left",
+        "options": [
+          {
+            "value": "text-left",
+            "label": "Left"
+          }, {
+            "value": "text-center",
+            "label": "Center"
+          }, {
+            "value": "text-right",
+            "label": "Right"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show button",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "text_btn",
+        "label": "Text button",
+        "default": "See more"
+      }, {
+        "type": "url",
+        "id": "link_btn",
+        "label": "Link button"
+      }, {
+        "type": "paragraph",
+        "content": "----------------------------------------"
+      }, {
+        "type": "header",
+        "content": "General"
+      }, {
+        "type": "select",
+        "id": "container",
+        "label": "Layout",
+        "default": "container",
+        "options": [
+          {
+            "value": "container",
+            "label": "Default"
+          }, {
+            "value": "container-fluid",
+            "label": "Fluid container"
+          }, {
+            "value": "full-width",
+            "label": "Full width"
+          }
+        ]
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      }, {
+        "type": "checkbox",
+        "id": "backgroud_box",
+        "label": "Backgroud box",
+        "default": true,
+        "info": "This applies to container options"
+      }, {
+        "type": "header",
+        "content": "Section padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      }, {
+        "type": "checkbox",
+        "id": "reset_spacing",
+        "label": "Remove default space between sections",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Product",
+        "type": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }, {
+            "type": "text",
+            "id": "bn_end_time",
+            "label": "End time",
+            "default": "2025-12-24",
+            "placeholder": "2025-12-24",
+            "info": "e.g. yyyy-mm-dd"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Proudct CountDown"
+      }
+    ]
+  }
+{% endschema %}

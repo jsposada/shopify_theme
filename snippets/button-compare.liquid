@@ -1,0 +1,29 @@
+{%- if product.handle != blank -%}
+  <button
+    button-compare
+    type="button"
+    aria-label="Add to compare"
+    class="button-compare shadow {% if page_compare %}tp-icon-close{% endif %}"
+    data-product-handle="{{ product.handle }}"
+  >
+    {% if page_compare %}
+      {% render 'icon', icon_name: 'close', width: 15, height: 15 %}
+    {% else %}
+      {% render 'icon', icon_name: 'icon-compare' %}
+    {% endif %}
+  </button>
+
+  <script>
+    var compareLocalStorage = localStorage.getItem('shopify-compare');
+    if (compareLocalStorage) {
+      var arrCompareLocal = compareLocalStorage.split(',');
+      var dataProductHandle = '{{ product.handle }}';
+      if (arrCompareLocal.includes(dataProductHandle)) {
+        var buttonEle = document.querySelector('#product-{{ product.id }}');
+        if (buttonEle && !buttonEle.classList.contains('active')) {
+          buttonEle.classList.add('active');
+        }
+      }
+    }
+  </script>
+{%- endif -%}
