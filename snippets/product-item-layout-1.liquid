@@ -147,7 +147,7 @@
               {%- endif -%}
             {%- endif -%}
                       {% if pre_order or soldout %}
-            {% unless product.metafields.custom.proveedor.value %}
+            {% unless card_product.metafields.custom.proveedor.value %}
               <div class="tp-prd-item__label pre-order" style="{{ radius_label }}">
                 <div class="label-inner">
                   {% if pre_order %}

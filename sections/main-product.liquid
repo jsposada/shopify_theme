@@ -3,6 +3,11 @@
   assign container = sst.container
   assign product_qty = 0
   assign prod = product.variants
+  assign current_variant = product.selected_or_first_available_variant
+  assign current_variant_provider = current_variant.metafields.custom.proveedor.value
+  if current_variant.metafields.custom.proveedor == blank
+    assign current_variant_provider = product.metafields.custom.proveedor.value
+  endif
   assign promo_badge_label = product.metafields.custom.promo_badge_label.value
   assign compare_at_price = product.compare_at_price
   assign price = product.price
@@ -119,9 +124,11 @@
                     {%- if shop.shipping_policy.body != blank -%}
                       {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
 
-                    {%- if product.metafields.custom.proveedor.value  -%}
-                       <p><strong> Última  unidad </strong></p>
-                    {%- endif -%}
+                    <div id="ProductProviderNote-{{ section.id }}" data-variant-fragment="provider-note">
+                      {%- if current_variant_provider  -%}
+                         <p><strong> Última  unidad </strong></p>
+                      {%- endif -%}
+                    </div>
                     {%- endif -%}
                   </div>
                 {%- endif -%}

@@ -29,6 +29,12 @@
         if block.settings.show_pickup_availability and gift_card_recipient_feature_active == false
           assign show_pickup_availability = true
         endif
+
+        assign current_variant = product.selected_or_first_available_variant
+        assign current_variant_provider = current_variant.metafields.custom.proveedor.value
+        if current_variant.metafields.custom.proveedor == blank
+          assign current_variant_provider = product.metafields.custom.proveedor.value
+        endif
         -%}
         <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
           {%- form 'product'
@@ -72,7 +78,7 @@
                   , block: block
                   , section: section -%}
             {% endif %}           
-            <div class="product-form__buttons">
+            <div id="ProductFormButtons-{{ section_id }}" data-variant-fragment="product-form-buttons" class="product-form__buttons">
               {%- liquid
                 assign check_against_inventory = true
                 if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
@@ -162,7 +168,7 @@
                   </div>
                 </div>
               {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-                {% if product.metafields.custom.proveedor.value == true %}
+                {% if current_variant_provider == true %}
                 
                   <a
                     href="https://wa.me/56957709915?text={% if product.metafields.custom.mensaje_whatsapp %}{{ product.metafields.custom.mensaje_whatsapp }}{% else %}Hola, quiero saber cuándo estará disponible el producto{% endif %} {{ product.title }}"
@@ -236,7 +242,7 @@
                       {{ block.settings.text_agree_terms_conditions }}</label>
                   </div>
                 {% endif %}
-                                {% if product.metafields.custom.proveedor.value and product.selected_or_first_available_variant.available == false or quantity_rule_soldout  %}
+                                {% if current_variant_provider and product.selected_or_first_available_variant.available == false or quantity_rule_soldout  %}
                                     <span style="opacity:0.7; pointer-events:none;">
                     {{ form | payment_button }}
                   </span>

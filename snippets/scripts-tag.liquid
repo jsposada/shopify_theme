@@ -19,6 +19,7 @@
 {%- endif -%}
 <script src="{{ 'product-grid.js' | asset_url }}" defer="defer"></script>
 {% if template.name == 'product' %}
+  <script src="{{ 'variant-metafields.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'helmet-size-guide-dialog.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 {% if gst.show_topbar %}

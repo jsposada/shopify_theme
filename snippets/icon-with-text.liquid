@@ -36,7 +36,26 @@
     assign text_only_all_items = false
   endif
 -%}
+{%- liquid
+  assign heading_1_output = block.settings.heading_1
+  assign heading_2_output = block.settings.heading_2
+  assign heading_3_output = block.settings.heading_3
+  assign current_variant = product.selected_or_first_available_variant
+  assign current_retiro_tienda = current_variant.metafields.custom.retiro_tienda.value | default: product.metafields.custom.retiro_tienda.value
+  assign current_tiempo_rm = current_variant.metafields.custom.tiempo_de_envio_rm.value | default: product.metafields.custom.tiempo_de_envio_rm.value
+  assign current_tiempo_regiones = current_variant.metafields.custom.tiempo_de_envio_regiones.value | default: product.metafields.custom.tiempo_de_envio_regiones.value
+-%}
+{%- if product != blank and heading_1_output contains 'Retiro en tienda' -%}
+  {%- capture heading_1_output -%}<strong>Retiro en tienda:</strong> {{ current_retiro_tienda }}{%- endcapture -%}
+{%- endif -%}
+{%- if product != blank and heading_2_output contains 'RM:' and heading_2_output contains 'Regiones' -%}
+  {%- capture heading_2_output -%}<strong>RM:</strong> {{ current_tiempo_rm }} - <strong>Regiones: </strong>{{ current_tiempo_regiones }}{%- endcapture -%}
+{%- elsif product != blank and heading_2_output contains 'Tiempo de entrega' and heading_2_output contains 'Regiones' -%}
+  {%- capture heading_2_output -%}Tiempo de entrega: <strong>{{ current_tiempo_rm }}</strong> días RM, Regiones  <strong>{{ current_tiempo_regiones }}</strong> días{%- endcapture -%}
+{%- endif -%}
 <ul
+  id="IconWithText-{{ section.id }}-{{ block.id }}"
+  data-variant-fragment="icon-with-text"
   class="icon-with-text icon-with-text--{{ block.settings.layout }} {% if text_only_all_items %} icon-with-text--text-only{% endif %} mb-24 ml-0"
   {{ block.shopify_attributes }}
 >
@@ -58,7 +77,7 @@
         >
       {%- endif -%}
       <span class="inline-richtext">
-        {{- block.settings.heading_1 -}}
+        {{- heading_1_output -}}
       </span>
     </li>
   {%- endunless -%}
@@ -80,7 +99,7 @@
         >
       {%- endif -%}
       <span class="inline-richtext">
-        {{- block.settings.heading_2 -}}
+        {{- heading_2_output -}}
       </span>
     </li>
   {%- endunless -%}
@@ -102,7 +121,7 @@
         >
       {%- endif -%}
       <span class="inline-richtext">
-        {{- block.settings.heading_3 -}}
+        {{- heading_3_output -}}
       </span>
     </li>
   {%- endunless -%}

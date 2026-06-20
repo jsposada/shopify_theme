@@ -6,8 +6,12 @@
   assign show_categories = block.settings.show_categories
   assign category_type = block.settings.category_type
   assign category_text = block.settings.category_text
+  assign current_variant_provider = current_variant.metafields.custom.proveedor.value
+  if current_variant.metafields.custom.proveedor == blank
+    assign current_variant_provider = product.metafields.custom.proveedor.value
+  endif
 %}
-<div class="tp-info-wrap bdb-prd-detail flex flex-col justify-content-start items-start mb-20">
+<div id="ProductMeta-{{ section.id }}" data-variant-fragment="product-meta" class="tp-info-wrap bdb-prd-detail flex flex-col justify-content-start items-start mb-20">
   {% if show_product_code %}
     <div class="flex items-center mb-8 item-product-code">
       <div class="item-info-title item-product-code-title mr-12">
@@ -29,7 +33,7 @@
           {% assign availableStatus = 'products.product.in_stock' | t %}
           {% assign availableClass = ' instock' %}
       {% else %}
-        {% if product.metafields.custom.proveedor.value == true %} {% comment %}Cambio de texto Disponibilidad cuando se activa el proveedor{% endcomment %}
+        {% if current_variant_provider == true %} {% comment %}Cambio de texto Disponibilidad cuando se activa el proveedor{% endcomment %}
         {% assign availableStatus = 'Confirmar' %}   
         {% assign availableStatus = 'Confirmar' %}  
         {% else %}  
