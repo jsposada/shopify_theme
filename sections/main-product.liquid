@@ -9,13 +9,13 @@
     assign current_variant_provider = product.metafields.custom.proveedor.value
   endif
   assign promo_badge_label = product.metafields.custom.promo_badge_label.value
-  assign compare_at_price = product.compare_at_price
-  assign price = product.price
-  for variant in prod limit: 1
-    assign product_qty = product_qty | plus: variant.inventory_quantity
-    assign compare_at_price = variant.compare_at_price
-    assign price = variant.price
-  endfor
+  assign compare_at_price = current_variant.compare_at_price
+  assign price = current_variant.price
+  assign product_qty = product_qty | plus: current_variant.inventory_quantity
+  assign current_variant_on_sale = false
+  if compare_at_price != blank and compare_at_price > price
+    assign current_variant_on_sale = true
+  endif
 
   assign p = compare_at_price | minus: price
   if p > 0
@@ -104,11 +104,11 @@
                     , use_variant: true
                     , price_class: 'price--large'
                   -%}
-                  {%- if promo_badge_label != blank -%}
+                  {%- if promo_badge_label != blank and current_variant_on_sale -%}
                     <div class="label-inner">
                       {{- promo_badge_label -}}
                     </div>
-                  {%- elsif compare_at_price > price and compare_at_price != blank -%}
+                  {%- elsif current_variant_on_sale -%}
                     <div class="label-inner">
                       -
                       {{- p -}}

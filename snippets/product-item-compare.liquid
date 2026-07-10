@@ -6,10 +6,11 @@
   assign show_variant = gst.show_variant
   assign enable_hover_image = gst.enable_hover_image
   assign enable_sale_label = gst.enable_sale_label
-  assign compare_at_price = card_product.compare_at_price
-  assign price = card_product.price
+  assign card_variant = card_product.selected_or_first_available_variant
+  assign compare_at_price = card_variant.compare_at_price
+  assign price = card_variant.price
   assign sale = false
-  if compare_at_price > price and compare_at_price != blank
+  if compare_at_price != blank and compare_at_price > price
     assign sale = true
   endif
 

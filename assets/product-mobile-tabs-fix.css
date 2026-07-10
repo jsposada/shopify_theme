@@ -26,9 +26,40 @@
   }
 
   .tp-product-tabs .summary-heading {
+    gap: 0.8rem;
     justify-content: center;
     padding: 1.6rem !important;
     text-align: center;
+  }
+
+  .tp-product-tabs .summary-heading > span:first-child {
+    max-width: calc(100% - 2.2rem);
+  }
+
+  .tp-product-tabs .summary-heading .icon-toggle {
+    display: inline-block;
+    flex: 0 0 1.4rem;
+    height: 1.4rem;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    width: 1.4rem;
+  }
+
+  .tp-product-tabs .summary-heading .icon-toggle::before {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .tp-product-tabs .summary-heading .icon-toggle::after {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .tp-product-tabs details[open] .summary-heading .icon-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg) !important;
   }
 
   .tp-product-tabs .tp-collap-tab__content,

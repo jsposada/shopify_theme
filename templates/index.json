@@ -14,6 +14,7 @@
       "blocks": {
         "slide_item_Mrnqcp": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/CASCO_NOLAN_N60-6_SPECIAL_BLANCO_O_NEGRO_ce025964-37bf-414d-90e2-10d364238f5d.png",
             "image_link": "shopify://collections/cascos",
@@ -34,6 +35,7 @@
         },
         "slide_item_4Y8mk4": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/REGALALE_SEGURIDAD_CASCO_NOLAN_34d2cb4a-bd9e-4000-8677-31acfd252ba8.png",
             "image_link": "shopify://collections/cascos",
@@ -54,6 +56,7 @@
         },
         "slide_item_hWhain": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/REGALALE_UN_CASCO_EN_EL_DIA_DEL_PADRE_228c54f8-5811-4662-8ea2-74029dd23125.png",
             "image_link": "shopify://collections/cascos",
@@ -74,7 +77,6 @@
         },
         "slide_item_wj6tFF": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
             "image_link": "shopify://collections/neumaticos",
@@ -94,7 +96,6 @@
         },
         "slide_item_AEgRfW": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cuidamos_tu_inversion_y_tu_camino_1.png",
             "image_link": "shopify://pages/contacto",
@@ -114,7 +115,6 @@
         },
         "slide_item_Xr6FYr": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Te_asesoramos_por_WhatsApp_1.png",
             "image_link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
@@ -449,6 +449,7 @@
         "show_button": true,
         "text_btn": "Ver mas",
         "button_collection": "cascos",
+        "link_btn": "",
         "container": "container",
         "color_scheme": "",
         "collection": "cascos-promocion",
@@ -467,28 +468,28 @@
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-160-60r17-69h",
-            "bn_end_time": "2026-06-30"
+            "bn_end_time": "2026-07-31"
           }
         },
         "product_gpxr8n": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-170-60r17-72w",
-            "bn_end_time": "2026-06-30"
+            "bn_end_time": "2026-07-31"
           }
         },
         "product_BJiQk4": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-110-70r17-54w",
-            "bn_end_time": "2026-06-30"
+            "bn_end_time": "2026-07-31"
           }
         },
         "product_46Neci": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-190-55r17-75w",
-            "bn_end_time": "2026-06-30"
+            "bn_end_time": "2026-07-31"
           }
         }
       },

@@ -6,15 +6,16 @@
   assign show_variant = g_st.show_variant
   assign enable_sale_label = g_st.enable_sale_label
   assign promo_badge_label = card_product.metafields.custom.promo_badge_label.value
-  assign compare_at_price = card_product.compare_at_price
-  assign price = card_product.price
+  assign card_variant = card_product.selected_or_first_available_variant
+  assign compare_at_price = card_variant.compare_at_price
+  assign price = card_variant.price
   assign sale = false
-  if compare_at_price > price and compare_at_price != blank
+  if compare_at_price != blank and compare_at_price > price
     assign sale = true
   endif
 
   assign label = false
-  if sale == true or promo_badge_label != blank
+  if sale == true
     assign label = true
   endif
 
@@ -83,7 +84,7 @@
               <div class="label-inner">
                 {{- promo_badge_label -}}
               </div>
-            {%- elsif enable_sale_label and compare_at_price > price and compare_at_price != blank -%}
+            {%- elsif enable_sale_label and sale -%}
               <div class="label-inner">
                 -
                 {{- compare_at_price
