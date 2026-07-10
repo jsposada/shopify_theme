@@ -9,6 +9,7 @@
 {%- endcapture -%}
 
 {%- if section.blocks.size > 0 -%}
+  {{ 'product-mobile-tabs-fix.css' | asset_url | stylesheet_tag }}
   <div
     id="{{ section.id }}"
     class="tp-product-tabs design-{{design}} color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}"
