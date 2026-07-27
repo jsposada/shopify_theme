@@ -218,6 +218,7 @@
         },
         "c3244bbb-dfb6-4c83-8fff-13f1657651a4": {
           "type": "custom_tab",
+          "disabled": true,
           "settings": {
             "title": "Características",
             "tab_content": "content",
@@ -227,6 +228,7 @@
         },
         "review_hLgtCC": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "title": "Opiniones"
           }

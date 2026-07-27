@@ -12,13 +12,12 @@
     "slide_ertLkK": {
       "type": "slide",
       "blocks": {
-        "slide_item_Mrnqcp": {
+        "slide_item_djifwm": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/CASCO_NOLAN_N60-6_SPECIAL_BLANCO_O_NEGRO_ce025964-37bf-414d-90e2-10d364238f5d.png",
-            "image_link": "shopify://collections/cascos",
-            "image_mobile": "shopify://shop_images/CASCO_NOLAN_N60-6_SPECIAL_BLANCO_O_NEGRO.png",
+            "image": "shopify://shop_images/Banner_web_Promocion_3_Eurogrip_1_Litro_de_aceite_Motul_GRATIS_9f1fb145-6fd6-4af2-b5d5-4dff3ed870a9.png",
+            "image_link": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=EUROGRIP&filter.v.price.gte=0&filter.v.price.lte=591860",
+            "image_mobile": "shopify://shop_images/Banner_mobile_Promocion_3_Eurogrip_1_Litro_de_aceite_Motul_GRATIS.png",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
@@ -33,34 +32,32 @@
             "label_btn": ""
           }
         },
-        "slide_item_4Y8mk4": {
+        "slide_item_7TVYU8": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/REGALALE_SEGURIDAD_CASCO_NOLAN_34d2cb4a-bd9e-4000-8677-31acfd252ba8.png",
-            "image_link": "shopify://collections/cascos",
-            "image_mobile": "shopify://shop_images/REGALALE_SEGURIDAD_CASCO_NOLAN.png",
+            "image": "shopify://shop_images/Banner_web_Promocion_1_Aceite_Motul_en_oferta_8.990_39c129f8-16b4-4fe9-a5c3-d0eb1dc63d9b.png",
+            "image_link": "https://www.bikerz.cl/collections/lubricantes/products/aceite-motul-5100-semi-sintetico-20w50-4t-1-litro-copia?_pos=1&_fid=7b86b6227&_ss=c",
+            "image_mobile": "shopify://shop_images/Banner_mobile_Promocion_1_Aceite_Motul_en_oferta_8.990.png",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
             "position_content": "left",
             "text_align_content": "text_left",
             "content_background": "",
-            "sub_title": "",
-            "title": "",
+            "sub_title": "Cuida de ti y de tu moto",
+            "title": "<h1><strong>Aceite Motul</strong></h1>",
             "discount": "",
-            "description_1": "",
-            "slide_url": "",
-            "label_btn": ""
+            "description_1": "<h3><strong>Haz el cambio a tiempo</strong></h3>",
+            "slide_url": "https://www.bikerz.cl/collections/lubricantes/products/aceite-motul-5100-semi-sintetico-20w50-4t-1-litro-copia?_pos=1&_fid=7b86b6227&_ss=c",
+            "label_btn": "PRECIO ESPECIAL"
           }
         },
-        "slide_item_hWhain": {
+        "slide_item_VGxBTR": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/REGALALE_UN_CASCO_EN_EL_DIA_DEL_PADRE_228c54f8-5811-4662-8ea2-74029dd23125.png",
-            "image_link": "shopify://collections/cascos",
-            "image_mobile": "shopify://shop_images/REGALALE_UN_CASCO_EN_EL_DIA_DEL_PADRE.png",
+            "image": "shopify://shop_images/Banner_web_CEAT.png",
+            "image_link": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=CEAT&filter.v.price.gte=0&filter.v.price.lte=591860",
+            "image_mobile": "shopify://shop_images/Banner_movil_descuento_CEAT.png",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
@@ -68,15 +65,16 @@
             "text_align_content": "text_left",
             "content_background": "",
             "sub_title": "",
-            "title": "",
+            "title": "<p>QUE LAS LLUVIAS </p><p>NO TE SORPRENDAN</p>",
             "discount": "",
-            "description_1": "",
-            "slide_url": "",
-            "label_btn": ""
+            "description_1": "<p>Aprovecha los descuento </p><p>en toda la marca <em><strong>CEAT</strong></em></p>",
+            "slide_url": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=CEAT&filter.v.price.gte=0&filter.v.price.lte=591860",
+            "label_btn": "Compra ahora"
           }
         },
         "slide_item_wj6tFF": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
             "image_link": "shopify://collections/neumaticos",
@@ -96,6 +94,7 @@
         },
         "slide_item_AEgRfW": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cuidamos_tu_inversion_y_tu_camino_1.png",
             "image_link": "shopify://pages/contacto",
@@ -115,6 +114,7 @@
         },
         "slide_item_Xr6FYr": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Te_asesoramos_por_WhatsApp_1.png",
             "image_link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
@@ -134,9 +134,9 @@
         }
       },
       "block_order": [
-        "slide_item_Mrnqcp",
-        "slide_item_4Y8mk4",
-        "slide_item_hWhain",
+        "slide_item_djifwm",
+        "slide_item_7TVYU8",
+        "slide_item_VGxBTR",
         "slide_item_wj6tFF",
         "slide_item_AEgRfW",
         "slide_item_Xr6FYr"
@@ -272,14 +272,14 @@
       ],
       "settings": {
         "show_heading_header": false,
-        "heading": "Marcas de neumaticos para moto",
+        "heading": "Nuestras marcas",
         "description": "",
         "text_alignment": "text-center",
         "show_button": true,
         "text_btn": "Explore Now",
         "link_btn": "",
         "container": "full-width",
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-152b5be2-fe28-4b16-a7d1-901d95612190",
         "style_layout": "slider",
         "border_content": false,
         "custom_column": 6,
@@ -289,10 +289,10 @@
         "custom_ratio": "21:9",
         "autoplay": true,
         "loop": true,
-        "show_arrow": false,
-        "show_bullet": true,
-        "padding_top": 35,
-        "padding_bottom": 31
+        "show_arrow": true,
+        "show_bullet": false,
+        "padding_top": 13,
+        "padding_bottom": 13
       }
     },
     "collection_list_AyqJ4z": {
@@ -677,6 +677,34 @@
     "17722487056dc7857d": {
       "type": "_blocks",
       "settings": {}
+    },
+    "1784646990e18c4ee5": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_7yePWM": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_7yePWM"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -691,6 +719,7 @@
     "banner_image_V9tdfK",
     "blocks_tCRLq6",
     "blog_posts_7CRjke",
-    "17722487056dc7857d"
+    "17722487056dc7857d",
+    "1784646990e18c4ee5"
   ]
 }

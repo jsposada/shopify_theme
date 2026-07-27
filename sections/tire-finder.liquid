@@ -58,14 +58,14 @@
         </div>
       </div>
 
-      <!-- Paso 2: Aspecto (opcional) -->
+      <!-- Paso 2: Perfil (opcional) -->
       <div class="pf-step" data-step="2">
         <div class="pf-step-number">2</div>
         <div class="pf-field">
-          <label class="pf-label" for="select-aspecto">Aspecto <span class="pf-optional">(opcional)</span></label>
+          <label class="pf-label" for="select-aspecto">Perfil <span class="pf-optional">(opcional)</span></label>
           <div class="pf-select-wrap">
             <select id="select-aspecto" class="pf-select" disabled>
-              <option value="">— Cualquier aspecto —</option>
+              <option value="">— Cualquier perfil —</option>
             </select>
             <span class="pf-select-icon">▾</span>
           </div>
@@ -106,85 +106,84 @@
     --pf-accent: {{ section.settings.accent_color }};
     --pf-bg: #FFFFFF;
     --pf-card: #FFFFFF;
-    --pf-border: #E3E3E3;
-    --pf-input-bg: #EFEFF2;
+    --pf-border: #D6D6D6;
+    --pf-input-bg: #FFFFFF;
     --pf-text: #1C1C1C;
     --pf-muted: #666666;
     --pf-step-size: 28px;
-    --pf-radius: 10px;
+    --pf-radius: 0;
     --pf-transition: 0.25s ease;
   }
 
   .pf-wrapper {
     background: var(--pf-bg);
-    padding: 24px 0 28px;
+    padding: 0 0 54px;
     font-family: 'Arial Narrow', Arial, sans-serif;
-    border-top: 1px solid var(--pf-border);
-    border-bottom: 1px solid var(--pf-border);
+    border-top: none;
+    border-bottom: none;
   }
 
   .pf-inner {
-    max-width: 1100px;
+    max-width: 1520px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .pf-header {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 26px;
   }
   .pf-title {
     color: var(--pf-text);
-    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin: 0 0 6px;
+    font-size: clamp(2.4rem, 1.7vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 0.98;
+    margin: 0;
     text-transform: uppercase;
   }
   .pf-title::after {
-    content: '';
-    display: block;
-    width: 36px;
-    height: 3px;
-    background: var(--pf-accent);
-    margin: 8px auto 0;
-    border-radius: 2px;
+    content: none;
   }
 
   .pf-card {
     background: var(--pf-card);
-    border: 1px solid var(--pf-border);
+    border: none;
     border-radius: var(--pf-radius);
-    padding: 20px;
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr) minmax(240px, 1fr) 250px;
+    gap: 8px;
     align-items: end;
   }
 
   .pf-step {
     position: relative;
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    align-items: end;
     gap: 10px;
+    min-width: 0;
   }
   .pf-step--action {
-    align-items: flex-end;
+    display: block;
+    align-items: end;
   }
 
   .pf-step-number {
     width: var(--pf-step-size);
     height: var(--pf-step-size);
     min-width: var(--pf-step-size);
-    background: var(--pf-input-bg);
+    background: #e9e9eb;
     color: var(--pf-muted);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-top: 22px;
+    font-size: 1rem;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 4px;
     transition: background var(--pf-transition), color var(--pf-transition);
   }
 
@@ -194,17 +193,18 @@
   }
 
   .pf-field {
-    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
   .pf-label {
-    color: var(--pf-muted);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    color: var(--pf-text);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1;
     text-transform: uppercase;
   }
   .pf-optional {
@@ -220,12 +220,14 @@
   }
   .pf-select {
     width: 100%;
-    padding: 12px 36px 12px 14px;
+    height: 40px;
+    padding: 0 34px 0 14px;
     background: var(--pf-input-bg);
     border: 1px solid var(--pf-border);
-    border-radius: 6px;
+    border-radius: 0;
     color: var(--pf-text);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
@@ -234,7 +236,7 @@
   }
   .pf-select:focus {
     border-color: var(--pf-accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pf-accent) 20%, transparent);
+    box-shadow: 0 0 0 1px var(--pf-accent);
   }
   .pf-select:disabled {
     opacity: 0.45;
@@ -249,21 +251,22 @@
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--pf-muted);
+    color: var(--pf-text);
     pointer-events: none;
     font-size: 0.85rem;
   }
 
   .pf-btn {
     width: 100%;
-    padding: 13px 20px;
+    height: 40px;
+    padding: 0 20px;
     background: var(--pf-accent);
     color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     cursor: pointer;
     display: flex;
@@ -280,11 +283,12 @@
     transform: translateY(0);
   }
   .pf-btn:disabled {
-    background: var(--pf-input-bg);
-    color: var(--pf-muted);
+    background: var(--pf-accent);
+    color: #fff;
     cursor: not-allowed;
     transform: none;
-    border: 1px solid var(--pf-border);
+    border: 1px solid var(--pf-accent);
+    opacity: 1;
   }
   .pf-btn-icon {
     font-size: 1.1rem;
@@ -295,22 +299,39 @@
   }
 
   .pf-status {
-    text-align: center;
+    text-align: left;
     margin-top: 16px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: var(--pf-muted);
   }
   .pf-status.is-error {
     color: #FF6600;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
+    .pf-card {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .pf-step--action {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pf-wrapper {
+      padding: 0 0 34px;
+    }
+    .pf-title {
+      font-size: 2.4rem;
+    }
     .pf-card {
       grid-template-columns: 1fr;
-      padding: 20px;
+      gap: 14px;
     }
-    .pf-step {
-      gap: 8px;
+    .pf-select,
+    .pf-btn {
+      height: 42px;
     }
   }
 </style>
@@ -362,11 +383,15 @@
     }
     function hideStatus() { statusEl.style.display = 'none'; }
 
-    function setStepActive(stepNum) {
+    function setStepActive() {
       steps.forEach(s => {
-        const n = parseInt(s.dataset.step);
-        if (n && n <= stepNum) s.classList.add('is-active');
-        else s.classList.remove('is-active');
+        const n = s.dataset.step;
+        const isActive =
+          (n === '1' && selectAncho.value) ||
+          (n === '2' && selectAspecto.value) ||
+          (n === '3' && selectAro.value);
+
+        s.classList.toggle('is-active', Boolean(isActive));
       });
     }
 
@@ -377,6 +402,14 @@
 
     function sortNumeric(arr) {
       return arr.slice().sort((a, b) => parseFloat(a) - parseFloat(b));
+    }
+
+    function formatAnchoValue(value) {
+      const num = Number(String(value).replace(',', '.'));
+      if (!Number.isFinite(num)) return value;
+      if (num > 50) return String(Math.round(num));
+      if (num < 50) return num.toFixed(2);
+      return value;
     }
 
     function getToken() {
@@ -469,8 +502,8 @@
         const aspecto = p.aspecto?.value?.trim() || ""; // puede estar vacío
         const aro     = p.aro?.value?.trim()     || "";
 
-        // Mínimo requerido: ancho y aro
-        if (!ancho || !aro) return;
+        // Mínimo requerido: aro
+        if (!aro) return;
 
         const key = `${ancho}|${aspecto}|${aro}`;
         if (!seen.has(key)) {
@@ -522,14 +555,14 @@
       // Recalcular cada select ignorando a sí mismo
       if (changedSelect !== 'ancho') {
         const src = changedSelect === null ? allCombinations : filtered('ancho');
-        const anchos = sortNumeric([...new Set(src.map(c => c.ancho))]);
-        rebuild(selectAncho, anchos, '— Selecciona Ancho —');
+        const anchos = sortNumeric([...new Set(src.map(c => c.ancho).filter(Boolean))]);
+        rebuild(selectAncho, anchos, '— Selecciona Ancho —', formatAnchoValue);
       }
 
       if (changedSelect !== 'aspecto') {
         const src = changedSelect === null ? allCombinations : filtered('aspecto');
         const aspectos = sortNumeric([...new Set(src.map(c => c.aspecto).filter(Boolean))]);
-        rebuild(selectAspecto, aspectos, '— Cualquier aspecto —');
+        rebuild(selectAspecto, aspectos, '— Cualquier perfil —');
       }
 
       if (changedSelect !== 'aro') {
@@ -539,12 +572,9 @@
       }
 
       // Botón e indicadores visuales
-      const a = selectAncho.value;
       const r = selectAro.value;
-      btnSearch.disabled = !(a && r);
-
-      const active = [a ? 1 : 0, selectAspecto.value ? 2 : 0, r ? 3 : 0].filter(Boolean);
-      setStepActive(active.length ? Math.max(...active) : 0);
+      btnSearch.disabled = !r;
+      setStepActive();
     }
 
     // Carga inicial — todos los selects con todos sus valores
@@ -571,7 +601,7 @@
         allCombinations = parseCombinations(products);
 
         if (allCombinations.length === 0) {
-          showStatus('⚠️ No se encontraron productos con ancho y aro definidos. Verifica los metacampos.', true);
+          showStatus('⚠️ No se encontraron productos con aro definido. Verifica el metacampo custom.di_metro.', true);
           return;
         }
 
@@ -596,19 +626,21 @@
 
     // ─────────────────────────────────────────────
     // BÚSQUEDA — aplica solo los filtros con valor
-    // Ancho + Aro obligatorio, Aspecto opcional
+    // Aro obligatorio; ancho y perfil opcionales
     // ─────────────────────────────────────────────
     btnSearch.addEventListener('click', () => {
       const ancho   = selectAncho.value;
       const aspecto = selectAspecto.value;
       const aro     = selectAro.value;
 
-      if (!ancho || !aro) return;
+      if (!aro) return;
 
       // Filtros de metacampos: ?filter.p.m.NAMESPACE.KEY=VALOR
-      // Solo se añade aspecto si el usuario lo seleccionó
+      // Solo se añaden ancho y perfil si el usuario los seleccionó
       const params = new URLSearchParams();
-      params.append(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`, ancho);
+      if (ancho) {
+        params.append(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`, ancho);
+      }
       if (aspecto) {
         params.append(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`, aspecto);
       }

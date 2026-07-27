@@ -1,0 +1,41 @@
+{% liquid
+  assign ancho = product.metafields.custom.ancho.value | default: product.metafields.custom.ancho
+  assign ancho_num = ancho | plus: 0
+  assign ancho_formateado = ancho
+
+  if ancho != blank
+    if ancho_num < 20
+      assign ancho_redondeado = ancho_num | round: 2
+      assign ancho_partes = ancho_redondeado | append: '' | split: '.'
+      assign ancho_decimales = ancho_partes[1]
+
+      if ancho_decimales == blank
+        assign ancho_formateado = ancho_partes[0] | append: '.00'
+      elsif ancho_decimales.size == 1
+        assign ancho_formateado = ancho_redondeado | append: '0'
+      else
+        assign ancho_formateado = ancho_redondeado
+      endif
+    else
+      assign ancho_formateado = ancho_num | round: 0
+    endif
+  endif
+%}
+
+<details class="tp-faq__item brd-1 mb-20" open="">
+  <summary class="tp-collap-tab__sm">
+    <h6 class="summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16">
+      <span>Dimensiones</span>
+      <span class="icon-toggle relative"></span>
+    </h6>
+  </summary>
+  <div class="tp-faq__item-content content-animation px-24 py-16">
+    <div class="tab-panel">
+      {% if ancho != blank %}
+        <p><strong>Ancho:</strong> {{ ancho_formateado }}</p>
+      {% endif %}
+      <p><strong>Perfil: </strong>{{ product.metafields.custom.aspecto }}</p>
+      <p><strong>Aro: </strong>{{ product.metafields.custom.di_metro }}</p>
+    </div>
+  </div>
+</details>

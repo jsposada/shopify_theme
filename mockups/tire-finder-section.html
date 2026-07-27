@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mockup - Buscador de Neumaticos Bikerz</title>
+  <style>
+    :root {
+      --bkz-accent: #ef0000;
+      --bkz-accent-dark: #c90000;
+      --bkz-orange: #ff4b0b;
+      --bkz-text: #171717;
+      --bkz-muted: #6d6d6d;
+      --bkz-border: #d6d6d6;
+      --bkz-field: #ffffff;
+      --bkz-field-hover: #f7f7f7;
+      --bkz-white: #ffffff;
+      --bkz-radius: 0;
+      --bkz-shadow: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(#050505 0 310px, #ffffff 310px 100%);
+      color: var(--bkz-text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mock-page {
+      width: 100%;
+      padding: 330px 0 64px;
+    }
+
+    .tire-finder {
+      width: 100%;
+      margin: 0 auto;
+      padding: 52px 0 70px;
+      background: var(--bkz-white);
+      border: 0;
+      border-radius: var(--bkz-radius);
+      box-shadow: var(--bkz-shadow);
+    }
+
+    .tire-finder__inner {
+      width: min(100%, 1520px);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .tire-finder__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .tire-finder__eyebrow {
+      display: none;
+    }
+
+    .tire-finder__title {
+      margin: 0;
+      color: var(--bkz-text);
+      font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+      font-size: clamp(28px, 2.25vw, 40px);
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .tire-finder__copy {
+      max-width: 380px;
+      margin: 0;
+      color: var(--bkz-muted);
+      font-size: 13px;
+      line-height: 1.45;
+      text-align: left;
+      transform: translateY(4px);
+      display: none;
+    }
+
+    .tire-finder__form {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr) minmax(240px, 1fr) 250px;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .tire-field {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: end;
+    }
+
+    .tire-step-number {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 4px;
+      background: #e9e9eb;
+      border-radius: 50%;
+      color: #666666;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 28px;
+      text-align: center;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .tire-field.is-selected .tire-step-number {
+      background: var(--bkz-orange);
+      color: #ffffff;
+    }
+
+    .tire-field__label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 0;
+      margin-bottom: 0;
+      color: var(--bkz-text);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    .tire-field__optional,
+    .tire-field__required {
+      color: var(--bkz-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .tire-field__required {
+      color: var(--bkz-accent);
+    }
+
+    .tire-select-wrap {
+      position: relative;
+      grid-column: 2;
+    }
+
+    .tire-select {
+      width: 100%;
+      height: 35px;
+      padding: 0 34px 0 14px;
+      background: var(--bkz-field);
+      border: 1px solid #d9d9dc;
+      border-radius: 0;
+      color: var(--bkz-text);
+      font-size: 12px;
+      font-weight: 400;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tire-select:hover {
+      background: var(--bkz-field-hover);
+    }
+
+    .tire-select:focus {
+      background: #ffffff;
+      border-color: var(--bkz-orange);
+      box-shadow: 0 0 0 1px var(--bkz-orange);
+    }
+
+    .tire-select-wrap::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid #000000;
+      border-bottom: 2px solid #000000;
+      pointer-events: none;
+      transform: translateY(-65%) rotate(45deg);
+    }
+
+    .tire-search-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 36px;
+      padding: 0 20px;
+      background: var(--bkz-accent);
+      border: 1px solid var(--bkz-accent);
+      border-radius: 0;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+      white-space: nowrap;
+    }
+
+    .tire-search-btn::after {
+      content: none;
+    }
+
+    .tire-search-btn:hover:not(:disabled) {
+      background: var(--bkz-accent-dark);
+      border-color: var(--bkz-accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .tire-search-btn:disabled {
+      background: #eeeeef;
+      border-color: #d9d9dc;
+      color: #858585;
+      cursor: not-allowed;
+      opacity: 1;
+      transform: none;
+    }
+
+    .tire-result {
+      display: none;
+      margin-top: 14px;
+      padding: 10px 12px;
+      background: #fff5f5;
+      border: 1px solid rgba(239, 0, 0, 0.22);
+      border-radius: 0;
+      color: #5d0000;
+      font-size: 14px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .tire-result.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 960px) {
+      .mock-page {
+        padding-top: 260px;
+      }
+
+      .tire-finder {
+        padding: 42px 0 54px;
+      }
+
+      .tire-finder__top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .tire-finder__copy {
+        max-width: 100%;
+        text-align: left;
+      }
+
+      .tire-finder__form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .tire-search-btn {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .mock-page {
+        padding-top: 190px;
+      }
+
+      .tire-finder {
+        padding: 34px 0 44px;
+      }
+
+      .tire-finder__title {
+        font-size: 26px;
+      }
+
+      .tire-finder__form {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .tire-field {
+        grid-template-columns: 32px minmax(0, 1fr);
+      }
+
+      .tire-select,
+      .tire-search-btn {
+        height: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="mock-page">
+    <section class="tire-finder" aria-labelledby="tire-finder-title">
+      <div class="tire-finder__inner">
+        <div class="tire-finder__top">
+          <div>
+            <div class="tire-finder__eyebrow">Buscador Bikerz</div>
+            <h1 class="tire-finder__title" id="tire-finder-title">Encuentra tu neumático</h1>
+          </div>
+          <p class="tire-finder__copy">Busca por aro o refina con ancho y aspecto.</p>
+        </div>
+
+        <form class="tire-finder__form" id="tireFinderForm">
+          <div class="tire-field">
+            <span class="tire-step-number" aria-hidden="true">1</span>
+            <label class="tire-field__label" for="selectAncho">
+              Ancho <span class="tire-field__optional">opcional</span>
+            </label>
+            <div class="tire-select-wrap">
+              <select class="tire-select" id="selectAncho" name="ancho">
+                <option value="">Cualquier ancho</option>
+                <option value="90">90</option>
+                <option value="100">100</option>
+                <option value="110">110</option>
+                <option value="120">120</option>
+                <option value="130">130</option>
+                <option value="150">150</option>
+                <option value="180">180</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tire-field">
+            <span class="tire-step-number" aria-hidden="true">2</span>
+            <label class="tire-field__label" for="selectAspecto">
+              Aspecto <span class="tire-field__optional">opcional</span>
+            </label>
+            <div class="tire-select-wrap">
+              <select class="tire-select" id="selectAspecto" name="aspecto">
+                <option value="">Cualquier aspecto</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tire-field">
+            <span class="tire-step-number" aria-hidden="true">3</span>
+            <label class="tire-field__label" for="selectAro">
+              Aro <span class="tire-field__required">requerido</span>
+            </label>
+            <div class="tire-select-wrap">
+              <select class="tire-select" id="selectAro" name="aro" required>
+                <option value="">Selecciona aro</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="21">21</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="tire-search-btn" id="searchButton" type="submit" disabled>
+            Buscar
+          </button>
+        </form>
+
+        <div class="tire-result" id="mockResult" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.querySelector('#tireFinderForm');
+    const ancho = document.querySelector('#selectAncho');
+    const aspecto = document.querySelector('#selectAspecto');
+    const aro = document.querySelector('#selectAro');
+    const button = document.querySelector('#searchButton');
+    const result = document.querySelector('#mockResult');
+
+    function updateButton() {
+      [ancho, aspecto, aro].forEach((select) => {
+        select.closest('.tire-field').classList.toggle('is-selected', Boolean(select.value));
+      });
+
+      button.disabled = !aro.value;
+      result.classList.remove('is-visible');
+    }
+
+    function buildMockUrl() {
+      const params = new URLSearchParams();
+
+      if (ancho.value) {
+        params.append('filter.p.m.custom.ancho', ancho.value);
+      }
+
+      if (aspecto.value) {
+        params.append('filter.p.m.custom.aspecto', aspecto.value);
+      }
+
+      params.append('filter.p.m.custom.di_metro', aro.value);
+
+      return `/collections/neumaticos?${params.toString()}`;
+    }
+
+    [ancho, aspecto, aro].forEach((select) => {
+      select.addEventListener('change', updateButton);
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!aro.value) return;
+
+      result.textContent = `URL simulada: ${buildMockUrl()}`;
+      result.classList.add('is-visible');
+    });
+  </script>
+</body>
+</html>

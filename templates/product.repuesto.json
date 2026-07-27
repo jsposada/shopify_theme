@@ -109,7 +109,7 @@
         "custom_liquid_TBdJLF": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<details class=\"tp-faq__item brd-1 mb-20\" open=\"\">\n  <summary class=\"tp-collap-tab__sm\">\n    <h6 class=\"summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16\">\n      <span>\n       Características\n      </span>\n      <span class=\"icon-toggle relative\"></span>\n    </h6>\n  </summary>\n  <div class=\"tp-faq__item-content content-animation px-24 py-16\">\n    <div class=\"tab-panel\">\n      <p><strong>Motos Compatibles:</strong> {{ product.metafields.custom.moto}}</p>\n      <p><strong>Marca: </strong>{{ product.metafields.custom.marca}}</p>\n\n    </div>\n  </div>\n</details>"
+            "custom_liquid": "{% render 'repuesto-caracteristicas' %}"
           }
         },
         "custom_liquid_j9w8F8": {
