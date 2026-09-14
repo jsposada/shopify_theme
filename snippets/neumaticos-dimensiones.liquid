@@ -25,7 +25,7 @@
 <details class="tp-faq__item brd-1 mb-20" open="">
   <summary class="tp-collap-tab__sm">
     <h6 class="summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16">
-      <span>Dimensiones</span>
+      <span>Características</span>
       <span class="icon-toggle relative"></span>
     </h6>
   </summary>
@@ -36,6 +36,9 @@
       {% endif %}
       <p><strong>Perfil: </strong>{{ product.metafields.custom.aspecto }}</p>
       <p><strong>Aro: </strong>{{ product.metafields.custom.di_metro }}</p>
+      {% if product.metafields.custom.tipo_de_montaje != blank %}
+        <p><strong>Tipo de montaje: </strong>{{ product.metafields.custom.tipo_de_montaje.value | default: product.metafields.custom.tipo_de_montaje }}</p>
+      {% endif %}
     </div>
   </div>
 </details>

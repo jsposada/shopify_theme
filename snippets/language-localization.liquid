@@ -6,6 +6,9 @@
 {%- endcomment -%}
 
 <div class="disclosure">
+  <span id="{{ localPosition }}Label" class="visually-hidden">
+    {{- 'localization.language_label' | t -}}
+  </span>
   <button
     type="button"
     class="disclosure__button localization-form__select localization-selector link link--text caption-large"

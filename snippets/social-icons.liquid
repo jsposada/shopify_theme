@@ -1,7 +1,7 @@
 <ul class="list-social">
   {%- if settings.social_instagram_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_instagram_link }}" class="link list-social__link">
+      <a href="{{ settings.social_instagram_link }}" class="link list-social__link" aria-label="Bikerz en Instagram">
         {%- render 'icon'
           , icon_name: 'icon-instagram' -%}
       </a>
@@ -9,7 +9,7 @@
   {%- endif -%}
   {%- if settings.social_facebook_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
+      <a href="{{ settings.social_facebook_link }}" class="link list-social__link" aria-label="Bikerz en Facebook">
         {%- render 'icon'
           , icon_name: 'icon-facebook' -%}
       </a>
@@ -17,7 +17,7 @@
   {%- endif -%}
   {%- if settings.social_twitter_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
+      <a href="{{ settings.social_twitter_link }}" class="link list-social__link" aria-label="Bikerz en X (Twitter)">
         {%- render 'icon'
           , icon_name: 'icon-twitter' -%}
         <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
@@ -26,7 +26,7 @@
   {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
+      <a href="{{ settings.social_youtube_link }}" class="link list-social__link" aria-label="Bikerz en YouTube">
         {%- render 'icon'
           , icon_name: 'icon-youtube' -%}
         <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
@@ -35,7 +35,7 @@
   {%- endif -%}
   {%- if settings.social_pinterest_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_pinterest_link }}" class="link list-social__link">
+      <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" aria-label="Bikerz en Pinterest">
         {%- render 'icon'
           , icon_name: 'icon-pinterest' -%}
         <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
@@ -44,7 +44,7 @@
   {%- endif -%}
   {%- if settings.social_tiktok_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_tiktok_link }}" class="link list-social__link">
+      <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" aria-label="Bikerz en TikTok">
         {%- render 'icon'
           , icon_name: 'icon-tiktok' -%}
         <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
@@ -53,7 +53,7 @@
   {%- endif -%}
   {%- if settings.social_snapchat_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_snapchat_link }}" class="link list-social__link">
+      <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" aria-label="Bikerz en Snapchat">
         {%- render 'icon'
           , icon_name: 'icon-snapchat' -%}
         <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
@@ -62,7 +62,7 @@
   {%- endif -%}
   {%- if settings.social_tumblr_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_tumblr_link }}" class="link list-social__link">
+      <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" aria-label="Bikerz en Tumblr">
         {%- render 'icon'
           , icon_name: 'icon-tumblr' -%}
         <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
@@ -71,7 +71,7 @@
   {%- endif -%}
   {%- if settings.social_vimeo_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_vimeo_link }}" class="link list-social__link">
+      <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" aria-label="Bikerz en Vimeo">
         {%- render 'icon'
           , icon_name: 'icon-vimeo' -%}
         <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>

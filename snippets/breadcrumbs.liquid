@@ -42,12 +42,14 @@
       assign bt_lv3 = product.title
       assign show_lv3 = true
 
-    when 'collection' and collection.handle
-      assign show_lv2 = true
-      assign bt_lv2 = 'sections.breadcrumbs.content.collections' | t
-      assign link_lv2 = '/collections'
-      assign bt_lv3 = collection.title
-      assign show_lv3 = true
+    when 'collection'
+      if collection.handle
+        assign show_lv2 = true
+        assign bt_lv2 = 'sections.breadcrumbs.content.collections' | t
+        assign link_lv2 = '/collections'
+        assign bt_lv3 = collection.title
+        assign show_lv3 = true
+      endif
     when 'list-collections'
       assign show_lv2 = true
       assign bt_lv2 = 'sections.breadcrumbs.content.collections' | t

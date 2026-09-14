@@ -3,23 +3,34 @@
   render 'schema-color'
   render 'variable-css'
 %}
-{{ 'animate.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'animate.css' | asset_url | stylesheet_tag }}
 {% assign rtl = settings.enable_rtl %}
 {% if rtl %}
-  {{ 'tailwind.rtl.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'reset.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'swiper-bundle.rtl.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'base.rtl.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'component.rtl.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'manual-rtl.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'tailwind.rtl.css' | asset_url | stylesheet_tag }}
+  {{ 'reset.css' | asset_url | stylesheet_tag }}
+  {{ 'swiper-bundle.rtl.css' | asset_url | stylesheet_tag }}
+  {{ 'base.rtl.css' | asset_url | stylesheet_tag }}
+  {{ 'component.rtl.css' | asset_url | stylesheet_tag }}
+  {{ 'manual-rtl.css' | asset_url | stylesheet_tag }}
 {% else %}
-  {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'reset.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'swiper-bundle.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'utilities.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ 'component.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+  {{ 'reset.css' | asset_url | stylesheet_tag }}
+  {{ 'swiper-bundle.css' | asset_url | stylesheet_tag }}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {{ 'utilities.css' | asset_url | stylesheet_tag }}
+  {{ 'component.css' | asset_url | stylesheet_tag }}
 {% endif %}
+
+{%- comment -%}
+  Restrict image transitions to compositor-friendly properties. The theme's base
+  stylesheet otherwise transitions every property, including aspect-ratio.
+{%- endcomment -%}
+<style>
+  [style*='--aspect-ratio'] img,
+  [style*='--aspect-ratio'] > svg {
+    transition-property: transform, opacity;
+  }
+</style>
 
 {% if template.name == 'product' %}
   {{ 'helmet-size-guide-dialog.css' | asset_url | stylesheet_tag }}

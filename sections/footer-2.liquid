@@ -121,15 +121,6 @@
                             </a>
                           </p>
                         </div>
-                        {%- comment -%} Segundo teléfono añadido {%- endcomment -%}
-                        <div class="flex gap-5 mb-16 items-baseline">
-                          <p class="mb-0">
-                            <a href="tel:+56957709915" class="">
-                              {{ 'sections.footer.phone' | t }} 2:
-                              <strong>+56 9 7767 0252</strong>
-                            </a>
-                          </p>
-                        </div>
                       {%- endif -%}
                       {%- if settings.store_email and block.settings.show_email -%}
                         <div class="flex gap-5 mb-16 items-baseline">
@@ -171,7 +162,9 @@
         {%- endif -%}
         {% if gst.copyright != blank %}
           <div class="footer__bottom-copyright">
-            <div class="rsmb-p">{{ gst.copyright }}</div>
+            <div class="rsmb-p">
+              <p>© {{ 'now' | date: '%Y' }} {{ gst.copyright | strip_html }}</p>
+            </div>
           </div>
         {% endif %}
       </div>

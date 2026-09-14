@@ -1,14 +1,22 @@
-{{ 'someone-purchased.css' | asset_url | stylesheet_tag: preload: true }}
-
 {% liquid
   assign st = section.settings
   assign positionNoti = 'notifi-left'
   if st['show_someone-purchased'] == 'right'
     assign positionNoti = 'notifi-right'
   endif
+
+  assign valid_products_count = 0
+  for block in section.blocks
+    assign notification_product = all_products[block.settings.product]
+    if notification_product != blank
+      assign valid_products_count = valid_products_count | plus: 1
+    endif
+  endfor
 %}
 
-{% if section.blocks.size > 0 %}
+{% if valid_products_count > 0 %}
+  {{ 'someone-purchased.css' | asset_url | stylesheet_tag }}
+
   <div class="product-notification {{ positionNoti }}" data-time="{{ section.settings.someone_speed | times: 1000 }}">
     <div class="product-notification__wrapper">
       <button class="close close-notifi flex items-center tp-icon-close absolute top-8 right-8">
@@ -38,12 +46,12 @@
         <span class="time-ago-text">{{ section.settings.time_location_text }}</span>
         {% for block in section.blocks %}
           {%- assign product = all_products[block.settings.product] -%}
-          {% if block.settings.product != blank %}
+          {% if product != blank %}
             <div
               class="data-product"
               data-id="{{ block.id }}"
               data-image="{{ product.featured_image.src | product_img_url: 'compact' }}"
-              data-url="{{ product.url | within: collection }}"
+              data-url="{{ product.url }}"
               data-title="{{ product.title | truncatewords: 5 }}"
               data-alt="{{ product.title }}"
               data-local="{{ block.settings.from_ago }}"
@@ -182,7 +190,7 @@
   }
 {% endschema %}
 
-{% if section.blocks.size > 0 %}
+{% if valid_products_count > 0 %}
   <script type="text/javascript">
     function SomeonePurchased() {
       const productNotification = document.querySelector('.product-notification');
@@ -264,12 +272,14 @@
   </script>
 {% endif %}
 
-{% unless section.settings['display_someone-purchased_mb'] %}
-  <style>
-    @media (max-width: 767px) {
-      .product-notification {
-        display: none;
+{% if valid_products_count > 0 %}
+  {% unless section.settings['display_someone-purchased_mb'] %}
+    <style>
+      @media (max-width: 767px) {
+        .product-notification {
+          display: none;
+        }
       }
-    }
-  </style>
-{% endunless %}
+    </style>
+  {% endunless %}
+{% endif %}

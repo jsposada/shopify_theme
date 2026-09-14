@@ -182,6 +182,7 @@
       {
         "type": "select",
         "id": "general_layout",
+        "label": "General layout",
         "options": [
           {
             "value": "default",
@@ -1928,6 +1929,28 @@
         "id": "cookie_button_text",
         "label": "Button label",
         "default": "Allow cookies"
+      }
+    ]
+  },
+  {
+    "name": "WhatsApp",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Configura los mensajes que se completan antes de abrir WhatsApp. El nombre del producto y la URL se agregan automáticamente cuando corresponde."
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_floating_message",
+        "label": "Mensaje del botón flotante",
+        "default": "¡Hola! Quiero más información"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_stock_message",
+        "label": "Mensaje para consulta de stock",
+        "default": "Hola, quiero saber cuándo estará disponible el producto",
+        "info": "Si un producto tiene el metafield custom.mensaje_whatsapp, ese texto tiene prioridad."
       }
     ]
   }

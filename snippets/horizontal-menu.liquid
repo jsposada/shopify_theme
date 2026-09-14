@@ -6,14 +6,15 @@
         <div class="close-hd-mobile flex items-center gap-5 font-medium lg:hidden justify-between">
             <div class="close-hd-mobile__logo">
                 {%- assign img_logo = settings.logo -%}
-                {%- assign logo_alt = img_logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: img_logo.aspect_ratio -%}
-                <picture class="coma-logo">
-                    <source media="(min-width:768px)" srcset="{{ logo_source | image_url: width: section.settings.logo_width }}">
-                    {% if img_logo %}
-                        {{- img_logo | image_url: width: 100 | image_tag: class: 'logo-menu-mobile', width: logo_width, height: img_logo.height, alt: img_logo.alt, reload: true -}}
-                    {% endif %}
-                </picture>
+                {% if img_logo != blank %}
+                  {%- assign logo_alt = img_logo.alt | default: shop.name | escape -%}
+                  {%- assign logo_width = settings.logo_width | default: 100 -%}
+                  {%- assign logo_height = logo_width | divided_by: img_logo.aspect_ratio -%}
+                  <picture class="coma-logo">
+                    <source media="(min-width:768px)" srcset="{{ img_logo | image_url: width: logo_width }}">
+                    {{- img_logo | image_url: width: logo_width | image_tag: class: 'logo-menu-mobile', width: logo_width, height: logo_height, alt: logo_alt, loading: 'lazy' -}}
+                  </picture>
+                {% endif %}
             </div>
             <div class="close-hd-mobile__button flex items-center">
                 {% render 'icon', icon_name: 'close-mobile' %}
@@ -355,11 +356,11 @@
                         <div class="language mr-10">
                             <localization-form>
                                 {%- form 'localization'
-                                        , id: 'FooterLanguageForm'
+                                        , id: 'MobileMenuLanguageForm'
                                         , class: 'localization-form' -%}
                                     <div class="no-js-hidden">
                                         {%- render 'language-localization'
-                                                , localPosition: 'FooterLanguage' -%}
+                                                , localPosition: 'MobileMenuLanguage' -%}
                                     </div>
                                 {%- endform -%}
                             </localization-form>
@@ -369,11 +370,11 @@
                         <div class="currency">
                             <localization-form>
                                 {%- form 'localization'
-                                        , id: 'FooterCountryForm'
+                                        , id: 'MobileMenuCountryForm'
                                         , class: 'localization-form' -%}
                                     <div class="no-js-hidden">
                                         {%- render 'country-localization'
-                                                , localPosition: 'FooterCountry' -%}
+                                                , localPosition: 'MobileMenuCountry' -%}
                                     </div>
                                 {%- endform -%}
                             </localization-form>

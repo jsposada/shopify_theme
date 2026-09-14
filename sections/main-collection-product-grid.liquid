@@ -1,7 +1,7 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-{% comment %} <script src="{{ 'collection-main.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+<script src="{{ 'collection-main.js' | asset_url }}" defer="defer"></script>
 {% liquid
   assign gst = settings
   assign sst = section.settings
@@ -33,6 +33,7 @@
   {% endif %}
 {% endcapture %}
 <div class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %} product-item-list" style="{{ style | strip | strip_newlines }}">
+  <span id="a11y-refresh-page-message" class="visually-hidden" role="status" aria-live="polite"></span>
   <div class="{{ container }}">
     {%- paginate collection.products by section.settings.products_per_page -%}
       <div class="{{ classWrapper | strip | strip_newlines }}">
@@ -40,7 +41,11 @@
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
         {%- if section.settings.enable_filtering -%}
           <aside
-            aria-labelledby="verticalTitle"
+            {% if filter_type == 'horizontal' %}
+              aria-labelledby="verticalTitle-{{ section.id }}"
+            {% else %}
+              aria-label="{{ 'products.facets.filter_by_label' | t | escape }}"
+            {% endif %}
             class="facets-wrapper"
             id="main-collection-filters"
             data-id="{{ section.id }}">
@@ -193,7 +198,7 @@
                           , icon_name: 'icon-close-border' %}</span>
                       <span class="text-sm">
                         {{ filter.label }}:
-                        {{ value.label | escape }}
+                        {% render 'format-ancho-filter-label', filter: filter, label: value.label %}
                       </span>
                     </a>
                   </facet-remove>

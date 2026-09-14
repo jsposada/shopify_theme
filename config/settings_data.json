@@ -16,7 +16,7 @@
     "show_back_to_top": true,
     "enable_loading_site": true,
     "enable_rtl": false,
-    "store_phone": "‪+56 9 5770 9915‬",
+    "store_phone": "‪+56 9  7767 0252",
     "store_email": "hola@bikerz.cl",
     "store_address": "Avenida Pedro de Valdivia 5691 Macul, Santiago, RM",
     "open_time": "Mon-Fri: 8:00am - 8:00pm<br> Sun - Sat: 10:00am - 10:00pm",
@@ -25,7 +25,7 @@
     "social_facebook_link": "https://www.facebook.com/Bikerz.cl",
     "social_instagram_link": "https://www.instagram.com/bikerz.cl/",
     "social_youtube_link": "https://www.youtube.com/@bikerzchile",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https://www.tiktok.com/@bikerz.cl",
     "social_twitter_link": "",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
@@ -93,7 +93,7 @@
     "padding_top": 60,
     "padding_bottom": 60,
     "color_scheme_ftb": "scheme-40ec7a9a-7096-4ed4-b20e-45698e7a9a31",
-    "copyright": "<p>@ 2024 BIKERZ. Todos los derechos reservados</p>",
+    "copyright": "<p>BIKERZ. Todos los derechos reservados</p>",
     "show_social_media_icons": true,
     "payment_enable": true,
     "product_layout": "prd-item-2",
@@ -281,7 +281,7 @@
           "show_language": true,
           "show_currency": true,
           "menu_top_bar": "",
-          "message": "<p>⚠️ Envíos a todo Chile 🇨🇱 </p>",
+          "message": "<p>📦 Envíos a todo Chile — RM y Regiones 🚚</p>",
           "hidden_top_bar_tablet_mobile": false,
           "hidden_social_tablet_mobile": true,
           "hidden_menu_tablet_mobile": true,
@@ -310,6 +310,14 @@
               "open_link": false
             }
           },
+          "single_link_c6XDta": {
+            "type": "single_link",
+            "settings": {
+              "title": "REPUESTOS",
+              "url": "shopify://collections/repuestos",
+              "open_link": false
+            }
+          },
           "single_link_nfBEi8": {
             "type": "single_link",
             "settings": {
@@ -326,27 +334,19 @@
               "open_link": false
             }
           },
+          "single_link_dELDpE": {
+            "type": "single_link",
+            "settings": {
+              "title": "OFERTAS🔥",
+              "url": "shopify://collections/ofertas",
+              "open_link": false
+            }
+          },
           "single_link_jWBXNX": {
             "type": "single_link",
             "settings": {
               "title": "SERVICIOS",
               "url": "shopify://pages/servicios",
-              "open_link": false
-            }
-          },
-          "single_link_3BPqBR": {
-            "type": "single_link",
-            "settings": {
-              "title": "BLOG",
-              "url": "shopify://blogs/motos-chile",
-              "open_link": false
-            }
-          },
-          "single_link_VcmQBK": {
-            "type": "single_link",
-            "settings": {
-              "title": "NOSOTROS",
-              "url": "shopify://pages/sobre-nosotros",
               "open_link": false
             }
           },
@@ -362,11 +362,11 @@
         "block_order": [
           "single_link_rw9BVb",
           "single_link_YfXKL8",
+          "single_link_c6XDta",
           "single_link_nfBEi8",
           "single_link_FmajJc",
+          "single_link_dELDpE",
           "single_link_jWBXNX",
-          "single_link_3BPqBR",
-          "single_link_VcmQBK",
           "single_link_gbXfGb"
         ],
         "custom_css": [],
@@ -1370,7 +1370,7 @@
     "blocks": {
       "8208493610395315515": {
         "type": "shopify://apps/dondy-whatsapp-chat-marketing/blocks/app-block/7f5a70cb-e171-4cc7-ac02-e2220203abd6",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       },
       "2567389343055140935": {
@@ -1380,6 +1380,26 @@
       },
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "disabled": false,
+        "settings": {}
+      },
+      "3816433319858854054": {
+        "type": "shopify://apps/editorify-product-reviews/blocks/embed-collection-stars/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
+        "disabled": false,
+        "settings": {}
+      },
+      "14167878431489293998": {
+        "type": "shopify://apps/editorify-product-reviews/blocks/editorify_load/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
+        "disabled": false,
+        "settings": {}
+      },
+      "13158583206780813295": {
+        "type": "shopify://apps/editorify-product-reviews/blocks/embed-star-rating/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
+        "disabled": false,
+        "settings": {}
+      },
+      "opinew-global-code": {
+        "type": "shopify://apps/opinew-reviews/blocks/global/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
         "disabled": false,
         "settings": {}
       }

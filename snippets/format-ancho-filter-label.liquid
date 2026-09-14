@@ -1,0 +1,29 @@
+{%- liquid
+  assign output_label = label
+  assign filter_title = filter.label | downcase
+  assign filter_key = filter.param_name | default: ''
+
+  if filter_title == 'ancho' or filter_key contains 'custom.ancho'
+    assign raw_label = label | strip
+    assign ancho_num = raw_label | replace: ',', '.' | plus: 0
+
+    if raw_label != blank
+      if ancho_num < 20
+        assign ancho_redondeado = ancho_num | round: 2
+        assign ancho_partes = ancho_redondeado | append: '' | split: '.'
+        assign ancho_decimales = ancho_partes[1]
+
+        if ancho_decimales == blank
+          assign output_label = ancho_partes[0] | append: '.00'
+        elsif ancho_decimales.size == 1
+          assign output_label = ancho_redondeado | append: '0'
+        else
+          assign output_label = ancho_redondeado
+        endif
+      else
+        assign output_label = ancho_num | round: 0
+      endif
+    endif
+  endif
+-%}
+{{- output_label | escape -}}

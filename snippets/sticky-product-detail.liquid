@@ -98,7 +98,7 @@
 
       <div class="sticky__actions--qty">
         <div
-          id="Quantity-Form-{{ section.id }}"
+          id="Quantity-Form-{{ section.id }}-sticky"
           class="quantity-Form-{{ section.id }} product-form__input product-form__quantity"
           {{ block.shopify_attributes }}>
           {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -128,7 +128,7 @@
                 class="quantity__input tp-item__qty_input quantity__input-sticky"
                 type="number"
                 name="quantity"
-                id="Quantity-{{ section.id }}"
+                id="Quantity-{{ section.id }}-sticky"
                 data-cart-quantity="{{ cart_qty }}"
                 data-inventory="{{ fistQtyVariant |  default: product.selected_or_first_available_variant.inventory_quantity }}"
                 data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"

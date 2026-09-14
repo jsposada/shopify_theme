@@ -95,17 +95,6 @@
             "show_copy": true
           }
         },
-        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e": {
-          "type": "product_meta",
-          "settings": {
-            "show_vendor": false,
-            "show_sku": true,
-            "show_availability": true,
-            "show_categories": true,
-            "category_text": "Categoría:",
-            "category_type": "first"
-          }
-        },
         "custom_liquid_TBdJLF": {
           "type": "custom_liquid",
           "settings": {
@@ -121,13 +110,6 @@
         "border_XMnppf": {
           "type": "border",
           "settings": {}
-        },
-        "a10de87f-c73f-4af0-9a13-c2c0428ffdac": {
-          "type": "trust_badge",
-          "disabled": true,
-          "settings": {
-            "image_width": 550
-          }
         },
         "icon_with_text_WdLjYH": {
           "type": "icon-with-text",
@@ -154,6 +136,25 @@
             "icon_3": "none",
             "heading_3": ""
           }
+        },
+        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e": {
+          "type": "product_meta",
+          "disabled": true,
+          "settings": {
+            "show_vendor": false,
+            "show_sku": true,
+            "show_availability": true,
+            "show_categories": true,
+            "category_text": "Categoría:",
+            "category_type": "first"
+          }
+        },
+        "a10de87f-c73f-4af0-9a13-c2c0428ffdac": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "image_width": 550
+          }
         }
       },
       "block_order": [
@@ -166,13 +167,13 @@
         "variant_picker",
         "e941e332-baff-4652-9625-d45a740935b2",
         "0d615ceb-1034-4564-8caf-4b8b0691adb2",
-        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e",
         "custom_liquid_TBdJLF",
         "custom_liquid_j9w8F8",
         "border_XMnppf",
-        "a10de87f-c73f-4af0-9a13-c2c0428ffdac",
         "icon_with_text_WdLjYH",
-        "f1ab33f1-48ca-45dc-bed1-8090c34a67db"
+        "f1ab33f1-48ca-45dc-bed1-8090c34a67db",
+        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e",
+        "a10de87f-c73f-4af0-9a13-c2c0428ffdac"
       ],
       "custom_css": [
         ".tp-prd-form__wishlist {display: none;}",

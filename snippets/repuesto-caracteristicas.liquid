@@ -17,12 +17,15 @@
       {% if tipo_repuesto != blank %}
         <p><strong>Tipo de repuesto:</strong> {{ tipo_repuesto }}</p>
       {% endif %}
+      {% if moto_fallback != blank %}
+        <p><strong>Moto compatible:</strong> {{ moto_fallback }}</p>
+      {% endif %}
 
       {% if motos_compatibles != blank %}
         <p>
-          <strong>Motos compatibles:</strong>
-          <select class="field__input" aria-label="Motos compatibles">
-            <option value="" selected>Ver motos compatibles</option>
+          <strong>Otras motos compatibles:</strong>
+          <select class="field__input" aria-label="Otras motos compatibles">
+            <option value="" selected>Ver otras motos compatibles</option>
             {% for moto in motos_compatibles %}
               {% liquid
                 assign moto_nombre = moto.nombre.value | default: moto.nombre
@@ -55,8 +58,6 @@
             {% endfor %}
           </select>
         </p>
-      {% elsif moto_fallback != blank %}
-        <p><strong>Moto compatible:</strong> {{ moto_fallback }}</p>
       {% endif %}
     </div>
   </div>

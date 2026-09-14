@@ -1,6 +1,13 @@
 <script src="{{ 'brand.js' | asset_url }}" defer="defer"></script>
 {{ 'brand.css' | asset_url | stylesheet_tag }}
 
+<style>
+  #shopify-section-{{ section.id }} .hover__show-nav:focus-within .swiper-navigation {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
 {%- liquid
   assign sst = section.settings
   assign container = sst.container
@@ -10,6 +17,16 @@
   assign autoplay = sst.autoplay
   assign show_bullet = sst.show_bullet
   assign show_arrow = sst.show_arrow
+  assign slider_gap_mobile = 15
+  assign slider_gap_desktop = settings.spacing_grid_horizontal | default: 30
+  assign tablet_columns = sst.custom_column_tablet | default: 5
+  assign desktop_columns = item_desktop | default: 6
+  assign tablet_gap_count = tablet_columns | minus: 1
+  assign desktop_gap_count = desktop_columns | minus: 1
+  assign tablet_width_percent = 100.0 | divided_by: tablet_columns
+  assign desktop_width_percent = 100.0 | divided_by: desktop_columns
+  assign tablet_gap_offset = slider_gap_mobile | times: tablet_gap_count | times: 1.0 | divided_by: tablet_columns
+  assign desktop_gap_offset = slider_gap_desktop | times: desktop_gap_count | times: 1.0 | divided_by: desktop_columns
   assign media_aspect_ratio = sst.image_ratio
   assign custom_ratio = sst.custom_ratio
   assign images_style = sst.images_style
@@ -25,11 +42,16 @@
   endif
 -%}
 {%- capture style -%}
-  --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px; 
+  --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px;
+  --tp-slider-mobile-width: calc(50% - 7.5px);
+  --tp-slider-tablet-width: calc({{ tablet_width_percent }}% - {{ tablet_gap_offset }}px);
+  --tp-slider-desktop-width: calc({{ desktop_width_percent }}% - {{ desktop_gap_offset }}px);
+  --tp-slider-mobile-gap: {{ slider_gap_mobile }}px;
+  --tp-slider-desktop-gap: {{ slider_gap_desktop }}px;
 {%- endcapture -%}
 
 <div
-  class="tp-brand color-{{ sst.color_scheme }} gradient section-py section-mb"
+  class="tp-brand color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}"
   style="{{ style | strip | strip_newlines }}"
   id="{{ section.id }}"
   data-id="{{ section.id }}">
@@ -51,7 +73,18 @@
           data-space-between="{{ settings.spacing_grid_horizontal }}">
           <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
-              {% assign bst = block.settings %}
+              {%- liquid
+                assign bst = block.settings
+                assign brand_alt = bst.alt_text | default: bst.image.alt | default: bst.heading
+                assign brand_url = bst.link | default: ''
+                if brand_alt == blank and brand_url contains 'filter.p.m.custom.marca='
+                  assign brand_name = brand_url | split: 'filter.p.m.custom.marca=' | last | split: '&' | first | url_decode
+                  assign brand_alt = 'Neumáticos ' | append: brand_name
+                endif
+                if brand_alt == blank
+                  assign brand_alt = 'Marca para motos disponible en Bikerz'
+                endif
+              -%}
               <div class="swiper-slide {{ hvr_effect }}" data-swiper-autoplay="5000">
                 <a href="{{ bst.link | default: "#" }}" class="block">
                 {% render 'responsive-image'
@@ -61,6 +94,7 @@
                   , images_style: images_style
                   , w_default: 220
                   , h_default: 90
+                  , alt_text: brand_alt
                 %}
                 {% if bst.heading != blank %}
                   <h6 class="mb-0 mt-20 text-center">{{ bst.heading }}</h6>
@@ -78,7 +112,18 @@
         <div class="tp-brand__grid">
           <div class="tp-grid tp-grid--{{ sst.custom_column_tablet }}-col-tablets tp-grid--{{ item_desktop }}-col-desktop">
             {%- for block in section.blocks -%}
-              {% assign bst = block.settings %}
+              {%- liquid
+                assign bst = block.settings
+                assign brand_alt = bst.alt_text | default: bst.image.alt | default: bst.heading
+                assign brand_url = bst.link | default: ''
+                if brand_alt == blank and brand_url contains 'filter.p.m.custom.marca='
+                  assign brand_name = brand_url | split: 'filter.p.m.custom.marca=' | last | split: '&' | first | url_decode
+                  assign brand_alt = 'Neumáticos ' | append: brand_name
+                endif
+                if brand_alt == blank
+                  assign brand_alt = 'Marca para motos disponible en Bikerz'
+                endif
+              -%}
               <div class="tp-brand__items tp-grid__item {{ hvr_effect }}">
                 <a href="{{ bst.link | default: "#" }}" class="block">
                   {% render 'responsive-image'
@@ -88,6 +133,7 @@
                     , images_style: images_style
                     , w_default: 220
                     , h_default: 90
+                    , alt_text: brand_alt
                   %}
                   {% if bst.heading != blank %}
                     <h6 class="mb-0 mt-20 text-center">{{ bst.heading }}</h6>
@@ -340,6 +386,11 @@
             "type": "text",
             "id": "heading",
             "label": "Brand heading"
+          }, {
+            "type": "text",
+            "id": "alt_text",
+            "label": "Alternative text",
+            "info": "Briefly describe the brand logo. If blank, the theme will generate a description from the brand link."
           }, {
             "type": "image_picker",
             "id": "image",

@@ -9,6 +9,7 @@
 {%- endcapture -%}
 <div class="tp-contact-2 color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}" style="{{ style | strip | strip_newlines }}">
   <div class="{{ container }}">
+    <h1 class="visually-hidden">{{ page.title | escape }}</h1>
     <div class="tp-grid tp-grid--2-col-desktop tp-grid--2-col-tablets tp-grid--1-col-mobile">
       {%- for block in section.blocks -%}
         {%- case block.type -%}

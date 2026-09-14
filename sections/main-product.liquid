@@ -151,7 +151,7 @@
                 {% render 'detail-block-organization'
                   , product: product
                   , block: block %}
-              {%- when 'wishlist_compare' - %}
+              {%- when 'wishlist_compare' -%}
                 {% render 'detail-wishlist-compare-share'
                   , product: product
                   , block: block %}
@@ -296,10 +296,10 @@
             type="button"
             class="product-popup-modal__toggle"
             aria-label="{{ 'accessibility.close' | t }}">
-            {% render 'icon-close' %}
+            {% render 'icon', icon_name: 'close' %}
           </button>
           <div class="product-popup-modal__content-info">
-            <h1 class="h2">{{ block.settings.page.title }}</h1>
+            <h2 class="h2">{{ block.settings.page.title }}</h2>
             {{ block.settings.page.content }}
           </div>
         </div>

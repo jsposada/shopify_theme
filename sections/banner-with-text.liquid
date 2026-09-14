@@ -30,11 +30,11 @@
 {%- endcapture -%}
 
 
-<div class="banner-with-text rounded-[10px] banner-with-text-{{ section.id }}  {% unless sst.background_container %}color-{{ sst.color_scheme }} gradient{% endunless %}  section-py section-mb" style="{{ style | strip | strip_newlines }}">
+<div class="banner-with-text rounded-[10px] banner-with-text-{{ section.id }}  {% unless sst.background_container %}color-{{ sst.color_scheme }} gradient{% endunless %}  section-py {% if sst.reset_spacing == false %}section-mb{% endif %}" style="{{ style | strip | strip_newlines }}">
   <div class="{{ container }} section-full">
     <div class="relative {% if sst.background_container %}color-{{ sst.color_scheme }} gradient{% endif %} {% if sst.bn_design == 'text_column' %}column-text {{ sst.text_position }}  {{ sst.img_position }} bd-radius{% endif %}">
       <div class="banner-text--media bd-radius">
-        {% render 'responsive-image', image: sst.image | width: "100vw" %}
+        {% render 'responsive-image', image: sst.image, width: '100vw' %}
       </div>
       <div class="{{ sst.bn_design }} {{ sst.text_align }} 
                   {% if sst.bn_design == 'text_overlay' %}
@@ -55,9 +55,15 @@
                   {{ bst.sub_title }}
                 </h6>
               {%- when 'heading' -%}
-                <h2 class="banner-text--heading mb-0" style="--fz-heading: {{ bst.font_size_heading }}px;--fz-heading-tb: {{ bst.font_size_heading_tb }}px;--fz-heading-mb: {{ bst.font_size_heading_mb }}px">
+                {%- liquid
+                  assign heading_tag = 'h2'
+                  if request.page_type == 'index' and bst.heading_tag == 'h1'
+                    assign heading_tag = 'h1'
+                  endif
+                -%}
+                <{{ heading_tag }} class="banner-text--heading mb-0" style="--fz-heading: {{ bst.font_size_heading }}px;--fz-heading-tb: {{ bst.font_size_heading_tb }}px;--fz-heading-mb: {{ bst.font_size_heading_mb }}px">
                   {{ bst.title }}
-                </h2>
+                </{{ heading_tag }}>
               {%- when 'text' -%}
                 <div class="banner-text--des rsmb-p">
                   {{ bst.txt_content }}
@@ -153,9 +159,20 @@
   .banner-with-text-{{ section.id }} {
     margin-top: {{ sst.margin_top }}px;
   }
+  .banner-with-text-{{ section.id }} .banner-text--heading {
+    font-size: var(--fz-heading);
+  }
   @media (max-width: 1024px) {
     .banner-with-text-{{ section.id }} {
       margin-top: 0;
+    }
+    .banner-with-text-{{ section.id }} .banner-text--heading {
+      font-size: var(--fz-heading-tb);
+    }
+  }
+  @media (max-width: 768px) {
+    .banner-with-text-{{ section.id }} .banner-text--heading {
+      font-size: var(--fz-heading-mb);
     }
   }
 </style>
@@ -386,6 +403,21 @@
             "id": "title",
             "label": "Heading",
             "default": "Heading"
+          }, {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "Heading level",
+            "default": "h2",
+            "options": [
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h1",
+                "label": "H1 on the home page"
+              }
+            ]
           }, {
             "type": "text",
             "id": "font_size_heading",

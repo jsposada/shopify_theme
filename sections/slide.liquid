@@ -31,6 +31,26 @@
   --color-dots: {{ st.color_dots }};
 {%- endcapture -%}
 
+{%- if slide_height == 'custom-height' -%}
+  <style>
+    #shopify-section-{{ section.id }} .tp-slide__main {
+      height: {{ st.height_dk }}px;
+    }
+
+    @media (max-width: 1024px) {
+      #shopify-section-{{ section.id }} .tp-slide__main {
+        height: {{ st.height_tb }}px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} .tp-slide__main {
+        height: {{ st.height_mb }}px;
+      }
+    }
+  </style>
+{%- endif -%}
+
 <div class="tp-slide relative color-{{ st.color_scheme }} gradient {{ container }} section-full {% if st.reset_spacing == false %}section-mb{% endif %}{{ fullScreen }}" style="{{ style_height | strip | strip_newlines }}">
   <div
     class="swiper tp-slide__main js-slide-main hover__show-nav"
@@ -41,10 +61,22 @@
     <div class="swiper-wrapper">
       
       {% for block in section.blocks %}
-         <a href="{{ block.settings.image_link }}" style="display: block;position: absolute;width: 100%;height: 100%;left: 0;top: 0;z-index: 999;"></a>
         {% liquid
           assign bst = block.settings
           assign slider_effect = bst.slider_effect
+          assign slide_link_label = bst.image_alt | strip
+          if slide_link_label == blank
+            assign slide_link_label = bst.title | strip_html | strip
+          endif
+          if slide_link_label == blank
+            assign slide_link_label = bst.label_btn | strip
+          endif
+          if slide_link_label == blank and bst.image_link contains '/collections/ofertas'
+            assign slide_link_label = 'ofertas para motos en Bikerz'
+          endif
+          if slide_link_label == blank
+            assign slide_link_label = 'promoción de Bikerz'
+          endif
           assign textContent = 'text-left'
           if bst.text_align_content == 'text_center'
             assign textContent = 'text-center'
@@ -63,23 +95,28 @@
         {% case block.type %}
           {% when 'slide_item' %}
             <div class="swiper-slide tp-slide__item tp-slide__item-{{ forloop.index }}" data-swiper-autoplay="{{ aptime }}">
+              {% if bst.image_link != blank %}
+                <a
+                  href="{{ bst.image_link }}"
+                  class="tp-slide__link absolute inset-0"
+                  aria-label="Ver {{ slide_link_label | escape }}"
+                  style="display: block; position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 999;"
+                ></a>
+              {% endif %}
               <div class="tp-slide__image absolute inset-0" style="--slider-opacity: {{ bst.overlay_slide }}">
 
                 {%- liquid
-                  assign full_width = '100vw'
                   assign widths = '375, 550, 750, 1100, 1920, 2000, 3000, 3840'
-                  assign stacked_sizes = '(min-width: 750px) 60vw, 120vw'
-                  assign half_width = '50vw'
-                  assign image_height = bst.image.width | divided_by: bst.image.aspect_ratio
+                  assign sizes = '100vw'
                   if bst.image != blank
                     assign image_class = 'banner__media-image-half'
                   endif
-                  if bst.image != blank
-                    assign sizes = stacked_sizes
-                  elsif bst.image != blank
-                    assign sizes = half_width
-                  else
-                    assign sizes = full_width
+
+                  assign fetch_priority = 'auto'
+                  assign image_loading = 'lazy'
+                  if forloop.first
+                    assign fetch_priority = 'high'
+                    assign image_loading = 'eager'
                   endif
 
                   if bst.content_background != 'rgba(0,0,0,0)'
@@ -91,22 +128,48 @@
                   if imageMobile == blank
                     assign imageMobile = bst.image
                   endif
+
+                  assign slide_alt = bst.image_alt | default: bst.image.alt
+                  if slide_alt == blank
+                    assign slide_alt = bst.title | strip_html | strip
+                  endif
+                  if slide_alt == blank
+                    assign slide_alt = bst.label_btn | strip
+                  endif
+                  if slide_alt == blank and bst.image_link contains '/collections/ofertas'
+                    assign slide_alt = 'Ofertas para motos en Bikerz'
+                  elsif slide_alt == blank and bst.image_link != blank
+                    assign slide_alt = 'Promoción de Bikerz'
+                  endif
                 -%}
-                <div class="image-desktop h-full hidden md:block bg-white">
-                  {% if bst.image != blank %}
-                    {{ bst.image | image_url: width: 3840 | image_tag: loading: 'lazy', width: bst.image.width, height: image_height, class: image_class, sizes: sizes, widths: widths }}
-                  {% else %}
+                {% if bst.image != blank %}
+                  <picture class="tp-slide__picture block h-full bg-white">
+                    {% if bst.image_mobile != blank %}
+                      <source
+                        media="(max-width: 767px)"
+                        srcset="
+                          {{ imageMobile | image_url: width: 375 }} 375w,
+                          {{ imageMobile | image_url: width: 550 }} 550w,
+                          {{ imageMobile | image_url: width: 750 }} 750w,
+                          {{ imageMobile | image_url: width: 1100 }} 1100w
+                        "
+                        sizes="100vw"
+                        width="{{ imageMobile.width }}"
+                        height="{{ imageMobile.height }}"
+                      >
+                    {% endif %}
+                    {{ bst.image | image_url: width: 3840 | image_tag: loading: image_loading, fetchpriority: fetch_priority, decoding: 'async', width: bst.image.width, height: bst.image.height, class: image_class, sizes: sizes, widths: widths, alt: slide_alt }}
+                  </picture>
+                {% else %}
+                  <div class="h-full bg-white">
                     {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
                     {%- if placeholder_slide == 1 -%}
                       {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
                     {%- else -%}
                       {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                     {%- endif -%}
-                  {% endif %}
-                </div>
-                <div class="image-mobile h-full block md:hidden bg-white">
-                  {{ imageMobile | image_url: width: 768 | image_tag: loading: 'lazy', width: imageMobile.width, height: image_height, class: image_class, sizes: sizes, widths: widths }}
-                </div>
+                  </div>
+                {% endif %}
               </div>
               <div class="tp-slide__wrapper absolute top-1/2 -translate-y-1/2 left-0 right-0">
                 <div class="{{ bst.content_box }} relative">
@@ -117,8 +180,9 @@
                       </div>
                     {% endif %}
                     {% if bst.title != blank %}
+                      {%- assign slide_title = bst.title | replace: '<h1>', '<p>' | replace: '</h1>', '</p>' -%}
                       <div class="tp-content__title color-heading h2  {% if bst.discount != blank %}mb-0{% else %}mb-30{% endif %}">
-                        {{ bst.title }}
+                        {{ slide_title }}
                       </div>
                     {% endif %}
 
@@ -387,6 +451,12 @@
             "id": "image",
             "type": "image_picker",
             "label": "t:sections.slide.blocks.settings.image"
+          },
+          {
+            "id": "image_alt",
+            "type": "text",
+            "label": "Alternative text",
+            "info": "Briefly describe the promotion shown in the banner."
           },
                     {
           "type": "url",

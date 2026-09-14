@@ -33,6 +33,9 @@
       <div class="predictive-search__result-group">
         {%- if predictive_search.resources.products.size > 0 -%}
           <div>
+            <span id="predictive-search-products" class="visually-hidden">
+              {{- 'templates.search.products' | t -}}
+            </span>
             <p data-predictive-search-search-for-text class="text-center text-xl font-medium">
               {{- 'templates.search.search_for' | t: terms: predictive_search.terms -}}
             </p>

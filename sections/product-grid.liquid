@@ -1,4 +1,5 @@
 {{ 'product-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-grid.js' | asset_url }}" defer="defer"></script>
 {% liquid
   assign sst = section.settings
   assign container = sst.container

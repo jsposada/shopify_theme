@@ -36,67 +36,81 @@
 }
 {% endschema %}
 
-<div class="pf-wrapper" id="tire-finder-section">
+{%- assign tire_finder_id = 'tire-finder-' | append: section.id -%}
+{%- assign tire_finder_ancho_id = tire_finder_id | append: '-ancho' -%}
+{%- assign tire_finder_aspecto_id = tire_finder_id | append: '-aspecto' -%}
+{%- assign tire_finder_aro_id = tire_finder_id | append: '-aro' -%}
+{%- assign tire_finder_button_id = tire_finder_id | append: '-buscar' -%}
+{%- assign tire_finder_instructions_id = tire_finder_id | append: '-instrucciones' -%}
+{%- assign tire_finder_status_id = tire_finder_id | append: '-estado' -%}
+{%- assign tire_finder_updates_id = tire_finder_id | append: '-actualizaciones' -%}
+
+<div class="pf-wrapper" id="{{ tire_finder_id }}" data-tire-finder aria-busy="true">
   <div class="pf-inner page-width">
 
     <div class="pf-header">
       <h2 class="pf-title">{{ section.settings.title }}</h2>
     </div>
 
-    <div class="pf-card">
+    <p id="{{ tire_finder_instructions_id }}" class="pf-sr-only">
+      Selecciona la medida del neumático. El aro es obligatorio; el ancho y el perfil son opcionales. Las opciones disponibles se actualizan según cada selección.
+    </p>
+
+    <div class="pf-card" role="search" aria-label="Buscar neumáticos por medida" aria-describedby="{{ tire_finder_instructions_id }}">
       <!-- Paso 1: Ancho -->
       <div class="pf-step" data-step="1">
-        <div class="pf-step-number">1</div>
+        <div class="pf-step-number" aria-hidden="true">1</div>
         <div class="pf-field">
-          <label class="pf-label" for="select-ancho">Ancho</label>
+          <label class="pf-label" for="{{ tire_finder_ancho_id }}">Ancho</label>
           <div class="pf-select-wrap">
-            <select id="select-ancho" class="pf-select" disabled>
+            <select id="{{ tire_finder_ancho_id }}" class="pf-select" aria-describedby="{{ tire_finder_instructions_id }}" aria-required="false" disabled>
               <option value="">Cargando...</option>
             </select>
-            <span class="pf-select-icon">▾</span>
+            <span class="pf-select-icon" aria-hidden="true">▾</span>
           </div>
         </div>
       </div>
 
       <!-- Paso 2: Perfil (opcional) -->
       <div class="pf-step" data-step="2">
-        <div class="pf-step-number">2</div>
+        <div class="pf-step-number" aria-hidden="true">2</div>
         <div class="pf-field">
-          <label class="pf-label" for="select-aspecto">Perfil <span class="pf-optional">(opcional)</span></label>
+          <label class="pf-label" for="{{ tire_finder_aspecto_id }}">Perfil <span class="pf-optional">(opcional)</span></label>
           <div class="pf-select-wrap">
-            <select id="select-aspecto" class="pf-select" disabled>
+            <select id="{{ tire_finder_aspecto_id }}" class="pf-select" aria-describedby="{{ tire_finder_instructions_id }}" aria-required="false" disabled>
               <option value="">— Cualquier perfil —</option>
             </select>
-            <span class="pf-select-icon">▾</span>
+            <span class="pf-select-icon" aria-hidden="true">▾</span>
           </div>
         </div>
       </div>
 
       <!-- Paso 3: Aro (diámetro) -->
       <div class="pf-step" data-step="3">
-        <div class="pf-step-number">3</div>
+        <div class="pf-step-number" aria-hidden="true">3</div>
         <div class="pf-field">
-          <label class="pf-label" for="select-aro">Aro</label>
+          <label class="pf-label" for="{{ tire_finder_aro_id }}">Aro</label>
           <div class="pf-select-wrap">
-            <select id="select-aro" class="pf-select" disabled>
+            <select id="{{ tire_finder_aro_id }}" class="pf-select" aria-describedby="{{ tire_finder_instructions_id }}" aria-required="true" disabled>
               <option value="">— Selecciona Aro —</option>
             </select>
-            <span class="pf-select-icon">▾</span>
+            <span class="pf-select-icon" aria-hidden="true">▾</span>
           </div>
         </div>
       </div>
 
       <!-- Botón de búsqueda -->
       <div class="pf-step pf-step--action">
-        <button id="btn-search-tire" class="pf-btn" disabled>
+        <button id="{{ tire_finder_button_id }}" class="pf-btn" type="button" aria-describedby="{{ tire_finder_instructions_id }}" disabled>
           <span class="pf-btn-text">BUSCAR NEUMÁTICOS</span>
-          <span class="pf-btn-icon">→</span>
+          <span class="pf-btn-icon" aria-hidden="true">→</span>
         </button>
       </div>
     </div>
 
     <!-- Estado de carga / error -->
-    <div id="pf-status-tire" class="pf-status" style="display:none;"></div>
+    <div id="{{ tire_finder_status_id }}" class="pf-status" role="status" aria-live="polite" aria-atomic="true" style="display:none;"></div>
+    <div id="{{ tire_finder_updates_id }}" class="pf-sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
   </div>
 </div>
@@ -117,6 +131,7 @@
 
   .pf-wrapper {
     background: var(--pf-bg);
+    margin-block: 20px;
     padding: 0 0 54px;
     font-family: 'Arial Narrow', Arial, sans-serif;
     border-top: none;
@@ -127,6 +142,18 @@
     max-width: 1520px;
     margin: 0 auto;
     padding: 0 24px;
+  }
+
+  .pf-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
   }
 
   .pf-header {
@@ -238,6 +265,11 @@
     border-color: var(--pf-accent);
     box-shadow: 0 0 0 1px var(--pf-accent);
   }
+  .pf-select:focus-visible,
+  .pf-btn:focus-visible {
+    outline: 2px solid var(--pf-accent);
+    outline-offset: 2px;
+  }
   .pf-select:disabled {
     opacity: 0.45;
     cursor: not-allowed;
@@ -340,7 +372,10 @@
 (function() {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', async () => {
+  async function initTireFinder() {
+    const finderEl = document.getElementById('{{ tire_finder_id }}');
+    if (!finderEl || finderEl.dataset.initialized === 'true') return;
+    finderEl.dataset.initialized = 'true';
 
     // ─────────────────────────────────────────────
     // CONFIGURACIÓN
@@ -359,12 +394,13 @@
     // ─────────────────────────────────────────────
     // ELEMENTOS DEL DOM
     // ─────────────────────────────────────────────
-    const selectAncho   = document.getElementById('select-ancho');
-    const selectAspecto = document.getElementById('select-aspecto');
-    const selectAro     = document.getElementById('select-aro');
-    const btnSearch     = document.getElementById('btn-search-tire');
-    const statusEl      = document.getElementById('pf-status-tire');
-    const steps         = document.querySelectorAll('#tire-finder-section .pf-step[data-step]');
+    const selectAncho   = finderEl.querySelector('#{{ tire_finder_ancho_id }}');
+    const selectAspecto = finderEl.querySelector('#{{ tire_finder_aspecto_id }}');
+    const selectAro     = finderEl.querySelector('#{{ tire_finder_aro_id }}');
+    const btnSearch     = finderEl.querySelector('#{{ tire_finder_button_id }}');
+    const statusEl      = finderEl.querySelector('#{{ tire_finder_status_id }}');
+    const updatesEl     = finderEl.querySelector('#{{ tire_finder_updates_id }}');
+    const steps         = finderEl.querySelectorAll('.pf-step[data-step]');
 
     // ─────────────────────────────────────────────
     // ESTADO LOCAL
@@ -382,6 +418,23 @@
       statusEl.style.display = 'block';
     }
     function hideStatus() { statusEl.style.display = 'none'; }
+
+    function setLoading(isLoading) {
+      finderEl.setAttribute('aria-busy', String(isLoading));
+    }
+
+    function announceOptions(changedSelect) {
+      if (!changedSelect) return;
+
+      const fieldNames = {
+        ancho: 'el ancho',
+        aspecto: 'el perfil',
+        aro: 'el aro'
+      };
+      const optionCount = (select) => Math.max(0, select.options.length - 1);
+
+      updatesEl.textContent = `Opciones actualizadas después de cambiar ${fieldNames[changedSelect]}. ${optionCount(selectAncho)} opciones de ancho, ${optionCount(selectAspecto)} opciones de perfil y ${optionCount(selectAro)} opciones de aro disponibles.`;
+    }
 
     function setStepActive() {
       steps.forEach(s => {
@@ -407,8 +460,8 @@
     function formatAnchoValue(value) {
       const num = Number(String(value).replace(',', '.'));
       if (!Number.isFinite(num)) return value;
-      if (num > 50) return String(Math.round(num));
-      if (num < 50) return num.toFixed(2);
+      if (num >= 20) return String(Math.round(num));
+      if (num < 20) return num.toFixed(2);
       return value;
     }
 
@@ -575,6 +628,7 @@
       const r = selectAro.value;
       btnSearch.disabled = !r;
       setStepActive();
+      announceOptions(changedSelect);
     }
 
     // Carga inicial — todos los selects con todos sus valores
@@ -591,6 +645,7 @@
       if (!token) {
         showStatus('⚠️ Token no configurado. Ve al Editor del Tema → Buscador de Neumáticos → pega tu Storefront Access Token.', true);
         selectAncho.innerHTML = '<option value="">Token requerido</option>';
+        setLoading(false);
         return;
       }
 
@@ -614,6 +669,8 @@
         console.error('[Tire Finder] Error:', err);
         showStatus(`Error al cargar datos: ${err.message}. Revisa la consola (F12) para más detalles.`, true);
         selectAncho.innerHTML = '<option value="">Error de carga</option>';
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -653,7 +710,13 @@
     // ARRANCAR
     // ─────────────────────────────────────────────
     init();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTireFinder, { once: true });
+  } else {
+    initTireFinder();
+  }
 
 })();
 </script>

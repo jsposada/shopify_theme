@@ -33,6 +33,7 @@
   class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py section-mb product-item-list"
   style="{{ style | strip | strip_newlines }}"
 >
+  <span id="a11y-refresh-page-message" class="visually-hidden" role="status" aria-live="polite"></span>
   <div class="{{ container }}">
     {% paginate search.results by 24 %}
       <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
@@ -176,7 +177,11 @@
             {%- if search.filters != empty -%}
               {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
                 <aside
-                  aria-labelledby="verticalTitle"
+                  {% if filter_type == 'horizontal' %}
+                    aria-labelledby="verticalTitle-{{ section.id }}"
+                  {% else %}
+                    aria-label="{{ 'products.facets.filter_by_label' | t | escape }}"
+                  {% endif %}
                   class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
                   id="main-search-filters"
                   data-id="{{ section.id }}"
@@ -192,7 +197,7 @@
                     enable_sorting: section.settings.enable_sorting,
                     filter_type: section.settings.filter_type,
                     paginate: paginate,
-                    , background_sidebar: section.settings.background_sidebar
+                    background_sidebar: section.settings.background_sidebar
                     , block: block
                   %}
                 </aside>
@@ -492,7 +497,6 @@
                 {%- else -%}
                   <div
                     class="template-search__results collection js-tp-collection"
-                    id="product-grid"
                     data-id="{{ section.id }}"
                   >
                     <div class="tp-loading-overlay gradient">
