@@ -21,6 +21,7 @@
       <ul class="tire-landing-hero__proofs" role="list">
         {%- for block in section.blocks -%}
           <li class="tire-landing-hero__proof" {{ block.shopify_attributes }}>
+            <span class="tire-landing-hero__check" aria-hidden="true">✓</span>
             <span>{{ block.settings.text | escape }}</span>
           </li>
         {%- endfor -%}

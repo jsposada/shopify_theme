@@ -106,11 +106,27 @@
   font-family: var(--font-heading-family);
   font-size: 1.15rem;
   font-weight: 700;
+  gap: .8rem;
   letter-spacing: .04em;
   line-height: 1.2;
   min-height: 44px;
   padding: .8rem 1.2rem;
   text-transform: uppercase;
+}
+
+.tire-landing-hero__check {
+  align-items: center;
+  background: var(--tire-orange);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 18px;
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  height: 18px;
+  justify-content: center;
+  line-height: 1;
+  width: 18px;
 }
 
 .tire-guide { background: var(--tire-surface); }
