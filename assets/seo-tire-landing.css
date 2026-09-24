@@ -262,6 +262,14 @@
   text-transform: uppercase;
 }
 
+@media (min-width: 990px) {
+  .seo-tire-landing [id$='__product-grid'] #main-collection-filters,
+  .seo-tire-landing [id$='__product-grid'] .facets__form-vertical {
+    flex: 0 0 23.3rem;
+    width: 23.3rem;
+  }
+}
+
 @media (max-width: 990px) {
   .tire-landing-hero__proofs { grid-template-columns: 1fr; max-width: 560px; }
   .tire-guide__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
