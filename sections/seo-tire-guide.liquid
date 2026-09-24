@@ -1,9 +1,13 @@
 <section class="tire-guide section-py" style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;">
   <div class="container">
     <header class="tire-guide__header">
-      <p class="tire-landing-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tire-landing-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
       <h2>{{ section.settings.heading | escape }}</h2>
-      <p>{{ section.settings.intro | escape }}</p>
+      {%- if section.settings.intro != blank -%}
+        <p>{{ section.settings.intro | escape }}</p>
+      {%- endif -%}
     </header>
 
     <div class="tire-guide__grid">
@@ -13,7 +17,9 @@
             <span class="tire-guide-card__code">{{ block.settings.code | escape }}</span>
             <h3>{{ block.settings.heading | escape }}</h3>
             <p>{{ block.settings.text | escape }}</p>
-            <strong>{{ block.settings.example | escape }}</strong>
+            {%- if block.settings.example != blank -%}
+              <strong>{{ block.settings.example | escape }}</strong>
+            {%- endif -%}
           </article>
         {%- endif -%}
       {%- endfor -%}
@@ -23,7 +29,9 @@
       <div class="tire-guide-tip__icon" aria-hidden="true">i</div>
       <div>
         <h3>{{ section.settings.tip_heading | escape }}</h3>
-        <p>{{ section.settings.tip_text | escape }}</p>
+        {%- if section.settings.tip_text != blank -%}
+          <p>{{ section.settings.tip_text | escape }}</p>
+        {%- endif -%}
         <ul role="list">
           <li>Confirma la medida en el manual o ficha técnica de tu moto.</li>
           <li>Revisa el eje, el sentido de giro y los índices de carga y velocidad.</li>

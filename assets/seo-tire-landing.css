@@ -132,17 +132,17 @@
 .tire-guide { background: var(--tire-surface); }
 
 .tire-guide__header {
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
   max-width: 760px;
   text-align: center;
 }
 
 .tire-guide__header h2 {
-  font-size: clamp(3rem, 4vw, 4.4rem);
+  font-size: clamp(2.6rem, 3vw, 3.6rem);
   font-weight: 900;
   letter-spacing: -.02em;
   line-height: 1;
-  margin: 0 0 1.4rem;
+  margin: 0;
   text-transform: uppercase;
 }
 
@@ -155,7 +155,7 @@
 
 .tire-guide__grid {
   display: grid;
-  gap: 1.6rem;
+  gap: 1.2rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -164,8 +164,8 @@
   border: 1px solid var(--tire-line);
   border-radius: 10px;
   box-shadow: 0 12px 30px rgba(18, 18, 18, .05);
-  min-height: 260px;
-  padding: 2.4rem;
+  min-height: 160px;
+  padding: 1.6rem;
 }
 
 .tire-guide-card__code {
@@ -175,27 +175,27 @@
   color: #b44700;
   display: inline-flex;
   font-family: var(--font-heading-family);
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 900;
-  height: 48px;
+  height: 38px;
   justify-content: center;
-  min-width: 48px;
-  padding: 0 .9rem;
+  min-width: 38px;
+  padding: 0 .7rem;
 }
 
 .tire-guide-card h3,
 .tire-guide-tip h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 900;
   line-height: 1.1;
-  margin: 1.8rem 0 1rem;
+  margin: 1rem 0 .6rem;
   text-transform: uppercase;
 }
 
 .tire-guide-card p,
 .tire-guide-tip p {
   color: var(--tire-muted);
-  line-height: 1.55;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -212,9 +212,9 @@
   border-radius: 12px;
   color: #fff;
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  padding: 3rem;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  padding: 1.6rem;
 }
 
 .tire-guide-tip__icon {
@@ -222,29 +222,29 @@
   background: var(--tire-orange);
   border-radius: 50%;
   display: flex;
-  flex: 0 0 42px;
+  flex: 0 0 32px;
   font-family: Georgia, serif;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  height: 42px;
+  height: 32px;
   justify-content: center;
 }
 
-.tire-guide-tip h3 { color: #fff; margin-top: .4rem; }
+.tire-guide-tip h3 { color: #fff; margin: .2rem 0 0; }
 .tire-guide-tip p { color: rgba(255, 255, 255, .72); max-width: 920px; }
 
 .tire-guide-tip ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2.4rem;
+  gap: .5rem 2rem;
   list-style: none;
-  margin: 1.6rem 0 0;
+  margin: .8rem 0 0;
   padding: 0;
 }
 
 .tire-guide-tip li {
   color: #ff9a55;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 

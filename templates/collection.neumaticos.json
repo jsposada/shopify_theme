@@ -100,18 +100,18 @@
           "type": "measure",
           "settings": {
             "code": "120",
-            "heading": "Ancho nominal",
-            "text": "Indica el ancho nominal del neumático expresado en milímetros.",
-            "example": "120 = 120 milímetros"
+            "heading": "Ancho",
+            "text": "Ancho nominal en milímetros.",
+            "example": ""
           }
         },
         "profile": {
           "type": "measure",
           "settings": {
             "code": "70",
-            "heading": "Perfil o aspecto",
-            "text": "Representa la altura del flanco como porcentaje del ancho nominal.",
-            "example": "70 = 70% del ancho"
+            "heading": "Perfil",
+            "text": "Altura del flanco como porcentaje del ancho.",
+            "example": ""
           }
         },
         "rim": {
@@ -119,17 +119,17 @@
           "settings": {
             "code": "R17",
             "heading": "Construcción y aro",
-            "text": "La R indica construcción radial y el número final corresponde al diámetro de la llanta en pulgadas.",
-            "example": "17 = llanta aro 17"
+            "text": "R indica construcción radial; 17 es el aro en pulgadas.",
+            "example": ""
           }
         },
         "service": {
           "type": "measure",
           "settings": {
             "code": "58W",
-            "heading": "Índices de servicio",
-            "text": "El número y la letra indican los índices de carga y velocidad. Deben respetar la especificación de la moto.",
-            "example": "Confirma ambos índices antes de comprar"
+            "heading": "Carga y velocidad",
+            "text": "Índices máximos de carga y velocidad.",
+            "example": ""
           }
         }
       },
@@ -140,13 +140,13 @@
         "service"
       ],
       "settings": {
-        "eyebrow": "Asistencia para elegir",
+        "eyebrow": "",
         "heading": "Cómo identificar la medida correcta",
-        "intro": "Aprende a leer la nomenclatura del costado del neumático antes de elegir.",
+        "intro": "",
         "tip_heading": "Consejo del taller Bikerz",
-        "tip_text": "Si compraste la moto usada, no te guíes solamente por la medida instalada. Contrástala con la recomendación del fabricante antes de comprar.",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "tip_text": "",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "faq": {
