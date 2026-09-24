@@ -400,21 +400,21 @@ theme; no se trasladará literalmente la estética del prototipo.
 
 #### Tareas de Codex
 
-- `[ ]` Crear una plantilla específica para la colección de neumáticos o extender la plantilla actual sin afectar otras colecciones.
-- `[ ]` Reutilizar `tire-finder.liquid` sin duplicar su lógica.
-- `[ ]` Permitir configuración independiente para home y colección.
-- `[ ]` Mantener Ancho → Perfil → Aro y la colección de destino.
-- `[ ]` Mantener las mejoras de accesibilidad ya aprobadas.
-- `[ ]` Añadir introducción superior concisa.
-- `[ ]` Mantener filtros, ordenamiento, paginación y grilla actuales.
-- `[ ]` Añadir contenido extendido después de los productos.
-- `[ ]` Añadir enlaces al servicio de instalación y artículos pertinentes.
-- `[ ]` Confirmar canonical, robots y tratamiento de parámetros.
-- `[ ]` Añadir medición del uso del buscador.
+- `[x]` Crear una plantilla específica para la colección de neumáticos o extender la plantilla actual sin afectar otras colecciones.
+- `[x]` Reutilizar `tire-finder.liquid` sin duplicar su lógica.
+- `[x]` Permitir configuración independiente para home y colección.
+- `[x]` Mantener Ancho → Perfil → Aro y la colección de destino.
+- `[x]` Mantener las mejoras de accesibilidad ya aprobadas.
+- `[x]` Añadir introducción superior concisa.
+- `[x]` Mantener filtros, ordenamiento, paginación y grilla actuales.
+- `[x]` Añadir contenido extendido después de los productos.
+- `[x]` Añadir enlaces al servicio de instalación y artículos pertinentes.
+- `[x]` Confirmar canonical, robots y tratamiento de parámetros.
+- `[x]` Añadir medición del uso del buscador.
 
 #### Tareas del propietario
 
-- `[ ]` Aprobar el texto introductorio y el contenido inferior.
+- `[x]` Aprobar el texto introductorio y el contenido inferior.
 - `[ ]` Aprobar la posición y tamaño del buscador.
 - `[ ]` Probar al menos tres medidas reales con productos.
 - `[ ]` Probar una combinación sin resultados.
@@ -430,6 +430,30 @@ theme; no se trasladará literalmente la estética del prototipo.
 - No hay errores nuevos en consola.
 - La colección puede navegarse aunque falle el buscador.
 - No se generan nuevas URLs indexables para cada filtro.
+
+**Estado al 2026-09-24:** implementación terminada y cargada únicamente en el
+theme no publicado `Codex landings 2026-09-24` (`166033588445`). Se creó
+`collection.neumaticos.json`, que reutiliza el buscador y los componentes
+visuales del theme. Los filtros conservan URLs con parámetros y el canonical de
+Shopify apunta a `/collections/neumaticos`; no se crean páginas de medida
+nuevas. Después de la aprobación visual, la plantilla deberá asignarse a la
+colección `neumaticos`. El theme live no fue modificado.
+
+Pruebas técnicas de filtros realizadas contra la colección pública:
+
+- `120/70-17`: 31 productos.
+- `160/60-17`: 18 productos.
+- `90/90-21`: 33 productos.
+- Combinación inexistente: 0 productos, sin error HTTP.
+
+La comprobación visual del theme de vista previa confirmó un único H1, ausencia
+de desbordamiento horizontal a 390 px, ausencia de errores de consola y
+persistencia de la plantilla al navegar desde el buscador. Faltan la revisión y
+aprobación visual del propietario en escritorio y móvil.
+
+El buscador publica los eventos personalizados
+`bikerz:tire_finder_search` y `bikerz:tire_finder_incomplete` mediante
+`Shopify.analytics.publish`, sin datos personales.
 
 ### Fase 3 — Contrato y pruebas del motor MMY
 
@@ -717,4 +741,6 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-012 | Se preparó el prototipo interactivo de escritorio y móvil para neumáticos y repuestos, con seis estados del buscador por medida y nueve estados MMY, fallback navegable, resumen de moto, mensajes de certeza y salida por WhatsApp. | Codex | `landing-wireframes.html`; aprobación visual pendiente |
 | 2026-09-24 | LMMY-013 | El propietario aclaró que el layout final debe adaptarse al diseño actual de la web. El prototipo se utilizará solo para revisar jerarquía, comportamiento y textos. | Propietario | Confirmación en esta conversación |
 | 2026-09-24 | LMMY-014 | El propietario aprobó los textos con ajustes: el año vacío y `No conozco el año` tendrán el mismo comportamiento, no habrá advertencia ni indicador por modelo y `Compatible con tu moto` se reserva para coincidencias exactas con año. La Fase 1 quedó completada. | Propietario | Textos y observaciones entregados en esta conversación |
+| 2026-09-24 | LMMY-015 | Se implementó localmente la plantilla `collection.neumaticos.json`, reutilizando el buscador y componentes del theme. Se validaron tres medidas reales y un caso vacío; todas las URLs filtradas conservaron el canonical de la colección. No se modificó el theme live. | Codex | Código local, Shopify Theme Check y comprobación de `/collections/neumaticos` |
+| 2026-09-24 | LMMY-016 | Se creó el theme no publicado `Codex landings 2026-09-24` (`166033588445`) y se validó la landing en escritorio y 390 px. El theme live `SEO` (`164560142557`) permanece intacto. | Codex | Vista previa de Shopify y pruebas en navegador |
 

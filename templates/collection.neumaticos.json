@@ -1,0 +1,245 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "column",
+        "heading_override": "Neumáticos para motos en Chile",
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    },
+    "intro": {
+      "type": "seo-collection-intro",
+      "settings": {
+        "container": "container",
+        "content": "<p>Encuentra la medida correcta, compara marcas y compra con despacho a todo Chile o instalación en nuestro taller de Santiago.</p>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "tire-finder": {
+      "type": "tire-finder",
+      "custom_css": [
+        ".pf-wrapper {margin-top: 0;}",
+        ".pf-inner {padding-left: 20px; padding-right: 20px;}"
+      ],
+      "settings": {
+        "title": "Encuentra tu neumático",
+        "help_text": "Ingresa la medida que aparece en el costado de tu neumático.",
+        "button_label": "Ver neumáticos",
+        "require_metric_profile": true,
+        "target_collection": "neumaticos",
+        "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
+        "accent_color": "#ff6600"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter": {
+          "type": "filter",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "filter"
+      ],
+      "settings": {
+        "heading": "Neumáticos disponibles",
+        "empty_heading": "No encontramos coincidencias publicadas",
+        "empty_message": "No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.",
+        "container": "container",
+        "color_scheme": "",
+        "products_per_page": 20,
+        "column_number": "4",
+        "show_description": false,
+        "is_collapse_description": true,
+        "display_position": "bottom",
+        "pagination": "default",
+        "show_product_count": true,
+        "show_list_grid": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "collab_first": true,
+        "filter_type": "left_sidebar",
+        "background_sidebar": "no_background",
+        "bg_color_sidebar": "#f4f4f4",
+        "collection_list": [],
+        "price_type": "range_slider",
+        "padding_top": 0,
+        "padding_bottom": 48,
+        "reset_spacing": false
+      }
+    },
+    "guidance": {
+      "type": "multicolumn",
+      "blocks": {
+        "measure": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/3",
+            "col_width_tablets": "md:w-1/3",
+            "col_width_mobile": "w-full",
+            "show_image": false,
+            "title": "Cómo identificar la medida correcta",
+            "description": "<p>Revisa el costado del neumático y confirma ancho, perfil y aro. También verifica el eje, los índices de carga y velocidad y la recomendación del fabricante.</p>",
+            "btn_content": "Ver guía de medidas",
+            "open_link": "_self",
+            "link": "/blogs/motos-chile/medidas-europeas-vs-americanas-cual-es-la-diferencia-en-los-neumaticos-de-moto",
+            "type_button": "underline"
+          }
+        },
+        "brands": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/3",
+            "col_width_tablets": "md:w-1/3",
+            "col_width_mobile": "w-full",
+            "show_image": false,
+            "title": "Marcas de neumáticos disponibles",
+            "description": "<p>Compara Dunlop, Michelin, Bridgestone, Continental y otras marcas según el inventario publicado y el tipo de uso que necesitas.</p>",
+            "btn_content": "",
+            "open_link": "_self",
+            "link": "",
+            "type_button": "underline"
+          }
+        },
+        "workshop": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/3",
+            "col_width_tablets": "md:w-1/3",
+            "col_width_mobile": "w-full",
+            "show_image": false,
+            "title": "Instalación de neumáticos para motos",
+            "description": "<p>Coordina la instalación y el balanceo en nuestro taller de Macul. La disponibilidad y las condiciones del servicio se confirman al agendar.</p>",
+            "btn_content": "Ver servicios",
+            "open_link": "_self",
+            "link": "/pages/servicios",
+            "type_button": "underline"
+          }
+        }
+      },
+      "block_order": [
+        "measure",
+        "brands",
+        "workshop"
+      ],
+      "settings": {
+        "show_heading_header": false,
+        "heading": "",
+        "description": "",
+        "text_alignment": "text-left",
+        "show_button": false,
+        "text_btn": "",
+        "container": "container",
+        "hover_effect": "hvr_none",
+        "color_scheme": "",
+        "image_ratio": "original",
+        "custom_ratio": "21:9",
+        "height_mobile": "default",
+        "height_image_desktop": "0",
+        "height_image_tablet": "0",
+        "height_img_mobile": "0",
+        "column_alignment": "text-left",
+        "design_banner": "text-below-image",
+        "show_border_separate": true,
+        "button_label": "",
+        "button_link": "",
+        "button_type": "tp-btn__primary",
+        "nowrap_item": false,
+        "reset_spacing": false,
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "measure": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo encuentro la medida de los neumáticos de mi moto?",
+            "tab_content": "content",
+            "content": "<p>Busca la medida grabada en el costado del neumático y compárala con el manual o la ficha técnica de tu moto. Confirma también si corresponde al eje delantero o trasero.</p>",
+            "page": ""
+          }
+        },
+        "numbers": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué significan el ancho, el perfil y el aro?",
+            "tab_content": "content",
+            "content": "<p>En una medida como 120/70-17, 120 es el ancho nominal en milímetros, 70 es la relación del perfil respecto del ancho y 17 es el diámetro de la llanta en pulgadas.</p>",
+            "page": ""
+          }
+        },
+        "tube": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo sé si necesito un neumático con cámara o sin cámara?",
+            "tab_content": "content",
+            "content": "<p>Revisa las siglas TT (con cámara) o TL (tubeless) en el producto y confirma la compatibilidad con la llanta. Si tienes dudas, envíanos los datos de tu moto antes de comprar.</p>",
+            "page": ""
+          }
+        },
+        "installation": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Realizan instalación y balanceo?",
+            "tab_content": "content",
+            "content": "<p>Sí. Realizamos instalación y balanceo de neumáticos en nuestro taller de Macul. Confirma disponibilidad y condiciones al agendar.</p>",
+            "page": ""
+          }
+        },
+        "shipping": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Hacen despachos a todo Chile?",
+            "tab_content": "content",
+            "content": "<p>Sí. Despachamos a la Región Metropolitana y a regiones. El plazo depende de la disponibilidad del producto y del destino.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "measure",
+        "numbers",
+        "tube",
+        "installation",
+        "shipping"
+      ],
+      "settings": {
+        "container": "container",
+        "heading": "Preguntas frecuentes",
+        "heading_alignment": "text-left",
+        "color_scheme": "",
+        "reset_spacing": false,
+        "padding_top": 24,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "intro",
+    "tire-finder",
+    "product-grid",
+    "guidance",
+    "faq"
+  ]
+}

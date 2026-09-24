@@ -8,6 +8,24 @@
       "label": "Título",
       "default": "Encuentra tu neumático"
     },
+    {
+      "type": "text",
+      "id": "help_text",
+      "label": "Texto de ayuda",
+      "default": "Ingresa la medida que aparece en el costado de tu neumático."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Ver neumáticos"
+    },
+    {
+      "type": "checkbox",
+      "id": "require_metric_profile",
+      "label": "Exigir perfil en medidas métricas",
+      "default": false
+    },
 
     {
       "type": "collection",
@@ -50,10 +68,18 @@
 
     <div class="pf-header">
       <h2 class="pf-title">{{ section.settings.title }}</h2>
+      {%- if section.settings.help_text != blank -%}
+        <p class="pf-help">{{ section.settings.help_text | escape }}</p>
+      {%- endif -%}
     </div>
 
     <p id="{{ tire_finder_instructions_id }}" class="pf-sr-only">
-      Selecciona la medida del neumático. El aro es obligatorio; el ancho y el perfil son opcionales. Las opciones disponibles se actualizan según cada selección.
+      {%- if section.settings.require_metric_profile -%}
+        Selecciona la medida del neumático. El perfil es obligatorio para medidas métricas y puede quedar vacío en medidas americanas.
+      {%- else -%}
+        Selecciona la medida del neumático. El aro es obligatorio; el ancho y el perfil son opcionales.
+      {%- endif -%}
+      Las opciones disponibles se actualizan según cada selección.
     </p>
 
     <div class="pf-card" role="search" aria-label="Buscar neumáticos por medida" aria-describedby="{{ tire_finder_instructions_id }}">
@@ -71,11 +97,11 @@
         </div>
       </div>
 
-      <!-- Paso 2: Perfil (opcional) -->
+      <!-- Paso 2: Perfil -->
       <div class="pf-step" data-step="2">
         <div class="pf-step-number" aria-hidden="true">2</div>
         <div class="pf-field">
-          <label class="pf-label" for="{{ tire_finder_aspecto_id }}">Perfil <span class="pf-optional">(opcional)</span></label>
+          <label class="pf-label" for="{{ tire_finder_aspecto_id }}">Perfil{% unless section.settings.require_metric_profile %} <span class="pf-optional">(opcional)</span>{% endunless %}</label>
           <div class="pf-select-wrap">
             <select id="{{ tire_finder_aspecto_id }}" class="pf-select" aria-describedby="{{ tire_finder_instructions_id }}" aria-required="false" disabled>
               <option value="">— Cualquier perfil —</option>
@@ -102,7 +128,7 @@
       <!-- Botón de búsqueda -->
       <div class="pf-step pf-step--action">
         <button id="{{ tire_finder_button_id }}" class="pf-btn" type="button" aria-describedby="{{ tire_finder_instructions_id }}" disabled>
-          <span class="pf-btn-text">BUSCAR NEUMÁTICOS</span>
+          <span class="pf-btn-text">{{ section.settings.button_label | escape }}</span>
           <span class="pf-btn-icon" aria-hidden="true">→</span>
         </button>
       </div>
@@ -171,6 +197,12 @@
   }
   .pf-title::after {
     content: none;
+  }
+  .pf-help {
+    color: var(--pf-muted);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin: 10px 0 0;
   }
 
   .pf-card {
@@ -381,9 +413,12 @@
     // CONFIGURACIÓN
     // ─────────────────────────────────────────────
     const STOREFRONT_TOKEN = "{{ section.settings.storefront_token }}";
-    const API_URL          = "/api/2024-01/graphql.json";
+    const API_URL          = "/api/2026-07/graphql.json";
     const COLLECTION_HANDLE = "{{ collections[section.settings.target_collection].handle | default: 'all' }}";
     const COLLECTION_URL    = "{{ collections[section.settings.target_collection].url | default: '/collections/all' }}";
+    const FINDER_SOURCE     = {{ request.page_type | json }};
+    const RESULTS_COUNT     = {{ collection.products_count | default: -1 | json }};
+    const REQUIRE_METRIC_PROFILE = {{ section.settings.require_metric_profile | json }};
 
     // Namespace y keys de los metacampos en los productos
     // Ajusta el namespace si no es "custom"
@@ -418,6 +453,16 @@
       statusEl.style.display = 'block';
     }
     function hideStatus() { statusEl.style.display = 'none'; }
+
+    function publishEvent(name, data) {
+      if (!window.Shopify?.analytics?.publish) return;
+      try {
+        const result = window.Shopify.analytics.publish(name, data);
+        if (result?.catch) result.catch(() => {});
+      } catch (error) {
+        console.debug('[Tire Finder] Analytics event not published.', error);
+      }
+    }
 
     function setLoading(isLoading) {
       finderEl.setAttribute('aria-busy', String(isLoading));
@@ -463,6 +508,12 @@
       if (num >= 20) return String(Math.round(num));
       if (num < 20) return num.toFixed(2);
       return value;
+    }
+
+    function requiresProfile(value) {
+      if (!REQUIRE_METRIC_PROFILE) return false;
+      const num = Number(String(value).replace(',', '.'));
+      return Number.isFinite(num) && num >= 20;
     }
 
     function getToken() {
@@ -615,7 +666,8 @@
       if (changedSelect !== 'aspecto') {
         const src = changedSelect === null ? allCombinations : filtered('aspecto');
         const aspectos = sortNumeric([...new Set(src.map(c => c.aspecto).filter(Boolean))]);
-        rebuild(selectAspecto, aspectos, '— Cualquier perfil —');
+        const profilePlaceholder = requiresProfile(ancho) ? '— Selecciona Perfil —' : '— Cualquier perfil —';
+        rebuild(selectAspecto, aspectos, profilePlaceholder);
       }
 
       if (changedSelect !== 'aro') {
@@ -626,7 +678,8 @@
 
       // Botón e indicadores visuales
       const r = selectAro.value;
-      btnSearch.disabled = !r;
+      btnSearch.disabled = !r || (requiresProfile(selectAncho.value) && !selectAspecto.value);
+      selectAspecto.setAttribute('aria-required', String(requiresProfile(selectAncho.value)));
       setStepActive();
       announceOptions(changedSelect);
     }
@@ -636,6 +689,43 @@
       repopulate(null); // null = no se está cambiando ninguno, mostrar todo
     }
 
+    function selectedMeasurement() {
+      const ancho = selectAncho.value;
+      const aspecto = selectAspecto.value;
+      const aro = selectAro.value;
+      if (!aro) return '';
+      if (ancho && aspecto) return `${formatAnchoValue(ancho)}/${aspecto}-${aro}`;
+      if (ancho) return `${formatAnchoValue(ancho)}-${aro}`;
+      return aro;
+    }
+
+    function restoreSelectionFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const selected = {
+        ancho: params.get(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`) || '',
+        aspecto: params.get(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`) || '',
+        aro: params.get(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`) || ''
+      };
+
+      if (!selected.ancho && !selected.aspecto && !selected.aro) return false;
+
+      if ([...selectAncho.options].some(option => option.value === selected.ancho)) selectAncho.value = selected.ancho;
+      if ([...selectAspecto.options].some(option => option.value === selected.aspecto)) selectAspecto.value = selected.aspecto;
+      if ([...selectAro.options].some(option => option.value === selected.aro)) selectAro.value = selected.aro;
+      repopulate(null);
+
+      if (RESULTS_COUNT === 0) {
+        showStatus('No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.');
+      } else {
+        const measurement = selectedMeasurement();
+        if (measurement) {
+          showStatus(`Medida seleccionada: ${measurement}. Mostrando los neumáticos disponibles.`);
+        }
+      }
+
+      return true;
+    }
+
     // ─────────────────────────────────────────────
     // INICIALIZAR
     // ─────────────────────────────────────────────
@@ -643,7 +733,7 @@
       const token = getToken();
 
       if (!token) {
-        showStatus('⚠️ Token no configurado. Ve al Editor del Tema → Buscador de Neumáticos → pega tu Storefront Access Token.', true);
+        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
         selectAncho.innerHTML = '<option value="">Token requerido</option>';
         setLoading(false);
         return;
@@ -656,18 +746,20 @@
         allCombinations = parseCombinations(products);
 
         if (allCombinations.length === 0) {
-          showStatus('⚠️ No se encontraron productos con aro definido. Verifica el metacampo custom.di_metro.', true);
+          showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
           return;
         }
 
         hideStatus();
         populateAll();
-        showStatus(`✓ ${allCombinations.length} combinaciones de medidas cargadas.`);
-        setTimeout(hideStatus, 3000);
+        const restoredSelection = restoreSelectionFromUrl();
+        if (!restoredSelection) {
+          hideStatus();
+        }
 
       } catch (err) {
         console.error('[Tire Finder] Error:', err);
-        showStatus(`Error al cargar datos: ${err.message}. Revisa la consola (F12) para más detalles.`, true);
+        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
         selectAncho.innerHTML = '<option value="">Error de carga</option>';
       } finally {
         setLoading(false);
@@ -677,9 +769,18 @@
     // ─────────────────────────────────────────────
     // EVENT LISTENERS — cada select actualiza los otros
     // ─────────────────────────────────────────────
-    selectAncho.addEventListener('change',   () => repopulate('ancho'));
-    selectAspecto.addEventListener('change', () => repopulate('aspecto'));
-    selectAro.addEventListener('change',     () => repopulate('aro'));
+    function handleSelectionChange(changedSelect) {
+      repopulate(changedSelect);
+      if (REQUIRE_METRIC_PROFILE && selectAncho.value && ((requiresProfile(selectAncho.value) && !selectAspecto.value) || !selectAro.value)) {
+        showStatus('Completa perfil y aro para buscar la medida correcta.');
+      } else {
+        hideStatus();
+      }
+    }
+
+    selectAncho.addEventListener('change',   () => handleSelectionChange('ancho'));
+    selectAspecto.addEventListener('change', () => handleSelectionChange('aspecto'));
+    selectAro.addEventListener('change',     () => handleSelectionChange('aro'));
 
     // ─────────────────────────────────────────────
     // BÚSQUEDA — aplica solo los filtros con valor
@@ -690,7 +791,14 @@
       const aspecto = selectAspecto.value;
       const aro     = selectAro.value;
 
-      if (!aro) return;
+      if (!aro || (requiresProfile(ancho) && !aspecto)) {
+        showStatus('Completa perfil y aro para buscar la medida correcta.');
+        publishEvent('bikerz:tire_finder_incomplete', {
+          source: FINDER_SOURCE,
+          collection_handle: COLLECTION_HANDLE
+        });
+        return;
+      }
 
       // Filtros de metacampos: ?filter.p.m.NAMESPACE.KEY=VALOR
       // Solo se añaden ancho y perfil si el usuario los seleccionó
@@ -702,6 +810,21 @@
         params.append(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`, aspecto);
       }
       params.append(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`, aro);
+
+      // Conserva el contexto técnico cuando la landing se revisa en un theme de vista previa.
+      const currentParams = new URLSearchParams(window.location.search);
+      ['preview_theme_id', 'view'].forEach(paramName => {
+        const value = currentParams.get(paramName);
+        if (value) params.append(paramName, value);
+      });
+
+      publishEvent('bikerz:tire_finder_search', {
+        source: FINDER_SOURCE,
+        collection_handle: COLLECTION_HANDLE,
+        ancho,
+        perfil: aspecto,
+        aro
+      });
 
       window.location.href = `${COLLECTION_URL}?${params.toString()}`;
     });

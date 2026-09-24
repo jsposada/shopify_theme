@@ -15,6 +15,9 @@
     data-section-id="{{ section.id }}"
     style="{{ style | strip | strip_newlines }}">
     <div class="{{ container }}">
+      {%- if sst.heading != blank -%}
+        <h2 class="mb-32 {{ sst.heading_alignment }}">{{ sst.heading | escape }}</h2>
+      {%- endif -%}
       <div class="tp-grid tp-grid--2-col-desktop tp-grid--1-col-tablets tp-grid--1-col-mobile">
         <div class="tp-faq__left tp-grid__item">
           {%- for block in section.blocks %}
@@ -106,6 +109,31 @@
           }, {
             "value": "full-width",
             "label": "Full width"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "heading_alignment",
+        "label": "Heading alignment",
+        "default": "text-left",
+        "options": [
+          {
+            "value": "text-left",
+            "label": "Left"
+          },
+          {
+            "value": "text-center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
           }
         ]
       },

@@ -131,6 +131,9 @@
   capture preview_heading
     render 'seo-landing-preview-content', part: 'heading'
   endcapture
+  if sst.heading_override != blank
+    assign bt_lv3 = sst.heading_override
+  endif
   assign preview_heading = preview_heading | strip
   if preview_heading != blank
     assign bt_lv3 = preview_heading

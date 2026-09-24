@@ -1,5 +1,6 @@
 {%- liquid
   assign seo_intro = collection.metafields.custom.seo_intro
+  assign section_intro = section.settings.content
   assign container = section.settings.container
 -%}
 
@@ -8,7 +9,7 @@
 {%- endcapture -%}
 {%- assign preview_intro = preview_intro | strip -%}
 
-{%- if preview_intro != blank or seo_intro != blank -%}
+{%- if preview_intro != blank or section_intro != blank or seo_intro != blank -%}
   {%- style -%}
     #shopify-section-{{ section.id }} .seo-collection-intro__content {
       max-width: 920px;
@@ -23,6 +24,8 @@
       <div class="seo-collection-intro__content rte">
         {%- if preview_intro != blank -%}
           {{ preview_intro }}
+        {%- elsif section_intro != blank -%}
+          {{ section_intro }}
         {%- else -%}
           {{ seo_intro | metafield_tag }}
         {%- endif -%}
@@ -55,6 +58,12 @@
           "label": "Full width"
         }
       ]
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Introductory text",
+      "info": "When present, this text takes priority over the collection SEO intro metafield."
     },
     {
       "type": "color_scheme",
