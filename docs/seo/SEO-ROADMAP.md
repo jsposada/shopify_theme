@@ -2,7 +2,7 @@
 
 > Fuente única de verdad para el trabajo SEO del theme Shopify de Bikerz.
 >
-> Última actualización: 2026-09-14
+> Última actualización: 2026-09-22
 > Rama de trabajo: `codex/seo-home-phase-1`
 > Entorno autorizado: copia local y theme no publicado de Shopify
 > Producción: no publicar ni modificar sin aprobación explícita del propietario
@@ -883,8 +883,9 @@ Producto limpio con `noindex`:
 
 #### 4.1 Información que debe entregar el propietario
 
-- Estado: `[ ]`
+- Estado: `[x]` ficha consolidada y aprobada; fotografía real del local diferida a 4.3.
 - Responsable: propietario.
+- Documento de trabajo: `docs/seo/LOCAL-BUSINESS-PROFILE-4-1.md`.
 - Información requerida:
   - Nombre comercial exacto.
   - Razón social, si debe mostrarse.
@@ -912,48 +913,56 @@ Producto limpio con `noindex`:
 
 #### 4.2 Rehacer el JSON-LD
 
-- Estado: `[ ]`
+- Estado: `[x]` implementado, publicado de forma aislada y validado en producción.
 - Responsable: Codex.
 - Implementación prevista:
-  - `Organization` o subtipo comercial exacto.
-  - `WebSite`.
-  - Información del establecimiento físico.
-  - `PostalAddress`.
-  - `ContactPoint`.
-  - `sameAs` sin valores vacíos.
-  - `openingHoursSpecification`.
-  - `geo`.
-  - `areaServed`.
-  - Referencias internas mediante `@id`.
-  - Enlace al logo y a las redes oficiales.
+  - `[x]` Subtipo comercial exacto `TireShop`.
+  - `[x]` `WebSite`.
+  - `[x]` Información del establecimiento físico.
+  - `[x]` `PostalAddress`.
+  - `[x]` `ContactPoint`.
+  - `[x]` `sameAs` sin valores vacíos.
+  - `[x]` `openingHoursSpecification`.
+  - `[x]` `geo`.
+  - `[x]` `areaServed`.
+  - `[x]` Referencias internas mediante `@id`.
+  - `[x]` Enlace al logo y a las redes oficiales.
 - Restricción: no marcar las reseñas de Google como `aggregateRating` propio sin comprobar que cumpla las políticas sobre reseñas autorreferenciales.
 - Validación:
-  - Rich Results Test.
-  - Schema.org Validator.
-  - PageSpeed.
-  - Inspección del DOM.
+  - `[x]` Rich Results Test público: 2 elementos válidos (`Empresa local` y `Organización`); solo faltan los campos opcionales `priceRange` e `image`.
+  - `[x]` Schema.org Validator público: 0 errores y 0 advertencias.
+  - `[x]` PageSpeed público móvil: rendimiento 86 y SEO 100; el seguimiento histórico de CLS continúa en 2.5.
+  - `[x]` Inspección del DOM local.
+  - `[x]` Inspección del DOM público: HTTP 200, un JSON-LD válido y sin el teléfono legado en la home.
+- Evidencia: `docs/seo/STRUCTURED-DATA-AUDIT-4-2-2026-09-14.md`.
 
 #### 4.3 Google Business Profile
 
-- Estado: `[ ]`
+- Estado: `[x]` trabajo operativo en Google terminado; quedan como arrastre no bloqueante `image` estable y teléfonos legados externos.
 - Responsable principal: propietario.
 - Trabajo del propietario:
-  - Verificar que nombre, dirección y teléfono coincidan exactamente con el sitio.
-  - Seleccionar categorías primarias y secundarias reales.
-  - Agregar servicios del taller.
-  - Agregar horarios.
-  - Agregar productos o categorías cuando corresponda.
-  - Subir fotos nuevas del local y taller.
-  - Responder todas las reseñas recientes.
-  - Crear un proceso para solicitar reseñas a clientes reales.
-  - Publicar novedades o promociones periódicamente.
-  - Revisar enlaces de sitio, teléfono y WhatsApp.
+  - `[~]` Verificar que nombre, dirección y teléfono coincidan exactamente con el sitio: Google coincide; Waze y una publicación antigua de Facebook todavía muestran el teléfono legado.
+  - `[x]` Seleccionar categorías primarias y secundarias reales.
+  - `[x]` Agregar servicios del taller.
+  - `[x]` Agregar horarios normales.
+  - `[x]` Agregar productos o categorías cuando corresponde.
+  - `[x]` Subir una fotografía real del local o taller.
+  - `[x]` Responder las dos reseñas recientes identificadas.
+  - `[x]` Crear un proceso permanente para solicitar reseñas a clientes reales.
+  - `[x]` Mantener publicaciones periódicas; la ficha muestra actividad reciente.
+  - `[x]` Revisar enlaces de sitio, teléfono y WhatsApp: los valores internos son correctos.
+  - `[x]` Cerrar el 18 y 19 de septiembre de 2026 en horarios especiales: guardado y visible como cerrado.
+  - `[x]` Eliminar `Acceso`, cheques y cita obligatoria; mantener NFC y aceptar estacionamiento accesible, mecánico y baños: todos los valores quedaron aplicados y visibles como actuales.
+  - `[x]` Sustituir el área de servicio `Chile` por `Región Metropolitana, Chile`, alcance confirmado para entregas el mismo día.
+  - `[x]` Agregar `https://www.bikerz.cl/pages/servicios` como enlace de reservas: guardado en Google.
 - Apoyo de Codex:
-  - Preparar una descripción optimizada del negocio.
-  - Preparar el listado de servicios.
-  - Crear plantillas de respuesta a reseñas.
-  - Crear mensajes para solicitar reseñas.
-  - Preparar un calendario de publicaciones locales.
+  - `[x]` Preparar una descripción optimizada del negocio.
+  - `[x]` Preparar el listado de servicios.
+  - `[x]` Crear plantillas de respuesta a reseñas.
+  - `[x]` Crear mensajes para solicitar reseñas.
+  - `[x]` Preparar un calendario de publicaciones locales.
+  - `[x]` Auditar en modo de solo lectura las ocho secciones internas y documentar valores y discrepancias.
+- Evidencia: `docs/seo/GBP-AUDIT-4-3-2026-09-15.md`.
 
 ### Fase 5 — Arquitectura de categorías y landing pages
 
@@ -962,8 +971,17 @@ Producto limpio con `noindex`:
 
 #### 5.1 Crear URLs limpias por intención
 
-- Estado: `[ ]`
+- Estado: `[x]` primera tanda de cinco URLs aprobada por el propietario el 2026-09-21.
 - Responsable: Codex prepara estructura, copy y plantilla; propietario aprueba el catálogo.
+- Evidencia y propuesta: `docs/seo/URL-ARCHITECTURE-5-1-2026-09-16.md`.
+- Primera tanda aprobada:
+  - `/collections/neumaticos-trail-adventure`.
+  - `/collections/neumaticos-sport-street`.
+  - `/collections/neumaticos-120-70-17`.
+  - `/collections/neumaticos-160-60-17`.
+  - `/collections/neumaticos-90-90-21`.
+- Marcas prioritarias: Dunlop, Bridgestone, Michelin y Continental.
+- Exclusiones comerciales: ninguna informada.
 - Neumáticos por uso:
   - `/collections/neumaticos-trail-adventure`
   - `/collections/neumaticos-scooter`
@@ -1002,8 +1020,16 @@ Producto limpio con `noindex`:
 
 #### 5.2 Estructura obligatoria de cada landing
 
-- Estado: `[ ]`
+- Estado: `[~]` plantilla y contenido cargados en cinco colecciones no publicadas; vista previa local funcional preparada el 2026-09-24 y pendiente de aprobación visual del propietario.
 - Responsable: Codex.
+- Evidencia: `docs/seo/LANDING-CONTENT-5-2-2026-09-21.md`.
+- Implementación local: `templates/collection.seo-landing.json` y `sections/seo-collection-intro.liquid`.
+- Vista previa segura: cinco plantillas alternas `collection.seo-preview-*` reutilizan localmente la colección pública `/collections/neumaticos` con los filtros equivalentes. No publican ni enlazan las colecciones SEO.
+- Validación local del 2026-09-24:
+  - Las cinco vistas responden `HTTP 200`, contienen un solo H1 específico, introducción, filtros, ordenamiento, paginación, productos y contenido extendido.
+  - El filtro interactivo conserva la plantilla de vista previa y actualiza la grilla por AJAX.
+  - La comprobación móvil a 390 × 844 px no presentó desbordamiento horizontal y mantuvo 20 tarjetas en la primera página.
+  - Las vistas incluyen `noindex,nofollow`; no se desplegaron al theme live.
 - Cada página tendrá:
   - Title único menor a 60 caracteres.
   - Meta description menor a 160 caracteres.
@@ -1339,30 +1365,49 @@ Producto limpio con `noindex`:
 - Verificación pública: home, contacto, búsqueda, producto, blog y artículo mantienen un H1 y cero IDs duplicados, referencias rotas, imágenes sin `alt` o dimensiones, interactivos anidados, imágenes rotas, desbordamiento y errores de consola.
 - Aprobación: propietario.
 
+### D-023 — Primera tanda de colecciones SEO
+
+- Fecha: 2026-09-21.
+- Decisión: aprobar cinco colecciones permanentes para neumáticos: Trail/Adventure, Sport/Street y las medidas `120/70-17`, `160/60-17` y `90/90-21`.
+- Confirmación comercial: Trail/Adventure y Sport/Street son líneas rentables con reposición; las tres medidas mantienen oferta habitual.
+- Prioridad de marcas: Dunlop, Bridgestone, Michelin y Continental.
+- Exclusiones: no se informaron marcas, líneas ni productos que deban excluirse.
+- Regla técnica: las colecciones se alimentarán con los metacampos estructurados `custom.uso`, `custom.ancho`, `custom.aspecto` y `custom.di_metro`, no con títulos ni etiquetas libres.
+- Control de publicación: la aprobación cierra la selección de URLs, pero no autoriza publicar páginas incompletas; primero se prepara y revisa la estructura del paso 5.2.
+- Aprobación: propietario.
+
 ## 6. Bloqueos y datos pendientes del propietario
 
 1. Fase 3: mantener editorialmente los textos alternativos particulares cuando una descripción automática no represente el contenido real; no bloquea 3.1.
 2. Fase 3.5: actualizar dentro del artículo CEAT Zoom XL el texto visible del WhatsApp antiguo a `+56 9 7767 0252`; no bloquea la publicación técnica.
-3. Fase 4: entregar la ficha completa del negocio solicitada en 4.1.
-4. Fase 5: entregar rentabilidad por categoría, stock estable, marcas y medidas prioritarias, exclusiones comerciales, servicios y diferenciadores reales.
+3. Fase 4: resolver los campos internos observados, entregar el archivo original o URL estable de Shopify de la fotografía ya publicada y retirar más adelante el teléfono legado terminado en `9915` del artículo, Waze y una publicación antigua de Facebook.
+4. Fase 5: rentabilidad, stock, marcas, medidas y exclusiones de la primera tanda ya fueron resueltos; permanecen pendientes los servicios y diferenciadores reales para futuras landings locales.
 5. Fases 6 y 7: revisar técnicamente los contenidos y ejecutar las acciones externas que requieren representación del negocio.
 
 ## 7. Próxima acción única
 
-**Paso actual: 4.1 — Información del negocio para SEO local.**
+**Paso actual: 5.2 — Estructura obligatoria de cada landing.**
 
-Responsable actual: propietario, con revisión de consistencia por Codex. El seguimiento diferido de 2.5 continúa en paralelo para el corte de CrUX del 2026-10-04.
+Responsable principal: Codex prepara estructura, contenido y validaciones; el propietario revisa la vista previa antes de cualquier publicación. El seguimiento diferido de 2.5 continúa en paralelo para el corte de CrUX del 2026-10-04.
 
 Próxima acción:
 
-1. `[ ]` Confirmar nombre comercial, razón social, teléfono principal, teléfono secundario y correo público.
-2. `[ ]` Entregar dirección completa, código postal, comuna, región, coordenadas y URL de Google Business Profile.
-3. `[ ]` Confirmar horarios por día, feriados o excepciones y existencia de retiro en tienda.
-4. `[ ]` Entregar URLs definitivas de Instagram, Facebook, TikTok y YouTube.
-5. `[ ]` Confirmar servicios del taller, zonas de despacho, métodos de pago y políticas de cambios, devoluciones y despacho.
-6. `[ ]` Seleccionar el logotipo oficial y una fotografía representativa del local.
-7. `[ ]` Revisar la coherencia de la ficha y, una vez aprobada, avanzar a 4.2 para rehacer el JSON-LD.
-8. `[ ]` Revisar CrUX a partir del 2026-10-04 y cerrar 2.5 únicamente si el nuevo periodo permite una decisión fundada.
+1. `[x]` Codex: auditar y documentar en modo de solo lectura las ocho secciones internas de Google Business Profile.
+2. `[x]` Propietario: confirmó cierre el 18 y 19 de septiembre de 2026.
+3. `[x]` Propietario: aprobó eliminar `Acceso`, cheques y cita obligatoria; mantener NFC y confirmar estacionamiento accesible, mecánico y baños.
+4. `[x]` Propietario: confirmó toda la Región Metropolitana como área de entregas el mismo día.
+5. `[x]` Propietario: aprobó `https://www.bikerz.cl/pages/servicios` como enlace de reservas.
+6. `[x]` Codex: cambios aplicados y aprobados por Google; `No se aceptan cheques` y `No se requiere cita` ya aparecen como valores actuales.
+7. `[~]` Propietario: retirar el teléfono legado terminado en `9915` de Waze y de la publicación antigua de Facebook; diferido hasta autorización.
+8. `[~]` Codex: omitir `priceRange` para no inventar un rango; falta recibir la foto original o su URL estable de Shopify para añadir `image` y ejecutar la auditoría final.
+9. `[x]` Codex: redactar la descripción optimizada, el listado de servicios y las plantillas de reseñas y solicitud de reseñas.
+10. `[ ]` Revisar CrUX a partir del 2026-10-04 y cerrar 2.5 únicamente si el nuevo periodo permite una decisión fundada.
+11. `[x]` Codex: cruzar demanda de Search Console y rendimiento comercial con las colecciones existentes para proponer la primera tanda de URLs de 5.1.
+12. `[x]` Propietario: aprobó la primera tanda, confirmó stock y rentabilidad, y priorizó Dunlop, Bridgestone, Michelin y Continental; no informó exclusiones.
+13. `[x]` Codex: preparar la plantilla común y el contenido único de las cinco landings del paso 5.2 sin publicarlas.
+14. `[x]` Propietario: revisar y aprobar los textos de las cinco landings.
+15. `[x]` Codex: crear las cinco colecciones sin publicarlas, cargar reglas, plantilla y contenidos, y preparar su validación.
+16. `[ ]` Propietario: revisar la vista previa de las landings antes de autorizar su publicación.
 
 ## 8. Bitácora
 
@@ -1652,3 +1697,112 @@ Próxima acción:
 - La descarga posterior confirmó coincidencia SHA-256 en 18 de 18 archivos.
 - La validación pública confirmó un H1 y cero IDs duplicados, referencias rotas, imágenes sin `alt` o dimensiones, interactivos anidados, imágenes rotas, desbordamiento y errores de consola en home, contacto, búsqueda, producto, blog y artículo.
 - El paso 3.5 quedó cerrado y el roadmap avanzó a 4.1: información del negocio para SEO local.
+- Se preconsolidó la ficha del negocio de 4.1 a partir del theme, las páginas públicas y la entidad vigente de Google.
+- Quedaron verificados la razón social, el RUT, el teléfono oficial, el correo, la ubicación base, el perfil de Google, la oferta publicada, las modalidades de pago, el retiro y las políticas comerciales.
+- Google publica `Bikerz.cl`, Avenida Pedro de Valdivia 5691, código postal 7810107, teléfono `+56 9 7767 0252` y horarios de lunes a viernes 09:30–13:00/14:00–18:00, sábado 09:00–14:00 y domingo cerrado; los horarios aún requieren aprobación del propietario.
+- Se detectaron cuatro decisiones de coherencia: `Bikerz.cl` frente a `Bikerz`, presencia de `Local 3`, cobertura nacional frente al alcance de fechas estimadas y el teléfono antiguo todavía visible en Waze.
+- El paso 4.1 queda en validación hasta completar las ocho confirmaciones mínimas registradas en `docs/seo/LOCAL-BUSINESS-PROFILE-4-1.md`.
+- El propietario aprobó `Bikerz.cl` como nombre principal intercambiable con `Bikerz`, la dirección con `Local 3`, el código postal, los horarios normales, las cuatro redes, la lista inicial de servicios, el despacho a todo Chile y el logo principal.
+- El número terminado en `9915` quedó clasificado como legado y excluido de cualquier canal público o dato estructurado; la fotografía real del local se difirió a 4.3.
+- El paso 4.1 quedó cerrado y se inició 4.2.
+- Se reemplazaron los bloques antiguos `Organization` y `WebSite` de ambos encabezados por un único grafo en la home con nodos `TireShop` y `WebSite`, identificadores estables y relaciones internas.
+- La implementación local incorpora dirección, coordenadas, teléfono oficial, correo, horario, cobertura nacional, pagos, mapa, logo y las cuatro redes, sin valores vacíos ni `aggregateRating` autorreferencial.
+- La home local respondió HTTP 200 y produjo un único JSON-LD válido; producto y artículo conservaron sus marcados propios y contacto no duplicó el grafo.
+- La validación pública con Schema.org y Rich Results se pospuso hasta el despliegue aprobado para no enviar una URL privada de preview a un tercero sin autorización.
+- Evidencia: `docs/seo/STRUCTURED-DATA-AUDIT-4-2-2026-09-14.md`.
+- El propietario aprobó la vista previa local de 4.2.
+- Antes de publicar se descargaron los cuatro archivos del alcance y se confirmó que los tres existentes coincidían con la base de Git; no había cambios productivos adicionales que fusionar.
+- Se publicó únicamente el paquete de cuatro archivos en el theme live `SEO` (`164560142557`) con protección contra borrados y se verificó la coincidencia posterior de sus hashes.
+- Schema.org validó el grafo público con 0 errores y 0 advertencias.
+- Google Rich Results detectó 2 elementos válidos (`Empresa local` y `Organización`); solo reportó como opcionales `priceRange` e `image`, que se difieren a 4.3 para no inventar información.
+- PageSpeed móvil obtuvo rendimiento 86 y SEO 100; los datos de campo aún no aprueban por CLS 0,12 y continúan bajo el seguimiento diferido de 2.5.
+- La home pública respondió HTTP 200, mantuvo un único JSON-LD válido y no contiene el teléfono legado.
+- El paso 4.2 quedó cerrado y el roadmap avanzó a 4.3, Google Business Profile.
+
+### 2026-09-15
+
+- Se inició el paso 4.3 con una auditoría pública de Google Business Profile.
+- La ficha muestra `Bikerz.cl`, categoría principal `Tienda de neumáticos`, teléfono oficial, horarios correctos, sitio canónico, 4,6/5 con 173 reseñas y publicaciones recientes.
+- Se detectó que Google no muestra `Local 3` en la dirección pública y que TikTok no aparece en la sección pública de perfiles.
+- Las dos reseñas más recientes observadas aparecen sin respuesta: una positiva sobre rapidez y una crítica por falta de stock pese a existir una reserva confirmada.
+- Se prepararon una descripción de 524 caracteres, ocho servicios, plantillas de respuesta y solicitud de reseñas, un plan de fotografías y una rotación mensual de publicaciones.
+- El paso queda en curso hasta revisar las pantallas internas y aplicar únicamente los cambios aprobados por el propietario.
+- Evidencia: `docs/seo/GBP-AUDIT-4-3-2026-09-15.md`.
+
+### 2026-09-16
+
+- El propietario confirmó como aprobadas y publicadas las categorías, la dirección con `Local 3`, la descripción, los servicios, las respuestas a reseñas y una fotografía real.
+- La comprobación pública confirmó `Loc 3`, la descripción optimizada, TikTok/Facebook/YouTube/Instagram y las respuestas a las dos reseñas recientes.
+- Se completó la auditoría interna de solo lectura; no se guardó ni publicó ningún cambio desde el navegador.
+- Se verificaron nombre, tres categorías, fecha de apertura, teléfono, SMS, WhatsApp, sitio, cuatro redes, dirección, horario principal, ocho servicios, portada, logotipo y galería.
+- Los ocho servicios coinciden con los textos aprobados y están configurados `Sin precio`.
+- La galería administrada por la empresa contiene portada, logotipo, 30 fotografías adicionales y 3 videos.
+- Se detectaron seis decisiones internas: horarios especiales del 18 y 19 de septiembre, horario adicional `Acceso`, área de servicio `Chile`, cheques/NFC, cita obligatoria y sugerencias de accesibilidad/servicios.
+- La tarjeta de Google solicita confirmar el horario especial del próximo feriado, identificado como `Fiestas Patrias`; no se guardó ningún valor.
+- El enlace de reservas está vacío; `https://www.bikerz.cl/pages/servicios` es el candidato recomendado porque está publicado y contiene acciones de agendamiento.
+- Google todavía muestra en un resultado de Facebook una publicación antigua con el teléfono legado terminado en `9915`; se añadió a la limpieza externa junto con Waze.
+- El propietario confirmó cierre el 18 y 19 de septiembre, eliminación de `Acceso`, cheques y cita obligatoria, permanencia de NFC, existencia de estacionamiento accesible y baños, y aprobación de la landing de servicios como enlace de reservas.
+- Bikerz realiza entregas el mismo día en toda la Región Metropolitana; este alcance sustituye el área de servicio excesivamente amplia `Chile`.
+- Se decidió mantener `priceRange` fuera del JSON-LD porque no existe un rango único y estable que represente todo el catálogo y el taller.
+- Para añadir `image` al JSON-LD falta el archivo original de la foto o una URL permanente alojada en Shopify.
+- La corrección del teléfono legado en Waze quedó diferida por decisión del propietario y permanece registrada.
+- El propietario confirmó toda la Región Metropolitana como alcance de las entregas del mismo día y autorizó los cambios en Google Business Profile.
+- Se sustituyó `Chile` por `Región Metropolitana, Chile`; el cambio fue guardado y luego apareció como valor actual.
+- Se guardaron como cerrados el 18 y 19 de septiembre de 2026; ambos días quedaron visibles como `Cerrado`.
+- Se eliminó el horario adicional `Acceso`; la ficha dejó de mostrar la sección y volvió a ofrecer `Acceso` entre los horarios opcionales.
+- Se guardaron `No se aceptan cheques` y `No se requiere cita`; Google los mantiene en revisión con una demora estimada de hasta 10 minutos. NFC permaneció activo.
+- Se aceptaron los atributos de estacionamiento accesible, sanitarios y mecánico; quedaron visibles como atributos actuales.
+- Se guardó `https://www.bikerz.cl/pages/servicios` como enlace de reservas.
+- Google aprobó los cambios de pagos y planificación: `No se aceptan cheques` y `No se requiere cita` ya aparecen como valores actuales.
+- El trabajo operativo de 4.3 queda terminado. La fotografía estable para `image` y los teléfonos legados externos permanecen como arrastres no bloqueantes.
+- El roadmap avanza a 5.1 para cruzar demanda, catálogo y colecciones antes de crear nuevas URLs.
+- Se cruzaron GSC de 16 meses, GA4 orgánico de 12 meses, el sitemap público y los filtros actuales del catálogo para el paso 5.1.
+- Se recomienda una primera tanda de cinco colecciones: Trail/Adventure, Sport/Street y las medidas `120/70-17`, `160/60-17` y `90/90-21`.
+- La creación queda detenida hasta que el propietario confirme stock estable, rentabilidad, marcas prioritarias y productos que no conviene promocionar.
+- Evidencia: `docs/seo/URL-ARCHITECTURE-5-1-2026-09-16.md`.
+
+### 2026-09-18
+
+- El propietario autorizó continuar con la preparación del paso 5.1; no se interpretó esta autorización como permiso para publicar colecciones ni modificar productos.
+- Se auditó el catálogo público actualizado: 580 neumáticos publicados y filtros estructurados por uso, ancho, aspecto, diámetro, marca y motos compatibles.
+- Se comprobó que las reglas deben apoyarse en los metacampos `custom.uso`, `custom.ancho`, `custom.aspecto` y `custom.di_metro`, no en títulos ni etiquetas inconsistentes.
+- La disponibilidad actual respalda técnicamente las tres medidas iniciales: `120/70-17` tiene 25 productos disponibles de 31, `160/60-17` tiene 17 de 19 y `90/90-21` tiene 23 de 31.
+- Shopify CLI identificó la tienda `996356-ea.myshopify.com`; el intento de autenticación con alcance exclusivo `read_products` expiró sin conceder permisos. La auditoría se completó con el catálogo público y no produjo cambios externos.
+- El paso 5.1 permanece pendiente únicamente de la confirmación comercial de rentabilidad, reposición, marcas prioritarias y exclusiones antes de solicitar permiso de escritura para crear colecciones.
+
+### 2026-09-21
+
+- El propietario confirmó rentabilidad y reposición para Trail/Adventure y Sport/Street, y oferta habitual para `120/70-17`, `160/60-17` y `90/90-21`.
+- Se definieron como marcas prioritarias Dunlop, Bridgestone, Michelin y Continental; no se informaron exclusiones comerciales.
+- El paso 5.1 quedó cerrado con cinco URLs aprobadas y reglas técnicas basadas en metacampos estructurados.
+- No se crearon ni publicaron colecciones como parte de esta aprobación.
+- El roadmap avanzó al paso 5.2 para preparar la estructura y el contenido de las cinco landings antes de su revisión.
+- Se creó en local una plantilla reutilizable `collection.seo-landing` con breadcrumbs y H1 existentes, introducción superior desde `custom.seo_intro`, grilla de productos y contenido extendido inferior.
+- Se redactaron title, meta description, introducción, guía, preguntas frecuentes, enlazado interno, CTA y `alt` sugerido para las cinco landings aprobadas.
+- Los titles miden entre 38 y 47 caracteres, las metas entre 126 y 137 y las introducciones entre 173 y 184 palabras.
+- Los diez destinos internos existentes utilizados en la propuesta respondieron HTTP 200.
+- Evidencia: `docs/seo/LANDING-CONTENT-5-2-2026-09-21.md`.
+- El paso 5.2 queda en curso hasta revisar el contenido y montar una vista previa; no se creó ni publicó ninguna colección.
+- El propietario revisó y aprobó los textos de las cinco landings.
+- Se inició la preparación para crear las colecciones como recursos no publicados; cualquier publicación o incorporación a la navegación requerirá una aprobación posterior.
+
+### 2026-09-22
+
+- Se completó la autenticación de Shopify CLI para `996356-ea.myshopify.com` con el alcance mínimo `write_products` y se verificó la tienda `Bikerz` en `https://www.bikerz.cl`.
+- Se habilitaron como condiciones de colecciones automáticas únicamente los metacampos de producto aprobados: `custom.uso`, `custom.ancho`, `custom.aspecto` y `custom.di_metro`.
+- Se creó el metacampo de colección `custom.seo_intro` de tipo texto enriquecido.
+- Se crearon las cinco colecciones aprobadas con la plantilla `seo-landing`, title, meta description, introducción, descripción extendida y reglas estructuradas.
+- Las reglas quedaron configuradas como `Uso = Trail`, `Uso = Sport o Street`, y coincidencia total de ancho, perfil y aro para `120/70-17`, `160/60-17` y `90/90-21`.
+- La validación administrativa confirmó 139, 196, 32, 19 y 33 productos activos respectivamente; los 14, 8, 1, 0 y 1 productos archivados asociados por regla no se muestran en el storefront.
+- Se confirmó por HTTP que las cinco URLs públicas responden `404`; no fueron publicadas ni enlazadas.
+- El paso técnico 5.2 queda listo para la revisión visual del propietario. Las cinco imágenes reales y la autorización de publicación permanecen pendientes.
+
+### 2026-09-24
+
+- Se levantó una sesión nueva de Shopify Theme Dev en `http://127.0.0.1:9292/` sin modificar la visibilidad de las cinco colecciones SEO.
+- Como Shopify responde `404` para colecciones no publicadas incluso dentro del proxy local, se construyeron cinco plantillas alternas de revisión que usan `/collections/neumaticos` como catálogo visible y aplican las reglas equivalentes de uso o medida.
+- Las vistas muestran el H1 y los textos aprobados de cada landing, conservan filtros, ordenamiento, paginación y tarjetas reales, y renderizan la guía y preguntas frecuentes debajo de los productos.
+- La validación HTTP confirmó 139 productos visibles para Trail, 184 para Sport/Street, 31 para `120/70-17`, 18 para `160/60-17` y 33 para `90/90-21`. La vista espejo solo puede mostrar productos publicados en el canal online; por eso algunos totales son menores que los conteos administrativos de las colecciones aún no publicadas.
+- Se comprobó un filtro real por ancho en Trail: la grilla cambió de 139 a 1 producto y conservó la vista SEO local.
+- Se revisó la primera landing en escritorio y móvil: un H1, sin desbordamiento horizontal y con 20 tarjetas iniciales. Theme Check no reportó errores en los archivos de la vista previa; el theme completo mantiene errores heredados ajenos a este paso, principalmente traducciones incompletas.
+- No se publicó ningún archivo ni colección en el theme live. El paso 5.2 continúa pendiente únicamente de aprobación visual, cinco imágenes reales y una decisión separada de publicación.

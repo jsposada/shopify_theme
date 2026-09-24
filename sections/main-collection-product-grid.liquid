@@ -17,6 +17,18 @@
     assign column_show = columnProductSettings
   endif
 %}
+{%- capture preview_description -%}
+  {%- render 'seo-landing-preview-content', part: 'description' -%}
+{%- endcapture -%}
+{%- liquid
+  assign preview_description = preview_description | strip
+  assign collection_description = collection.description
+  assign clear_all_url = collection.url
+  if preview_description != blank
+    assign collection_description = preview_description
+    assign clear_all_url = collection.url | append: '?view=' | append: template.suffix
+  endif
+-%}
 {%- capture style -%}
   --section-padding-top: {{ sst.padding_top }}px; 
   --section-padding-bottom: {{ sst.padding_bottom }}px;
@@ -234,17 +246,17 @@
               {%- endfor -%}
 
               {% if showClearAll %}
-                <a href="{{ collection.url }}" class="clear-all fw-secondary {% if checkValue == false %} mb-32{% else %} mb-8{% endif %}">
+                <a href="{{ clear_all_url }}" class="clear-all fw-secondary {% if checkValue == false %} mb-32{% else %} mb-8{% endif %}">
                   {{- 'sections.collection_template.clear_all' | t -}}
                 </a>
               {% endif %}
             </div>
           </div>
           {% assign desc_pos = section.settings.display_position %}
-          {% if section.settings.show_description and desc_pos == 'top' and collection.description != blank %}
+          {% if section.settings.show_description and desc_pos == 'top' and collection_description != blank %}
             <div class="product-grid__desc mb-40 flex flex-col items-center{% if section.settings.is_collapse_description %} is-collapse{% endif %}">
               <div class="desc-content mb-5 relative">
-                {{ collection.description }}
+                {{ collection_description }}
                 {% if section.settings.is_collapse_description %}
                   <div class="desc-gradient"></div>
                 {% endif %}
@@ -313,10 +325,10 @@
                   , type: 'scroll' %}
               {% endif %}
             </div>
-            {% if section.settings.show_description and desc_pos == 'bottom' and collection.description != blank %}
+            {% if section.settings.show_description and desc_pos == 'bottom' and collection_description != blank %}
               <div class="product-grid__desc mt-40 flex flex-col items-center{% if section.settings.is_collapse_description %} is-collapse{% endif %}">
                 <div class="desc-content mb-5 relative">
-                  {{ collection.description }}
+                  {{ collection_description }}
                   {% if section.settings.is_collapse_description %}
                     <div class="desc-gradient"></div>
                   {% endif %}

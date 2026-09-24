@@ -1,0 +1,194 @@
+{%- comment -%}
+  Preview-only copy for the five SEO collection landings.
+
+  The real collections remain unpublished and keep their content in Shopify.
+  These alternate templates let the local theme preview use the public
+  /collections/neumaticos catalog while displaying the approved landing copy.
+
+  Accepts:
+  - part: heading, intro or description
+{%- endcomment -%}
+
+{%- liquid
+  assign preview_key = template.suffix | remove: 'seo-preview-'
+-%}
+
+{%- case preview_key -%}
+  {%- when 'trail' -%}
+    {%- if part == 'heading' -%}
+      Neumáticos trail y adventure para motos
+    {%- elsif part == 'intro' -%}
+      <p>Encuentra neumáticos trail y adventure para motos pensados para combinar estabilidad en carretera, confianza en caminos de tierra y resistencia durante viajes largos. En esta colección reunimos alternativas para distintos estilos de conducción, desde rutas principalmente asfaltadas hasta recorridos mixtos donde el dibujo y la capacidad de evacuación adquieren mayor importancia.</p>
+      <p>Antes de elegir, revisa la medida indicada por el fabricante de tu moto, el eje de montaje, los índices de carga y velocidad, y si tu llanta utiliza sistema tubeless o cámara. La proporción entre carretera y uso fuera de pavimento también es clave: un neumático orientado al asfalto suele entregar una conducción más suave en ciudad y carretera, mientras que un diseño con tacos más marcados favorece la tracción en superficies sueltas.</p>
+      <p>Aquí podrás comparar opciones de Dunlop, Bridgestone, Michelin, Continental y otras marcas compatibles disponibles en Bikerz. Si no sabes qué modelo corresponde a tu moto o al tipo de viaje que estás preparando, podemos ayudarte a revisar medida, uso y compatibilidad antes de comprar, con despacho a todo Chile y servicio de instalación en Santiago.</p>
+    {%- elsif part == 'description' -%}
+      <h2>Cómo elegir neumáticos trail o adventure</h2>
+      <p>Considera estos cinco puntos antes de decidir:</p>
+      <ol>
+        <li><strong>Tipo de ruta:</strong> define cuánto conducirás por asfalto, ripio, tierra o superficies sueltas.</li>
+        <li><strong>Medida homologada:</strong> confirma ancho, perfil y diámetro en el manual o en la especificación del fabricante.</li>
+        <li><strong>Eje correcto:</strong> verifica si el neumático corresponde a posición delantera, trasera o a ambas según la ficha del producto.</li>
+        <li><strong>Carga y velocidad:</strong> utiliza índices iguales o superiores a los exigidos por la motocicleta.</li>
+        <li><strong>Cámara o tubeless:</strong> la construcción del neumático debe ser compatible con la llanta y el sistema de montaje.</li>
+      </ol>
+      <p>Las líneas de Dunlop, Bridgestone, Michelin y Continental tienen prioridad comercial dentro de esta categoría, sin excluir otras alternativas compatibles. La disponibilidad puede cambiar, por lo que la decisión final debe considerar el producto actualmente en stock y la recomendación para tu modelo de moto.</p>
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿Trail y adventure significan exactamente lo mismo?</h3>
+      <p>Se utilizan para describir motos y neumáticos capaces de circular en más de un tipo de superficie, pero cada modelo puede estar más orientado a carretera o a uso fuera de pavimento. Revisa siempre el diseño, la ficha técnica y la proporción de uso recomendada.</p>
+      <h3>¿Puedo instalar un neumático más agresivo que el original?</h3>
+      <p>Solo si la medida, construcción, índices y compatibilidad con la llanta cumplen las especificaciones de la moto. Un dibujo más agresivo también puede cambiar el comportamiento y el confort sobre asfalto.</p>
+      <h3>¿Debo usar la misma línea adelante y atrás?</h3>
+      <p>La opción más predecible suele ser emplear una combinación delantera y trasera diseñada para trabajar en conjunto. Si necesitas mezclar líneas, confirma compatibilidad técnica y tipo de uso antes del montaje.</p>
+      <h3>¿Bikerz realiza instalación y balanceo?</h3>
+      <p>Sí. En Bikerz, la instalación y el balanceo son gratis con la compra de tus neumáticos, exclusivamente en la Región Metropolitana. Puedes solicitar atención desde la página de <a href="/pages/servicios">servicios</a>.</p>
+      <h3>Enlaces relacionados</h3>
+      <ul>
+        <li><a href="/collections/neumaticos">Todos los neumáticos para moto</a>.</li>
+        <li><a href="/blogs/motos-chile/medidas-europeas-vs-americanas-cual-es-la-diferencia-en-los-neumaticos-de-moto">Cómo interpretar medidas europeas y americanas</a>.</li>
+        <li><a href="/blogs/motos-chile/tube-type-vs-tubeless">Neumáticos con cámara frente a tubeless</a>.</li>
+        <li><a href="/blogs/motos-chile/calcular-la-capacidad-de-carga-de-tus-neumaticos-de-moto">Cómo calcular la capacidad de carga</a>.</li>
+        <li><a href="/collections/michelin">Michelin</a>, <a href="/collections/dunlop">Dunlop</a>, <a href="/collections/continental">Continental</a> y <a href="/collections/bridgestone">Bridgestone</a>.</li>
+      </ul>
+      <p><strong>¿No sabes qué opción corresponde a tu moto?</strong> Consulta compatibilidad con Bikerz antes de comprar.</p>
+    {%- endif -%}
+
+  {%- when 'sport' -%}
+    {%- if part == 'heading' -%}
+      Neumáticos sport y street para motos
+    {%- elsif part == 'intro' -%}
+      <p>Explora neumáticos sport y street para motos orientados al uso urbano, carretera y conducción sobre pavimento. Esta colección reúne alternativas para quienes buscan respuesta precisa, estabilidad y un comportamiento adecuado en trayectos cotidianos o recorridos más dinámicos, siempre respetando las especificaciones de cada motocicleta.</p>
+      <p>La elección no depende únicamente del dibujo. Antes de comprar, verifica el ancho, perfil y diámetro indicados por el fabricante, además del eje de montaje, la construcción del neumático y los índices de carga y velocidad. También conviene considerar la frecuencia de uso, el tipo de pavimento, la conducción con pasajero o equipaje y las condiciones climáticas habituales de tu recorrido.</p>
+      <p>En Bikerz podrás comparar modelos de Dunlop, Bridgestone, Michelin, Continental y otras marcas disponibles. Sport y Street se mantienen en una sola landing para facilitar la comparación y evitar páginas que compitan por búsquedas demasiado similares. Si tienes dudas sobre compatibilidad, podemos ayudarte a revisar la medida y el uso correcto antes de la compra. Contamos con despacho a todo Chile y servicios de montaje y balanceo en Santiago.</p>
+    {%- elsif part == 'description' -%}
+      <h2>Qué revisar en un neumático sport o street</h2>
+      <ul>
+        <li><strong>Compatibilidad:</strong> conserva las medidas y especificaciones autorizadas para tu modelo.</li>
+        <li><strong>Uso real:</strong> diferencia entre traslado urbano, carretera, conducción deportiva ocasional y viajes con carga.</li>
+        <li><strong>Eje y sentido de giro:</strong> respeta la posición y las indicaciones impresas en el neumático.</li>
+        <li><strong>Construcción:</strong> no cambies entre radial y diagonal sin comprobar que la combinación está permitida.</li>
+        <li><strong>Estado del conjunto:</strong> presión, válvulas, llantas, suspensión y balanceo influyen en el resultado final.</li>
+      </ul>
+      <p>Priorizamos Dunlop, Bridgestone, Michelin y Continental al presentar alternativas, sin ocultar otras marcas que cumplan la medida y el uso requerido.</p>
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿Qué diferencia existe entre un neumático Sport y uno Street?</h3>
+      <p>Ambos están orientados al pavimento, pero un modelo Sport puede priorizar respuesta y agarre en una conducción más exigente, mientras que un Street suele buscar equilibrio entre uso diario, duración y confort. La ficha de cada producto permite comparar su enfoque real.</p>
+      <h3>¿Puedo cambiar el ancho o el perfil original?</h3>
+      <p>Por lo general, es posible cambiar una medida y, en algunos casos, hasta dos; sin embargo, lo recomendable es modificar solo una. Una medida distinta puede afectar la geometría, el espacio disponible, la lectura de velocidad y el comportamiento. Confirma cualquier cambio con la especificación del fabricante o un especialista.</p>
+      <h3>¿Cómo sé cuándo debo reemplazar mis neumáticos?</h3>
+      <p>Revisa profundidad del dibujo, desgaste irregular, grietas, deformaciones, reparaciones y antigüedad. Si existe daño o dudas sobre su estado, solicita una inspección profesional.</p>
+      <h3>¿Conviene balancear después de instalar?</h3>
+      <p>Sí, el balanceo ayuda a reducir vibraciones y desgaste irregular. En Bikerz es gratis con la compra de tus neumáticos. Consulta el servicio disponible en <a href="/pages/servicios">Bikerz</a>.</p>
+      <h3>Enlaces relacionados</h3>
+      <ul>
+        <li><a href="/collections/neumaticos">Todos los neumáticos para moto</a>.</li>
+        <li><a href="/blogs/motos-chile/balanceo-de-neumaticos-en-moto">Balanceo de neumáticos en moto</a>.</li>
+        <li><a href="/blogs/motos-chile/calcular-la-capacidad-de-carga-de-tus-neumaticos-de-moto">Cómo calcular la capacidad de carga</a>.</li>
+        <li><a href="/collections/michelin">Michelin</a>, <a href="/collections/dunlop">Dunlop</a>, <a href="/collections/continental">Continental</a> y <a href="/collections/bridgestone">Bridgestone</a>.</li>
+      </ul>
+      <p><strong>Compara las opciones disponibles</strong> o consulta a Bikerz si necesitas confirmar medida, eje y compatibilidad.</p>
+    {%- endif -%}
+
+  {%- when '120-70-17' -%}
+    {%- if part == 'heading' -%}
+      Neumáticos 120/70-17 para motos
+    {%- elsif part == 'intro' -%}
+      <p>Encuentra neumáticos 120/70-17 para motos en distintas marcas y tipos de uso. En esta medida, <code>120</code> indica el ancho nominal en milímetros, <code>70</code> corresponde a la relación entre la altura del perfil y el ancho, y <code>17</code> señala el diámetro de la llanta en pulgadas. Es una medida frecuente en varias motocicletas, pero su presencia en tu neumático actual no basta para garantizar compatibilidad.</p>
+      <p>Antes de comprar, confirma en el manual de la moto el eje correspondiente, el índice de carga, el código de velocidad, el tipo de construcción y si la llanta requiere cámara o permite montaje tubeless. También debes considerar el uso previsto: existen alternativas 120/70-17 orientadas a conducción street, sport, touring y trail, con comportamientos diferentes aunque compartan la misma medida.</p>
+      <p>Esta colección permite comparar productos disponibles de Dunlop, Bridgestone, Michelin, Continental y otras marcas. El listado se genera con los metacampos de ancho, perfil y diámetro para evitar depender de variaciones en el nombre del producto. Si necesitas ayuda, Bikerz puede revisar la información de tu motocicleta antes de la compra y ofrecer instalación y balanceo en Santiago.</p>
+    {%- elsif part == 'description' -%}
+      <h2>Cómo confirmar que un 120/70-17 es compatible</h2>
+      <ol>
+        <li>Revisa la medida homologada en el manual o etiqueta técnica de la moto.</li>
+        <li>Confirma si corresponde al eje delantero o trasero.</li>
+        <li>Comprueba índices de carga y velocidad.</li>
+        <li>Verifica construcción radial o diagonal y sistema con cámara o tubeless.</li>
+        <li>Elige el patrón según uso street, sport, touring o trail.</li>
+      </ol>
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿Qué significa 120/70-17?</h3>
+      <p><code>120</code> es el ancho nominal en milímetros, <code>70</code> es la relación porcentual del perfil respecto del ancho y <code>17</code> es el diámetro de la llanta en pulgadas.</p>
+      <h3>¿Todos los neumáticos 120/70-17 sirven para la misma moto?</h3>
+      <p>No. Pueden variar en construcción, índice de carga, velocidad, eje y tipo de uso. Deben compararse todas las especificaciones.</p>
+      <h3>¿Puedo elegir cualquier marca si la medida coincide?</h3>
+      <p>La medida es solo uno de los requisitos. También debes verificar compatibilidad y, si mantienes otro neumático instalado, que el conjunto delantero y trasero tenga un comportamiento adecuado.</p>
+      <h3>¿Bikerz puede instalarlo?</h3>
+      <p>Sí. La instalación es gratis en el taller con la compra de tus neumáticos. Revisa las condiciones y solicita atención desde <a href="/pages/servicios">servicios</a>.</p>
+      <h3>Enlaces relacionados</h3>
+      <ul>
+        <li><a href="/collections/neumaticos-sport-street">Neumáticos sport y street</a>.</li>
+        <li><a href="/collections/neumaticos-trail-adventure">Neumáticos trail y adventure</a>.</li>
+        <li><a href="/blogs/motos-chile/medidas-europeas-vs-americanas-cual-es-la-diferencia-en-los-neumaticos-de-moto">Guía de medidas de neumáticos</a>.</li>
+        <li><a href="/blogs/motos-chile/tube-type-vs-tubeless">Neumáticos con cámara frente a tubeless</a>.</li>
+      </ul>
+      <p><strong>Confirma tu moto, año, medida e índices</strong> con Bikerz antes de completar la compra.</p>
+    {%- endif -%}
+
+  {%- when '160-60-17' -%}
+    {%- if part == 'heading' -%}
+      Neumáticos 160/60-17 para motos
+    {%- elsif part == 'intro' -%}
+      <p>Compara neumáticos 160/60-17 para motos con disponibilidad en distintas marcas y enfoques de conducción. La nomenclatura indica un ancho nominal de 160 milímetros, un perfil equivalente al 60 % del ancho y una llanta de 17 pulgadas. Esta medida aparece con frecuencia en aplicaciones traseras, pero debes confirmar la posición y todas las especificaciones para tu modelo concreto.</p>
+      <p>Dos neumáticos 160/60-17 pueden responder de manera diferente si fueron diseñados para uso street, sport, touring o trail. Por eso, además de la medida, revisa el índice de carga, el código de velocidad, la construcción, la recomendación de eje y la compatibilidad con cámara o sistema tubeless. Si llevas pasajero, equipaje o realizas viajes frecuentes, considera también las exigencias de carga previstas por el fabricante.</p>
+      <p>La colección reúne opciones de Michelin, Dunlop, Bridgestone, Continental y otras marcas disponibles. Los productos se seleccionan mediante metacampos técnicos para reducir errores producidos por títulos escritos de formas distintas. Bikerz puede ayudarte a comparar alternativas, verificar la información de tu moto y coordinar instalación y balanceo en Santiago.</p>
+    {%- elsif part == 'description' -%}
+      <h2>Puntos clave para elegir un 160/60-17</h2>
+      <ul>
+        <li>Confirma medida y eje en la documentación de la moto.</li>
+        <li>Mantén índices de carga y velocidad adecuados.</li>
+        <li>Revisa si la construcción es radial, diagonal o reforzada según la ficha.</li>
+        <li>Elige el compuesto y dibujo de acuerdo con ciudad, carretera, turismo o uso mixto.</li>
+        <li>Comprueba presión, estado de la llanta y balanceo durante la instalación.</li>
+      </ul>
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿El 160/60-17 siempre es un neumático trasero?</h3>
+      <p>Es común encontrarlo en el eje trasero, pero la posición correcta depende de la ficha del neumático y de la especificación de la motocicleta.</p>
+      <h3>¿Puedo reemplazar un 150/60-17 por un 160/60-17?</h3>
+      <p>No debe asumirse que son intercambiables. El cambio modifica ancho y geometría, y puede afectar espacio, llanta y comportamiento. Requiere validación técnica específica.</p>
+      <h3>¿Qué marca debo elegir?</h3>
+      <p>Dunlop, Bridgestone, Michelin y Continental son prioridades de la tienda, pero la elección debe basarse en compatibilidad, uso, disponibilidad y combinación con el neumático del otro eje.</p>
+      <h3>¿Se ofrece instalación?</h3>
+      <p>Sí. La instalación y el balanceo son gratis en el taller con la compra de tus neumáticos. Revisa las condiciones y solicita atención desde la página de <a href="/pages/servicios">servicios</a>.</p>
+      <h3>Enlaces relacionados</h3>
+      <ul>
+        <li><a href="/collections/neumaticos-sport-street">Neumáticos sport y street</a>.</li>
+        <li><a href="/collections/neumaticos-trail-adventure">Neumáticos trail y adventure</a>.</li>
+        <li><a href="/blogs/motos-chile/calcular-la-capacidad-de-carga-de-tus-neumaticos-de-moto">Cómo calcular la capacidad de carga</a>.</li>
+        <li><a href="/blogs/motos-chile/balanceo-de-neumaticos-en-moto">Balanceo de neumáticos en moto</a>.</li>
+      </ul>
+      <p><strong>Envíanos los datos de tu motocicleta</strong> para confirmar compatibilidad antes del montaje.</p>
+    {%- endif -%}
+
+  {%- when '90-90-21' -%}
+    {%- if part == 'heading' -%}
+      Neumáticos 90/90-21 para motos
+    {%- elsif part == 'intro' -%}
+      <p>Encuentra neumáticos 90/90-21 para motos, una medida habitual en ruedas de gran diámetro utilizadas por distintas motocicletas trail, adventure y de uso fuera de carretera. <code>90</code> representa el ancho nominal en milímetros, el segundo <code>90</code> corresponde a la relación del perfil y <code>21</code> indica el diámetro de la llanta en pulgadas. La medida debe coincidir con la especificación de tu moto, pero también es necesario revisar el resto de la ficha técnica.</p>
+      <p>Antes de elegir, confirma el eje de montaje, los índices de carga y velocidad, la construcción y el uso recomendado. Dentro de 90/90-21 existen dibujos con orientación principalmente asfáltica, mixta o más enfocada en tierra, por lo que dos productos con la misma medida pueden ofrecer experiencias muy diferentes. También verifica si la llanta y el neumático requieren cámara o admiten configuración tubeless.</p>
+      <p>Bikerz reúne opciones de Dunlop, Bridgestone, Michelin, Continental y otras marcas disponibles. La colección se alimenta con ancho, perfil y diámetro estructurados para presentar resultados precisos. Si estás preparando un viaje o quieres cambiar el tipo de uso, podemos ayudarte a comparar alternativas compatibles antes de comprar.</p>
+    {%- elsif part == 'description' -%}
+      <h2>Cómo escoger un 90/90-21 según el terreno</h2>
+      <ul>
+        <li>Para uso principalmente en carretera, busca estabilidad, evacuación y comportamiento predecible sobre pavimento.</li>
+        <li>Para recorridos mixtos, equilibra superficie de contacto en asfalto y capacidad de tracción en ripio o tierra.</li>
+        <li>Para mayor uso fuera de carretera, revisa un dibujo más abierto y la recomendación concreta del fabricante.</li>
+        <li>En todos los casos, conserva medida, índices, construcción y compatibilidad de montaje.</li>
+      </ul>
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿El 90/90-21 se instala siempre adelante?</h3>
+      <p>Es una aplicación delantera frecuente, pero debes confirmarla en la ficha del producto y en las especificaciones de la motocicleta.</p>
+      <h3>¿Un neumático con más tacos es mejor para cualquier uso?</h3>
+      <p>No. Un dibujo más abierto puede ayudar en superficies sueltas, pero también cambia sensaciones, ruido y comportamiento sobre pavimento. Elige según el porcentaje real de uso.</p>
+      <h3>¿Puedo montar un neumático tubeless con cámara?</h3>
+      <p>Depende de la llanta, del neumático y de las instrucciones del fabricante. No tomes la decisión únicamente por la sigla del producto; solicita revisión técnica.</p>
+      <h3>¿Cómo confirmo carga y velocidad?</h3>
+      <p>Compara los índices impresos en el neumático con los mínimos exigidos por el fabricante de la moto. Consulta nuestra <a href="/blogs/motos-chile/calcular-la-capacidad-de-carga-de-tus-neumaticos-de-moto">guía de capacidad de carga</a>.</p>
+      <h3>Enlaces relacionados</h3>
+      <ul>
+        <li><a href="/collections/neumaticos-trail-adventure">Neumáticos trail y adventure</a>.</li>
+        <li><a href="/collections/neumaticos">Todos los neumáticos para moto</a>.</li>
+        <li><a href="/blogs/motos-chile/tube-type-vs-tubeless">Neumáticos con cámara frente a tubeless</a>.</li>
+        <li><a href="/blogs/motos-chile/medidas-europeas-vs-americanas-cual-es-la-diferencia-en-los-neumaticos-de-moto">Guía de medidas de neumáticos</a>.</li>
+      </ul>
+      <p><strong>Cuéntanos qué moto conduces y qué proporción de asfalto y tierra recorres</strong> para orientarte mejor.</p>
+    {%- endif -%}
+{%- endcase -%}

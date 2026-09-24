@@ -24,6 +24,9 @@
     assign terms = results.terms | escape
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif 
+  if template.suffix contains 'seo-preview-'
+    assign results_url = results_url | append: '?view=' | append: template.suffix
+  endif
 -%}
 
 <div class="tp-facets facets-container {% if background_sidebar == 'no_background' %}no-bg-sidebar{% else %}bg-sidebar{% endif %}" style="--bg-sidebar:{{ sst.bg_color_sidebar }}">
@@ -37,6 +40,9 @@
         id="FacetFiltersForm"
         class="{% if filter_type == 'horizontal' %}facets__form{% else %}facets__form-vertical{% endif %}"
       >
+        {%- if template.suffix contains 'seo-preview-' -%}
+          <input type="hidden" name="view" value="{{ template.suffix }}">
+        {%- endif -%}
         {%- if results.terms -%}
           <input type="hidden" name="q" value="{{ results.terms | escape }}">
           <input name="options[prefix]" type="hidden" value="last">

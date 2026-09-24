@@ -127,6 +127,14 @@
         assign bt_lv3 = 'Carro'
         assign pos_lv3 = '2'
     endcase
+
+  capture preview_heading
+    render 'seo-landing-preview-content', part: 'heading'
+  endcapture
+  assign preview_heading = preview_heading | strip
+  if preview_heading != blank
+    assign bt_lv3 = preview_heading
+  endif
   %}
 
   <div class="flex  {{ flexDirection }} {{ classPositonContent }}">

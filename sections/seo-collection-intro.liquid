@@ -1,0 +1,92 @@
+{%- liquid
+  assign seo_intro = collection.metafields.custom.seo_intro
+  assign container = section.settings.container
+-%}
+
+{%- capture preview_intro -%}
+  {%- render 'seo-landing-preview-content', part: 'intro' -%}
+{%- endcapture -%}
+{%- assign preview_intro = preview_intro | strip -%}
+
+{%- if preview_intro != blank or seo_intro != blank -%}
+  {%- style -%}
+    #shopify-section-{{ section.id }} .seo-collection-intro__content {
+      max-width: 920px;
+    }
+  {%- endstyle -%}
+
+  <section
+    class="seo-collection-intro color-{{ section.settings.color_scheme }} gradient section-py"
+    style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="{{ container }}">
+      <div class="seo-collection-intro__content rte">
+        {%- if preview_intro != blank -%}
+          {{ preview_intro }}
+        {%- else -%}
+          {{ seo_intro | metafield_tag }}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "SEO collection intro",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Layout",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Default"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Fluid container"
+        },
+        {
+          "value": "full-width",
+          "label": "Full width"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 32,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SEO collection intro"
+    }
+  ]
+}
+{% endschema %}
