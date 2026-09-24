@@ -4,7 +4,7 @@
 **Proyecto:** Bikerz.cl  
 **Plan maestro:** `docs/seo/PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`  
 **Rama Shopify:** `codex/landings-neumaticos-repuestos`  
-**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY implementado y probado localmente; ninguno de los dos componentes está publicado.
+**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY implementado, probado y preparado como servicio independiente para Easypanel; ninguno de los dos componentes está publicado.
 
 ## 1. Resumen ejecutivo
 
@@ -252,7 +252,7 @@ La implementación local de la Fase 3 quedó terminada en `C:\JS\bikerz_app`, ra
 
 ### 12.1 Evidencia automatizada
 
-- 37 pruebas YMM pasan.
+- 39 pruebas YMM pasan.
 - Las 11 pruebas históricas del importador y el ETL continúan pasando.
 - Se probaron firma válida, manipulación de parámetros, expiración, tienda incorrecta y solicitud sin firma.
 - Se probaron cursores, categorías permitidas, coincidencia `exact_year`, coincidencia `model_only`, año inexistente, producto retirado de Shopify y resultado vacío estable.
@@ -289,5 +289,57 @@ El código y las pruebas de la Fase 3 están listos. Todavía no existe un servi
 5. Confirmar monitoreo y reinicio automático del proceso.
 
 Después de esa prueba integrada se puede iniciar la Fase 4: construir la landing de repuestos sobre este contrato real.
+
+## 13. Arquitectura de despliegue acordada
+
+Se revisó `C:\JS\inventarioNeumaticosV2`, que en Easypanel ya utiliza dos
+procesos separados sobre la misma base PostgreSQL:
+
+- `app.bikerz.cl`: aplicación Flask interna.
+- `bikerz-worker`: worker combinado de pedidos y sincronizaciones.
+
+El buscador público no se añadirá a ninguno de esos procesos. Se preparó un
+tercer servicio, `bikerz-ymm-api`, desde el repositorio `bikerz_app`. Será un
+contenedor FastAPI independiente, conectado al mismo PostgreSQL y a Shopify
+Storefront API.
+
+```text
+bikerz.cl -> Shopify App Proxy -> bikerz-ymm-api
+                                      |       |
+                                      v       v
+                                 PostgreSQL  Storefront API
+
+app.bikerz.cl --------------------> PostgreSQL
+bikerz-worker --------------------> PostgreSQL
+```
+
+Esta separación evita que el tráfico de clientes, los despliegues o los
+reinicios del buscador afecten la aplicación interna o los procesos nocturnos.
+
+La preparación local quedó en `C:\JS\bikerz_app` e incluye:
+
+- `Dockerfile.ymm-api`: imagen pequeña con solo las dependencias del API.
+- `.dockerignore`: excluye archivos locales, credenciales y artefactos.
+- `ymm/docs/easypanel_service.md`: variables, despliegue, comprobaciones y reversión.
+- Configuración por variables `DB_*` y `SHOPIFY_*`; no es necesario copiar el
+  archivo compartido `dev/files/credentials.yml` al contenedor.
+- Ejecución como usuario sin privilegios, puerto interno `8000`, soporte de
+  cabeceras del proxy y comprobación `GET /healthz`.
+
+La suite completa del módulo YMM pasa con **39 pruebas**. Docker no está
+instalado en el equipo local, por lo que la construcción real de la imagen se
+validará en el primer despliegue de Easypanel.
+
+### Pendientes operativos
+
+1. Revisar y fusionar o desplegar la rama `codex/ymm-query-api`.
+2. Crear `bikerz-ymm-api` en el mismo proyecto de Easypanel.
+3. Cargar las variables mínimas de PostgreSQL, Storefront y App Proxy.
+4. Asignar un dominio HTTPS técnico al servicio y comprobar `/healthz`.
+5. Configurar el App Proxy de Shopify para `/apps/ymm`.
+6. Probar una búsqueda firmada desde `bikerz.cl`.
+
+No se ha creado ni modificado ningún servicio remoto de Easypanel y el App
+Proxy continúa sin configurar.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
