@@ -354,6 +354,11 @@ modificó ni desplegó el theme live.
 móvil, con todos los estados interactivos. Pendiente de revisión y aprobación
 del propietario antes de comenzar código de las landings.
 
+El wireframe valida únicamente jerarquía, orden, comportamiento y textos. La
+implementación final se adaptará al diseño vigente de Bikerz y reutilizará los
+componentes, tipografía, colores, anchos, tarjetas, filtros y espaciados del
+theme; no se trasladará literalmente la estética del prototipo.
+
 ### Fase 2 — Landing de neumáticos
 
 **Objetivo:** convertir `/collections/neumaticos` en la landing completa sin esperar el buscador MMY.
@@ -675,4 +680,5 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-010 | El propietario aprobó las seis categorías como alcance inicial. Agregar más categorías queda como pendiente posterior, sujeto a inventario, demanda y compatibilidad publicada. | Propietario | Confirmación en esta conversación |
 | 2026-09-24 | LMMY-011 | Se preservó la eliminación aprobada de `dev/app.log` en el commit `d8d29a4` y se creó `codex/ymm-query-api`. La Fase 0 quedó completada. | Codex | Git de `C:\JS\bikerz_app` |
 | 2026-09-24 | LMMY-012 | Se preparó el prototipo interactivo de escritorio y móvil para neumáticos y repuestos, con seis estados del buscador por medida y nueve estados MMY, fallback navegable, resumen de moto, mensajes de certeza y salida por WhatsApp. | Codex | `landing-wireframes.html`; aprobación visual pendiente |
+| 2026-09-24 | LMMY-013 | El propietario aclaró que el layout final debe adaptarse al diseño actual de la web. El prototipo se utilizará solo para revisar jerarquía, comportamiento y textos. | Propietario | Confirmación en esta conversación |
 
