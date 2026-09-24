@@ -126,10 +126,43 @@ La landing deberá contener:
 6. Tipo de repuesto como filtro opcional posterior a la moto.
 7. Resumen de la selección del usuario.
 8. Resultados compatibles.
-9. Indicador del nivel de certeza de la compatibilidad.
+9. Indicador `Compatible con tu moto` solo para una coincidencia exacta con año.
 10. Acción para cambiar la moto.
 11. Ayuda por WhatsApp cuando no existan resultados o haya dudas.
 12. Contenido SEO y preguntas frecuentes después de los productos.
+
+### 4.3 Textos de interfaz aprobados
+
+#### Neumáticos
+
+- H1: `Neumáticos para motos en Chile`.
+- Introducción: `Encuentra la medida correcta, compara marcas y compra con despacho a todo Chile o instalación en nuestro taller de Santiago.`
+- Buscador: título `Encuentra tu neumático`, ayuda `Ingresa la medida que aparece en el costado de tu neumático.` y botón `Ver neumáticos`.
+- Selección incompleta: `Completa perfil y aro para buscar la medida correcta.`
+- Selección válida: `Medida seleccionada: 120/70-17. Mostrando los neumáticos disponibles.`
+- Sin resultados: `No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.`
+- Error: `No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.`
+- Bloques posteriores: `Neumáticos disponibles`, `Cómo identificar la medida correcta`, `Marcas de neumáticos disponibles` e `Instalación de neumáticos para motos`.
+- Preguntas frecuentes: cómo encontrar la medida; qué significan ancho, perfil y aro; cámara o sin cámara; instalación y balanceo; y despachos a todo Chile.
+
+#### Repuestos
+
+- H1: `Repuestos para motos en Chile`.
+- Introducción: `Busca por marca, modelo y año para encontrar el repuesto compatible con tu moto.`
+- Buscador: título `¿Qué moto tienes?`, ayuda `Selecciona marca, modelo y año para mostrar repuestos compatibles.` y botón `Buscar repuestos`.
+- El año puede quedar vacío o el usuario puede marcar `No conozco el año`; ambas opciones ejecutan la misma búsqueda por modelo.
+- Selección exacta: resumen `Tu moto: Yamaha FZ16 150 · 2022`, indicador `Compatible con tu moto` y acción `Cambiar moto`.
+- La búsqueda sin año no mostrará advertencia ni indicador de compatibilidad por modelo.
+- Sin resultados: título `No encontramos una coincidencia publicada` y mensaje `No encontramos repuestos publicados para esta selección. Puedes escribirnos por WhatsApp y te ayudamos a encontrarlo.`
+- Acciones sin resultados: `Cambiar selección`, `Explorar categorías` y `Consultar por WhatsApp`.
+- Mensaje de WhatsApp: `Hola Bikerz, necesito ayuda para confirmar un repuesto compatible con mi moto: [marca, modelo y año].`
+- Error: `No pudimos consultar las compatibilidades en este momento. Puedes navegar por los repuestos manualmente o pedirnos ayuda por WhatsApp.`
+- Preguntas frecuentes: significado de `Compatible con tu moto`; qué hacer sin conocer el año; cómo confirmar compatibilidad; y qué hacer cuando no hay resultados.
+
+Se normalizaron únicamente el espacio duplicado de la introducción y la redacción
+`WhatsApp` / `te ayudamos a encontrarlo`; el sentido aprobado no cambia.
+Se omitió la pregunta `¿Qué significa “Compatible con el modelo”?` porque ese
+indicador fue eliminado de la interfaz.
 
 ## 5. Reglas funcionales del buscador MMY
 
@@ -146,11 +179,12 @@ Cuando el usuario seleccione marca, modelo y año:
 
 ### 5.2 Selección sin año
 
-Cuando el usuario elija `No conozco el año`:
+Cuando el usuario deje el año vacío o elija `No conozco el año`:
 
 - Se consultará la compatibilidad por `moto_model`.
 - Se utilizará la información equivalente a `custom.modelos_compatibles_sin_year`.
-- El resultado deberá advertir: `Compatible con el modelo. Confirma el año antes de comprar`.
+- No se mostrará una advertencia ni un indicador de compatibilidad por modelo.
+- No se mostrará `Compatible con tu moto`, porque ese indicador queda reservado para una coincidencia anual exacta.
 - Se ofrecerá ayuda para confirmar la compatibilidad antes de finalizar la compra.
 
 ### 5.3 Sin resultados
@@ -340,19 +374,20 @@ modificó ni desplegó el theme live.
 
 #### Tareas del propietario
 
-- `[ ]` Revisar la jerarquía y apariencia en escritorio.
-- `[ ]` Revisar la experiencia móvil.
-- `[ ]` Aprobar los textos que prometen compatibilidad.
-- `[ ]` Confirmar los tipos de repuesto prioritarios.
+- `[x]` Revisar la jerarquía y apariencia en escritorio.
+- `[x]` Revisar la experiencia móvil.
+- `[x]` Aprobar los textos que prometen compatibilidad.
+- `[x]` Confirmar los tipos de repuesto prioritarios.
 
 #### Criterio de término
 
 - Todos los estados tienen diseño y texto aprobado.
 - No quedan decisiones funcionales críticas para comenzar el código.
 
-**Estado al 2026-09-24:** propuesta visual y funcional preparada en escritorio y
-móvil, con todos los estados interactivos. Pendiente de revisión y aprobación
-del propietario antes de comenzar código de las landings.
+**Estado al 2026-09-24:** fase completada. La jerarquía, el comportamiento y los
+textos quedaron aprobados con los ajustes del propietario. En la búsqueda sin
+año no se mostrará advertencia ni sello de compatibilidad; `Compatible con tu
+moto` queda reservado para una coincidencia anual exacta.
 
 El wireframe valida únicamente jerarquía, orden, comportamiento y textos. La
 implementación final se adaptará al diseño vigente de Bikerz y reutilizará los
@@ -681,4 +716,5 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-011 | Se preservó la eliminación aprobada de `dev/app.log` en el commit `d8d29a4` y se creó `codex/ymm-query-api`. La Fase 0 quedó completada. | Codex | Git de `C:\JS\bikerz_app` |
 | 2026-09-24 | LMMY-012 | Se preparó el prototipo interactivo de escritorio y móvil para neumáticos y repuestos, con seis estados del buscador por medida y nueve estados MMY, fallback navegable, resumen de moto, mensajes de certeza y salida por WhatsApp. | Codex | `landing-wireframes.html`; aprobación visual pendiente |
 | 2026-09-24 | LMMY-013 | El propietario aclaró que el layout final debe adaptarse al diseño actual de la web. El prototipo se utilizará solo para revisar jerarquía, comportamiento y textos. | Propietario | Confirmación en esta conversación |
+| 2026-09-24 | LMMY-014 | El propietario aprobó los textos con ajustes: el año vacío y `No conozco el año` tendrán el mismo comportamiento, no habrá advertencia ni indicador por modelo y `Compatible con tu moto` se reserva para coincidencias exactas con año. La Fase 1 quedó completada. | Propietario | Textos y observaciones entregados en esta conversación |
 
