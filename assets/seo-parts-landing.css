@@ -286,11 +286,11 @@
   border-radius: 8px;
   color: #26384f;
   display: flex;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   gap: .8rem;
   line-height: 1.45;
   margin-top: 1.2rem;
-  min-height: 47px;
+  min-height: 49px;
   padding: .6rem .8rem;
 }
 
@@ -323,7 +323,7 @@
   color: #222;
   cursor: pointer;
   font-family: var(--font-heading-family);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 800;
   min-height: 30px;
   padding: .5rem .9rem;

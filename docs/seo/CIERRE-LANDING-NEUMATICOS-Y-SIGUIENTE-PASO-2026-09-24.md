@@ -436,8 +436,9 @@ La consola del navegador no presentó errores. Los cambios siguen cargados solo
 en el theme de vista previa `166033588445`; el theme live no fue modificado.
 
 Como ajuste final, las dos barras indicadoras se igualaron a una altura mínima
-de 47 px. Los textos descriptivos y sus botones se muestran en minúsculas,
-mientras la medida seleccionada o el nombre de la moto conservan la escritura
-original. Se validaron `180/50-17` y `Bmw F 700` en el theme de vista previa.
+de 49 px, con texto principal de `1.5rem` y botones de `1.3rem`. Los textos
+descriptivos y sus botones se muestran en minúsculas, mientras la medida
+seleccionada o el nombre de la moto conservan la escritura original. Se
+validaron `180/50-17` y `Bmw F 700` en el theme de vista previa.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
