@@ -285,7 +285,7 @@
 .tire-guide-link-card--dark p:not(.tire-landing-eyebrow) { color: rgba(255, 255, 255, .68); }
 .tire-guide-link-card--dark a { color: #ff9550; }
 
-.seo-tire-landing [id$='__product-grid'] { padding-top: 4rem; }
+.seo-tire-landing [id$='__product-grid'] { padding-top: .8rem; }
 .seo-tire-landing [id$='__product-grid'] h2 { font-weight: 900; text-transform: uppercase; }
 .seo-tire-landing [id$='__faq'] { background: #fff; }
 .seo-tire-landing [id$='__faq'] .container { max-width: 980px; }
