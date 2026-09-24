@@ -168,7 +168,7 @@
     <div id="{{ tire_finder_status_id }}" class="pf-status" role="status" aria-live="polite" aria-atomic="true" style="display:none;">
       <span class="pf-status-icon" aria-hidden="true"></span>
       <span class="pf-status-message"></span>
-      <button class="pf-status-clear" type="button">Limpiar filtros</button>
+      <button class="pf-status-clear" type="button">limpiar filtros</button>
     </div>
     <div id="{{ tire_finder_updates_id }}" class="pf-sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
@@ -528,7 +528,7 @@
     gap: .8rem;
     line-height: 1.45;
     margin-top: 1.2rem;
-    min-height: 42px;
+    min-height: 47px;
     padding: .6rem .8rem;
   }
 
@@ -562,7 +562,7 @@
     font-weight: 800;
     min-height: 30px;
     padding: .5rem .9rem;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .pf-wrapper--landing .pf-status.has-clear .pf-status-clear { display: inline-flex; }
@@ -955,7 +955,7 @@
             : RESULTS_COUNT > 1
               ? `${RESULTS_COUNT} neumáticos disponibles`
               : 'neumáticos disponibles';
-          showStatus(`Medida seleccionada: ${measurement}. Mostrando ${availability}.`, 'info', true);
+          showStatus(`medida seleccionada: ${measurement}. mostrando ${availability}.`, 'info', true);
         }
       }
 

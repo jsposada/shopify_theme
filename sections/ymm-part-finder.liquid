@@ -62,10 +62,10 @@
       <div class="ymm-selection" data-ymm-selection hidden>
         <span class="ymm-selection__icon" aria-hidden="true">✓</span>
         <p class="ymm-selection__message">
-          Tu moto: <strong class="ymm-selection__vehicle" data-ymm-vehicle></strong>.
-          <span data-ymm-availability>Buscando repuestos disponibles…</span>
+          tu moto: <strong class="ymm-selection__vehicle" data-ymm-vehicle></strong>.
+          <span data-ymm-availability>buscando repuestos disponibles…</span>
         </p>
-        <button class="ymm-selection__change" type="button" data-ymm-change>Cambiar moto</button>
+        <button class="ymm-selection__change" type="button" data-ymm-change>cambiar moto</button>
       </div>
     </div>
   </div>
@@ -208,14 +208,14 @@
 
     function showSelection() {
       vehicle.textContent = currentVehicleLabel();
-      availability.textContent = 'Buscando repuestos disponibles…';
+      availability.textContent = 'buscando repuestos disponibles…';
       selection.dataset.kind = 'info';
       selection.hidden = false;
       updateWhatsappLink();
     }
 
     function updateSelectionCount(total) {
-      availability.textContent = `Mostrando ${total} ${total === 1 ? 'repuesto disponible' : 'repuestos disponibles'}.`;
+      availability.textContent = `mostrando ${total} ${total === 1 ? 'repuesto disponible' : 'repuestos disponibles'}.`;
       selection.dataset.kind = total ? 'info' : 'empty';
     }
 
@@ -326,8 +326,8 @@
       moreButton.hidden = true;
       empty.hidden = false;
       availability.textContent = isError
-        ? 'No pudimos cargar los repuestos disponibles.'
-        : 'No encontramos repuestos disponibles.';
+        ? 'no pudimos cargar los repuestos disponibles.'
+        : 'no encontramos repuestos disponibles.';
       selection.dataset.kind = isError ? 'error' : 'empty';
       emptyTitle.textContent = isError
         ? 'No pudimos consultar las compatibilidades'

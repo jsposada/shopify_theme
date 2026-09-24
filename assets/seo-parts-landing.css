@@ -286,10 +286,11 @@
   border-radius: 8px;
   color: #26384f;
   display: flex;
+  font-size: 1.3rem;
   gap: .8rem;
   line-height: 1.45;
   margin-top: 1.2rem;
-  min-height: 42px;
+  min-height: 47px;
   padding: .6rem .8rem;
 }
 
@@ -326,7 +327,7 @@
   font-weight: 800;
   min-height: 30px;
   padding: .5rem .9rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .ymm-results {
