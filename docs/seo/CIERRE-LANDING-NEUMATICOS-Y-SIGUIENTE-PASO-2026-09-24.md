@@ -4,7 +4,7 @@
 **Proyecto:** Bikerz.cl  
 **Plan maestro:** `docs/seo/PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`  
 **Rama Shopify:** `codex/landings-neumaticos-repuestos`  
-**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; disponible únicamente en un theme no publicado.
+**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY implementado y probado localmente; ninguno de los dos componentes está publicado.
 
 ## 1. Resumen ejecutivo
 
@@ -235,4 +235,55 @@ Después se inicia la **Fase 4**, que integrará el buscador MMY en `/collection
 6. Probar resultados contra muestras comerciales conocidas.
 7. Volver a Shopify únicamente cuando el contrato MMY esté estable.
 
-Este documento funciona como registro de cierre de la landing de neumáticos y punto de partida para continuar con repuestos sin depender del historial de la conversación.
+## 12. Avance de la Fase 3 — Servicio MMY
+
+La implementación local de la Fase 3 quedó terminada en `C:\JS\bikerz_app`, rama `codex/ymm-query-api`. Se creó un servicio FastAPI independiente de `main.py` y del proceso nocturno, con estos componentes:
+
+- Cinco endpoints de lectura en `/apps/ymm/*` y un endpoint de salud.
+- Consultas PostgreSQL parametrizadas dentro de transacciones `READ ONLY`.
+- Validación HMAC-SHA256 de solicitudes del Shopify App Proxy.
+- Validación de tienda y expiración de la solicitud.
+- Límite de uso en memoria sin conservar direcciones IP en texto claro.
+- Caché larga de navegación y caché corta de información comercial.
+- Paginación con cursor y un máximo de 24 productos por página.
+- Validación comercial en lote contra Shopify antes de devolver precio, imagen, URL y disponibilidad.
+- Dependencias en un entorno virtual aislado mediante `requirements-ymm-api.txt`.
+- Contrato técnico en `C:\JS\bikerz_app\ymm\docs\query_api_contract.md`.
+
+### 12.1 Evidencia automatizada
+
+- 32 pruebas YMM pasan.
+- Las 11 pruebas históricas del importador y el ETL continúan pasando.
+- Se probaron firma válida, manipulación de parámetros, expiración, tienda incorrecta y solicitud sin firma.
+- Se probaron cursores, categorías permitidas, coincidencia `exact_year`, coincidencia `model_only`, año inexistente, producto retirado de Shopify y resultado vacío estable.
+- Las pruebas verifican que la búsqueda con año contempla `all_years`, `range` y `exact_vehicle`, y excluye `unspecified`.
+- La búsqueda sin año no utiliza ningún año centinela.
+
+### 12.2 Evidencia con datos reales
+
+- 134 marcas con cobertura comercial dentro de las seis categorías iniciales.
+- Honda devuelve 664 modelos con al menos un producto elegible.
+- Honda CB 500 devuelve 30 años con compatibilidad comercial.
+- Un rango cerrado devolvió cuatro productos exactos.
+- Un rango con límite abierto devolvió dos productos exactos.
+- Una regla `all_years` devolvió tres productos exactos para el año probado.
+- Una regla `unspecified` devolvió un producto al buscar solo por modelo.
+- Un tipo de repuesto válido sin coincidencias devolvió cero productos sin error.
+- Se detectaron 40 productos activos de PostgreSQL sin IDs Shopify completos; el servicio los excluye.
+- La consulta comercial real a Shopify devolvió una coincidencia exacta y cinco coincidencias por modelo, todas con el nivel correcto; la exacta incluyó URL pública y precio vigente.
+
+La base actual contiene 1.406 reglas `all_years`, 17.987 reglas `range` —1.593 con algún límite abierto— y 77 reglas `unspecified`. No contiene reglas `exact_vehicle`; el camino está implementado y probado estructuralmente, pero su primera validación productiva queda pendiente hasta que exista una regla aprobada de ese tipo.
+
+### 12.3 Estado y siguiente paso
+
+El código y las pruebas de la Fase 3 están listos. Todavía no existe un servicio público ni se configuró el App Proxy. Para exponerlo se requiere:
+
+1. Elegir el hosting del proceso Uvicorn con HTTPS.
+2. Guardar `SHOPIFY_APP_SECRET` en el gestor de secretos del hosting.
+3. Configurar el App Proxy de Shopify para `/apps/ymm/*`.
+4. Ejecutar una prueba firmada desde el storefront.
+5. Confirmar monitoreo y reinicio automático del proceso.
+
+Después de esa prueba integrada se puede iniciar la Fase 4: construir la landing de repuestos sobre este contrato real.
+
+Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.

@@ -415,9 +415,9 @@ theme; no se trasladará literalmente la estética del prototipo.
 #### Tareas del propietario
 
 - `[x]` Aprobar el texto introductorio y el contenido inferior.
-- `[ ]` Aprobar la posición y tamaño del buscador.
-- `[ ]` Probar al menos tres medidas reales con productos.
-- `[ ]` Probar una combinación sin resultados.
+- `[x]` Aprobar la posición y tamaño del buscador.
+- `[x]` Probar al menos tres medidas reales con productos.
+- `[x]` Probar una combinación sin resultados.
 - `[ ]` Aprobar escritorio y móvil.
 
 #### Criterios de aceptación
@@ -461,34 +461,43 @@ El buscador publica los eventos personalizados
 
 #### Tareas de Codex en `bikerz_app`
 
-- `[ ]` Documentar las consultas necesarias en PostgreSQL.
-- `[ ]` Implementar el contrato del servicio aprobado en la fase 0.
-- `[ ]` Filtrar siempre por `review_status=approved`.
-- `[ ]` Resolver correctamente `all_years`, `range`, `unspecified` y `exact_vehicle`.
-- `[ ]` Devolver coincidencia exacta o solo por modelo de forma explícita.
-- `[ ]` Cruzar los resultados con los identificadores Shopify disponibles.
-- `[ ]` Excluir SKU sin correspondencia comercial.
-- `[ ]` Implementar caché, validación, manejo de errores y registro técnico.
-- `[ ]` Crear pruebas automatizadas del servicio.
+- `[x]` Documentar las consultas necesarias en PostgreSQL.
+- `[x]` Implementar el contrato del servicio aprobado en la fase 0.
+- `[x]` Filtrar siempre por `review_status=approved`.
+- `[x]` Resolver correctamente `all_years`, `range`, `unspecified` y `exact_vehicle`.
+- `[x]` Devolver coincidencia exacta o solo por modelo de forma explícita.
+- `[x]` Cruzar los resultados con los identificadores Shopify disponibles.
+- `[x]` Excluir SKU sin correspondencia comercial.
+- `[x]` Implementar caché, validación, manejo de errores y registro técnico.
+- `[x]` Crear pruebas automatizadas del servicio.
 
 #### Casos de prueba obligatorios
 
-- `[ ]` Marca con múltiples modelos.
-- `[ ]` Modelo con múltiples años.
-- `[ ]` Regla `all_years`.
-- `[ ]` Rango cerrado.
-- `[ ]` Rango con inicio o fin abierto.
-- `[ ]` Compatibilidad `unspecified` sin promesa anual.
-- `[ ]` Producto con referencias distribuidas en los cinco fragmentos.
-- `[ ]` SKU inexistente o no publicado en Shopify.
-- `[ ]` Moto válida sin productos compatibles.
-- `[ ]` Parámetros inválidos o manipulados.
+- `[x]` Marca con múltiples modelos.
+- `[x]` Modelo con múltiples años.
+- `[x]` Regla `all_years`.
+- `[x]` Rango cerrado.
+- `[x]` Rango con inicio o fin abierto.
+- `[x]` Compatibilidad `unspecified` sin promesa anual.
+- `[x]` Producto con referencias distribuidas en los cinco fragmentos.
+- `[x]` SKU inexistente o no publicado en Shopify.
+- `[x]` Moto válida sin productos compatibles.
+- `[x]` Parámetros inválidos o manipulados.
 
 #### Criterio de término
 
 - Las pruebas demuestran que no hay falsos positivos en los casos conocidos.
 - El servicio no expone secretos.
 - La respuesta distingue de forma inequívoca la compatibilidad exacta y la compatibilidad solo por modelo.
+
+**Estado al 2026-09-24:** contrato e implementación local terminados en
+`C:\JS\bikerz_app`, rama `codex/ymm-query-api`. Las 32 pruebas YMM pasan y las
+consultas de humo de solo lectura validaron marcas, modelos, años, `all_years`,
+rangos cerrados y abiertos, `unspecified`, cero resultados y el cruce comercial
+real con Shopify. La base actual no contiene reglas `exact_vehicle`; el camino
+está implementado y cubierto estructuralmente, pendiente de una muestra real.
+El despliegue HTTPS y la configuración del App Proxy siguen pendientes; no se
+expuso ningún endpoint público.
 
 ### Fase 4 — Buscador MMY en la landing de repuestos
 
@@ -719,7 +728,7 @@ El proyecto se considerará terminado cuando:
 
 Usar este mensaje inicial:
 
-> Trabajaremos el plan `C:\JS\shopify\docs\seo\PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`. Lee el documento completo y comienza únicamente por la Fase 0. Mantén separados el theme Shopify en `C:\JS\shopify` y el motor YMM en `C:\JS\bikerz_app`. No publiques ni modifiques el theme live sin entregarme primero una vista previa y recibir mi aprobación explícita. Registra en el mismo archivo cada decisión, avance, evidencia y pendiente.
+> Trabajaremos el plan `C:\JS\shopify\docs\seo\PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`. Lee el documento completo. Las fases 0 a 3 están implementadas localmente; comienza por revisar los pendientes de despliegue y App Proxy al final de la Fase 3, y luego prepara la Fase 4. Mantén separados el theme Shopify en `C:\JS\shopify` y el motor YMM en `C:\JS\bikerz_app`. No publiques, expongas endpoints ni modifiques el theme live sin entregarme primero una vista previa o prueba integrada y recibir mi aprobación explícita. Registra en el mismo archivo cada decisión, avance, evidencia y pendiente.
 
 ## 13. Registro de decisiones y avances
 
@@ -743,4 +752,6 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-014 | El propietario aprobó los textos con ajustes: el año vacío y `No conozco el año` tendrán el mismo comportamiento, no habrá advertencia ni indicador por modelo y `Compatible con tu moto` se reserva para coincidencias exactas con año. La Fase 1 quedó completada. | Propietario | Textos y observaciones entregados en esta conversación |
 | 2026-09-24 | LMMY-015 | Se implementó localmente la plantilla `collection.neumaticos.json`, reutilizando el buscador y componentes del theme. Se validaron tres medidas reales y un caso vacío; todas las URLs filtradas conservaron el canonical de la colección. No se modificó el theme live. | Codex | Código local, Shopify Theme Check y comprobación de `/collections/neumaticos` |
 | 2026-09-24 | LMMY-016 | Se creó el theme no publicado `Codex landings 2026-09-24` (`166033588445`) y se validó la landing en escritorio y 390 px. El theme live `SEO` (`164560142557`) permanece intacto. | Codex | Vista previa de Shopify y pruebas en navegador |
+| 2026-09-24 | LMMY-017 | El propietario cerró la revisión visual de la landing de neumáticos después de compactar hero, buscador, resultados, guía, FAQ y filtros. La revisión móvil final continúa recomendada antes de publicar. | Propietario | Confirmación `Listo terminado esto` y documento de cierre |
+| 2026-09-24 | LMMY-018 | Se implementó el servicio FastAPI YMM aislado, con App Proxy firmado, consultas PostgreSQL de solo lectura, cachés, paginación, validación comercial en Shopify y errores estables. Pasan 32 pruebas y las pruebas de humo reales cubren reglas anuales, rangos, modelo sin año y cero resultados. No se desplegó el servicio. | Codex | `C:\JS\bikerz_app\ymm\docs\query_api_contract.md` y rama `codex/ymm-query-api` |
 
