@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "seo-parts-hero",
+      "blocks": {
+        "compatibility": {
+          "type": "proof",
+          "settings": {
+            "text": "Compatibilidad verificada"
+          }
+        },
+        "catalog": {
+          "type": "proof",
+          "settings": {
+            "text": "Productos publicados"
+          }
+        },
+        "help": {
+          "type": "proof",
+          "settings": {
+            "text": "Ayuda antes de comprar"
+          }
+        }
+      },
+      "block_order": [
+        "compatibility",
+        "catalog",
+        "help"
+      ],
+      "settings": {
+        "eyebrow": "Repuestos Bikerz",
+        "heading": "Repuestos para motos en Chile",
+        "intro": "<p>Busca por marca, modelo y año para encontrar el repuesto compatible con tu moto.</p>",
+        "image": ""
+      }
+    },
+    "finder": {
+      "type": "ymm-part-finder",
+      "settings": {
+        "title": "¿Qué moto tienes?",
+        "help_text": "Selecciona marca, modelo y año para mostrar repuestos compatibles.",
+        "button_label": "Buscar repuestos",
+        "api_root": "/apps/ymm",
+        "target_collection": "repuestos",
+        "whatsapp_number": "56977670252"
+      }
+    },
+    "catalog": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter": {
+          "type": "filter",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "filter"
+      ],
+      "settings": {
+        "heading": "Explorar todos los repuestos",
+        "empty_heading": "No encontramos productos en esta colección",
+        "empty_message": "Prueba otros filtros o consulta por WhatsApp para que podamos ayudarte.",
+        "container": "container",
+        "color_scheme": "",
+        "products_per_page": 20,
+        "column_number": "4",
+        "show_description": false,
+        "is_collapse_description": true,
+        "display_position": "bottom",
+        "pagination": "default",
+        "show_product_count": true,
+        "show_list_grid": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "collab_first": true,
+        "filter_type": "left_sidebar",
+        "background_sidebar": "no_background",
+        "bg_color_sidebar": "#f4f4f4",
+        "collection_list": [],
+        "price_type": "range_slider",
+        "padding_top": 24,
+        "padding_bottom": 48,
+        "reset_spacing": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "compatible": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué significa “Compatible con tu moto”?",
+            "tab_content": "content",
+            "content": "<p>Significa que encontramos una compatibilidad aprobada para la marca, el modelo y el año seleccionados. Revisa también las observaciones y especificaciones del producto antes de comprar.</p>",
+            "page": ""
+          }
+        },
+        "unknown-year": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué hago si no conozco el año de mi moto?",
+            "tab_content": "content",
+            "content": "<p>Puedes dejar el año en “No conozco el año” y buscar por modelo. Antes de comprar, confirma el año en el padrón, el manual o la ficha técnica de tu moto.</p>",
+            "page": ""
+          }
+        },
+        "confirm": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo confirmo la compatibilidad antes de comprar?",
+            "tab_content": "content",
+            "content": "<p>Compara la referencia, medidas y posición del repuesto con la pieza instalada. Si tienes dudas, envíanos por WhatsApp la marca, modelo, año y una foto de la pieza.</p>",
+            "page": ""
+          }
+        },
+        "no-results": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué hago si el buscador no muestra resultados?",
+            "tab_content": "content",
+            "content": "<p>Cambia la selección, explora las categorías o escríbenos por WhatsApp. Que no aparezca una coincidencia publicada no significa necesariamente que el repuesto no exista.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "compatible",
+        "unknown-year",
+        "confirm",
+        "no-results"
+      ],
+      "settings": {
+        "container": "container",
+        "heading": "Preguntas frecuentes",
+        "heading_alignment": "text-left",
+        "color_scheme": "",
+        "reset_spacing": false,
+        "padding_top": 24,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "finder",
+    "catalog",
+    "faq"
+  ]
+}

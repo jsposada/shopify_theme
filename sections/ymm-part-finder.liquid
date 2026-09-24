@@ -1,0 +1,603 @@
+{{ 'seo-parts-landing.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign target_collection = section.settings.target_collection
+  assign catalog_url = target_collection.url | default: '/collections/repuestos'
+-%}
+
+<section
+  id="YmmFinder-{{ section.id }}"
+  class="ymm-finder-section"
+  data-api-root="{{ section.settings.api_root | default: '/apps/ymm' | escape }}"
+  data-catalog-url="{{ catalog_url | escape }}"
+  data-whatsapp-number="{{ section.settings.whatsapp_number | remove: ' ' | remove: '+' | escape }}"
+>
+  <div class="container">
+    <div class="ymm-finder">
+      <header class="ymm-finder__header">
+        <div>
+          <h2 class="ymm-finder__title">{{ section.settings.title | escape }}</h2>
+          <p class="ymm-finder__help">{{ section.settings.help_text | escape }}</p>
+        </div>
+      </header>
+
+      <form class="ymm-finder__form" novalidate>
+        <div class="ymm-field">
+          <label for="YmmMake-{{ section.id }}">Marca</label>
+          <select id="YmmMake-{{ section.id }}" data-ymm-make disabled>
+            <option value="">Cargando marcas…</option>
+          </select>
+        </div>
+
+        <div class="ymm-field">
+          <label for="YmmModel-{{ section.id }}">Modelo</label>
+          <select id="YmmModel-{{ section.id }}" data-ymm-model disabled>
+            <option value="">Selecciona una marca</option>
+          </select>
+        </div>
+
+        <div class="ymm-field">
+          <label for="YmmYear-{{ section.id }}">Año <span class="visually-hidden">opcional</span></label>
+          <select id="YmmYear-{{ section.id }}" data-ymm-year disabled>
+            <option value="">Selecciona un modelo</option>
+          </select>
+        </div>
+
+        <div class="ymm-field">
+          <label for="YmmPartType-{{ section.id }}">Tipo de repuesto <span class="visually-hidden">opcional</span></label>
+          <select id="YmmPartType-{{ section.id }}" data-ymm-part-type disabled>
+            <option value="">Selecciona un modelo</option>
+          </select>
+        </div>
+
+        <button class="ymm-finder__submit" type="submit" data-ymm-submit disabled>
+          <span data-ymm-submit-label>{{ section.settings.button_label | escape }}</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="ymm-finder__status" role="status" aria-live="polite" data-ymm-status></div>
+
+      <div class="ymm-selection" data-ymm-selection hidden>
+        <div>
+          <span class="ymm-selection__label">Tu moto</span>
+          <strong class="ymm-selection__vehicle" data-ymm-vehicle></strong>
+          <span class="ymm-selection__badge" data-ymm-compatibility hidden>Compatible con tu moto</span>
+        </div>
+        <button class="ymm-selection__change" type="button" data-ymm-change>Cambiar moto</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ymm-results" data-ymm-results hidden>
+    <div class="container">
+      <header class="ymm-results__header">
+        <div>
+          <h2 class="ymm-results__title" tabindex="-1" data-ymm-results-title>Repuestos compatibles</h2>
+          <p class="ymm-results__count" aria-live="polite" data-ymm-results-count></p>
+        </div>
+      </header>
+
+      <div class="ymm-results__grid" data-ymm-grid></div>
+
+      <div class="ymm-results__footer">
+        <button class="ymm-results__more" type="button" data-ymm-more hidden>Cargar más</button>
+      </div>
+
+      <div class="ymm-empty" data-ymm-empty hidden>
+        <h3 tabindex="-1" data-ymm-empty-title>No encontramos una coincidencia publicada</h3>
+        <p data-ymm-empty-message>No encontramos repuestos publicados para esta selección. Puedes escribirnos por WhatsApp y te ayudamos a encontrarlo.</p>
+        <div class="ymm-empty__actions">
+          <button class="ymm-action ymm-action--secondary" type="button" data-ymm-empty-change>Cambiar selección</button>
+          <a class="ymm-action" href="{{ catalog_url }}">Explorar categorías</a>
+          <a class="ymm-action ymm-action--whatsapp" href="#" target="_blank" rel="noopener" data-ymm-whatsapp>Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.getElementById('YmmFinder-{{ section.id }}');
+    if (!root || root.dataset.initialized === 'true') return;
+    root.dataset.initialized = 'true';
+
+    const apiRoot = root.dataset.apiRoot.replace(/\/$/, '');
+    const catalogUrl = root.dataset.catalogUrl;
+    const whatsappNumber = root.dataset.whatsappNumber || '56977670252';
+    const form = root.querySelector('.ymm-finder__form');
+    const makeSelect = root.querySelector('[data-ymm-make]');
+    const modelSelect = root.querySelector('[data-ymm-model]');
+    const yearSelect = root.querySelector('[data-ymm-year]');
+    const typeSelect = root.querySelector('[data-ymm-part-type]');
+    const submitButton = root.querySelector('[data-ymm-submit]');
+    const submitLabel = root.querySelector('[data-ymm-submit-label]');
+    const status = root.querySelector('[data-ymm-status]');
+    const selection = root.querySelector('[data-ymm-selection]');
+    const vehicle = root.querySelector('[data-ymm-vehicle]');
+    const compatibility = root.querySelector('[data-ymm-compatibility]');
+    const results = root.querySelector('[data-ymm-results]');
+    const resultsTitle = root.querySelector('[data-ymm-results-title]');
+    const resultsCount = root.querySelector('[data-ymm-results-count]');
+    const grid = root.querySelector('[data-ymm-grid]');
+    const moreButton = root.querySelector('[data-ymm-more]');
+    const empty = root.querySelector('[data-ymm-empty]');
+    const emptyTitle = root.querySelector('[data-ymm-empty-title]');
+    const emptyMessage = root.querySelector('[data-ymm-empty-message]');
+    const whatsapp = root.querySelector('[data-ymm-whatsapp]');
+    const defaultSubmitLabel = submitLabel.textContent;
+
+    let availableTypes = [];
+    let nextCursor = null;
+    let activePartType = '';
+    let requestSequence = 0;
+
+    function publish(name, payload = {}) {
+      if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
+        Shopify.analytics.publish(`bikerz:${name}`, payload);
+      }
+    }
+
+    function setStatus(message = '', kind = '') {
+      status.textContent = message;
+      status.dataset.kind = kind;
+    }
+
+    function setOptions(select, items, placeholder, valueKey = 'id', labelKey = 'name') {
+      select.replaceChildren();
+      const placeholderOption = document.createElement('option');
+      placeholderOption.value = '';
+      placeholderOption.textContent = placeholder;
+      select.appendChild(placeholderOption);
+      items.forEach((item) => {
+        const option = document.createElement('option');
+        option.value = String(item[valueKey]);
+        option.textContent = item[labelKey];
+        select.appendChild(option);
+      });
+      select.disabled = false;
+    }
+
+    function resetSelect(select, message) {
+      setOptions(select, [], message);
+      select.disabled = true;
+    }
+
+    function selectedText(select) {
+      return select.options[select.selectedIndex]?.textContent?.trim() || '';
+    }
+
+    function queryString(parameters) {
+      const query = new URLSearchParams();
+      Object.entries(parameters).forEach(([key, value]) => {
+        if (value !== '' && value !== null && value !== undefined) query.set(key, value);
+      });
+      return query.toString();
+    }
+
+    async function api(path, parameters = {}) {
+      const query = queryString(parameters);
+      const response = await fetch(`${apiRoot}${path}${query ? `?${query}` : ''}`, {
+        credentials: 'same-origin',
+        headers: { Accept: 'application/json' }
+      });
+      let payload;
+      try {
+        payload = await response.json();
+      } catch (_error) {
+        throw new Error('El servicio devolvió una respuesta inesperada.');
+      }
+      if (!response.ok) {
+        throw new Error(payload?.error?.message || 'No pudimos consultar las compatibilidades.');
+      }
+      return payload;
+    }
+
+    function currentVehicleLabel() {
+      const year = yearSelect.value ? ` · ${yearSelect.value}` : '';
+      return `${selectedText(makeSelect)} ${selectedText(modelSelect)}${year}`.trim();
+    }
+
+    function updateWhatsappLink() {
+      const year = yearSelect.value || 'año por confirmar';
+      const message = `Hola Bikerz, necesito ayuda para confirmar un repuesto compatible con mi moto: ${selectedText(makeSelect)} ${selectedText(modelSelect)} · ${year}.`;
+      whatsapp.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    }
+
+    function showSelection() {
+      vehicle.textContent = currentVehicleLabel();
+      compatibility.hidden = !yearSelect.value;
+      selection.hidden = false;
+      updateWhatsappLink();
+    }
+
+    function setBusy(isBusy) {
+      submitButton.disabled = isBusy || !modelSelect.value;
+      submitLabel.textContent = isBusy ? 'Buscando…' : defaultSubmitLabel;
+      makeSelect.disabled = isBusy;
+      modelSelect.disabled = isBusy;
+      yearSelect.disabled = isBusy;
+      typeSelect.disabled = isBusy;
+      moreButton.disabled = isBusy;
+    }
+
+    function formatMoney(price) {
+      const amount = Number(price?.amount);
+      const currency = price?.currency || 'CLP';
+      if (!Number.isFinite(amount)) return 'Precio no disponible';
+      return new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency,
+        maximumFractionDigits: currency === 'CLP' ? 0 : 2
+      }).format(amount);
+    }
+
+    function productCard(product) {
+      const article = document.createElement('article');
+      article.className = 'ymm-product-card';
+
+      if (product.match_level === 'exact_year') {
+        const badge = document.createElement('span');
+        badge.className = 'ymm-product-card__compatibility';
+        badge.textContent = 'Compatible con tu moto';
+        article.appendChild(badge);
+      }
+
+      const imageLink = document.createElement('a');
+      imageLink.className = 'ymm-product-card__image';
+      imageLink.href = product.url;
+      imageLink.dataset.ymmProductLink = '';
+      if (product.image?.url) {
+        const image = document.createElement('img');
+        image.src = product.image.url;
+        image.alt = product.image.alt || product.title || '';
+        image.loading = 'lazy';
+        image.width = 500;
+        image.height = 500;
+        imageLink.appendChild(image);
+      } else {
+        imageLink.classList.add('ymm-product-card__image--empty');
+        imageLink.textContent = 'Imagen no disponible';
+      }
+      article.appendChild(imageLink);
+
+      const body = document.createElement('div');
+      body.className = 'ymm-product-card__body';
+
+      if (product.brand) {
+        const brand = document.createElement('p');
+        brand.className = 'ymm-product-card__brand';
+        brand.textContent = product.brand;
+        body.appendChild(brand);
+      }
+
+      const title = document.createElement('a');
+      title.className = 'ymm-product-card__title';
+      title.href = product.url;
+      title.textContent = product.title || 'Repuesto para moto';
+      title.dataset.ymmProductLink = '';
+      body.appendChild(title);
+
+      const type = document.createElement('p');
+      type.className = 'ymm-product-card__type';
+      type.textContent = product.part_type_label || '';
+      body.appendChild(type);
+
+      const price = document.createElement('p');
+      price.className = 'ymm-product-card__price';
+      price.textContent = formatMoney(product.price);
+      body.appendChild(price);
+
+      const stock = document.createElement('p');
+      stock.className = `ymm-product-card__stock${product.available ? '' : ' ymm-product-card__stock--out'}`;
+      stock.textContent = product.available ? 'Disponible' : 'Sin stock disponible';
+      body.appendChild(stock);
+
+      article.appendChild(body);
+      return article;
+    }
+
+    function renderProducts(items, append = false) {
+      if (!append) grid.replaceChildren();
+      const fragment = document.createDocumentFragment();
+      items.forEach((product) => fragment.appendChild(productCard(product)));
+      grid.appendChild(fragment);
+      grid.querySelectorAll('[data-ymm-product-link]').forEach((link) => {
+        if (link.dataset.analyticsBound === 'true') return;
+        link.dataset.analyticsBound = 'true';
+        link.addEventListener('click', () => publish('ymm_product_click', {
+          has_year: Boolean(yearSelect.value),
+          part_type_selected: Boolean(typeSelect.value)
+        }));
+      });
+    }
+
+    function showEmptyState(isError = false) {
+      results.hidden = false;
+      grid.replaceChildren();
+      moreButton.hidden = true;
+      empty.hidden = false;
+      emptyTitle.textContent = isError
+        ? 'No pudimos consultar las compatibilidades'
+        : 'No encontramos una coincidencia publicada';
+      emptyMessage.textContent = isError
+        ? 'Puedes navegar por los repuestos manualmente o pedirnos ayuda por WhatsApp.'
+        : 'No encontramos repuestos publicados para esta selección. Puedes escribirnos por WhatsApp y te ayudamos a encontrarlo.';
+      emptyTitle.focus({ preventScroll: true });
+      empty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function showResults(items, meta, append = false) {
+      results.hidden = false;
+      empty.hidden = true;
+      renderProducts(items, append);
+      const totalShown = grid.children.length;
+      resultsCount.textContent = `${totalShown} ${totalShown === 1 ? 'repuesto encontrado' : 'repuestos encontrados'}`;
+      nextCursor = meta?.page_info?.next_cursor || null;
+      moreButton.hidden = !activePartType || !meta?.page_info?.has_next_page;
+      if (!append) {
+        resultsTitle.focus({ preventScroll: true });
+        results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    async function loadPartTypes(modelId, year = '') {
+      const payload = await api('/part-types', { model_id: modelId, year });
+      availableTypes = payload.data || [];
+      const previous = typeSelect.value;
+      setOptions(typeSelect, availableTypes, 'Todos los tipos', 'value', 'label');
+      if (availableTypes.some((item) => item.value === previous)) typeSelect.value = previous;
+      return availableTypes;
+    }
+
+    async function searchSpecificType(partType, cursor = null) {
+      return api('/products', {
+        model_id: modelSelect.value,
+        year: yearSelect.value,
+        part_type: partType,
+        cursor,
+        limit: 12
+      });
+    }
+
+    async function searchAllTypes() {
+      const perType = Math.max(2, Math.ceil(24 / Math.max(availableTypes.length, 1)));
+      const responses = await Promise.all(
+        availableTypes.map((item) => api('/products', {
+          model_id: modelSelect.value,
+          year: yearSelect.value,
+          part_type: item.value,
+          limit: Math.min(perType, 12)
+        }))
+      );
+      const items = responses.flatMap((response) => response.data || []).slice(0, 24);
+      return {
+        data: items,
+        meta: { count: items.length, match_level: yearSelect.value ? 'exact_year' : 'model_only' }
+      };
+    }
+
+    async function submitSearch() {
+      if (!modelSelect.value) {
+        setStatus('Selecciona una marca y un modelo para buscar.', 'error');
+        modelSelect.focus();
+        return;
+      }
+
+      const sequence = ++requestSequence;
+      setBusy(true);
+      setStatus('Buscando repuestos compatibles…');
+      showSelection();
+      results.hidden = true;
+      activePartType = typeSelect.value;
+      nextCursor = null;
+      publish('ymm_search_submit', {
+        has_year: Boolean(yearSelect.value),
+        part_type_selected: Boolean(activePartType)
+      });
+
+      try {
+        const response = activePartType
+          ? await searchSpecificType(activePartType)
+          : await searchAllTypes();
+        if (sequence !== requestSequence) return;
+        const items = response.data || [];
+        setStatus('');
+        if (!items.length) {
+          showEmptyState(false);
+          publish('ymm_no_results', {
+            has_year: Boolean(yearSelect.value),
+            part_type_selected: Boolean(activePartType)
+          });
+          return;
+        }
+        showResults(items, response.meta || {});
+        publish('ymm_results_view', {
+          result_count: items.length,
+          has_year: Boolean(yearSelect.value),
+          part_type_selected: Boolean(activePartType)
+        });
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        setStatus('No pudimos consultar las compatibilidades en este momento.', 'error');
+        showEmptyState(true);
+      } finally {
+        if (sequence === requestSequence) setBusy(false);
+      }
+    }
+
+    makeSelect.addEventListener('change', async () => {
+      requestSequence += 1;
+      selection.hidden = true;
+      results.hidden = true;
+      resetSelect(modelSelect, 'Selecciona una marca');
+      resetSelect(yearSelect, 'Selecciona un modelo');
+      resetSelect(typeSelect, 'Selecciona un modelo');
+      submitButton.disabled = true;
+      if (!makeSelect.value) return;
+      setStatus('Cargando modelos…');
+      publish('ymm_make_selected');
+      try {
+        const payload = await api('/models', { make_id: makeSelect.value });
+        setOptions(modelSelect, payload.data || [], 'Selecciona un modelo');
+        setStatus('');
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        setStatus('No pudimos cargar los modelos. Intenta nuevamente.', 'error');
+      }
+    });
+
+    modelSelect.addEventListener('change', async () => {
+      requestSequence += 1;
+      selection.hidden = true;
+      results.hidden = true;
+      resetSelect(yearSelect, 'Selecciona un modelo');
+      resetSelect(typeSelect, 'Selecciona un modelo');
+      submitButton.disabled = true;
+      if (!modelSelect.value) return;
+      setStatus('Cargando años y tipos de repuesto…');
+      publish('ymm_model_selected');
+      try {
+        const [years] = await Promise.all([
+          api('/years', { model_id: modelSelect.value }),
+          loadPartTypes(modelSelect.value)
+        ]);
+        setOptions(
+          yearSelect,
+          (years.data || []).map((year) => ({ value: year, label: String(year) })),
+          'No conozco el año',
+          'value',
+          'label'
+        );
+        submitButton.disabled = availableTypes.length === 0;
+        setStatus(availableTypes.length ? '' : 'No hay tipos de repuesto publicados para este modelo.', availableTypes.length ? '' : 'error');
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        setStatus('No pudimos cargar la información de este modelo. Intenta nuevamente.', 'error');
+      }
+    });
+
+    yearSelect.addEventListener('change', async () => {
+      requestSequence += 1;
+      selection.hidden = true;
+      results.hidden = true;
+      submitButton.disabled = true;
+      setStatus('Actualizando tipos de repuesto…');
+      publish(yearSelect.value ? 'ymm_year_selected' : 'ymm_unknown_year_selected');
+      try {
+        await loadPartTypes(modelSelect.value, yearSelect.value);
+        submitButton.disabled = availableTypes.length === 0;
+        setStatus(availableTypes.length ? '' : 'No hay tipos de repuesto publicados para esta selección.', availableTypes.length ? '' : 'error');
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        setStatus('No pudimos actualizar los tipos de repuesto.', 'error');
+      }
+    });
+
+    typeSelect.addEventListener('change', () => {
+      selection.hidden = true;
+      results.hidden = true;
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      submitSearch();
+    });
+
+    moreButton.addEventListener('click', async () => {
+      if (!activePartType || !nextCursor) return;
+      setBusy(true);
+      setStatus('Cargando más repuestos…');
+      try {
+        const response = await searchSpecificType(activePartType, nextCursor);
+        showResults(response.data || [], response.meta || {}, true);
+        setStatus('');
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        setStatus('No pudimos cargar más repuestos. Intenta nuevamente.', 'error');
+      } finally {
+        setBusy(false);
+      }
+    });
+
+    root.querySelector('[data-ymm-change]').addEventListener('click', () => {
+      root.querySelector('.ymm-finder').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      makeSelect.focus({ preventScroll: true });
+    });
+
+    root.querySelector('[data-ymm-empty-change]').addEventListener('click', () => {
+      results.hidden = true;
+      root.querySelector('.ymm-finder').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      makeSelect.focus({ preventScroll: true });
+    });
+
+    whatsapp.addEventListener('click', () => publish('compatibility_help_click', {
+      has_year: Boolean(yearSelect.value)
+    }));
+
+    async function initialize() {
+      setStatus('Cargando marcas…');
+      try {
+        const payload = await api('/makes');
+        setOptions(makeSelect, payload.data || [], 'Selecciona una marca');
+        setStatus('');
+      } catch (error) {
+        console.error('[Bikerz YMM]', error);
+        resetSelect(makeSelect, 'No pudimos cargar las marcas');
+        setStatus('No pudimos consultar las compatibilidades en este momento. El catálogo sigue disponible más abajo.', 'error');
+      }
+    }
+
+    initialize();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Buscador MMY repuestos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "¿Qué moto tienes?"
+    },
+    {
+      "type": "text",
+      "id": "help_text",
+      "label": "Ayuda",
+      "default": "Selecciona marca, modelo y año para mostrar repuestos compatibles."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Botón",
+      "default": "Buscar repuestos"
+    },
+    {
+      "type": "text",
+      "id": "api_root",
+      "label": "Ruta del App Proxy",
+      "default": "/apps/ymm"
+    },
+    {
+      "type": "collection",
+      "id": "target_collection",
+      "label": "Colección para navegación manual"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "WhatsApp sin espacios",
+      "default": "56977670252"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buscador MMY repuestos"
+    }
+  ]
+}
+{% endschema %}

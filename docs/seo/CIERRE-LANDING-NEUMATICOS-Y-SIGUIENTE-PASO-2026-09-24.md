@@ -4,7 +4,7 @@
 **Proyecto:** Bikerz.cl  
 **Plan maestro:** `docs/seo/PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`  
 **Rama Shopify:** `codex/landings-neumaticos-repuestos`  
-**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY desplegado y validado mediante el App Proxy de Shopify; la landing de neumáticos continúa sin publicarse.
+**Estado:** landing de neumáticos terminada; servicio MMY desplegado; primera versión funcional de la landing de repuestos cargada en el theme de prueba. Ninguna de las dos landings está publicada.
 
 ## 1. Resumen ejecutivo
 
@@ -12,7 +12,7 @@ Se completó la nueva landing de neumáticos en `/collections/neumaticos`. La p�
 
 Durante la revisión visual se redujeron tipografías, alturas y espacios para mostrar productos antes; se eliminaron bloques repetidos y se amplió el área útil de resultados. El theme live no fue modificado.
 
-El siguiente bloque de trabajo es la **Fase 3: contrato y pruebas del motor Marca–Modelo–Año (MMY)** en `C:\JS\bikerz_app`. Este servicio debe estar validado antes de construir la landing de repuestos, para que el diseño se conecte desde el inicio a compatibilidades reales y no a datos simulados.
+La **Fase 4** ya conecta la landing de repuestos con el servicio real Marca–Modelo–Año mediante el App Proxy de Shopify. El siguiente paso es la revisión visual y comercial del propietario; después corresponde la Fase 5, que llevará la misma confirmación de compatibilidad a la ficha de producto.
 
 ## 2. Estado de publicación y vista previa
 
@@ -361,7 +361,57 @@ aplicación desplegada. No se cambió el secreto de Easypanel: el recorrido real
 firmado por Shopify funcionó correctamente, demostrando que la configuración
 productiva es la válida.
 
-El backend de la Fase 3 queda operativo. El siguiente paso es iniciar la Fase 4
-y conectar la landing de repuestos a `/apps/ymm/*`.
+El backend de la Fase 3 queda operativo y conectado a la landing de repuestos.
+
+## 14. Fase 4 — landing de repuestos conectada al MMY
+
+La primera versión funcional se cargó exclusivamente en el theme de vista
+previa `Codex landings 2026-09-24` (`166033588445`). El theme live `SEO`
+(`164560142557`) no fue modificado.
+
+Vista previa:
+
+<https://www.bikerz.cl/collections/repuestos?preview_theme_id=166033588445&view=repuestos>
+
+### 14.1 Archivos implementados
+
+- `assets/seo-parts-landing.css`: diseño responsive del encabezado, buscador,
+  estados y tarjetas.
+- `sections/seo-parts-hero.liquid`: encabezado SEO compacto.
+- `sections/ymm-part-finder.liquid`: buscador progresivo, consulta al App Proxy,
+  resultados, estados y eventos de analítica.
+- `templates/collection.repuestos.json`: estructura de la landing, colección
+  nativa de respaldo y preguntas frecuentes.
+
+### 14.2 Comportamiento validado
+
+- Marca y modelo se cargan progresivamente desde `/apps/ymm/*`.
+- El año es opcional y solo lista años válidos para el modelo.
+- El tipo de repuesto también es opcional; sin tipo se combinan las categorías
+  disponibles hasta un máximo inicial de 24 productos.
+- Con Honda CB 500, año 2026 y filtro de aceite se obtuvo un producto exacto:
+  `FILTRO DE ACEITE HONDA CB 500 HIFLOFILTRO HF138RC`, precio `$17.990`,
+  disponible y marcado `Compatible con tu moto`.
+- Con Honda CB 500 sin año y sin tipo se obtuvieron 19 repuestos; no se mostró
+  ninguna promesa de compatibilidad anual.
+- La colección nativa sigue disponible debajo del buscador para navegación
+  manual y como respaldo si el servicio falla.
+- Se revisó el diseño en escritorio y a 390 px de ancho; no se detectaron
+  errores en la consola del navegador.
+
+### 14.3 Medición incorporada
+
+El componente publica eventos para selección de marca, modelo y año, uso de
+`No conozco el año`, envío de búsqueda, resultados, ausencia de resultados,
+clic en producto y solicitud de ayuda de compatibilidad.
+
+### 14.4 Pendientes del propietario
+
+1. Revisar visualmente la landing en el enlace de vista previa.
+2. Probar motos frecuentes y verificar una muestra de productos con criterio
+   comercial.
+3. Aprobar los textos de compatibilidad y la experiencia móvil.
+4. Autorizar explícitamente la publicación cuando corresponda.
+5. Definir si se inicia la Fase 5: compatibilidad dentro de la ficha de producto.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.

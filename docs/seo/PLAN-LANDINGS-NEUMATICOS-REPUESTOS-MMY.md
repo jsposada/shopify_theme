@@ -1,7 +1,7 @@
 # Plan de implementación — landings de neumáticos y repuestos con buscadores
 
 **Creado:** 2026-09-24  
-**Estado:** propuesta pendiente de aprobación e implementación  
+**Estado:** fases 0 a 4 implementadas; landings en theme de vista previa, pendientes de aprobación y publicación
 **Proyecto Shopify:** `C:\JS\shopify`  
 **Motor de compatibilidad:** `C:\JS\bikerz_app\ymm`  
 **Documento principal relacionado:** `docs/seo/SEO-ROADMAP.md`
@@ -506,18 +506,18 @@ expuso ningún endpoint público.
 
 #### Tareas de Codex
 
-- `[ ]` Crear un componente nuevo; no publicar el prototipo actual sin corregirlo.
-- `[ ]` Cargar marcas y modelos de forma progresiva.
-- `[ ]` Mostrar únicamente años válidos para el modelo.
-- `[ ]` Incluir `No conozco el año`.
-- `[ ]` Ejecutar la consulta al servicio MMY.
-- `[ ]` Mostrar resumen de la moto seleccionada.
-- `[ ]` Mostrar y cambiar el tipo de repuesto.
-- `[ ]` Renderizar resultados con información comercial vigente de Shopify.
-- `[ ]` Mostrar el nivel correcto de compatibilidad.
-- `[ ]` Implementar estados de carga, error y cero resultados.
-- `[ ]` Conservar navegación manual por la colección.
-- `[ ]` Añadir medición de cada paso del embudo.
+- `[x]` Crear un componente nuevo; no publicar el prototipo actual sin corregirlo.
+- `[x]` Cargar marcas y modelos de forma progresiva.
+- `[x]` Mostrar únicamente años válidos para el modelo.
+- `[x]` Incluir `No conozco el año`.
+- `[x]` Ejecutar la consulta al servicio MMY.
+- `[x]` Mostrar resumen de la moto seleccionada.
+- `[x]` Mostrar y cambiar el tipo de repuesto.
+- `[x]` Renderizar resultados con información comercial vigente de Shopify.
+- `[x]` Mostrar el nivel correcto de compatibilidad.
+- `[x]` Implementar estados de carga, error y cero resultados.
+- `[x]` Conservar navegación manual por la colección.
+- `[x]` Añadir medición de cada paso del embudo.
 
 #### Tareas del propietario
 
@@ -536,6 +536,17 @@ expuso ningún endpoint público.
 - El usuario puede cambiar su moto sin recargar toda la experiencia.
 - El estado sin resultados tiene una salida útil.
 - La colección sigue siendo utilizable si el servicio MMY no responde.
+
+**Estado al 2026-09-24:** primera implementación terminada y cargada solamente
+en el theme no publicado `Codex landings 2026-09-24` (`166033588445`). La
+plantilla `collection.repuestos.json` usa un componente nuevo conectado al App
+Proxy `/apps/ymm/*`; mantiene la colección nativa como respaldo y no modifica
+el theme live. Se validaron dos recorridos reales con Honda CB 500: con año
+2026 y filtro de aceite devuelve una coincidencia exacta con precio y stock de
+Shopify; sin año y sin tipo devuelve 19 productos por modelo sin mostrar el
+sello `Compatible con tu moto`. La revisión responsive a 390 px y la consola
+del navegador no presentaron errores. Quedan pendientes la revisión comercial,
+la aprobación visual del propietario y la publicación explícita.
 
 ### Fase 5 — Compatibilidad en la ficha de producto
 
