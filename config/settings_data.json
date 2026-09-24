@@ -1070,7 +1070,6 @@
             "settings": {
               "heading": "New arivals",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_13.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "main-menu",
@@ -1083,7 +1082,6 @@
             "settings": {
               "heading": "Headlights & Lighting",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Group_1.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "main-menu",
@@ -1096,7 +1094,6 @@
             "settings": {
               "heading": "Interior Accessories",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_14.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "main-menu",
@@ -1109,7 +1106,6 @@
             "settings": {
               "heading": "Tires & Wheels",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_15.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1122,7 +1118,6 @@
             "settings": {
               "heading": "Tools & Equipment",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_16.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1135,7 +1130,6 @@
             "settings": {
               "heading": "Auto Safety & Security",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_17.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1148,7 +1142,6 @@
             "settings": {
               "heading": "Garage Tools",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Group_2.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1161,7 +1154,6 @@
             "settings": {
               "heading": "Original Battery Tools",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Group_3.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1174,7 +1166,6 @@
             "settings": {
               "heading": "Phone Displays",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_18.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "",
@@ -1187,7 +1178,6 @@
             "settings": {
               "heading": "Battery and adhesives",
               "link_title": "",
-              "icon_image": "shopify://shop_images/Icon_19.png",
               "sub_width": 900,
               "columns_desktop": 2,
               "menu": "main-menu",
@@ -1380,26 +1370,6 @@
       },
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": false,
-        "settings": {}
-      },
-      "3816433319858854054": {
-        "type": "shopify://apps/editorify-product-reviews/blocks/embed-collection-stars/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
-        "disabled": false,
-        "settings": {}
-      },
-      "14167878431489293998": {
-        "type": "shopify://apps/editorify-product-reviews/blocks/editorify_load/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
-        "disabled": false,
-        "settings": {}
-      },
-      "13158583206780813295": {
-        "type": "shopify://apps/editorify-product-reviews/blocks/embed-star-rating/f0f9fd22-9991-4d3f-8173-3b8c4b7c192f",
-        "disabled": false,
-        "settings": {}
-      },
-      "opinew-global-code": {
-        "type": "shopify://apps/opinew-reviews/blocks/global/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
         "disabled": false,
         "settings": {}
       }

@@ -51,7 +51,7 @@
               class="data-product"
               data-id="{{ block.id }}"
               data-image="{{ product.featured_image.src | product_img_url: 'compact' }}"
-              data-url="{{ product.url }}"
+              data-url="{{ product.url | within: collection }}"
               data-title="{{ product.title | truncatewords: 5 }}"
               data-alt="{{ product.title }}"
               data-local="{{ block.settings.from_ago }}"

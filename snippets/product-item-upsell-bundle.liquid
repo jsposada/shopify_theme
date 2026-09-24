@@ -14,7 +14,7 @@
   <div class="tp-prd-upsell__inner">
     {%- if card_product.featured_media -%}
       <div class="card__media relative">
-        <a class="tp__img-url" href="{{ card_product.url }}">
+        <a class="tp__img-url" href="{{ card_product.url | within: collection }}">
           <div class="tp__product-main-img">
             {%- if card_product.has_only_default_variant -%}
               {%- if img[0] != blank -%}

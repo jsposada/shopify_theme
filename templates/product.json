@@ -154,16 +154,11 @@
             "icon_3": "truck",
             "heading_3": ""
           }
-        },
-        "opinew-stars-plugin-product": {
-          "type": "shopify://apps/opinew-reviews/blocks/product-stars/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-          "settings": {}
         }
       },
       "block_order": [
         "ba616973-d50c-4a41-bf32-be6082527ac7",
         "title",
-        "opinew-stars-plugin-product",
         "price",
         "bb0e61cf-bc6f-48d4-9c9b-56ff606a4f27",
         "description",
@@ -287,15 +282,6 @@
     },
     "opinew-reviews-product-page-code": {
       "type": "apps",
-      "blocks": {
-        "opinew-reviews-widget": {
-          "type": "shopify://apps/opinew-reviews/blocks/product-widget/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "opinew-reviews-widget"
-      ],
       "settings": {
         "include_margins": true
       }

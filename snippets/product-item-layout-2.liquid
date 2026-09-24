@@ -50,7 +50,7 @@
       <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}">
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <a class="tp__img-url{% if enable_hover_image %} tp__hover-image{% endif %}" href="{{ card_product.url }}">
+            <a class="tp__img-url{% if enable_hover_image %} tp__hover-image{% endif %}" href="{{ card_product.url | within: collection }}">
               <div class="tp__product-main-img">
                 {%- if card_product.has_only_default_variant -%}
                   {%- if img[0] != blank -%}

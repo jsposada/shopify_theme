@@ -26,72 +26,108 @@
         "1e30824f-5745-4585-a960-e99fd2e1a5dc": {
           "type": "custom_tab",
           "settings": {
-            "title": "Do I need to open an account in order to shop with you?",
+            "title": "¿Cuánto tardan en despachar mi pedido y en qué horario entregan?",
             "tab_content": "content",
-            "content": "<p>No, you don’t need to. You can make purchases and check out as a guest everytime.</p><p>However, by setting up an account with us, it will allow you to order without having to enter your details every time you shop with us. You can sign up right now, or you can first start shopping and create your account before you check out at the shopping cart page.</p>",
+            "content": "<p>Si haces tu pedido antes de las 12:00 hrs. y el producto está en tienda, se despacha el mismo día. Si está en bodega, se despacha al día siguiente.</p>",
             "page": ""
           }
         },
         "f92a9bd5-01cc-4312-b4ba-e7ef3f5fdb7b": {
           "type": "custom_tab",
           "settings": {
-            "title": "How do I /create an account?",
+            "title": "¿Puedo retirar mi compra en el taller de Macul?",
             "tab_content": "content",
-            "content": "<p>Please click on “Login/Register” followed by ‘Create An Account’ and fill in your personal particulars.</p>",
+            "content": "<p>Sí. Cada producto está etiquetado según disponibilidad: retiro inmediato o en 1 a 2 días. Te avisamos cuando tu compra esté lista para que coordines tu retiro en Av. Pedro de Valdivia 5691, Macul.</p>",
             "page": ""
           }
         },
         "6d4ad014-4782-4618-aeac-510cdca75d93": {
           "type": "custom_tab",
           "settings": {
-            "title": "How do I order?",
+            "title": "¿Qué medios de pago puedo utilizar en el sitio web?",
             "tab_content": "content",
-            "content": "<p>Shop for the items you want and add it to your shopping cart. When you have finished, you can proceed to your shopping cart and check out. Check and ensure that all information is correct before confirming your purchases and payment.</p>",
+            "content": "<p>Aceptamos tarjetas de débito y transferencias bancarias.</p>",
             "page": ""
           }
         },
         "c86ce7c5-b49b-4858-9840-47d6364ab871": {
           "type": "custom_tab",
           "settings": {
-            "title": "How do I pay for my orders?",
+            "title": "Si pago con transferencia bancaria, ¿cuándo se procesa mi orden?",
             "tab_content": "content",
-            "content": "<p>We accept payments via Paypal and all major credit and debit cards such as Mastercard, VISA and American Express.</p>",
+            "content": "<p>Tu orden se procesa de inmediato; validamos tu transferencia al instante.</p>",
             "page": ""
           }
         },
         "70bcee1c-a314-4009-83af-00065a64edcc": {
           "type": "custom_tab",
           "settings": {
-            "title": "Can I amend and cancel my order?",
+            "title": "¿Cómo encuentro el neumático adecuado para mi moto?",
             "tab_content": "content",
-            "content": "<p>Unfortunately we are unable to cancel an order once it has been placed. This will allow us to pack your orders efficiently and to minimize errors. It is advisable to check your order before placing it.</p>",
+            "content": "<p>Puedes buscar ingresando el ancho, perfil y aro en los filtros del sitio. Si no tienes claras las medidas, escríbenos por WhatsApp indicando la marca y el modelo de tu moto.</p>",
             "page": ""
           }
         },
         "d5b32ddf-c81f-4ed7-9874-34b23d40932e": {
           "type": "custom_tab",
           "settings": {
-            "title": "I have a discount code, how can I use it?",
+            "title": "Me equivoqué de medida o producto, ¿puedo solicitar un cambio?",
             "tab_content": "content",
-            "content": "<p>Unfortunately we are unable to cancel an order once it has been placed. This will allow us to pack your orders efficiently and to minimize errors. It is advisable to check your order before placing it.</p>",
+            "content": "<p>Sí. Cuentas con una garantía de satisfacción de 5 días corridos desde la recepción para solicitar un cambio por un producto sin fallas. El producto debe estar sin uso y con su embalaje original. Revisa la información completa en nuestros términos y condiciones.</p>",
             "page": ""
           }
         },
         "f6a9ed00-da6b-4715-8c6c-6f2963850190": {
           "type": "custom_tab",
           "settings": {
-            "title": "How will I know if my order is confirmed?",
+            "title": "¿Puedo anular mi compra y solicitar la devolución del dinero?",
             "tab_content": "content",
-            "content": "<p>After you have placed your order, you will receive an acknowledgement e-mail from us to confirm that your orders have been received. However, do note that orders will only be shipped when your credit card payment has been approved and billing and delivery address is verified. Alternatively, you may check the status of your order in “My Account” if you are a registered user.</p>",
+            "content": "<p>Sí. Para compras realizadas en nuestro sitio web, puedes ejercer tu derecho a retracto dentro de los 10 días siguientes a la recepción.</p>",
             "page": ""
           }
         },
         "4d6fe986-f3d2-40bf-8c46-e8b0719ada8d": {
           "type": "custom_tab",
           "settings": {
-            "title": "I have problems adding items to my shopping cart?",
+            "title": "¿La compra de neumáticos incluye el montaje y balanceo en el taller?",
             "tab_content": "content",
-            "content": "<p>You will be able to add the items as long as it is available. There could be an instance where the item is in someone else’s shopping cart hence the status of the items is reflected as “Temporarily Unavailable”.</p>",
+            "content": "<p>Sí. La instalación y el balanceo computarizado en nuestro taller de Macul son gratuitos al comprar tus neumáticos en Bikerz.cl. Coordina tu visita para agendar la atención.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_j6rkqD": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo sé si mi moto usa neumáticos con cámara (TT) o sin cámara (TL)?",
+            "tab_content": "content",
+            "content": "<p>Por lo general, las ruedas con rayos usan neumáticos con cámara (Tube Type, TT), mientras que las ruedas de aleación usan neumáticos sin cámara (Tubeless, TL). En la ficha de cada producto indicamos el tipo de montaje, o puedes consultarnos por WhatsApp.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_UheqqG": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo elijo la talla correcta de casco al comprar por la web?",
+            "tab_content": "content",
+            "content": "<p>Mide la circunferencia de tu cabeza con una cinta métrica sobre las cejas y las orejas. Compara los centímetros con la tabla de tallas del modelo. Si estás entre dos medidas, elige la más ajustada, ya que los acolchados ceden con el uso.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_UVRGVy": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué es un neumático “cara blanca” (white wall)?",
+            "tab_content": "content",
+            "content": "<p>Es un neumático con una banda o franja blanca en el costado, típico de motos vintage o custom. También se le llama WW o white wall. Viene así fabricado, no es un accesorio que se agrega después. Escríbenos por WhatsApp con la medida y el modelo de tu moto y te confirmamos disponibilidad.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_78cprn": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Le puedo poner un neumático más ancho a mi moto?",
+            "tab_content": "content",
+            "content": "<p>Generalmente sí, pero depende del espacio disponible y de las especificaciones de la moto. En muchos casos se puede aumentar una medida y, en algunos modelos, hasta dos. Algunos reemplazos frecuentes son 130/70-17 por 140/70-17 y 150/70-17 por 160/60-17. Antes de hacer el cambio, consúltanos con la marca, el modelo y el año de tu moto para confirmar compatibilidad.</p>",
             "page": ""
           }
         }
@@ -104,19 +140,35 @@
         "70bcee1c-a314-4009-83af-00065a64edcc",
         "d5b32ddf-c81f-4ed7-9874-34b23d40932e",
         "f6a9ed00-da6b-4715-8c6c-6f2963850190",
-        "4d6fe986-f3d2-40bf-8c46-e8b0719ada8d"
+        "4d6fe986-f3d2-40bf-8c46-e8b0719ada8d",
+        "custom_tab_j6rkqD",
+        "custom_tab_UheqqG",
+        "custom_tab_UVRGVy",
+        "custom_tab_78cprn"
       ],
       "settings": {
         "container": "container",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "reset_spacing": false,
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "custom_liquid_LDnGgL": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Cuánto tardan en despachar mi pedido y en qué horario entregan?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Coordinamos el despacho dentro de 72 horas hábiles posteriores a la verificación de tu pago. Las entregas se realizan de lunes a viernes, entre las 9:00 y las 18:00 hrs.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Puedo retirar mi compra en el taller de Macul?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Sí, en los productos habilitados para retiro en tienda. Te avisaremos por correo cuando tu compra esté lista y dispondrás de 10 días para retirarla en Av. Pedro de Valdivia 5691, Macul.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Qué medios de pago puedo utilizar en el sitio web?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Aceptamos tarjetas de débito RedCompra, tarjetas de crédito (Visa, Mastercard, Diners Club y American Express) y transferencias bancarias.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Si pago con transferencia bancaria, ¿cuándo se procesa mi orden?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Las transferencias bancarias requieren un plazo de validación de hasta 48 horas hábiles. Una vez confirmado el pago, iniciamos la preparación de tu pedido.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Cómo encuentro el neumático adecuado para mi moto?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Puedes buscar ingresando el ancho, perfil y aro en los filtros del sitio. Si no tienes claras las medidas, escríbenos por WhatsApp indicando la marca y modelo de tu moto.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Qué cubre la garantía legal en neumáticos y cuánto tiempo dura?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Dispones de 6 meses de garantía legal por defectos de fabricación desde la entrega, validada con el número de serie o código DOT. No cubre desgaste normal, pinchazos, mala alineación, presión inadecuada, impactos ni competencias.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Me equivoqué de medida o producto, ¿puedo solicitar un cambio?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Sí, cuentas con una garantía de satisfacción de 5 días corridos desde la recepción para solicitar cambio (sin falla). El producto debe estar sin uso y con su embalaje original.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Puedo anular mi compra y solicitar la devolución del dinero?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Sí. Para compras realizadas en nuestro sitio web, puedes ejercer tu derecho a retracto dentro de los 10 días siguientes a la recepción.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿La compra de neumáticos incluye el montaje y balanceo en el taller?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Sí. La instalación y el balanceo computarizado en nuestro taller de Macul son gratuitos al comprar tus neumáticos en Bikerz.cl. Coordina tu visita para agendar la atención.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Cómo sé si mi moto usa neumáticos con cámara (TT) o sin cámara (TL)?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Por lo general, las ruedas con rayos usan neumáticos con cámara (Tube Type - TT), mientras que las ruedas de aleación usan neumáticos sin cámara (Tubeless - TL). En la ficha de cada producto indicamos el tipo de montaje, o puedes consultarnos por WhatsApp.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Qué antigüedad tienen los neumáticos que venden (código DOT)?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Solo vendemos neumáticos nuevos y de fabricación reciente, certificados bajo normativas internacionales DOT y E-Mark, con rotación activa de inventario.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Cómo elijo la talla correcta de casco al comprar por la web?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Mide la circunferencia de tu cabeza con una cinta métrica sobre las cejas y orejas. Compara los centímetros con la tabla de tallas del modelo; si estás entre dos medidas, elige la más ajustada, ya que los acolchados ceden con el uso.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"¿Qué es un neumático \\\"cara blanca\\\" (white wall)?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Es un neumático con una banda o franja blanca en el costado, típico de motos vintage o custom. También se le llama WW o white wall — viene así fabricado, no es un accesorio que se agrega después. Escríbenos por WhatsApp con la medida y el modelo de tu moto y te confirmamos disponibilidad.\"\n      }\n    }\n  ]\n}\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "breadcrumbs",
-    "main"
+    "main",
+    "custom_liquid_LDnGgL"
   ]
 }

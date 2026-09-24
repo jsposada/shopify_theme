@@ -14,8 +14,10 @@
       "blocks": {
         "slide_item_acWfR3": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Banner_web_campana_ofertas_aleatorias_bikerz_2026.png",
+            "image_alt": "",
             "image_link": "shopify://collections/ofertas",
             "image_mobile": "shopify://shop_images/Banner_mobile_campana_ofertas_aleatorias_bikerz_2026.png",
             "overlay_slide": 0,
@@ -34,9 +36,9 @@
         },
         "slide_item_wj6tFF": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
+            "image_alt": "",
             "image_link": "shopify://collections/neumaticos",
             "overlay_slide": 0,
             "content_box": "container",
@@ -57,6 +59,7 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cuidamos_tu_inversion_y_tu_camino_1.png",
+            "image_alt": "",
             "image_link": "shopify://pages/contacto",
             "overlay_slide": 0,
             "content_box": "container",
@@ -77,6 +80,7 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Te_asesoramos_por_WhatsApp_1.png",
+            "image_alt": "",
             "image_link": "https://api.whatsapp.com/send/?phone=%2B56977670252&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
             "overlay_slide": 0,
             "content_box": "container",
@@ -136,6 +140,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Xcelink_logo.png",
             "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=XCELINK"
           }
@@ -144,6 +149,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/ceat_logo.png",
             "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=CEAT"
           }
@@ -152,6 +158,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_michelin.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MICHELIN"
           }
@@ -160,6 +167,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Maggion_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MAGGION"
           }
@@ -168,6 +176,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_dunlop_3bca03f2-07ed-4f97-aa2a-e42f4b235dca.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=DUNLOP"
           }
@@ -176,6 +185,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Continental_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=CONTINENTAL"
           }
@@ -184,6 +194,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_rinaldi.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=RINALDI"
           }
@@ -192,6 +203,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Heidenau_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=HEIDENAU"
           }
@@ -200,6 +212,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_anlas.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=ANLAS"
           }
@@ -348,7 +361,7 @@
         "text_bRgyed": {
           "type": "text",
           "settings": {
-            "txt_content": "<p>En Bikerz encuentras equipamiento para mantener tu moto segura y lista para la ruta. Somos especialistas en neumáticos para motos y te asesoramos para elegir la medida, el tipo y la compatibilidad según tu modelo. También contamos con repuestos, cascos y lubricantes para viajes y mantenimiento preventivo.</p><p>Compra online con despacho a todo Chile o visita nuestra tienda y taller en Santiago para recibir atención especializada, instalación y mantenimiento. Explora nuestros <a href=\"/collections/neumaticos\"><strong>neumáticos para motos</strong></a>, <a href=\"/collections/repuestos\"><strong>repuestos</strong></a>, <a href=\"/collections/cascos\"><strong>cascos</strong></a> y <a href=\"/collections/lubricantes\"><strong>lubricantes</strong></a> antes de comprar. Reunimos catálogo, asesoría técnica y taller en un solo lugar para ayudarte a decidir con información y volver a la ruta con confianza.</p>"
+            "txt_content": "<p>En Bikerz encontrarás neumáticos, repuestos, cascos y lubricantes para mantener tu moto segura y lista para la ruta. Trabajamos con marcas como <strong>Michelin, Dunlop, Continental, CEAT, Rinaldi y Eurogrip</strong>, y te asesoramos para elegir la medida y compatibilidad exacta según tu modelo; desde motos urbanas y scooters hasta cruisers y adventure como BMW 1200, Honda Africa Twin o Dominar 400.<br/><br/>Compra online con <strong>despacho a todo Chile (RM y regiones) </strong>o visita nuestra tienda y taller en Macul, Santiago. Explora nuestros <a href=\"https://www.bikerz.cl/collections/neumaticos\">neumáticos para motos</a>, <a href=\"https://www.bikerz.cl/collections/repuestos\">repuestos</a>, <a href=\"https://www.bikerz.cl/collections/cascos\">cascos</a> y <a href=\"https://www.bikerz.cl/collections/lubricantes\">lubricantes</a> antes de comprar. Reunimos catálogo, asesoría técnica y taller en un solo lugar para ayudarte a decidir con información y volver a la ruta con confianza.</p>"
           }
         }
       },
@@ -375,10 +388,124 @@
         "height_tb": 300,
         "height_mb": 380,
         "height_mb_auto": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
         "reset_spacing": true,
         "margin_top": 0
+      }
+    },
+    "multicolumn_b9iRcT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4PA8Cf": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/cono-escudo-con-check.png",
+            "show_image": true,
+            "title": "Productos 100% originales",
+            "description": "<p>Neumáticos nuevos con certificación DOT y E-Mark, respaldados por 6 meses de garantía legal por defectos de fabricación.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_69ewCH": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/delivery-truck-line-icon.png",
+            "show_image": true,
+            "title": "Despacho a todo Chile",
+            "description": "<p>Coordinamos tu envío dentro de 72 horas hábiles tras confirmar el pago, a la Región Metropolitana y a regiones.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_YpXxz7": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/wrench-line-icon.png",
+            "show_image": true,
+            "title": "Compra simple, instalación incluida",
+            "description": "<p>Busca por medida o modelo, compra online o visita el taller, y recibe instalación y balanceo gratis en Macul.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_nPKzzb": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/star-line-icon.png",
+            "show_image": true,
+            "title": "Respaldados por nuestros clientes",
+            "description": "<p>4.6 estrellas en Google, con más de 160 reseñas verificadas de motociclistas reales.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_4PA8Cf",
+        "column_69ewCH",
+        "column_YpXxz7",
+        "column_nPKzzb"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".tp-multicolumn__item-img {width: 75%; margin-left: auto; margin-right: auto;}",
+        ".tp-multicolumn__item-info {margin-top: 18px;}",
+        ".tp-multicolumn__item-info h3 {font-size: 23px; line-height: 1.25; margin-bottom: 9px;}",
+        ".tp-multicolumn__item-info p {font-size: 14px; line-height: 1.5;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "¿Por qué elegir Bikerz?",
+        "description": "",
+        "text_alignment": "text-center",
+        "show_button": false,
+        "text_btn": "See more",
+        "container": "container",
+        "hover_effect": "translate_to_top",
+        "color_scheme": "",
+        "image_ratio": "1/1",
+        "custom_ratio": "21:9",
+        "height_mobile": "default",
+        "height_image_desktop": "80",
+        "height_image_tablet": "80",
+        "height_img_mobile": "64",
+        "column_alignment": "text-center",
+        "design_banner": "text-below-image",
+        "show_border_separate": false,
+        "button_label": "",
+        "button_link": "",
+        "button_type": "tp-btn__primary",
+        "nowrap_item": false,
+        "reset_spacing": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "tire_finder_yQeRC4": {
@@ -408,8 +535,8 @@
         ],
         "limit_products": 8,
         "columns_desktop": 4,
-        "columns_tablets": "1",
-        "columns_mobile": "1",
+        "columns_tablets": "2",
+        "columns_mobile": "2",
         "text_button": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -485,73 +612,6 @@
         "container": "container",
         "color_scheme": "background-1",
         "backgroud_box": true,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
-    },
-    "banner_image_V9tdfK": {
-      "type": "banner-image",
-      "blocks": {
-        "image_banner_3dQRYY": {
-          "type": "image_banner",
-          "settings": {
-            "color_scheme": "",
-            "subtext": "Floor mats & liners",
-            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
-            "content": "",
-            "link": "shopify://collections/bike-parts",
-            "btn_content": "Shop now",
-            "open_link": "_blank",
-            "type_button": "underline"
-          }
-        },
-        "image_banner_KdWHgh": {
-          "type": "image_banner",
-          "settings": {
-            "color_scheme": "",
-            "subtext": "Floor mats & liners",
-            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
-            "content": "",
-            "link": "shopify://collections/bikes",
-            "btn_content": "Shop now",
-            "open_link": "_blank",
-            "type_button": "underline"
-          }
-        }
-      },
-      "block_order": [
-        "image_banner_3dQRYY",
-        "image_banner_KdWHgh"
-      ],
-      "disabled": true,
-      "settings": {
-        "show_heading_header": false,
-        "heading": "Title",
-        "description": "",
-        "text_alignment": "text-center",
-        "container": "container",
-        "color_scheme": "",
-        "columns_desktop": 2,
-        "card_banner_style": "card",
-        "image_ratio": "original",
-        "custom_ratio": "21:9",
-        "hover_effect": "hvr_zoom",
-        "design_banner": "text-overlay-image",
-        "text_position": "center",
-        "height_mobile": "custom_height",
-        "height_image_desktop": "300",
-        "height_image_tablet": "250",
-        "height_img_mobile": "250",
-        "text_align": "text-left",
-        "font_size_sub_heading": 16,
-        "font_weight_sub_heading": 500,
-        "font_size_heading": 30,
-        "font_weight_heading": 500,
-        "font_size_description": 16,
-        "font_weight_description": 500,
-        "columns_tablets": "2",
-        "columns_mobile": "1",
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -675,7 +735,7 @@
           "settings": {
             "title": "Si pago con transferencia bancaria, ¿cuándo se procesa mi orden?",
             "tab_content": "content",
-            "content": "<p>Las transferencias bancarias requieren un plazo de validación de hasta 48 horas hábiles. Una vez confirmado el pago, iniciamos la preparación de tu pedido.</p>",
+            "content": "<p>Tu orden se procesa de inmediato; validamos tu transferencia al instante.</p>",
             "page": ""
           }
         },
@@ -684,7 +744,7 @@
           "settings": {
             "title": "¿Qué medios de pago puedo utilizar en el sitio web?",
             "tab_content": "content",
-            "content": "<p>Aceptamos tarjetas de débito RedCompra, tarjetas de crédito (Visa, Mastercard, Diners Club y American Express) y transferencias bancarias.</p>",
+            "content": "<p>Aceptamos tarjetas de débito y transferencias bancarias.</p>",
             "page": ""
           }
         },
@@ -693,7 +753,7 @@
           "settings": {
             "title": "¿Puedo retirar mi compra en el taller de Macul?",
             "tab_content": "content",
-            "content": "<p>Sí, en los productos habilitados para retiro en tienda. Te avisaremos por correo cuando tu compra esté lista y dispondrás de 10 días para retirarla en Av. Pedro de Valdivia 5691, Macul.</p>",
+            "content": "<p>Sí. Cada producto está etiquetado según disponibilidad: retiro inmediato o en 1 a 2 días. Te avisamos cuando tu compra esté lista para que coordines tu recogida en Av. Pedro de Valdivia 5691, Macul.</p>",
             "page": ""
           }
         },
@@ -702,7 +762,7 @@
           "settings": {
             "title": "¿Cuánto tardan en despachar mi pedido y en qué horario entregan?",
             "tab_content": "content",
-            "content": "<p>Coordinamos el despacho dentro de 72 horas hábiles posteriores a la verificación de tu pago. Las entregas se realizan de lunes a viernes, entre las 9:00 y las 18:00 hrs.</p>",
+            "content": "<p>Si haces tu pedido antes de las 12:00 hrs. y el producto está en tienda, se despacha el mismo día. Si está en bodega, se despacha al día siguiente.</p>",
             "page": ""
           }
         }
@@ -715,7 +775,7 @@
         "custom_tab_inireh",
         "custom_tab_ECfRnA"
       ],
-      "name": "Faq",
+      "name": "Preguntas frecuentes",
       "settings": {
         "container": "container",
         "color_scheme": "",
@@ -762,11 +822,11 @@
     "brand_pzpLjB",
     "collection_list_AyqJ4z",
     "banner_with_text_CCJXJr",
+    "multicolumn_b9iRcT",
     "tire_finder_yQeRC4",
     "product_tab_QLzGPL",
     "product_slider_UFDnf9",
     "product_countdown_TaexT7",
-    "banner_image_V9tdfK",
     "blocks_tCRLq6",
     "blog_posts_7CRjke",
     "faq_PngzMG",
