@@ -4,7 +4,7 @@
 **Proyecto:** Bikerz.cl  
 **Plan maestro:** `docs/seo/PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`  
 **Rama Shopify:** `codex/landings-neumaticos-repuestos`  
-**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY implementado, probado y preparado como servicio independiente para Easypanel; ninguno de los dos componentes está publicado.
+**Estado:** landing de neumáticos terminada y aprobada visualmente en escritorio; servicio MMY desplegado y validado mediante el App Proxy de Shopify; la landing de neumáticos continúa sin publicarse.
 
 ## 1. Resumen ejecutivo
 
@@ -327,19 +327,41 @@ La preparación local quedó en `C:\JS\bikerz_app` e incluye:
   cabeceras del proxy y comprobación `GET /healthz`.
 
 La suite completa del módulo YMM pasa con **39 pruebas**. Docker no está
-instalado en el equipo local, por lo que la construcción real de la imagen se
-validará en el primer despliegue de Easypanel.
+instalado en el equipo local; la construcción de la imagen quedó validada por
+el despliegue exitoso en Easypanel.
 
-### Pendientes operativos
+### Acciones operativas completadas
 
-1. Revisar y fusionar o desplegar la rama `codex/ymm-query-api`.
-2. Crear `bikerz-ymm-api` en el mismo proyecto de Easypanel.
-3. Cargar las variables mínimas de PostgreSQL, Storefront y App Proxy.
-4. Asignar un dominio HTTPS técnico al servicio y comprobar `/healthz`.
-5. Configurar el App Proxy de Shopify para `/apps/ymm`.
-6. Probar una búsqueda firmada desde `bikerz.cl`.
+1. Se desplegó el código de `codex/ymm-query-api`.
+2. Se creó `bikerz-ymm-api` en el mismo proyecto de Easypanel.
+3. Se cargaron las variables mínimas de PostgreSQL, Storefront y App Proxy.
+4. Se asignó un dominio HTTPS y se comprobó `/healthz`.
+5. Se configuró el App Proxy de Shopify para `/apps/ymm`.
+6. Se probó una búsqueda firmada desde `bikerz.cl`.
 
-No se ha creado ni modificado ningún servicio remoto de Easypanel y el App
-Proxy continúa sin configurar.
+### 13.1 Validación en Easypanel y Shopify
+
+El servicio quedó desplegado en:
+
+```text
+https://bikerz-ymm-api.dlvapy.easypanel.host
+```
+
+Resultados de la prueba del 24 de septiembre de 2026:
+
+- `/healthz` directo: `200`.
+- Endpoint MMY directo sin firma: `401`, comportamiento esperado.
+- `https://www.bikerz.cl/apps/ymm/makes`: `200`, confirmando el App Proxy real.
+- Marcas, modelos, años, tipos de repuesto y productos: cinco respuestas `200`.
+- Caso probado: Honda CB 500, año 2026, filtro de aceite.
+- Resultado: un producto con `match_level=exact_year` y URL pública válida.
+
+La firma creada con una credencial local histórica no coincidió con la
+aplicación desplegada. No se cambió el secreto de Easypanel: el recorrido real
+firmado por Shopify funcionó correctamente, demostrando que la configuración
+productiva es la válida.
+
+El backend de la Fase 3 queda operativo. El siguiente paso es iniciar la Fase 4
+y conectar la landing de repuestos a `/apps/ymm/*`.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
