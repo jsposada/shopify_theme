@@ -138,7 +138,7 @@
 }
 
 .tire-guide__header h2 {
-  font-size: clamp(2.6rem, 3vw, 3.6rem);
+  font-size: clamp(2.2rem, 2.4vw, 2.8rem);
   font-weight: 900;
   letter-spacing: -.02em;
   line-height: 1;
@@ -253,8 +253,14 @@
 .seo-tire-landing [id$='__product-grid'] { padding-top: .8rem; }
 .seo-tire-landing [id$='__product-grid'] h2 { font-weight: 900; text-transform: uppercase; }
 .seo-tire-landing [id$='__faq'] { background: #fff; }
-.seo-tire-landing [id$='__faq'] .container { max-width: 980px; }
-.seo-tire-landing [id$='__faq'] h2 { font-weight: 900; text-align: center; text-transform: uppercase; }
+.seo-tire-landing [id$='__faq'] .container { max-width: 1240px; }
+.seo-tire-landing [id$='__faq'] h2 {
+  font-size: clamp(2.2rem, 2.4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 @media (max-width: 990px) {
   .tire-landing-hero__proofs { grid-template-columns: 1fr; max-width: 560px; }
