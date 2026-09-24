@@ -246,13 +246,13 @@ La implementación local de la Fase 3 quedó terminada en `C:\JS\bikerz_app`, ra
 - Límite de uso en memoria sin conservar direcciones IP en texto claro.
 - Caché larga de navegación y caché corta de información comercial.
 - Paginación con cursor y un máximo de 24 productos por página.
-- Validación comercial en lote contra Shopify antes de devolver precio, imagen, URL y disponibilidad.
+- Validación comercial en lote mediante Shopify Storefront API antes de devolver precio, imagen, URL y disponibilidad.
 - Dependencias en un entorno virtual aislado mediante `requirements-ymm-api.txt`.
 - Contrato técnico en `C:\JS\bikerz_app\ymm\docs\query_api_contract.md`.
 
 ### 12.1 Evidencia automatizada
 
-- 32 pruebas YMM pasan.
+- 37 pruebas YMM pasan.
 - Las 11 pruebas históricas del importador y el ETL continúan pasando.
 - Se probaron firma válida, manipulación de parámetros, expiración, tienda incorrecta y solicitud sin firma.
 - Se probaron cursores, categorías permitidas, coincidencia `exact_year`, coincidencia `model_only`, año inexistente, producto retirado de Shopify y resultado vacío estable.
@@ -270,7 +270,11 @@ La implementación local de la Fase 3 quedó terminada en `C:\JS\bikerz_app`, ra
 - Una regla `unspecified` devolvió un producto al buscar solo por modelo.
 - Un tipo de repuesto válido sin coincidencias devolvió cero productos sin error.
 - Se detectaron 40 productos activos de PostgreSQL sin IDs Shopify completos; el servicio los excluye.
-- La consulta comercial real a Shopify devolvió una coincidencia exacta y cinco coincidencias por modelo, todas con el nivel correcto; la exacta incluyó URL pública y precio vigente.
+- La consulta comercial real mediante Storefront API devolvió una coincidencia exacta y cinco coincidencias por modelo, todas con el nivel correcto; la exacta incluyó URL pública, precio CLP y disponibilidad vigente.
+
+La arquitectura comercial quedó ajustada después de la revisión del propietario: `bikerz_app` resuelve únicamente la compatibilidad y Shopify Storefront API entrega los datos visibles del producto. Admin API ya no participa en las búsquedas de clientes. El servicio usa el token privado Storefront existente y reenvía la IP validada del comprador; conserva como respaldo el token público y el acceso tokenless soportado por la tienda.
+
+La prueba de extremo a extremo del endpoint local respondió HTTP 200 para Honda CB 500 2026 / filtro de aceite, con una coincidencia `exact_year`, precio CLP y URL pública. El servicio permaneció local y no se configuró todavía ningún App Proxy público.
 
 La base actual contiene 1.406 reglas `all_years`, 17.987 reglas `range` —1.593 con algún límite abierto— y 77 reglas `unspecified`. No contiene reglas `exact_vehicle`; el camino está implementado y probado estructuralmente, pero su primera validación productiva queda pendiente hasta que exista una regla aprobada de ese tipo.
 

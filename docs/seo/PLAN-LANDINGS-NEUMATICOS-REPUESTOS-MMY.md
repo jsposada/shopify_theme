@@ -250,7 +250,7 @@ Requisitos del servicio:
 - Distinguir coincidencia anual exacta de compatibilidad solo por modelo.
 - Implementar caché para marcas, modelos y años.
 - Aplicar límites de uso y registro de errores.
-- No exponer credenciales de PostgreSQL ni del Admin API en el navegador.
+- No exponer credenciales de PostgreSQL, Admin API ni el token privado Storefront en el navegador.
 - Devolver únicamente los datos necesarios para construir los resultados.
 
 ### 6.4 Decisión técnica de la fase 0
@@ -285,8 +285,9 @@ Reglas del contrato:
   `match_level=model_only`.
 - Solo se consultarán reglas `approved`, productos activos y productos con
   identificador Shopify conocido.
-- La respuesta comercial se validará en lote contra Shopify antes de devolver
-  título, URL, imagen, precio y disponibilidad.
+- La respuesta comercial se validará en lote mediante Shopify Storefront API,
+  en contexto Chile/español, antes de devolver título, URL, imagen, precio y
+  disponibilidad. Admin API no participará en las búsquedas públicas.
 - La primera página tendrá un máximo definido de resultados y continuará con
   cursor; no se enviará el catálogo completo al navegador.
 - Marcas, modelos y años tendrán caché larga; los resultados comerciales usarán
@@ -491,7 +492,7 @@ El buscador publica los eventos personalizados
 - La respuesta distingue de forma inequívoca la compatibilidad exacta y la compatibilidad solo por modelo.
 
 **Estado al 2026-09-24:** contrato e implementación local terminados en
-`C:\JS\bikerz_app`, rama `codex/ymm-query-api`. Las 32 pruebas YMM pasan y las
+`C:\JS\bikerz_app`, rama `codex/ymm-query-api`. Las 37 pruebas YMM pasan y las
 consultas de humo de solo lectura validaron marcas, modelos, años, `all_years`,
 rangos cerrados y abiertos, `unspecified`, cero resultados y el cruce comercial
 real con Shopify. La base actual no contiene reglas `exact_vehicle`; el camino
@@ -753,5 +754,6 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-015 | Se implementó localmente la plantilla `collection.neumaticos.json`, reutilizando el buscador y componentes del theme. Se validaron tres medidas reales y un caso vacío; todas las URLs filtradas conservaron el canonical de la colección. No se modificó el theme live. | Codex | Código local, Shopify Theme Check y comprobación de `/collections/neumaticos` |
 | 2026-09-24 | LMMY-016 | Se creó el theme no publicado `Codex landings 2026-09-24` (`166033588445`) y se validó la landing en escritorio y 390 px. El theme live `SEO` (`164560142557`) permanece intacto. | Codex | Vista previa de Shopify y pruebas en navegador |
 | 2026-09-24 | LMMY-017 | El propietario cerró la revisión visual de la landing de neumáticos después de compactar hero, buscador, resultados, guía, FAQ y filtros. La revisión móvil final continúa recomendada antes de publicar. | Propietario | Confirmación `Listo terminado esto` y documento de cierre |
-| 2026-09-24 | LMMY-018 | Se implementó el servicio FastAPI YMM aislado, con App Proxy firmado, consultas PostgreSQL de solo lectura, cachés, paginación, validación comercial en Shopify y errores estables. Pasan 32 pruebas y las pruebas de humo reales cubren reglas anuales, rangos, modelo sin año y cero resultados. No se desplegó el servicio. | Codex | `C:\JS\bikerz_app\ymm\docs\query_api_contract.md` y rama `codex/ymm-query-api` |
+| 2026-09-24 | LMMY-018 | Se implementó el servicio FastAPI YMM aislado, con App Proxy firmado, consultas PostgreSQL de solo lectura, cachés, paginación, validación comercial en Shopify y errores estables. Pasan 37 pruebas y las pruebas de humo reales cubren reglas anuales, rangos, modelo sin año y cero resultados. No se desplegó el servicio. | Codex | `C:\JS\bikerz_app\ymm\docs\query_api_contract.md` y rama `codex/ymm-query-api` |
+| 2026-09-24 | LMMY-019 | El propietario aprobó probar la arquitectura híbrida. `bikerz_app` conserva el cálculo de compatibilidad y Storefront API reemplaza Admin API para precio, disponibilidad, imagen, publicación y URL. La prueba real devolvió una coincidencia exacta y cinco por modelo, con precios CLP y URLs públicas. | Propietario / Codex | Prueba Storefront de solo lectura y 37 pruebas automatizadas |
 
