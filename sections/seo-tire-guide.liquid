@@ -1,0 +1,132 @@
+<section class="tire-guide section-py" style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="container">
+    <header class="tire-guide__header">
+      <p class="tire-landing-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h2>{{ section.settings.heading | escape }}</h2>
+      <p>{{ section.settings.intro | escape }}</p>
+    </header>
+
+    <div class="tire-guide__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'measure' -%}
+          <article class="tire-guide-card" {{ block.shopify_attributes }}>
+            <span class="tire-guide-card__code">{{ block.settings.code | escape }}</span>
+            <h3>{{ block.settings.heading | escape }}</h3>
+            <p>{{ block.settings.text | escape }}</p>
+            <strong>{{ block.settings.example | escape }}</strong>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <aside class="tire-guide-tip">
+      <div class="tire-guide-tip__icon" aria-hidden="true">i</div>
+      <div>
+        <h3>{{ section.settings.tip_heading | escape }}</h3>
+        <p>{{ section.settings.tip_text | escape }}</p>
+        <ul role="list">
+          <li>Confirma la medida en el manual o ficha técnica de tu moto.</li>
+          <li>Revisa el eje, el sentido de giro y los índices de carga y velocidad.</li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="tire-guide__next">
+      <article class="tire-guide-link-card">
+        <p class="tire-landing-eyebrow">Compara opciones</p>
+        <h3>Marcas de neumáticos disponibles</h3>
+        <p>Compara Dunlop, Michelin, Bridgestone, Continental y otras marcas según el inventario publicado y el tipo de uso que necesitas.</p>
+        <a href="#main-collection-product-grid">Ver neumáticos disponibles <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="tire-guide-link-card tire-guide-link-card--dark">
+        <p class="tire-landing-eyebrow">Taller Bikerz</p>
+        <h3>Instalación de neumáticos para motos</h3>
+        <p>Coordina la instalación y el balanceo en nuestro taller de Macul. La disponibilidad y las condiciones del servicio se confirman al agendar.</p>
+        <a href="/pages/servicios">Ver servicios <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Guía medida neumáticos",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "Asistencia para elegir"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Cómo identificar la medida correcta"
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Introducción",
+      "default": "Aprende a leer la nomenclatura del costado del neumático antes de elegir."
+    },
+    {
+      "type": "text",
+      "id": "tip_heading",
+      "label": "Título del consejo",
+      "default": "Consejo del taller Bikerz"
+    },
+    {
+      "type": "textarea",
+      "id": "tip_text",
+      "label": "Consejo",
+      "default": "Si compraste la moto usada, no te guíes solamente por la medida instalada. Contrástala con la recomendación del fabricante antes de comprar."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "measure",
+      "name": "Dato de la medida",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "code", "label": "Código", "default": "120" },
+        { "type": "text", "id": "heading", "label": "Título", "default": "Ancho nominal" },
+        { "type": "textarea", "id": "text", "label": "Explicación", "default": "El ancho nominal del neumático, expresado en milímetros." },
+        { "type": "text", "id": "example", "label": "Ejemplo", "default": "120 = 120 milímetros" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guía medida neumáticos",
+      "blocks": [
+        { "type": "measure" },
+        { "type": "measure" },
+        { "type": "measure" },
+        { "type": "measure" }
+      ]
+    }
+  ]
+}
+{% endschema %}

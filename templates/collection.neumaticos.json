@@ -9,34 +9,42 @@
  */
 {
   "sections": {
-    "breadcrumbs": {
-      "type": "breadcrumbs",
+    "hero": {
+      "type": "seo-tire-hero",
+      "blocks": {
+        "sizes": {
+          "type": "proof",
+          "settings": {
+            "text": "Medidas para distintos tipos de moto"
+          }
+        },
+        "shipping": {
+          "type": "proof",
+          "settings": {
+            "text": "Despacho a todo Chile"
+          }
+        },
+        "workshop": {
+          "type": "proof",
+          "settings": {
+            "text": "Instalación en nuestro taller de Macul"
+          }
+        }
+      },
+      "block_order": [
+        "sizes",
+        "shipping",
+        "workshop"
+      ],
       "settings": {
-        "container": "container",
-        "color_scheme": "background-1",
-        "text_alignment": "text-left",
-        "position_content": "column",
-        "heading_override": "Neumáticos para motos en Chile",
-        "padding_top": 40,
-        "padding_bottom": 16
-      }
-    },
-    "intro": {
-      "type": "seo-collection-intro",
-      "settings": {
-        "container": "container",
-        "content": "<p>Encuentra la medida correcta, compara marcas y compra con despacho a todo Chile o instalación en nuestro taller de Santiago.</p>",
-        "color_scheme": "background-1",
-        "padding_top": 0,
-        "padding_bottom": 24
+        "eyebrow": "Neumáticos Bikerz",
+        "heading": "Neumáticos para motos en Chile",
+        "intro": "<p>Encuentra la medida correcta, compara marcas y compra con despacho a todo Chile o instalación en nuestro taller de Santiago.</p>",
+        "image": ""
       }
     },
     "tire-finder": {
       "type": "tire-finder",
-      "custom_css": [
-        ".pf-wrapper {margin-top: 0;}",
-        ".pf-inner {padding-left: 20px; padding-right: 20px;}"
-      ],
       "settings": {
         "title": "Encuentra tu neumático",
         "help_text": "Ingresa la medida que aparece en el costado de tu neumático.",
@@ -85,86 +93,60 @@
         "reset_spacing": false
       }
     },
-    "guidance": {
-      "type": "multicolumn",
+    "guide": {
+      "type": "seo-tire-guide",
       "blocks": {
-        "measure": {
-          "type": "column",
+        "width": {
+          "type": "measure",
           "settings": {
-            "col_width_desktop": "lg:w-1/3",
-            "col_width_tablets": "md:w-1/3",
-            "col_width_mobile": "w-full",
-            "show_image": false,
-            "title": "Cómo identificar la medida correcta",
-            "description": "<p>Revisa el costado del neumático y confirma ancho, perfil y aro. También verifica el eje, los índices de carga y velocidad y la recomendación del fabricante.</p>",
-            "btn_content": "Ver guía de medidas",
-            "open_link": "_self",
-            "link": "/blogs/motos-chile/medidas-europeas-vs-americanas-cual-es-la-diferencia-en-los-neumaticos-de-moto",
-            "type_button": "underline"
+            "code": "120",
+            "heading": "Ancho nominal",
+            "text": "Indica el ancho nominal del neumático expresado en milímetros.",
+            "example": "120 = 120 milímetros"
           }
         },
-        "brands": {
-          "type": "column",
+        "profile": {
+          "type": "measure",
           "settings": {
-            "col_width_desktop": "lg:w-1/3",
-            "col_width_tablets": "md:w-1/3",
-            "col_width_mobile": "w-full",
-            "show_image": false,
-            "title": "Marcas de neumáticos disponibles",
-            "description": "<p>Compara Dunlop, Michelin, Bridgestone, Continental y otras marcas según el inventario publicado y el tipo de uso que necesitas.</p>",
-            "btn_content": "",
-            "open_link": "_self",
-            "link": "",
-            "type_button": "underline"
+            "code": "70",
+            "heading": "Perfil o aspecto",
+            "text": "Representa la altura del flanco como porcentaje del ancho nominal.",
+            "example": "70 = 70% del ancho"
           }
         },
-        "workshop": {
-          "type": "column",
+        "rim": {
+          "type": "measure",
           "settings": {
-            "col_width_desktop": "lg:w-1/3",
-            "col_width_tablets": "md:w-1/3",
-            "col_width_mobile": "w-full",
-            "show_image": false,
-            "title": "Instalación de neumáticos para motos",
-            "description": "<p>Coordina la instalación y el balanceo en nuestro taller de Macul. La disponibilidad y las condiciones del servicio se confirman al agendar.</p>",
-            "btn_content": "Ver servicios",
-            "open_link": "_self",
-            "link": "/pages/servicios",
-            "type_button": "underline"
+            "code": "R17",
+            "heading": "Construcción y aro",
+            "text": "La R indica construcción radial y el número final corresponde al diámetro de la llanta en pulgadas.",
+            "example": "17 = llanta aro 17"
+          }
+        },
+        "service": {
+          "type": "measure",
+          "settings": {
+            "code": "58W",
+            "heading": "Índices de servicio",
+            "text": "El número y la letra indican los índices de carga y velocidad. Deben respetar la especificación de la moto.",
+            "example": "Confirma ambos índices antes de comprar"
           }
         }
       },
       "block_order": [
-        "measure",
-        "brands",
-        "workshop"
+        "width",
+        "profile",
+        "rim",
+        "service"
       ],
       "settings": {
-        "show_heading_header": false,
-        "heading": "",
-        "description": "",
-        "text_alignment": "text-left",
-        "show_button": false,
-        "text_btn": "",
-        "container": "container",
-        "hover_effect": "hvr_none",
-        "color_scheme": "",
-        "image_ratio": "original",
-        "custom_ratio": "21:9",
-        "height_mobile": "default",
-        "height_image_desktop": "0",
-        "height_image_tablet": "0",
-        "height_img_mobile": "0",
-        "column_alignment": "text-left",
-        "design_banner": "text-below-image",
-        "show_border_separate": true,
-        "button_label": "",
-        "button_link": "",
-        "button_type": "tp-btn__primary",
-        "nowrap_item": false,
-        "reset_spacing": false,
-        "padding_top": 24,
-        "padding_bottom": 40
+        "eyebrow": "Asistencia para elegir",
+        "heading": "Cómo identificar la medida correcta",
+        "intro": "Aprende a leer la nomenclatura del costado del neumático antes de elegir.",
+        "tip_heading": "Consejo del taller Bikerz",
+        "tip_text": "Si compraste la moto usada, no te guíes solamente por la medida instalada. Contrástala con la recomendación del fabricante antes de comprar.",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "faq": {
@@ -235,11 +217,10 @@
     }
   },
   "order": [
-    "breadcrumbs",
-    "intro",
+    "hero",
     "tire-finder",
     "product-grid",
-    "guidance",
+    "guide",
     "faq"
   ]
 }

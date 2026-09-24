@@ -58,19 +58,31 @@
 {%- assign tire_finder_ancho_id = tire_finder_id | append: '-ancho' -%}
 {%- assign tire_finder_aspecto_id = tire_finder_id | append: '-aspecto' -%}
 {%- assign tire_finder_aro_id = tire_finder_id | append: '-aro' -%}
+{%- assign tire_finder_use_id = tire_finder_id | append: '-uso' -%}
 {%- assign tire_finder_button_id = tire_finder_id | append: '-buscar' -%}
 {%- assign tire_finder_instructions_id = tire_finder_id | append: '-instrucciones' -%}
 {%- assign tire_finder_status_id = tire_finder_id | append: '-estado' -%}
 {%- assign tire_finder_updates_id = tire_finder_id | append: '-actualizaciones' -%}
+{%- assign tire_usage_filter = nil -%}
+{%- for filter in collection.filters -%}
+  {%- assign tire_filter_label = filter.label | downcase -%}
+  {%- if tire_filter_label contains 'uso' -%}
+    {%- assign tire_usage_filter = filter -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 
-<div class="pf-wrapper" id="{{ tire_finder_id }}" data-tire-finder aria-busy="true">
+<div class="pf-wrapper{% if request.page_type == 'collection' %} pf-wrapper--landing{% endif %}" id="{{ tire_finder_id }}" data-tire-finder aria-busy="true">
   <div class="pf-inner page-width">
-
+    <div class="pf-accent" aria-hidden="true"></div>
     <div class="pf-header">
-      <h2 class="pf-title">{{ section.settings.title }}</h2>
-      {%- if section.settings.help_text != blank -%}
-        <p class="pf-help">{{ section.settings.help_text | escape }}</p>
-      {%- endif -%}
+      <span class="pf-header-icon" aria-hidden="true">⌕</span>
+      <div>
+        <h2 class="pf-title">{{ section.settings.title }}</h2>
+        {%- if section.settings.help_text != blank -%}
+          <p class="pf-help">{{ section.settings.help_text | escape }}</p>
+        {%- endif -%}
+      </div>
     </div>
 
     <p id="{{ tire_finder_instructions_id }}" class="pf-sr-only">
@@ -125,6 +137,24 @@
         </div>
       </div>
 
+      {%- if tire_usage_filter != nil -%}
+        <div class="pf-step" data-step="4">
+          <div class="pf-step-number" aria-hidden="true">4</div>
+          <div class="pf-field">
+            <label class="pf-label" for="{{ tire_finder_use_id }}">Tipo de uso <span class="pf-optional">(opcional)</span></label>
+            <div class="pf-select-wrap">
+              <select id="{{ tire_finder_use_id }}" class="pf-select" data-param-name="{{ tire_usage_filter.param_name | escape }}">
+                <option value="">— Todos los usos —</option>
+                {%- for value in tire_usage_filter.values -%}
+                  <option value="{{ value.value | escape }}"{% if value.active %} selected{% endif %}>{{ value.label | escape }}</option>
+                {%- endfor -%}
+              </select>
+              <span class="pf-select-icon" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
       <!-- Botón de búsqueda -->
       <div class="pf-step pf-step--action">
         <button id="{{ tire_finder_button_id }}" class="pf-btn" type="button" aria-describedby="{{ tire_finder_instructions_id }}" disabled>
@@ -135,7 +165,11 @@
     </div>
 
     <!-- Estado de carga / error -->
-    <div id="{{ tire_finder_status_id }}" class="pf-status" role="status" aria-live="polite" aria-atomic="true" style="display:none;"></div>
+    <div id="{{ tire_finder_status_id }}" class="pf-status" role="status" aria-live="polite" aria-atomic="true" style="display:none;">
+      <span class="pf-status-icon" aria-hidden="true"></span>
+      <span class="pf-status-message"></span>
+      <button class="pf-status-clear" type="button">Limpiar filtros</button>
+    </div>
     <div id="{{ tire_finder_updates_id }}" class="pf-sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
   </div>
@@ -162,6 +196,10 @@
     font-family: 'Arial Narrow', Arial, sans-serif;
     border-top: none;
     border-bottom: none;
+  }
+
+  .pf-accent {
+    display: none;
   }
 
   .pf-inner {
@@ -372,12 +410,180 @@
     color: #FF6600;
   }
 
+  .pf-status-icon,
+  .pf-status-clear {
+    display: none;
+  }
+
+  .pf-wrapper--landing {
+    background: transparent;
+    margin: 0;
+    padding: 0 0 6.4rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  .pf-wrapper--landing .pf-inner {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 22px 55px rgba(18, 18, 18, .16);
+    margin-bottom: -5.2rem;
+    max-width: min(1440px, calc(100% - 3rem));
+    overflow: hidden;
+    padding: 0 2.8rem 2.8rem;
+    transform: translateY(-5.2rem);
+  }
+
+  .pf-wrapper--landing .pf-accent {
+    background: var(--pf-accent);
+    display: block;
+    height: 7px;
+    margin: 0 -2.8rem 2.6rem;
+  }
+
+  .pf-wrapper--landing .pf-header {
+    align-items: center;
+    display: flex;
+    gap: 1.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .pf-wrapper--landing .pf-header-icon {
+    align-items: center;
+    background: #17191b;
+    border-radius: 9px;
+    color: var(--pf-accent);
+    display: flex;
+    flex: 0 0 46px;
+    font-family: Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    height: 46px;
+    justify-content: center;
+    transform: rotate(-20deg);
+  }
+
+  .pf-wrapper--landing .pf-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.6rem, 3vw, 3.5rem);
+  }
+
+  .pf-wrapper--landing .pf-help {
+    margin-top: .5rem;
+  }
+
+  .pf-wrapper--landing .pf-card {
+    grid-template-columns: repeat(4, minmax(150px, 1fr)) minmax(190px, .9fr);
+    gap: 1.2rem;
+  }
+
+  .pf-wrapper--landing .pf-step {
+    display: block;
+  }
+
+  .pf-wrapper--landing .pf-step-number {
+    display: none;
+  }
+
+  .pf-wrapper--landing .pf-label {
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
+  }
+
+  .pf-wrapper--landing .pf-select,
+  .pf-wrapper--landing .pf-btn {
+    border-radius: 7px;
+    height: 48px;
+  }
+
+  .pf-wrapper--landing .pf-select {
+    background: #f2f3f5;
+    border-color: transparent;
+    font-family: var(--font-body-family);
+    font-size: 1.45rem;
+    font-weight: 700;
+  }
+
+  .pf-wrapper--landing .pf-select:hover:not(:disabled) {
+    border-color: #d3d5d8;
+  }
+
+  .pf-wrapper--landing .pf-btn {
+    box-shadow: 0 8px 18px rgba(255, 102, 0, .2);
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+  }
+
+  .pf-wrapper--landing .pf-btn:disabled {
+    opacity: .48;
+  }
+
+  .pf-wrapper--landing .pf-status {
+    align-items: center;
+    background: #eef4ff;
+    border: 1px solid #dce7f7;
+    border-radius: 8px;
+    color: #26384f;
+    display: flex;
+    gap: 1.2rem;
+    line-height: 1.45;
+    margin-top: 2rem;
+    min-height: 54px;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .pf-wrapper--landing .pf-status-icon {
+    align-items: center;
+    background: var(--pf-accent);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    flex: 0 0 28px;
+    font-weight: 900;
+    height: 28px;
+    justify-content: center;
+  }
+
+  .pf-wrapper--landing .pf-status-message {
+    flex: 1;
+    font-weight: 700;
+  }
+
+  .pf-wrapper--landing .pf-status-clear {
+    background: #fff;
+    border: 1px solid #d6d9de;
+    border-radius: 5px;
+    color: #222;
+    cursor: pointer;
+    display: none;
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    font-weight: 800;
+    min-height: 34px;
+    padding: .7rem 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .pf-wrapper--landing .pf-status.has-clear .pf-status-clear { display: inline-flex; }
+  .pf-wrapper--landing .pf-status.is-warning { background: #fff5da; border-color: #f1d690; color: #614900; }
+  .pf-wrapper--landing .pf-status.is-warning .pf-status-icon { background: #c78000; }
+  .pf-wrapper--landing .pf-status.is-error { background: #fff0ed; border-color: #f2c7bf; color: #8f2a1b; }
+  .pf-wrapper--landing .pf-status.is-error .pf-status-icon { background: #b73a26; }
+  .pf-wrapper--landing .pf-status.is-empty { background: #f1f2f3; border-color: #d9dadd; color: #3c4145; }
+  .pf-wrapper--landing .pf-status.is-empty .pf-status-icon { background: #656a6e; }
+
   @media (max-width: 960px) {
     .pf-card {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
     .pf-step--action {
+      grid-column: 1 / -1;
+    }
+    .pf-wrapper--landing .pf-card {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .pf-wrapper--landing .pf-step--action {
       grid-column: 1 / -1;
     }
   }
@@ -393,6 +599,20 @@
       grid-template-columns: 1fr;
       gap: 14px;
     }
+    .pf-wrapper--landing { padding-bottom: 3.5rem; }
+    .pf-wrapper--landing .pf-inner {
+      border-radius: 9px;
+      margin-bottom: -3.8rem;
+      max-width: calc(100% - 2.4rem);
+      padding: 0 1.6rem 1.8rem;
+      transform: translateY(-3.8rem);
+    }
+    .pf-wrapper--landing .pf-accent { margin: 0 -1.6rem 2rem; }
+    .pf-wrapper--landing .pf-header { align-items: flex-start; }
+    .pf-wrapper--landing .pf-header-icon { flex-basis: 40px; height: 40px; }
+    .pf-wrapper--landing .pf-card { grid-template-columns: 1fr; }
+    .pf-wrapper--landing .pf-status { align-items: flex-start; flex-wrap: wrap; }
+    .pf-wrapper--landing .pf-status-clear { margin-left: 4rem; }
     .pf-select,
     .pf-btn {
       height: 42px;
@@ -432,10 +652,15 @@
     const selectAncho   = finderEl.querySelector('#{{ tire_finder_ancho_id }}');
     const selectAspecto = finderEl.querySelector('#{{ tire_finder_aspecto_id }}');
     const selectAro     = finderEl.querySelector('#{{ tire_finder_aro_id }}');
+    const selectUse     = finderEl.querySelector('#{{ tire_finder_use_id }}');
     const btnSearch     = finderEl.querySelector('#{{ tire_finder_button_id }}');
     const statusEl      = finderEl.querySelector('#{{ tire_finder_status_id }}');
+    const statusIconEl  = statusEl.querySelector('.pf-status-icon');
+    const statusMessageEl = statusEl.querySelector('.pf-status-message');
+    const statusClearEl = statusEl.querySelector('.pf-status-clear');
     const updatesEl     = finderEl.querySelector('#{{ tire_finder_updates_id }}');
     const steps         = finderEl.querySelectorAll('.pf-step[data-step]');
+    const USAGE_PARAM_NAME = selectUse?.dataset.paramName || '';
 
     // ─────────────────────────────────────────────
     // ESTADO LOCAL
@@ -447,10 +672,12 @@
     // ─────────────────────────────────────────────
     // HELPERS
     // ─────────────────────────────────────────────
-    function showStatus(msg, isError = false) {
-      statusEl.textContent = msg;
-      statusEl.className = 'pf-status' + (isError ? ' is-error' : '');
-      statusEl.style.display = 'block';
+    function showStatus(msg, type = 'info', showClear = false) {
+      const iconByType = { info: '✓', warning: '!', error: '!', empty: '–' };
+      statusMessageEl.textContent = msg;
+      statusIconEl.textContent = iconByType[type] || '✓';
+      statusEl.className = `pf-status${type === 'info' ? '' : ` is-${type}`}${showClear ? ' has-clear' : ''}`;
+      statusEl.style.display = 'flex';
     }
     function hideStatus() { statusEl.style.display = 'none'; }
 
@@ -487,7 +714,8 @@
         const isActive =
           (n === '1' && selectAncho.value) ||
           (n === '2' && selectAspecto.value) ||
-          (n === '3' && selectAro.value);
+          (n === '3' && selectAro.value) ||
+          (n === '4' && selectUse?.value);
 
         s.classList.toggle('is-active', Boolean(isActive));
       });
@@ -704,22 +932,24 @@
       const selected = {
         ancho: params.get(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`) || '',
         aspecto: params.get(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`) || '',
-        aro: params.get(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`) || ''
+        aro: params.get(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`) || '',
+        uso: USAGE_PARAM_NAME ? params.get(USAGE_PARAM_NAME) || '' : ''
       };
 
-      if (!selected.ancho && !selected.aspecto && !selected.aro) return false;
+      if (!selected.ancho && !selected.aspecto && !selected.aro && !selected.uso) return false;
 
       if ([...selectAncho.options].some(option => option.value === selected.ancho)) selectAncho.value = selected.ancho;
       if ([...selectAspecto.options].some(option => option.value === selected.aspecto)) selectAspecto.value = selected.aspecto;
       if ([...selectAro.options].some(option => option.value === selected.aro)) selectAro.value = selected.aro;
+      if (selectUse && [...selectUse.options].some(option => option.value === selected.uso)) selectUse.value = selected.uso;
       repopulate(null);
 
       if (RESULTS_COUNT === 0) {
-        showStatus('No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.');
+        showStatus('No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.', 'empty', true);
       } else {
         const measurement = selectedMeasurement();
         if (measurement) {
-          showStatus(`Medida seleccionada: ${measurement}. Mostrando los neumáticos disponibles.`);
+          showStatus(`Medida seleccionada: ${measurement}. Mostrando los neumáticos disponibles.`, 'info', true);
         }
       }
 
@@ -733,20 +963,20 @@
       const token = getToken();
 
       if (!token) {
-        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
+        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', 'error');
         selectAncho.innerHTML = '<option value="">Token requerido</option>';
         setLoading(false);
         return;
       }
 
-      showStatus('Cargando medidas disponibles...');
+      showStatus('Cargando medidas disponibles...', 'info');
 
       try {
         const products = await fetchAllProducts(token);
         allCombinations = parseCombinations(products);
 
         if (allCombinations.length === 0) {
-          showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
+          showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', 'error');
           return;
         }
 
@@ -759,7 +989,7 @@
 
       } catch (err) {
         console.error('[Tire Finder] Error:', err);
-        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', true);
+        showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', 'error');
         selectAncho.innerHTML = '<option value="">Error de carga</option>';
       } finally {
         setLoading(false);
@@ -772,7 +1002,7 @@
     function handleSelectionChange(changedSelect) {
       repopulate(changedSelect);
       if (REQUIRE_METRIC_PROFILE && selectAncho.value && ((requiresProfile(selectAncho.value) && !selectAspecto.value) || !selectAro.value)) {
-        showStatus('Completa perfil y aro para buscar la medida correcta.');
+        showStatus('Completa perfil y aro para buscar la medida correcta.', 'warning');
       } else {
         hideStatus();
       }
@@ -781,6 +1011,18 @@
     selectAncho.addEventListener('change',   () => handleSelectionChange('ancho'));
     selectAspecto.addEventListener('change', () => handleSelectionChange('aspecto'));
     selectAro.addEventListener('change',     () => handleSelectionChange('aro'));
+    selectUse?.addEventListener('change', () => setStepActive());
+
+    statusClearEl.addEventListener('click', () => {
+      const params = new URLSearchParams();
+      const currentParams = new URLSearchParams(window.location.search);
+      ['preview_theme_id', 'view'].forEach(paramName => {
+        const value = currentParams.get(paramName);
+        if (value) params.append(paramName, value);
+      });
+      const query = params.toString();
+      window.location.href = `${COLLECTION_URL}${query ? `?${query}` : ''}`;
+    });
 
     // ─────────────────────────────────────────────
     // BÚSQUEDA — aplica solo los filtros con valor
@@ -790,9 +1032,10 @@
       const ancho   = selectAncho.value;
       const aspecto = selectAspecto.value;
       const aro     = selectAro.value;
+      const uso     = selectUse?.value || '';
 
       if (!aro || (requiresProfile(ancho) && !aspecto)) {
-        showStatus('Completa perfil y aro para buscar la medida correcta.');
+        showStatus('Completa perfil y aro para buscar la medida correcta.', 'warning');
         publishEvent('bikerz:tire_finder_incomplete', {
           source: FINDER_SOURCE,
           collection_handle: COLLECTION_HANDLE
@@ -810,6 +1053,9 @@
         params.append(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`, aspecto);
       }
       params.append(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`, aro);
+      if (uso && USAGE_PARAM_NAME) {
+        params.append(USAGE_PARAM_NAME, uso);
+      }
 
       // Conserva el contexto técnico cuando la landing se revisa en un theme de vista previa.
       const currentParams = new URLSearchParams(window.location.search);
@@ -823,7 +1069,8 @@
         collection_handle: COLLECTION_HANDLE,
         ancho,
         perfil: aspecto,
-        aro
+        aro,
+        uso
       });
 
       window.location.href = `${COLLECTION_URL}?${params.toString()}`;
