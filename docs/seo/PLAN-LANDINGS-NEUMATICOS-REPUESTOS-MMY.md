@@ -329,14 +329,14 @@ modificó ni desplegó el theme live.
 
 #### Tareas de Codex
 
-- `[ ]` Crear wireframe de escritorio y móvil para ambas landings.
-- `[ ]` Definir estados del buscador de neumáticos: inicial, cargando, incompleto, válido, sin resultados y error.
-- `[ ]` Definir estados MMY: inicial, marca elegida, modelo elegido, año exacto, sin año, buscando, resultados, sin resultados y error.
-- `[ ]` Redactar todos los textos de interfaz y compatibilidad.
-- `[ ]` Definir el comportamiento sin JavaScript: las colecciones y productos deben seguir siendo navegables.
-- `[ ]` Definir cómo se mostrará el tipo de repuesto.
-- `[ ]` Definir dónde aparecerá `Cambiar moto`.
-- `[ ]` Definir el enlace y mensaje de ayuda por WhatsApp.
+- `[x]` Crear wireframe de escritorio y móvil para ambas landings.
+- `[x]` Definir estados del buscador de neumáticos: inicial, cargando, incompleto, válido, sin resultados y error.
+- `[x]` Definir estados MMY: inicial, marca elegida, modelo elegido, año exacto, sin año, buscando, resultados, sin resultados y error.
+- `[x]` Redactar todos los textos de interfaz y compatibilidad.
+- `[x]` Definir el comportamiento sin JavaScript: las colecciones, categorías, filtros y productos siguen siendo navegables debajo del buscador.
+- `[x]` Definir cómo se mostrará el tipo de repuesto: cuarto selector, habilitado después de elegir el modelo y opcional por defecto.
+- `[x]` Definir dónde aparecerá `Cambiar moto`: dentro del resumen persistente de la selección, antes de los resultados.
+- `[x]` Definir el enlace y mensaje de ayuda por WhatsApp: `wa.me/56977670252` con una solicitud breve de confirmación de repuesto.
 
 #### Tareas del propietario
 
@@ -349,6 +349,10 @@ modificó ni desplegó el theme live.
 
 - Todos los estados tienen diseño y texto aprobado.
 - No quedan decisiones funcionales críticas para comenzar el código.
+
+**Estado al 2026-09-24:** propuesta visual y funcional preparada en escritorio y
+móvil, con todos los estados interactivos. Pendiente de revisión y aprobación
+del propietario antes de comenzar código de las landings.
 
 ### Fase 2 — Landing de neumáticos
 
@@ -670,4 +674,5 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-009 | Una consulta PostgreSQL de solo lectura permitió proponer las seis categorías iniciales: pastillas de freno, filtros de aceite, baterías, filtros de aire, cadenas y kits de transmisión. | Codex | Conteos documentados en 6.5; aprobación del propietario pendiente |
 | 2026-09-24 | LMMY-010 | El propietario aprobó las seis categorías como alcance inicial. Agregar más categorías queda como pendiente posterior, sujeto a inventario, demanda y compatibilidad publicada. | Propietario | Confirmación en esta conversación |
 | 2026-09-24 | LMMY-011 | Se preservó la eliminación aprobada de `dev/app.log` en el commit `d8d29a4` y se creó `codex/ymm-query-api`. La Fase 0 quedó completada. | Codex | Git de `C:\JS\bikerz_app` |
+| 2026-09-24 | LMMY-012 | Se preparó el prototipo interactivo de escritorio y móvil para neumáticos y repuestos, con seis estados del buscador por medida y nueve estados MMY, fallback navegable, resumen de moto, mensajes de certeza y salida por WhatsApp. | Codex | `landing-wireframes.html`; aprobación visual pendiente |
 
