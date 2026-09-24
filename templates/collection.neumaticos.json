@@ -67,7 +67,7 @@
         "filter"
       ],
       "settings": {
-        "heading": "Neumáticos disponibles",
+        "heading": "",
         "empty_heading": "No encontramos coincidencias publicadas",
         "empty_message": "No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.",
         "container": "container",
