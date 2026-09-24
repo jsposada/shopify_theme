@@ -551,6 +551,10 @@
     font-weight: 700;
   }
 
+  .pf-wrapper--landing .pf-status-measurement {
+    font-weight: 900;
+  }
+
   .pf-wrapper--landing .pf-status-clear {
     background: #fff;
     border: 1px solid #d6d9de;
@@ -681,6 +685,20 @@
       statusEl.className = `pf-status${type === 'info' ? '' : ` is-${type}`}${showClear ? ' has-clear' : ''}`;
       statusEl.style.display = 'flex';
     }
+
+    function showMeasurementStatus(measurement, availability) {
+      const measurementEl = document.createElement('strong');
+      measurementEl.className = 'pf-status-measurement';
+      measurementEl.textContent = measurement;
+
+      showStatus('', 'info', true);
+      statusMessageEl.append(
+        'medida seleccionada: ',
+        measurementEl,
+        `. mostrando ${availability}.`
+      );
+    }
+
     function hideStatus() { statusEl.style.display = 'none'; }
 
     function publishEvent(name, data) {
@@ -956,7 +974,7 @@
             : RESULTS_COUNT > 1
               ? `${RESULTS_COUNT} neumáticos disponibles`
               : 'neumáticos disponibles';
-          showStatus(`medida seleccionada: ${measurement}. mostrando ${availability}.`, 'info', true);
+          showMeasurementStatus(measurement, availability);
         }
       }
 

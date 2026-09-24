@@ -441,4 +441,8 @@ descriptivos y sus botones se muestran en minúsculas, mientras la medida
 seleccionada o el nombre de la moto conservan la escritura original. Se
 validaron `180/50-17` y `Bmw F 700` en el theme de vista previa.
 
+La medida seleccionada del indicador de neumáticos se separó como elemento
+semántico destacado y se configuró con peso tipográfico `900`, para que se
+diferencie claramente del texto descriptivo de la barra.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
