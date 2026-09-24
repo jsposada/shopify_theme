@@ -219,6 +219,72 @@ Requisitos del servicio:
 - No exponer credenciales de PostgreSQL ni del Admin API en el navegador.
 - Devolver únicamente los datos necesarios para construir los resultados.
 
+### 6.4 Decisión técnica de la fase 0
+
+La integración recomendada es un servicio HTTPS de solo lectura dentro de
+`bikerz_app`, expuesto al storefront mediante Shopify App Proxy. El navegador
+consultará rutas del mismo dominio, por ejemplo `/apps/ymm/makes`, y Shopify
+reenviará la solicitud firmada al servicio. El backend validará la firma del
+proxy antes de consultar PostgreSQL.
+
+La aplicación actual no incluye un servidor HTTP ni una configuración de App
+Proxy utilizable. Por ello, el servicio se implementará como módulo aislado,
+sin convertir `main.py` ni el proceso nocturno en servidor web. La propuesta es
+usar FastAPI, Uvicorn y el cliente PostgreSQL ya adoptado por el proyecto, con
+dependencias y punto de entrada separados del proceso por lotes.
+
+Superficie prevista:
+
+```text
+GET /apps/ymm/makes
+GET /apps/ymm/models?make_id={id}
+GET /apps/ymm/years?model_id={id}
+GET /apps/ymm/part-types?model_id={id}&year={year_opcional}
+GET /apps/ymm/products?model_id={id}&year={year_opcional}&part_type={tipo}&cursor={cursor}
+```
+
+Reglas del contrato:
+
+- La ausencia de `year` representa explícitamente una búsqueda solo por modelo;
+  no se utilizará un año centinela.
+- Cada resultado declarará `match_level=exact_year` o
+  `match_level=model_only`.
+- Solo se consultarán reglas `approved`, productos activos y productos con
+  identificador Shopify conocido.
+- La respuesta comercial se validará en lote contra Shopify antes de devolver
+  título, URL, imagen, precio y disponibilidad.
+- La primera página tendrá un máximo definido de resultados y continuará con
+  cursor; no se enviará el catálogo completo al navegador.
+- Marcas, modelos y años tendrán caché larga; los resultados comerciales usarán
+  caché corta para no presentar stock o precio obsoleto.
+- Se aplicarán validación estricta de parámetros, límites de uso, tiempos de
+  espera, registro técnico sin datos personales y respuestas de error estables.
+- Marca, modelo, año y tipo de repuesto serán estado de interfaz, no nuevas URLs
+  indexables.
+
+Si el hosting o la configuración de la aplicación no permiten App Proxy, el
+mismo servicio podrá publicarse temporalmente como endpoint controlado con CORS
+restringido, límites de uso y protección equivalente. La proyección estática se
+mantiene como último recurso, no como primera implementación.
+
+### 6.5 Categorías iniciales recomendadas
+
+La consulta de solo lectura del 2026-09-24 encontró estos seis grupos con mayor
+cobertura comercial útil y compatibilidades aprobadas:
+
+| Categoría visible | `part_type` | Productos comerciales | SKU con compatibilidad aprobada |
+| --- | --- | ---: | ---: |
+| Pastillas de freno | `Brake Pads` | 141 | 154 |
+| Filtros de aceite | `Oil Filter` | 74 | 82 |
+| Baterías | `Battery` | 23 | 16 |
+| Filtros de aire | `Air Filter` | 18 | 19 |
+| Cadenas | `Chain` | 16 | 9 |
+| Kits de transmisión | `Transmission Kit` | 13 | 17 |
+
+Los conteos de SKU aprobados pueden superar los productos comerciales porque
+algunas referencias todavía no tienen correspondencia publicable en Shopify.
+La interfaz solo mostrará el subconjunto comercial validado.
+
 ## 7. Plan de ejecución
 
 ### Fase 0 — Inicio seguro y decisiones
@@ -227,27 +293,32 @@ Requisitos del servicio:
 
 #### Tareas de Codex
 
-- `[ ]` Leer completamente este documento.
-- `[ ]` Revisar `docs/seo/SEO-ROADMAP.md` y el estado de Git antes de editar.
-- `[ ]` Revisar el theme live y compararlo con la copia local antes de cualquier despliegue.
-- `[ ]` Confirmar qué cambios locales pertenecen al trabajo SEO anterior.
-- `[ ]` Inspeccionar la infraestructura ejecutable de `C:\JS\bikerz_app`, no solo los documentos YMM.
-- `[ ]` Proponer el método de integración definitivo: App Proxy, endpoint controlado o proyección cacheada.
-- `[ ]` Definir un plan de ramas y commits separado para Shopify y `bikerz_app`.
+- `[x]` Leer completamente este documento.
+- `[x]` Revisar `docs/seo/SEO-ROADMAP.md` y el estado de Git antes de editar.
+- `[x]` Revisar el theme live y compararlo con la copia local antes de cualquier despliegue.
+- `[x]` Confirmar qué cambios locales pertenecen al trabajo SEO anterior.
+- `[x]` Inspeccionar la infraestructura ejecutable de `C:\JS\bikerz_app`, no solo los documentos YMM.
+- `[x]` Proponer el método de integración definitivo: App Proxy, endpoint controlado o proyección cacheada.
+- `[~]` Definir un plan de ramas y commits separado para Shopify y `bikerz_app`: rama Shopify creada; rama de `bikerz_app` pendiente de aislar un cambio local previo en `dev/app.log`.
 
 #### Decisiones del propietario
 
-- `[ ]` Aprobar el uso de las URLs existentes de las colecciones.
-- `[ ]` Aprobar el orden visible Marca → Modelo → Año.
-- `[ ]` Aprobar que el año sea opcional mediante `No conozco el año`.
-- `[ ]` Aprobar si el buscador de neumáticos seguirá también en la home.
-- `[ ]` Definir las categorías iniciales de repuestos visibles después de seleccionar la moto.
+- `[x]` Aprobar el uso de las URLs existentes de las colecciones.
+- `[x]` Aprobar el orden visible Marca → Modelo → Año.
+- `[x]` Aprobar que el año sea opcional mediante `No conozco el año`.
+- `[x]` Aprobar que el buscador de neumáticos siga también en la home.
+- `[~]` Definir las categorías iniciales de repuestos visibles después de seleccionar la moto: seis categorías propuestas con conteos reales; aprobación pendiente.
 
 #### Criterio de término
 
 - Arquitectura de integración documentada y aprobada.
 - No se ha modificado ni desplegado el theme live.
 - Riesgos y archivos afectados están identificados.
+
+**Estado al 2026-09-24:** fase en curso. La auditoría, sincronización segura y
+recomendación técnica están completas. Restan la aprobación de las seis
+categorías propuestas y aislar la eliminación preexistente de
+`bikerz_app/dev/app.log` antes de crear la rama del servicio.
 
 ### Fase 1 — Especificación visual y funcional
 
@@ -586,4 +657,12 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | Fecha | ID | Decisión o avance | Responsable | Evidencia |
 | --- | --- | --- | --- | --- |
 | 2026-09-24 | LMMY-001 | Se creó el plan independiente; no se modificó el theme ni el roadmap principal. | Codex | Este documento |
+| 2026-09-24 | LMMY-002 | Se aprobaron las URLs `/collections/neumaticos` y `/collections/repuestos`, el orden Marca → Modelo → Año, la opción `No conozco el año` y la permanencia del buscador de neumáticos en la home. | Propietario | Confirmación `vamos` después de presentar el paquete de decisiones |
+| 2026-09-24 | LMMY-003 | El trabajo SEO local anterior se preservó en `c771fde` y se creó la rama `codex/landings-neumaticos-repuestos`. | Codex | Git local |
+| 2026-09-24 | LMMY-004 | Se descargó el theme live `SEO` (`164560142557`) a una carpeta aislada y se comparó con HEAD y el working tree. Se detectaron 16 archivos con estado remoto más reciente; 15 producían diferencias reales y se incorporaron sin reemplazar los archivos locales de las previews SEO. | Codex | `.tmp/landings-phase0-live-20260924/` y commit `f7c55d2` |
+| 2026-09-24 | LMMY-005 | Después de sincronizar producción, las únicas diferencias frente al live son cuatro archivos locales modificados para las previews y ocho archivos nuevos de las landings SEO no publicadas. No se modificó ni desplegó el theme live. | Codex | Comparación SHA-256 local/live |
+| 2026-09-24 | LMMY-006 | `bikerz_app` contiene un ETL por lotes y consultas YMM, pero no un servidor HTTP ni configuración desplegable de App Proxy. Las 11 pruebas YMM existentes pasan. | Codex | `python -m unittest discover -s ymm/tests -p "test_*.py"` |
+| 2026-09-24 | LMMY-007 | Arquitectura recomendada: crear un servicio HTTPS de solo lectura en `bikerz_app`, exponerlo al storefront mediante Shopify App Proxy y resolver allí compatibilidad aprobada y validación comercial contra Shopify. Un endpoint con CORS restringido queda solo como contingencia si el hosting o la app no admiten App Proxy. | Codex | Auditoría de infraestructura y arquitectura YMM |
+| 2026-09-24 | LMMY-008 | La rama prevista para el servicio es `codex/ymm-query-api`, pero no se creó porque `C:\JS\bikerz_app` ya tenía la eliminación local ajena `dev/app.log`; ese cambio se preservó sin tocar. | Codex | `git -C C:\JS\bikerz_app status --short --branch` |
+| 2026-09-24 | LMMY-009 | Una consulta PostgreSQL de solo lectura permitió proponer las seis categorías iniciales: pastillas de freno, filtros de aceite, baterías, filtros de aire, cadenas y kits de transmisión. | Codex | Conteos documentados en 6.5; aprobación del propietario pendiente |
 
