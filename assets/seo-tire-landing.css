@@ -24,7 +24,7 @@
     #151719;
   color: #fff;
   isolation: isolate;
-  min-height: 390px;
+  min-height: 330px;
   overflow: hidden;
   position: relative;
 }
@@ -58,16 +58,16 @@
 .tire-landing-hero__inner {
   align-items: center;
   display: flex;
-  min-height: 390px;
-  padding-bottom: 8rem;
-  padding-top: 6rem;
+  min-height: 330px;
+  padding-bottom: 6rem;
+  padding-top: 4.2rem;
 }
 
 .tire-landing-hero__content { max-width: 920px; }
 
 .tire-landing-hero__title {
   color: #fff;
-  font-size: clamp(3.8rem, 4.2vw, 5.8rem);
+  font-size: clamp(3.4rem, 3.4vw, 5rem);
   font-weight: 900;
   letter-spacing: -.035em;
   line-height: .96;
@@ -88,10 +88,10 @@
 
 .tire-landing-hero__proofs {
   display: grid;
-  gap: 1rem;
+  gap: .8rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
-  margin: 3rem 0 0;
+  margin: 2rem 0 0;
   max-width: 900px;
   padding: 0;
 }
@@ -104,25 +104,13 @@
   border-radius: 8px;
   display: flex;
   font-family: var(--font-heading-family);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  gap: 1rem;
   letter-spacing: .04em;
-  line-height: 1.25;
-  min-height: 58px;
-  padding: 1.2rem 1.4rem;
+  line-height: 1.2;
+  min-height: 44px;
+  padding: .8rem 1.2rem;
   text-transform: uppercase;
-}
-
-.tire-landing-hero__check {
-  align-items: center;
-  background: var(--tire-orange);
-  border-radius: 50%;
-  display: inline-flex;
-  flex: 0 0 24px;
-  height: 24px;
-  justify-content: center;
-  width: 24px;
 }
 
 .tire-guide { background: var(--tire-surface); }
@@ -295,9 +283,9 @@
 @media (max-width: 767px) {
   .tire-landing-hero,
   .tire-landing-hero__inner { min-height: 0; }
-  .tire-landing-hero__inner { padding-bottom: 7rem; padding-top: 4.8rem; }
-  .tire-landing-hero__title { font-size: 4rem; }
-  .tire-landing-hero__proof { min-height: 50px; }
+  .tire-landing-hero__inner { padding-bottom: 6rem; padding-top: 4rem; }
+  .tire-landing-hero__title { font-size: 3.4rem; }
+  .tire-landing-hero__proof { min-height: 42px; }
   .tire-guide__grid,
   .tire-guide__next { grid-template-columns: 1fr; }
   .tire-guide-card { min-height: 0; }
