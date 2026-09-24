@@ -285,6 +285,10 @@ Los conteos de SKU aprobados pueden superar los productos comerciales porque
 algunas referencias todavía no tienen correspondencia publicable en Shopify.
 La interfaz solo mostrará el subconjunto comercial validado.
 
+La primera versión se limitará a estas seis categorías. Agregar más categorías
+queda registrado como pendiente y se evaluará usando inventario comercial,
+compatibilidades aprobadas, demanda observada y calidad de los resultados.
+
 ## 7. Plan de ejecución
 
 ### Fase 0 — Inicio seguro y decisiones
@@ -299,7 +303,7 @@ La interfaz solo mostrará el subconjunto comercial validado.
 - `[x]` Confirmar qué cambios locales pertenecen al trabajo SEO anterior.
 - `[x]` Inspeccionar la infraestructura ejecutable de `C:\JS\bikerz_app`, no solo los documentos YMM.
 - `[x]` Proponer el método de integración definitivo: App Proxy, endpoint controlado o proyección cacheada.
-- `[~]` Definir un plan de ramas y commits separado para Shopify y `bikerz_app`: rama Shopify creada; rama de `bikerz_app` pendiente de aislar un cambio local previo en `dev/app.log`.
+- `[x]` Definir un plan de ramas y commits separado para Shopify y `bikerz_app`: `codex/landings-neumaticos-repuestos` y `codex/ymm-query-api`.
 
 #### Decisiones del propietario
 
@@ -307,7 +311,7 @@ La interfaz solo mostrará el subconjunto comercial validado.
 - `[x]` Aprobar el orden visible Marca → Modelo → Año.
 - `[x]` Aprobar que el año sea opcional mediante `No conozco el año`.
 - `[x]` Aprobar que el buscador de neumáticos siga también en la home.
-- `[~]` Definir las categorías iniciales de repuestos visibles después de seleccionar la moto: seis categorías propuestas con conteos reales; aprobación pendiente.
+- `[x]` Definir las categorías iniciales de repuestos visibles después de seleccionar la moto: seis categorías aprobadas con conteos reales; ampliar el listado queda como pendiente posterior.
 
 #### Criterio de término
 
@@ -315,10 +319,9 @@ La interfaz solo mostrará el subconjunto comercial validado.
 - No se ha modificado ni desplegado el theme live.
 - Riesgos y archivos afectados están identificados.
 
-**Estado al 2026-09-24:** fase en curso. La auditoría, sincronización segura y
-recomendación técnica están completas. Restan la aprobación de las seis
-categorías propuestas y aislar la eliminación preexistente de
-`bikerz_app/dev/app.log` antes de crear la rama del servicio.
+**Estado al 2026-09-24:** fase completada. La auditoría, sincronización segura,
+arquitectura, categorías iniciales y separación de ramas están aprobadas. No se
+modificó ni desplegó el theme live.
 
 ### Fase 1 — Especificación visual y funcional
 
@@ -663,6 +666,8 @@ Agregar aquí las decisiones de la conversación futura, sin depender de su cont
 | 2026-09-24 | LMMY-005 | Después de sincronizar producción, las únicas diferencias frente al live son cuatro archivos locales modificados para las previews y ocho archivos nuevos de las landings SEO no publicadas. No se modificó ni desplegó el theme live. | Codex | Comparación SHA-256 local/live |
 | 2026-09-24 | LMMY-006 | `bikerz_app` contiene un ETL por lotes y consultas YMM, pero no un servidor HTTP ni configuración desplegable de App Proxy. Las 11 pruebas YMM existentes pasan. | Codex | `python -m unittest discover -s ymm/tests -p "test_*.py"` |
 | 2026-09-24 | LMMY-007 | Arquitectura recomendada: crear un servicio HTTPS de solo lectura en `bikerz_app`, exponerlo al storefront mediante Shopify App Proxy y resolver allí compatibilidad aprobada y validación comercial contra Shopify. Un endpoint con CORS restringido queda solo como contingencia si el hosting o la app no admiten App Proxy. | Codex | Auditoría de infraestructura y arquitectura YMM |
-| 2026-09-24 | LMMY-008 | La rama prevista para el servicio es `codex/ymm-query-api`, pero no se creó porque `C:\JS\bikerz_app` ya tenía la eliminación local ajena `dev/app.log`; ese cambio se preservó sin tocar. | Codex | `git -C C:\JS\bikerz_app status --short --branch` |
+| 2026-09-24 | LMMY-008 | La primera inspección pospuso la creación de `codex/ymm-query-api` al detectar la eliminación local previa de `dev/app.log`; el archivo se mantuvo intacto hasta recibir confirmación del propietario. | Codex | `git -C C:\JS\bikerz_app status --short --branch` |
 | 2026-09-24 | LMMY-009 | Una consulta PostgreSQL de solo lectura permitió proponer las seis categorías iniciales: pastillas de freno, filtros de aceite, baterías, filtros de aire, cadenas y kits de transmisión. | Codex | Conteos documentados en 6.5; aprobación del propietario pendiente |
+| 2026-09-24 | LMMY-010 | El propietario aprobó las seis categorías como alcance inicial. Agregar más categorías queda como pendiente posterior, sujeto a inventario, demanda y compatibilidad publicada. | Propietario | Confirmación en esta conversación |
+| 2026-09-24 | LMMY-011 | Se preservó la eliminación aprobada de `dev/app.log` en el commit `d8d29a4` y se creó `codex/ymm-query-api`. La Fase 0 quedó completada. | Codex | Git de `C:\JS\bikerz_app` |
 
