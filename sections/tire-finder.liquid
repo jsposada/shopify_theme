@@ -949,7 +949,12 @@
       } else {
         const measurement = selectedMeasurement();
         if (measurement) {
-          showStatus(`Medida seleccionada: ${measurement}. Mostrando los neumáticos disponibles.`, 'info', true);
+          const availability = RESULTS_COUNT === 1
+            ? '1 neumático disponible'
+            : RESULTS_COUNT > 1
+              ? `${RESULTS_COUNT} neumáticos disponibles`
+              : 'neumáticos disponibles';
+          showStatus(`Medida seleccionada: ${measurement}. Mostrando ${availability}.`, 'info', true);
         }
       }
 

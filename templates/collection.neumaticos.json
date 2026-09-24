@@ -78,7 +78,7 @@
         "is_collapse_description": true,
         "display_position": "bottom",
         "pagination": "default",
-        "show_product_count": true,
+        "show_product_count": false,
         "show_list_grid": true,
         "enable_sorting": true,
         "enable_filtering": true,
