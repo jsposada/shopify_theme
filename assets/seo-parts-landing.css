@@ -132,30 +132,54 @@
 }
 
 .ymm-finder-section {
-  background: linear-gradient(#fff 0 55%, var(--parts-surface) 55% 100%);
+  background: transparent;
   position: relative;
+  z-index: 3;
+}
+
+.ymm-finder-section > .container {
+  max-width: min(1440px, calc(100% - 3rem));
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .ymm-finder {
   background: #fff;
-  border-top: 5px solid var(--parts-orange);
+  border-top: 7px solid var(--parts-orange);
   border-radius: 12px;
-  box-shadow: 0 18px 50px rgba(18, 18, 18, .12);
-  margin-top: -5.2rem;
-  padding: 2.4rem 2.8rem 2rem;
+  box-shadow: 0 22px 55px rgba(18, 18, 18, .16);
+  margin-bottom: -5.2rem;
+  overflow: hidden;
+  padding: 2.6rem 2.8rem 1.2rem;
   position: relative;
+  transform: translateY(-5.2rem);
   z-index: 2;
 }
 
 .ymm-finder__header {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.8rem;
+  gap: 1.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.ymm-finder__header-icon {
+  align-items: center;
+  background: #17191b;
+  border-radius: 9px;
+  color: var(--parts-orange);
+  display: flex;
+  flex: 0 0 46px;
+  font-family: Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  height: 46px;
+  justify-content: center;
+  transform: rotate(-20deg);
 }
 
 .ymm-finder__title {
-  font-size: clamp(2.2rem, 2.2vw, 3rem);
+  font-size: clamp(1.9rem, 1.6vw, 2.4rem);
   font-weight: 900;
   line-height: 1;
   margin: 0;
@@ -178,7 +202,7 @@
 .ymm-field label {
   display: block;
   font-family: var(--font-heading-family);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: .08em;
   margin: 0 0 .6rem;
@@ -186,11 +210,14 @@
 }
 
 .ymm-field select {
-  background: #f1f2f4;
+  background: #f2f3f5;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 7px;
   color: var(--parts-ink);
-  min-height: 48px;
+  font-family: var(--font-body-family);
+  font-size: 1.45rem;
+  font-weight: 700;
+  height: 48px;
   padding: 0 3.4rem 0 1.3rem;
   width: 100%;
 }
@@ -208,7 +235,7 @@
 .ymm-action {
   align-items: center;
   border: 0;
-  border-radius: 8px;
+  border-radius: 7px;
   cursor: pointer;
   display: inline-flex;
   font-family: var(--font-heading-family);
@@ -224,7 +251,9 @@
 
 .ymm-finder__submit {
   background: var(--parts-orange);
+  box-shadow: 0 8px 18px rgba(255, 102, 0, .2);
   color: #fff;
+  font-size: 1.45rem;
   width: 100%;
 }
 
@@ -252,56 +281,71 @@
 
 .ymm-selection {
   align-items: center;
-  background: var(--parts-ink);
-  border-radius: 10px;
-  color: #fff;
+  background: #eef4ff;
+  border: 1px solid #dce7f7;
+  border-radius: 8px;
+  color: #26384f;
   display: flex;
-  gap: 1.2rem;
-  justify-content: space-between;
-  margin-top: 1.6rem;
-  padding: 1.2rem 1.5rem;
+  gap: .8rem;
+  line-height: 1.45;
+  margin-top: 1.2rem;
+  min-height: 42px;
+  padding: .6rem .8rem;
 }
 
 .ymm-selection[hidden] { display: none; }
-.ymm-selection__label { color: rgba(255, 255, 255, .65); display: block; font-size: 1.15rem; }
-.ymm-selection__vehicle { font-family: var(--font-heading-family); font-size: 1.65rem; font-weight: 900; }
+.ymm-selection[data-kind='empty'] { background: #f1f2f3; border-color: #d9dadd; color: #3c4145; }
+.ymm-selection[data-kind='error'] { background: #fff0ed; border-color: #f2c7bf; color: #8f2a1b; }
 
-.ymm-selection__badge {
-  background: var(--parts-success);
-  border-radius: 999px;
-  display: inline-flex;
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-left: 1rem;
-  padding: .45rem .9rem;
+.ymm-selection__icon {
+  align-items: center;
+  background: var(--parts-orange);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  flex: 0 0 22px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  height: 22px;
+  justify-content: center;
 }
 
-.ymm-selection__badge[hidden] { display: none !important; }
+.ymm-selection[data-kind='empty'] .ymm-selection__icon { background: #656a6e; }
+.ymm-selection[data-kind='error'] .ymm-selection__icon { background: #b73a26; }
+.ymm-selection__message { flex: 1; font-weight: 700; margin: 0; }
+.ymm-selection__vehicle { font-weight: 800; }
 
 .ymm-selection__change {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, .32);
-  border-radius: 7px;
-  color: #fff;
+  background: #fff;
+  border: 1px solid #d6d9de;
+  border-radius: 5px;
+  color: #222;
   cursor: pointer;
+  font-family: var(--font-heading-family);
+  font-size: 1.1rem;
   font-weight: 800;
-  min-height: 38px;
-  padding: .6rem 1.2rem;
+  min-height: 30px;
+  padding: .5rem .9rem;
+  text-transform: uppercase;
 }
 
 .ymm-results {
   background: var(--parts-surface);
-  padding: 2.8rem 0 4rem;
+  padding: .8rem 0 4rem;
 }
 
 .ymm-results[hidden] { display: none; }
 
 .ymm-results__header {
-  align-items: end;
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  margin-bottom: 1.8rem;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .ymm-results__title {
@@ -418,7 +462,7 @@
 .ymm-action--whatsapp { background: #177d45; color: #fff; }
 .ymm-action:hover { color: #fff; filter: brightness(.92); }
 
-.seo-parts-landing [id$='__catalog'] { padding-top: 2.5rem; }
+.seo-parts-landing [id$='__catalog'] { padding-top: .8rem; }
 .seo-parts-landing [id$='__catalog'] h2 { font-weight: 900; text-transform: uppercase; }
 .seo-parts-landing [id$='__faq'] .container { max-width: 1240px; }
 .seo-parts-landing [id$='__faq'] h2 {
@@ -446,13 +490,19 @@
   .parts-landing-hero__inner { padding-bottom: 6rem; padding-top: 4rem; }
   .parts-landing-hero__title { font-size: 3.4rem; }
   .parts-landing-hero__proof { min-height: 42px; }
-  .ymm-finder { margin-top: -4.2rem; padding: 2rem 1.5rem 1.5rem; }
+  .ymm-finder-section > .container { max-width: calc(100% - 2.4rem); }
+  .ymm-finder {
+    margin-bottom: -3.8rem;
+    padding: 2rem 1.6rem 1.2rem;
+    transform: translateY(-3.8rem);
+  }
   .ymm-finder__header { margin-bottom: 1.5rem; }
+  .ymm-finder__header-icon { flex-basis: 40px; height: 40px; }
   .ymm-finder__form { grid-template-columns: 1fr; }
   .ymm-finder__submit { grid-column: auto; }
-  .ymm-selection { align-items: flex-start; flex-direction: column; }
-  .ymm-selection__badge { display: flex; margin: .6rem 0 0; width: max-content; }
-  .ymm-results { padding-top: 2.2rem; }
+  .ymm-selection { align-items: flex-start; flex-wrap: wrap; }
+  .ymm-selection__change { margin-left: 3rem; }
+  .ymm-results { padding-top: .8rem; }
   .ymm-results__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .ymm-product-card__body { padding: 1.1rem; }
   .ymm-product-card__title { font-size: 1.4rem; }

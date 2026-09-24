@@ -15,6 +15,7 @@
   <div class="container">
     <div class="ymm-finder">
       <header class="ymm-finder__header">
+        <span class="ymm-finder__header-icon" aria-hidden="true">⌕</span>
         <div>
           <h2 class="ymm-finder__title">{{ section.settings.title | escape }}</h2>
           <p class="ymm-finder__help">{{ section.settings.help_text | escape }}</p>
@@ -59,11 +60,11 @@
       <div class="ymm-finder__status" role="status" aria-live="polite" data-ymm-status></div>
 
       <div class="ymm-selection" data-ymm-selection hidden>
-        <div>
-          <span class="ymm-selection__label">Tu moto</span>
-          <strong class="ymm-selection__vehicle" data-ymm-vehicle></strong>
-          <span class="ymm-selection__badge" data-ymm-compatibility hidden>Compatible con tu moto</span>
-        </div>
+        <span class="ymm-selection__icon" aria-hidden="true">✓</span>
+        <p class="ymm-selection__message">
+          Tu moto: <strong class="ymm-selection__vehicle" data-ymm-vehicle></strong>.
+          <span data-ymm-availability>Buscando repuestos disponibles…</span>
+        </p>
         <button class="ymm-selection__change" type="button" data-ymm-change>Cambiar moto</button>
       </div>
     </div>
@@ -116,7 +117,7 @@
     const status = root.querySelector('[data-ymm-status]');
     const selection = root.querySelector('[data-ymm-selection]');
     const vehicle = root.querySelector('[data-ymm-vehicle]');
-    const compatibility = root.querySelector('[data-ymm-compatibility]');
+    const availability = root.querySelector('[data-ymm-availability]');
     const results = root.querySelector('[data-ymm-results]');
     const resultsTitle = root.querySelector('[data-ymm-results-title]');
     const resultsCount = root.querySelector('[data-ymm-results-count]');
@@ -207,9 +208,15 @@
 
     function showSelection() {
       vehicle.textContent = currentVehicleLabel();
-      compatibility.hidden = !yearSelect.value;
+      availability.textContent = 'Buscando repuestos disponibles…';
+      selection.dataset.kind = 'info';
       selection.hidden = false;
       updateWhatsappLink();
+    }
+
+    function updateSelectionCount(total) {
+      availability.textContent = `Mostrando ${total} ${total === 1 ? 'repuesto disponible' : 'repuestos disponibles'}.`;
+      selection.dataset.kind = total ? 'info' : 'empty';
     }
 
     function setBusy(isBusy) {
@@ -318,6 +325,10 @@
       grid.replaceChildren();
       moreButton.hidden = true;
       empty.hidden = false;
+      availability.textContent = isError
+        ? 'No pudimos cargar los repuestos disponibles.'
+        : 'No encontramos repuestos disponibles.';
+      selection.dataset.kind = isError ? 'error' : 'empty';
       emptyTitle.textContent = isError
         ? 'No pudimos consultar las compatibilidades'
         : 'No encontramos una coincidencia publicada';
@@ -334,6 +345,7 @@
       renderProducts(items, append);
       const totalShown = grid.children.length;
       resultsCount.textContent = `${totalShown} ${totalShown === 1 ? 'repuesto encontrado' : 'repuestos encontrados'}`;
+      updateSelectionCount(totalShown);
       nextCursor = meta?.page_info?.next_cursor || null;
       moreButton.hidden = !activePartType || !meta?.page_info?.has_next_page;
       if (!append) {

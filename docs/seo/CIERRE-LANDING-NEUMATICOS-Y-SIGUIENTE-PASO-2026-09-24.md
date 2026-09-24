@@ -414,4 +414,25 @@ clic en producto y solicitud de ayuda de compatibilidad.
 4. Autorizar explícitamente la publicación cuando corresponda.
 5. Definir si se inicia la Fase 5: compatibilidad dentro de la ficha de producto.
 
+### 14.5 Unificación visual con la landing de neumáticos
+
+Se ajustó la landing de repuestos para que ambas colecciones compartan el mismo
+sistema visual en el primer bloque de la página:
+
+- misma altura, escala tipográfica y espaciado del hero;
+- buscador superpuesto sobre el borde inferior del hero;
+- mismo ancho máximo, sombra, borde naranja y proporción de campos;
+- título, ayuda, etiquetas, selectores y botón con la misma escala;
+- indicador azul compacto equivalente al de neumáticos;
+- mensaje dinámico `Tu moto: [marca y modelo]. Mostrando X repuestos disponibles.`;
+- botón `Cambiar moto` integrado en el indicador;
+- eliminación visual del encabezado redundante `Repuestos compatibles` y de su
+  contador separado; ambos se conservan ocultos para accesibilidad;
+- continuidad directa entre buscador, resultados y catálogo, sin espacio extra.
+
+La validación se realizó en escritorio y a 390 px de ancho. El caso BMW F 700,
+sin año y con todos los tipos, mostró siete repuestos y el indicador correcto.
+La consola del navegador no presentó errores. Los cambios siguen cargados solo
+en el theme de vista previa `166033588445`; el theme live no fue modificado.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
