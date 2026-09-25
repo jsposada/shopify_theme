@@ -175,6 +175,11 @@
     padding-bottom: 1.5rem;
   }
 
+  .seo-results-catalog .facets__summary h4 {
+    font-size: 1.8rem;
+    line-height: 1.15;
+  }
+
   .seo-results-catalog .product-grid-container {
     column-gap: 1.6rem;
     display: grid;

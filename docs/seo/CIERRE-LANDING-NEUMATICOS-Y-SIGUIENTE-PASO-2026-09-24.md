@@ -493,4 +493,8 @@ conjunto de filtros y resultados. Sus bordes laterales ahora coinciden con el
 contenido del catálogo en escritorio, tablet y móvil, respetando los márgenes
 responsivos nativos del theme.
 
+Los títulos internos del panel de filtros nativo se redujeron de 24 px a
+18 px en escritorio. El encabezado principal `Filtros` conserva su escala para
+mantener clara la jerarquía del panel.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
