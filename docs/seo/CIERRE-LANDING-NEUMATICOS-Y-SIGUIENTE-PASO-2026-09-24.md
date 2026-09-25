@@ -498,3 +498,8 @@ Los títulos internos del panel de filtros nativo se redujeron de 24 px a
 mantener clara la jerarquía del panel.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
+
+### Ajuste del panel de filtros
+
+- El panel lateral de filtros se amplió aproximadamente un 15% en escritorio, de `23.3rem` a `26.8rem`, y se mantuvo el mismo ancho en ambas landings.
+- Los signos `+` quedaron junto a cada título de filtro, con una separación uniforme de `0.8rem`.

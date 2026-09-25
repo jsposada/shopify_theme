@@ -263,10 +263,13 @@
 }
 
 @media (min-width: 990px) {
-  .seo-tire-landing [id$='__product-grid'] #main-collection-filters,
+  .seo-tire-landing [id$='__product-grid'] #main-collection-filters {
+    flex: 0 0 26.8rem;
+    width: 26.8rem;
+  }
+
   .seo-tire-landing [id$='__product-grid'] .facets__form-vertical {
-    flex: 0 0 23.3rem;
-    width: 23.3rem;
+    width: 100%;
   }
 }
 

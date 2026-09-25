@@ -157,9 +157,9 @@
     border: 1px solid #e1e3e6;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(18, 18, 18, .08);
-    flex: 0 0 25rem;
+    flex: 0 0 26.8rem;
     padding: 1.6rem;
-    width: 25rem;
+    width: 26.8rem;
   }
 
   .seo-results-catalog .facets__form-vertical {
@@ -180,13 +180,18 @@
     line-height: 1.15;
   }
 
+  .seo-results-catalog .facets__summary .summary-heading {
+    gap: .8rem;
+    justify-content: flex-start;
+  }
+
   .seo-results-catalog .product-grid-container {
     column-gap: 1.6rem;
     display: grid;
     flex: 1;
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 0;
-    width: calc(100% - 27rem);
+    width: calc(100% - 28.8rem);
   }
 
   .seo-results-catalog .seo-results-heading {
