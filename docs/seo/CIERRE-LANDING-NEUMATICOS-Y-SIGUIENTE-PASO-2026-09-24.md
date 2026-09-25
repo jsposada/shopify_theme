@@ -472,9 +472,15 @@ horizontal. Todo permanece únicamente en el theme de vista previa
 
 Como corrección posterior, en neumáticos los filtros activos quedaron fijados
 en una fila independiente bajo el título y los controles, evitando cruces con
-los botones de vista y el selector de orden en pantallas anchas. En repuestos se
-redujo de 12 px a 4 px el espacio superior del bloque de resultados. Se volvió
-a comprobar la medida `160/70-17` y la búsqueda `Bmw F 700` sin solapamientos,
-errores de consola ni desbordamiento horizontal.
+los botones de vista y el selector de orden en pantallas anchas.
+
+La comparación final con el mockup de Stitch mostró que el catálogo requería
+una separación visual mayor después del buscador. Ambas landings quedaron con
+40 px entre la caja y el contenido de resultados, fondo gris técnico y sombras
+suaves en la barra lateral, el selector de orden y las tarjetas. Las tarjetas
+también elevan levemente su sombra al pasar el cursor. En móvil la separación
+se ajusta a 30 px. Se validaron el catálogo general de ambas colecciones y la
+búsqueda compatible `Bmw F 700` sin solapamientos, errores de consola ni
+desbordamiento horizontal.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
