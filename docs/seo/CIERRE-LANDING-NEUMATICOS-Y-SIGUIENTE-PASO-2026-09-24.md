@@ -488,4 +488,9 @@ catálogo (`#f4f5f7`) en ambas landings. El color comienza al terminar el hero y
 continúa hasta los resultados; únicamente la tarjeta superpuesta del buscador
 permanece blanca, conservando su borde naranja y su sombra.
 
+El ancho de ambas tarjetas de búsqueda también se igualó al ancho útil del
+conjunto de filtros y resultados. Sus bordes laterales ahora coinciden con el
+contenido del catálogo en escritorio, tablet y móvil, respetando los márgenes
+responsivos nativos del theme.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.

@@ -428,10 +428,22 @@
     border-radius: 12px;
     box-shadow: 0 22px 55px rgba(18, 18, 18, .16);
     margin-bottom: -5.2rem;
-    max-width: min(1440px, calc(100% - 3rem));
+    max-width: min(1380px, calc(100% - 12rem));
     overflow: hidden;
     padding: 0 2.8rem 1.2rem;
     transform: translateY(-5.2rem);
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .pf-wrapper--landing .pf-inner {
+      max-width: calc(100% - 6rem);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .pf-wrapper--landing .pf-inner {
+      max-width: calc(100% - 3rem);
+    }
   }
 
   .pf-wrapper--landing .pf-accent {
@@ -609,7 +621,7 @@
     .pf-wrapper--landing .pf-inner {
       border-radius: 9px;
       margin-bottom: -3.8rem;
-      max-width: calc(100% - 2.4rem);
+      max-width: calc(100% - 3rem);
       padding: 0 1.6rem 1.2rem;
       transform: translateY(-3.8rem);
     }

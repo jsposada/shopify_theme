@@ -138,7 +138,7 @@
 }
 
 .ymm-finder-section > .container {
-  max-width: min(1440px, calc(100% - 3rem));
+  max-width: min(1380px, calc(100% - 12rem));
   padding-left: 0;
   padding-right: 0;
 }
@@ -634,6 +634,10 @@
 
 .ymm-search-has-results .seo-results-catalog--repuestos { display: none; }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .ymm-finder-section > .container { max-width: calc(100% - 6rem); }
+}
+
 @media (max-width: 1100px) {
   .ymm-finder__form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ymm-finder__submit { grid-column: span 2; }
@@ -657,7 +661,7 @@
   .parts-landing-hero__inner { padding-bottom: 6rem; padding-top: 4rem; }
   .parts-landing-hero__title { font-size: 3.4rem; }
   .parts-landing-hero__proof { min-height: 42px; }
-  .ymm-finder-section > .container { max-width: calc(100% - 2.4rem); }
+  .ymm-finder-section > .container { max-width: calc(100% - 3rem); }
   .ymm-finder {
     margin-bottom: -3.8rem;
     padding: 2rem 1.6rem 1.2rem;
