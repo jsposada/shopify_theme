@@ -167,9 +167,11 @@
   }
 
   .seo-results-catalog .product-grid-container {
+    column-gap: 1.6rem;
     display: grid;
     flex: 1;
     grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 0;
     width: calc(100% - 27rem);
   }
 
@@ -189,14 +191,17 @@
   }
 
   .seo-results-catalog .active-facets {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    justify-content: flex-start;
     margin-top: 1rem;
+    width: 100% !important;
   }
 
   .seo-results-catalog .collection,
   .seo-results-catalog .product-grid__desc {
     grid-column: 1 / -1;
+    grid-row: 3;
   }
 }
 

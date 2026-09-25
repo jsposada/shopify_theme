@@ -470,4 +470,11 @@ el cambio de vista funcionaron sin errores de consola ni desbordamiento
 horizontal. Todo permanece únicamente en el theme de vista previa
 `166033588445`; el theme live no fue modificado.
 
+Como corrección posterior, en neumáticos los filtros activos quedaron fijados
+en una fila independiente bajo el título y los controles, evitando cruces con
+los botones de vista y el selector de orden en pantallas anchas. En repuestos se
+redujo de 12 px a 4 px el espacio superior del bloque de resultados. Se volvió
+a comprobar la medida `160/70-17` y la búsqueda `Bmw F 700` sin solapamientos,
+errores de consola ni desbordamiento horizontal.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
