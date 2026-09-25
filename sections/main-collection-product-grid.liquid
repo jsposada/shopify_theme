@@ -16,7 +16,17 @@
   if column_show > columnProductSettings
     assign column_show = columnProductSettings
   endif
+  assign seo_results_layout = false
+  if template.suffix == 'neumaticos' or template.suffix == 'repuestos'
+    assign seo_results_layout = true
+  endif
+  if seo_results_layout and column_show != 1
+    assign column_show = 3
+  endif
 %}
+{% if seo_results_layout %}
+  {{ 'seo-collection-results.css' | asset_url | stylesheet_tag }}
+{% endif %}
 {%- capture preview_description -%}
   {%- render 'seo-landing-preview-content', part: 'description' -%}
 {%- endcapture -%}
@@ -44,11 +54,11 @@
    flex-row-reverse
   {% endif %}
 {% endcapture %}
-<div class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %} product-item-list" style="{{ style | strip | strip_newlines }}">
+<div class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %} product-item-list{% if seo_results_layout %} seo-results-catalog seo-results-catalog--{{ template.suffix }}{% endif %}" style="{{ style | strip | strip_newlines }}">
   <span id="a11y-refresh-page-message" class="visually-hidden" role="status" aria-live="polite"></span>
   <div class="{{ container }}">
     {%- paginate collection.products by section.settings.products_per_page -%}
-      <div class="{{ classWrapper | strip | strip_newlines }}">
+      <div class="{{ classWrapper | strip | strip_newlines }}{% if seo_results_layout %} seo-results-layout{% endif %}">
         {{ 'component-facets.css' | asset_url | stylesheet_tag }}
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
         {%- if section.settings.enable_filtering -%}
@@ -61,6 +71,20 @@
             class="facets-wrapper"
             id="main-collection-filters"
             data-id="{{ section.id }}">
+            {% if seo_results_layout %}
+              <div class="seo-results-filter-header">
+                <span class="seo-results-filter-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M4 6h16M7 12h10M10 18h4" />
+                    <circle cx="8" cy="6" r="1.5" fill="currentColor" stroke="none" />
+                    <circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                    <circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none" />
+                  </svg>
+                </span>
+                <h2>Filtros</h2>
+                <a href="{{ clear_all_url }}">limpiar todo</a>
+              </div>
+            {% endif %}
             <div class="btn-close-filter absolute top-0 right-0 p-8 {% if filter_type == 'drawer' %}block{% else %}block lg:hidden{% endif %}">
               <button class="btn-close-filter__innner flex items-center tp-icon-close">
                 {% render 'icon'
@@ -84,7 +108,39 @@
 
         <div class="product-grid-container" id="ProductGridContainer">
           {%- if sst.heading != blank -%}
-            <h2 class="mb-32">{{ sst.heading | escape }}</h2>
+            <header class="{% if seo_results_layout %}seo-results-heading{% endif %}">
+              <h2 class="{% unless seo_results_layout %}mb-32{% endunless %}">{{ sst.heading | escape }}</h2>
+              {% if seo_results_layout %}
+                <p>
+                  {% if template.suffix == 'neumaticos' %}
+                    {% assign seo_width = '' %}
+                    {% assign seo_profile = '' %}
+                    {% assign seo_rim = '' %}
+                    {% for filter in collection.filters %}
+                      {% assign seo_filter_label = filter.label | downcase %}
+                      {% for value in filter.active_values %}
+                        {% if seo_filter_label == 'ancho' %}
+                          {% capture seo_width %}{% render 'format-ancho-filter-label', filter: filter, label: value.label %}{% endcapture %}
+                        {% elsif seo_filter_label == 'perfil' %}
+                          {% assign seo_profile = value.label %}
+                        {% elsif seo_filter_label == 'aro' %}
+                          {% assign seo_rim = value.label %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                    {% assign seo_width = seo_width | strip %}
+                    {% if seo_width != blank and seo_rim != blank %}
+                      Resultados para <strong>{{ seo_width }}{% if seo_profile != blank %}/{{ seo_profile }}{% endif %}-{{ seo_rim }}</strong>
+                    {% else %}
+                      Neumáticos disponibles
+                    {% endif %}
+                    ({{ collection.products_count }} {% if collection.products_count == 1 %}opción encontrada{% else %}opciones encontradas{% endif %})
+                  {% else %}
+                    {{ collection.products_count }} {% if collection.products_count == 1 %}repuesto disponible{% else %}repuestos disponibles{% endif %} en el catálogo
+                  {% endif %}
+                </p>
+              {% endif %}
+            </header>
           {%- endif -%}
           <div class="tp-main-clc__topbar">
             <div class="flex justify-between items-stretch flex-col md:flex-row mb-40">

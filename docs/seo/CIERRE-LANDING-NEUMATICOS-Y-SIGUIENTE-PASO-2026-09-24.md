@@ -426,8 +426,6 @@ sistema visual en el primer bloque de la página:
 - indicador azul compacto equivalente al de neumáticos;
 - mensaje dinámico `Tu moto: [marca y modelo]. Mostrando X repuestos disponibles.`;
 - botón `Cambiar moto` integrado en el indicador;
-- eliminación visual del encabezado redundante `Repuestos compatibles` y de su
-  contador separado; ambos se conservan ocultos para accesibilidad;
 - continuidad directa entre buscador, resultados y catálogo, sin espacio extra.
 
 La validación se realizó en escritorio y a 390 px de ancho. El caso BMW F 700,
@@ -444,5 +442,32 @@ validaron `180/50-17` y `Bmw F 700` en el theme de vista previa.
 La medida seleccionada del indicador de neumáticos se separó como elemento
 semántico destacado y se configuró con peso tipográfico `900`, para que se
 diferencie claramente del texto descriptivo de la barra.
+
+### 14.6 Unificación del catálogo posterior al buscador
+
+El bloque de resultados de ambas landings se ajustó al patrón visual aprobado:
+
+- columna lateral de filtros con encabezado `Filtros` y acción `limpiar todo`;
+- título visible del catálogo, resumen contextual y filtros activos en chips;
+- controles de vista en cuadrícula o lista y selector de orden;
+- cuadrícula de tres productos por fila en escritorio;
+- fondo, bordes, espacios y proporciones comunes para neumáticos y repuestos.
+
+En neumáticos se conservan los filtros, el orden y la actualización dinámica
+nativos de Shopify. El resumen muestra la medida elegida y la cantidad de
+opciones encontradas.
+
+En repuestos, al buscar una moto, el bloque compatible muestra filtros locales
+por marca y tipo de repuesto, orden por relevancia, precio o nombre, y vistas de
+cuadrícula o lista. Mientras estos resultados están visibles se oculta el
+catálogo general para evitar duplicación; si no hay una selección compatible o
+el servicio no responde, el catálogo nativo vuelve a quedar disponible como
+respaldo.
+
+Se validó el caso `180/50-17` en neumáticos y `Bmw F 700` en repuestos. Este
+último devolvió siete productos; los filtros, el orden ascendente por precio y
+el cambio de vista funcionaron sin errores de consola ni desbordamiento
+horizontal. Todo permanece únicamente en el theme de vista previa
+`166033588445`; el theme live no fue modificado.
 
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.

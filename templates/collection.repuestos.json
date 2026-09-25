@@ -66,18 +66,18 @@
         "filter"
       ],
       "settings": {
-        "heading": "Explorar todos los repuestos",
+        "heading": "Repuestos disponibles",
         "empty_heading": "No encontramos productos en esta colección",
         "empty_message": "Prueba otros filtros o consulta por WhatsApp para que podamos ayudarte.",
         "container": "container",
         "color_scheme": "",
         "products_per_page": 20,
-        "column_number": "4",
+        "column_number": "3",
         "show_description": false,
         "is_collapse_description": true,
         "display_position": "bottom",
         "pagination": "default",
-        "show_product_count": true,
+        "show_product_count": false,
         "show_list_grid": true,
         "enable_sorting": true,
         "enable_filtering": true,
@@ -87,7 +87,7 @@
         "bg_color_sidebar": "#f4f4f4",
         "collection_list": [],
         "price_type": "range_slider",
-        "padding_top": 24,
+        "padding_top": 0,
         "padding_bottom": 48,
         "reset_spacing": false
       }

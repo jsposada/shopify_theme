@@ -1,0 +1,226 @@
+.seo-results-catalog {
+  background: #f7f8fa;
+  border-top: 1px solid #e3e5e8;
+  margin-bottom: 0;
+}
+
+.seo-results-catalog .container {
+  max-width: 1500px;
+}
+
+.seo-results-layout {
+  align-items: flex-start;
+  gap: 2rem !important;
+}
+
+.seo-results-filter-header {
+  align-items: center;
+  border-bottom: 1px solid #dfe2e6;
+  display: flex;
+  gap: .8rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+}
+
+.seo-results-filter-header h2 {
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.seo-results-filter-header a {
+  color: #5f6368;
+  font-family: var(--font-heading-family);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+.seo-results-filter-icon {
+  color: #ff4f12;
+  display: inline-flex;
+}
+
+.seo-results-heading h2 {
+  font-size: clamp(2.8rem, 2.7vw, 3.8rem);
+  font-weight: 900;
+  line-height: .95;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.seo-results-heading p {
+  color: #656a70;
+  font-size: 1.2rem;
+  margin: .5rem 0 0;
+}
+
+.seo-results-heading strong {
+  color: #202327;
+  font-weight: 900;
+}
+
+.seo-results-catalog .tp-main-clc__topbar > .flex {
+  margin-bottom: 0;
+}
+
+.seo-results-catalog .list-grid-bar {
+  gap: .5rem;
+}
+
+.seo-results-catalog .list-grid-bar li {
+  align-items: center;
+  background: #eef0f3;
+  border: 1px solid #e3e5e8;
+  border-radius: 4px;
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.seo-results-catalog .list-grid-bar li.active {
+  background: #17191c;
+  border-color: #17191c;
+}
+
+.seo-results-catalog .list-grid-bar li.active path {
+  fill: #fff;
+}
+
+.seo-results-catalog .topbar-right {
+  background: #fff;
+  border: 1px solid #e2e4e7;
+  border-radius: 4px;
+  gap: .8rem;
+  min-height: 36px;
+  padding: 0 1rem;
+}
+
+.seo-results-catalog .topbar-right > p {
+  color: #6b6f74;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.seo-results-catalog .btn-select-filter-sort {
+  font-family: var(--font-heading-family);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.seo-results-catalog .active-facets {
+  border-bottom: 1px solid #e1e3e6;
+  margin-bottom: 1.4rem !important;
+  min-height: 1px;
+  padding-bottom: .8rem;
+}
+
+.seo-results-catalog .active-facets .item-active {
+  background: #f0f1f3;
+  border: 1px solid #e5e7ea;
+  border-radius: 3px;
+}
+
+.seo-results-catalog .active-facets .clear-all {
+  color: #e33d13;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.seo-results-catalog #product-grid {
+  gap: 1.4rem;
+}
+
+.seo-results-catalog .tp-grid__item {
+  background: #fff;
+  border: 1px solid #e5e7ea;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@media (min-width: 1023px) {
+  .seo-results-catalog .facets-wrapper {
+    background: #fff;
+    border: 1px solid #e1e3e6;
+    border-radius: 6px;
+    flex: 0 0 25rem;
+    padding: 1.6rem;
+    width: 25rem;
+  }
+
+  .seo-results-catalog .facets__form-vertical {
+    width: 100%;
+  }
+
+  .seo-results-catalog .facets__disclosure-vertical {
+    margin-bottom: 1.8rem;
+  }
+
+  .seo-results-catalog .facets__summary,
+  .seo-results-catalog .facets__display-vertical {
+    padding-bottom: 1.5rem;
+  }
+
+  .seo-results-catalog .product-grid-container {
+    display: grid;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: calc(100% - 27rem);
+  }
+
+  .seo-results-catalog .seo-results-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .seo-results-catalog .tp-main-clc__topbar {
+    display: contents;
+  }
+
+  .seo-results-catalog .tp-main-clc__topbar > .flex {
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .seo-results-catalog .active-facets {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 1rem;
+  }
+
+  .seo-results-catalog .collection,
+  .seo-results-catalog .product-grid__desc {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1022px) {
+  .seo-results-catalog .seo-results-heading {
+    margin-bottom: 1.2rem;
+  }
+
+  .seo-results-catalog .tp-main-clc__topbar > .flex {
+    gap: 1rem;
+  }
+
+  .seo-results-catalog .seo-results-filter-header {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .seo-results-heading h2 {
+    font-size: 2.6rem;
+  }
+
+  .seo-results-catalog .topbar-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

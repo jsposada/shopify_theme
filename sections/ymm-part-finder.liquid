@@ -72,26 +72,67 @@
 
   <div class="ymm-results" data-ymm-results hidden>
     <div class="container">
-      <header class="ymm-results__header">
-        <div>
-          <h2 class="ymm-results__title" tabindex="-1" data-ymm-results-title>Repuestos compatibles</h2>
-          <p class="ymm-results__count" aria-live="polite" data-ymm-results-count></p>
-        </div>
-      </header>
+      <div class="ymm-results__layout">
+        <aside class="ymm-results__filters" aria-label="Filtros de resultados compatibles">
+          <header class="ymm-results__filters-header">
+            <span class="ymm-results__filters-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 6h16M7 12h10M10 18h4" />
+                <circle cx="8" cy="6" r="1.5" fill="currentColor" stroke="none" />
+                <circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                <circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+            <h2>Filtros</h2>
+            <button type="button" data-ymm-clear-filters>limpiar todo</button>
+          </header>
+          <div data-ymm-result-filters></div>
+        </aside>
 
-      <div class="ymm-results__grid" data-ymm-grid></div>
+        <div class="ymm-results__main">
+          <div class="ymm-results__toolbar">
+            <header class="ymm-results__header">
+              <h2 class="ymm-results__title" tabindex="-1" data-ymm-results-title>Repuestos compatibles</h2>
+              <p class="ymm-results__count" aria-live="polite" data-ymm-results-count></p>
+            </header>
 
-      <div class="ymm-results__footer">
-        <button class="ymm-results__more" type="button" data-ymm-more hidden>Cargar más</button>
-      </div>
+            <div class="ymm-results__controls">
+              <div class="ymm-results__views" aria-label="Vista de resultados">
+                <button type="button" class="is-active" aria-label="Vista de cuadrícula" aria-pressed="true" data-ymm-view="grid">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </button>
+                <button type="button" aria-label="Vista de lista" aria-pressed="false" data-ymm-view="list">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                </button>
+              </div>
+              <label class="ymm-results__sort">
+                <span>Ordenar por:</span>
+                <select data-ymm-sort>
+                  <option value="relevance">Relevancia</option>
+                  <option value="price-asc">Precio: menor a mayor</option>
+                  <option value="price-desc">Precio: mayor a menor</option>
+                  <option value="title">Nombre</option>
+                </select>
+              </label>
+            </div>
+          </div>
 
-      <div class="ymm-empty" data-ymm-empty hidden>
-        <h3 tabindex="-1" data-ymm-empty-title>No encontramos una coincidencia publicada</h3>
-        <p data-ymm-empty-message>No encontramos repuestos publicados para esta selección. Puedes escribirnos por WhatsApp y te ayudamos a encontrarlo.</p>
-        <div class="ymm-empty__actions">
-          <button class="ymm-action ymm-action--secondary" type="button" data-ymm-empty-change>Cambiar selección</button>
-          <a class="ymm-action" href="{{ catalog_url }}">Explorar categorías</a>
-          <a class="ymm-action ymm-action--whatsapp" href="#" target="_blank" rel="noopener" data-ymm-whatsapp>Consultar por WhatsApp</a>
+          <div class="ymm-results__active-filters" data-ymm-active-filters></div>
+          <div class="ymm-results__grid" data-ymm-grid></div>
+
+          <div class="ymm-results__footer">
+            <button class="ymm-results__more" type="button" data-ymm-more hidden>Cargar más</button>
+          </div>
+
+          <div class="ymm-empty" data-ymm-empty hidden>
+            <h3 tabindex="-1" data-ymm-empty-title>No encontramos una coincidencia publicada</h3>
+            <p data-ymm-empty-message>No encontramos repuestos publicados para esta selección. Puedes escribirnos por WhatsApp y te ayudamos a encontrarlo.</p>
+            <div class="ymm-empty__actions">
+              <button class="ymm-action ymm-action--secondary" type="button" data-ymm-empty-change>Cambiar selección</button>
+              <a class="ymm-action" href="{{ catalog_url }}">Explorar categorías</a>
+              <a class="ymm-action ymm-action--whatsapp" href="#" target="_blank" rel="noopener" data-ymm-whatsapp>Consultar por WhatsApp</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -127,12 +168,22 @@
     const emptyTitle = root.querySelector('[data-ymm-empty-title]');
     const emptyMessage = root.querySelector('[data-ymm-empty-message]');
     const whatsapp = root.querySelector('[data-ymm-whatsapp]');
+    const resultFilters = root.querySelector('[data-ymm-result-filters]');
+    const activeResultFilters = root.querySelector('[data-ymm-active-filters]');
+    const clearResultFiltersButton = root.querySelector('[data-ymm-clear-filters]');
+    const sortResultsSelect = root.querySelector('[data-ymm-sort]');
+    const viewButtons = root.querySelectorAll('[data-ymm-view]');
     const defaultSubmitLabel = submitLabel.textContent;
 
     let availableTypes = [];
     let nextCursor = null;
     let activePartType = '';
     let requestSequence = 0;
+    let currentProducts = [];
+    const selectedResultFilters = {
+      brand: new Set(),
+      partType: new Set()
+    };
 
     function publish(name, payload = {}) {
       if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
@@ -240,9 +291,14 @@
       }).format(amount);
     }
 
-    function productCard(product) {
+    function productCard(product, index) {
       const article = document.createElement('article');
       article.className = 'ymm-product-card';
+      article.dataset.brand = product.brand || 'Sin marca';
+      article.dataset.partType = product.part_type_label || 'Otros repuestos';
+      article.dataset.price = String(Number(product.price?.amount) || 0);
+      article.dataset.title = product.title || 'Repuesto para moto';
+      article.dataset.resultIndex = String(index);
 
       if (product.match_level === 'exact_year') {
         const badge = document.createElement('span');
@@ -308,7 +364,8 @@
     function renderProducts(items, append = false) {
       if (!append) grid.replaceChildren();
       const fragment = document.createDocumentFragment();
-      items.forEach((product) => fragment.appendChild(productCard(product)));
+      const startIndex = append ? grid.children.length : 0;
+      items.forEach((product, index) => fragment.appendChild(productCard(product, startIndex + index)));
       grid.appendChild(fragment);
       grid.querySelectorAll('[data-ymm-product-link]').forEach((link) => {
         if (link.dataset.analyticsBound === 'true') return;
@@ -320,9 +377,141 @@
       });
     }
 
+    function countResultValues(key) {
+      const counts = new Map();
+      currentProducts.forEach((product) => {
+        const value = key === 'brand'
+          ? (product.brand || 'Sin marca')
+          : (product.part_type_label || 'Otros repuestos');
+        counts.set(value, (counts.get(value) || 0) + 1);
+      });
+      return [...counts.entries()].sort(([left], [right]) => left.localeCompare(right, 'es'));
+    }
+
+    function renderResultFacet(title, key) {
+      const values = countResultValues(key);
+      if (!values.length) return null;
+
+      const section = document.createElement('section');
+      section.className = 'ymm-result-facet';
+      const heading = document.createElement('h3');
+      heading.textContent = title;
+      section.appendChild(heading);
+
+      const list = document.createElement('div');
+      list.className = 'ymm-result-facet__list';
+      values.forEach(([value, count]) => {
+        const label = document.createElement('label');
+        label.className = 'ymm-result-facet__option';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = selectedResultFilters[key].has(value);
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) selectedResultFilters[key].add(value);
+          else selectedResultFilters[key].delete(value);
+          applyResultFilters();
+        });
+        const text = document.createElement('span');
+        text.textContent = value;
+        const countElement = document.createElement('small');
+        countElement.textContent = `(${count})`;
+        label.append(checkbox, text, countElement);
+        list.appendChild(label);
+      });
+      section.appendChild(list);
+      return section;
+    }
+
+    function renderResultFacets() {
+      resultFilters.replaceChildren();
+      const brandFacet = renderResultFacet('Marca', 'brand');
+      const typeFacet = renderResultFacet('Tipo de repuesto', 'partType');
+      if (brandFacet) resultFilters.appendChild(brandFacet);
+      if (typeFacet) resultFilters.appendChild(typeFacet);
+    }
+
+    function renderActiveResultFilters() {
+      activeResultFilters.replaceChildren();
+      Object.entries(selectedResultFilters).forEach(([key, values]) => {
+        values.forEach((value) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'ymm-results__filter-chip';
+          button.setAttribute('aria-label', `Quitar filtro ${value}`);
+          button.textContent = `× ${value}`;
+          button.addEventListener('click', () => {
+            selectedResultFilters[key].delete(value);
+            renderResultFacets();
+            applyResultFilters();
+          });
+          activeResultFilters.appendChild(button);
+        });
+      });
+      if (activeResultFilters.children.length) {
+        const clear = document.createElement('button');
+        clear.type = 'button';
+        clear.className = 'ymm-results__clear-active';
+        clear.textContent = 'limpiar todo';
+        clear.addEventListener('click', clearResultFilters);
+        activeResultFilters.appendChild(clear);
+      }
+    }
+
+    function updateResultsSummary(total) {
+      const vehicleElement = document.createElement('strong');
+      vehicleElement.textContent = currentVehicleLabel();
+      resultsCount.replaceChildren(
+        'Resultados para ',
+        vehicleElement,
+        ` (${total} ${total === 1 ? 'opción encontrada' : 'opciones encontradas'})`
+      );
+    }
+
+    function applyResultFilters() {
+      let visibleCount = 0;
+      [...grid.children].forEach((card) => {
+        const brandMatch = !selectedResultFilters.brand.size || selectedResultFilters.brand.has(card.dataset.brand);
+        const typeMatch = !selectedResultFilters.partType.size || selectedResultFilters.partType.has(card.dataset.partType);
+        card.hidden = !(brandMatch && typeMatch);
+        if (!card.hidden) visibleCount += 1;
+      });
+      updateResultsSummary(visibleCount);
+      updateSelectionCount(visibleCount);
+      clearResultFiltersButton.disabled = !selectedResultFilters.brand.size && !selectedResultFilters.partType.size;
+      renderActiveResultFilters();
+    }
+
+    function clearResultFilters() {
+      selectedResultFilters.brand.clear();
+      selectedResultFilters.partType.clear();
+      renderResultFacets();
+      applyResultFilters();
+    }
+
+    function sortResultCards() {
+      const mode = sortResultsSelect.value;
+      const cards = [...grid.children];
+      cards.sort((left, right) => {
+        if (mode === 'price-asc') return Number(left.dataset.price) - Number(right.dataset.price);
+        if (mode === 'price-desc') return Number(right.dataset.price) - Number(left.dataset.price);
+        if (mode === 'title') return left.dataset.title.localeCompare(right.dataset.title, 'es');
+        return Number(left.dataset.resultIndex) - Number(right.dataset.resultIndex);
+      });
+      grid.append(...cards);
+    }
+
+    function hideResultLayout() {
+      results.hidden = true;
+      document.documentElement.classList.remove('ymm-search-has-results');
+    }
+
     function showEmptyState(isError = false) {
       results.hidden = false;
+      document.documentElement.classList.remove('ymm-search-has-results');
+      currentProducts = [];
       grid.replaceChildren();
+      resultFilters.replaceChildren();
+      activeResultFilters.replaceChildren();
       moreButton.hidden = true;
       empty.hidden = false;
       availability.textContent = isError
@@ -342,10 +531,12 @@
     function showResults(items, meta, append = false) {
       results.hidden = false;
       empty.hidden = true;
+      currentProducts = append ? [...currentProducts, ...items] : [...items];
       renderProducts(items, append);
-      const totalShown = grid.children.length;
-      resultsCount.textContent = `${totalShown} ${totalShown === 1 ? 'repuesto encontrado' : 'repuestos encontrados'}`;
-      updateSelectionCount(totalShown);
+      renderResultFacets();
+      sortResultCards();
+      applyResultFilters();
+      document.documentElement.classList.add('ymm-search-has-results');
       nextCursor = meta?.page_info?.next_cursor || null;
       moreButton.hidden = !activePartType || !meta?.page_info?.has_next_page;
       if (!append) {
@@ -401,9 +592,19 @@
       setBusy(true);
       setStatus('Buscando repuestos compatibles…');
       showSelection();
-      results.hidden = true;
+      hideResultLayout();
       activePartType = typeSelect.value;
       nextCursor = null;
+      currentProducts = [];
+      selectedResultFilters.brand.clear();
+      selectedResultFilters.partType.clear();
+      sortResultsSelect.value = 'relevance';
+      grid.classList.remove('is-list');
+      viewButtons.forEach((button) => {
+        const isGrid = button.dataset.ymmView === 'grid';
+        button.classList.toggle('is-active', isGrid);
+        button.setAttribute('aria-pressed', String(isGrid));
+      });
       publish('ymm_search_submit', {
         has_year: Boolean(yearSelect.value),
         part_type_selected: Boolean(activePartType)
@@ -442,7 +643,7 @@
     makeSelect.addEventListener('change', async () => {
       requestSequence += 1;
       selection.hidden = true;
-      results.hidden = true;
+      hideResultLayout();
       resetSelect(modelSelect, 'Selecciona una marca');
       resetSelect(yearSelect, 'Selecciona un modelo');
       resetSelect(typeSelect, 'Selecciona un modelo');
@@ -463,7 +664,7 @@
     modelSelect.addEventListener('change', async () => {
       requestSequence += 1;
       selection.hidden = true;
-      results.hidden = true;
+      hideResultLayout();
       resetSelect(yearSelect, 'Selecciona un modelo');
       resetSelect(typeSelect, 'Selecciona un modelo');
       submitButton.disabled = true;
@@ -493,7 +694,7 @@
     yearSelect.addEventListener('change', async () => {
       requestSequence += 1;
       selection.hidden = true;
-      results.hidden = true;
+      hideResultLayout();
       submitButton.disabled = true;
       setStatus('Actualizando tipos de repuesto…');
       publish(yearSelect.value ? 'ymm_year_selected' : 'ymm_unknown_year_selected');
@@ -509,12 +710,26 @@
 
     typeSelect.addEventListener('change', () => {
       selection.hidden = true;
-      results.hidden = true;
+      hideResultLayout();
     });
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       submitSearch();
+    });
+
+    clearResultFiltersButton.addEventListener('click', clearResultFilters);
+    sortResultsSelect.addEventListener('change', sortResultCards);
+    viewButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const isList = button.dataset.ymmView === 'list';
+        grid.classList.toggle('is-list', isList);
+        viewButtons.forEach((viewButton) => {
+          const isActive = viewButton === button;
+          viewButton.classList.toggle('is-active', isActive);
+          viewButton.setAttribute('aria-pressed', String(isActive));
+        });
+      });
     });
 
     moreButton.addEventListener('click', async () => {
@@ -539,7 +754,7 @@
     });
 
     root.querySelector('[data-ymm-empty-change]').addEventListener('click', () => {
-      results.hidden = true;
+      hideResultLayout();
       root.querySelector('.ymm-finder').scrollIntoView({ behavior: 'smooth', block: 'center' });
       makeSelect.focus({ preventScroll: true });
     });
