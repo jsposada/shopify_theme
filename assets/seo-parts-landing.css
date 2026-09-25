@@ -132,7 +132,7 @@
 }
 
 .ymm-finder-section {
-  background: transparent;
+  background: var(--parts-surface);
   position: relative;
   z-index: 3;
 }

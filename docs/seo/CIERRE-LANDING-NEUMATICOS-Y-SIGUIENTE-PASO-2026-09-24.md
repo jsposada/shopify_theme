@@ -483,4 +483,9 @@ se ajusta a 30 px. Se validaron el catálogo general de ambas colecciones y la
 búsqueda compatible `Bmw F 700` sin solapamientos, errores de consola ni
 desbordamiento horizontal.
 
+Finalmente se unificó el fondo exterior del buscador con el gris técnico del
+catálogo (`#f4f5f7`) en ambas landings. El color comienza al terminar el hero y
+continúa hasta los resultados; únicamente la tarjeta superpuesta del buscador
+permanece blanca, conservando su borde naranja y su sombra.
+
 Este documento funciona como registro de cierre de la landing de neumáticos y punto de continuidad del buscador de repuestos sin depender del historial de la conversación.
