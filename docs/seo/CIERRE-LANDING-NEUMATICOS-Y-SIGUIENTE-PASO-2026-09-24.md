@@ -503,3 +503,10 @@ Este documento funciona como registro de cierre de la landing de neumáticos y p
 
 - El panel lateral de filtros se amplió aproximadamente un 15% en escritorio, de `23.3rem` a `26.8rem`, y se mantuvo el mismo ancho en ambas landings.
 - Los signos `+` quedaron junto a cada título de filtro, con una separación uniforme de `0.8rem`.
+
+### Columnas configurables de resultados
+
+- Las landings de neumáticos y repuestos muestran inicialmente 4 productos por fila en computador y 2 en móvil.
+- La sección de resultados permite cambiar ambas cantidades desde el editor del tema de Shopify.
+- En computador se puede elegir entre 2, 3 o 4 productos por fila; en móvil, entre 1 o 2.
+- La vista de lista continúa disponible y, al volver a la grilla, se respeta la cantidad configurada en Shopify.

@@ -21,7 +21,7 @@
     assign seo_results_layout = true
   endif
   if seo_results_layout and column_show != 1
-    assign column_show = 3
+    assign column_show = columnProductSettings
   endif
 %}
 {% if seo_results_layout %}
@@ -359,7 +359,8 @@
               <ul
                 id="product-grid"
                 data-id="{{ section.id }}"
-                class="tp-grid product-grid tp-grid--{{ column_show }}-col-desktop tp-grid--2-col-mobile list-none"
+                data-columns-mobile="{{ sst.column_number_mobile }}"
+                class="tp-grid product-grid tp-grid--{{ column_show }}-col-desktop tp-grid--{{ sst.column_number_mobile }}-col-mobile list-none"
                 {% if paginate.next.url != blank %}
                 data-url="{{ paginate.next.url }}"
                 {% endif %}>
@@ -478,7 +479,7 @@
       }, {
         "type": "select",
         "id": "column_number",
-        "label": "Column product on desktop",
+        "label": "Productos por fila en computador",
         "options": [
           {
             "value": "2",
@@ -491,7 +492,21 @@
             "label": "4 column"
           }
         ],
-        "default": "3"
+        "default": "4"
+      }, {
+        "type": "select",
+        "id": "column_number_mobile",
+        "label": "Productos por fila en móvil",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 producto"
+          }, {
+            "value": "2",
+            "label": "2 productos"
+          }
+        ],
+        "default": "2"
       }, {
         "type": "header",
         "content": "Description"
