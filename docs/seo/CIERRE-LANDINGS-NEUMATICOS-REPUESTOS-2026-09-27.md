@@ -1,11 +1,13 @@
 # Cierre técnico — landings de neumáticos y repuestos
 
 - **Fecha de cierre técnico:** 2026-09-27
+- **Fecha de publicación y cierre en producción:** 2026-09-27
 - **Proyecto:** Bikerz.cl
 - **Repositorio:** `C:\JS\shopify`
 - **Rama:** `codex/landings-neumaticos-repuestos`
 - **Commit funcional final:** `f66ca04`
-- **Estado:** desarrollo y revisión visual terminados; publicación en producción pendiente de autorización explícita.
+- **Commit documental previo a la publicación:** `2e3a121`
+- **Estado:** desarrollo, revisión, publicación y verificación en producción completados.
 
 ## 1. Resultado
 
@@ -22,14 +24,19 @@ Este documento reemplaza como cierre definitivo a `CIERRE-LANDING-NEUMATICOS-Y-S
 
 | Elemento | Estado al cierre técnico |
 | --- | --- |
-| Theme publicado | `SEO` — ID `164560142557`; la publicación final de este paquete no está registrada todavía |
+| Theme publicado | `SEO` — ID `164560142557`; paquete final publicado y verificado el 2026-09-27 |
 | Theme de revisión | `Codex landings 2026-09-24` — ID `166033588445` |
-| Rama remota | Sincronizada hasta `f66ca04` |
+| Rama remota | Código funcional y documentación de cierre sincronizados |
 | Servicio MMY | Operativo en Easypanel |
 | App Proxy | Operativo bajo `/apps/ymm` |
-| Publicación final | Requiere comparación, prueba y autorización del propietario |
+| Publicación final | Completada con autorización explícita del propietario |
 
-Enlaces de revisión:
+Enlaces públicos:
+
+- Neumáticos: <https://www.bikerz.cl/collections/neumaticos?view=neumaticos>
+- Repuestos: <https://www.bikerz.cl/collections/repuestos?view=repuestos>
+
+El theme de revisión se conserva como respaldo:
 
 - Neumáticos: <https://www.bikerz.cl/collections/neumaticos?preview_theme_id=166033588445&view=neumaticos>
 - Repuestos: <https://www.bikerz.cl/collections/repuestos?preview_theme_id=166033588445&view=repuestos>
@@ -178,6 +185,19 @@ Los datos de compatibilidad y la lógica de búsqueda no se administran desde es
 - Servicio MMY y App Proxy con respuestas correctas.
 - Sin errores nuevos de consola durante las revisiones registradas.
 
+### Publicación y verificación en producción del 2026-09-27
+
+- Publicación realizada en el theme live `SEO`, ID `164560142557`.
+- Se subieron únicamente los 12 archivos necesarios para las dos landings, con protección contra borrado de archivos remotos.
+- Se excluyeron los nueve archivos modificados del proyecto que no pertenecían a este trabajo.
+- Descarga posterior del paquete desde Shopify: **12 de 12 archivos presentes**.
+- Comparación SHA-256 entre el paquete local y el descargado desde producción: **12 de 12 coincidencias**.
+- Respuesta pública de `/collections/neumaticos?view=neumaticos`: HTTP 200, H1, buscador y hoja de estilos correctos.
+- Respuesta pública de `/collections/repuestos?view=repuestos`: HTTP 200, H1, buscador y hoja de estilos correctos.
+- Prueba real de neumáticos: medida `120/70-17`, con 31 neumáticos disponibles.
+- Prueba real de repuestos: `Honda CB 500 · 2026` + `Filtros de aceite`, con un repuesto compatible y disponible.
+- Ambas pruebas mantuvieron un solo H1, no presentaron desbordamiento horizontal y no registraron errores de consola.
+
 ## 9. Decisiones finales
 
 - Se conservan las colecciones existentes como URLs canónicas.
@@ -192,7 +212,6 @@ Los datos de compatibilidad y la lógica de búsqueda no se administran desde es
 
 Estos puntos no impiden considerar terminado el desarrollo de las landings:
 
-- Publicar el paquete final en el theme live después de la autorización explícita.
 - Agregar más categorías al motor MMY.
 - Implementar métricas y rankings de lo más buscado según `PLAN-METRICAS-BUSCADORES-NEUMATICOS-REPUESTOS.md`.
 - Evaluar compatibilidad coherente dentro de las fichas de producto.
@@ -230,9 +249,9 @@ Se considera completado cuando:
 
 ### Cierre en producción
 
-Se completará cuando:
+Completado el 2026-09-27:
 
-- el propietario autorice explícitamente la publicación;
-- el paquete se publique sin sobrescribir cambios ajenos;
-- ambas URLs públicas superen las pruebas de humo;
-- quede registrada la evidencia de publicación y la ruta de reversión.
+- [x] El propietario autorizó explícitamente la publicación.
+- [x] El paquete se publicó sin sobrescribir cambios ajenos.
+- [x] Ambas URLs públicas superaron las pruebas de humo.
+- [x] Se registraron la evidencia de publicación y la ruta de reversión.
