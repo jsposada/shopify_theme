@@ -94,42 +94,34 @@
       }
     },
     "faq": {
-      "type": "faq",
+      "type": "seo-landing-faq",
       "blocks": {
         "compatible": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Qué significa “Compatible con tu moto”?",
-            "tab_content": "content",
-            "content": "<p>Significa que encontramos una compatibilidad aprobada para la marca, el modelo y el año seleccionados. Revisa también las observaciones y especificaciones del producto antes de comprar.</p>",
-            "page": ""
+            "content": "<p>Significa que encontramos una compatibilidad aprobada para la marca, el modelo y el año seleccionados. Revisa también las observaciones y especificaciones del producto antes de comprar.</p>"
           }
         },
         "unknown-year": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Qué hago si no conozco el año de mi moto?",
-            "tab_content": "content",
-            "content": "<p>Puedes dejar el año en “No conozco el año” y buscar por modelo. Antes de comprar, confirma el año en el padrón, el manual o la ficha técnica de tu moto.</p>",
-            "page": ""
+            "content": "<p>Puedes dejar el año en “No conozco el año” y buscar por modelo. Antes de comprar, confirma el año en el padrón, el manual o la ficha técnica de tu moto.</p>"
           }
         },
         "confirm": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Cómo confirmo la compatibilidad antes de comprar?",
-            "tab_content": "content",
-            "content": "<p>Compara la referencia, medidas y posición del repuesto con la pieza instalada. Si tienes dudas, envíanos por WhatsApp la marca, modelo, año y una foto de la pieza.</p>",
-            "page": ""
+            "content": "<p>Compara la referencia, medidas y posición del repuesto con la pieza instalada. Si tienes dudas, envíanos por WhatsApp la marca, modelo, año y una foto de la pieza.</p>"
           }
         },
         "no-results": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Qué hago si el buscador no muestra resultados?",
-            "tab_content": "content",
-            "content": "<p>Cambia la selección, explora las categorías o escríbenos por WhatsApp. Que no aparezca una coincidencia publicada no significa necesariamente que el repuesto no exista.</p>",
-            "page": ""
+            "content": "<p>Cambia la selección, explora las categorías o escríbenos por WhatsApp. Que no aparezca una coincidencia publicada no significa necesariamente que el repuesto no exista.</p>"
           }
         }
       },

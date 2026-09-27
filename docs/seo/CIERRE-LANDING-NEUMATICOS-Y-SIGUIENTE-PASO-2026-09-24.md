@@ -518,3 +518,11 @@ Este documento funciona como registro de cierre de la landing de neumáticos y p
 - El diseño se puede alternar globalmente entre `Original` y `Nuevo Bikerz` desde la configuración del tema; `Nuevo Bikerz` queda como valor inicial.
 - Se validó en el theme de vista previa `166033588445` con 4 tarjetas por fila en computador y 2 en móvil.
 - El theme publicado no fue modificado.
+
+### Contenidos editables desde Shopify
+
+- Se retiró el ícono decorativo de lupa de los buscadores de neumáticos y repuestos.
+- Los tres badges destacados de cada hero se editan como bloques `Badge destacado` desde el editor visual del tema.
+- Cada landing usa una sección `FAQ landing SEO` con bloques ordenables de pregunta y respuesta.
+- El mantenedor permite agregar, eliminar y reordenar hasta 12 preguntas frecuentes sin editar código.
+- Las preguntas visibles generan automáticamente el marcado estructurado `FAQPage`, que también puede desactivarse desde la sección.

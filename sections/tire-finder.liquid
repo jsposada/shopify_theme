@@ -76,7 +76,6 @@
   <div class="pf-inner page-width">
     <div class="pf-accent" aria-hidden="true"></div>
     <div class="pf-header">
-      <span class="pf-header-icon" aria-hidden="true">⌕</span>
       <div>
         <h2 class="pf-title">{{ section.settings.title }}</h2>
         {%- if section.settings.help_text != blank -%}
@@ -460,21 +459,6 @@
     margin-bottom: 2.4rem;
   }
 
-  .pf-wrapper--landing .pf-header-icon {
-    align-items: center;
-    background: #17191b;
-    border-radius: 9px;
-    color: var(--pf-accent);
-    display: flex;
-    flex: 0 0 46px;
-    font-family: Arial, sans-serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-    height: 46px;
-    justify-content: center;
-    transform: rotate(-20deg);
-  }
-
   .pf-wrapper--landing .pf-title {
     font-family: var(--font-heading-family);
     font-size: clamp(1.9rem, 1.6vw, 2.4rem);
@@ -627,7 +611,6 @@
     }
     .pf-wrapper--landing .pf-accent { margin: 0 -1.6rem 2rem; }
     .pf-wrapper--landing .pf-header { align-items: flex-start; }
-    .pf-wrapper--landing .pf-header-icon { flex-basis: 40px; height: 40px; }
     .pf-wrapper--landing .pf-card { grid-template-columns: 1fr; }
     .pf-wrapper--landing .pf-status { align-items: flex-start; flex-wrap: wrap; }
     .pf-wrapper--landing .pf-status-clear { margin-left: 4rem; }

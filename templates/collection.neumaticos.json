@@ -151,51 +151,41 @@
       }
     },
     "faq": {
-      "type": "faq",
+      "type": "seo-landing-faq",
       "blocks": {
         "measure": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Cómo encuentro la medida de los neumáticos de mi moto?",
-            "tab_content": "content",
-            "content": "<p>Busca la medida grabada en el costado del neumático y compárala con el manual o la ficha técnica de tu moto. Confirma también si corresponde al eje delantero o trasero.</p>",
-            "page": ""
+            "content": "<p>Busca la medida grabada en el costado del neumático y compárala con el manual o la ficha técnica de tu moto. Confirma también si corresponde al eje delantero o trasero.</p>"
           }
         },
         "numbers": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Qué significan el ancho, el perfil y el aro?",
-            "tab_content": "content",
-            "content": "<p>En una medida como 120/70-17, 120 es el ancho nominal en milímetros, 70 es la relación del perfil respecto del ancho y 17 es el diámetro de la llanta en pulgadas.</p>",
-            "page": ""
+            "content": "<p>En una medida como 120/70-17, 120 es el ancho nominal en milímetros, 70 es la relación del perfil respecto del ancho y 17 es el diámetro de la llanta en pulgadas.</p>"
           }
         },
         "tube": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Cómo sé si necesito un neumático con cámara o sin cámara?",
-            "tab_content": "content",
-            "content": "<p>Revisa las siglas TT (con cámara) o TL (tubeless) en el producto y confirma la compatibilidad con la llanta. Si tienes dudas, envíanos los datos de tu moto antes de comprar.</p>",
-            "page": ""
+            "content": "<p>Revisa las siglas TT (con cámara) o TL (tubeless) en el producto y confirma la compatibilidad con la llanta. Si tienes dudas, envíanos los datos de tu moto antes de comprar.</p>"
           }
         },
         "installation": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Realizan instalación y balanceo?",
-            "tab_content": "content",
-            "content": "<p>Sí. Realizamos instalación y balanceo de neumáticos en nuestro taller de Macul. Confirma disponibilidad y condiciones al agendar.</p>",
-            "page": ""
+            "content": "<p>Sí. Realizamos instalación y balanceo de neumáticos en nuestro taller de Macul. Confirma disponibilidad y condiciones al agendar.</p>"
           }
         },
         "shipping": {
-          "type": "custom_tab",
+          "type": "item",
           "settings": {
             "title": "¿Hacen despachos a todo Chile?",
-            "tab_content": "content",
-            "content": "<p>Sí. Despachamos a la Región Metropolitana y a regiones. El plazo depende de la disponibilidad del producto y del destino.</p>",
-            "page": ""
+            "content": "<p>Sí. Despachamos a la Región Metropolitana y a regiones. El plazo depende de la disponibilidad del producto y del destino.</p>"
           }
         }
       },

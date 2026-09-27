@@ -163,21 +163,6 @@
   margin-bottom: 2.4rem;
 }
 
-.ymm-finder__header-icon {
-  align-items: center;
-  background: #17191b;
-  border-radius: 9px;
-  color: var(--parts-orange);
-  display: flex;
-  flex: 0 0 46px;
-  font-family: Arial, sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  height: 46px;
-  justify-content: center;
-  transform: rotate(-20deg);
-}
-
 .ymm-finder__title {
   font-size: clamp(1.9rem, 1.6vw, 2.4rem);
   font-weight: 900;
@@ -668,7 +653,6 @@
     transform: translateY(-3.8rem);
   }
   .ymm-finder__header { margin-bottom: 1.5rem; }
-  .ymm-finder__header-icon { flex-basis: 40px; height: 40px; }
   .ymm-finder__form { grid-template-columns: 1fr; }
   .ymm-finder__submit { grid-column: auto; }
   .ymm-selection { align-items: flex-start; flex-wrap: wrap; }
