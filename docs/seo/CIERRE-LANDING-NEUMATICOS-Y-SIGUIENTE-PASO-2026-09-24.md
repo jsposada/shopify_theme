@@ -1,5 +1,7 @@
 # Cierre de la landing de neumáticos y siguiente paso
 
+> **Documento histórico:** el cierre consolidado y vigente de ambas landings está en `docs/seo/CIERRE-LANDINGS-NEUMATICOS-REPUESTOS-2026-09-27.md`.
+
 **Fecha:** 24 de septiembre de 2026  
 **Proyecto:** Bikerz.cl  
 **Plan maestro:** `docs/seo/PLAN-LANDINGS-NEUMATICOS-REPUESTOS-MMY.md`  

@@ -1,10 +1,12 @@
 # Plan de implementación — landings de neumáticos y repuestos con buscadores
 
 **Creado:** 2026-09-24  
-**Estado:** fases 0 a 4 implementadas; landings en theme de vista previa, pendientes de aprobación y publicación
+**Estado:** desarrollo de ambas landings terminado; cierre técnico en curso y publicación final pendiente de autorización explícita
 **Proyecto Shopify:** `C:\JS\shopify`  
 **Motor de compatibilidad:** `C:\JS\bikerz_app\ymm`  
 **Documento principal relacionado:** `docs/seo/SEO-ROADMAP.md`
+
+**Cierre consolidado:** `docs/seo/CIERRE-LANDINGS-NEUMATICOS-REPUESTOS-2026-09-27.md`
 
 ## 1. Objetivo
 
