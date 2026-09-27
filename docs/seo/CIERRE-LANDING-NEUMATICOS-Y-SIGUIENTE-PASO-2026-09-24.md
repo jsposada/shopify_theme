@@ -510,3 +510,11 @@ Este documento funciona como registro de cierre de la landing de neumáticos y p
 - La sección de resultados permite cambiar ambas cantidades desde el editor del tema de Shopify.
 - En computador se puede elegir entre 2, 3 o 4 productos por fila; en móvil, entre 1 o 2.
 - La vista de lista continúa disponible y, al volver a la grilla, se respeta la cantidad configurada en Shopify.
+
+### Nueva tarjeta de producto Bikerz
+
+- Los catálogos nativos de las landings de neumáticos y repuestos usan la nueva tarjeta de producto Bikerz.
+- La tarjeta incluye imagen, marca, nombre, disponibilidad, precio, botón de compra y acceso a vista rápida.
+- El diseño se puede alternar globalmente entre `Original` y `Nuevo Bikerz` desde la configuración del tema; `Nuevo Bikerz` queda como valor inicial.
+- Se validó en el theme de vista previa `166033588445` con 4 tarjetas por fila en computador y 2 en móvil.
+- El theme publicado no fue modificado.

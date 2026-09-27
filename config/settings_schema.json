@@ -1102,6 +1102,22 @@
       },
       {
         "type": "select",
+        "id": "product_card_design",
+        "label": "Diseño de tarjeta",
+        "default": "bikerz",
+        "options": [
+          {
+            "value": "original",
+            "label": "Original"
+          },
+          {
+            "value": "bikerz",
+            "label": "Nuevo Bikerz"
+          }
+        ]
+      },
+      {
+        "type": "select",
         "id": "product_layout",
         "label": "Product layout",
         "default": "prd-item-1",

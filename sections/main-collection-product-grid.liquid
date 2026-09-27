@@ -367,7 +367,11 @@
                 {%- for product in collection.products -%}
                   <li class="tp-grid__item">
                     {% liquid
-                      render 'product-item-layout-1', card_product: product
+                      if seo_results_layout
+                        render 'product-card-selector', card_product: product
+                      else
+                        render 'product-item-layout-1', card_product: product
+                      endif
                     %}
                   </li>
                 {%- endfor -%}
