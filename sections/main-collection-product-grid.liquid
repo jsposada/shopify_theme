@@ -57,6 +57,9 @@
 <div class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %} product-item-list{% if seo_results_layout %} seo-results-catalog seo-results-catalog--{{ template.suffix }}{% endif %}" style="{{ style | strip | strip_newlines }}">
   <span id="a11y-refresh-page-message" class="visually-hidden" role="status" aria-live="polite"></span>
   <div class="{{ container }}">
+    {% if template.suffix == 'repuestos' %}
+      <p class="parts-catalog-status" data-parts-catalog-status role="status" aria-live="polite" aria-atomic="true"></p>
+    {% endif %}
     {%- paginate collection.products by section.settings.products_per_page -%}
       <div class="{{ classWrapper | strip | strip_newlines }}{% if seo_results_layout %} seo-results-layout{% endif %}">
         {{ 'component-facets.css' | asset_url | stylesheet_tag }}
@@ -107,6 +110,11 @@
         {%- endif -%}
 
         <div class="product-grid-container" id="ProductGridContainer">
+          {% if template.suffix == 'neumaticos' %}
+            <span data-tire-results-count="{{ collection.products_count }}" hidden></span>
+          {% elsif template.suffix == 'repuestos' %}
+            <span data-parts-results-count="{{ collection.products_count }}" hidden></span>
+          {% endif %}
           {%- if sst.heading != blank -%}
             <header class="{% if seo_results_layout %}seo-results-heading{% endif %}">
               <h2 class="{% unless seo_results_layout %}mb-32{% endunless %}">{{ sst.heading | escape }}</h2>
@@ -248,6 +256,7 @@
                 </div>
               {%- endif -%}
             </div>
+            {%- if enable_filtering -%}
             {% liquid
               assign checkValue = false
               for filter in collection.filters
@@ -310,6 +319,7 @@
                 </a>
               {% endif %}
             </div>
+            {%- endif -%}
           </div>
           {% assign desc_pos = section.settings.display_position %}
           {% if section.settings.show_description and desc_pos == 'top' and collection_description != blank %}

@@ -81,7 +81,7 @@
           {%- for product in collections limit: sst.limit_products -%}
             <div class="swiper-slide">
               {% liquid
-                render 'product-item-layout-1', card_product: product, section_id: section.id
+                render 'product-card-selector', card_product: product, section_id: section.id
               %}
             </div>
           {%- else -%}

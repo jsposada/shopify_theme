@@ -168,6 +168,7 @@
       <span class="pf-status-icon" aria-hidden="true"></span>
       <span class="pf-status-message"></span>
       <button class="pf-status-clear" type="button">limpiar filtros</button>
+      <a class="pf-status-fallback" hidden>Ver resultados</a>
     </div>
     <div id="{{ tire_finder_updates_id }}" class="pf-sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
@@ -638,7 +639,7 @@
     const COLLECTION_HANDLE = "{{ collections[section.settings.target_collection].handle | default: 'all' }}";
     const COLLECTION_URL    = "{{ collections[section.settings.target_collection].url | default: '/collections/all' }}";
     const FINDER_SOURCE     = {{ request.page_type | json }};
-    const RESULTS_COUNT     = {{ collection.products_count | default: -1 | json }};
+    let resultsCount        = {{ collection.products_count | default: -1 | json }};
     const REQUIRE_METRIC_PROFILE = {{ section.settings.require_metric_profile | json }};
 
     // Namespace y keys de los metacampos en los productos
@@ -659,6 +660,9 @@
     const statusIconEl  = statusEl.querySelector('.pf-status-icon');
     const statusMessageEl = statusEl.querySelector('.pf-status-message');
     const statusClearEl = statusEl.querySelector('.pf-status-clear');
+    const statusFallbackEl = statusEl.querySelector('.pf-status-fallback');
+    const buttonTextEl = btnSearch.querySelector('.pf-btn-text');
+    const buttonLabel = buttonTextEl.textContent;
     const updatesEl     = finderEl.querySelector('#{{ tire_finder_updates_id }}');
     const steps         = finderEl.querySelectorAll('.pf-step[data-step]');
     const USAGE_PARAM_NAME = selectUse?.dataset.paramName || '';
@@ -669,11 +673,14 @@
     // extraídas de todos los productos de la colección
     // ─────────────────────────────────────────────
     let allCombinations = [];
+    let measuresLoading = true;
+    let resultsLoading = false;
 
     // ─────────────────────────────────────────────
     // HELPERS
     // ─────────────────────────────────────────────
     function showStatus(msg, type = 'info', showClear = false) {
+      statusFallbackEl.hidden = true;
       const iconByType = { info: '✓', warning: '!', error: '!', empty: '–' };
       statusMessageEl.textContent = msg;
       statusIconEl.textContent = iconByType[type] || '✓';
@@ -707,7 +714,17 @@
     }
 
     function setLoading(isLoading) {
-      finderEl.setAttribute('aria-busy', String(isLoading));
+      measuresLoading = isLoading;
+      finderEl.setAttribute('aria-busy', String(measuresLoading || resultsLoading));
+    }
+
+    function navigateToResults(url) {
+      const request = new CustomEvent('bikerz:tire-results-search', {
+        bubbles: true,
+        cancelable: true,
+        detail: { url }
+      });
+      if (finderEl.dispatchEvent(request)) window.location.href = url;
     }
 
     function announceOptions(changedSelect) {
@@ -944,32 +961,47 @@
 
     function restoreSelectionFromUrl() {
       const params = new URLSearchParams(window.location.search);
+      const singleValue = name => {
+        const values = [...new Set(params.getAll(name))];
+        return values.length === 1 ? values[0] : '';
+      };
       const selected = {
-        ancho: params.get(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`) || '',
-        aspecto: params.get(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`) || '',
-        aro: params.get(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`) || '',
-        uso: USAGE_PARAM_NAME ? params.get(USAGE_PARAM_NAME) || '' : ''
+        ancho: singleValue(`filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`),
+        aspecto: singleValue(`filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`),
+        aro: singleValue(`filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`),
+        uso: USAGE_PARAM_NAME ? singleValue(USAGE_PARAM_NAME) : ''
       };
 
-      if (!selected.ancho && !selected.aspecto && !selected.aro && !selected.uso) return false;
-
+      selectAncho.value = '';
+      selectAspecto.value = '';
+      selectAro.value = '';
+      if (selectUse) selectUse.value = '';
+      repopulate(null);
       if ([...selectAncho.options].some(option => option.value === selected.ancho)) selectAncho.value = selected.ancho;
       if ([...selectAspecto.options].some(option => option.value === selected.aspecto)) selectAspecto.value = selected.aspecto;
       if ([...selectAro.options].some(option => option.value === selected.aro)) selectAro.value = selected.aro;
       if (selectUse && [...selectUse.options].some(option => option.value === selected.uso)) selectUse.value = selected.uso;
       repopulate(null);
 
-      if (RESULTS_COUNT === 0) {
+      const hasFilters = [...params.keys()].some(name => name.startsWith('filter.'));
+      if (!hasFilters) {
+        hideStatus();
+        return false;
+      }
+      if (resultsCount === 0) {
         showStatus('No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.', 'empty', true);
       } else {
-        const measurement = selectedMeasurement();
+        const hasMultipleMeasures = [
+          `filter.p.m.${NAMESPACE_ANCHO}.${KEY_ANCHO}`,
+          `filter.p.m.${NAMESPACE_ASPECTO}.${KEY_ASPECTO}`,
+          `filter.p.m.${NAMESPACE_ARO}.${KEY_ARO}`
+        ].some(name => new Set(params.getAll(name)).size > 1);
+        const measurement = hasMultipleMeasures ? '' : selectedMeasurement();
+        const availability = resultsCount === 1 ? '1 resultado' : `${resultsCount} resultados`;
         if (measurement) {
-          const availability = RESULTS_COUNT === 1
-            ? '1 neumático disponible'
-            : RESULTS_COUNT > 1
-              ? `${RESULTS_COUNT} neumáticos disponibles`
-              : 'neumáticos disponibles';
           showMeasurementStatus(measurement, availability);
+        } else {
+          showStatus(`Mostrando ${availability} con los filtros seleccionados.`, 'info', true);
         }
       }
 
@@ -1033,6 +1065,30 @@
     selectAro.addEventListener('change',     () => handleSelectionChange('aro'));
     selectUse?.addEventListener('change', () => setStepActive());
 
+    finderEl.addEventListener('bikerz:tire-results-loading', () => {
+      resultsLoading = true;
+      finderEl.setAttribute('aria-busy', 'true');
+      buttonTextEl.textContent = 'Buscando...';
+      showStatus('Buscando neumáticos...', 'info');
+    });
+    function finishResultsLoading() {
+      resultsLoading = false;
+      finderEl.setAttribute('aria-busy', String(measuresLoading));
+      buttonTextEl.textContent = buttonLabel;
+    }
+    finderEl.addEventListener('bikerz:tire-results-updated', event => {
+      finishResultsLoading();
+      resultsCount = event.detail.count;
+      if (allCombinations.length) restoreSelectionFromUrl();
+      updatesEl.textContent = `${resultsCount} ${resultsCount === 1 ? 'resultado encontrado' : 'resultados encontrados'}.`;
+    });
+    finderEl.addEventListener('bikerz:tire-results-error', event => {
+      finishResultsLoading();
+      showStatus('No pudimos actualizar los resultados. Intenta buscar nuevamente o abre los resultados.', 'error');
+      statusFallbackEl.href = event.detail.url;
+      statusFallbackEl.hidden = false;
+    });
+
     statusClearEl.addEventListener('click', () => {
       const params = new URLSearchParams();
       const currentParams = new URLSearchParams(window.location.search);
@@ -1041,7 +1097,7 @@
         if (value) params.append(paramName, value);
       });
       const query = params.toString();
-      window.location.href = `${COLLECTION_URL}${query ? `?${query}` : ''}`;
+      navigateToResults(`${COLLECTION_URL}${query ? `?${query}` : ''}#ProductGridContainer`);
     });
 
     // ─────────────────────────────────────────────
@@ -1093,7 +1149,7 @@
         uso
       });
 
-      window.location.href = `${COLLECTION_URL}?${params.toString()}`;
+      navigateToResults(`${COLLECTION_URL}?${params.toString()}#ProductGridContainer`);
     });
 
     // ─────────────────────────────────────────────
@@ -1110,3 +1166,6 @@
 
 })();
 </script>
+{% if request.page_type == 'collection' and template.suffix == 'neumaticos' %}
+  <script src="{{ 'tire-collection-results.js' | asset_url }}" defer="defer"></script>
+{% endif %}

@@ -61,7 +61,7 @@
           <div class="swiper-wrapper">
             {% for recommendation in recommendations.products %}
               <div class="grid__item swiper-slide">
-                {% render 'product-item-layout-1'
+                {% render 'product-card-selector'
                   , card_product: recommendation %}
               </div>
             {% endfor %}

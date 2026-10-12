@@ -81,7 +81,7 @@
         "show_product_count": false,
         "show_list_grid": true,
         "enable_sorting": true,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "collab_first": true,
         "filter_type": "left_sidebar",
         "background_sidebar": "no_background",

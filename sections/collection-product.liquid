@@ -187,7 +187,7 @@
                     <div class="swiper-wrapper">
                       {% for product in bst.product_list %}
                         <div class="swiper-slide" data-swiper-autoplay="3000">
-                          {% render 'product-item-layout-1'
+                          {% render 'product-card-selector'
                             , card_product: product %}
                         </div>
                       {%- else -%}

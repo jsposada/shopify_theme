@@ -37,7 +37,7 @@
         <div class="{{ classGrid }}">
           {%- for product in collection.products limit: sst.limit_products -%}
             <div class="tp-grid__item">
-              {% render 'product-item-layout-1'
+              {% render 'product-card-selector'
                 , card_product: product %}
             </div>
           {%- else -%}

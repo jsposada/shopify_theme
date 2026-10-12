@@ -2,6 +2,21 @@
   assign seo_intro = collection.metafields.custom.seo_intro
   assign section_intro = section.settings.content
   assign container = section.settings.container
+  assign landing_key = collection.handle
+  assign seo_image_asset = blank
+  assign seo_image_alt = blank
+
+  if template.suffix contains 'seo-preview-'
+    assign landing_key = template.suffix | remove: 'seo-preview-'
+  endif
+
+  if landing_key == 'neumaticos-trail-adventure' or landing_key == 'trail'
+    assign seo_image_asset = 'neumaticos-trail-adventure-moto-chile.jpg'
+    assign seo_image_alt = 'Moto trail adventure equipada con neumáticos mixtos en un camino de montaña en Chile'
+  elsif landing_key == 'neumaticos-sport-street' or landing_key == 'sport'
+    assign seo_image_asset = 'neumaticos-sport-street-moto-chile.jpg'
+    assign seo_image_alt = 'Moto sport street equipada con neumáticos para asfalto en Santiago de Chile'
+  endif
 -%}
 
 {%- capture preview_intro -%}
@@ -9,10 +24,40 @@
 {%- endcapture -%}
 {%- assign preview_intro = preview_intro | strip -%}
 
-{%- if preview_intro != blank or section_intro != blank or seo_intro != blank -%}
+{%- if preview_intro != blank or section_intro != blank or seo_intro != blank or seo_image_asset != blank -%}
   {%- style -%}
-    #shopify-section-{{ section.id }} .seo-collection-intro__content {
+    #shopify-section-{{ section.id }} .seo-collection-intro__layout {
       max-width: 920px;
+    }
+
+    #shopify-section-{{ section.id }} .seo-collection-intro__layout--with-image {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 56px);
+      max-width: none;
+    }
+
+    #shopify-section-{{ section.id }} .seo-collection-intro__image {
+      aspect-ratio: 3 / 2;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #eeeeee;
+    }
+
+    #shopify-section-{{ section.id }} .seo-collection-intro__image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} .seo-collection-intro__layout--with-image {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+      }
     }
   {%- endstyle -%}
 
@@ -21,13 +66,29 @@
     style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   >
     <div class="{{ container }}">
-      <div class="seo-collection-intro__content rte">
-        {%- if preview_intro != blank -%}
-          {{ preview_intro }}
-        {%- elsif section_intro != blank -%}
-          {{ section_intro }}
-        {%- else -%}
-          {{ seo_intro | metafield_tag }}
+      <div class="seo-collection-intro__layout{% if seo_image_asset != blank %} seo-collection-intro__layout--with-image{% endif %}">
+        <div class="seo-collection-intro__content rte">
+          {%- if preview_intro != blank -%}
+            {{ preview_intro }}
+          {%- elsif section_intro != blank -%}
+            {{ section_intro }}
+          {%- else -%}
+            {{ seo_intro | metafield_tag }}
+          {%- endif -%}
+        </div>
+
+        {%- if seo_image_asset != blank -%}
+          <figure class="seo-collection-intro__image">
+            <img
+              src="{{ seo_image_asset | asset_url }}"
+              alt="{{ seo_image_alt | escape }}"
+              width="1200"
+              height="800"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </figure>
         {%- endif -%}
       </div>
     </div>

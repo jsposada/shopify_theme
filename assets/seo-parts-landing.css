@@ -8,6 +8,20 @@
   --parts-success: #137a45;
 }
 
+.seo-parts-landing #ProductGridContainer,
+.seo-parts-landing #YmmResults {
+  scroll-margin-top: calc(var(--header-height, 0px) + 24px);
+}
+
+.seo-parts-landing #ProductGridContainer[aria-busy="true"],
+.ymm-results[aria-busy="true"] { opacity: .6; }
+
+.parts-catalog-status { grid-column: 1 / -1; margin: 0; }
+.parts-catalog-status:empty { display: none; }
+.parts-catalog-status a,
+.ymm-finder__retry { color: inherit; font-weight: 700; text-decoration: underline; }
+.ymm-finder__retry[hidden] { display: none; }
+
 .parts-landing-eyebrow {
   color: var(--parts-orange);
   font-family: var(--font-heading-family);

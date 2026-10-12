@@ -6,6 +6,24 @@
   --tire-line: #e3e5e8;
 }
 
+.seo-tire-landing #ProductGridContainer {
+  scroll-margin-top: calc(var(--header-height, 0px) + 24px);
+}
+
+.seo-tire-landing #ProductGridContainer[aria-busy="true"] {
+  opacity: .6;
+}
+
+.seo-tire-landing .pf-status-fallback {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.seo-tire-landing .pf-status-fallback[hidden] {
+  display: none;
+}
+
 .tire-landing-eyebrow {
   color: var(--tire-orange);
   font-family: var(--font-heading-family);
