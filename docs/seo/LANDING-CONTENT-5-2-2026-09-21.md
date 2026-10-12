@@ -1,8 +1,10 @@
 # Contenido y estructura de landings SEO — Paso 5.2
 
-Fecha: 2026-09-21  
-Estado: `[~]` textos aprobados por el propietario el 2026-09-21 y cargados el 2026-09-22 en cinco colecciones no publicadas; vista previa local funcional preparada el 2026-09-24 y pendiente de aprobación visual.  
-Publicación: no autorizada.
+Fecha: 2026-09-21
+
+Estado: `[x]` estructura y contenido cargados en las cinco colecciones; primera tanda publicada y validada el 2026-09-27.
+
+Publicación: autorizada únicamente para Trail/Adventure y Sport/Street en el canal `Tienda online`. Las tres landings por medida quedan diferidas y ocultas.
 
 ## 1. Implementación común
 
@@ -25,6 +27,18 @@ El theme ya genera la canonical con `canonical_url`, y la plantilla conserva bre
 - Cargar SEO title y meta description en los campos nativos de Shopify.
 - No publicar ni enlazar una colección antes de validar su listado de productos.
 
+### Estado de publicación al 2026-09-27
+
+| URL | Estado | Imagen |
+| --- | --- | --- |
+| `/collections/neumaticos-trail-adventure` | Pública en `Tienda online`; validada en producción | `neumaticos-trail-adventure-moto-chile.jpg` |
+| `/collections/neumaticos-sport-street` | Pública en `Tienda online`; validada en producción | `neumaticos-sport-street-moto-chile.jpg` |
+| `/collections/neumaticos-120-70-17` | Diferida; cero canales; URL pública en `404` | Pendiente |
+| `/collections/neumaticos-160-60-17` | Diferida; cero canales; URL pública en `404` | Pendiente |
+| `/collections/neumaticos-90-90-21` | Diferida; cero canales; URL pública en `404` | Pendiente |
+
+Las dos páginas activas no se añadieron al menú principal. Quedan disponibles por su URL canónica para indexación orgánica y para futuros enlaces editoriales.
+
 ## 2. `/collections/neumaticos-trail-adventure`
 
 ### Configuración SEO
@@ -33,8 +47,8 @@ El theme ya genera la canonical con `canonical_url`, y la plantilla conserva bre
 - SEO title: `Neumáticos Trail y Adventure para Moto | Bikerz`
 - Meta description: `Compra neumáticos trail y adventure para moto en Chile. Encuentra Dunlop, Bridgestone, Michelin y Continental con asesoría especializada.`
 - Regla automática prevista: `custom.uso = Trail`.
-- Imagen sugerida: motocicleta trail real sobre una ruta mixta, sin texto incrustado.
-- Alt sugerido: `Neumáticos trail y adventure para motos disponibles en Bikerz`.
+- Imagen publicada: `assets/neumaticos-trail-adventure-moto-chile.jpg`, 1200 × 800 px.
+- Alt publicado: `Moto trail adventure equipada con neumáticos mixtos en un camino de montaña en Chile`.
 - Categoría superior: `/collections/neumaticos`.
 
 ### Introducción — `custom.seo_intro`
@@ -95,8 +109,8 @@ Sí. En Bikerz, la instalación y el balanceo son gratis con la compra de tus ne
 - SEO title: `Neumáticos Sport y Street para Moto | Bikerz`
 - Meta description: `Encuentra neumáticos sport y street para moto en Chile. Compara Dunlop, Bridgestone, Michelin y Continental con despacho y asesoría.`
 - Regla automática prevista: `custom.uso = Sport` o `custom.uso = Street`.
-- Imagen sugerida: motocicleta naked o sport circulando sobre pavimento seco.
-- Alt sugerido: `Neumáticos sport y street para motos de uso urbano y carretera`.
+- Imagen publicada: `assets/neumaticos-sport-street-moto-chile.jpg`, 1200 × 800 px.
+- Alt publicado: `Moto sport street equipada con neumáticos para asfalto en Santiago de Chile`.
 - Categoría superior: `/collections/neumaticos`.
 
 ### Introducción — `custom.seo_intro`

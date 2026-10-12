@@ -2,7 +2,7 @@
 
 > Fuente única de verdad para el trabajo SEO del theme Shopify de Bikerz.
 >
-> Última actualización: 2026-09-22
+> Última actualización: 2026-10-12
 > Rama de trabajo: `codex/seo-home-phase-1`
 > Entorno autorizado: copia local y theme no publicado de Shopify
 > Producción: no publicar ni modificar sin aprobación explícita del propietario
@@ -1020,16 +1020,23 @@ Producto limpio con `noindex`:
 
 #### 5.2 Estructura obligatoria de cada landing
 
-- Estado: `[~]` plantilla y contenido cargados en cinco colecciones no publicadas; vista previa local funcional preparada el 2026-09-24 y pendiente de aprobación visual del propietario.
+- Estado: `[x]` estructura y contenido completados para las cinco colecciones; primera tanda autorizada publicada y validada el 2026-09-27. Las tres landings por medida quedan diferidas y ocultas por decisión del propietario.
 - Responsable: Codex.
 - Evidencia: `docs/seo/LANDING-CONTENT-5-2-2026-09-21.md`.
-- Implementación local: `templates/collection.seo-landing.json` y `sections/seo-collection-intro.liquid`.
+- Implementación local y live: `templates/collection.seo-landing.json`, `sections/seo-collection-intro.liquid` y las dos imágenes optimizadas de la primera tanda.
 - Vista previa segura: cinco plantillas alternas `collection.seo-preview-*` reutilizan localmente la colección pública `/collections/neumaticos` con los filtros equivalentes. No publican ni enlazan las colecciones SEO.
 - Validación local del 2026-09-24:
   - Las cinco vistas responden `HTTP 200`, contienen un solo H1 específico, introducción, filtros, ordenamiento, paginación, productos y contenido extendido.
   - El filtro interactivo conserva la plantilla de vista previa y actualiza la grilla por AJAX.
   - La comprobación móvil a 390 × 844 px no presentó desbordamiento horizontal y mantuvo 20 tarjetas en la primera página.
-  - Las vistas incluyen `noindex,nofollow`; no se desplegaron al theme live.
+  - Las vistas de revisión incluyen `noindex,nofollow` y no sustituyen las URLs canónicas.
+- Publicación escalonada del 2026-09-27:
+  - Activa: `/collections/neumaticos-trail-adventure`, únicamente en el canal `Tienda online`.
+  - Activa: `/collections/neumaticos-sport-street`, únicamente en el canal `Tienda online`.
+  - Diferidas: `/collections/neumaticos-120-70-17`, `/collections/neumaticos-160-60-17` y `/collections/neumaticos-90-90-21`; continúan publicadas en cero canales y responden `404` en la web pública.
+  - Las dos páginas activas tienen title, canonical propia, un solo H1, imagen optimizada de 1200 × 800 px con `alt` específico y ausencia de `noindex`.
+  - El sitemap de colecciones incluye únicamente las dos URLs activas de esta tanda y excluye las tres landings diferidas.
+  - No se agregaron enlaces al menú ni se habilitaron otros canales comerciales.
 - Cada página tendrá:
   - Title único menor a 60 caracteres.
   - Meta description menor a 160 caracteres.
@@ -1376,6 +1383,21 @@ Producto limpio con `noindex`:
 - Control de publicación: la aprobación cierra la selección de URLs, pero no autoriza publicar páginas incompletas; primero se prepara y revisa la estructura del paso 5.2.
 - Aprobación: propietario.
 
+### D-024 — Clarity y rendimiento de fichas de producto
+
+- Fecha: 2026-10-12.
+- Prioridad solicitada por el propietario: revisar las sesiones de Clarity y mejorar la carga de las fichas Nolan; se retoma rendimiento en paralelo al roadmap comercial.
+- El 2026-10-11 se publicó únicamente la comprobación de elemento opcional ausente en `assets/facets.js`, con aprobación explícita del propietario y verificación posterior. Esa aprobación no se extiende al paquete de rendimiento.
+- Línea base móvil: tres mediciones por producto con PageSpeed y 4G lenta simulada; medianas de FCP cercanas a 5 s y LCP de 10,9 s (Negro/Amarillo) y 10,4 s (Negro Brillante). El LCP de 1,6 s de CrUX corresponde al origen completo, no a estas URLs.
+- Se compararon 18 auditorías móviles de Lighthouse en un proxy local y el tema no publicado `Clarity medicion local 2026-10-12` (`189290643677`): código público, prioridad de foto sin preloader y prioridad de foto con CSS de animación diferido. No hubo mejora consistente del LCP y aparecieron desplazamientos visuales altos en algunos ensayos. Los tiempos absolutos del proxy HTTP no representan producción. Resumen: `outputs/clarity/local-benchmark-2026-10-12/summary.json`.
+- Se retiraron todas las optimizaciones de rendimiento ensayadas en esa copia y en `Clarity imagen producto 2026-10-11` (`189262332125`). Ya no se requiere un enlace temporal del propietario para esa comparación; la mejora de carga permanece pendiente.
+- Se reprodujeron en producción dos errores al seleccionar talla: falta el JSON opcional de inventario y falta `Quantity-Form` en la respuesta. Las comprobaciones en `global.js` y `product-info.js` evitan ambas excepciones y conservan las actualizaciones cuando esos elementos existen.
+- Aprobación explícita del propietario: «Sí, publicar los dos archivos». El 2026-10-12 se publicaron únicamente `assets/global.js` y `assets/product-info.js` en el tema live `SEO` (`164560142557`), desde `.tmp/clarity-product-load-stage-2026-10-12`, con `--only` para ambos archivos, `--nodelete` y `--allow-live`.
+- Respaldo previo recién descargado: `.tmp/clarity-live-before-variant-publish-2026-10-12`. Verificación posterior: `.tmp/clarity-live-variant-verified-2026-10-12`; ambos SHA256 coinciden con el paquete. Se comprobó que cada archivo público cambia solo la comprobación opcional autorizada.
+- Validación: regresión de ambas funciones y sintaxis JavaScript aprobadas. En producción, escritorio y móvil, se cambió entre XL y L en Negro Brillante: URL de variante y SKU correctos, botón de carrito habilitado y sin nuevos errores de consola; los scripts cargan desde el tema público `/t/18/`.
+- Esta publicación corrige los dos errores de talla; no establece una mejora de velocidad ni resuelve el mensaje `Java object is gone` del navegador interno de Meta.
+- Evidencia: `outputs/clarity/product-load-validation-2026-10-12.json`, `outputs/clarity/variant-published-browser-checks-2026-10-12.json` y las capturas `variant-fix-published-*-2026-10-12.jpg`.
+
 ## 6. Bloqueos y datos pendientes del propietario
 
 1. Fase 3: mantener editorialmente los textos alternativos particulares cuando una descripción automática no represente el contenido real; no bloquea 3.1.
@@ -1386,9 +1408,9 @@ Producto limpio con `noindex`:
 
 ## 7. Próxima acción única
 
-**Paso actual: 5.2 — Estructura obligatoria de cada landing.**
+**Paso actual: 5.2 cerrado para el alcance autorizado; tres landings por medida quedan diferidas como backlog.**
 
-Responsable principal: Codex prepara estructura, contenido y validaciones; el propietario revisa la vista previa antes de cualquier publicación. El seguimiento diferido de 2.5 continúa en paralelo para el corte de CrUX del 2026-10-04.
+Responsable principal: Codex mantiene el registro y valida producción; el propietario decidirá más adelante si activa las tres landings por medida. El seguimiento diferido de 2.5 continúa en paralelo para el corte de CrUX del 2026-10-04.
 
 Próxima acción:
 
@@ -1407,7 +1429,9 @@ Próxima acción:
 13. `[x]` Codex: preparar la plantilla común y el contenido único de las cinco landings del paso 5.2 sin publicarlas.
 14. `[x]` Propietario: revisar y aprobar los textos de las cinco landings.
 15. `[x]` Codex: crear las cinco colecciones sin publicarlas, cargar reglas, plantilla y contenidos, y preparar su validación.
-16. `[ ]` Propietario: revisar la vista previa de las landings antes de autorizar su publicación.
+16. `[x]` Propietario: revisó y aprobó visualmente Trail/Adventure y Sport/Street con sus imágenes.
+17. `[x]` Codex: publicó únicamente Trail/Adventure y Sport/Street en `Tienda online` y validó sus URLs reales en producción.
+18. `[~]` Propietario: decidir más adelante si publica las landings `120/70-17`, `160/60-17` y `90/90-21`; permanecen ocultas y responden `404`.
 
 ## 8. Bitácora
 
@@ -1806,3 +1830,18 @@ Próxima acción:
 - Se comprobó un filtro real por ancho en Trail: la grilla cambió de 139 a 1 producto y conservó la vista SEO local.
 - Se revisó la primera landing en escritorio y móvil: un H1, sin desbordamiento horizontal y con 20 tarjetas iniciales. Theme Check no reportó errores en los archivos de la vista previa; el theme completo mantiene errores heredados ajenos a este paso, principalmente traducciones incompletas.
 - No se publicó ningún archivo ni colección en el theme live. El paso 5.2 continúa pendiente únicamente de aprobación visual, cinco imágenes reales y una decisión separada de publicación.
+
+### 2026-09-27
+
+- El propietario confirmó formalmente el cierre del paso 5.2 para el alcance publicado: Trail/Adventure y Sport/Street activas; las tres landings por medida permanecen diferidas y no bloquean el cierre.
+- Se asignaron en Shopify las plantillas `neumaticos` y `repuestos` a sus colecciones canónicas. Las landings principales ahora viven directamente en `/collections/neumaticos` y `/collections/repuestos`, sin depender de `?view=`.
+- Se publicaron los titles `Neumáticos para Motos en Chile | Bikerz` y `Repuestos para Motos en Chile | Bikerz`, junto con metadescripciones específicas de 140 y 142 caracteres.
+- La comprobación pública confirmó HTTP 200, canonical correcta, un H1, marcado `FAQPage`, ausencia de `noindex` y funcionamiento del buscador correspondiente en ambas URLs base. El endpoint MMY `/apps/ymm/makes` también respondió HTTP 200.
+- El propietario redujo la primera activación a dos landings: Trail/Adventure y Sport/Street. Las tres landings por medida quedaron diferidas.
+- Se optimizaron y añadieron las imágenes `neumaticos-trail-adventure-moto-chile.jpg` y `neumaticos-sport-street-moto-chile.jpg` en 1200 × 800 px, con textos alternativos específicos.
+- La plantilla común, la sección introductoria y las dos imágenes se publicaron en el theme live `SEO` (`164560142557`) mediante un paquete limitado y sin borrar archivos remotos.
+- Las colecciones Trail/Adventure y Sport/Street se publicaron únicamente en el canal `Tienda online`; no se habilitaron Shop, Google & YouTube, Facebook & Instagram, Falabella, Inbox ni Buscador Frontend.
+- La validación pública confirmó title, canonical propia, ausencia de `noindex`, un solo H1 e imagen correcta en ambas URLs.
+- El sitemap de colecciones contiene Trail/Adventure y Sport/Street, pero no contiene ninguna de las tres landings por medida diferidas.
+- Las colecciones `120/70-17`, `160/60-17` y `90/90-21` conservan cero canales de venta y sus URLs públicas responden `404`.
+- No se añadieron estas páginas al menú. Podrán descubrirse por indexación orgánica y enlaces editoriales futuros, manteniendo el despliegue separado de la navegación principal.

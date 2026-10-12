@@ -33,8 +33,10 @@ Este documento reemplaza como cierre definitivo a `CIERRE-LANDING-NEUMATICOS-Y-S
 
 Enlaces públicos:
 
-- Neumáticos: <https://www.bikerz.cl/collections/neumaticos?view=neumaticos>
-- Repuestos: <https://www.bikerz.cl/collections/repuestos?view=repuestos>
+- Neumáticos: <https://www.bikerz.cl/collections/neumaticos>
+- Repuestos: <https://www.bikerz.cl/collections/repuestos>
+
+Las colecciones tienen asignadas sus plantillas finales en Shopify (`neumaticos` y `repuestos`), por lo que ya no requieren el parámetro `?view=` para mostrar las landings.
 
 El theme de revisión se conserva como respaldo:
 
@@ -192,8 +194,12 @@ Los datos de compatibilidad y la lógica de búsqueda no se administran desde es
 - Se excluyeron los nueve archivos modificados del proyecto que no pertenecían a este trabajo.
 - Descarga posterior del paquete desde Shopify: **12 de 12 archivos presentes**.
 - Comparación SHA-256 entre el paquete local y el descargado desde producción: **12 de 12 coincidencias**.
-- Respuesta pública de `/collections/neumaticos?view=neumaticos`: HTTP 200, H1, buscador y hoja de estilos correctos.
-- Respuesta pública de `/collections/repuestos?view=repuestos`: HTTP 200, H1, buscador y hoja de estilos correctos.
+- Respuesta pública de `/collections/neumaticos`: HTTP 200, plantilla `neumaticos`, un H1, buscador, hoja de estilos y `FAQPage` correctos.
+- Respuesta pública de `/collections/repuestos`: HTTP 200, plantilla `repuestos`, un H1, buscador MMY, hoja de estilos y `FAQPage` correctos.
+- La verificación se ejecutó sobre las URLs base, sin `?view=` ni parámetros de vista previa.
+- Neumáticos conserva canonical `https://www.bikerz.cl/collections/neumaticos`, title `Neumáticos para Motos en Chile | Bikerz` y metadescripción de 140 caracteres.
+- Repuestos conserva canonical `https://www.bikerz.cl/collections/repuestos`, title `Repuestos para Motos en Chile | Bikerz` y metadescripción de 142 caracteres.
+- Ninguna de las dos páginas contiene `noindex`; el App Proxy de MMY continúa respondiendo HTTP 200.
 - Prueba real de neumáticos: medida `120/70-17`, con 31 neumáticos disponibles.
 - Prueba real de repuestos: `Honda CB 500 · 2026` + `Filtros de aceite`, con un repuesto compatible y disponible.
 - Ambas pruebas mantuvieron un solo H1, no presentaron desbordamiento horizontal y no registraron errores de consola.
