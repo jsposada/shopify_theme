@@ -223,7 +223,7 @@
                           <button
                             button-quick-view
                             type="button"
-                            aria-label="Add to quick view"
+                            aria-label="{{ 'product_items.quick_view' | t | escape }}: {{ card_product.title | escape }}"
                             class="button-quick-view shadow"
                             data-product-handle="{{ card_product.handle }}">
                             <span class="text-add-to-cart pointer-events-none">
