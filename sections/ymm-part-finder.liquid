@@ -227,7 +227,7 @@
     function saveSearchUrl() {
       const url = new URL(window.location.href);
       for (const key of [...url.searchParams.keys()]) {
-        if (key.startsWith('ymm_') || key.startsWith('filter.') || key === 'page' || key === 'sort_by') url.searchParams.delete(key);
+        if (key.startsWith('ymm_')) url.searchParams.delete(key);
       }
       for (const [key, value] of Object.entries({ ymm_make: makeSelect.value, ymm_model: modelSelect.value, ymm_year: yearSelect.value, ymm_type: typeSelect.value })) {
         if (value) url.searchParams.set(key, value);
