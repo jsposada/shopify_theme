@@ -115,7 +115,7 @@
                       {%- if settings.store_phone and block.settings.show_phone -%}
                         <div class="flex gap-5 mb-16 items-baseline">
                           <p class="mb-0">
-                            <a href="tel:{{ settings.store_phone }}" class="">
+                            <a href="tel:{% render 'phone-href', phone: settings.store_phone %}" class="">
                               {{ 'sections.footer.phone' | t }}:
                               <strong>{{ settings.store_phone }}</strong>
                             </a>

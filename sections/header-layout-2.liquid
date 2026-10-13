@@ -266,7 +266,7 @@
             <div class="flex gap-5">
               <p class="mb-0 fw-body">{{ 'sections.footer.phone' | t }}:</p>
               <p class="mb-0">
-                <a href="tel:{{ settings.store_phone }}">
+                <a href="tel:{% render 'phone-href', phone: settings.store_phone %}">
                   {{ settings.store_phone }}
                 </a>
               </p>
