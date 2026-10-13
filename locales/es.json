@@ -337,7 +337,7 @@
     "select_option": "Seleccionar opción",
     "wishlist": "Lista de deseos",
     "quick_view": "Vista rápida",
-    "close": "Cerca",
+    "close": "Cerrar",
     "fake_view": "La gente está viendo esto ahora mismo",
     "compare": "Comparar"
   },
@@ -352,7 +352,7 @@
     "total": ""
   },
   "mobile": {
-    "close_menu": "Cerca",
+    "close_menu": "Cerrar",
     "recent_viewed": "Visto recientemente",
     "wishlist": "Lista de deseos",
     "login": "Iniciar sesión/Registrarse"
@@ -457,7 +457,7 @@
   "accessibility": {
     "skip_to_text": "Saltar al contenido",
     "skip_to_product_info": "Saltar a la información del producto",
-    "close": "Cerca",
+    "close": "Cerrar",
     "unit_price_separator": "por",
     "vendor": "Proveedor:",
     "refresh_page": "Al seleccionar una opción se actualiza toda la página.",
