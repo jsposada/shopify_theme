@@ -13,19 +13,27 @@
  | plus: predictive_search.resources.pages.size
  | plus: predictive_search.resources.articles.size
   %}
-  <div
-    id="predictive-search-results"
-    role="listbox"
-    class="{% unless predictive_search.resources.products.size > 0 %} predictive-search__results-groups-wrapper--no-products{% endunless %}">
+  {%- capture search_display -%}
+    {%- render 'search-display-term', terms: predictive_search.terms -%}
+  {%- endcapture -%}
+  {%- assign tire_collection_url = collections['neumaticos'].url | default: '/collections/neumaticos' -%}
+  <div id="predictive-search-results" role="listbox">
+  {%- if predictive_search.resources.products.size > 0 -%}
     {%- comment -%}
       Primary action, placed first so it stays visible under the input while the
       mobile keyboard is open. type="submit" always searches the current input value.
       Only the inner span carries the data attribute: global.js rewrites its innerText.
+      The data-label-* values feed assets/search-normalize.js (rewrite note, tire finder link).
     {%- endcomment -%}
-    <button type="submit" class="predictive-search__view-all">
+    <button
+      type="submit"
+      class="predictive-search__view-all"
+      data-label-normalized="{{ 'templates.search.showing_results_for' | t | escape }}"
+      data-label-tire="{{ 'templates.search.tire_finder_for' | t: size: '__SIZE__' | escape }}"
+      data-tire-base="{{ tire_collection_url }}">
       {%- render 'icon', icon_name: 'search', class: 'predictive-search__view-all-icon' -%}
       <span class="predictive-search__view-all-text" data-predictive-search-search-for-text>
-        {{- 'templates.search.view_all_for' | t: terms: predictive_search.terms -}}
+        {{- 'templates.search.view_all_for' | t: terms: search_display -}}
       </span>
       {%- render 'icon', icon_name: 'arrow-right' -%}
     </button>
@@ -76,6 +84,41 @@
         {{ 'templates.search.button_more' | t }}
       </button>
     </div>
+  {%- else -%}
+    {%- comment -%} Zero results: say so visibly and offer a next step instead of an empty modal. {%- endcomment -%}
+    <div class="predictive-search__empty">
+      <p class="predictive-search__empty-title">{{ 'templates.search.empty_title' | t: terms: search_display }}</p>
+      {%- assign empty_chips = settings.qs_listtext | split: ',' -%}
+      {%- if settings.qs_show and empty_chips.size > 0 -%}
+        <p class="predictive-search__empty-hint">{{ 'templates.search.empty_hint' | t }}</p>
+        <ul class="predictive-search__empty-chips list-none" role="list">
+          {%- for empty_chip in empty_chips -%}
+            {%- assign chip_term = empty_chip | strip -%}
+            <li>
+              <a href="{{ routes.search_url }}?type=product&q={{ chip_term | url_encode }}&options%5Bprefix%5D=last">
+                {{- chip_term -}}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <div class="predictive-search__empty-actions">
+        <a class="predictive-search__assist-link" href="{{ tire_collection_url }}" data-search-tire-link>
+          <span class="predictive-search__view-all-text">{{ 'templates.search.empty_tire' | t }}</span>
+          {%- render 'icon', icon_name: 'arrow-right' -%}
+        </a>
+        {%- capture whatsapp_text -%}{{ 'templates.search.whatsapp_message' | t: terms: search_display }}{%- endcapture -%}
+        <a
+          class="predictive-search__assist-link"
+          href="https://wa.me/56977670252?text={{ whatsapp_text | url_encode }}"
+          target="_blank"
+          rel="noopener">
+          <span class="predictive-search__view-all-text">{{ 'templates.search.empty_whatsapp' | t }}</span>
+          {%- render 'icon', icon_name: 'arrow-right' -%}
+        </a>
+      </div>
+    </div>
+  {%- endif -%}
   </div>
 
   <span class="hidden" data-predictive-search-live-region-count-value>

@@ -306,6 +306,13 @@
       "title": "Search results",
       "search_for": "Search for “{{ terms }}”",
       "view_all_for": "View all results for “{{ terms }}”",
+      "showing_results_for": "Showing results for",
+      "tire_finder_for": "{{ size }} tires in the size finder",
+      "empty_title": "No results for “{{ terms }}”",
+      "empty_hint": "Check the spelling or try:",
+      "empty_tire": "Looking for a tire? Search by size",
+      "empty_whatsapp": "Ask us on WhatsApp",
+      "whatsapp_message": "Hi, I'm looking for: {{ terms }}",
       "suggestions": "Suggestions",
       "pages": "Pages"
     },

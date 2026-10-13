@@ -3,6 +3,10 @@
   assign search_suggest = gst.search_suggest
   assign input_id =  'Search-In-Modal-1'
 %}
+{%- capture search_display_terms -%}
+  {%- render 'search-display-term', terms: search.terms -%}
+{%- endcapture -%}
+<script src="{{ 'search-normalize.js' | asset_url }}" defer="defer"></script>
 
   {% if gst.header_layout == 'h_layout1' or gst.header_layout == 'h_layout3' %}
     {{ 'search-modal.css' | asset_url | stylesheet_tag }}
@@ -42,7 +46,7 @@
                     id="{{ input_id }}"
                     type="search"
                     name="q"
-                    value="{{ search.terms | escape }}"
+                    value="{{ search_display_terms | escape }}"
                     placeholder="{{ 'general.search.search' | t }}"
                     enterkeyhint="search"
                     {%- if settings.predictive_search_enabled -%}
@@ -152,7 +156,7 @@
                 id="{{ input_id }}"
                 type="search"
                 name="q"
-                value="{{ search.terms | escape }}"
+                value="{{ search_display_terms | escape }}"
                 placeholder="{{ 'general.search.search' | t }}"
                 {%- if settings.predictive_search_enabled -%}
                   role="combobox"

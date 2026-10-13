@@ -1,0 +1,18 @@
+{%- comment -%}
+  Human-readable version of a search query built by assets/search-normalize.js.
+  Oil viscosities are searched as "(10W40 OR 10W-40)" so both catalogue spellings
+  match; customers should read "10W-40". Outputs plain text; escape it where needed.
+
+  Usage:
+  {% render 'search-display-term', terms: search.terms %}
+{%- endcomment -%}
+{%- liquid
+  assign display_term = terms | default: ''
+  if display_term contains ' OR '
+    assign display_parts = display_term | split: ' OR '
+    assign display_before = display_parts[0] | split: '(' | first
+    assign display_after = display_parts[1] | remove: ')'
+    assign display_term = display_before | append: display_after
+  endif
+  echo display_term | strip
+-%}

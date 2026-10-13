@@ -28,6 +28,10 @@
   assign terms = search.terms | escape
   assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
 -%}
+{%- comment -%} Readable query for headings and the input; search_url above keeps the real query. {%- endcomment -%}
+{%- capture search_display_terms -%}
+  {%- render 'search-display-term', terms: search.terms -%}
+{%- endcapture -%}
 
 <div
   class="tp-main-clc color-{{ sst.color_scheme }} gradient section-py section-mb product-item-list"
@@ -43,7 +47,7 @@
           {%- if search.results_count == 0 and search.filters == empty -%}
             {{- 'templates.search.title' | t -}}
           {% else %}
-          {{- 'templates.search.search_for' | t: terms: search.terms, count: search.results_count -}}
+          {{- 'templates.search.search_for' | t: terms: search_display_terms, count: search.results_count -}}
           {%- endif -%}
 
             {% comment %} {%- if search.performed -%}
@@ -64,7 +68,7 @@
                     id="Search-In-Template"
                     type="search"
                     name="q"
-                    value="{{ search.terms | escape }}"
+                    value="{{ search_display_terms | escape }}"
                     placeholder="{{ 'general.search.search' | t }}"
                   >
                   <input name="options[prefix]" type="hidden" value="last">
@@ -85,13 +89,13 @@
                 <p role="status" class="text-center">
                   {{
                     'templates.search.results_with_count_and_term'
-                    | t: terms: search.terms, count: search.results_count
+                    | t: terms: search_display_terms, count: search.results_count
                   }}
                 </p>
               {%- endif -%}
             {%- endunless -%}
             {%- if search.results_count == 0 and search.filters == empty -%}
-              <p role="status" class="text-center">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+              <p role="status" class="text-center">{{ 'templates.search.no_results' | t: terms: search_display_terms }}</p>
             {% comment %} {% else %}
               <h2>{{- 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count -}}</h2> {% endcomment %}
             {%- endif -%}
@@ -541,6 +545,23 @@
     {% endpaginate %}
   </div>
 </div>
+
+{%- comment -%}
+  One search control at a time: while this page's own search field is on screen, the
+  header magnifier is hidden (assets/search-modal.css); it comes back once the field
+  scrolls away so customers can still search again from deep in the results.
+{%- endcomment -%}
+<script>
+  (() => {
+    const field = document.getElementById('Search-In-Template');
+    if (!field || !('IntersectionObserver' in window)) return;
+    const header = document.querySelector('.section-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    new IntersectionObserver(([entry]) => {
+      document.documentElement.classList.toggle('search-field-in-view', entry.isIntersecting);
+    }, { rootMargin: `-${headerHeight}px 0px 0px 0px` }).observe(field.closest('form') || field);
+  })();
+</script>
 
 {% schema %}
 {

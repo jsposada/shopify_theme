@@ -148,6 +148,13 @@
       "title": "Resultados de la búsqueda",
       "search_for": "Buscar “ {{ terms }} ”",
       "view_all_for": "Ver todos los resultados para “{{ terms }}”",
+      "showing_results_for": "Mostrando resultados para",
+      "tire_finder_for": "Neumáticos {{ size }} en el buscador de medidas",
+      "empty_title": "No encontramos “{{ terms }}”",
+      "empty_hint": "Revisa cómo está escrito o prueba con:",
+      "empty_tire": "¿Buscas un neumático? Buscar por medida",
+      "empty_whatsapp": "Pregúntanos por WhatsApp",
+      "whatsapp_message": "Hola, busco: {{ terms }}",
       "suggestions": "Sugerencias",
       "pages": "Páginas"
     },
