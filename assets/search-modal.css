@@ -182,6 +182,160 @@
   margin-bottom: 8px;
 }
 
+/* Query suggestions ("casco integral"): the typed part comes wrapped in <mark>. */
+.predictive-search__suggestions {
+  max-width: 740px;
+  margin: 0 auto 16px;
+  padding: 0;
+  border-top: 1px solid #ececf0;
+}
+
+.predictive-search__suggestion {
+  --base-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ececf0;
+  color: #1c1c1c;
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.predictive-search__suggestion mark {
+  background: none;
+  color: inherit;
+  font-weight: 400;
+}
+
+.predictive-search__suggestion svg {
+  flex: none;
+  pointer-events: none;
+}
+
+.predictive-search__suggestion:hover,
+.predictive-search__suggestions [aria-selected="true"] .predictive-search__suggestion {
+  background: #f4f4f6;
+}
+
+/* Compact product rows: hidden on desktop, where the product cards stay. */
+.predictive-search__compact-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.predictive-search__compact-list li {
+  border-bottom: 1px solid #ececf0;
+}
+
+.predictive-search__compact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 8px 4px;
+  color: #1c1c1c;
+  text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.predictive-search__compact-link:hover,
+.predictive-search__compact-list [aria-selected="true"] .predictive-search__compact-link {
+  background: #f4f4f6;
+}
+
+.predictive-search__compact-link:focus-visible {
+  outline: 2px solid var(--primary-color, #ff6600);
+  outline-offset: -2px;
+}
+
+.predictive-search__compact-media {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border: 1px solid #ececf0;
+  background: #fff;
+}
+
+.predictive-search__compact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.predictive-search__compact-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.predictive-search__compact-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.predictive-search__compact-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.predictive-search__compact-price-sale {
+  color: #c43c00;
+}
+
+.predictive-search__compact-price-was {
+  color: #6b6b73;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.predictive-search__compact-badge {
+  padding: 1px 6px;
+  background: #d71920;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.predictive-search__compact-soldout {
+  color: #6b6b73;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Quick links: 44px tall tap targets instead of 17px text. */
+.header__search .search-modal__quicksearch a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 /* Search page: hide the header magnifier while the page's own field is visible.
    visibility (not display) keeps its space, so the logo and menu never shift. */
 html.search-field-in-view .header__search .header__icon--search {
@@ -245,8 +399,20 @@ html.search-field-in-view .header__search .header__icon--search {
     margin-bottom: 20px;
   }
 
-  .header__search .predictive-search__item--term {
-    min-height: 44px;
+  /* Five compact rows instead of two large cards. */
+  .header__search #predictive-search-results-products-list {
+    display: none !important;
+  }
+
+  .header__search .predictive-search__compact-list {
+    display: block;
+    max-width: 740px;
+    margin: 0 auto 24px;
+    border-top: 1px solid #ececf0;
+  }
+
+  .header__search .predictive-search__results-groups-wrapper {
+    margin-bottom: 0;
   }
 
   /* Scroll lock without the desktop scrollbar compensation (phones have no scrollbar). */

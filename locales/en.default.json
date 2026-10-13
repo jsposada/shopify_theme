@@ -70,6 +70,10 @@
     },
     "search": {
       "search": "Enter keyword ...",
+      "placeholder": "e.g. 140/70-17, helmet, Motul",
+      "open": "Open search",
+      "dialog": "Search the store",
+      "submit": "Search",
       "reset": "Clear search term"
     },
     "cart": {

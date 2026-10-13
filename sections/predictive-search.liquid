@@ -27,7 +27,11 @@
     {%- endcomment -%}
     <button
       type="submit"
+      id="predictive-search-option-view-all"
       class="predictive-search__view-all"
+      role="option"
+      aria-selected="false"
+      tabindex="-1"
       data-label-normalized="{{ 'templates.search.showing_results_for' | t | escape }}"
       data-label-tire="{{ 'templates.search.tire_finder_for' | t: size: '__SIZE__' | escape }}"
       data-tire-base="{{ tire_collection_url }}">
@@ -37,6 +41,28 @@
       </span>
       {%- render 'icon', icon_name: 'arrow-right' -%}
     </button>
+    {%- comment -%}
+      Query suggestions Shopify already returns ("casco integral"…). Collections stay out
+      for now. The typed term itself is skipped: "Ver todos" already covers it.
+    {%- endcomment -%}
+    {%- assign shown_queries = 0 -%}
+    {%- if predictive_search.resources.queries.size > 0 -%}
+      <ul class="predictive-search__suggestions list-none" role="group" aria-label="{{ 'templates.search.suggestions' | t | escape }}">
+        {%- for query in predictive_search.resources.queries -%}
+          {%- assign query_text = query.text | downcase | strip -%}
+          {%- assign typed_text = predictive_search.terms | downcase | strip -%}
+          {%- if query_text != typed_text and shown_queries < 3 -%}
+            {%- assign shown_queries = shown_queries | plus: 1 -%}
+            <li id="predictive-search-option-query-{{ forloop.index }}" role="option" aria-selected="false">
+              <a href="{{ query.url }}" class="predictive-search__suggestion" tabindex="-1">
+                <span class="predictive-search__suggestion-text">{{ query.styled_text }}</span>
+                {%- render 'icon', icon_name: 'arrow-right' -%}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
     {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
       <div id="predictive-search-results-groups-wrapper" class="predictive-search__results-groups-wrapper mb-40 {% unless predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %} predictive-search__results-groups-wrapper--no-suggestions{% endunless %}">
     {%- endif -%}
@@ -62,12 +88,63 @@
               role="group"
               aria-labelledby="predictive-search-products">
               {%- for product in predictive_search.resources.products limit: 5 -%}
-                <div class="tp-grid__item tp-grid__item-{{ forloop.index }}">
+                <div
+                  id="predictive-search-option-product-{{ forloop.index }}"
+                  class="tp-grid__item tp-grid__item-{{ forloop.index }}"
+                  role="option"
+                  aria-selected="false">
                   {% render 'product-item-layout-1'
                     , card_product: product %}
                 </div>
               {%- endfor -%}
             </div>
+            {%- comment -%}
+              Mobile only (assets/search-modal.css): compact rows so all five results fit,
+              even with the keyboard open. Desktop keeps the product cards above.
+            {%- endcomment -%}
+            <ul class="predictive-search__compact-list list-none" role="group" aria-labelledby="predictive-search-products">
+              {%- for product in predictive_search.resources.products limit: 5 -%}
+                {%- liquid
+                  # Same price source and rounding as snippets/product-item-layout-1.liquid
+                  assign row_variant = product.selected_or_first_available_variant
+                  assign row_price = row_variant.price
+                  assign row_compare = row_variant.compare_at_price
+                  assign on_sale = false
+                  if row_compare != blank and row_compare > row_price
+                    assign on_sale = true
+                    assign sale_percent = row_compare | minus: row_price | times: 100.0 | divided_by: row_compare | round
+                  endif
+                -%}
+                <li id="predictive-search-option-compact-{{ forloop.index }}" role="option" aria-selected="false">
+                  <a href="{{ product.url }}" class="predictive-search__compact-link" tabindex="-1">
+                    <span class="predictive-search__compact-media">
+                      {%- if product.featured_media -%}
+                        {{
+                          product.featured_media
+                          | image_url: width: 128
+                          | image_tag: loading: 'lazy', width: 56, height: 56, alt: '', class: 'predictive-search__compact-image'
+                        }}
+                      {%- endif -%}
+                    </span>
+                    <span class="predictive-search__compact-info">
+                      <span class="predictive-search__compact-title">{{ product.title | escape }}</span>
+                      <span class="predictive-search__compact-price">
+                        {%- if on_sale -%}
+                          <span class="predictive-search__compact-price-sale">{{ row_price | money }}</span>
+                          <s class="predictive-search__compact-price-was">{{ row_compare | money }}</s>
+                          <span class="predictive-search__compact-badge">-{{ sale_percent }}%</span>
+                        {%- else -%}
+                          <span>{{ row_price | money }}</span>
+                        {%- endif -%}
+                        {%- unless row_variant.available -%}
+                          <span class="predictive-search__compact-soldout">{{ 'products.product.sold_out' | t }}</span>
+                        {%- endunless -%}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
           </div>
         {%- endif -%}
       </div>
@@ -75,15 +152,6 @@
     {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
       </div>
     {%- endif -%}
-    <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button flex items-center justify-center">
-      <button
-        class="predictive-search__item predictive-search__item--term tp-btn tp-btn__primary"
-        tabindex="-1"
-        role="option"
-        aria-selected="false">
-        {{ 'templates.search.button_more' | t }}
-      </button>
-    </div>
   {%- else -%}
     {%- comment -%} Zero results: say so visibly and offer a next step instead of an empty modal. {%- endcomment -%}
     <div class="predictive-search__empty">

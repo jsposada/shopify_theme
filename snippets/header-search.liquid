@@ -15,7 +15,7 @@
       <div
         class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
         aria-haspopup="dialog"
-        aria-label="{{ 'general.search.search' | t }}"
+        aria-label="{{ 'general.search.open' | t }}"
       >
         <span class="modal-search-toggle-open cursor-pointer">
           {% render 'icon', icon_name: 'search', class: 'icon icon-search pointer-events-none block' %}
@@ -27,7 +27,7 @@
         class="search-modal search-modal--wrapper shadow hidden"
         role="dialog"
         aria-modal="true"
-        aria-label="{{ 'general.search.search' | t }}"
+        aria-label="{{ 'general.search.dialog' | t }}"
       >
         <button type="button" class="modal-search-toggle-close flex items-center tp-icon-close absolute top-12 right-12" aria-label="Cerrar búsqueda">
           {% render 'icon', icon_name: 'close', width: 15, height: 15 %}
@@ -47,7 +47,7 @@
                     type="search"
                     name="q"
                     value="{{ search_display_terms | escape }}"
-                    placeholder="{{ 'general.search.search' | t }}"
+                    placeholder="{{ 'general.search.placeholder' | t }}"
                     enterkeyhint="search"
                     {%- if settings.predictive_search_enabled -%}
                       role="combobox"
@@ -66,7 +66,7 @@
                   <button
                     type="submit"
                     class="search__button field__button"
-                    aria-label="{{ 'general.search.search' | t }}"
+                    aria-label="{{ 'general.search.submit' | t }}"
                   >
                     {% render 'icon', icon_name: 'search', width: 20, height: 20 %}
                   </button>
@@ -85,7 +85,6 @@
                           {% for listtext in qs_listtext %}
                             <li class="color-grey">
                               <a
-                                title="Search with keyword: Shirt"
                                 href="/search?type=product&q={{ listtext }}&options%5Bprefix%5D=last&form_type=product&utf8=✓"
                               >
                                 {{- listtext -}}
@@ -157,7 +156,7 @@
                 type="search"
                 name="q"
                 value="{{ search_display_terms | escape }}"
-                placeholder="{{ 'general.search.search' | t }}"
+                placeholder="{{ 'general.search.placeholder' | t }}"
                 {%- if settings.predictive_search_enabled -%}
                   role="combobox"
                   aria-expanded="false"
@@ -178,7 +177,7 @@
               <button
                 type="submit"
                 class="search__button field__button"
-                aria-label="{{ 'general.search.search' | t }}"
+                aria-label="{{ 'general.search.submit' | t }}"
               >
               {% render 'icon', icon_name: 'search', width: 20, height: 20 %}
               </button>
@@ -199,7 +198,6 @@
                       {% for listtext in qs_listtext %}
                         <li class="color-grey">
                           <a
-                            title="Search with keyword: Shirt"
                             href="/search?type=product&q={{ listtext }}&options%5Bprefix%5D=last&form_type=product&utf8=✓"
                           >
                             {{- listtext -}}

@@ -400,6 +400,10 @@
     },
     "search": {
       "search": "Introduzca palabra clave ...",
+      "placeholder": "Ej: 140/70-17, casco, Motul",
+      "open": "Abrir búsqueda",
+      "dialog": "Buscar en la tienda",
+      "submit": "Buscar",
       "reset": "Borrar término de búsqueda"
     },
     "cart": {

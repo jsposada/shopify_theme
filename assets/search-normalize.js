@@ -80,15 +80,46 @@
     if (!input) return;
     const { submitQuery } = normalize(input.value);
     if (submitQuery && submitQuery !== input.value) input.value = submitQuery;
+
+    // Product cards inside the results carry their own form fields (product-id, section-id,
+    // form_type, utf8) that would otherwise ride along in the search URL. Keep them out,
+    // and restore them if the submit is cancelled so the cards' add-to-cart still works.
+    const extras = [...form.querySelectorAll('[data-predictive-search] input, [data-predictive-search] select, [data-predictive-search] textarea')].filter((field) => !field.disabled);
+    extras.forEach((field) => { field.disabled = true; field.dataset.searchDisabled = ''; });
+    setTimeout(() => {
+      if (event.defaultPrevented) restoreFields();
+    });
   }, true);
 
+  function restoreFields() {
+    document.querySelectorAll('[data-search-disabled]').forEach((field) => {
+      field.disabled = false;
+      delete field.dataset.searchDisabled;
+    });
+  }
+
+  // Back/forward cache restores the page with those fields still disabled.
+  window.addEventListener('pageshow', (event) => { if (event.persisted) restoreFields(); });
+
   // Predictive results: explain the rewrite and offer the tire finder for sizes.
+  // Drop query suggestions that are the current search in another spelling ("140 70 17").
+  function pruneSuggestions(container, result) {
+    const list = container.querySelector('.predictive-search__suggestions');
+    if (!list) return;
+    const current = result.query.toLowerCase();
+    list.querySelectorAll('[role="option"]').forEach((item) => {
+      if (normalize(item.textContent).query.toLowerCase() === current) item.remove();
+    });
+    if (!list.querySelector('[role="option"]')) list.remove();
+  }
+
   function enhance(container) {
-    if (container.querySelector('[data-search-assist]')) return;
     const root = container.closest('predictive-search');
     const input = root && root.querySelector('input[name="q"]');
     if (!input || !input.value.trim()) return;
     const result = normalize(input.value);
+    pruneSuggestions(container, result);
+    if (container.querySelector('[data-search-assist]')) return;
 
     const viewAll = container.querySelector('.predictive-search__view-all');
     if (viewAll && result.changed) {

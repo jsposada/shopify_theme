@@ -69,13 +69,13 @@
                     type="search"
                     name="q"
                     value="{{ search_display_terms | escape }}"
-                    placeholder="{{ 'general.search.search' | t }}"
+                    placeholder="{{ 'general.search.placeholder' | t }}"
                   >
                   <input name="options[prefix]" type="hidden" value="last">
                   <button
                     type="submit"
                     class="search__button field__button"
-                    aria-label="{{ 'general.search.search' | t }}"
+                    aria-label="{{ 'general.search.submit' | t }}"
                   >
                     {% render 'icon', icon_name: 'search', width: 20, height: 20 %}
                   </button>
