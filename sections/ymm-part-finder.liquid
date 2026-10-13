@@ -185,6 +185,8 @@
     let requestController = null;
     let retryAction = null;
     let makesLoaded = false;
+    // Last query string seen, so history changes that only move the #fragment can be ignored.
+    let lastSearch = window.location.search;
     const selectedResultFilters = {
       brand: new Set(),
       partType: new Set()
@@ -238,6 +240,7 @@
       for (const value of selectedResultFilters.partType) url.searchParams.append('ymm_result_type', value);
       url.hash = 'YmmResults';
       if (url.href !== window.location.href) history.pushState({ searchParams: url.search.slice(1) }, '', url);
+      lastSearch = window.location.search;
       const Facets = customElements.get('facet-filters-form');
       if (Facets) Facets.searchParamsPrev = url.search.slice(1);
     }
@@ -907,7 +910,13 @@
       }
     }
 
+    // The native catalog pushes its own URLs and reports them through this event.
+    root.addEventListener('bikerz:parts-results-updated', () => { lastSearch = window.location.search; });
+
     window.addEventListener('popstate', () => {
+      const fragmentOnly = window.location.search === lastSearch;
+      lastSearch = window.location.search;
+      if (fragmentOnly) return;
       if (new URLSearchParams(window.location.search).has('ymm_model') || modelSelect.value || !results.hidden || !selection.hidden) {
         restoreSearchFromUrl();
       }
