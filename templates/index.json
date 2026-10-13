@@ -12,6 +12,27 @@
     "slide_ertLkK": {
       "type": "slide",
       "blocks": {
+        "slide_item_CKAGNV": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Banner_web_Cyber_Monday_Bikerz_octubre_2026.png",
+            "image_alt": "Ofertas en neumáticos cyber chile",
+            "image_link": "https://www.bikerz.cl/collections/ofertas",
+            "image_mobile": "shopify://shop_images/Banner_mobile_Cyber_Monday_Bikerz_octubre_2026.png",
+            "overlay_slide": 0,
+            "content_box": "container",
+            "slider_effect": "effect_fadeindown",
+            "position_content": "left",
+            "text_align_content": "text_left",
+            "content_background": "",
+            "sub_title": "",
+            "title": "",
+            "discount": "",
+            "description_1": "",
+            "slide_url": "",
+            "label_btn": ""
+          }
+        },
         "slide_item_acWfR3": {
           "type": "slide_item",
           "disabled": true,
@@ -36,6 +57,7 @@
         },
         "slide_item_wj6tFF": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
             "image_alt": "",
@@ -98,6 +120,7 @@
         }
       },
       "block_order": [
+        "slide_item_CKAGNV",
         "slide_item_acWfR3",
         "slide_item_wj6tFF",
         "slide_item_AEgRfW",
@@ -300,6 +323,7 @@
         },
         "collection_item_wQg8Ph": {
           "type": "collection_item",
+          "disabled": true,
           "settings": {
             "heading": "Ofertas",
             "font_size_heading": 20,
@@ -331,7 +355,7 @@
         "images_style": "square",
         "image_ratio": "1/1",
         "custom_ratio": "21:9",
-        "custom_column": 5,
+        "custom_column": 4,
         "column_gap": 20,
         "autoplay": false,
         "loop": false,
@@ -518,6 +542,9 @@
       "name": "Buscador de Neumáticos",
       "settings": {
         "title": "Encuentra tu neumático",
+        "help_text": "Ingresa la medida que aparece en el costado de tu neumático.",
+        "button_label": "Ver neumáticos",
+        "require_metric_profile": false,
         "target_collection": "neumaticos",
         "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
         "accent_color": "#ff6600"
@@ -570,28 +597,28 @@
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-q5a-120-70zr17-58w-tl",
-            "bn_end_time": "2026-09-30"
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_gpxr8n": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-q5a-180-55r17-73w-tl",
-            "bn_end_time": "2026-09-30"
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_BJiQk4": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-110-70r17-54w",
-            "bn_end_time": "2026-09-30"
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_46Neci": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-190-55r17-75w",
-            "bn_end_time": "2026-09-30"
+            "bn_end_time": "2026-10-31"
           }
         }
       },
