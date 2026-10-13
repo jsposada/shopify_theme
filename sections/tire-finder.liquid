@@ -575,6 +575,17 @@
   .pf-wrapper--landing .pf-status.is-empty { background: #f1f2f3; border-color: #d9dadd; color: #3c4145; }
   .pf-wrapper--landing .pf-status.is-empty .pf-status-icon { background: #656a6e; }
 
+  /* Inch sizes (ancho < 20) have no profile: the step is hidden and the row closes the gap. */
+  .pf-step[hidden] { display: none !important; }
+  @media (min-width: 961px) {
+    .pf-card.is-no-profile {
+      grid-template-columns: repeat(var(--pf-visible-steps, 2), minmax(240px, 1fr)) 250px;
+    }
+    .pf-wrapper--landing .pf-card.is-no-profile {
+      grid-template-columns: repeat(var(--pf-visible-steps, 3), minmax(150px, 1fr)) minmax(190px, .9fr);
+    }
+  }
+
   @media (max-width: 960px) {
     .pf-card {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -776,6 +787,25 @@
       return Number.isFinite(num) && num >= 20;
     }
 
+    // Medidas americanas (ancho < 20: 2.50, 3.00, 3.50…) no tienen perfil: se oculta el paso
+    // en vez de mostrar un select vacío, y los pasos visibles se renumeran (Ancho 1, Aro 2…).
+    const cardEl = finderEl.querySelector('.pf-card');
+    const profileStep = finderEl.querySelector('.pf-step[data-step="2"]');
+    function updateProfileStep() {
+      if (!cardEl || !profileStep) return;
+      const num = Number(String(selectAncho.value).replace(',', '.'));
+      const hide = Boolean(selectAncho.value) && Number.isFinite(num) && num < 20;
+      if (hide && selectAspecto.value) selectAspecto.value = '';
+      profileStep.hidden = hide;
+      cardEl.classList.toggle('is-no-profile', hide);
+      const visibleSteps = [...steps].filter(step => !step.hidden);
+      cardEl.style.setProperty('--pf-visible-steps', String(visibleSteps.length));
+      visibleSteps.forEach((step, index) => {
+        const number = step.querySelector('.pf-step-number');
+        if (number) number.textContent = String(index + 1);
+      });
+    }
+
     function getToken() {
       if (STOREFRONT_TOKEN && STOREFRONT_TOKEN.trim().length > 10) return STOREFRONT_TOKEN.trim();
       if (window.Shopify && window.Shopify.storefrontAccessToken) return window.Shopify.storefrontAccessToken;
@@ -940,6 +970,7 @@
       const r = selectAro.value;
       btnSearch.disabled = !r || (requiresProfile(selectAncho.value) && !selectAspecto.value);
       selectAspecto.setAttribute('aria-required', String(requiresProfile(selectAncho.value)));
+      updateProfileStep();
       setStepActive();
       announceOptions(changedSelect);
     }
