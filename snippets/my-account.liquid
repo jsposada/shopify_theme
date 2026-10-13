@@ -13,6 +13,7 @@
     {% endif %}
     {% endunless %}
     class="menu-drawer__account hidden md:block link focus-inset marker:{% if settings.show_popup_login_customer %} account-button{% endif %}"
+    aria-label="{% if customer %}Mi cuenta{% else %}Iniciar sesión{% endif %}"
     href="#">
     {% render 'icon'
       , icon_name: 'account' %}

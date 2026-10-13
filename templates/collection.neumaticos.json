@@ -1,0 +1,217 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "seo-tire-hero",
+      "blocks": {
+        "sizes": {
+          "type": "proof",
+          "settings": {
+            "text": "Amplia variedad de medidas"
+          }
+        },
+        "shipping": {
+          "type": "proof",
+          "settings": {
+            "text": "Las marcas líderes"
+          }
+        },
+        "workshop": {
+          "type": "proof",
+          "settings": {
+            "text": "Instalación profesional"
+          }
+        }
+      },
+      "block_order": [
+        "sizes",
+        "shipping",
+        "workshop"
+      ],
+      "settings": {
+        "eyebrow": "Neumáticos Bikerz",
+        "heading": "Neumáticos para motos en Chile",
+        "intro": "<p>Encuentra la medida correcta, compara marcas y compra con despacho a todo Chile o instalación en nuestro taller de Santiago.</p>",
+        "image": ""
+      }
+    },
+    "tire-finder": {
+      "type": "tire-finder",
+      "settings": {
+        "title": "Encuentra tu neumático",
+        "help_text": "Ingresa la medida que aparece en el costado de tu neumático.",
+        "button_label": "Ver neumáticos",
+        "require_metric_profile": true,
+        "target_collection": "neumaticos",
+        "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
+        "accent_color": "#ff6600"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter": {
+          "type": "filter",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "filter"
+      ],
+      "settings": {
+        "heading": "Neumáticos disponibles",
+        "empty_heading": "No encontramos coincidencias publicadas",
+        "empty_message": "No encontramos coincidencias publicadas para esta medida con los filtros seleccionados. Puedes cambiar la medida o seguir navegando por el catálogo.",
+        "container": "container",
+        "color_scheme": "",
+        "products_per_page": 20,
+        "column_number": "4",
+        "column_number_mobile": "2",
+        "show_description": false,
+        "is_collapse_description": true,
+        "display_position": "bottom",
+        "pagination": "default",
+        "show_product_count": false,
+        "show_list_grid": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "collab_first": true,
+        "filter_type": "left_sidebar",
+        "background_sidebar": "no_background",
+        "bg_color_sidebar": "#f4f4f4",
+        "collection_list": [],
+        "price_type": "range_slider",
+        "padding_top": 0,
+        "padding_bottom": 48,
+        "reset_spacing": false
+      }
+    },
+    "guide": {
+      "type": "seo-tire-guide",
+      "blocks": {
+        "width": {
+          "type": "measure",
+          "settings": {
+            "code": "120",
+            "heading": "Ancho",
+            "text": "Ancho nominal en milímetros.",
+            "example": ""
+          }
+        },
+        "profile": {
+          "type": "measure",
+          "settings": {
+            "code": "70",
+            "heading": "Perfil",
+            "text": "Altura del flanco como porcentaje del ancho.",
+            "example": ""
+          }
+        },
+        "rim": {
+          "type": "measure",
+          "settings": {
+            "code": "R17",
+            "heading": "Construcción y aro",
+            "text": "R indica construcción radial; 17 es el aro en pulgadas.",
+            "example": ""
+          }
+        },
+        "service": {
+          "type": "measure",
+          "settings": {
+            "code": "58W",
+            "heading": "Carga y velocidad",
+            "text": "Índices máximos de carga y velocidad.",
+            "example": ""
+          }
+        }
+      },
+      "block_order": [
+        "width",
+        "profile",
+        "rim",
+        "service"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Cómo identificar la medida correcta",
+        "intro": "",
+        "tip_heading": "Consejo del taller Bikerz",
+        "tip_text": "",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "faq": {
+      "type": "seo-landing-faq",
+      "blocks": {
+        "measure": {
+          "type": "item",
+          "settings": {
+            "title": "¿Cómo encuentro la medida de los neumáticos de mi moto?",
+            "content": "<p>Busca la medida grabada en el costado del neumático y compárala con el manual o la ficha técnica de tu moto. Confirma también si corresponde al eje delantero o trasero.</p>"
+          }
+        },
+        "numbers": {
+          "type": "item",
+          "settings": {
+            "title": "¿Qué significan el ancho, el perfil y el aro?",
+            "content": "<p>En una medida como 120/70-17, 120 es el ancho nominal en milímetros, 70 es la relación del perfil respecto del ancho y 17 es el diámetro de la llanta en pulgadas.</p>"
+          }
+        },
+        "tube": {
+          "type": "item",
+          "settings": {
+            "title": "¿Cómo sé si necesito un neumático con cámara o sin cámara?",
+            "content": "<p>Revisa las siglas TT (con cámara) o TL (tubeless) en el producto y confirma la compatibilidad con la llanta. Si tienes dudas, envíanos los datos de tu moto antes de comprar.</p>"
+          }
+        },
+        "installation": {
+          "type": "item",
+          "settings": {
+            "title": "¿Realizan instalación y balanceo?",
+            "content": "<p>Sí. Realizamos instalación y balanceo de neumáticos en nuestro taller de Macul. Confirma disponibilidad y condiciones al agendar.</p>"
+          }
+        },
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "title": "¿Hacen despachos a todo Chile?",
+            "content": "<p>Sí. Despachamos a la Región Metropolitana y a regiones. El plazo depende de la disponibilidad del producto y del destino.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "measure",
+        "numbers",
+        "tube",
+        "installation",
+        "shipping"
+      ],
+      "settings": {
+        "container": "container",
+        "heading": "Preguntas frecuentes",
+        "heading_alignment": "text-left",
+        "color_scheme": "",
+        "reset_spacing": false,
+        "padding_top": 24,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "tire-finder",
+    "product-grid",
+    "guide",
+    "faq"
+  ]
+}

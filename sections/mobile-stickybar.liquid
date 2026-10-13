@@ -13,7 +13,7 @@
       <ul class="mobile-bottom-link flex items-center justify-around py-16 list-none">
         {%- if show_home -%}
           <li>
-            <a href="{{ routes.root_url }}">
+            <a href="{{ routes.root_url }}" aria-label="Inicio">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -29,7 +29,7 @@
         {%- if show_products_all -%}
           <li>
             <div class="tp-mobile-stickybar__clc">
-              <a href="/collections/all">
+              <a href="/collections/all" aria-label="Ver todos los productos">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -61,10 +61,11 @@
         {%- endif -%}
         {%- if show_cart and template != 'cart' -%}
           <li class="">
-            <div class="tp-mobile-stickybar__cart">
+            <cart-bubble-sync class="tp-mobile-stickybar__cart">
               {% render 'minicart'
-                , cart: cart %}
-            </div>
+                , cart: cart
+                , omit_id: true %}
+            </cart-bubble-sync>
           </li>
         {%- endif -%}
         {%- if show_account -%}
@@ -77,6 +78,37 @@
       </ul>
     </div>
   </div>
+  <script>
+    if (!customElements.get('cart-bubble-sync')) {
+      customElements.define(
+        'cart-bubble-sync',
+        class CartBubbleSync extends HTMLElement {
+          connectedCallback() {
+            this.source = document.getElementById('cart-icon-bubble');
+            this.target = this.querySelector('.cart-icon-bubble');
+
+            if (!this.source || !this.target) return;
+
+            this.sync = () => {
+              this.target.innerHTML = this.source.innerHTML;
+            };
+
+            this.sync();
+            this.observer = new MutationObserver(this.sync);
+            this.observer.observe(this.source, {
+              childList: true,
+              subtree: true,
+              characterData: true,
+            });
+          }
+
+          disconnectedCallback() {
+            if (this.observer) this.observer.disconnect();
+          }
+        }
+      );
+    }
+  </script>
   <style>
     @media (max-width: 768px) {
       footer {

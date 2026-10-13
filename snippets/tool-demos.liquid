@@ -6,7 +6,7 @@
 -%}
 {% if domains contains shop.domain %}
     <script src="{{ 'demos.js' | asset_url }}" defer="defer"></script>
-    {{ 'demos.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'demos.css' | asset_url | stylesheet_tag }}
     <div class="tools fixed right-[15px] top-1/4 z-[400]">
         <div class="tools__demos mb-5 w-[64px] h-[64px] rounded-md overflow-hidden shadow-tool">
             <div class="tools__click cursor-pointer w-full h-full">

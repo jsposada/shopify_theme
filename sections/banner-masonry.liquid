@@ -90,7 +90,7 @@
                 </div>
                 {%- if image_mobile != blank -%}
                   <div class="mobile block md:hidden">
-                    {%- render 'responsive-image' | image: bst.image_mobile | width: "100vw" | class: "h-full" -%}
+                    {%- render 'responsive-image', image: bst.image_mobile, width: '100vw', class: 'h-full' -%}
                   </div>
                 {% endif %}
               </a>

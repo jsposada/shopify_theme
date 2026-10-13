@@ -136,7 +136,9 @@
       <div class="footer__bottom-wrapper {{ container }} flex items-center justify-between">
         {% if gst.copyright != blank %}
           <div class="footer__bottom-copyright py-28">
-            <div class="rsmb-p">{{ gst.copyright }}</div>
+            <div class="rsmb-p">
+              <p>© {{ 'now' | date: '%Y' }} {{ gst.copyright | strip_html }}</p>
+            </div>
           </div>
         {% endif %}
         {%- if gst.payment_enable -%}

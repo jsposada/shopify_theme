@@ -11,6 +11,20 @@
   assign autoplay = sst.autoplay
   assign show_bullet = sst.show_bullet
   assign show_arrow = sst.show_arrow
+  assign slider_gap_mobile = 15
+  assign slider_gap_desktop = sst.column_gap | default: 30
+  assign mobile_columns = sst.custom_column_mobile | default: 2
+  assign tablet_columns = sst.custom_column_tablets | default: 3
+  assign desktop_columns = item_desktop | default: 4
+  assign mobile_gap_count = mobile_columns | minus: 1
+  assign tablet_gap_count = tablet_columns | minus: 1
+  assign desktop_gap_count = desktop_columns | minus: 1
+  assign mobile_width_percent = 100.0 | divided_by: mobile_columns
+  assign tablet_width_percent = 100.0 | divided_by: tablet_columns
+  assign desktop_width_percent = 100.0 | divided_by: desktop_columns
+  assign mobile_gap_offset = slider_gap_mobile | times: mobile_gap_count | times: 1.0 | divided_by: mobile_columns
+  assign tablet_gap_offset = slider_gap_mobile | times: tablet_gap_count | times: 1.0 | divided_by: tablet_columns
+  assign desktop_gap_offset = slider_gap_desktop | times: desktop_gap_count | times: 1.0 | divided_by: desktop_columns
   assign media_aspect_ratio = sst.image_ratio
   assign custom_ratio = sst.custom_ratio
   assign images_style = sst.images_style
@@ -24,7 +38,12 @@
   endif
 -%}
 {%- capture style -%}
-  --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px; 
+  --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px;
+  --tp-slider-mobile-width: calc({{ mobile_width_percent }}% - {{ mobile_gap_offset }}px);
+  --tp-slider-tablet-width: calc({{ tablet_width_percent }}% - {{ tablet_gap_offset }}px);
+  --tp-slider-desktop-width: calc({{ desktop_width_percent }}% - {{ desktop_gap_offset }}px);
+  --tp-slider-mobile-gap: {{ slider_gap_mobile }}px;
+  --tp-slider-desktop-gap: {{ slider_gap_desktop }}px;
 {%- endcapture -%}
 
 <div

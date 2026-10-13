@@ -1,0 +1,5 @@
+# Local audit, preview, and deployment artifacts
+.tmp/
+
+# Private analytics and performance evidence kept only on this workstation
+outputs/

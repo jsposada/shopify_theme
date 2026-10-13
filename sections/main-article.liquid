@@ -150,7 +150,7 @@
               <div class="popular-articles">
 
                 <details
-                  id="popular-articles"
+                  id="popular-articles-details"
                   class=""
                   data-index="1"
                   style=""
@@ -176,8 +176,11 @@
                             <div class="pa-item__image mb-15 overflow-hidden">
                               <img
                                 class="w-full"
-                                src="{{ pa_article.image.src | img_url: '330x' }}"
-                                alt="{{ pa_article.title }}">
+                                src="{{ pa_article.image | image_url: width: 330 }}"
+                                alt="{{ pa_article.title | escape }}"
+                                loading="lazy"
+                                width="{{ pa_article.image.width }}"
+                                height="{{ pa_article.image.height }}">
                             </div>
                             <div class="info-container mb-10 flex-row flex flex-wrap items-center justify-center text-sm color-other">
                               {%- if gst.post_show_author -%}
@@ -282,7 +285,13 @@
                   class="article-template__content mb-30 pb-30 rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   itemprop="articleBody"
                   {{ block.shopify_attributes }}>
-                  {{ article.content }}
+                  {%- assign normalized_article_content = article.content
+                    | replace: '<h1', '<h2'
+                    | replace: '</h1>', '</h2>'
+                    | replace: '<H1', '<H2'
+                    | replace: '</H1>', '</H2>'
+                  -%}
+                  {{ normalized_article_content }}
                 </div>
               {%- when 'nextprev' -%}
                 {%- if blog.previous_article != null or blog.next_article != null -%}
@@ -358,6 +367,7 @@
 
                       <a
                         class="btn-sharing hvr-opacity btnFacebook bls_tooltip d-inline-flex mr-10"
+                        aria-label="Compartir en Facebook"
                         href="javascript:void(0);"
                         data-social='https://www.facebook.com/sharer/sharer.php?u={{ canonical_url }}&p[images][0]={{ article.image | image_url: width: 480, height: 480 }}", "sharer", "toolbar=0,status=0,width=660,height=445'>
                         {% render 'icon'
@@ -365,6 +375,7 @@
                       </a>
                       <a
                         class="btn-sharing hvr-opacity btnTwitter bls_tooltip d-inline-flex mr-10"
+                        aria-label="Compartir en X"
                         href="javascript:void(0);"
                         data-social='https://twitter.com/intent/tweet?text={{ article.title | truncate: 30 | url_param_escape }} {{ canonical_url }}", "sharertwt", "toolbar=0,status=0,width=640,height=445'>
                         {% render 'icon'
@@ -372,6 +383,7 @@
                       </a>
                       <a
                         class="btn-sharing hvr-opacity btnPinterest bls_tooltip d-inline-flex"
+                        aria-label="Compartir en Pinterest"
                         href="javascript:void(0);"
                         data-social='http://pinterest.com/pin/create/button/?url={{ canonical_url }}&amp;media={{ article.image | image_url: width: 480, height: 480 }}", "sharerpinterest", "toolbar=0,status=0,width=660,height=445'>
                         {% render 'icon'

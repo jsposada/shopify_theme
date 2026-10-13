@@ -1,5 +1,5 @@
 {%- if check_index -%}
-  <h1 class="header__heading">
+  <div class="header__heading">
 {%- endif -%}
 <a href="{{ routes.root_url }}" class="header__heading-link">
   {%- if img_logo != blank -%}
@@ -35,5 +35,5 @@
   {%- endif -%}
 </a>
 {%- if check_index -%}
-  </h1>
+  </div>
 {%- endif -%}

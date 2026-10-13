@@ -63,7 +63,7 @@
             <ul class="tp-fcl__content list-none {{ classGrid }}">
               {%- for product in collection.products limit: section.settings.limit_products -%}
                 <li class="tp-fcl__item tp-grid__item">
-                  {% render 'product-item-layout-1'
+                  {% render 'product-card-selector'
                     , card_product: product %}
                 </li>
               {%- endfor -%}

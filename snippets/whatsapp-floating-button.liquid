@@ -1,0 +1,85 @@
+{%- liquid
+  assign whatsapp_phone = '56977670252'
+  assign whatsapp_message = settings.whatsapp_floating_message | default: '¡Hola! Quiero más información'
+
+  if template.name == 'product' and product != blank
+    assign whatsapp_message = whatsapp_message | append: ' sobre ' | append: product.title
+  endif
+
+  assign whatsapp_message = whatsapp_message | append: '. ' | append: canonical_url
+  assign whatsapp_message_encoded = whatsapp_message | strip | url_encode
+  assign whatsapp_url = 'https://wa.me/' | append: whatsapp_phone | append: '?text=' | append: whatsapp_message_encoded
+-%}
+
+<a
+  class="bikerz-whatsapp-float"
+  href="{{ whatsapp_url }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Escríbenos por WhatsApp"
+  data-whatsapp-source="floating-button"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 16 16"
+    width="32"
+    height="32"
+    fill="currentColor"
+  >
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994.001C3.649.001.126 3.524.126 7.869c0 1.386.361 2.733 1.05 3.922L.058 16l4.165-1.092a7.873 7.873 0 0 0 3.77.96h.004c4.342 0 7.86-3.524 7.87-7.865a7.85 7.85 0 0 0-2.266-5.677M7.994 14.536a6.6 6.6 0 0 1-3.356-.92l-.239-.142-2.472.648.66-2.41-.156-.248a6.6 6.6 0 0 1-1.01-3.595A6.614 6.614 0 0 1 8.03 1.259a6.6 6.6 0 0 1 4.717 1.956 6.6 6.6 0 0 1 1.935 4.727c-.003 3.645-2.966 6.596-6.637 6.596m3.625-4.934c-.198-.099-1.175-.58-1.357-.646-.182-.065-.314-.099-.445.1-.132.197-.512.645-.627.775-.115.132-.23.148-.428.05-.198-.1-.836-.308-1.592-.984-.588-.525-.985-1.173-1.1-1.371-.115-.198-.012-.304.086-.403.089-.088.198-.23.297-.345.1-.115.132-.198.198-.33.065-.132.033-.248-.017-.347-.05-.099-.445-1.075-.61-1.47-.16-.389-.323-.335-.445-.34-.115-.006-.247-.007-.38-.007a.73.73 0 0 0-.528.247c-.182.198-.693.678-.693 1.654s.71 1.918.81 2.05c.098.132 1.397 2.132 3.383 2.992.473.205.842.328 1.13.42.475.151.907.13 1.249.079.38-.057 1.175-.48 1.341-.943.165-.462.165-.858.115-.943-.049-.084-.181-.132-.38-.23"/>
+  </svg>
+</a>
+
+{% style %}
+  .bikerz-whatsapp-float {
+    position: fixed;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 1000;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .bikerz-whatsapp-float:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .bikerz-whatsapp-float svg {
+    display: block;
+  }
+
+  .bikerz-whatsapp-float:focus-visible {
+    outline: 3px solid #111111;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 767px) {
+    .bikerz-whatsapp-float {
+      width: 56px;
+      height: 56px;
+    }
+
+    .bikerz-whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bikerz-whatsapp-float {
+      transition: none;
+    }
+  }
+{% endstyle %}

@@ -53,11 +53,11 @@
               <div class="language {% if st.hidden_language_tablet_mobile %} hidden lg:block {% endif %}">
                 <localization-form>
                   {%- form 'localization'
-                    , id: 'FooterLanguageForm'
+                    , id: 'TopBarLanguageForm'
                     , class: 'localization-form' -%}
                     <div class="no-js-hidden">
                       {%- render 'language-localization'
-                        , localPosition: 'FooterLanguage' -%}
+                        , localPosition: 'TopBarLanguage' -%}
                     </div>
                   {%- endform -%}
                 </localization-form>
@@ -67,11 +67,11 @@
               <div class="currency {% if st.hidden_currency_tablet_mobile %} hidden lg:block {% endif %}">
                 <localization-form>
                   {%- form 'localization'
-                    , id: 'FooterCountryForm'
+                    , id: 'TopBarCountryForm'
                     , class: 'localization-form' -%}
                     <div class="no-js-hidden">
                       {%- render 'country-localization'
-                        , localPosition: 'FooterCountry' -%}
+                        , localPosition: 'TopBarCountry' -%}
                     </div>
                   {%- endform -%}
                 </localization-form>

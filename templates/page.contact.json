@@ -28,9 +28,9 @@
           "type": "contact-info",
           "settings": {
             "title_info": "Información de contacto",
-            "number_phone": "<p>+569 5770 9915</p>",
+            "number_phone": "<p><a href=\"https://wa.link/hfjqvd\" target=\"_blank\" title=\"Número Bikerz\">+56 9 7767 0252</a></p>",
             "address": "<p>Avenida Pedro de Valdivia 5691 local 3, Macul, RM</p>",
-            "email": "<p>Hola@bikerz.cl</p>",
+            "email": "<p>hola@bikerz.cl</p>",
             "show_social": true,
             "title_form": "Póngase en contacto",
             "show_form": true

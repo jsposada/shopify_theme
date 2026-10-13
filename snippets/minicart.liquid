@@ -2,7 +2,7 @@
   <a
     href="{{ routes.cart_url }}"
     class="cart-icon-bubble link link--text focus-inset ml-3.75 icon-contain-count hidden md:block relative"
-    id="cart-icon-bubble"
+    {% unless omit_id %}id="cart-icon-bubble"{% endunless %}
   >
     {% render 'icon', icon_name: 'cart' %}
     <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>

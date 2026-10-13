@@ -27,7 +27,7 @@
           {%- assign max_chars_message_rendered = 'recipient.form.max_characters' | t: max_chars: max_chars_message -%}
           {%- assign message_label_rendered = 'recipient.form.message_label' | t -%}
           <div class="field">
-            <input
+            <textarea
               rows="10"
               id="Recipient-message-{{ section.id }}"
               class="text-area field__input color-other"
@@ -35,7 +35,7 @@
               maxlength="{{ max_chars_message }}"
               placeholder="Customize note"
               aria-label="{{ message_label_rendered }} {{ max_chars_message_rendered }}"
-            >{{ form.message }}</input>
+            >{{ form.message }}</textarea>
           </div>
         </div>
         <div class="btn-upload-cloud w-full field__input flex cursor-pointer">
@@ -46,16 +46,12 @@
             accept="image/*"
             name="properties[Upload image]"
             class="form-input pointer file flex-1 block color-other">
-          <label for="custom-image-upload" class="custom-file-upload block">
-            <? xml version="1.0" encoding="iso-8859-1" ?>
-            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+          <label for="Recipient-image-{{ section.id }}" class="custom-file-upload block">
             <svg
               class="mx-5"
               height="20px"
               width="20px"
               version="1.1"
-              id="Capa_1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 312.602 312.602"

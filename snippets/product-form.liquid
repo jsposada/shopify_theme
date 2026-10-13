@@ -94,7 +94,6 @@
                   class="quantity-Form-{{ section.id }} product-form__input product-form__quantity"
                   {{ block.shopify_attributes }}>
                   {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
-                  </label>
                   <div class="product-form__input product-form__quantity h-full">
                     <quantity-input class="tp-item__quantity quantity">
                       <button
@@ -169,17 +168,20 @@
                 </div>
               {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
                 {% if current_variant_provider == true %}
-                
+                  {%- liquid
+                    assign whatsapp_stock_message = product.metafields.custom.mensaje_whatsapp | default: settings.whatsapp_stock_message | default: 'Hola, quiero saber cuándo estará disponible el producto'
+                    assign whatsapp_stock_message = whatsapp_stock_message | append: ' ' | append: product.title | url_encode
+                  -%}
                   <a
-                    href="https://wa.me/56957709915?text={% if product.metafields.custom.mensaje_whatsapp %}{{ product.metafields.custom.mensaje_whatsapp }}{% else %}Hola, quiero saber cuándo estará disponible el producto{% endif %} {{ product.title }}"
+                    href="https://wa.me/56977670252?text={{ whatsapp_stock_message }}"
                     target="_blank"
                     rel="noopener noreferrer"
                     id="ProductWhatsAppButton-{{ section_id }}"
                     class="product-form__submit button button--full-width tp-btn tp-btn__secondary mb-12 w-full"
                     style="display:flex;align-items:center;justify-content:center;gap:8px;background-color:#25D366;color:#fff;border:none;border-radius:8px;text-decoration:none;"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
-                      <path d="M16.01 3.2C9.38 3.2 4 8.58 4 15.22c0 2.66.87 5.12 2.34 7.12L4 28.8l6.68-2.23c1.93 1.06 4.15 1.65 6.33 1.65 6.63 0 12.01-5.38 12.01-12.02 0-6.63-5.38-12-12.01-12zm.01 21.58c-2.04 0-4.02-.55-5.75-1.59l-.41-.24-3.96 1.32 1.3-4.08-.26-.42c-1.36-2.04-2.08-4.42-2.08-6.87 0-6.75 5.49-12.24 12.17-12.24 6.68 0 12.17 5.49 12.17 12.24-.01 6.76-5.5 12.24-12.18 12.24zm6.94-8.97c-.38-.19-2.27-1.12-2.63-1.25-.35-.13-.6-.19-.85.19-.25.38-.97 1.25-1.18 1.5-.22.25-.44.28-.81.09-.38-.19-1.59-.58-3.03-1.85-1.12-.99-1.88-2.21-2.1-2.58-.22-.38-.02-.58.16-.77.16-.16.38-.41.57-.63.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.09-.19-.84-2.04-1.15-2.79-.3-.72-.61-.62-.85-.63h-.72c-.25 0-.66.09-1.01.47-.35.38-1.33 1.3-1.33 3.16s1.36 3.67 1.55 3.93c.19.25 2.68 4.09 6.48 5.74.91.39 1.62.62 2.17.79.91.29 1.73.25 2.38.15.73-.11 2.27-.93 2.59-1.82.32-.9.32-1.66.22-1.82-.09-.16-.35-.25-.73-.44z"/>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="18" height="18" fill="currentColor">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994.001C3.649.001.126 3.524.126 7.869c0 1.386.361 2.733 1.05 3.922L.058 16l4.165-1.092a7.873 7.873 0 0 0 3.77.96h.004c4.342 0 7.86-3.524 7.87-7.865a7.85 7.85 0 0 0-2.266-5.677M7.994 14.536a6.6 6.6 0 0 1-3.356-.92l-.239-.142-2.472.648.66-2.41-.156-.248a6.6 6.6 0 0 1-1.01-3.595A6.614 6.614 0 0 1 8.03 1.259a6.6 6.6 0 0 1 4.717 1.956 6.6 6.6 0 0 1 1.935 4.727c-.003 3.645-2.966 6.596-6.637 6.596m3.625-4.934c-.198-.099-1.175-.58-1.357-.646-.182-.065-.314-.099-.445.1-.132.197-.512.645-.627.775-.115.132-.23.148-.428.05-.198-.1-.836-.308-1.592-.984-.588-.525-.985-1.173-1.1-1.371-.115-.198-.012-.304.086-.403.089-.088.198-.23.297-.345.1-.115.132-.198.198-.33.065-.132.033-.248-.017-.347-.05-.099-.445-1.075-.61-1.47-.16-.389-.323-.335-.445-.34-.115-.006-.247-.007-.38-.007a.73.73 0 0 0-.528.247c-.182.198-.693.678-.693 1.654s.71 1.918.81 2.05c.098.132 1.397 2.132 3.383 2.992.473.205.842.328 1.13.42.475.151.907.13 1.249.079.38-.057 1.175-.48 1.341-.943.165-.462.165-.858.115-.943-.049-.084-.181-.132-.38-.23"/>
                     </svg>
                     Consulta stock por Whatsapp
                   </a>
@@ -194,7 +196,7 @@
                     {{ 'products.product.sold_out' | t }}
                   </button>
                {% endif %}
-                {% else %}
+                 {% else %}
 
                 <button
                       id="ProductSubmitButton-{{ section_id }}"
@@ -227,10 +229,10 @@
                       {%- render 'button-wishlist'
                         , product: product -%}
                     </div>
-                    
+              {%- endif -%}
               </div>
-              
-              {%- if show_dynamic_checkout -%}
+
+              {%- if show_dynamic_checkout and product.selected_or_first_available_variant.available and quantity_rule_soldout != true -%}
                 {% assign text_agree_terms_conditions = block.settings.text_agree_terms_conditions %}
                 {% if text_agree_terms_conditions != blank and block.settings.confirm_terms %}
                   <div class="mb-8 agreetc-class rsmb-p">
@@ -250,7 +252,6 @@
                   {{ form | payment_button }}
                 {% endif %}
                 {%- endif -%}
-              {%- endif -%}
               
             </div>
           {%- endform -%}

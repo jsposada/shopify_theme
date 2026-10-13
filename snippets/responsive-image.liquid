@@ -59,6 +59,13 @@
   if width
     assign width_default = width
   endif
+
+  assign resolved_alt = image.alt
+  if alt_is_decorative == true
+    assign resolved_alt = ''
+  elsif alt_text != blank
+    assign resolved_alt = alt_text
+  endif
 -%}
 
 <div
@@ -80,7 +87,7 @@
       "
       src="{{ image | image_url: width: image.width }}"
       sizes="(min-width: {{ container_width }}px) {{ width_default }}, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-      alt="{{ image.alt | escape }}"
+      alt="{{ resolved_alt | escape }}"
       loading="lazy"
       width="{{ image.width }}"
       height="{{ image.height }}"

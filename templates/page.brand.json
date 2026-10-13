@@ -42,7 +42,7 @@
           "type": "buttons",
           "settings": {
             "btn_content": "Más información",
-            "link_btn": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre...&type=phone_number&app_absent=0",
+            "link_btn": "https://wa.link/v6lvap",
             "button_type": "tp-btn__primary"
           }
         }
@@ -123,7 +123,7 @@
             "description": "<p>Reparación profesional de neumáticos para evitar fugas de aire y mejorar la seguridad en ruta.</p>",
             "btn_content": "Agendar",
             "open_link": "_blank",
-            "link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+servicio+de+vulcanizado.&type=phone_number&app_absent=0",
+            "link": "https://wa.link/lvl7p5",
             "type_button": "secondary"
           }
         },
@@ -157,7 +157,7 @@
             "description": "<p>Elimina la cámara de aire de tu neumático y reduce el riesgo de pinchazos con nuestro proceso de tubulización.</p>",
             "btn_content": "Agendar",
             "open_link": "_blank",
-            "link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+servicio+de+tubulizaci%C3%B3n.&type=phone_number&app_absent=0",
+            "link": "https://wa.link/58fuzw",
             "type_button": "secondary"
           }
         },
@@ -174,7 +174,7 @@
             "description": "<p>Evita fallas mecánicas y extiende la vida útil de tu moto con nuestro mantenimiento integral.</p>",
             "btn_content": "Agendar",
             "open_link": "_blank",
-            "link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+mantenimiento+preventivo.&type=phone_number&app_absent=0",
+            "link": "https://wa.link/we35gu",
             "type_button": "secondary"
           }
         },
@@ -191,7 +191,7 @@
             "description": "<p>Limpieza, ajuste y lubricación de la cadena para un funcionamiento eficiente y mayor durabilidad.</p>",
             "btn_content": "Agendar",
             "open_link": "_blank",
-            "link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+mantenimiento+de+cadena.&type=phone_number&app_absent=0",
+            "link": "https://wa.link/mf9531",
             "type_button": "secondary"
           }
         },
@@ -208,7 +208,7 @@
             "description": "<p>Usamos aceites de calidad para garantizar el mejor rendimiento y protección del motor de tu moto.</p>",
             "btn_content": "Agendar",
             "open_link": "_blank",
-            "link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+cambio+de+aceite.&type=phone_number&app_absent=0",
+            "link": "https://wa.link/t0y5ek",
             "type_button": "secondary"
           }
         }
@@ -241,7 +241,7 @@
         "design_banner": "text-overlay-image",
         "show_border_separate": false,
         "button_label": "Conocer todos los servicios",
-        "button_link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=Hola%21+quiero+m%C3%A1s+informaci%C3%B3n+sobre...&type=phone_number&app_absent=0",
+        "button_link": "https://wa.link/hfjqvd",
         "button_type": "tp-btn__primary",
         "nowrap_item": false,
         "reset_spacing": false,

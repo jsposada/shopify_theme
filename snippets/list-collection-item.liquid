@@ -14,7 +14,7 @@
 <div class="collection-item {{ design_collection }} {{ hvr_effect }} overflow-hidden relative">
   <div class="collection-item__image h-full mb-20 {% if featured_image == blank %}no-image{% endif %}">
     <a
-      aria-label="links"
+      aria-label="Ver colección {{ title_collection | default: 'Productos' | escape }}"
       href="{% if collection_item == blank %}#{% else %}{{ collection_item.url }}{% endif %}"
       class="h-full">
       {% render 'responsive-image'
@@ -25,6 +25,7 @@
         , placeholder_image: placeholder_image
         , w_default: 330
         , h_default: 330
+        , alt_text: title_collection
       %}
     </a>
   </div>

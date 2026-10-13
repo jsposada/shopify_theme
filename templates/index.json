@@ -12,12 +12,13 @@
     "slide_ertLkK": {
       "type": "slide",
       "blocks": {
-        "slide_item_djifwm": {
+        "slide_item_CKAGNV": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/Banner_web_Promocion_3_Eurogrip_1_Litro_de_aceite_Motul_GRATIS_9f1fb145-6fd6-4af2-b5d5-4dff3ed870a9.png",
-            "image_link": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=EUROGRIP&filter.v.price.gte=0&filter.v.price.lte=591860",
-            "image_mobile": "shopify://shop_images/Banner_mobile_Promocion_3_Eurogrip_1_Litro_de_aceite_Motul_GRATIS.png",
+            "image": "shopify://shop_images/Banner_web_Cyber_Monday_Bikerz_octubre_2026.png",
+            "image_alt": "Ofertas en neumáticos cyber chile",
+            "image_link": "https://www.bikerz.cl/collections/ofertas",
+            "image_mobile": "shopify://shop_images/Banner_mobile_Cyber_Monday_Bikerz_octubre_2026.png",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
@@ -32,32 +33,14 @@
             "label_btn": ""
           }
         },
-        "slide_item_7TVYU8": {
+        "slide_item_acWfR3": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Banner_web_Promocion_1_Aceite_Motul_en_oferta_8.990_39c129f8-16b4-4fe9-a5c3-d0eb1dc63d9b.png",
-            "image_link": "https://www.bikerz.cl/collections/lubricantes/products/aceite-motul-5100-semi-sintetico-20w50-4t-1-litro-copia?_pos=1&_fid=7b86b6227&_ss=c",
-            "image_mobile": "shopify://shop_images/Banner_mobile_Promocion_1_Aceite_Motul_en_oferta_8.990.png",
-            "overlay_slide": 0,
-            "content_box": "container",
-            "slider_effect": "effect_fadeindown",
-            "position_content": "left",
-            "text_align_content": "text_left",
-            "content_background": "",
-            "sub_title": "Cuida de ti y de tu moto",
-            "title": "<h1><strong>Aceite Motul</strong></h1>",
-            "discount": "",
-            "description_1": "<h3><strong>Haz el cambio a tiempo</strong></h3>",
-            "slide_url": "https://www.bikerz.cl/collections/lubricantes/products/aceite-motul-5100-semi-sintetico-20w50-4t-1-litro-copia?_pos=1&_fid=7b86b6227&_ss=c",
-            "label_btn": "PRECIO ESPECIAL"
-          }
-        },
-        "slide_item_VGxBTR": {
-          "type": "slide_item",
-          "settings": {
-            "image": "shopify://shop_images/Banner_web_CEAT.png",
-            "image_link": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=CEAT&filter.v.price.gte=0&filter.v.price.lte=591860",
-            "image_mobile": "shopify://shop_images/Banner_movil_descuento_CEAT.png",
+            "image": "shopify://shop_images/Banner_web_campana_ofertas_aleatorias_bikerz_2026.png",
+            "image_alt": "",
+            "image_link": "shopify://collections/ofertas",
+            "image_mobile": "shopify://shop_images/Banner_mobile_campana_ofertas_aleatorias_bikerz_2026.png",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
@@ -65,11 +48,11 @@
             "text_align_content": "text_left",
             "content_background": "",
             "sub_title": "",
-            "title": "<p>QUE LAS LLUVIAS </p><p>NO TE SORPRENDAN</p>",
+            "title": "",
             "discount": "",
-            "description_1": "<p>Aprovecha los descuento </p><p>en toda la marca <em><strong>CEAT</strong></em></p>",
-            "slide_url": "https://www.bikerz.cl/collections/neumaticos?sort_by=manual&filter.p.m.custom.marca=CEAT&filter.v.price.gte=0&filter.v.price.lte=591860",
-            "label_btn": "Compra ahora"
+            "description_1": "",
+            "slide_url": "",
+            "label_btn": ""
           }
         },
         "slide_item_wj6tFF": {
@@ -77,6 +60,7 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
+            "image_alt": "",
             "image_link": "shopify://collections/neumaticos",
             "overlay_slide": 0,
             "content_box": "container",
@@ -97,6 +81,7 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cuidamos_tu_inversion_y_tu_camino_1.png",
+            "image_alt": "",
             "image_link": "shopify://pages/contacto",
             "overlay_slide": 0,
             "content_box": "container",
@@ -117,7 +102,8 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Te_asesoramos_por_WhatsApp_1.png",
-            "image_link": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
+            "image_alt": "",
+            "image_link": "https://api.whatsapp.com/send/?phone=%2B56977670252&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
             "overlay_slide": 0,
             "content_box": "container",
             "slider_effect": "effect_fadeindown",
@@ -128,20 +114,21 @@
             "title": "<p>Te asesoramos por WhatsApp</p>",
             "discount": "",
             "description_1": "<p>¿Dudas con la medida o el compuesto? </p><h5>Envíos a todo Chile.</h5>",
-            "slide_url": "https://api.whatsapp.com/send/?phone=%2B56957709915&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
+            "slide_url": "https://api.whatsapp.com/send/?phone=%2B56977670252&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
             "label_btn": "Escríbenos al WhatsApp"
           }
         }
       },
       "block_order": [
-        "slide_item_djifwm",
-        "slide_item_7TVYU8",
-        "slide_item_VGxBTR",
+        "slide_item_CKAGNV",
+        "slide_item_acWfR3",
         "slide_item_wj6tFF",
         "slide_item_AEgRfW",
         "slide_item_Xr6FYr"
       ],
       "custom_css": [
+        ".tp-slide.section-mb {margin-bottom: 40px;}",
+        "@media (max-width: 768px) {.tp-slide.section-mb {margin-bottom: 28px; }}",
         ".tp-btn__primary {border-radius: 20px 20px 20px 20px;}"
       ],
       "settings": {
@@ -169,16 +156,6 @@
         "reset_spacing": false
       }
     },
-    "tire_finder_yQeRC4": {
-      "type": "tire-finder",
-      "name": "Buscador de Neumáticos",
-      "settings": {
-        "title": "Encuentra tu neumático",
-        "target_collection": "neumaticos",
-        "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
-        "accent_color": "#ff6600"
-      }
-    },
     "brand_pzpLjB": {
       "type": "brand",
       "blocks": {
@@ -186,6 +163,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Xcelink_logo.png",
             "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=XCELINK"
           }
@@ -194,6 +172,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/ceat_logo.png",
             "link": "https://www.bikerz.cl/collections/neumaticos?filter.p.m.custom.marca=CEAT"
           }
@@ -202,6 +181,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_michelin.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MICHELIN"
           }
@@ -210,6 +190,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Maggion_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=MAGGION"
           }
@@ -218,6 +199,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_dunlop_3bca03f2-07ed-4f97-aa2a-e42f4b235dca.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=DUNLOP"
           }
@@ -226,6 +208,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Continental_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=CONTINENTAL"
           }
@@ -234,6 +217,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_rinaldi.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=RINALDI"
           }
@@ -242,6 +226,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Heidenau_neumaticos.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=HEIDENAU"
           }
@@ -250,6 +235,7 @@
           "type": "brand_item",
           "settings": {
             "heading": "",
+            "alt_text": "",
             "image": "shopify://shop_images/Neumaticos_de_moto_anlas.svg",
             "link": "https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.marca=ANLAS"
           }
@@ -267,8 +253,9 @@
         "brand_item_VB6Ddg"
       ],
       "custom_css": [
-        ".tp__responsive-image {border-radius: 12px 12px 12px 12px; border-style: solid; border-color: (86, 86, 86); border-width: 2px;}",
-        ".tp__responsive-image:hover {border-style: solid; border-color: #333333; border-width: 3px;}"
+        ".tp-brand__content {margin-top: -40px; background-color: white; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;}",
+        ".tp__responsive-image {border: none; border-right: 2px solid; border-image: linear-gradient( to bottom, transparent 25%, #e0e0e0 25%, #e0e0e0 75%, transparent 75% ) 1; border-radius: 0;}",
+        ".tp__responsive-image:hover {border: none; border-right: 2px solid; border-image: linear-gradient( to bottom, transparent 25%, #a6a6a6 25%, #a6a6a6 75%, transparent 75% ) 1; border-radius: 0;}"
       ],
       "settings": {
         "show_heading_header": false,
@@ -291,8 +278,8 @@
         "loop": true,
         "show_arrow": true,
         "show_bullet": false,
-        "padding_top": 13,
-        "padding_bottom": 13
+        "padding_top": 0,
+        "padding_bottom": 48
       }
     },
     "collection_list_AyqJ4z": {
@@ -309,7 +296,6 @@
         },
         "collection_item_pyBgHp": {
           "type": "collection_item",
-          "disabled": true,
           "settings": {
             "heading": "Repuestos",
             "font_size_heading": 20,
@@ -335,14 +321,14 @@
             "image": "shopify://shop_images/Lubricante.jpg"
           }
         },
-        "collection_item_amwXdH": {
+        "collection_item_wQg8Ph": {
           "type": "collection_item",
           "disabled": true,
           "settings": {
-            "heading": "Accesorios",
+            "heading": "Ofertas",
             "font_size_heading": 20,
-            "collection": "accesorios-para-motos",
-            "image": "shopify://shop_images/Accesorios_8a722cfd-fa58-4b80-bfa7-a8cba4afc76f.jpg"
+            "collection": "ofertas",
+            "image": "shopify://shop_images/COLECCIONES_SHOPIFY.png"
           }
         }
       },
@@ -351,11 +337,11 @@
         "collection_item_pyBgHp",
         "collection_item_GQaYiq",
         "collection_item_VUWkVb",
-        "collection_item_amwXdH"
+        "collection_item_wQg8Ph"
       ],
       "settings": {
         "show_heading_header": true,
-        "heading": "CONOCE NUESTROS PRODUCTOS",
+        "heading": "Conoce nuestros productos",
         "description": "",
         "text_alignment": "text-left",
         "show_button": false,
@@ -364,13 +350,13 @@
         "container": "container",
         "color_scheme": "",
         "style_layout": "slider",
-        "design_collection": "design-2",
-        "hover_effect": "hvr_zoom",
+        "design_collection": "design-1",
+        "hover_effect": "translate_to_top",
         "images_style": "square",
-        "image_ratio": "3/4",
+        "image_ratio": "1/1",
         "custom_ratio": "21:9",
-        "custom_column": 3,
-        "column_gap": 30,
+        "custom_column": 4,
+        "column_gap": 20,
         "autoplay": false,
         "loop": false,
         "show_arrow": false,
@@ -386,14 +372,25 @@
     "banner_with_text_CCJXJr": {
       "type": "banner-with-text",
       "blocks": {
+        "heading_seo_home": {
+          "type": "heading",
+          "settings": {
+            "title": "Neumáticos, repuestos y equipamiento para motos en Chile",
+            "heading_tag": "h1",
+            "font_size_heading": "20",
+            "font_size_heading_tb": "20",
+            "font_size_heading_mb": "18"
+          }
+        },
         "text_bRgyed": {
           "type": "text",
           "settings": {
-            "txt_content": "<p><em>En Bikerz, nos especializamos en </em><em><strong>neumáticos </strong></em><em>y </em>servicios de <em><strong>mantenimiento</strong></em> y <em><strong>reparación</strong></em> para garantizar que siempre estés listo para la carretera<em> con opciones para cada estilo de conducción. </em></p><p><em>Descubre nuestra selección de </em><em><strong>neumáticos </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Trail&filter.p.m.custom.uso=Mixto&filter.p.m.custom.uso=Trail\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Trail&filter.p.m.custom.uso=Mixto&filter.p.m.custom.uso=Trail\"><em><strong>Trail (Mixto)</strong></em></a><em><strong>, </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Chopper\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Chopper\"><em><strong>Chopper</strong></em></a><em><strong>, </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Scooter\" target=\"_blank\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Scooter\"><em><strong>Scooter</strong></em></a><em><strong> y </strong></em><a href=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Sport&filter.p.m.custom.uso=Street\" title=\"https://www.bikerz.cl/collections/neumaticos?sort_by=title-ascending&filter.p.m.custom.uso=Sport&filter.p.m.custom.uso=Street\"><em><strong>Sport (Street)</strong></em></a><em>, diseñados para ofrecer el mejor rendimiento en carretera y terrenos mixtos. Trabajamos con marcas reconocidas como </em><em><strong>Dunlop, Michelin y Rinaldi</strong></em><em>, asegurando </em><em><strong>calidad, seguridad y durabilidad</strong></em><em>.</em></p>"
+            "txt_content": "<p>En Bikerz encontrarás neumáticos, repuestos, cascos y lubricantes para mantener tu moto segura y lista para la ruta. Trabajamos con marcas como <strong>Michelin, Dunlop, Continental, CEAT, Rinaldi y Eurogrip</strong>, y te asesoramos para elegir la medida y compatibilidad exacta según tu modelo; desde motos urbanas y scooters hasta cruisers y adventure como BMW 1200, Honda Africa Twin o Dominar 400.<br/><br/>Compra online con <strong>despacho a todo Chile (RM y regiones) </strong>o visita nuestra tienda y taller en Macul, Santiago. Explora nuestros <a href=\"https://www.bikerz.cl/collections/neumaticos\">neumáticos para motos</a>, <a href=\"https://www.bikerz.cl/collections/repuestos\">repuestos</a>, <a href=\"https://www.bikerz.cl/collections/cascos\">cascos</a> y <a href=\"https://www.bikerz.cl/collections/lubricantes\">lubricantes</a> antes de comprar. Reunimos catálogo, asesoría técnica y taller en un solo lugar para ayudarte a decidir con información y volver a la ruta con confianza.</p>"
           }
         }
       },
       "block_order": [
+        "heading_seo_home",
         "text_bRgyed"
       ],
       "custom_css": [],
@@ -404,21 +401,153 @@
         "bn_design": "text_overlay",
         "image": "shopify://shop_images/Untitled_design.svg",
         "text_align": "text-center",
-        "row_gap_content": 22,
-        "container_content": "full-width",
-        "position_content": "left",
+        "row_gap_content": 12,
+        "container_content": "container",
+        "position_content": "center",
         "content_below_image_mb": false,
         "img_position": "left",
         "text_position": "center",
         "width_image": "10%",
         "height_dk": 200,
         "height_tb": 300,
-        "height_mb": 300,
+        "height_mb": 380,
         "height_mb_auto": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "reset_spacing": true,
         "margin_top": 0
+      }
+    },
+    "multicolumn_b9iRcT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4PA8Cf": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/cono-escudo-con-check.png",
+            "show_image": true,
+            "title": "Productos 100% originales",
+            "description": "<p>Neumáticos nuevos con certificación DOT y E-Mark, respaldados por 6 meses de garantía legal por defectos de fabricación.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_69ewCH": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/delivery-truck-line-icon.png",
+            "show_image": true,
+            "title": "Despacho a todo Chile",
+            "description": "<p>Coordinamos tu envío dentro de 72 horas hábiles tras confirmar el pago, a la Región Metropolitana y a regiones.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_YpXxz7": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/wrench-line-icon.png",
+            "show_image": true,
+            "title": "Compra simple, instalación incluida",
+            "description": "<p>Busca por medida o modelo, compra online o visita el taller, y recibe instalación y balanceo gratis en Macul.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        },
+        "column_nPKzzb": {
+          "type": "column",
+          "settings": {
+            "col_width_desktop": "lg:w-1/4",
+            "col_width_tablets": "md:w-1/4",
+            "col_width_mobile": "w-1/2",
+            "width_custom": -45,
+            "image": "shopify://shop_images/star-line-icon.png",
+            "show_image": true,
+            "title": "Respaldados por nuestros clientes",
+            "description": "<p>4.6 estrellas en Google, con más de 160 reseñas verificadas de motociclistas reales.</p>",
+            "btn_content": "",
+            "open_link": "_blank",
+            "link": "",
+            "type_button": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_4PA8Cf",
+        "column_69ewCH",
+        "column_YpXxz7",
+        "column_nPKzzb"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".tp-multicolumn__item-img {width: 75%; margin-left: auto; margin-right: auto;}",
+        ".tp-multicolumn__item-info {margin-top: 18px;}",
+        ".tp-multicolumn__item-info h3 {font-size: 23px; line-height: 1.25; margin-bottom: 9px;}",
+        ".tp-multicolumn__item-info p {font-size: 14px; line-height: 1.5;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "¿Por qué elegir Bikerz?",
+        "description": "",
+        "text_alignment": "text-center",
+        "show_button": false,
+        "text_btn": "See more",
+        "container": "container",
+        "hover_effect": "translate_to_top",
+        "color_scheme": "",
+        "image_ratio": "1/1",
+        "custom_ratio": "21:9",
+        "height_mobile": "default",
+        "height_image_desktop": "80",
+        "height_image_tablet": "80",
+        "height_img_mobile": "64",
+        "column_alignment": "text-center",
+        "design_banner": "text-below-image",
+        "show_border_separate": false,
+        "button_label": "",
+        "button_link": "",
+        "button_type": "tp-btn__primary",
+        "nowrap_item": false,
+        "reset_spacing": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "tire_finder_yQeRC4": {
+      "type": "tire-finder",
+      "custom_css": [
+        ".pf-wrapper {background-color: #ff6600; margin: 0 0 40px !important; padding-top: 32px;}",
+        ".pf-btn {background-color: black;}",
+        ".pf-card {background-color: transparent;}"
+      ],
+      "name": "Buscador de Neumáticos",
+      "settings": {
+        "title": "Encuentra tu neumático",
+        "help_text": "Ingresa la medida que aparece en el costado de tu neumático.",
+        "button_label": "Ver neumáticos",
+        "require_metric_profile": false,
+        "target_collection": "neumaticos",
+        "storefront_token": "cd9ac442675d9bb6e70b0cf7df1a9ac3",
+        "accent_color": "#ff6600"
       }
     },
     "product_tab_QLzGPL": {
@@ -433,8 +562,8 @@
         ],
         "limit_products": 8,
         "columns_desktop": 4,
-        "columns_tablets": "1",
-        "columns_mobile": "1",
+        "columns_tablets": "2",
+        "columns_mobile": "2",
         "text_button": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -447,7 +576,7 @@
         "show_heading_header": true,
         "heading": "Cascos",
         "show_button": true,
-        "text_btn": "Ver mas",
+        "text_btn": "Ver cascos para moto",
         "button_collection": "cascos",
         "link_btn": "",
         "container": "container",
@@ -467,29 +596,29 @@
         "product_636KtX": {
           "type": "product",
           "settings": {
-            "product": "dunlop-sportmax-gpr300-160-60r17-69h",
-            "bn_end_time": "2026-07-31"
+            "product": "dunlop-sportmax-q5a-120-70zr17-58w-tl",
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_gpxr8n": {
           "type": "product",
           "settings": {
-            "product": "dunlop-sportmax-gpr300-170-60r17-72w",
-            "bn_end_time": "2026-07-31"
+            "product": "dunlop-sportmax-q5a-180-55r17-73w-tl",
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_BJiQk4": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-110-70r17-54w",
-            "bn_end_time": "2026-07-31"
+            "bn_end_time": "2026-10-31"
           }
         },
         "product_46Neci": {
           "type": "product",
           "settings": {
             "product": "dunlop-sportmax-gpr300-190-55r17-75w",
-            "bn_end_time": "2026-07-31"
+            "bn_end_time": "2026-10-31"
           }
         }
       },
@@ -505,78 +634,11 @@
         "description": "",
         "text_alignment": "text-left",
         "show_button": true,
-        "text_btn": "Ver más",
+        "text_btn": "Ver neumáticos en oferta",
         "link_btn": "shopify://collections/neumaticos",
         "container": "container",
         "color_scheme": "background-1",
         "backgroud_box": true,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      }
-    },
-    "banner_image_V9tdfK": {
-      "type": "banner-image",
-      "blocks": {
-        "image_banner_3dQRYY": {
-          "type": "image_banner",
-          "settings": {
-            "color_scheme": "",
-            "subtext": "Floor mats & liners",
-            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
-            "content": "",
-            "link": "shopify://collections/bike-parts",
-            "btn_content": "Shop now",
-            "open_link": "_blank",
-            "type_button": "underline"
-          }
-        },
-        "image_banner_KdWHgh": {
-          "type": "image_banner",
-          "settings": {
-            "color_scheme": "",
-            "subtext": "Floor mats & liners",
-            "title": "$15 Welcome RPM Cash<br> For First-Time Members",
-            "content": "",
-            "link": "shopify://collections/bikes",
-            "btn_content": "Shop now",
-            "open_link": "_blank",
-            "type_button": "underline"
-          }
-        }
-      },
-      "block_order": [
-        "image_banner_3dQRYY",
-        "image_banner_KdWHgh"
-      ],
-      "disabled": true,
-      "settings": {
-        "show_heading_header": false,
-        "heading": "Title",
-        "description": "",
-        "text_alignment": "text-center",
-        "container": "container",
-        "color_scheme": "",
-        "columns_desktop": 2,
-        "card_banner_style": "card",
-        "image_ratio": "original",
-        "custom_ratio": "21:9",
-        "hover_effect": "hvr_zoom",
-        "design_banner": "text-overlay-image",
-        "text_position": "center",
-        "height_mobile": "custom_height",
-        "height_image_desktop": "300",
-        "height_image_tablet": "250",
-        "height_img_mobile": "250",
-        "text_align": "text-left",
-        "font_size_sub_heading": 16,
-        "font_weight_sub_heading": 500,
-        "font_size_heading": 30,
-        "font_weight_heading": 500,
-        "font_size_description": 16,
-        "font_weight_description": 500,
-        "columns_tablets": "2",
-        "columns_mobile": "1",
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -616,7 +678,7 @@
             "columns_tablet": 2,
             "grid_gap": 20,
             "desktop_width_percent": 100,
-            "padding_top": 50,
+            "padding_top": 0,
             "padding_bottom": 50,
             "padding_horizontal": 20,
             "header_spacing": 40,
@@ -658,7 +720,7 @@
         "show_heading_header": true,
         "heading": "Te puede interesar",
         "show_button": true,
-        "text_btn": "Ver mas",
+        "text_btn": "Leer consejos para motociclistas",
         "container": "container",
         "color_scheme": "",
         "blog": "motos-chile",
@@ -672,6 +734,81 @@
         "reset_spacing": false,
         "padding_top": 28,
         "padding_bottom": 34
+      }
+    },
+    "faq_PngzMG": {
+      "type": "faq",
+      "blocks": {
+        "custom_tab_zkewhj": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo sé si mi moto usa neumáticos con cámara (TT) o sin cámara (TL)?",
+            "tab_content": "content",
+            "content": "<p>Por lo general, las ruedas con rayos usan neumáticos con cámara (Tube Type - TT), mientras que las ruedas de aleación usan neumáticos sin cámara (Tubeless - TL). En la ficha de cada producto indicamos el tipo de montaje, o puedes consultarnos por WhatsApp.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_K8e33m": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cómo encuentro el neumático adecuado para mi moto?",
+            "tab_content": "content",
+            "content": "<p>Puedes buscar ingresando el ancho, perfil y aro en los filtros del sitio. Si no tienes claras las medidas, escríbenos por WhatsApp indicando la marca y modelo de tu moto.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_XyPDxy": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "Si pago con transferencia bancaria, ¿cuándo se procesa mi orden?",
+            "tab_content": "content",
+            "content": "<p>Tu orden se procesa de inmediato; validamos tu transferencia al instante.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_d7KtcY": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Qué medios de pago puedo utilizar en el sitio web?",
+            "tab_content": "content",
+            "content": "<p>Aceptamos tarjetas de débito y transferencias bancarias.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_inireh": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Puedo retirar mi compra en el taller de Macul?",
+            "tab_content": "content",
+            "content": "<p>Sí. Cada producto está etiquetado según disponibilidad: retiro inmediato o en 1 a 2 días. Te avisamos cuando tu compra esté lista para que coordines tu recogida en Av. Pedro de Valdivia 5691, Macul.</p>",
+            "page": ""
+          }
+        },
+        "custom_tab_ECfRnA": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "¿Cuánto tardan en despachar mi pedido y en qué horario entregan?",
+            "tab_content": "content",
+            "content": "<p>Si haces tu pedido antes de las 12:00 hrs. y el producto está en tienda, se despacha el mismo día. Si está en bodega, se despacha al día siguiente.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_tab_zkewhj",
+        "custom_tab_K8e33m",
+        "custom_tab_XyPDxy",
+        "custom_tab_d7KtcY",
+        "custom_tab_inireh",
+        "custom_tab_ECfRnA"
+      ],
+      "name": "Preguntas frecuentes",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "reset_spacing": false,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "17722487056dc7857d": {
@@ -709,16 +846,17 @@
   },
   "order": [
     "slide_ertLkK",
-    "tire_finder_yQeRC4",
     "brand_pzpLjB",
     "collection_list_AyqJ4z",
     "banner_with_text_CCJXJr",
+    "multicolumn_b9iRcT",
+    "tire_finder_yQeRC4",
     "product_tab_QLzGPL",
     "product_slider_UFDnf9",
     "product_countdown_TaexT7",
-    "banner_image_V9tdfK",
     "blocks_tCRLq6",
     "blog_posts_7CRjke",
+    "faq_PngzMG",
     "17722487056dc7857d",
     "1784646990e18c4ee5"
   ]

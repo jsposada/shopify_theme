@@ -1,0 +1,197 @@
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign sst = section.settings
+  assign container = sst.container
+-%}
+{%- capture section_style -%}
+  --section-padding-top: {{ sst.padding_top }}px;
+  --section-padding-bottom: {{ sst.padding_bottom }}px;
+{%- endcapture -%}
+
+{%- if section.blocks.size > 0 -%}
+  <div
+    id="{{ section.id }}"
+    class="tp-faq color-{{ sst.color_scheme }} gradient section-py{% unless sst.reset_spacing %} section-mb{% endunless %}"
+    data-section-id="{{ section.id }}"
+    style="{{ section_style | strip | strip_newlines }}"
+  >
+    <div class="{{ container }}">
+      {%- if sst.heading != blank -%}
+        <h2 class="mb-32 {{ sst.heading_alignment }}">{{ sst.heading | escape }}</h2>
+      {%- endif -%}
+
+      <div class="tp-grid tp-grid--2-col-desktop tp-grid--1-col-tablets tp-grid--1-col-mobile">
+        <div class="tp-faq__left tp-grid__item">
+          {%- for block in section.blocks -%}
+            {%- assign remainder = forloop.index | modulo: 2 -%}
+            {%- if remainder == 1 -%}
+              <details class="tp-faq__item brd-1 mb-20" {{ block.shopify_attributes }}>
+                <summary class="tp-collap-tab__sm">
+                  <h5 class="summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16">
+                    <span>{{ block.settings.title | escape }}</span>
+                    <span class="icon-toggle relative" aria-hidden="true"></span>
+                  </h5>
+                </summary>
+                <div class="tp-faq__item-content content-animation px-24 py-16">
+                  <div class="tab-panel rte">{{ block.settings.content }}</div>
+                </div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="tp-faq__right tp-grid__item">
+          {%- for block in section.blocks -%}
+            {%- assign remainder = forloop.index | modulo: 2 -%}
+            {%- if remainder == 0 -%}
+              <details class="tp-faq__item brd-1 mb-20" {{ block.shopify_attributes }}>
+                <summary class="tp-collap-tab__sm">
+                  <h5 class="summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16">
+                    <span>{{ block.settings.title | escape }}</span>
+                    <span class="icon-toggle relative" aria-hidden="true"></span>
+                  </h5>
+                </summary>
+                <div class="tp-faq__item-content content-animation px-24 py-16">
+                  <div class="tab-panel rte">{{ block.settings.content }}</div>
+                </div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- if sst.enable_schema -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- for block in section.blocks -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.title | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.content | strip_html | json }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      }
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ landing SEO",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título de la sección",
+      "default": "Preguntas frecuentes"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Alineación del título",
+      "default": "text-left",
+      "options": [
+        { "value": "text-left", "label": "Izquierda" },
+        { "value": "text-center", "label": "Centro" },
+        { "value": "text-right", "label": "Derecha" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_schema",
+      "label": "Publicar datos estructurados FAQ",
+      "info": "Mantiene sincronizadas las preguntas visibles con el marcado SEO.",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Ancho del contenido",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Normal" },
+        { "value": "container-fluid", "label": "Amplio" },
+        { "value": "full-width", "label": "Ancho completo" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "reset_spacing",
+      "label": "Quitar espacio exterior predeterminado",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior",
+      "default": 24,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior",
+      "default": 48,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Pregunta frecuente",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Pregunta",
+          "default": "Escribe una pregunta"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Respuesta",
+          "default": "<p>Escribe la respuesta.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ landing SEO",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

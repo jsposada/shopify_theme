@@ -279,6 +279,12 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "opinew-reviews-product-page-code": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -287,6 +293,7 @@
     "upsell-productt-bundle",
     "product-information-tabs",
     "related-products",
-    "recently-products"
+    "recently-products",
+    "opinew-reviews-product-page-code"
   ]
 }

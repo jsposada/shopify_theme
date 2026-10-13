@@ -10,14 +10,13 @@
 <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'collection-main.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'compare.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+{% if settings.show_wishlist or settings.show_wishlist_icon or template.suffix == 'wishlist' %}
+  <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 {%- if settings.animations_reveal_on_scroll -%}
   <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-<script src="{{ 'product-grid.js' | asset_url }}" defer="defer"></script>
 {% if template.name == 'product' %}
   <script src="{{ 'variant-metafields.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'helmet-size-guide-dialog.js' | asset_url }}" defer="defer"></script>
@@ -34,6 +33,10 @@
     cart_url: '{{ routes.cart_url }}',
     predictive_search_url: '{{ routes.predictive_search_url }}',
   };
+
+  // Some cart flows call this optional shipping helper even when the estimator is disabled.
+  // The real shipping-calculator asset replaces this fallback whenever that feature is enabled.
+  window.loadContry = window.loadContry || function () {};
   
   window.cartStrings = {
       error: `{{ 'sections.cart.cart_error' | t }}`,
