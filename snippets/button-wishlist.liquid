@@ -10,7 +10,7 @@
   <button
     button-wishlist
     type="button"
-    aria-label="Add to wishlist"
+    aria-label="{{ 'product_items.wishlist' | t | escape }}: {{ product.title | escape }}"
     class="button-wishlist shadow"
     data-product-handle="{{ product.handle }}">
     {% if type == 'prd-item-3' %}

@@ -14,7 +14,7 @@
         <button
           button-wishlist
           type="button"
-          aria-label="Add to wishlist"
+          aria-label="{{ 'products.product.wishlist' | t | escape }}"
           class="button-wishlist gap-8 flex items-center"
           data-product-handle="{{ product.handle }}">
           {% render 'icon'
@@ -29,7 +29,7 @@
         <button
           button-compare
           type="button"
-          aria-label="Add to compare"
+          aria-label="{{ 'products.product.compare' | t | escape }}"
           class="button-compare gap-8 flex items-center"
           data-product-handle="{{ product.handle }}">
           {% render 'icon'

@@ -2,7 +2,7 @@
   <button
     button-compare
     type="button"
-    aria-label="Add to compare"
+    aria-label="{% if page_compare %}Quitar de la comparación: {% else %}{{ 'product_items.compare' | t | escape }}: {% endif %}{{ product.title | escape }}"
     class="button-compare shadow {% if page_compare %}tp-icon-close{% endif %}"
     data-product-handle="{{ product.handle }}"
   >
