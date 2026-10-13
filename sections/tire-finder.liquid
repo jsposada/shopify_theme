@@ -1080,6 +1080,8 @@
       finishResultsLoading();
       resultsCount = event.detail.count;
       if (allCombinations.length) restoreSelectionFromUrl();
+      else if (measuresLoading) showStatus('Cargando medidas disponibles...', 'info');
+      else showStatus('No pudimos cargar el buscador. Intenta nuevamente; la colección y sus filtros siguen disponibles.', 'error');
       updatesEl.textContent = `${resultsCount} ${resultsCount === 1 ? 'resultado encontrado' : 'resultados encontrados'}.`;
     });
     finderEl.addEventListener('bikerz:tire-results-error', event => {

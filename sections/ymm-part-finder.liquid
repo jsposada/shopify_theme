@@ -334,6 +334,7 @@
       typeSelect.disabled = isBusy || !modelSelect.value;
       moreButton.disabled = isBusy;
       results.querySelectorAll('input, select, button').forEach(control => { control.disabled = isBusy; });
+      if (!isBusy) clearResultFiltersButton.disabled = !selectedResultFilters.brand.size && !selectedResultFilters.partType.size;
     }
 
     function formatMoney(price) {
