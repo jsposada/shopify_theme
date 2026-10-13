@@ -17,6 +17,18 @@
     id="predictive-search-results"
     role="listbox"
     class="{% unless predictive_search.resources.products.size > 0 %} predictive-search__results-groups-wrapper--no-products{% endunless %}">
+    {%- comment -%}
+      Primary action, placed first so it stays visible under the input while the
+      mobile keyboard is open. type="submit" always searches the current input value.
+      Only the inner span carries the data attribute: global.js rewrites its innerText.
+    {%- endcomment -%}
+    <button type="submit" class="predictive-search__view-all">
+      {%- render 'icon', icon_name: 'search', class: 'predictive-search__view-all-icon' -%}
+      <span class="predictive-search__view-all-text" data-predictive-search-search-for-text>
+        {{- 'templates.search.view_all_for' | t: terms: predictive_search.terms -}}
+      </span>
+      {%- render 'icon', icon_name: 'arrow-right' -%}
+    </button>
     {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
       <div id="predictive-search-results-groups-wrapper" class="predictive-search__results-groups-wrapper mb-40 {% unless predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %} predictive-search__results-groups-wrapper--no-suggestions{% endunless %}">
     {%- endif -%}
@@ -36,9 +48,6 @@
             <span id="predictive-search-products" class="visually-hidden">
               {{- 'templates.search.products' | t -}}
             </span>
-            <p data-predictive-search-search-for-text class="text-center text-xl font-medium">
-              {{- 'templates.search.search_for' | t: terms: predictive_search.terms -}}
-            </p>
             <div
               id="predictive-search-results-products-list"
               class="predictive-search__results-list tp-grid tp-grid--2-col-mobile tp-grid--3-col-tablets tp-grid--{{ numberItemSearch }}-col-desktop"

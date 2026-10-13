@@ -1,0 +1,142 @@
+/*
+  Header search modal (header layouts 1 and 3).
+  Mobile fixes for the predictive search: full-screen modal, primary action
+  under the input, iOS-safe input size, 44px close target, and no floating
+  widgets competing with the results. Pixel units on purpose: the theme root
+  font size changes between breakpoints (10px / 8.75px).
+*/
+
+/* Primary action: "Ver todos los resultados para “…”". Shared with desktop. */
+.predictive-search__view-all {
+  --base-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 740px;
+  min-height: 48px;
+  margin: 0 auto 16px;
+  padding: 12px 14px;
+  border: 1px solid #dcdce2;
+  background: #fff;
+  color: #1c1c1c;
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.predictive-search__view-all:hover {
+  border-color: #1c1c1c;
+}
+
+.predictive-search__view-all:active {
+  background: #efeff2;
+}
+
+.predictive-search__view-all:focus-visible {
+  outline: 2px solid var(--primary-color, #ff6600);
+  outline-offset: 2px;
+}
+
+.predictive-search__view-all svg {
+  flex: none;
+  pointer-events: none;
+}
+
+.predictive-search__view-all .predictive-search__view-all-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.predictive-search__view-all .predictive-search__view-all-icon path {
+  fill: #1c1c1c;
+}
+
+.predictive-search__view-all-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The close icon must not swallow the tap: global.js only closes on the button itself. */
+.header__search .modal-search-toggle-close svg {
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  /* Full screen instead of 80vh: no page bleeding through, nothing cut at the bottom. */
+  .header__search .search-modal {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .header__search .search-modal__content {
+    padding-top: 12px;
+    padding-bottom: 32px;
+  }
+
+  /* Keep the heading for screen readers; it costs ~50px of the visible area on phones. */
+  .header__search .search-modal__content > h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Input, search button and close share one row. */
+  .header__search .search-modal .field {
+    padding-right: 48px;
+  }
+
+  .header__search .modal-search-toggle-close {
+    top: 12px;
+    right: 8px;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+  }
+
+  /* 16px stops iOS from zooming the page when the input gets focus. */
+  .header__search .search__input {
+    font-size: 16px;
+  }
+
+  /* Quick links only help before typing. */
+  .header__search predictive-search[results] .search-modal__quicksearch {
+    display: none;
+  }
+
+  .header__search .predictive-search__view-all {
+    margin-bottom: 20px;
+  }
+
+  .header__search .predictive-search__item--term {
+    min-height: 44px;
+  }
+
+  /* Scroll lock without the desktop scrollbar compensation (phones have no scrollbar). */
+  html.tp-over-flow-search-hidden {
+    padding-right: 0;
+  }
+
+  html.tp-over-flow-search-hidden body {
+    overflow: hidden;
+  }
+
+  /* Floating widgets stay out of the way while searching. */
+  html.tp-over-flow-search-hidden .bikerz-whatsapp-float,
+  html.tp-over-flow-search-hidden .tp-back-to-top,
+  html.tp-over-flow-search-hidden .tp-mobile-stickybar,
+  html.tp-over-flow-search-hidden shopify-chat {
+    display: none !important;
+  }
+}

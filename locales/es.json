@@ -121,7 +121,7 @@
     "search": {
       "no_results": "No se encontraron resultados para “ {{ terms }} ”. Verifique la ortografía o use una palabra o frase diferente.",
       "page": "Página",
-      "button_more": "Más resultados",
+      "button_more": "Ver todos los resultados",
       "products": "Productos",
       "popular_products": "Productos populares",
       "title_predictive": "Busque en nuestro sitio",
@@ -147,6 +147,7 @@
       },
       "title": "Resultados de la búsqueda",
       "search_for": "Buscar “ {{ terms }} ”",
+      "view_all_for": "Ver todos los resultados para “{{ terms }}”",
       "suggestions": "Sugerencias",
       "pages": "Páginas"
     },

@@ -5,6 +5,7 @@
 %}
 
   {% if gst.header_layout == 'h_layout1' or gst.header_layout == 'h_layout3' %}
+    {{ 'search-modal.css' | asset_url | stylesheet_tag }}
     <div class="header__search">
     <div>
       <div
@@ -43,6 +44,7 @@
                     name="q"
                     value="{{ search.terms | escape }}"
                     placeholder="{{ 'general.search.search' | t }}"
+                    enterkeyhint="search"
                     {%- if settings.predictive_search_enabled -%}
                       role="combobox"
                       aria-expanded="false"

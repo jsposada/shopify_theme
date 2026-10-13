@@ -305,6 +305,7 @@
       },
       "title": "Search results",
       "search_for": "Search for “{{ terms }}”",
+      "view_all_for": "View all results for “{{ terms }}”",
       "suggestions": "Suggestions",
       "pages": "Pages"
     },
