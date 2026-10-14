@@ -60,6 +60,11 @@
         {% assign collection = collections[collection] %}
         <div class="relative">
           <div class="parent-item-{{ forloop.index }} parent-item  {% if forloop.first %}active{% endif %}">
+            {%- comment -%}
+              Hidden tabs ship inside a <template>: no layout, no image downloads until
+              assets/product-tab.js unpacks them on first use.
+            {%- endcomment -%}
+            {%- unless forloop.first -%}<template data-tab-content>{%- endunless -%}
             <ul class="tp-fcl__content list-none {{ classGrid }}">
               {%- for product in collection.products limit: section.settings.limit_products -%}
                 <li class="tp-fcl__item tp-grid__item">
@@ -68,6 +73,7 @@
                 </li>
               {%- endfor -%}
             </ul>
+            {%- unless forloop.first -%}</template>{%- endunless -%}
           </div>
         </div>
       {% else %}
