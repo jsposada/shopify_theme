@@ -6,6 +6,33 @@
     opacity: 1;
     visibility: visible;
   }
+
+  /*
+    Mobile: a clean swipeable row of logos (~3.5 visible). Overrides the section's
+    custom CSS from the theme editor (card floating over the hero, white box, dividers),
+    which keeps working from 768px up. Extra class in each selector so it wins.
+  */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .tp-brand {
+      padding-top: 0;
+      padding-bottom: 32px;
+    }
+    #shopify-section-{{ section.id }} .tp-brand .tp-brand__content {
+      margin-top: 0;
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: none;
+    }
+    #shopify-section-{{ section.id }} .tp-brand .tp__responsive-image,
+    #shopify-section-{{ section.id }} .tp-brand .tp__responsive-image:hover {
+      border: 0;
+      border-image: none;
+    }
+    #shopify-section-{{ section.id }} .tp-brand .swiper-navigation {
+      display: none;
+    }
+  }
 </style>
 
 {%- liquid
@@ -43,7 +70,7 @@
 -%}
 {%- capture style -%}
   --section-padding-top: {{ sst.padding_top }}px; --section-padding-bottom: {{ sst.padding_bottom }}px;
-  --tp-slider-mobile-width: calc(50% - 7.5px);
+  --tp-slider-mobile-width: calc((100% - 37.5px) / 3.5);
   --tp-slider-tablet-width: calc({{ tablet_width_percent }}% - {{ tablet_gap_offset }}px);
   --tp-slider-desktop-width: calc({{ desktop_width_percent }}% - {{ desktop_gap_offset }}px);
   --tp-slider-mobile-gap: {{ slider_gap_mobile }}px;
@@ -67,7 +94,7 @@
           data-section-id="{{ section.id }}"
           data-autoplay="{{ autoplay }}"
           data-loop="{{ loop }}"
-          data-mobile="2"
+          data-mobile="3.5"
           data-tablet="{{ sst.custom_column_tablet }}"
           data-desktop="{{ item_desktop }}"
           data-space-between="{{ settings.spacing_grid_horizontal }}">
