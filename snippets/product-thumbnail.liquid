@@ -1,13 +1,9 @@
 {%- liquid
   assign gst = settings
   assign sst = section.settings
-  # The first gallery image (lazy_load: false) is the page's LCP: fetch it right away.
-  assign lazy = 'lazy'
-  assign fetch_priority = 'auto'
-  if lazy_load == false
-    assign lazy = 'eager'
-    assign fetch_priority = 'high'
-  endif
+  unless lazy_load == false
+    assign lazy = 'lazy'
+  endunless
 
   assign desktop_columns = 1
   if desktop_layout == 'columns' and media_count > 1
@@ -75,7 +71,6 @@
         {{ media.preview_image | image_url: width: 1946 | image_tag:
           class: image_class,
           loading: lazy,
-          fetchpriority: fetch_priority,
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
         }}
@@ -84,7 +79,6 @@
         {{ media.preview_image | image_url: width: 1946 | image_tag:
           class: image_class,
           loading: lazy,
-          fetchpriority: fetch_priority,
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
         }}
