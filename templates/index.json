@@ -14,6 +14,7 @@
       "blocks": {
         "slide_item_CKAGNV": {
           "type": "slide_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Banner_web_Cyber_Monday_Bikerz_octubre_2026.png",
             "image_alt": "Ofertas en neumáticos cyber chile",
@@ -57,7 +58,6 @@
         },
         "slide_item_wj6tFF": {
           "type": "slide_item",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/El_neumatico_exacto_para_tu_ruta_1.png",
             "image_alt": "",
@@ -113,7 +113,7 @@
             "sub_title": "",
             "title": "<p>Te asesoramos por WhatsApp</p>",
             "discount": "",
-            "description_1": "<p>¿Dudas con la medida o el compuesto? </p><h5>Envíos a todo Chile.</h5>",
+            "description_1": "<p>¿Dudas con la medida o el compuesto?&nbsp;</p><h5>Envíos a todo Chile.</h5>",
             "slide_url": "https://api.whatsapp.com/send/?phone=%2B56977670252&text=%C2%A1Hola%21+quiero+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0",
             "label_btn": "Escríbenos al WhatsApp"
           }
@@ -814,34 +814,6 @@
     "17722487056dc7857d": {
       "type": "_blocks",
       "settings": {}
-    },
-    "1784646990e18c4ee5": {
-      "type": "apps",
-      "blocks": {
-        "forms_inline_7yePWM": {
-          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-          "settings": {
-            "form_id": "",
-            "text_color": "#202020",
-            "button_background_color": "#202020",
-            "button_label_color": "#ffffff",
-            "links_color": "#1878b9",
-            "errors_color": "#e02229",
-            "text_alignment": "center",
-            "form_alignment": "center",
-            "padding_top": 0,
-            "padding_bottom": 24,
-            "padding_right": 0,
-            "padding_left": 0
-          }
-        }
-      },
-      "block_order": [
-        "forms_inline_7yePWM"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -857,7 +829,6 @@
     "blocks_tCRLq6",
     "blog_posts_7CRjke",
     "faq_PngzMG",
-    "17722487056dc7857d",
-    "1784646990e18c4ee5"
+    "17722487056dc7857d"
   ]
 }
