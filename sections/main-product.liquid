@@ -67,6 +67,28 @@
 
     <div class="product tp-grid tp-grid--2-col-desktop tp-grid--1-col-tablets tp-grid--1-col-mobile {% if  product.featured_image == null %} product-no-image justify-center{% endif %}">
       {% if product.featured_image != null %}
+        {%- comment -%}
+          Until Swiper starts, every thumbnail is as wide as the gallery, which pushes the
+          title and buy button ~300px down; they jump back up once JS runs. Give the slides
+          their final size up front (same slidesPerView / spaceBetween as product-detail.js),
+          and undo base.css's generic pre-init gutters (-15px wrapper margin, 15px slide padding).
+        {%- endcomment -%}
+        <style>
+          #MediaGallery-{{ section.id }} .thumbnails_bottom .swiper-thumbnail:not(.swiper-initialized) .swiper-wrapper {
+            width: 100%;
+            margin: 0;
+          }
+          #MediaGallery-{{ section.id }} .thumbnails_bottom .swiper-thumbnail:not(.swiper-initialized) .swiper-slide {
+            width: calc((100% - 60px) / 6);
+            margin-right: 12px;
+            padding: 0;
+          }
+          @media (max-width: 1024px) {
+            #MediaGallery-{{ section.id }} .thumbnails_bottom .swiper-thumbnail:not(.swiper-initialized) .swiper-slide {
+              width: calc((100% - 48px) / 5);
+            }
+          }
+        </style>
         <div class="tp-grid__item product__media-wrapper">
           {% render 'product-media-gallery'
             , variant_images: variant_images %}
