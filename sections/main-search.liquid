@@ -41,6 +41,9 @@
   <div class="{{ container }}">
     {% paginate search.results by 24 %}
       <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
+        {% if settings.search_analytics_enabled and search.performed and search.results_count == 0 %}
+          {% render 'search-results-metadata', search_paginate: paginate, display_limit: sst.products_per_page %}
+        {% endif %}
         <div class="template-search__header">
           <h1 class="h2 text-center">
 
@@ -209,6 +212,9 @@
             {%- endif -%}
             {% if search.performed and search.results_count > 0 %}
               <div class="product-grid-container" id="ProductGridContainer">
+                {% if settings.search_analytics_enabled %}
+                  {% render 'search-results-metadata', search_paginate: paginate, display_limit: sst.products_per_page %}
+                {% endif %}
                 <div class="tp-main-clc__topbar">
 
                   {% comment %} <div class="flex justify-between items-stretch flex-col md:flex-row">

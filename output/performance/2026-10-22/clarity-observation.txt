@@ -1,0 +1,230 @@
+Ir al contenido
+Clarity
+
+Filtros
+
+Segmentos
+Últimos 3 días
+
+Guardar como segmento
+Sesiones
+590
+163 sesiones de bot excluidas
+Páginas por sesión
+2,39
+promedio
+Profundidad de desplazamiento
+43,46%
+promedio
+Tiempo activo empleado
+46 s
+tiempo total de 2,2 min
+Ideas
+
+Clics continuos
+0%
+0 sesiones
+Clics fallidos
+0,85%
+5 sesiones
+Desplazamiento excesivo
+0%
+0 sesiones
+Retrocesos rápidos
+11,36%
+67 sesiones
+Información general de los usuarios
+
+7
+Usuarios activos
+Hace 1,0 min
+515
+Usuarios únicos
+Sesiones con nuevos usuarios
+78,31%
+462
+Sesiones con usuarios recurrentes
+21,69%
+128
+Usuario principal
+Ver todos los usuarios
+6 sesiones
+Chile
+Ver el perfil del visitante con 6 sesiones, del país Chile y del dispositivo Mobile
+Mi lista de reproducción
+
+Realice un seguimiento de lo que le interesa
+Agregar a la lista de reproducción
+¿Está listo para impulsar las conversiones con AI?
+¡Clarity ahora ofrece Brand agents!
+Aumenta las ventas con un Asistente de compras con AI que representa tu marca.
+Descargar ahora
+Más información
+Eventos inteligentes
+
+Mostrar porcentaje de sesiones
+Desactivado
+Enviar formulario
+26 sesiones
+Producto visto
+14 sesiones
+Clic de salida
+12 sesiones
+Agregar al carro
+7 sesiones
+Buscar
+5 sesiones
+Póngase en contacto con nosotros
+4 sesiones
+Mostrar más
+3 sesiones
+Comenzar finalización de la compra
+2 sesiones
+Finalización de la compra
+1 sesiones
+Embudos
+
+Embudo general
+
+0%
+Tasa de conversión
+0
+Sesiones convertidas
+-
+Tiempo medio para convertir
+Producto visto
+2.37% del total de sesiones 590
+100% ha alcanzado este paso
+14 sesiones
+Buscar
+0% ha alcanzado este paso
+100% no llegó a este paso
+14 sesiones
+Enviar formulario
+0% ha alcanzado este paso
+Agregar al carro
+0% ha alcanzado este paso
+Finalización de la compra
+0% ha alcanzado este paso
+Carro visto
+0% ha alcanzado este paso
+Quitar del carro
+0% ha alcanzado este paso
+Origen de referencia
+Canal
+Campaña
+Fuente
+
+www.google.com
+220
+www.bikerz.cl
+147
+m.facebook.com
+108
+facebook.com
+25
+instagram.com
+18
+syndicatedsearch.goog
+8
+www.bing.com
+7
+com.google.android.googlequicksearchbox
+4
+l.facebook.com
+4
+bikerz.cl
+2
+knasta.cl
+2
+linktr.ee
+2
+Exploradores
+Dispositivos
+Sistemas operativos
+
+Chrome
+27,80%
+164 sesiones
+ChromeMobile
+24,92%
+147 sesiones
+FacebookApp
+24,41%
+144 sesiones
+MobileSafari
+11,69%
+69 sesiones
+InstagramApp
+3,90%
+23 sesiones
+Other
+
+7,29%
+43 sesiones
+Información general del rendimiento
+Rendimiento de URL
+
+85/100
+Puntuación de rendimiento
+de 284 páginas vistas
+76,1% bueno
+23,9% necesita mejoras
+0% pobre
+Desglose de puntuación de cumplimiento
+1,4
+s
+LCP (Pintura con contenido más grande)
+bueno
+260
+ms
+INP (Interacción con Next Paint)
+necesita mejoras
+0,029
+CLS (desplazamiento de diseño acumulativo)
+bueno
+Obtenga información sobre cómo mejorar su rendimiento
+Páginas principales
+Productos populares
+
+Parámetros de dirección URL
+Desactivado
+
+Ordenar por: Más populares
+https://www.bikerz.cl/
+122
+https://www.bikerz.cl/collections/neumaticos
+115
+https://www.bikerz.cl/products/motoz-tractionator-adventure-150-70b18-tl-70q
+18
+https://www.bikerz.cl/products/casco-nolan-n70-2-x-ruvido-negro-amarillo
+17
+https://www.bikerz.cl/collections/cascos
+16
+https://www.bikerz.cl/search
+16
+https://www.bikerz.cl/collections/ofertas
+11
+https://www.bikerz.cl/products/casco-de-moto-mt-helmets-streetfighter-sv-twin-c4-naranjo-fluor-mate
+11
+https://www.bikerz.cl/products/mitas-enduro-trail-e07-150-70b17-tl-tt-69h
+11
+https://www.bikerz.cl/collections/repuestos
+10
+https://www.bikerz.cl/pages/servicios
+10
+https://www.bikerz.cl/blogs/motos-chile/guia-de-motos-custom-deja-de-llamar-chopper-a-todo
+9
+Errores de JavaScript
+
+Mostrar solo los errores de clic
+Desactivado
+2,71%
+Grabaciones
+25 total de errores de JavaScript
+100%error invoking postmessage: java object is gone
+Tráfico de bots
+
+No hay datos disponibles
+
+No hay suficientes datos de tráfico. Intente ampliar el rango de fechas

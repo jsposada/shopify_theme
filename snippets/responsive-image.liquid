@@ -69,7 +69,7 @@
 -%}
 
 <div
-  class="tp__responsive-image h-full tp-image-js bd-radius {% if image != blank %}tp-loading-image{% endif %} {{ class }}"
+  class="tp__responsive-image{% if type == 'product' %} tp__responsive-image--product{% endif %} h-full tp-image-js bd-radius {% if image != blank %}tp-loading-image{% endif %} {{ class }}"
   {% if ratio != blank %}
   style="--aspect-ratio: {{ ratio }};"
   {% endif %}>

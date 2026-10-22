@@ -1,0 +1,880 @@
+- status
+- status
+- link "Saltar al contenido":
+  - /url: "#AppFrameMain"
+  - strong:
+    - generic: Saltar al contenido
+- generic "Navegación":
+  - img "Shopify"
+  - button "Contraer navegación" [expanded]:
+  - button "Buscar":
+    - generic: Buscar
+    - generic: Ctrl K
+  - navigation:
+    - list:
+      - link "Inicio":
+        - /url: /store/996356-ea
+        - generic: Inicio
+      - link "Pedidos 3":
+        - /url: /store/996356-ea/orders
+        - generic: Pedidos
+        - generic: "3"
+      - link "Productos":
+        - /url: /store/996356-ea/products
+        - generic: Productos
+      - link "Clientes":
+        - /url: /store/996356-ea/customers
+        - generic: Clientes
+      - link "Crecimiento":
+        - /url: /store/996356-ea/growth
+        - generic: Crecimiento
+      - link "Descuentos":
+        - /url: /store/996356-ea/discounts
+        - generic: Descuentos
+      - link "Contenido":
+        - /url: /store/996356-ea/content/metaobjects
+        - generic: Contenido
+      - link "Mercados":
+        - /url: /store/996356-ea/markets
+        - generic: Mercados
+      - link "Informes y estadísticas" [expanded]:
+        - /url: /store/996356-ea/analytics
+        - generic: Informes y estadísticas
+      - list:
+        - link "Informes":
+          - /url: /store/996356-ea/analytics/reports
+          - generic: Informes
+        - link "Vista en tiempo real":
+          - /url: /store/996356-ea/analytics/live
+          - generic: Vista en tiempo real
+    - list:
+      - button "Canales de ventas":
+        - generic: Canales de ventas
+      - list:
+        - button "Tienda online":
+          - list:
+            - link "Tienda online":
+              - /url: /store/996356-ea/themes?appLoadId=c868ad44-2379-4084-a481-22e1437f9a06
+              - generic: Tienda online
+        - button "Falabella":
+          - list:
+            - link "Falabella":
+              - /url: /store/996356-ea/apps/linio-store?appLoadId=0f08012e-d9ab-4546-8c0c-4f53bcb33dc4
+              - generic: Falabella
+        - button "Google & YouTube":
+          - list:
+            - link "Google & YouTube":
+              - /url: /store/996356-ea/apps/google?appLoadId=88113d6b-407f-4882-8eed-2dc4d71fd696
+              - generic: Google & YouTube
+        - button "Shop":
+          - list:
+            - link "Shop":
+              - /url: /store/996356-ea/apps/shop-72?appLoadId=eab1a272-ecb0-4ee7-b053-947ba25eabb6
+              - generic: Shop
+        - button "Agéntico":
+          - list:
+            - link "Agéntico":
+              - /url: /store/996356-ea/apps/agentic?appLoadId=b2666dfd-ab6c-4816-b212-2ae084f8d0cd
+              - generic: Agéntico
+        - button "Inbox Fijar en la navegación":
+          - list:
+            - link "Inbox":
+              - /url: /store/996356-ea/apps/shopify-inbox?appLoadId=be467997-7215-473b-ba4f-28cd6bdbabff
+              - generic: Inbox
+            - button "Fijar en la navegación":
+              - text: •
+      - status
+      - button "Apps":
+        - generic: Apps
+      - list:
+        - button "Search & Discovery":
+          - list:
+            - link "Search & Discovery":
+              - /url: /store/996356-ea/apps/search-and-discovery?appLoadId=6cd7d96f-6526-455f-83c6-86dea43ec241
+              - generic: Search & Discovery
+        - button "Translate & Adapt":
+          - list:
+            - link "Translate & Adapt":
+              - /url: /store/996356-ea/apps/translate-and-adapt?appLoadId=7eb4c38d-62de-4fd5-a0d0-7e795573bc47
+              - generic: Translate & Adapt
+        - button "Messaging":
+          - list:
+            - link "Messaging":
+              - /url: /store/996356-ea/apps/shopify-messaging?appLoadId=61ae8eef-94a6-420f-8fed-208b433eeb9c
+              - generic: Messaging
+        - 'button "Dondy: WhatsApp"':
+          - list:
+            - 'link "Dondy: WhatsApp"':
+              - /url: /store/996356-ea/apps/dondy-whatsapp-chat-widget?appLoadId=e99520d8-39c4-4355-a90e-a912804ac757
+              - generic: "Dondy: WhatsApp"
+        - button "Flow":
+          - list:
+            - link "Flow":
+              - /url: /store/996356-ea/apps/flow?appLoadId=e2897308-73d4-4058-8d40-0bca4027ab40
+              - generic: Flow
+        - button "Microsoft Clarity":
+          - list:
+            - link "Microsoft Clarity":
+              - /url: /store/996356-ea/apps/microsoft-clarity-prod?appLoadId=117e36b8-eb39-4f61-b6db-c804cc7b2e24
+              - generic: Microsoft Clarity
+        - button "Dropify Fijar en la navegación":
+          - list:
+            - link "Dropify":
+              - /url: /store/996356-ea/apps/dropify-10?appLoadId=3ec09a9a-18c0-44bd-92fa-c16f25d726fe
+              - generic: Dropify
+            - button "Fijar en la navegación":
+              - text: •
+      - status
+    - list:
+      - link "Configuración":
+        - /url: /store/996356-ea/settings
+        - generic: Configuración
+      - button "Bikerz Chile":
+        - img "Bikerz"
+        - paragraph: Bikerz
+      - generic: Ver el Dev Dashboard
+      - button "Feed de alertas - 0 alertas no leídas":
+      - generic: Marcar todas como leídas
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tu forma de pago.
+      - generic: El pago de tu factura de Shopify vence pronto. Agrega una forma de pago de respaldo para no interrumpir los pedidos si falla tu tarjeta.
+      - generic: El pago de tu factura de Shopify vence pronto. Agrega una forma de pago de respaldo para no interrumpir los pedidos si falla tu tarjeta.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tu forma de pago.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+      - generic: No se pudo procesar el pago de $118.42 correspondiente a tu factura de Shopify debido a un problema con tus formas de pago principal y alternativa.
+- main:
+  - navigation:
+    - link "Informes":
+      - /url: /store/996356-ea/analytics/reports
+    - link "Informes":
+      - /url: /store/996356-ea/analytics/reports
+      - generic: Informes
+    - generic: /
+  - heading "Bikerz - rendimiento real por URL y dispositivo" [level=1]
+  - generic: "Última actualización: 9:01 a. m."
+  - button "Activar actualización automática" [disabled]:
+    - generic: Activar actualización automática
+  - button "Cambiar nombre":
+    - generic: Cambiar nombre
+  - button "Exportar":
+    - generic: Exportar
+  - button "Imprimir":
+    - generic: Imprimir
+  - button "Eliminar":
+    - generic: Eliminar
+  - 'button "Control de fechas: Último 30 días"':
+    - 'button "Control de fechas: Último 30 días"':
+      - text: Último 30 días
+  - option "Minutos"
+  - option "Horas"
+  - option "Días" [selected]
+  - option "Semanas"
+  - option "Meses"
+  - option "Trimestres"
+  - option "Años"
+  - generic: Cancelar
+  - generic: Aplicar
+  - 'button "Control de comparación: Sin comparación"':
+    - 'button "Control de comparación: Sin comparación"':
+      - img: />
+      - text: Sin comparación
+  - button "CLP $":
+    - generic: CLP $
+  - button "Abrir panel de anotaciones" [disabled]:
+    - generic: Anotaciones
+  - button "Activar panel de exploración" [pressed]:
+    - generic: Controles
+  - region "Contenido del informe":
+    - generic: 100% Porcentaje de cargas de página + 5 métricas
+    - button:
+    - generic: "1"
+    - generic: "2"
+    - generic: "3"
+    - generic: "4"
+    - generic: "5"
+    - generic: "6"
+    - generic: "7"
+    - generic: "8"
+    - textbox:
+      - generic: FROM web_performance
+      - generic: SHOW percent_of_page_loads, page_loads, inp_p75_ms, inp_distribution,
+      - generic: lcp_p75_ms, p75_cls
+      - generic: GROUP BY page_path, device_type WITH GROUP_TOTALS, TOTALS
+      - generic: SINCE startOfDay(-30d) UNTIL endOfDay(-1d)
+      - generic: ORDER BY percent_of_page_loads__page_path_totals DESC, percent_of_page_loads
+      - generic: DESC, page_path ASC, device_type ASC
+      - generic: LIMIT 1000
+    - paragraph
+    - button "Cerrar" [disabled]:
+    - generic: Refina la consulta
+    - textbox "Refina la consulta"
+    - button "Enviar" [disabled]:
+    - paragraph:
+      - generic: Los datos de Distribución de INP pueden muestrearse dependiendo del volumen de tráfico de Shop
+    - generic: Web performance
+    - button "Anidar tabla":
+    - status
+    - table "Tabla de métricas":
+      - row "Ordenar Ruta de la página ascendente Ordenar Tipo de dispositivo ascendente Ordenar Porcentaje de cargas de página ascendente Ordenar Cargas de página ascendente Ordenar INP P75 ascendente Ordenar Distribución de INP ascendente Ordenar LCP P75 ascendente Ordenar CLS P75 ascendente":
+        - columnheader "Ordenar Ruta de la página ascendente":
+          - cell "Ordenar Ruta de la página ascendente":
+            - button "Ordenar Ruta de la página ascendente":
+              - generic: Ruta de la página
+              - generic: A-Z
+          - separator "Cambiar el tamaño de la columna Ruta de la página"
+        - columnheader "Ordenar Tipo de dispositivo ascendente":
+          - cell "Ordenar Tipo de dispositivo ascendente":
+            - button "Ordenar Tipo de dispositivo ascendente":
+              - generic: Tipo de dispositivo
+              - generic: A-Z
+          - separator "Cambiar el tamaño de la columna Tipo de dispositivo"
+        - columnheader "Ordenar Porcentaje de cargas de página ascendente":
+          - cell "Ordenar Porcentaje de cargas de página ascendente":
+            - button "Ordenar Porcentaje de cargas de página ascendente":
+              - generic: Porcentaje de cargas de página
+              - generic: Porcentaje de cargas de página, de menor a mayor
+            - generic: Quitar
+          - separator "Cambiar el tamaño de la columna Porcentaje de cargas de página"
+        - columnheader "Ordenar Cargas de página ascendente":
+          - cell "Ordenar Cargas de página ascendente":
+            - button "Ordenar Cargas de página ascendente":
+              - generic: Cargas de página
+              - generic: Cargas de página, de menor a mayor
+          - separator "Cambiar el tamaño de la columna Cargas de página"
+        - columnheader "Ordenar INP P75 ascendente":
+          - cell "Ordenar INP P75 ascendente":
+            - button "Ordenar INP P75 ascendente":
+              - generic: INP P75
+              - generic: Más antiguo primero
+          - separator "Cambiar el tamaño de la columna INP P75"
+        - columnheader "Ordenar Distribución de INP ascendente":
+          - cell "Ordenar Distribución de INP ascendente":
+            - button "Ordenar Distribución de INP ascendente":
+              - generic: Distribución de INP
+              - generic: Distribución de INP, A-Z
+          - separator "Cambiar el tamaño de la columna Distribución de INP"
+        - columnheader "Ordenar LCP P75 ascendente":
+          - cell "Ordenar LCP P75 ascendente":
+            - button "Ordenar LCP P75 ascendente":
+              - generic: LCP P75
+              - generic: Más antiguo primero
+          - separator "Cambiar el tamaño de la columna LCP P75"
+        - columnheader "Ordenar CLS P75 ascendente":
+          - cell "Ordenar CLS P75 ascendente":
+            - button "Ordenar CLS P75 ascendente":
+              - generic: CLS P75
+              - generic: De menor a mayor
+      - row "Resumen 100% 3.952 96 milisegundos Gráfico de distribución 1728 milisegundos 0,02":
+        - cell "Resumen":
+          - generic: Resumen
+        - cell
+        - cell "100%":
+          - generic: 100%
+        - cell "3.952":
+          - generic: "3.952"
+        - cell "96 milisegundos":
+          - generic: 96 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1728 milisegundos":
+          - generic: 1728 milisegundos
+        - cell "0,02":
+          - generic: 0,02
+      - row "/collections/neumaticos Total 20,1% 793 128 milisegundos Gráfico de distribución 1432 milisegundos 0,02":
+        - cell "/collections/neumaticos":
+          - generic: /collections/neumaticos
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "20,1%":
+          - generic: 20,1%
+        - cell "793":
+          - generic: "793"
+        - cell "128 milisegundos":
+          - generic: 128 milisegundos
+          - generic: 128 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1432 milisegundos":
+          - generic: 1432 milisegundos
+          - generic: 1432 milisegundos
+        - cell "0,02":
+          - generic: 0,02
+      - row "Móvil 14,8% 585 152 milisegundos Gráfico de distribución 1453 milisegundos 0,01":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "14,8%":
+          - generic: 14,8%
+        - cell "585":
+          - generic: "585"
+        - cell "152 milisegundos":
+          - generic: 152 milisegundos
+          - generic: 152 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1453 milisegundos":
+          - generic: 1453 milisegundos
+          - generic: 1453 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "Escritorio 5,3% 208 72 milisegundos Gráfico de distribución 1393 milisegundos 0,03":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "5,3%":
+          - generic: 5,3%
+        - cell "208":
+          - generic: "208"
+        - cell "72 milisegundos":
+          - generic: 72 milisegundos
+          - generic: 72 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1393 milisegundos":
+          - generic: 1393 milisegundos
+          - generic: 1393 milisegundos
+        - cell "0,03":
+          - generic: 0,03
+      - row "/ Total 17,4% 687 102 milisegundos Gráfico de distribución 1792 milisegundos 0,1":
+        - cell /:
+          - generic: /
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "17,4%":
+          - generic: 17,4%
+        - cell "687":
+          - generic: "687"
+        - cell "102 milisegundos":
+          - generic: 102 milisegundos
+          - generic: 102 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1792 milisegundos":
+          - generic: 1792 milisegundos
+          - generic: 1792 milisegundos
+        - cell "0,1":
+          - generic: 0,1
+      - row "Móvil 13,5% 533 112 milisegundos Gráfico de distribución 1801 milisegundos 0,13":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "13,5%":
+          - generic: 13,5%
+        - cell "533":
+          - generic: "533"
+        - cell "112 milisegundos":
+          - generic: 112 milisegundos
+          - generic: 112 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1801 milisegundos":
+          - generic: 1801 milisegundos
+          - generic: 1801 milisegundos
+        - cell "0,13":
+          - generic: 0,13
+      - row "Escritorio 3,9% 154 56 milisegundos Gráfico de distribución 1680 milisegundos 0,03":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "3,9%":
+          - generic: 3,9%
+        - cell "154":
+          - generic: "154"
+        - cell "56 milisegundos":
+          - generic: 56 milisegundos
+          - generic: 56 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1680 milisegundos":
+          - generic: 1680 milisegundos
+          - generic: 1680 milisegundos
+        - cell "0,03":
+          - generic: 0,03
+      - row "/collections/cascos Total 6,6% 261 72 milisegundos Gráfico de distribución 1431 milisegundos 0":
+        - cell "/collections/cascos":
+          - generic: /collections/cascos
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "6,6%":
+          - generic: 6,6%
+        - cell "261":
+          - generic: "261"
+        - cell "72 milisegundos":
+          - generic: 72 milisegundos
+          - generic: 72 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1431 milisegundos":
+          - generic: 1431 milisegundos
+          - generic: 1431 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Móvil 5,1% 203 80 milisegundos Gráfico de distribución 1394 milisegundos 0":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "5,1%":
+          - generic: 5,1%
+        - cell "203":
+          - generic: "203"
+        - cell "80 milisegundos":
+          - generic: 80 milisegundos
+          - generic: 80 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1394 milisegundos":
+          - generic: 1394 milisegundos
+          - generic: 1394 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Escritorio 1,5% 58 64 milisegundos Gráfico de distribución 1704 milisegundos 0":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "1,5%":
+          - generic: 1,5%
+        - cell "58":
+          - generic: "58"
+        - cell "64 milisegundos":
+          - generic: 64 milisegundos
+          - generic: 64 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1704 milisegundos":
+          - generic: 1704 milisegundos
+          - generic: 1704 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "/search Total 5,9% 234 104 milisegundos Gráfico de distribución 1250 milisegundos 0":
+        - cell "/search":
+          - generic: /search
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "5,9%":
+          - generic: 5,9%
+        - cell "234":
+          - generic: "234"
+        - cell "104 milisegundos":
+          - generic: 104 milisegundos
+          - generic: 104 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1250 milisegundos":
+          - generic: 1250 milisegundos
+          - generic: 1250 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Móvil 4,9% 194 120 milisegundos Gráfico de distribución 1252 milisegundos 0":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "4,9%":
+          - generic: 4,9%
+        - cell "194":
+          - generic: "194"
+        - cell "120 milisegundos":
+          - generic: 120 milisegundos
+          - generic: 120 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1252 milisegundos":
+          - generic: 1252 milisegundos
+          - generic: 1252 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Escritorio 1% 40 48 milisegundos Gráfico de distribución 1201 milisegundos 0":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "1%":
+          - generic: 1%
+        - cell "40":
+          - generic: "40"
+        - cell "48 milisegundos":
+          - generic: 48 milisegundos
+          - generic: 48 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1201 milisegundos":
+          - generic: 1201 milisegundos
+          - generic: 1201 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "/collections/ofertas Total 2,7% 105 96 milisegundos Gráfico de distribución 2020 milisegundos 0":
+        - cell "/collections/ofertas":
+          - generic: /collections/ofertas
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "2,7%":
+          - generic: 2,7%
+        - cell "105":
+          - generic: "105"
+        - cell "96 milisegundos":
+          - generic: 96 milisegundos
+          - generic: 96 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "2020 milisegundos":
+          - generic: 2020 milisegundos
+          - generic: 2020 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Móvil 2% 78 120 milisegundos Gráfico de distribución 1816 milisegundos 0":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "2%":
+          - generic: 2%
+        - cell "78":
+          - generic: "78"
+        - cell "120 milisegundos":
+          - generic: 120 milisegundos
+          - generic: 120 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1816 milisegundos":
+          - generic: 1816 milisegundos
+          - generic: 1816 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Escritorio 0,7% 27 38 milisegundos Gráfico de distribución 2197 milisegundos 0,02":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "0,7%":
+          - generic: 0,7%
+        - cell "27":
+          - generic: "27"
+        - cell "38 milisegundos":
+          - generic: 38 milisegundos
+          - generic: 38 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "2197 milisegundos":
+          - generic: 2197 milisegundos
+          - generic: 2197 milisegundos
+        - cell "0,02":
+          - generic: 0,02
+      - row "/collections/repuestos Total 1,6% 64 148 milisegundos Gráfico de distribución 1334 milisegundos 0,01":
+        - cell "/collections/repuestos":
+          - generic: /collections/repuestos
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "1,6%":
+          - generic: 1,6%
+        - cell "64":
+          - generic: "64"
+        - cell "148 milisegundos":
+          - generic: 148 milisegundos
+          - generic: 148 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1334 milisegundos":
+          - generic: 1334 milisegundos
+          - generic: 1334 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "Escritorio 0,9% 36 68 milisegundos Gráfico de distribución 1622 milisegundos 0,02":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "0,9%":
+          - generic: 0,9%
+        - cell "36":
+          - generic: "36"
+        - cell "68 milisegundos":
+          - generic: 68 milisegundos
+          - generic: 68 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1622 milisegundos":
+          - generic: 1622 milisegundos
+          - generic: 1622 milisegundos
+        - cell "0,02":
+          - generic: 0,02
+      - row "Móvil 0,7% 28 220 milisegundos Gráfico de distribución 1139 milisegundos 0":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "0,7%":
+          - generic: 0,7%
+        - cell "28":
+          - generic: "28"
+        - cell "220 milisegundos":
+          - generic: 220 milisegundos
+          - generic: 220 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1139 milisegundos":
+          - generic: 1139 milisegundos
+          - generic: 1139 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "/products/casco-nolan-n70-2-x-convinto Total 1% 38 144 milisegundos Gráfico de distribución 2177 milisegundos 0,08":
+        - cell "/products/casco-nolan-n70-2-x-convinto":
+          - generic: /products/casco-nolan-n70-2-x-convinto
+          - generic: /products/casco-nolan-n70-2-x-convinto
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "1%":
+          - generic: 1%
+        - cell "38":
+          - generic: "38"
+        - cell "144 milisegundos":
+          - generic: 144 milisegundos
+          - generic: 144 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "2177 milisegundos":
+          - generic: 2177 milisegundos
+          - generic: 2177 milisegundos
+        - cell "0,08":
+          - generic: 0,08
+      - row "Móvil 0,9% 37 148 milisegundos Gráfico de distribución 2178 milisegundos 0,13":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "0,9%":
+          - generic: 0,9%
+        - cell "37":
+          - generic: "37"
+        - cell "148 milisegundos":
+          - generic: 148 milisegundos
+          - generic: 148 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "2178 milisegundos":
+          - generic: 2178 milisegundos
+          - generic: 2178 milisegundos
+        - cell "0,13":
+          - generic: 0,13
+      - row "Escritorio 0% 1 8 milisegundos Gráfico de distribución 604 milisegundos 0,01":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "0%":
+          - generic: 0%
+        - cell "1":
+          - generic: "1"
+        - cell "8 milisegundos":
+          - generic: 8 milisegundos
+          - generic: 8 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "604 milisegundos":
+          - generic: 604 milisegundos
+          - generic: 604 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "/products/casco-nolan-n70-2-x-ruvido-negro-amarillo Total 0,8% 30 136 milisegundos Gráfico de distribución 1764 milisegundos 0,01":
+        - cell "/products/casco-nolan-n70-2-x-ruvido-negro-amarillo":
+          - generic: /products/casco-nolan-n70-2-x-ruvido-negro-amarillo
+          - generic: /products/casco-nolan-n70-2-x-ruvido-negro-amarillo
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "0,8%":
+          - generic: 0,8%
+        - cell "30":
+          - generic: "30"
+        - cell "136 milisegundos":
+          - generic: 136 milisegundos
+          - generic: 136 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1764 milisegundos":
+          - generic: 1764 milisegundos
+          - generic: 1764 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "Móvil 0,7% 28 138 milisegundos Gráfico de distribución 1784 milisegundos 0,01":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "0,7%":
+          - generic: 0,7%
+        - cell "28":
+          - generic: "28"
+        - cell "138 milisegundos":
+          - generic: 138 milisegundos
+          - generic: 138 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1784 milisegundos":
+          - generic: 1784 milisegundos
+          - generic: 1784 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "Escritorio 0,1% 2 112 milisegundos Gráfico de distribución 1007 milisegundos 0,01":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "0,1%":
+          - generic: 0,1%
+        - cell "2":
+          - generic: "2"
+        - cell "112 milisegundos":
+          - generic: 112 milisegundos
+          - generic: 112 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1007 milisegundos":
+          - generic: 1007 milisegundos
+          - generic: 1007 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - row "/blogs/motos-chile/guia-de-motos-custom-deja-de-llamar-chopper-a-todo Total 0,7% 29 64 milisegundos Gráfico de distribución 1538 milisegundos 0":
+        - cell "/blogs/motos-chile/guia-de-motos-custom-deja-de-llamar-chopper-a-todo":
+          - generic: /blogs/motos-chile/guia-de-motos-custom-deja-de-llamar-chopper-a-todo
+          - generic: /blogs/motos-chile/guia-de-motos-custom-deja-de-llamar-chopper-a-todo
+        - cell "Total":
+          - paragraph:
+            - generic: Total
+        - cell "0,7%":
+          - generic: 0,7%
+        - cell "29":
+          - generic: "29"
+        - cell "64 milisegundos":
+          - generic: 64 milisegundos
+          - generic: 64 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1538 milisegundos":
+          - generic: 1538 milisegundos
+          - generic: 1538 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Móvil 0,5% 19 244 milisegundos Gráfico de distribución 1577 milisegundos 0":
+        - cell
+        - cell "Móvil":
+          - generic: Móvil
+        - cell "0,5%":
+          - generic: 0,5%
+        - cell "19":
+          - generic: "19"
+        - cell "244 milisegundos":
+          - generic: 244 milisegundos
+          - generic: 244 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1577 milisegundos":
+          - generic: 1577 milisegundos
+          - generic: 1577 milisegundos
+        - cell "0":
+          - generic: "0"
+      - row "Escritorio 0,3% 10 40 milisegundos Gráfico de distribución 1376 milisegundos 0,01":
+        - cell
+        - cell "Escritorio":
+          - generic: Escritorio
+        - cell "0,3%":
+          - generic: 0,3%
+        - cell "10":
+          - generic: "10"
+        - cell "40 milisegundos":
+          - generic: 40 milisegundos
+          - generic: 40 milisegundos
+        - cell "Gráfico de distribución":
+          - img "Gráfico de distribución"
+        - cell "1376 milisegundos":
+          - generic: 1376 milisegundos
+          - generic: 1376 milisegundos
+        - cell "0,01":
+          - generic: 0,01
+      - generic: 910 filas
+  - tablist "Método de exploración":
+    - tab "Libre" [selected]:
+      - strong:
+        - generic: Libre
+    - tab "Cohortes":
+      - strong:
+        - generic: Cohortes
+  - tabpanel "Libre":
+    - generic "Métricas":
+      - heading "Métricas" [level=2]:
+        - generic: Métricas
+      - button "Agregar métrica":
+      - button "Métricas"
+      - checkbox "Visualizar Porcentaje de cargas de página"
+      - button "Porcentaje de cargas de página":
+        - generic: Porcentaje de cargas de página
+      - checkbox "Visualizar Cargas de página"
+      - button "Cargas de página":
+        - generic: Cargas de página
+      - checkbox "Visualizar INP P75"
+      - button "INP P75":
+        - generic: INP P75
+      - checkbox "Visualizar Distribución de INP"
+      - button "Distribución de INP":
+        - generic: Distribución de INP
+      - checkbox "Visualizar LCP P75"
+      - button "LCP P75":
+        - generic: LCP P75
+      - checkbox "Visualizar CLS P75"
+      - button "CLS P75":
+        - generic: CLS P75
+      - status
+    - generic "Dimensiones":
+      - heading "Dimensiones" [level=2]:
+        - generic: Dimensiones
+      - button "Agregar dimensión":
+      - button "Dimensiones"
+      - button "Ruta de la página":
+        - generic: Ruta de la página
+      - button "Tipo de dispositivo":
+        - generic: Tipo de dispositivo
+      - status
+    - generic "Visualización":
+      - heading "Visualización" [level=2]:
+        - generic: Visualización
+      - button "Visualización"
+      - button "Mostrar tabla":
+        - paragraph:
+          - generic: Mostrar tabla
+      - generic: Mostrar todas las filas
+      - checkbox "Mostrar todas las filas" [checked]
+      - generic: Mostrar todas las filas
+    - generic "Filtros":
+      - heading "Filtros" [level=2]:
+        - generic: Filtros
+      - button "Añadir filtro":
+      - button "Filtros"
+  - status
+- status
+- region "Sidekick":
+  - status
+  - paragraph
+  - button "Cerrar" [disabled]:
+  - generic: Trabaja con Sidekick
+  - textbox "Trabaja con Sidekick"
+  - button "Agregar archivos y más":
+  - button "Voz":
+  - button "Abrir Sidekick":
+- generic: Volver a informes
+- generic: Cancelar
+- generic: Guardar
+- generic: Cancelar
+- generic: Guardar copia
+- generic: Cancelar
+- generic: Exportar
+- generic: Cancelar
+- generic: Guardar
+- generic: Cancelar
+- generic: Eliminar
+- generic: Atajos generales
+- generic: Agregar artículos a tu tienda
+- generic: Navegar por tu panel de control
+- generic: Navegar por la configuración
+- separator "Cambiar tamaño de la barra lateral"
+- complementary "Sidekick"
+- status
+- alert

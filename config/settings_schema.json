@@ -1262,7 +1262,7 @@
         "type": "select",
         "id": "product_aspect_ratio",
         "label": "Aspect Ratio",
-        "default": "3\/4",
+        "default": "1\/1",
         "options": [
           {
             "value": "original",
@@ -1747,6 +1747,13 @@
         "id": "predictive_search_enabled",
         "default": true,
         "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "search_analytics_enabled",
+        "default": false,
+        "label": "Medir búsquedas y previsualizaciones",
+        "info": "Activar solo después de conectar los eventos de búsqueda al Web Pixel Bikerz y al receptor. Respeta el consentimiento de analítica."
       },
       {
         "type": "checkbox",

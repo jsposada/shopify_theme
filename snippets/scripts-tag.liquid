@@ -9,6 +9,11 @@
 <script src="{{ 'swiper-bundle.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+{% if settings.search_analytics_enabled %}
+  {% render 'search-analytics-config' %}
+  <script src="{{ 'search-analytics-contract.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'search-analytics.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% if settings.show_wishlist or settings.show_wishlist_icon or template.suffix == 'wishlist' %}

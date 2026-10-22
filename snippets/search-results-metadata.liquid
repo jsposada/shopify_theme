@@ -1,0 +1,16 @@
+{% comment %}Machine-readable search context, refreshed together with the AJAX result grid.{% endcomment %}
+{%- capture analytics_product_ids -%}
+  {%- for analytics_item in search.results limit: display_limit -%}
+    {%- if analytics_item.object_type == 'product' -%}{{ analytics_item.id }},{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+<span
+  hidden
+  data-search-results-metadata
+  data-query="{{ search.terms | escape }}"
+  data-total="{{ search.results_count }}"
+  data-resource-types="{{ search.types | join: ',' | escape }}"
+  data-page="{{ search_paginate.current_page }}"
+  data-display-limit="{{ display_limit }}"
+  data-product-ids="{{ analytics_product_ids | strip | escape }}"
+></span>

@@ -17,7 +17,13 @@
     {%- render 'search-display-term', terms: predictive_search.terms -%}
   {%- endcapture -%}
   {%- assign tire_collection_url = collections['neumaticos'].url | default: '/collections/neumaticos' -%}
-  <div id="predictive-search-results" role="listbox">
+  <div id="predictive-search-results" role="listbox"
+    {% if settings.search_analytics_enabled %}
+      data-search-preview-metadata
+      data-query="{{ predictive_search.terms | escape }}"
+      data-products-returned="{{ predictive_search.resources.products.size }}"
+    {% endif %}
+  >
   {%- if predictive_search.resources.products.size > 0 -%}
     {%- comment -%}
       Primary action, placed first so it stays visible under the input while the
@@ -90,6 +96,7 @@
               {%- for product in predictive_search.resources.products limit: 5 -%}
                 <div
                   id="predictive-search-option-product-{{ forloop.index }}"
+                  data-search-product-id="{{ product.id }}"
                   class="tp-grid__item tp-grid__item-{{ forloop.index }}"
                   role="option"
                   aria-selected="false">
@@ -115,7 +122,7 @@
                     assign sale_percent = row_compare | minus: row_price | times: 100.0 | divided_by: row_compare | round
                   endif
                 -%}
-                <li id="predictive-search-option-compact-{{ forloop.index }}" role="option" aria-selected="false">
+                <li id="predictive-search-option-compact-{{ forloop.index }}" role="option" aria-selected="false" data-search-product-id="{{ product.id }}">
                   <a href="{{ product.url }}" class="predictive-search__compact-link" tabindex="-1">
                     <span class="predictive-search__compact-media">
                       {%- if product.featured_media -%}
