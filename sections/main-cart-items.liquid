@@ -18,6 +18,7 @@
 {%- endcapture -%}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-discount.js' | asset_url }}" defer="defer"></script>
 <div
   class="tp-cart color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}"
   style="{{ style | strip | strip_newlines }}"

@@ -1,0 +1,29 @@
+{% comment %}Shared by the cart page and drawer; prices are always rendered by Shopify.{% endcomment %}
+<cart-discount class="cart__coupon mb-24 block" data-context="{{ context }}" data-update-url="{{ routes.cart_update_url }}.js">
+  <div class="tca_coupon tca_item">
+    <div class="tca-field mb-12 flex flex-col">
+      <label class="mb-12 fw-secondary" for="CartDiscount-{{ context }}">{{ 'sections.cart.discount_code' | t }}</label>
+      <input
+        type="text"
+        name="cartdiscountcode"
+        id="CartDiscount-{{ context }}"
+        aria-describedby="CartDiscountStatus-{{ context }}"
+        placeholder="Ingrese el código de descuento"
+        autocomplete="off"
+        class="text-area field__input">
+    </div>
+    <p id="CartDiscountStatus-{{ context }}" data-discount-status class="mb-12 hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+    <button type="button" data-apply-discount class="tp-btn tp-btn__secondary w-full">
+      <span data-discount-spinner class="hidden w-16 h-16 ml-auto mr-auto border-2 border-solid border-black border-t-gray-200 rounded-full animate-spin" aria-hidden="true"></span>
+      <span data-discount-label>{{ 'sections.cart.discount_code_applied' | t }}</span>
+    </button>
+    {%- for application in cart.discount_applications -%}
+      {%- if application.type == 'discount_code' -%}
+        <div class="flex items-center justify-between gap-8 mt-12">
+          <span>{{ application.title | escape }}</span>
+          <button type="button" class="button button--tertiary" data-remove-code="{{ application.title | escape }}" aria-label="Quitar código {{ application.title | escape }}">Quitar</button>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</cart-discount>

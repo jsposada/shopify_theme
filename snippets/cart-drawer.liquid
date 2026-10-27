@@ -10,6 +10,7 @@
   assign gift_wrap = cart.items | where: 'product_id', gift_pr_id
 %}
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-discount.js' | asset_url }}" defer="defer"></script>
 <style>
   .drawer {
     visibility: hidden;
@@ -425,41 +426,7 @@
                 </p>
               </summary>
               <div class="content-animation py-12 md:px-0 md:py-0">
-                <div class="cart__coupon mb-24">
-                  <div class="tca_coupon tca_item">
-                    <div class="tca-field mb-12 flex flex-col">
-                      <input
-                        type="text"
-                        data-name="discount"
-                        name="cartdiscountcode"
-                        id="CartDiscountcode"
-                        value=""
-                        placeholder="Ingrese el código de descuento"
-                        class="text-area field__input">
-                    </div>
-                    <div class="cp-applied mb-12 hidden">
-                      <div class="cp-applied__message inline-flex flex-row items-center justify-center">
-                        <div class="cp-applied__text">
-                          {{ 'sections.cart.discount_code_noti' | t }}
-                        </div>
-                        <div class="cp-applied__close">
-                          {% render 'icon'
-                            , icon_name: 'icon-close' %}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tca-field mb-12">
-                      <button
-                        type="button"
-                        data-url="{{ routes.root_url }}"
-                        class="ajc-discount__push tp-btn tp-btn__secondary w-full"
-                        id="cpcode-incart__apply">
-                        <div class="load-more_spinner hidden w-16 h-16 ml-auto mr-auto border-2 border-solid border-black border-t-gray-200 rounded-full animate-spin"></div>
-                        <div class="load-more_text">{{ 'sections.cart.discount_code_applied' | t }}</div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                {% render 'cart-discount', context: 'drawer' %}
               </div>
             </details>
           {% endif %}
