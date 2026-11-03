@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-11-02T23:08:38.461Z",
+  "status": "investigation_and_design_validated_not_implemented",
+  "scope": "General storefront search consistency and preservation of technical constraints",
+  "comparisons": 90,
+  "evidenceChecks": 10,
+  "causes": [
+    "Predictive query suggestions can change product intent",
+    "Technical numbers are treated as fuzzy text in both search paths",
+    "Normalizer infers tires from ambiguous two-number text",
+    "Preview and full results have separate retrieval logic; analytics also replaces retrieval"
+  ],
+  "rejected": [
+    "Quote the whole query",
+    "Increase the predictive product limit",
+    "Request products only",
+    "Wrap every query in parentheses"
+  ],
+  "proposedPolicy": [
+    "Parse explicit technical attributes conservatively and preserve ambiguous text",
+    "Resolve dimensions, viscosity and unambiguous product brands against existing catalog filters",
+    "Use one query plan and normal-search product source for preview and Enter",
+    "Use predictive suggestions as optional suggestions without replacing constrained product results",
+    "Keep partial attributes open; never substitute complete technical values silently",
+    "Separate retrieval from analytics configuration"
+  ],
+  "verifiedCases": {
+    "tireExact": 1,
+    "tire12070rim17": 33,
+    "tire14070rim17": 20,
+    "oil10w40": 15,
+    "motul10w40": 6,
+    "partial90100": 11,
+    "unknownRim": 0
+  },
+  "implementationRequirements": [
+    "Audit catalog attribute coverage before making a field mandatory",
+    "Resolve taxonomy IDs from catalog labels instead of hardcoding them",
+    "Handle unknown construction codes and multiple measures without dropping attributes",
+    "Preserve existing user-entered syntax and incomplete identifiers",
+    "Validate compact preview latency and keyboard behavior",
+    "Include filters, locale and policy version in request/cache identity",
+    "Accept native relevance variation; do not promise byte-identical ordering"
+  ]
+}

@@ -1,0 +1,382 @@
+{{ 'banner-image.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign sst = section.settings
+  assign container = sst.container
+
+  assign bdRadiusImg = ''
+  if sst.border_radius_img
+    assign bdRadiusImg = 'bd-radius'
+  endif
+%}
+{%- capture style -%}
+  --section-padding-top: {{ sst.padding_top }}px; 
+  --section-padding-bottom: {{ sst.padding_bottom }}px;
+  --fz-heading: {{ sst.font_size_heading }}px;
+  --fz-sub-heading: {{ sst.font_size_sub_heading }}px;
+  --fz-description: {{ sst.font_size_description }}px;
+  --fw-heading: {{ sst.font_weight_heading }};
+  --fw-sub-heading: {{ sst.font_weight_sub_heading }};
+  --fw-description: {{ sst.font_weight_description }};
+    --height-img-desktop: {{ sst.height_image_desktop }}px;
+    --height-img-tablet: {{ sst.height_image_tablet }}px;
+    --height-img: {{ sst.height_img_mobile }}px;
+
+{%- endcapture -%}
+
+<div class="tp-banner color-{{ sst.color_scheme }} !bg-transparent gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}" style="{{ style | strip | strip_newlines }}">
+  <div class="{{ container }} section-full">
+    <div class="tp-banner__inner-parallax-background overflow-hidden relative {{ bdRadiusImg }}">
+      {%- for block in section.blocks -%}
+        {% liquid
+          assign bst = block.settings
+        %}
+        <div class="bg-wrap-para color-{{ bst.color_scheme }} gradient" style="
+            background-repeat: no-repeat;
+            background-image: url({{ bst.image | image_url: width: bst.image.width, height: bst.image.height }});
+            background-position: 50% 50%;
+            background-attachment: scroll;
+            background-size: 0 !important;
+            overflow: hidden;
+            position: relative;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        ">
+          <div class="tp-banner__item-content content-{{ bst.text_align }}">
+            <div class="content-wrap">
+              {%- if bst.subtext != blank -%}
+                <h4 class="tp-subtext-content mb-0">
+                  {{ bst.subtext }}
+                </h4>
+              {%- endif -%}
+              {%- if bst.title != blank -%}
+                <h3 class="tp-heading-content mb-0 ">
+                  {% if sst.design_banner == 'text-below-image' and bst.btn_content == blank %}
+                    <a
+                      {% if bst.link == blank %}
+                      role="link"
+                      aria-disabled="true"
+                      {% else %}
+                      href="{{ bst.link }}"
+                      {% endif %}
+                      {%- if bst.open_link == '_blank' -%}
+                      target="_blank"
+                      {%- else -%}
+                      target="_self"
+                      {%- endif -%}>
+                  {% endif %}
+                  {{ bst.title }}
+                  {% if sst.design_banner == 'text-below-image' and bst.btn_content == blank %}
+                    </a>
+                  {% endif %}
+                </h3>
+
+
+              {%- endif -%}
+              {%- if bst.content != blank -%}
+                <div class="mb-0 tp-desc-content">{{ bst.content }}</div>
+              {%- endif -%}
+            </div>
+            {%- if bst.btn_content != blank -%}
+              <div>
+                <a
+                  {% if bst.link == blank %}
+                  role="link"
+                  aria-disabled="true"
+                  {% else %}
+                  href="{{ bst.link }}"
+                  {% endif %}
+                  {%- if bst.open_link == '_blank' -%}
+                  target="_blank"
+                  {%- else -%}
+                  target="_self"
+                  {%- endif -%}
+                  class="tp-btn tp-btn__{{ bst.type_button }} n-hvr mt-24">
+                  {{ bst.btn_content | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+          <style>
+            .bg-wrap-para::before {
+              background-image: inherit !important;
+              background-repeat: inherit !important;
+              background-size: cover;
+              background-position: inherit;
+              content: "";
+              position: fixed;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              z-index: -1 !important;
+              pointer-events: none;
+            }
+          </style>
+        </div>
+
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner parallax",
+    "tag": "section",
+    "disabled_on": {
+      "groups": ["*"]
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "select",
+        "id": "container",
+        "label": "Layout",
+        "default": "container",
+        "options": [
+          {
+            "value": "container",
+            "label": "Default"
+          }, {
+            "value": "container-fluid",
+            "label": "Fluid container"
+          }, {
+            "value": "full-width",
+            "label": "Full width"
+          }
+        ]
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_radius_img",
+        "label": "Border radius image",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "height_image_desktop",
+        "label": "Height image desktop",
+        "default": "500"
+      }, {
+        "type": "text",
+        "id": "height_image_tablet",
+        "label": "Height image tablet",
+        "default": "500"
+      }, {
+        "type": "text",
+        "id": "height_img_mobile",
+        "label": "Height image mobile",
+        "default": "350"
+      }, {
+        "type": "header",
+        "content": "Typography"
+      }, {
+        "type": "paragraph",
+        "content": "----------Sub heading---------"
+      }, {
+        "type": "range",
+        "id": "font_size_sub_heading",
+        "label": "Font sub size",
+        "min": 16,
+        "step": 1,
+        "max": 36,
+        "default": 20,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "font_weight_sub_heading",
+        "label": "Font weight",
+        "min": 300,
+        "step": 100,
+        "max": 900,
+        "default": 500
+      }, {
+        "type": "paragraph",
+        "content": "----------Heading---------"
+      }, {
+        "type": "range",
+        "id": "font_size_heading",
+        "label": "Font size",
+        "min": 26,
+        "step": 1,
+        "max": 50,
+        "default": 36,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "font_weight_heading",
+        "label": "Font weight",
+        "min": 300,
+        "step": 100,
+        "max": 900,
+        "default": 500
+      }, {
+        "type": "paragraph",
+        "content": "----------Description---------"
+      }, {
+        "type": "range",
+        "id": "font_size_description",
+        "label": "Font description",
+        "min": 16,
+        "step": 1,
+        "max": 36,
+        "default": 16,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "font_weight_description",
+        "label": "Font weight",
+        "min": 300,
+        "step": 100,
+        "max": 900,
+        "default": 500
+      }, {
+        "type": "header",
+        "content": "Tablets and Mobile layout"
+      }, {
+        "type": "paragraph",
+        "content": "----------------------------------------"
+      }, {
+        "type": "header",
+        "content": "Section padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      }, {
+        "type": "checkbox",
+        "id": "reset_spacing",
+        "label": "Remove default space between sections",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_banner",
+        "name": "Banner item",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Banner image",
+            "info": "1920 x 500px recommended"
+          },
+          {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "background-1"
+          },
+          {
+            "type": "textarea",
+            "id": "subtext",
+            "label": "Subtext",
+            "default": "Subtext"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Heading",
+            "default": "Heading"
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Description</p>"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }, {
+            "type": "text",
+            "id": "btn_content",
+            "label": "Button label",
+            "default": "Shop now"
+          }, {
+            "type": "select",
+            "id": "open_link",
+            "options": [
+              {
+                "value": "_self",
+                "label": "Current tab"
+              }, {
+                "value": "_blank",
+                "label": "New tab"
+              }
+            ],
+            "label": "Button open link in",
+            "default": "_blank"
+          }, {
+            "type": "select",
+            "id": "type_button",
+            "label": "Type button",
+            "default": "primary",
+            "options": [
+              {
+                "value": "primary",
+                "label": "Primary"
+              }, {
+                "value": "secondary",
+                "label": "Secondary"
+              }, {
+                "value": "underline",
+                "label": "Underline"
+              }
+            ]
+          }, {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text align",
+            "default": "center",
+            "options": [
+              {
+                "value": "start",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "end",
+                "label": "Right"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner parallax",
+        "blocks": [
+          {
+            "type": "image_banner"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

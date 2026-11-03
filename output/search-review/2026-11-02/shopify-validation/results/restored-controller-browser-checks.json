@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "case": "desktop keyboard selects visible desktop card",
+      "pass": true
+    },
+    {
+      "case": "selected exact product opens with Enter",
+      "pass": true
+    },
+    {
+      "case": "mobile keyboard selects visible compact row",
+      "pass": true
+    },
+    {
+      "case": "native search excludes purchase fields and preserves unrelated search fields",
+      "pass": true
+    },
+    {
+      "case": "HTTP failure shows a recoverable error",
+      "pass": true
+    },
+    {
+      "case": "invalid rejected without losing input",
+      "pass": true
+    },
+    {
+      "case": "bad-filter rejected without losing input",
+      "pass": true
+    },
+    {
+      "case": "true zero remains an empty state",
+      "pass": true
+    },
+    {
+      "case": "slow optional suggestions neither block products nor shift keyboard selection",
+      "pass": true
+    },
+    {
+      "case": "old product and suggestion responses cannot overwrite the current query",
+      "pass": true
+    },
+    {
+      "case": "reset clears input, products and suggestions",
+      "pass": true
+    },
+    {
+      "case": "technical suggestions keep compatible alternatives and remove contradictory or equivalent measures",
+      "pass": true
+    },
+    {
+      "case": "general text suggestions remain available",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

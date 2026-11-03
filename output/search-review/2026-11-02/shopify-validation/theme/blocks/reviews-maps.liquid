@@ -1,0 +1,774 @@
+{% doc %}
+  @prompt
+    Quiero un seccion que muestre los comentarios y las calificaciones de google my bussines (maps)
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-gmb-reviews-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+    display: block;
+  }
+
+  .ai-gmb-reviews-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-gmb-reviews-header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-gmb-reviews-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  .ai-gmb-reviews-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .ai-gmb-reviews-overall-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.text_alignment }};
+    gap: 16px;
+    margin-bottom: {{ block.settings.overall_spacing }}px;
+    padding: 24px;
+    background-color: {{ block.settings.overall_bg_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+  }
+
+  .ai-gmb-reviews-overall-score-{{ ai_gen_id }} {
+    font-size: 48px;
+    font-weight: 700;
+    color: {{ block.settings.title_color }};
+    line-height: 1;
+  }
+
+  .ai-gmb-reviews-overall-details-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-gmb-reviews-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ai-gmb-reviews-star-{{ ai_gen_id }} {
+    width: {{ block.settings.star_size }}px;
+    height: {{ block.settings.star_size }}px;
+    fill: {{ block.settings.star_color }};
+  }
+
+  .ai-gmb-reviews-star-empty-{{ ai_gen_id }} {
+    fill: {{ block.settings.star_empty_color }};
+  }
+
+  .ai-gmb-reviews-count-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.subtitle_color }};
+  }
+
+  .ai-gmb-reviews-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-gmb-review-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    padding: {{ block.settings.card_padding }}px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-gmb-review-header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-gmb-review-avatar-{{ ai_gen_id }} {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: {{ block.settings.avatar_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: {{ block.settings.avatar_text_color }};
+    flex-shrink: 0;
+  }
+
+  .ai-gmb-review-author-info-{{ ai_gen_id }} {
+    flex-grow: 1;
+  }
+
+  .ai-gmb-review-author-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 4px;
+  }
+
+  .ai-gmb-review-date-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.subtitle_color }};
+  }
+
+  .ai-gmb-review-rating-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ai-gmb-review-text-{{ ai_gen_id }} {
+    font-size: 14px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-gmb-review-google-logo-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ai-gmb-cta-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-top: {{ block.settings.cta_spacing }}px;
+  }
+
+  .ai-gmb-cta-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .ai-gmb-cta-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-gmb-reviews-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_tablet }}, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-gmb-reviews-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-gmb-reviews-overall-{{ ai_gen_id }} {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .ai-gmb-reviews-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<ai-gmb-reviews-{{ ai_gen_id }} class="ai-gmb-reviews-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-gmb-reviews-container-{{ ai_gen_id }}">
+    {% if block.settings.show_header %}
+      <div class="ai-gmb-reviews-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-gmb-reviews-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-gmb-reviews-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_overall_rating %}
+      <div class="ai-gmb-reviews-overall-{{ ai_gen_id }}">
+        <div class="ai-gmb-reviews-overall-score-{{ ai_gen_id }}">{{ block.settings.overall_rating }}</div>
+        <div class="ai-gmb-reviews-overall-details-{{ ai_gen_id }}">
+          <div class="ai-gmb-reviews-stars-{{ ai_gen_id }}">
+            {% assign rating_floor = block.settings.overall_rating | floor %}
+            {% assign rating_decimal = block.settings.overall_rating | minus: rating_floor %}
+            {% assign next_star = rating_floor | plus: 1 %}
+            {% for i in (1..5) %}
+              {% if i <= rating_floor %}
+                <svg class="ai-gmb-reviews-star-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {% elsif i == next_star and rating_decimal >= 0.3 %}
+                <svg class="ai-gmb-reviews-star-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="half-{{ ai_gen_id }}">
+                      <stop offset="50%" stop-color="{{ block.settings.star_color }}"/>
+                      <stop offset="50%" stop-color="{{ block.settings.star_empty_color }}"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#half-{{ ai_gen_id }})" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {% else %}
+                <svg class="ai-gmb-reviews-star-{{ ai_gen_id }} ai-gmb-reviews-star-empty-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="ai-gmb-reviews-count-{{ ai_gen_id }}">Basado en {{ block.settings.total_reviews }} reseñas</div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="ai-gmb-reviews-grid-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign review_name_key = 'review_' | append: i | append: '_name'
+          assign review_rating_key = 'review_' | append: i | append: '_rating'
+          assign review_text_key = 'review_' | append: i | append: '_text'
+          assign review_date_key = 'review_' | append: i | append: '_date'
+
+          assign review_name = block.settings[review_name_key]
+          assign review_rating = block.settings[review_rating_key]
+          assign review_text = block.settings[review_text_key]
+          assign review_date = block.settings[review_date_key]
+        %}
+
+        {% if review_name != blank %}
+          <div class="ai-gmb-review-card-{{ ai_gen_id }}">
+            <div class="ai-gmb-review-header-{{ ai_gen_id }}">
+              <div class="ai-gmb-review-avatar-{{ ai_gen_id }}">
+                {{ review_name | slice: 0 | upcase }}
+              </div>
+              <div class="ai-gmb-review-author-info-{{ ai_gen_id }}">
+                <h3 class="ai-gmb-review-author-{{ ai_gen_id }}">{{ review_name }}</h3>
+                {% if review_date != blank %}
+                  <div class="ai-gmb-review-date-{{ ai_gen_id }}">{{ review_date }}</div>
+                {% endif %}
+              </div>
+              <svg class="ai-gmb-review-google-logo-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+            <div class="ai-gmb-review-rating-{{ ai_gen_id }}">
+              {% for j in (1..5) %}
+                {% if j <= review_rating %}
+                  <svg class="ai-gmb-reviews-star-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                {% else %}
+                  <svg class="ai-gmb-reviews-star-{{ ai_gen_id }} ai-gmb-reviews-star-empty-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% if review_text != blank %}
+              <p class="ai-gmb-review-text-{{ ai_gen_id }}">{{ review_text }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if block.settings.show_cta and block.settings.cta_url != blank %}
+      <div class="ai-gmb-cta-{{ ai_gen_id }}">
+        <a href="{{ block.settings.cta_url }}" class="ai-gmb-cta-button-{{ ai_gen_id }}" target="_blank" rel="noopener">
+          {{ block.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</ai-gmb-reviews-{{ ai_gen_id }}>
+
+{% schema %}
+{
+  "name": "Reseñas de Google",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Mostrar encabezado",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Lo que dicen nuestros clientes"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Reseñas verificadas de Google My Business"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Tamaño del título",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Tamaño del subtítulo",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Calificación general"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overall_rating",
+      "label": "Mostrar calificación general",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "overall_rating",
+      "label": "Calificación promedio",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Total de reseñas",
+      "default": "127"
+    },
+    {
+      "type": "header",
+      "content": "Reseña 1"
+    },
+    {
+      "type": "text",
+      "id": "review_1_name",
+      "label": "Nombre"
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Calificación",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Texto de la reseña"
+    },
+    {
+      "type": "text",
+      "id": "review_1_date",
+      "label": "Fecha"
+    },
+    {
+      "type": "header",
+      "content": "Reseña 2"
+    },
+    {
+      "type": "text",
+      "id": "review_2_name",
+      "label": "Nombre"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Calificación",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Texto de la reseña"
+    },
+    {
+      "type": "text",
+      "id": "review_2_date",
+      "label": "Fecha"
+    },
+    {
+      "type": "header",
+      "content": "Reseña 3"
+    },
+    {
+      "type": "text",
+      "id": "review_3_name",
+      "label": "Nombre"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Calificación",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Texto de la reseña"
+    },
+    {
+      "type": "text",
+      "id": "review_3_date",
+      "label": "Fecha"
+    },
+    {
+      "type": "header",
+      "content": "Llamado a la acción"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Mostrar botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texto del botón",
+      "default": "Ver todas las reseñas"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "URL de Google My Business"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alineación",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columnas en escritorio",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columnas en tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Espacio entre tarjetas",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Ancho en escritorio",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espaciado superior",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espaciado inferior",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Espaciado horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Espacio después del encabezado",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "overall_spacing",
+      "label": "Espacio después de calificación",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "cta_spacing",
+      "label": "Espacio antes del botón",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Título",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtítulo",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texto",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Estrellas",
+      "default": "#FFB800"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Estrellas vacías",
+      "default": "#E3E3E3"
+    },
+    {
+      "type": "header",
+      "content": "Tarjetas"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Fondo de tarjeta",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Borde de tarjeta",
+      "default": "#e3e3e3"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Grosor del borde",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Radio del borde",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Espaciado interno",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "overall_bg_color",
+      "label": "Fondo calificación general",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Avatar"
+    },
+    {
+      "type": "color",
+      "id": "avatar_bg_color",
+      "label": "Fondo del avatar",
+      "default": "#ff6600"
+    },
+    {
+      "type": "color",
+      "id": "avatar_text_color",
+      "label": "Texto del avatar",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Estrellas"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Tamaño de estrellas",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Botón"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Fondo del botón",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texto del botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Fondo hover",
+      "default": "#ff6600"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Texto hover",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Radio del borde",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reseñas de Google"
+    }
+  ]
+}
+{% endschema %}

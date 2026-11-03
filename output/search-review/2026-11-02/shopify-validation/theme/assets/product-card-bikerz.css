@@ -1,0 +1,318 @@
+.bikerz-product-card {
+  display: flex;
+  height: 100%;
+  min-width: 0;
+  text-align: left;
+}
+
+.bikerz-product-card,
+.bikerz-product-card * {
+  box-sizing: border-box;
+}
+
+.bikerz-product-card__shell {
+  background: #fff;
+  border: 1px solid #eceef2;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.bikerz-product-card__media {
+  aspect-ratio: 1 / 1;
+  background: #f5f6f7;
+  border-radius: 0;
+  flex: 0 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.bikerz-product-card__media .card__media,
+.bikerz-product-card__image-link,
+.bikerz-product-card__media .tp__product-main-img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.bikerz-product-card__media .tp__responsive-image {
+  border-radius: 0;
+  height: 100%;
+}
+
+.bikerz-product-card__media .tp__responsive-image img {
+  object-fit: contain;
+  padding: 1.6rem;
+}
+
+.bikerz-product-card .bikerz-product-card__media .tp__product-main-img,
+.bikerz-product-card .bikerz-product-card__media:hover .tp__product-main-img {
+  transform: none;
+}
+
+.bikerz-product-card__soldout-badge {
+  background: #151515;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  left: 0.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 0.55rem 0.8rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0.8rem;
+  z-index: 2;
+}
+
+.bikerz-product-card__content {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.bikerz-product-card__information {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.6rem;
+}
+
+.bikerz-product-card__details {
+  min-width: 0;
+}
+
+.bikerz-product-card__brand {
+  color: #777;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.bikerz-product-card__title {
+  color: #1b1b1b;
+  display: -webkit-box;
+  font-family: var(--font-heading-family);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  min-height: 2.3em;
+  overflow: hidden;
+  text-transform: uppercase;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bikerz-product-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bikerz-product-card__description {
+  color: #777;
+  display: -webkit-box;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  margin: 0.7rem 0 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bikerz-product-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  min-height: 2.2rem;
+}
+
+.bikerz-product-card__tag {
+  align-items: center;
+  background: #f0f1f3;
+  border-radius: 3px;
+  color: #4d4d4d;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  min-height: 2.2rem;
+  padding: 0.4rem 0.7rem;
+}
+
+.bikerz-product-card__stock {
+  background: #d9f7e7;
+  color: #147a50;
+  font-weight: 800;
+}
+
+.bikerz-product-card__stock--out {
+  background: #f4e4e4;
+  color: #9b2727;
+}
+
+.bikerz-product-card__purchase {
+  margin-top: auto;
+  padding-top: 1.8rem;
+}
+
+.bikerz-product-card__price-row {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.bikerz-product-card__price {
+  color: #1b1b1b;
+  font-family: var(--font-heading-family);
+  font-size: 2.7rem;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.bikerz-product-card__currency {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bikerz-product-card__compare-price {
+  color: #b02929;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bikerz-product-card__installments {
+  color: #777;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 0.6rem 0 0;
+  text-align: right;
+}
+
+.bikerz-product-card__actions {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: 1.2rem;
+}
+
+.bikerz-product-card__product-form,
+.bikerz-product-card__product-form form,
+.bikerz-product-card__actions button {
+  min-width: 0;
+  width: 100%;
+}
+
+.bikerz-product-card__actions button {
+  align-items: center;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-heading-family);
+  font-size: 1.2rem;
+  font-weight: 900;
+  gap: 0.7rem;
+  height: 4.8rem;
+  justify-content: center;
+  letter-spacing: 0.01em;
+  padding: 0.8rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.bikerz-product-card__add {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bikerz-product-card__quick-view {
+  background: #151515;
+  color: #fff;
+}
+
+.bikerz-product-card__button-content {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.7rem;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.bikerz-product-card__actions button > * {
+  pointer-events: none;
+}
+
+.bikerz-product-card__actions button svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.bikerz-product-card__actions button svg path,
+.bikerz-product-card__actions button svg circle {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.bikerz-product-card__actions button:hover {
+  filter: brightness(0.92);
+}
+
+.bikerz-product-card__actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+@media (max-width: 767px) {
+  .bikerz-product-card__information {
+    padding: 1.2rem;
+  }
+
+  .bikerz-product-card__media .tp__responsive-image img {
+    padding: 1rem;
+  }
+
+  .bikerz-product-card__title {
+    font-size: 1.5rem;
+  }
+
+  .bikerz-product-card__price {
+    font-size: 2rem;
+  }
+
+  .bikerz-product-card__compare-price {
+    font-size: 1.05rem;
+  }
+
+  .bikerz-product-card__actions button {
+    font-size: 1rem;
+    gap: 0.4rem;
+    height: 4.4rem;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .bikerz-product-card__actions button svg {
+    height: 1.7rem;
+    width: 1.7rem;
+  }
+}

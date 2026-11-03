@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "column",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter_iG8WNF": {
+          "type": "filter",
+          "settings": {}
+        },
+        "categories_x7fkwm": {
+          "type": "categories",
+          "settings": {
+            "title": "Category",
+            "collection_list": [
+              "accessories",
+              "best-selling",
+              "men",
+              "pod",
+              "collections"
+            ]
+          }
+        },
+        "popular_product_Tq9BwH": {
+          "type": "popular_product",
+          "settings": {
+            "title": "Featured product",
+            "product_list": [
+              "19-brand-new-single-19x8-5-alloy-wheel-for-2018-2022-honda",
+              "2-5m-car-battery-power-emergency-cable-jump-start-firing-line-power-wire",
+              "24-way-street-coilovers-struts-for-subaru-impreza-wrx-2002-2007"
+            ],
+            "maximum": 3
+          }
+        }
+      },
+      "block_order": [
+        "filter_iG8WNF",
+        "categories_x7fkwm",
+        "popular_product_Tq9BwH"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "products_per_page": 20,
+        "column_number": "4",
+        "show_description": false,
+        "is_collapse_description": true,
+        "display_position": "top",
+        "pagination": "default",
+        "show_product_count": true,
+        "show_list_grid": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "collab_first": true,
+        "filter_type": "left_sidebar",
+        "background_sidebar": "no_background",
+        "bg_color_sidebar": "#f4f4f4",
+        "collection_list": [],
+        "price_type": "range_slider",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "product-grid"
+  ]
+}

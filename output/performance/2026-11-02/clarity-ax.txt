@@ -1,0 +1,695 @@
+Browser tab: 9, Title: "Bikerz · Microsoft Clarity · Shopify", URL: "https://admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod/app".
+0 AXWebArea Bikerz · Microsoft Clarity · Shopify, URL: admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod/app
+	1 container
+		2 container app
+			3 container AppFrame
+				4 container AppFrameChrome
+					5 link Description: Saltar al contenido, Value: admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod/app#AppFrameMain
+					6 container AppFrameBevel
+						7 container Description: Navegación, ID: AppFrameNav
+							8 container
+								9 image Shopify
+								10 button (expanded) Description: Contraer navegación, Secondary Actions: Collapse
+								11 button Buscar
+									12 text Buscar
+								13 container scroll-container
+									14 content list
+										15 link Description: Inicio, Value: admin.shopify.com/store/996356-ea
+										16 container
+											17 link (collapsed) Description: Pedidos 1, Value: admin.shopify.com/store/996356-ea/orders, Secondary Actions: Expand
+										18 container
+											19 link (collapsed) Description: Productos, Value: admin.shopify.com/store/996356-ea/products, Secondary Actions: Expand
+										20 container
+											21 link (collapsed) Description: Clientes, Value: admin.shopify.com/store/996356-ea/customers, Secondary Actions: Expand
+										22 container
+											23 link (collapsed) Description: Crecimiento, Value: admin.shopify.com/store/996356-ea/growth, Secondary Actions: Expand
+										24 link Description: Descuentos, Value: admin.shopify.com/store/996356-ea/discounts
+										25 container
+											26 link (collapsed) Description: Contenido, Value: admin.shopify.com/store/996356-ea/content/metaobjects, Secondary Actions: Expand
+										27 container
+											28 link (collapsed) Description: Mercados, Value: admin.shopify.com/store/996356-ea/markets, Secondary Actions: Expand
+										29 container
+											30 link (collapsed) Description: Informes y estadísticas, Value: admin.shopify.com/store/996356-ea/analytics, Secondary Actions: Expand
+									31 content list
+										32 container
+											33 button Canales de ventas
+												34 text Canales de ventas
+											35 content list
+												36 sortable Tienda online
+													37 content list
+														38 link Description: Tienda online, Value: admin.shopify.com/store/996356-ea/themes?appLoadId=f131c43a-2d2c-4c19-8e64-f99661b8114f
+												39 sortable Falabella
+													40 content list
+														41 link Description: Falabella, Value: admin.shopify.com/store/996356-ea/apps/linio-store?appLoadId=1249bcb2-9dc7-4af0-ba6c-ef9ca9160108
+												42 sortable Google & YouTube
+													43 content list
+														44 link Description: Google & YouTube, Value: admin.shopify.com/store/996356-ea/apps/google?appLoadId=eaa5d9ae-28c0-47c9-8364-a4cdb570e6df
+												45 sortable Shop
+													46 content list
+														47 link Description: Shop, Value: admin.shopify.com/store/996356-ea/apps/shop-72?appLoadId=94b7c666-55c5-4cff-aca5-d0c9fec0cf8e
+												48 sortable Agéntico
+													49 content list
+														50 link Description: Agéntico, Value: admin.shopify.com/store/996356-ea/apps/agentic?appLoadId=ee71b281-5f60-45f1-8dc8-1b3661bdd494
+												51 sortable Inbox Fijar en la navegación 1
+													52 content list
+														53 container
+															54 link Description: Inbox, Value: admin.shopify.com/store/996356-ea/apps/shopify-inbox?appLoadId=1bfecf6d-83cb-4de4-9c66-aeb622a13935
+															55 button Fijar en la navegación
+																56 text •
+															57 text 1
+										58 container
+											59 button Apps
+												60 text Apps
+											61 content list
+												62 sortable Search & Discovery
+													63 content list
+														64 link Description: Search & Discovery, Value: admin.shopify.com/store/996356-ea/apps/search-and-discovery?appLoadId=f010962a-6da8-480d-8b82-06f65fde0f56
+												65 sortable Translate & Adapt
+													66 content list
+														67 link Description: Translate & Adapt, Value: admin.shopify.com/store/996356-ea/apps/translate-and-adapt?appLoadId=b55278cc-397e-4cb5-9eba-c48d8111a3e6
+												68 sortable Messaging
+													69 content list
+														70 link Description: Messaging, Value: admin.shopify.com/store/996356-ea/apps/shopify-messaging?appLoadId=1b731320-4290-429a-9b80-3a5d894515c3
+												71 sortable Dondy: WhatsApp
+													72 content list
+														73 link Description: Dondy: WhatsApp, Value: admin.shopify.com/store/996356-ea/apps/dondy-whatsapp-chat-widget?appLoadId=c4c1d375-389b-43ef-8463-847df27ca2b1
+												74 sortable Flow
+													75 content list
+														76 link Description: Flow, Value: admin.shopify.com/store/996356-ea/apps/flow?appLoadId=5696a500-b8d3-46b5-96ae-22d303233703
+												77 sortable Microsoft Clarity
+													78 content list
+														79 link Description: Microsoft Clarity, Value: admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod?appLoadId=19faa757-7c5a-42a2-8faf-56f9abeccd65
+												80 sortable Forms Fijar en la navegación
+													81 content list
+														82 container
+															83 link Description: Forms, Value: admin.shopify.com/store/996356-ea/apps/shopify-forms?appLoadId=cb40fd68-290e-4a12-a3e1-0e75819e6981
+															84 button Fijar en la navegación
+																85 text •
+								86 content list
+									87 link Description: Configuración, Value: admin.shopify.com/store/996356-ea/settings
+									88 container
+										89 button (collapsed) Description: Bikerz Chile, Secondary Actions: Expand
+											90 image Bikerz
+											91 text Bikerz
+										92 button (collapsed) Description: Feed de alertas - 0 alertas no leídas, Secondary Actions: Expand
+						93 container AppFrameMain
+							94 container
+								95 container
+									96 heading Microsoft Clarity, Value: 1
+										97 text Microsoft Clarity
+								98 button (collapsed) Description: Más acciones, Secondary Actions: Expand
+								99 container Microsoft Clarity
+									100 AXWebArea shop-integration.clarity.microsoft.com/app?admin_theme=admin-next&embedded=1&hmac=92a3c12147332ca2955b98c220c4e4bc748a31cf4b5c51937f51173dc953e60d&host=YWRtaW4uc2hvcGlmeS5jb20vc3RvcmUvOTk2MzU2LWVh&id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczpcL1wvOTk2MzU2LWVhLm15c2hvcGlmeS5jb21cL2FkbWluIiwiZGVzdCI6Imh0dHBzOlwvXC85OTYzNTYtZWEubXlzaG9waWZ5LmNvbSIsImF1ZCI6ImYwMDM4ZmVkYTNlMGYwZGI4Y2RiNGNlM2YyOWJmMTg3Iiwic3ViIjoiOTM1NTE1OTE2NDUiLCJleHAiOjE3OTM2MjA1MjcsIm5iZiI6MTc5MzYyMDQ2NywiaWF0IjoxNzkzNjIwNDY3LCJqdGkiOiIxNzgzZWIxZi00MTdlLTRkYzktOGM1Yy0yMzY3Yzg0YmFlNzIiLCJzaWQiOiJkMDE2Yjg5NS05OTVlLTRlNjMtYTg3Yi0wMTRjOGJlN2IyNzQiLCJzaWciOiI5MWE1ZjQ1MGM4NzJhZmY2OWMzYjA1YWJlYjA0ODNjNTI0ZjA4MTIxZmVhYjkwYjkzOGNmYTJlN2YxZjllNWYzIn0.HYYU3beG5hZ0j92i5ZMXDfeW9K2_-UcmuFeLsM1pfqw&locale=es&session=6f59d5012de5eb2f176f9c22fd2d92208e2aaaba02e74c0028c59d1ccb3bd569&shop=996356-ea.myshopify.com&timestamp=1793620467
+										101 AXWebArea Microsoft Clarity - Free Heatmaps & Session Recordings, URL: clarity.microsoft.com/embed/wgxvai3ebp?integration=Shopify&shop=72021016797&shopifyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiJ3Z3h2YWkzZWJwIiwiaWF0IjoxNzkzNjIwNDc5LCJleHAiOjE3OTM3MDY4NzksImF1ZCI6Imh0dHBzOi8vY2xhcml0eS5taWNyb3NvZnQuY29tIiwiaXNzIjoiZjAwMzhmZWRhM2UwZjBkYjhjZGI0Y2UzZjI5YmYxODciLCJzdWIiOiI3MjAyMTAxNjc5NyJ9.SJro3lu7sVuf5xVnuv8QTFEsXdW1B1wuq95nRsuhaw8&lang=es&country=CL
+											102 container
+												103 container clarity-embed-root
+													104 AXWebArea Bikerz - Clarity, URL: clarity.microsoft.com/projects/view/wgxvai3ebp/dashboard?date=Last+3+days&integration=Shopify&shop=72021016797&shopifyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiJ3Z3h2YWkzZWJwIiwiaWF0IjoxNzkzNjIwNDc5LCJleHAiOjE3OTM3MDY4NzksImF1ZCI6Imh0dHBzOi8vY2xhcml0eS5taWNyb3NvZnQuY29tIiwiaXNzIjoiZjAwMzhmZWRhM2UwZjBkYjhjZGI0Y2UzZjI5YmYxODciLCJzdWIiOiI3MjAyMTAxNjc5NyJ9.SJro3lu7sVuf5xVnuv8QTFEsXdW1B1wuq95nRsuhaw8&lang=es&country=CL
+														105 container
+															106 container clarity-app-root
+																107 button Ir al contenido
+																108 container
+																	109 link Description: Microsoft Logo, Value: microsoft.com/, ID: msLogo
+																	110 link Description: Clarity, Value: clarity.microsoft.com/
+																	111 button Description: Menú de encabezado, ID: hamburgerButton
+																112 container
+																	113 container filterActionsContainer_dashboard
+																		114 button Filtros, ID: dashboard_FiltersButton
+																			115 text Filtros
+																		116 button (collapsed) Description: Segmentos, ID: dashboard_SegmentsDropdown, Secondary Actions: Expand
+																			117 text Segmentos
+																	118 button Últimos 3 días Expandir menú, ID: filterBadge_date_dashboard
+																		119 text Últimos 3 días 
+																		120 button Expandir menú
+																	121 button Description: Guardar como segmento, ID: dashboard_SaveAsSegment
+																		122 text Guardar como segmento
+																	123 pop up button (collapsed) Description: Descargar, Secondary Actions: Expand
+																	124 button Chat
+																		125 image icon
+																	126 text Sesiones
+																	127 button Sesiones Total de sesiones Este es el número de visitas a tu sitio durante el período de tiempo seleccionado. Sesiones de bot Clarity marcó estas sesiones como tráfico de bot. No se incluyen en el recuento total de sesiones.
+																	128 container
+																		129 text 550 178 sesiones de bot excluidas
+																		130 button Description: Ver tendencias, ID: trends-totalSessions
+																	131 text Páginas por sesión
+																	132 container
+																		133 text 2,34 promedio
+																		134 button Description: Ver tendencias, ID: trends-pagesPerSession
+																	135 text Profundidad de desplazamiento
+																	136 container
+																		137 text 42,40% promedio
+																		138 button Description: Ver tendencias, ID: trends-scrollDepth
+																	139 text Tiempo activo empleado
+																	140 button Este es el tiempo medio empleado en una sesión Tiempo activo: Cuando la atención de un usuario estaba en tu sitio Tiempo inactivo: Cuando el sitio estaba oculto detrás de otras pestañas o ventanas
+																	141 container
+																		142 text 39 s tiempo total de 1,7 min
+																		143 button Description: Ver tendencias, ID: trends-engagement
+																	144 container 6
+																		145 button Description: Arrastrar tarjeta, ID: dragIcon_0
+																		146 heading Ideas, Value: 2
+																			147 text Ideas
+																		148 container
+																			149 button Abrir tendencias
+																			150 pop up button (collapsed) Description: Opciones de $Ideas, Secondary Actions: Expand
+																		151 container tileContent_6
+																			152 heading Clics continuos, Value: 2
+																				153 text Clics continuos
+																			154 button El usuario ha hecho clic o ha pulsado rápidamente en la misma área pequeña
+																			155 toolbar Clics continuos
+																				156 image
+																				157 button Clics continuos
+																					158 text 0%
+																					159 text 0 sesiones
+																			160 heading Clics fallidos, Value: 2
+																				161 text Clics fallidos
+																			162 button El usuario ha hecho clic o pulsado en una página sin efecto
+																			163 toolbar Clics fallidos
+																				164 image
+																				165 button Clics fallidos
+																					166 text 0,18%
+																					167 text 1 sesiones
+																				168 button Establecer como filtro e ir a grabaciones
+																			169 heading Desplazamiento excesivo, Value: 2
+																				170 text Desplazamiento excesivo
+																			171 button El usuario se desplazó por una página más de lo esperado
+																			172 toolbar Desplazamiento excesivo
+																				173 image
+																				174 button Desplazamiento excesivo
+																					175 text 0%
+																					176 text 0 sesiones
+																			177 heading Retrocesos rápidos, Value: 2
+																				178 text Retrocesos rápidos
+																			179 button El usuario ha navegado a una página y, a continuación, ha vuelto rápidamente a la anterior
+																			180 toolbar Retrocesos rápidos
+																				181 image
+																				182 button Retrocesos rápidos
+																					183 text 10,36%
+																					184 text 57 sesiones
+																				185 button Establecer como filtro e ir a grabaciones
+																	186 container 34,4,5
+																		187 button Description: Arrastrar tarjeta, ID: dragIcon_1
+																		188 container
+																			189 tab (selected, settable, boolean) Información general de los usuarios, Value: 1
+																			190 pop up button (collapsed) Secondary Actions: Expand
+																		191 container
+																			192 button Abrir tendencias
+																			193 pop up button (collapsed) Description: Opciones de $Información general de los usuarios, Secondary Actions: Expand
+																		194 container tileContent_4
+																			195 text 5
+																			196 text Usuarios activos
+																			197 text Hace < 1 min
+																			198 button Establecer como filtro e ir a grabaciones
+																			199 text 481
+																			200 text Usuarios únicos
+																			201 button Establecer como filtro e ir a grabaciones
+																			202 button Sesiones con nuevos usuarios
+																			203 toolbar Sesiones con nuevos usuarios
+																				204 text Sesiones con nuevos usuarios
+																			205 button 76%
+																			206 button 418
+																			207 toolbar Sesiones con nuevos usuarios
+																				208 button Establecer como filtro e ir a grabaciones
+																			209 toolbar Sesiones con nuevos usuarios
+																				210 button Establecer como filtro y ir a mapas térmicos
+																			211 button Sesiones con usuarios recurrentes
+																			212 toolbar Sesiones con usuarios recurrentes
+																				213 text Sesiones con usuarios recurrentes
+																			214 button 24%
+																			215 button 132
+																			216 toolbar Sesiones con usuarios recurrentes
+																				217 button Establecer como filtro e ir a grabaciones
+																			218 toolbar Sesiones con usuarios recurrentes
+																				219 button Establecer como filtro y ir a mapas térmicos
+																			220 container
+																				221 image
+																				222 text Usuario principal
+																				223 button Ver todos los usuarios
+																				224 button 7 sesiones
+																				225 button Chile
+																				226 button Dispositivo de usuario principal Dispositivo móvil
+																				227 button Ver el perfil del visitante con 7 sesiones, del país Chile y del dispositivo Mobile
+																					228 text Ver el perfil del visitante con 7 sesiones, del país Chile y del dispositivo Mobile
+																				229 image
+																	230 container 7
+																		231 button Description: Arrastrar tarjeta, ID: dragIcon_2
+																		232 container dashboardTabWatchlist
+																			233 heading Mi lista de reproducción, Value: 2
+																				234 text Mi lista de reproducción
+																			235 container Agregue segmentos específicos, etiquetas personalizadas o etiquetas a su lista de seguimiento para facilitar el seguimiento. Su lista de reproducción es única para usted y no se comparte entre su equipo.
+																		236 pop up button (collapsed) Description: Opciones de $Mi lista de reproducción, Secondary Actions: Expand
+																		237 container tileContent_7
+																			238 container No hay datos disponibles
+																			239 text Realice un seguimiento de lo que le interesa
+																			240 button Agregar a la lista de reproducción
+																				241 text Agregar a la lista de reproducción
+																	242 container 37
+																		243 button Description: Arrastrar tarjeta, ID: dragIcon_3
+																		244 heading 2
+																		245 container tileContent_37
+																			246 button Anterior
+																			247 text ¿Está listo para impulsar las conversiones con AI?
+																			248 image ¿Está listo para impulsar las conversiones con AI?
+																			249 text ¡Clarity ahora ofrece Brand agents!
+																			250 text Aumenta las ventas con un Asistente de compras con AI que representa tu marca.
+																			251 button Descargar ahora
+																				252 text Descargar ahora
+																			253 button Más información
+																			254 button Siguiente
+																	255 container 16
+																		256 button Description: Arrastrar tarjeta, ID: dragIcon_4
+																		257 container dashboardTabSmartEvents
+																			258 heading Eventos inteligentes, Value: 2
+																				259 text Eventos inteligentes
+																			260 container Los eventos inteligentes capturan acciones clave del usuario. Clarity define automáticamente los eventos inteligentes, que puedes editar. O bien, puedes definir la tuya propia.
+																		261 container
+																			262 button Abrir tendencias
+																			263 pop up button (collapsed) Description: Opciones de $Eventos inteligentes, Secondary Actions: Expand
+																		264 container tileContent_16
+																			265 text Mostrar porcentaje de sesiones
+																			266 container
+																				267 switch Description: Mostrar porcentaje de sesiones, Value: 0, ID: Toggle629
+																				268 text Desactivado
+																			269 container
+																				270 button Enviar formulario
+																					271 image submit Form Icon
+																				272 button Enviar formulario
+																				273 button 20 sesiones
+																				274 toolbar Enviar formulario
+																					275 button Establecer como filtro e ir a grabaciones
+																				276 toolbar Enviar formulario
+																					277 button Establecer como filtro y ir a mapas térmicos
+																				278 button Producto visto
+																					279 image auto Event Icon
+																				280 button Producto visto
+																				281 button 13 sesiones
+																				282 toolbar Producto visto
+																					283 button Establecer como filtro e ir a grabaciones
+																				284 toolbar Producto visto
+																					285 button Establecer como filtro y ir a mapas térmicos
+																				286 button Clic de salida
+																					287 image auto Event Icon
+																				288 button Clic de salida
+																				289 button 9 sesiones
+																				290 toolbar Clic de salida
+																					291 button Establecer como filtro e ir a grabaciones
+																				292 toolbar Clic de salida
+																					293 button Establecer como filtro y ir a mapas térmicos
+																				294 button Buscar
+																					295 image auto Event Icon
+																				296 button Buscar
+																				297 button 5 sesiones
+																				298 toolbar Buscar
+																					299 button Establecer como filtro e ir a grabaciones
+																				300 toolbar Buscar
+																					301 button Establecer como filtro y ir a mapas térmicos
+																				302 button Agregar al carro
+																					303 image add To Cart Icon
+																				304 button Agregar al carro
+																				305 button 4 sesiones
+																				306 toolbar Agregar al carro
+																					307 button Establecer como filtro e ir a grabaciones
+																				308 toolbar Agregar al carro
+																					309 button Establecer como filtro y ir a mapas térmicos
+																				310 button Finalización de la compra
+																					311 image auto Event Icon
+																				312 button Finalización de la compra
+																				313 button 3 sesiones
+																				314 toolbar Finalización de la compra
+																					315 button Establecer como filtro e ir a grabaciones
+																				316 toolbar Finalización de la compra
+																					317 button Establecer como filtro y ir a mapas térmicos
+																				318 button Comenzar finalización de la compra
+																					319 image begin Checkout Icon
+																				320 button Comenzar finalización de la compra
+																				321 button 1 sesiones
+																				322 toolbar Comenzar finalización de la compra
+																					323 button Establecer como filtro e ir a grabaciones
+																				324 toolbar Comenzar finalización de la compra
+																					325 button Establecer como filtro y ir a mapas térmicos
+																				326 button Póngase en contacto con nosotros
+																					327 image contact Us Icon
+																				328 button Póngase en contacto con nosotros
+																				329 button 1 sesiones
+																				330 toolbar Póngase en contacto con nosotros
+																					331 button Establecer como filtro e ir a grabaciones
+																				332 toolbar Póngase en contacto con nosotros
+																					333 button Establecer como filtro y ir a mapas térmicos
+																				334 button Mostrar más
+																					335 image auto Event Icon
+																				336 button Mostrar más
+																				337 button 1 sesiones
+																				338 toolbar Mostrar más
+																					339 button Establecer como filtro e ir a grabaciones
+																				340 toolbar Mostrar más
+																					341 button Establecer como filtro y ir a mapas térmicos
+																				342 button Quitar del carro
+																					343 image auto Event Icon
+																				344 button Quitar del carro
+																				345 button 1 sesiones
+																				346 toolbar Quitar del carro
+																					347 button Establecer como filtro e ir a grabaciones
+																				348 toolbar Quitar del carro
+																					349 button Establecer como filtro y ir a mapas térmicos
+																	350 container 32
+																		351 button Description: Arrastrar tarjeta, ID: dragIcon_5
+																		352 heading Embudos, Value: 2
+																			353 text Embudos
+																		354 pop up button (collapsed) Description: Opciones de $Embudos, Secondary Actions: Expand
+																		355 container tileContent_32
+																			356 combo box (collapsed) Description: Opciones de lista desplegable, Value: Embudo general, ID: Dropdown537, Secondary Actions: Expand
+																				357 text Embudo general
+																			358 container
+																				359 text 0% Tasa de conversión 0 Sesiones convertidas - Tiempo medio para convertir Producto visto 2.36% del total de sesiones 550
+																				360 button ha alcanzado este paso
+																				361 toolbar ha alcanzado este paso
+																					362 container
+																						363 text 100% ha alcanzado este paso
+																					364 text 13 sesiones
+																					365 button Ir a las grabaciones filtradas por Producto visto.
+																					366 button Ir a mapas térmicos filtrados para Producto visto
+																				367 text Buscar
+																				368 button no llegó a este paso
+																				369 toolbar ha alcanzado este paso
+																					370 text 0% ha alcanzado este paso
+																				371 toolbar no llegó a este paso
+																					372 container
+																						373 text 100% no llegó a este paso
+																					374 text 13 sesiones
+																					375 button Ir a las grabaciones filtradas por Buscar.
+																					376 button Ir a mapas térmicos filtrados para Buscar
+																				377 text Enviar formulario 0% ha alcanzado este paso Agregar al carro 0% ha alcanzado este paso Finalización de la compra 0% ha alcanzado este paso Carro visto 0% ha alcanzado este paso Quitar del carro 0% ha alcanzado este paso
+																	378 container 17,18,19,20
+																		379 button Description: Arrastrar tarjeta, ID: dragIcon_6
+																		380 container
+																			381 tab (selected, settable, boolean) Origen de referencia, Value: 1
+																			382 tab (selectable, settable, boolean) Canal, Value: 0
+																			383 tab (selectable, settable, boolean) Campaña, Value: 0
+																			384 tab (selectable, settable, boolean) Fuente, Value: 0
+																		385 container
+																			386 button Abrir tendencias
+																			387 pop up button (collapsed) Description: Opciones de $Origen de referencia, Secondary Actions: Expand
+																		388 container
+																			389 button www.google.com
+																			390 button www.google.com 100% 204 sesiones
+																				391 text 204
+																			392 button Establecer como filtro e ir a grabaciones
+																			393 button Establecer como filtro y ir a mapas térmicos
+																			394 button www.bikerz.cl
+																			395 button www.bikerz.cl 63.23529411764706% 129 sesiones
+																				396 text 129
+																			397 button Establecer como filtro e ir a grabaciones
+																			398 button Establecer como filtro y ir a mapas térmicos
+																			399 button m.facebook.com
+																			400 button m.facebook.com 54.90196078431373% 112 sesiones
+																				401 text 112
+																			402 button Establecer como filtro e ir a grabaciones
+																			403 button Establecer como filtro y ir a mapas térmicos
+																			404 button instagram.com
+																			405 button instagram.com 33.33333333333333% 68 sesiones
+																				406 text 68
+																			407 button Establecer como filtro e ir a grabaciones
+																			408 button Establecer como filtro y ir a mapas térmicos
+																			409 button facebook.com
+																			410 button facebook.com 8.823529411764707% 18 sesiones
+																				411 text 18
+																			412 button Establecer como filtro e ir a grabaciones
+																			413 button Establecer como filtro y ir a mapas térmicos
+																			414 button youtube.com
+																			415 button youtube.com 3.431372549019608% 7 sesiones
+																				416 text 7
+																			417 button Establecer como filtro e ir a grabaciones
+																			418 button Establecer como filtro y ir a mapas térmicos
+																			419 button linktr.ee
+																			420 button linktr.ee 2.941176470588235% 6 sesiones
+																				421 text 6
+																			422 button Establecer como filtro e ir a grabaciones
+																			423 button Establecer como filtro y ir a mapas térmicos
+																			424 button l.wl.co
+																			425 button l.wl.co 1.9607843137254901% 4 sesiones
+																				426 text 4
+																			427 button Establecer como filtro e ir a grabaciones
+																			428 button Establecer como filtro y ir a mapas térmicos
+																			429 button rodaemotor.com
+																			430 button rodaemotor.com 1.9607843137254901% 4 sesiones
+																				431 text 4
+																			432 button Establecer como filtro e ir a grabaciones
+																			433 button Establecer como filtro y ir a mapas térmicos
+																			434 button 5c58279f1be03fe0d994e18babd16a33.safeframe.googlesyndication.com
+																			435 button 5c58279f1be03fe0d994e18babd16a33.safeframe.googlesyndication.com 0.49019607843137253% 1 sesiones
+																				436 text 1
+																			437 button Establecer como filtro e ir a grabaciones
+																			438 button Establecer como filtro y ir a mapas térmicos
+																			439 button com.google.android.googlequicksearchbox
+																			440 button com.google.android.googlequicksearchbox 0.49019607843137253% 1 sesiones
+																				441 text 1
+																			442 button Establecer como filtro e ir a grabaciones
+																			443 button Establecer como filtro y ir a mapas térmicos
+																			444 button e9b6c2905c3a619d7ec925d0cb43a5df.safeframe.googlesyndication.com
+																			445 button e9b6c2905c3a619d7ec925d0cb43a5df.safeframe.googlesyndication.com 0.49019607843137253% 1 sesiones
+																				446 text 1
+																			447 button Establecer como filtro e ir a grabaciones
+																			448 button Establecer como filtro y ir a mapas térmicos
+																	449 container 11,12,8,9
+																		450 button Description: Arrastrar tarjeta, ID: dragIcon_7
+																		451 container
+																			452 tab (selected, settable, boolean) Exploradores, Value: 1
+																			453 tab (selectable, settable, boolean) Dispositivos, Value: 0
+																			454 tab (selectable, settable, boolean) Sistemas operativos, Value: 0
+																			455 pop up button (collapsed) Secondary Actions: Expand
+																		456 container
+																			457 button Abrir tendencias
+																			458 pop up button (collapsed) Description: Opciones de $Exploradores, Secondary Actions: Expand
+																		459 container tileContent_8
+																			460 button ChromeMobile 
+																			461 toolbar ChromeMobile 
+																				462 text ChromeMobile
+																			463 button 34,55%
+																			464 button 190 sesiones
+																			465 toolbar ChromeMobile 
+																				466 button Establecer como filtro e ir a grabaciones
+																			467 toolbar ChromeMobile 
+																				468 button Establecer como filtro y ir a mapas térmicos
+																			469 button FacebookApp 
+																			470 toolbar FacebookApp 
+																				471 text FacebookApp
+																			472 button 24,18%
+																			473 button 133 sesiones
+																			474 toolbar FacebookApp 
+																				475 button Establecer como filtro e ir a grabaciones
+																			476 toolbar FacebookApp 
+																				477 button Establecer como filtro y ir a mapas térmicos
+																			478 button InstagramApp 
+																			479 toolbar InstagramApp 
+																				480 text InstagramApp
+																			481 button 13,45%
+																			482 button 74 sesiones
+																			483 toolbar InstagramApp 
+																				484 button Establecer como filtro e ir a grabaciones
+																			485 toolbar InstagramApp 
+																				486 button Establecer como filtro y ir a mapas térmicos
+																			487 button MobileSafari 
+																			488 toolbar MobileSafari 
+																				489 text MobileSafari
+																			490 button 12,18%
+																			491 button 67 sesiones
+																			492 toolbar MobileSafari 
+																				493 button Establecer como filtro e ir a grabaciones
+																			494 toolbar MobileSafari 
+																				495 button Establecer como filtro y ir a mapas térmicos
+																			496 button Chrome 
+																			497 toolbar Chrome 
+																				498 text Chrome
+																			499 button 10,18%
+																			500 button 56 sesiones
+																			501 toolbar Chrome 
+																				502 button Establecer como filtro e ir a grabaciones
+																			503 toolbar Chrome 
+																				504 button Establecer como filtro y ir a mapas térmicos
+																			505 button Other 
+																			506 toolbar Description: Other , Help: Other
+																				507 text Other 
+																				508 button Contraído
+																			509 button 5,45%
+																			510 button 30 sesiones
+																			511 toolbar Other 
+																			512 toolbar Other 
+																	513 container 28,29
+																		514 button Description: Arrastrar tarjeta, ID: dragIcon_8
+																		515 container
+																			516 tab (selected, settable, boolean) Información general del rendimiento, Value: 1
+																			517 tab (selectable, settable, boolean) Rendimiento de URL, Value: 0
+																		518 pop up button (collapsed) Description: Opciones de $Información general del rendimiento, Secondary Actions: Expand
+																		519 container tileContent_28
+																			520 toolbar Description: Puntuación de rendimiento, ID: performanceScoreContainer
+																				521 text 87 /100
+																				522 container
+																					523 text Puntuación de rendimiento
+																					524 image La puntuación de rendimiento es un promedio ponderado de las puntuaciones de métricas (LCP, INP y CLS).
+																					525 text de 221 páginas vistas
+																			526 button bueno
+																			527 button necesita mejoras
+																			528 button 83,7% bueno
+																				529 text 83,7%
+																				530 text bueno
+																			531 button 16,3% necesita mejoras
+																				532 text 16,3%
+																				533 text necesita mejoras
+																			534 button 0% pobre
+																				535 text 0%
+																				536 text pobre
+																			537 text Desglose de puntuación de cumplimiento
+																			538 toolbar Description: LCP (Pintura con contenido más grande), ID: WebVitalsLCP_Row
+																				539 text 1,6 s
+																				540 container
+																					541 text LCP (Pintura con contenido más grande) bueno
+																				542 container WebVitalsLCP_Buttons
+																					543 button Establecer como filtro e ir a grabaciones
+																					544 button Establecer como filtro y ir a mapas térmicos
+																			545 toolbar Description: INP (Interacción con Next Paint), ID: WebVitalsINP_Row
+																				546 text 220 ms INP (Interacción con Next Paint) necesita mejoras
+																				547 container WebVitalsINP_Buttons
+																					548 button Establecer como filtro e ir a grabaciones
+																					549 button Establecer como filtro y ir a mapas térmicos
+																			550 toolbar Description: CLS (desplazamiento de diseño acumulativo), ID: WebVitalsCLS_Row
+																				551 text 0,022
+																				552 container
+																					553 text CLS (desplazamiento de diseño acumulativo) bueno
+																				554 container WebVitalsCLS_Buttons
+																					555 button Establecer como filtro e ir a grabaciones
+																					556 button Establecer como filtro y ir a mapas térmicos
+																			557 link Description: Obtenga información sobre cómo mejorar su rendimiento, Value: learn.microsoft.com/clarity/insights/performance-widget
+																	558 container 10,13,33,35,36
+																		559 button Description: Arrastrar tarjeta, ID: dragIcon_9
+																		560 container
+																			561 tab (selected, settable, boolean) Páginas principales, Value: 1
+																			562 tab (selectable, settable, boolean) Productos populares, Value: 0
+																			563 pop up button (collapsed) Secondary Actions: Expand
+																		564 container
+																			565 button Abrir tendencias
+																			566 pop up button (collapsed) Description: Opciones de $Páginas principales, Secondary Actions: Expand
+																		567 container tileContent_10
+																			568 switch (settable, boolean) Description: Parámetros de dirección URL, Value: 0, ID: switch-_r_u_
+																			569 text Desactivado
+																			570 button Ordenar por: Más populares
+																			571 container
+																				572 button https://www.bikerz.cl/
+																				573 button https://www.bikerz.cl/ 100% 114 sesiones
+																					574 text 114
+																				575 button Establecer como filtro e ir a grabaciones
+																				576 button Establecer como filtro y ir a mapas térmicos
+																				577 button https://www.bikerz.cl/collections/neumaticos
+																				578 button https://www.bikerz.cl/collections/neumaticos 79.82456140350878% 91 sesiones
+																					579 text 91
+																				580 button Establecer como filtro e ir a grabaciones
+																				581 button Establecer como filtro y ir a mapas térmicos
+																				582 button https://www.bikerz.cl/pages/servicios
+																				583 button https://www.bikerz.cl/pages/servicios 14.912280701754385% 17 sesiones
+																					584 text 17
+																				585 button Establecer como filtro e ir a grabaciones
+																				586 button Establecer como filtro y ir a mapas térmicos
+																				587 button https://www.bikerz.cl/search
+																				588 button https://www.bikerz.cl/search 14.912280701754385% 17 sesiones
+																					589 text 17
+																				590 button Establecer como filtro e ir a grabaciones
+																				591 button Establecer como filtro y ir a mapas térmicos
+																				592 button https://www.bikerz.cl/collections/cascos
+																				593 button https://www.bikerz.cl/collections/cascos 14.035087719298245% 16 sesiones
+																					594 text 16
+																				595 button Establecer como filtro e ir a grabaciones
+																				596 button Establecer como filtro y ir a mapas térmicos
+																				597 button https://www.bikerz.cl/collections/repuestos
+																				598 button https://www.bikerz.cl/collections/repuestos 13.157894736842104% 15 sesiones
+																					599 text 15
+																				600 button Establecer como filtro e ir a grabaciones
+																				601 button Establecer como filtro y ir a mapas térmicos
+																				602 button https://www.bikerz.cl/products/casco-nolan-n70-2-x-ruvido-negro-amarillo
+																				603 button https://www.bikerz.cl/products/casco-nolan-n70-2-x-ruvido-negro-amarillo 11.403508771929824% 13 sesiones
+																					604 text 13
+																				605 button Establecer como filtro e ir a grabaciones
+																				606 button Establecer como filtro y ir a mapas térmicos
+																				607 button https://www.bikerz.cl/products/continental-tkc-70-rocks-150-70r17-69s
+																				608 button https://www.bikerz.cl/products/continental-tkc-70-rocks-150-70r17-69s 10.526315789473683% 12 sesiones
+																					609 text 12
+																				610 button Establecer como filtro e ir a grabaciones
+																				611 button Establecer como filtro y ir a mapas térmicos
+																				612 button https://www.bikerz.cl/collections/ofertas
+																				613 button https://www.bikerz.cl/collections/ofertas 8.771929824561402% 10 sesiones
+																					614 text 10
+																				615 button Establecer como filtro e ir a grabaciones
+																				616 button Establecer como filtro y ir a mapas térmicos
+																				617 button https://www.bikerz.cl/products/bs-battery-bsli-14-litio-lifepo4-12-8v-3ah-bs13472
+																				618 button https://www.bikerz.cl/products/bs-battery-bsli-14-litio-lifepo4-12-8v-3ah-bs13472 8.771929824561402% 10 sesiones
+																					619 text 10
+																				620 button Establecer como filtro e ir a grabaciones
+																				621 button Establecer como filtro y ir a mapas térmicos
+																				622 button https://www.bikerz.cl/products/motoz-tractionator-gps-150-70b18-tl-70t
+																				623 button https://www.bikerz.cl/products/motoz-tractionator-gps-150-70b18-tl-70t 8.771929824561402% 10 sesiones
+																					624 text 10
+																				625 button Establecer como filtro e ir a grabaciones
+																				626 button Establecer como filtro y ir a mapas térmicos
+																				627 button https://www.bikerz.cl/products/camara-duro-3-50-4-00-12-reforzada
+																				628 button https://www.bikerz.cl/products/camara-duro-3-50-4-00-12-reforzada 7.894736842105263% 9 sesiones
+																					629 text 9
+																				630 button Establecer como filtro e ir a grabaciones
+																				631 button Establecer como filtro y ir a mapas térmicos
+																	632 container 21
+																		633 button Description: Arrastrar tarjeta, ID: dragIcon_10
+																		634 container dashboardTabJSErrors
+																			635 heading Errores de JavaScript, Value: 2
+																				636 text Errores de JavaScript
+																			637 container Se produjeron errores de JavaScript al ejecutar JavaScript en el explorador. Los errores de clic son errores de JavaScript que se producen después de un clic del usuario.
+																		638 container
+																			639 button Abrir tendencias
+																			640 pop up button (collapsed) Description: Opciones de $Errores de JavaScript, Secondary Actions: Expand
+																		641 container tileContent_21
+																			642 text Mostrar solo los errores de clic
+																			643 container
+																				644 switch Description: Mostrar solo los errores de clic, Value: 0, ID: Toggle631
+																				645 text Desactivado
+																			646 container
+																				647 image Sesiones con errores de JavaScript
+																				648 text 6,18%
+																			649 button Grabaciones
+																				650 text Grabaciones
+																			651 container
+																				652 text 74 total de errores de JavaScript
+																				653 toolbar error invoking postmessage: java object is gone
+																					654 container
+																						655 text 62,16% error invoking postmessage: java object is gone
+																					656 button Establecer como filtro e ir a grabaciones
+																				657 toolbar can't find variable: _autofillcallbackhandler
+																					658 container
+																						659 text 18,92% can't find variable: _autofillcallbackhandler
+																					660 button Establecer como filtro e ir a grabaciones
+																				661 toolbar cannot read properties of null (reading 'addeventlistener')
+																					662 container
+																						663 text 6,76% cannot read properties of null (reading 'addeventlistener')
+																					664 button Establecer como filtro e ir a grabaciones
+																				665 toolbar cannot read properties of null (reading 'form')
+																					666 container
+																						667 text 6,76% cannot read properties of null (reading 'form')
+																					668 button Establecer como filtro e ir a grabaciones
+																				669 toolbar script error.
+																					670 container
+																						671 text 5,41% script error.
+																					672 button Establecer como filtro e ir a grabaciones
+																	673 container 39
+																		674 button Description: Arrastrar tarjeta, ID: dragIcon_11
+																		675 heading Tráfico de bots, Value: 2
+																			676 text Tráfico de bots
+																		677 pop up button (collapsed) Description: Opciones de $Tráfico de bots, Secondary Actions: Expand
+																		678 container tileContent_39
+																			679 image zero state bruno
+																			680 heading No hay datos disponibles, Value: 3
+																				681 text No hay datos disponibles
+																			682 text No hay suficientes datos de tráfico. Intente ampliar el rango de fechas
+															683 image
+					684 container
+						685 container Sidekick
+							686 container
+								687 container
+									688 text field (settable) Description: Trabaja con Sidekick, ID: :r3c:
+									689 button Agregar archivos y más
+									690 button Dictar
+									691 button Abrir Sidekick
+
+The focused UI element is 0 AXWebArea Bikerz · Microsoft Clarity · Shopify, URL: admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod/app

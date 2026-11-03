@@ -9,6 +9,10 @@
 <script src="{{ 'swiper-bundle.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+{% render 'search-catalog-config' %}
+<script src="{{ 'search-policy.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-preview.js' | asset_url }}" defer="defer"></script>
+{{ 'search-preview.css' | asset_url | stylesheet_tag }}
 {% if settings.search_analytics_enabled %}
   {% render 'search-analytics-config' %}
   <script src="{{ 'search-analytics-contract.js' | asset_url }}" defer="defer"></script>

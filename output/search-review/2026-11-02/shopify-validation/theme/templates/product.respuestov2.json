@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "row",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "ba616973-d50c-4a41-bf32-be6082527ac7": {
+          "type": "viewing",
+          "disabled": true,
+          "settings": {
+            "change_text_view": "people are viewing the right now",
+            "change_text_sold": "sold in last",
+            "show_viewing": true,
+            "show_sold": false,
+            "fv_min": 20,
+            "fv_max": 100,
+            "time_random": 10000,
+            "fv_sold": 6,
+            "fv_hour": 24
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "bb0e61cf-bc6f-48d4-9c9b-56ff606a4f27": {
+          "type": "countdown_timer",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "9d4c08c6-8a5b-49a1-baff-2b6e2c264f29": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "swatches_variant"
+          }
+        },
+        "e941e332-baff-4652-9625-d45a740935b2": {
+          "type": "product_form",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_pickup_availability": false,
+            "show_gift_card_recipient": false,
+            "confirm_terms": false,
+            "text_agree_terms_conditions": "<p>I agree with the terms and conditions</p>",
+            "background_btn_buy_it_now": "#ff8a00",
+            "show_custom_field": false,
+            "background_field": "#eef2f6",
+            "title_field": "Add your personalization",
+            "description_field": "<p>Add your name, note or upload your customized idea image to personalise your item. Custom items cannot be returned or exchanged.</p>"
+          }
+        },
+        "0d615ceb-1034-4564-8caf-4b8b0691adb2": {
+          "type": "wishlist_compare",
+          "settings": {
+            "use_dt_wishlist": false,
+            "use_dt_compare": false,
+            "use_dt_share": true,
+            "show_ask_a_question": true,
+            "show_pinterest": true,
+            "show_instagram": true,
+            "show_facebook": true,
+            "show_twitter": true,
+            "show_copy": true
+          }
+        },
+        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": false,
+            "show_sku": true,
+            "show_availability": true,
+            "show_categories": true,
+            "category_text": "Categoría:",
+            "category_type": "first"
+          }
+        },
+        "custom_liquid_TBdJLF": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<details class=\"tp-faq__item brd-1 mb-20\" open=\"\">\n  <summary class=\"tp-collap-tab__sm\">\n    <h6 class=\"summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16\">\n      <span>\n       Características\n      </span>\n      <span class=\"icon-toggle relative\"></span>\n    </h6>\n  </summary>\n  <div class=\"tp-faq__item-content content-animation px-24 py-16\">\n    <div class=\"tab-panel\">\n      <p><strong>Motos Compatibles:</strong> {{ product.metafields.custom.moto}}</p>\n      <p><strong>Marca: </strong>{{ product.metafields.custom.marca}}</p>\n\n    </div>\n  </div>\n</details>"
+          }
+        },
+        "custom_liquid_j9w8F8": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.uso %}\n<fieldset class=\"product-form__input mb-22 tp-prd-variant tp-prd-variant-material del artículo\">\n          \n            \n            <strong><span class=\"form__label mb-10\">Uso</span></strong>\n          \n          <div class=\"variatn-option flex flex-wrap items-center justify-start gap-8\">\n      \n      <label class=\"mb-8 variants-item block data-variant-js tp-custom-aluminio \" id=\"template--18495898386653__main-1-0\" name=\"Material del artículo\" form=\"product-form-template--18495898386653__main\" checked=\"true\" data-value=\"Aluminio\">\n       {{ product.metafields.custom.uso}}\n      </label>\n          </div>\n        </fieldset>\n{% endif %}"
+          }
+        },
+        "border_XMnppf": {
+          "type": "border",
+          "settings": {}
+        },
+        "f1ab33f1-48ca-45dc-bed1-8090c34a67db": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "",
+            "icon_2": "truck",
+            "heading_2": "Tiempo de entrega: <strong>{{ product.metafields.custom.tiempo_de_envio_rm.value }}</strong> días RM, Regiones  <strong>{{ product.metafields.custom.tiempo_de_envio_regiones.value }}</strong> días",
+            "icon_3": "truck",
+            "heading_3": ""
+          }
+        },
+        "icon_with_text_WdLjYH": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/Pagos_Seguros.png",
+            "heading_1": "<strong>Pago Seguro </strong>- Pagos 100% Seguros",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/transporte.png",
+            "heading_2": "<strong>Envíos Nacional </strong>- Enviamos a todo Chile",
+            "icon_3": "truck",
+            "heading_3": ""
+          }
+        },
+        "a10de87f-c73f-4af0-9a13-c2c0428ffdac": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "image_width": 550
+          }
+        }
+      },
+      "block_order": [
+        "ba616973-d50c-4a41-bf32-be6082527ac7",
+        "title",
+        "price",
+        "bb0e61cf-bc6f-48d4-9c9b-56ff606a4f27",
+        "description",
+        "9d4c08c6-8a5b-49a1-baff-2b6e2c264f29",
+        "variant_picker",
+        "e941e332-baff-4652-9625-d45a740935b2",
+        "0d615ceb-1034-4564-8caf-4b8b0691adb2",
+        "a9c0a848-e5b4-4c20-86eb-6de73c72c10e",
+        "custom_liquid_TBdJLF",
+        "custom_liquid_j9w8F8",
+        "border_XMnppf",
+        "f1ab33f1-48ca-45dc-bed1-8090c34a67db",
+        "icon_with_text_WdLjYH",
+        "a10de87f-c73f-4af0-9a13-c2c0428ffdac"
+      ],
+      "custom_css": [
+        ".tp-prd-form__wishlist {display: none;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnails_bottom",
+        "image_zoom": "lightbox",
+        "enable_video_looping": true,
+        "sticky": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "upsell-productt-bundle": {
+      "type": "upsell-productt-bundle",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "Frequently Bought Together",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container",
+        "color_scheme": "",
+        "collection": "",
+        "description_discount": "<p>Get 20% off when you purchase this combo of products.</p>",
+        "limit_products": 4,
+        "sliders_perview": "4",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-information-tabs": {
+      "type": "product-information-tabs",
+      "blocks": {
+        "b2b3bcb7-f4e2-4e73-8ecb-b546620eaa9d": {
+          "type": "description",
+          "settings": {
+            "title": "Descripción"
+          }
+        },
+        "c3244bbb-dfb6-4c83-8fff-13f1657651a4": {
+          "type": "custom_tab",
+          "settings": {
+            "title": "Características",
+            "tab_content": "content",
+            "content": "<p><strong>Marca:</strong> {{ product.metafields.custom.marca.value }}</p>{{ product.metafields.custom.caracteristicas | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "review_hLgtCC": {
+          "type": "review",
+          "settings": {
+            "title": "Opiniones"
+          }
+        }
+      },
+      "block_order": [
+        "b2b3bcb7-f4e2-4e73-8ecb-b546620eaa9d",
+        "c3244bbb-dfb6-4c83-8fff-13f1657651a4",
+        "review_hLgtCC"
+      ],
+      "custom_css": [
+        "div {padding-right: 50px; padding-left: 50px;}"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "design": "tab",
+        "reset_spacing": false,
+        "padding_top": 26,
+        "padding_bottom": 26
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "Productos relacionados",
+        "text_alignment": "text-left",
+        "container": "container",
+        "color_scheme": "background-1",
+        "products_to_show": 8,
+        "sliders_perview": "5",
+        "column_gap": 30,
+        "autoplay": false,
+        "loop": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "recently-products": {
+      "type": "main-recently",
+      "settings": {
+        "show_heading_header": true,
+        "heading": "Productos recientes",
+        "description": "",
+        "text_alignment": "text-left",
+        "container": "container",
+        "color_scheme": "",
+        "sliders_perview": "5",
+        "autoplay": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "upsell-productt-bundle",
+    "product-information-tabs",
+    "related-products",
+    "recently-products"
+  ]
+}

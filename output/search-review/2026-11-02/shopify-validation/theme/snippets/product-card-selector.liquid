@@ -1,0 +1,5 @@
+{%- if settings.product_card_design == 'bikerz' -%}
+  {%- render 'product-card-bikerz', card_product: card_product, section_id: section_id -%}
+{%- else -%}
+  {%- render 'product-item-layout-1', card_product: card_product, section_id: section_id -%}
+{%- endif -%}

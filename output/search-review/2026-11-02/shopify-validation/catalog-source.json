@@ -1,0 +1,361 @@
+{
+  "capturedAt": "2026-11-03T00:46:39.184Z",
+  "catalog": {
+    "profiles": [
+      "40",
+      "50",
+      "55",
+      "60",
+      "65",
+      "70",
+      "75",
+      "80",
+      "90",
+      "100"
+    ],
+    "rims": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21"
+    ],
+    "viscosities": {
+      "5W-40": "gid://shopify/TaxonomyValue/16682",
+      "10W-40": "gid://shopify/TaxonomyValue/16685",
+      "10W-50": "gid://shopify/TaxonomyValue/16686",
+      "15W-50": "gid://shopify/TaxonomyValue/16689",
+      "20W-50": "gid://shopify/TaxonomyValue/16691"
+    },
+    "brands": [
+      "ANLAS",
+      "AVON",
+      "BRIDGESTONE",
+      "CASTROL",
+      "CEAT",
+      "CHAMPION",
+      "CONTINENTAL",
+      "DUNLOP",
+      "EUROGRIP",
+      "HEIDENAU",
+      "IPONE",
+      "LIQUI MOLY",
+      "MAGGION",
+      "MAXIMA",
+      "MEFO",
+      "METZELER",
+      "MICHELIN",
+      "MITAS",
+      "MOBIL",
+      "MOTOZ",
+      "MOTUL",
+      "RINALDI",
+      "SEIPRO",
+      "SHINKO",
+      "SUPER RUN",
+      "TIMSUN",
+      "VIPAL",
+      "VISTONY",
+      "XCELINK"
+    ]
+  },
+  "evidence": [
+    {
+      "handle": "neumaticos",
+      "values": [
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "40",
+          "label": "40"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "55",
+          "label": "55"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "60",
+          "label": "60"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "65",
+          "label": "65"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "70",
+          "label": "70"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "80",
+          "label": "80"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "90",
+          "label": "90"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "50",
+          "label": "50"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "75",
+          "label": "75"
+        },
+        {
+          "name": "filter.p.m.custom.aspecto",
+          "value": "100",
+          "label": "100"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "10",
+          "label": "10"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "11",
+          "label": "11"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "12",
+          "label": "12"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "13",
+          "label": "13"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "14",
+          "label": "14"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "15",
+          "label": "15"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "16",
+          "label": "16"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "17",
+          "label": "17"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "18",
+          "label": "18"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "19",
+          "label": "19"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "20",
+          "label": "20"
+        },
+        {
+          "name": "filter.p.m.custom.di_metro",
+          "value": "21",
+          "label": "21"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "CONTINENTAL",
+          "label": "CONTINENTAL"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "ANLAS",
+          "label": "ANLAS"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MICHELIN",
+          "label": "MICHELIN"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "DUNLOP",
+          "label": "DUNLOP"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "RINALDI",
+          "label": "RINALDI"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MAGGION",
+          "label": "MAGGION"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "HEIDENAU",
+          "label": "HEIDENAU"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MEFO",
+          "label": "MEFO"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "SHINKO",
+          "label": "SHINKO"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "METZELER",
+          "label": "METZELER"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "VIPAL",
+          "label": "VIPAL"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "EUROGRIP",
+          "label": "EUROGRIP"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "TIMSUN",
+          "label": "TIMSUN"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MITAS",
+          "label": "MITAS"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "CEAT",
+          "label": "CEAT"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "XCELINK",
+          "label": "XCELINK"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "BRIDGESTONE",
+          "label": "BRIDGESTONE"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MOTOZ",
+          "label": "MOTOZ"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "SEIPRO",
+          "label": "SEIPRO"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "SUPER RUN",
+          "label": "SUPER RUN"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "AVON",
+          "label": "AVON"
+        }
+      ]
+    },
+    {
+      "handle": "lubricantes",
+      "values": [
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "CASTROL",
+          "label": "CASTROL"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MOBIL",
+          "label": "MOBIL"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "LIQUI MOLY",
+          "label": "LIQUI MOLY"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "VISTONY",
+          "label": "VISTONY"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MOTUL",
+          "label": "MOTUL"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "CHAMPION",
+          "label": "CHAMPION"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "IPONE",
+          "label": "IPONE"
+        },
+        {
+          "name": "filter.p.m.custom.marca",
+          "value": "MAXIMA",
+          "label": "MAXIMA"
+        },
+        {
+          "name": "filter.v.t.shopify.viscosity",
+          "value": "gid://shopify/TaxonomyValue/16682",
+          "label": "5W-40"
+        },
+        {
+          "name": "filter.v.t.shopify.viscosity",
+          "value": "gid://shopify/TaxonomyValue/16685",
+          "label": "10W-40"
+        },
+        {
+          "name": "filter.v.t.shopify.viscosity",
+          "value": "gid://shopify/TaxonomyValue/16686",
+          "label": "10W-50"
+        },
+        {
+          "name": "filter.v.t.shopify.viscosity",
+          "value": "gid://shopify/TaxonomyValue/16689",
+          "label": "15W-50"
+        },
+        {
+          "name": "filter.v.t.shopify.viscosity",
+          "value": "gid://shopify/TaxonomyValue/16691",
+          "label": "20W-50"
+        }
+      ]
+    }
+  ]
+}

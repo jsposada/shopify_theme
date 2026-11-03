@@ -1,0 +1,141 @@
+{
+  "capturedAt": "2026-11-02T23:33:11.328Z",
+  "status": "isolated_prototype_validated_production_implementation_deferred",
+  "automatedTests": {
+    "total": 70,
+    "passed": 70,
+    "failed": 0,
+    "policyTests": 43,
+    "browserTests": 27,
+    "scope": "Local prototype using actual compiled theme search classes and synthetic responses; desktop and mobile viewports"
+  },
+  "liveValidation": {
+    "dimensionCases": 12,
+    "pairedQueries": 24,
+    "consistentTotals": true,
+    "sampledProductTitles": 108,
+    "titleConfirmsDimensions": 108,
+    "constructionCases": [
+      {
+        "raw": "120/70ZR17",
+        "total": 15
+      },
+      {
+        "raw": "140/70R17",
+        "total": 4
+      },
+      {
+        "raw": "100/90B19",
+        "total": 2
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "pagination_gap",
+      "scope": "Existing live theme",
+      "severity": "must_fix_before_rollout",
+      "total": 33,
+      "uniqueRenderedAcrossPages": 25,
+      "missingPositions": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "cause": "Pagination size is 24 while the product loop display limit is 16",
+      "sourceLocations": [
+        "sections/main-search.liquid:42",
+        "sections/main-search.liquid:523"
+      ],
+      "proposal": "Use the same page size for pagination, rendering, metadata and links"
+    },
+    {
+      "id": "encoded_numeric_multi_values",
+      "scope": "Proposed query builder",
+      "severity": "resolved_in_isolated_prototype",
+      "evidence": {
+        "single10": 1,
+        "single14": 3,
+        "encodedComma10And14": 0,
+        "repeated10And14": 4,
+        "rawCommaSixValues": 8,
+        "repeatedSixValues": 8
+      },
+      "proposal": "Append one URL parameter per value rather than encoding comma-separated numeric values"
+    },
+    {
+      "id": "explicit_construction",
+      "scope": "Proposed normalizer",
+      "severity": "resolved_for_sampled_cases_in_isolated_prototype",
+      "proposal": "Preserve explicit R/ZR/B with a title phrase for the technical token, combined with dimensional filters; do not quote the whole user query"
+    },
+    {
+      "id": "stale_selection_enter",
+      "scope": "Proposed controller",
+      "severity": "resolved_in_isolated_prototype",
+      "proposal": "Invalidate prior result selection on input before the debounced request; never clear the visible input while closing stale results"
+    },
+    {
+      "id": "partial_profile_boundary",
+      "scope": "Proposed parser",
+      "severity": "resolved_in_isolated_prototype",
+      "proposal": "Once the rim delimiter is present, treat the preceding profile as complete and do not expand 10 into 100"
+    }
+  ],
+  "simulatedMobile": {
+    "inputFrames": [
+      0.8999999985098839,
+      12.700000001117587,
+      13.599999999627471,
+      1.099999999627471,
+      2.5
+    ],
+    "visibleOptions": 5,
+    "elapsedMs": 782.6520999999993,
+    "requests": 1,
+    "limitation": "Synthetic fixture, 150ms simulated network latency and CPU4x. Excludes actual Shopify server work, production pricing/images and physical mobile keyboard."
+  },
+  "coverage": [
+    "Equivalent metric/inch inputs",
+    "Ambiguous model numbers remain text",
+    "Partial dimensions and numeric URL encoding",
+    "Explicit tire construction",
+    "Brand plus viscosity",
+    "User-authored search syntax",
+    "Cache identity across currency/country/language",
+    "Five-product cap and no nested forms",
+    "Enter before preview and after changing a selected result",
+    "Keyboard option IDs and live status",
+    "One settled request after rapid typing",
+    "Late responses, reset and blur",
+    "IME composition",
+    "HTTP errors, malformed responses and timeouts distinct from zero matches",
+    "Simulated 150ms network latency and CPU4x"
+  ],
+  "readiness": {
+    "queryStrategy": "Supported by sampled live behavior and isolated integration tests",
+    "nextImplementationScope": [
+      "Shared conservative query planner and compact product renderer",
+      "Generated catalog attribute dictionary with coverage checks",
+      "Pagination page-size correction",
+      "Retrieval independent of analytics configuration"
+    ],
+    "beforePublishing": [
+      "Measure actual compact Liquid response and paint time in an unpublished theme",
+      "Test final pricing, sale badges, stock states, links and localized formatting",
+      "Audit attribute coverage before treating a catalog filter as mandatory",
+      "Verify final modal keyboard, screen reader and physical mobile behavior"
+    ]
+  },
+  "unchanged": "No tracked storefront files modified by this investigation; all new work is under output/search-review.",
+  "limitations": [
+    "No production compact section exists yet, so local simulated timings are not Shopify response-time guarantees",
+    "Sample audit covers 108 titles, not the entire catalog",
+    "Tests preserve R/ZR/B literally and do not assert tire compatibility or equivalence between construction codes"
+  ]
+}

@@ -1,0 +1,133 @@
+{% comment %}theme-check-disable OrphanedSnippet{% endcomment %}
+{%- comment -%}
+  Business identity graph for the storefront home page.
+  Keep the verified business facts in sync with docs/seo/LOCAL-BUSINESS-PROFILE-4-1.md.
+{%- endcomment -%}
+
+{%- if request.page_type == 'index' -%}
+  {%- liquid
+    assign business_url = shop.secure_url | default: request.origin
+    assign business_id = business_url | append: '#organization'
+    assign website_id = business_url | append: '#website'
+    assign logo_id = business_url | append: '#logo'
+    assign search_target = business_url | append: routes.search_url | append: '?q={search_term_string}'
+    assign social_links = settings.social_facebook_link | append: '|' | append: settings.social_instagram_link | append: '|' | append: settings.social_youtube_link | append: '|' | append: settings.social_tiktok_link | split: '|'
+    assign rendered_social_links = 0
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TireShop",
+          "@id": {{ business_id | json }},
+          "name": "Bikerz.cl",
+          "alternateName": "Bikerz",
+          "legalName": "Comercializadora de Piezas y Accesorios para Motos Bikerz Ltda.",
+          "taxID": "77.900.826-6",
+          "description": "Tienda y taller de neumáticos, repuestos, cascos y lubricantes para motos, con atención en Macul y despacho a todo Chile.",
+          "url": {{ business_url | append: '/' | json }},
+          {%- if settings.logo != blank %}
+            "logo": {
+              "@type": "ImageObject",
+              "@id": {{ logo_id | json }},
+              "url": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }},
+              "contentUrl": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }}
+            },
+          {%- endif %}
+          "telephone": "+56977670252",
+          "email": "hola@bikerz.cl",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenida Pedro de Valdivia 5691, Local 3",
+            "addressLocality": "Macul",
+            "addressRegion": "Región Metropolitana de Santiago",
+            "postalCode": "7810107",
+            "addressCountry": "CL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.4758894,
+            "longitude": -70.6064284
+          },
+          "hasMap": "https://www.google.com/maps/place/Bikerz.cl/data=!4m2!3m1!1s0x0:0x1709939ff17f1501",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Chile"
+          },
+          "currenciesAccepted": "CLP",
+          "paymentAccepted": "Tarjetas de débito, tarjetas de crédito y transferencia bancaria",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+56977670252",
+            "email": "hola@bikerz.cl",
+            "areaServed": "CL",
+            "availableLanguage": "es"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday",
+                "https://schema.org/Friday"
+              ],
+              "opens": "09:30",
+              "closes": "13:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday",
+                "https://schema.org/Friday"
+              ],
+              "opens": "14:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "https://schema.org/Saturday",
+              "opens": "09:00",
+              "closes": "14:00"
+            }
+          ],
+          "sameAs": [
+            {%- for social_link in social_links -%}
+              {%- assign social_link = social_link | strip -%}
+              {%- if social_link != blank -%}
+                {%- if rendered_social_links > 0 -%},{%- endif -%}
+                {{ social_link | json }}
+                {%- assign rendered_social_links = rendered_social_links | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": {{ website_id | json }},
+          "url": {{ business_url | append: '/' | json }},
+          "name": "Bikerz.cl",
+          "alternateName": "Bikerz",
+          "inLanguage": "es-CL",
+          "publisher": {
+            "@id": {{ business_id | json }}
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": {{ search_target | json }}
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+  </script>
+{%- endif -%}

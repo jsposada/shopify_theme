@@ -1,0 +1,1333 @@
+{
+  "status": "published_verified",
+  "store": "996356-ea.myshopify.com",
+  "liveTheme": 189814309085,
+  "validationTheme": 190293868765,
+  "localPreview": "http://127.0.0.1:9297/",
+  "liveFiles": [
+    {
+      "path": "snippets/scripts-tag.liquid",
+      "unchanged": true
+    },
+    {
+      "path": "assets/search-normalize.js",
+      "unchanged": true
+    },
+    {
+      "path": "assets/search-analytics.js",
+      "unchanged": true
+    },
+    {
+      "path": "snippets/search-display-term.liquid",
+      "unchanged": true
+    },
+    {
+      "path": "snippets/search-results-metadata.liquid",
+      "unchanged": true
+    },
+    {
+      "path": "sections/main-search.liquid",
+      "unchanged": true
+    }
+  ],
+  "allLiveFilesUnchanged": true,
+  "validation": {
+    "queryPolicyTests": {
+      "passed": 43,
+      "failed": 0
+    },
+    "analyticsTests": {
+      "passed": 6,
+      "failed": 0
+    },
+    "realRenderer": {
+      "capturedAt": "2026-11-03T00:30:15.644Z",
+      "config": {
+        "version": "search-v2-qa-1",
+        "searchUrl": "/search",
+        "language": "es",
+        "country": "CL",
+        "currency": "CLP",
+        "theme": 190293868765,
+        "viewAllLabel": "Ver todos los resultados para “__QUERY__”",
+        "tireUrl": "/collections/neumaticos",
+        "tireLabel": "Neumáticos __SIZE__ en el buscador de medidas",
+        "profiles": [
+          "40",
+          "50",
+          "55",
+          "60",
+          "65",
+          "70",
+          "75",
+          "80",
+          "90",
+          "100"
+        ],
+        "rims": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ],
+        "viscosities": {
+          "5W-40": "gid://shopify/TaxonomyValue/16682",
+          "10W-40": "gid://shopify/TaxonomyValue/16685",
+          "10W-50": "gid://shopify/TaxonomyValue/16686",
+          "15W-50": "gid://shopify/TaxonomyValue/16689",
+          "20W-50": "gid://shopify/TaxonomyValue/16691"
+        },
+        "brands": [
+          "ANLAS",
+          "AVON",
+          "BRIDGESTONE",
+          "CASTROL",
+          "CEAT",
+          "CHAMPION",
+          "CONTINENTAL",
+          "DUNLOP",
+          "EUROGRIP",
+          "HEIDENAU",
+          "IPONE",
+          "LIQUI MOLY",
+          "MAGGION",
+          "MAXIMA",
+          "MEFO",
+          "METZELER",
+          "MICHELIN",
+          "MITAS",
+          "MOBIL",
+          "MOTOZ",
+          "MOTUL",
+          "RINALDI",
+          "SEIPRO",
+          "SHINKO",
+          "SUPER RUN",
+          "TIMSUN",
+          "VIPAL",
+          "VISTONY",
+          "XCELINK"
+        ]
+      },
+      "validation": [
+        {
+          "raw": "90/100-10",
+          "total": 1,
+          "shown": 1,
+          "bytes": 20724,
+          "checks": [
+            {
+              "id": "9592944885981",
+              "title": "CEAT ZOOM D 90/100-10 TL 53J",
+              "price": 4679000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "90 100 10",
+          "total": 1,
+          "shown": 1,
+          "bytes": 20724,
+          "checks": [
+            {
+              "id": "9592944885981",
+              "title": "CEAT ZOOM D 90/100-10 TL 53J",
+              "price": 4679000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "120/70ZR17",
+          "total": 15,
+          "shown": 5,
+          "bytes": 93980,
+          "checks": [
+            {
+              "id": "10192859529437",
+              "title": "DUNLOP SPORTMAX ROADSMART IV 120/70ZR17 TL 58W",
+              "price": 18940000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "8876458180829",
+              "title": "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+              "price": 14519000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "8876547866845",
+              "title": "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+              "price": 24700000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "8876552159453",
+              "title": "CONTINENTAL TKC 70 120/70ZR17 58W",
+              "price": 22099000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9005056262365",
+              "title": "MICHELIN POWER GP 120/70ZR17 58W TL",
+              "price": 24487400,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "motul 10w40",
+          "total": 6,
+          "shown": 5,
+          "bytes": 92177,
+          "checks": [
+            {
+              "id": "9449874063581",
+              "title": "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+              "price": 1460000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9458304745693",
+              "title": "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+              "price": 1969000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9459219628253",
+              "title": "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+              "price": 2930000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9459659047133",
+              "title": "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+              "price": 4400000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9464251744477",
+              "title": "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+              "price": 3969000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "90/100-1",
+          "total": 8,
+          "shown": 5,
+          "bytes": 95140,
+          "checks": [
+            {
+              "id": "15434153066717",
+              "title": "DUNLOP GEOMAX MX53 90/100-16 TT 51M",
+              "price": 10690000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "15434153132253",
+              "title": "DUNLOP GEOMAX MX53 90/100-14 TT 49M",
+              "price": 8790000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9037387301085",
+              "title": "MICHELIN STARCROSS 5 90/100-14",
+              "price": 8501800,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9037387563229",
+              "title": "MICHELIN STARCROSS 5 SOFT 90/100-14",
+              "price": 7565200,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9037387792605",
+              "title": "MICHELIN STARCROSS 5 SOFT 90/100-16",
+              "price": 9954600,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "casco nolan",
+          "total": 159,
+          "shown": 5,
+          "bytes": 89838,
+          "checks": [
+            {
+              "id": "9519299264733",
+              "title": "CASCO NOLAN N80-8 KOSMOS NEGRO/BLANCO",
+              "price": 29919000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9502135124189",
+              "title": "CASCO NOLAN N80-8 CLASSICO 302",
+              "price": 24900000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9502134304989",
+              "title": "CASCO NOLAN N60-6 NOBILE",
+              "price": 23900000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9502134370525",
+              "title": "CASCO NOLAN N60-6 NOBILE",
+              "price": 23900000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            },
+            {
+              "id": "9519298379997",
+              "title": "CASCO NOLAN N100-6 ASSOLUTO NEGRO/AZUL",
+              "price": 50619000,
+              "available": true,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "title:\"DUNLOP SPORTMAX Q5A 120/70ZR17\"",
+          "total": 1,
+          "shown": 1,
+          "bytes": 21413,
+          "checks": [
+            {
+              "id": "9562180518109",
+              "title": "DUNLOP SPORTMAX Q5A 120/70ZR17 58W TL",
+              "price": 17279100,
+              "available": true,
+              "sale": true,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "title:\"MICHELIN PILOT ROAD 5 180/55ZR17\"",
+          "total": 1,
+          "shown": 1,
+          "bytes": 21165,
+          "checks": [
+            {
+              "id": "8896951648477",
+              "title": "MICHELIN PILOT ROAD 5 180/55ZR17 73W",
+              "price": 27283800,
+              "available": false,
+              "sale": false,
+              "variantMatches": true
+            }
+          ]
+        },
+        {
+          "raw": "90/100-99",
+          "total": 0,
+          "shown": 0,
+          "bytes": 2612,
+          "checks": []
+        }
+      ],
+      "pagination": [
+        {
+          "page": 1,
+          "total": 33,
+          "ids": [
+            "10192859529437",
+            "8826003488989",
+            "8861873766621",
+            "8876458180829",
+            "8876547866845",
+            "8876552159453",
+            "8896991264989",
+            "9005056262365",
+            "9010328273117",
+            "9013632139485",
+            "9013634236637",
+            "9025292730589",
+            "9128648605917",
+            "9244287729885",
+            "9252325327069",
+            "9297972822237"
+          ],
+          "positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "page": 2,
+          "total": 33,
+          "ids": [
+            "9388675104989",
+            "9403550826717",
+            "9443339337949",
+            "9495224778973",
+            "9495268360413",
+            "9507356475613",
+            "9552256663773",
+            "9562180518109",
+            "9592944591069",
+            "8866486812893",
+            "8876547703005",
+            "8876603179229",
+            "8876605243613",
+            "9010328371421",
+            "9025292632285",
+            "9079963844829"
+          ],
+          "positions": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ]
+        },
+        {
+          "page": 3,
+          "total": 33,
+          "ids": [
+            "9257314779357"
+          ],
+          "positions": [
+            33
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "controllerBrowserChecks": {
+      "checks": [
+        {
+          "case": "desktop keyboard selects visible desktop card",
+          "pass": true
+        },
+        {
+          "case": "selected exact product opens with Enter",
+          "pass": true
+        },
+        {
+          "case": "mobile keyboard selects visible compact row",
+          "pass": true
+        },
+        {
+          "case": "native search excludes purchase fields and preserves unrelated search fields",
+          "pass": true
+        },
+        {
+          "case": "HTTP failure shows a recoverable error",
+          "pass": true
+        },
+        {
+          "case": "invalid rejected without losing input",
+          "pass": true
+        },
+        {
+          "case": "bad-filter rejected without losing input",
+          "pass": true
+        },
+        {
+          "case": "true zero remains an empty state",
+          "pass": true
+        },
+        {
+          "case": "slow optional suggestions neither block products nor shift keyboard selection",
+          "pass": true
+        },
+        {
+          "case": "old product and suggestion responses cannot overwrite the current query",
+          "pass": true
+        },
+        {
+          "case": "reset clears input, products and suggestions",
+          "pass": true
+        },
+        {
+          "case": "technical suggestions keep compatible alternatives and remove contradictory or equivalent measures",
+          "pass": true
+        },
+        {
+          "case": "general text suggestions remain available",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "enterAfterCards": {
+      "heading": "Buscar “ 120.0/70-17 ”",
+      "total": "33",
+      "url": "http://127.0.0.1:9297/search?q=*&type=product&options%5Bprefix%5D=last&filter.p.m.custom.ancho=120.0&filter.p.m.custom.aspecto=70&filter.p.m.custom.di_metro=17"
+    },
+    "desktop": {
+      "width": 1280,
+      "height": 900,
+      "cards": 5,
+      "overflow": false,
+      "compactListHidden": true,
+      "screenshot": "results/restored-desktop.jpg"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "rows": 5,
+      "inputFont": "16px",
+      "overflow": false,
+      "desktopGridHidden": true,
+      "allFiveImagesLoaded": true,
+      "screenshot": "results/restored-mobile.jpg"
+    },
+    "exactCase": {
+      "productId": "9592944885981",
+      "title": "CEAT ZOOM D 90/100-10 TL 53J",
+      "total": 1,
+      "screenshot": "results/restored-desktop-exact.jpg"
+    },
+    "changedLiquidErrors": 0
+  },
+  "performance": {
+    "method": "Original cards retained. Actual Shopify via the same CLI development proxy, four rounds after warmup. Candidate includes an optional query-only request in parallel, included in total bytes and all-content timing. Product rendering never waits for it. Cold client cache; no production guarantees.",
+    "summary": {
+      "legacy": {
+        "samples": 24,
+        "medianMs": 485,
+        "p90Ms": 618,
+        "medianAllContentMs": 485,
+        "p90AllContentMs": 618,
+        "medianKB": 89.9
+      },
+      "preserved": {
+        "samples": 24,
+        "medianMs": 508,
+        "p90Ms": 609,
+        "medianAllContentMs": 508,
+        "p90AllContentMs": 609,
+        "medianKB": 90.2
+      }
+    },
+    "rows": [
+      {
+        "round": -1,
+        "raw": "90/100-10",
+        "mode": "preserved",
+        "ms": 506,
+        "allContentMs": 506,
+        "bytes": 23035,
+        "suggestions": {
+          "ms": 340,
+          "bytes": 2311
+        }
+      },
+      {
+        "round": -1,
+        "raw": "90/100-10",
+        "mode": "legacy",
+        "ms": 546,
+        "allContentMs": 546,
+        "bytes": 94710,
+        "suggestions": null
+      },
+      {
+        "round": -1,
+        "raw": "120/70-17",
+        "mode": "preserved",
+        "ms": 509,
+        "allContentMs": 509,
+        "bytes": 93659,
+        "suggestions": {
+          "ms": 369,
+          "bytes": 937
+        }
+      },
+      {
+        "round": -1,
+        "raw": "120/70-17",
+        "mode": "legacy",
+        "ms": 496,
+        "allContentMs": 496,
+        "bytes": 92061,
+        "suggestions": null
+      },
+      {
+        "round": -1,
+        "raw": "90/100",
+        "mode": "preserved",
+        "ms": 485,
+        "allContentMs": 485,
+        "bytes": 96722,
+        "suggestions": {
+          "ms": 343,
+          "bytes": 2299
+        }
+      },
+      {
+        "round": -1,
+        "raw": "90/100",
+        "mode": "legacy",
+        "ms": 556,
+        "allContentMs": 556,
+        "bytes": 94650,
+        "suggestions": null
+      },
+      {
+        "round": -1,
+        "raw": "motul 10w40",
+        "mode": "preserved",
+        "ms": 974,
+        "allContentMs": 974,
+        "bytes": 92334,
+        "suggestions": {
+          "ms": 405,
+          "bytes": 157
+        }
+      },
+      {
+        "round": -1,
+        "raw": "motul 10w40",
+        "mode": "legacy",
+        "ms": 629,
+        "allContentMs": 629,
+        "bytes": 91206,
+        "suggestions": null
+      },
+      {
+        "round": -1,
+        "raw": "casco integral",
+        "mode": "preserved",
+        "ms": 774,
+        "allContentMs": 774,
+        "bytes": 93104,
+        "suggestions": {
+          "ms": 345,
+          "bytes": 256
+        }
+      },
+      {
+        "round": -1,
+        "raw": "casco integral",
+        "mode": "legacy",
+        "ms": 571,
+        "allContentMs": 571,
+        "bytes": 92198,
+        "suggestions": null
+      },
+      {
+        "round": -1,
+        "raw": "honda cb 190",
+        "mode": "preserved",
+        "ms": 953,
+        "allContentMs": 953,
+        "bytes": 91355,
+        "suggestions": {
+          "ms": 351,
+          "bytes": 158
+        }
+      },
+      {
+        "round": -1,
+        "raw": "honda cb 190",
+        "mode": "legacy",
+        "ms": 527,
+        "allContentMs": 527,
+        "bytes": 90427,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "90/100-10",
+        "mode": "legacy",
+        "ms": 435,
+        "allContentMs": 435,
+        "bytes": 94710,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "90/100-10",
+        "mode": "preserved",
+        "ms": 514,
+        "allContentMs": 514,
+        "bytes": 23035,
+        "suggestions": {
+          "ms": 370,
+          "bytes": 2311
+        }
+      },
+      {
+        "round": 0,
+        "raw": "120/70-17",
+        "mode": "legacy",
+        "ms": 644,
+        "allContentMs": 644,
+        "bytes": 92061,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "120/70-17",
+        "mode": "preserved",
+        "ms": 484,
+        "allContentMs": 484,
+        "bytes": 93659,
+        "suggestions": {
+          "ms": 352,
+          "bytes": 937
+        }
+      },
+      {
+        "round": 0,
+        "raw": "90/100",
+        "mode": "legacy",
+        "ms": 451,
+        "allContentMs": 451,
+        "bytes": 94650,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "90/100",
+        "mode": "preserved",
+        "ms": 546,
+        "allContentMs": 546,
+        "bytes": 96722,
+        "suggestions": {
+          "ms": 343,
+          "bytes": 2299
+        }
+      },
+      {
+        "round": 0,
+        "raw": "motul 10w40",
+        "mode": "legacy",
+        "ms": 454,
+        "allContentMs": 454,
+        "bytes": 91206,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "motul 10w40",
+        "mode": "preserved",
+        "ms": 485,
+        "allContentMs": 485,
+        "bytes": 92334,
+        "suggestions": {
+          "ms": 359,
+          "bytes": 157
+        }
+      },
+      {
+        "round": 0,
+        "raw": "casco integral",
+        "mode": "legacy",
+        "ms": 618,
+        "allContentMs": 618,
+        "bytes": 92198,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "casco integral",
+        "mode": "preserved",
+        "ms": 581,
+        "allContentMs": 581,
+        "bytes": 93104,
+        "suggestions": {
+          "ms": 398,
+          "bytes": 256
+        }
+      },
+      {
+        "round": 0,
+        "raw": "honda cb 190",
+        "mode": "legacy",
+        "ms": 653,
+        "allContentMs": 653,
+        "bytes": 90427,
+        "suggestions": null
+      },
+      {
+        "round": 0,
+        "raw": "honda cb 190",
+        "mode": "preserved",
+        "ms": 500,
+        "allContentMs": 500,
+        "bytes": 91355,
+        "suggestions": {
+          "ms": 458,
+          "bytes": 158
+        }
+      },
+      {
+        "round": 1,
+        "raw": "90/100-10",
+        "mode": "preserved",
+        "ms": 484,
+        "allContentMs": 484,
+        "bytes": 23035,
+        "suggestions": {
+          "ms": 357,
+          "bytes": 2311
+        }
+      },
+      {
+        "round": 1,
+        "raw": "90/100-10",
+        "mode": "legacy",
+        "ms": 578,
+        "allContentMs": 578,
+        "bytes": 94710,
+        "suggestions": null
+      },
+      {
+        "round": 1,
+        "raw": "120/70-17",
+        "mode": "preserved",
+        "ms": 488,
+        "allContentMs": 488,
+        "bytes": 93659,
+        "suggestions": {
+          "ms": 409,
+          "bytes": 937
+        }
+      },
+      {
+        "round": 1,
+        "raw": "120/70-17",
+        "mode": "legacy",
+        "ms": 517,
+        "allContentMs": 517,
+        "bytes": 92061,
+        "suggestions": null
+      },
+      {
+        "round": 1,
+        "raw": "90/100",
+        "mode": "preserved",
+        "ms": 698,
+        "allContentMs": 698,
+        "bytes": 96722,
+        "suggestions": {
+          "ms": 350,
+          "bytes": 2299
+        }
+      },
+      {
+        "round": 1,
+        "raw": "90/100",
+        "mode": "legacy",
+        "ms": 488,
+        "allContentMs": 488,
+        "bytes": 94650,
+        "suggestions": null
+      },
+      {
+        "round": 1,
+        "raw": "motul 10w40",
+        "mode": "preserved",
+        "ms": 452,
+        "allContentMs": 452,
+        "bytes": 92334,
+        "suggestions": {
+          "ms": 340,
+          "bytes": 157
+        }
+      },
+      {
+        "round": 1,
+        "raw": "motul 10w40",
+        "mode": "legacy",
+        "ms": 471,
+        "allContentMs": 471,
+        "bytes": 91206,
+        "suggestions": null
+      },
+      {
+        "round": 1,
+        "raw": "casco integral",
+        "mode": "preserved",
+        "ms": 528,
+        "allContentMs": 528,
+        "bytes": 93104,
+        "suggestions": {
+          "ms": 337,
+          "bytes": 256
+        }
+      },
+      {
+        "round": 1,
+        "raw": "casco integral",
+        "mode": "legacy",
+        "ms": 532,
+        "allContentMs": 532,
+        "bytes": 92198,
+        "suggestions": null
+      },
+      {
+        "round": 1,
+        "raw": "honda cb 190",
+        "mode": "preserved",
+        "ms": 508,
+        "allContentMs": 508,
+        "bytes": 91355,
+        "suggestions": {
+          "ms": 366,
+          "bytes": 158
+        }
+      },
+      {
+        "round": 1,
+        "raw": "honda cb 190",
+        "mode": "legacy",
+        "ms": 464,
+        "allContentMs": 464,
+        "bytes": 90427,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "90/100-10",
+        "mode": "legacy",
+        "ms": 485,
+        "allContentMs": 485,
+        "bytes": 94710,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "90/100-10",
+        "mode": "preserved",
+        "ms": 595,
+        "allContentMs": 595,
+        "bytes": 23035,
+        "suggestions": {
+          "ms": 378,
+          "bytes": 2311
+        }
+      },
+      {
+        "round": 2,
+        "raw": "120/70-17",
+        "mode": "legacy",
+        "ms": 528,
+        "allContentMs": 528,
+        "bytes": 92061,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "120/70-17",
+        "mode": "preserved",
+        "ms": 494,
+        "allContentMs": 494,
+        "bytes": 93659,
+        "suggestions": {
+          "ms": 407,
+          "bytes": 937
+        }
+      },
+      {
+        "round": 2,
+        "raw": "90/100",
+        "mode": "legacy",
+        "ms": 455,
+        "allContentMs": 455,
+        "bytes": 94650,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "90/100",
+        "mode": "preserved",
+        "ms": 497,
+        "allContentMs": 497,
+        "bytes": 96722,
+        "suggestions": {
+          "ms": 347,
+          "bytes": 2299
+        }
+      },
+      {
+        "round": 2,
+        "raw": "motul 10w40",
+        "mode": "legacy",
+        "ms": 560,
+        "allContentMs": 560,
+        "bytes": 91206,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "motul 10w40",
+        "mode": "preserved",
+        "ms": 583,
+        "allContentMs": 583,
+        "bytes": 92334,
+        "suggestions": {
+          "ms": 361,
+          "bytes": 157
+        }
+      },
+      {
+        "round": 2,
+        "raw": "casco integral",
+        "mode": "legacy",
+        "ms": 474,
+        "allContentMs": 474,
+        "bytes": 92198,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "casco integral",
+        "mode": "preserved",
+        "ms": 600,
+        "allContentMs": 600,
+        "bytes": 93104,
+        "suggestions": {
+          "ms": 359,
+          "bytes": 256
+        }
+      },
+      {
+        "round": 2,
+        "raw": "honda cb 190",
+        "mode": "legacy",
+        "ms": 517,
+        "allContentMs": 517,
+        "bytes": 90427,
+        "suggestions": null
+      },
+      {
+        "round": 2,
+        "raw": "honda cb 190",
+        "mode": "preserved",
+        "ms": 525,
+        "allContentMs": 525,
+        "bytes": 91355,
+        "suggestions": {
+          "ms": 370,
+          "bytes": 158
+        }
+      },
+      {
+        "round": 3,
+        "raw": "90/100-10",
+        "mode": "preserved",
+        "ms": 444,
+        "allContentMs": 444,
+        "bytes": 23035,
+        "suggestions": {
+          "ms": 356,
+          "bytes": 2311
+        }
+      },
+      {
+        "round": 3,
+        "raw": "90/100-10",
+        "mode": "legacy",
+        "ms": 472,
+        "allContentMs": 472,
+        "bytes": 94710,
+        "suggestions": null
+      },
+      {
+        "round": 3,
+        "raw": "120/70-17",
+        "mode": "preserved",
+        "ms": 609,
+        "allContentMs": 609,
+        "bytes": 93659,
+        "suggestions": {
+          "ms": 379,
+          "bytes": 937
+        }
+      },
+      {
+        "round": 3,
+        "raw": "120/70-17",
+        "mode": "legacy",
+        "ms": 502,
+        "allContentMs": 502,
+        "bytes": 92061,
+        "suggestions": null
+      },
+      {
+        "round": 3,
+        "raw": "90/100",
+        "mode": "preserved",
+        "ms": 488,
+        "allContentMs": 488,
+        "bytes": 96722,
+        "suggestions": {
+          "ms": 359,
+          "bytes": 2299
+        }
+      },
+      {
+        "round": 3,
+        "raw": "90/100",
+        "mode": "legacy",
+        "ms": 457,
+        "allContentMs": 457,
+        "bytes": 94650,
+        "suggestions": null
+      },
+      {
+        "round": 3,
+        "raw": "motul 10w40",
+        "mode": "preserved",
+        "ms": 467,
+        "allContentMs": 467,
+        "bytes": 92334,
+        "suggestions": {
+          "ms": 355,
+          "bytes": 157
+        }
+      },
+      {
+        "round": 3,
+        "raw": "motul 10w40",
+        "mode": "legacy",
+        "ms": 483,
+        "allContentMs": 483,
+        "bytes": 91206,
+        "suggestions": null
+      },
+      {
+        "round": 3,
+        "raw": "casco integral",
+        "mode": "preserved",
+        "ms": 666,
+        "allContentMs": 666,
+        "bytes": 93104,
+        "suggestions": {
+          "ms": 380,
+          "bytes": 256
+        }
+      },
+      {
+        "round": 3,
+        "raw": "casco integral",
+        "mode": "legacy",
+        "ms": 477,
+        "allContentMs": 477,
+        "bytes": 92198,
+        "suggestions": null
+      },
+      {
+        "round": 3,
+        "raw": "honda cb 190",
+        "mode": "preserved",
+        "ms": 563,
+        "allContentMs": 563,
+        "bytes": 91355,
+        "suggestions": {
+          "ms": 362,
+          "bytes": 158
+        }
+      },
+      {
+        "round": 3,
+        "raw": "honda cb 190",
+        "mode": "legacy",
+        "ms": 541,
+        "allContentMs": 541,
+        "bytes": 90427,
+        "suggestions": null
+      }
+    ]
+  },
+  "addedAssets": [
+    {
+      "name": "search-policy.js",
+      "bytes": 5919
+    },
+    {
+      "name": "search-preview.js",
+      "bytes": 12036
+    },
+    {
+      "name": "search-preview.css",
+      "bytes": 95
+    }
+  ],
+  "limitations": [
+    "Mediciones a través del proxy oficial de desarrollo, con 24 muestras por versión después del calentamiento; no garantizan tiempos en conexiones reales de clientes.",
+    "La versión final conserva el HTML de las tarjetas originales: no aplica la reducción de HTML de la propuesta compacta descartada.",
+    "En consultas sin caché se agrega una solicitud opcional solo para sugerencias, en paralelo. Una sugerencia lenta puede aparecer después de los productos.",
+    "Prueba móvil con viewport de 390px; no se midió un dispositivo físico ni su teclado.",
+    "El diccionario de atributos debe regenerarse antes de publicar y al introducir valores nuevos en el catálogo.",
+    "Theme Check conserva errores anteriores fuera de los archivos modificados.",
+    "La suite adicional de Playwright no se ejecutó por dependencia ausente; los escenarios relevantes del controlador final se verificaron con el navegador conectado y el mismo servidor de fixtures."
+  ],
+  "customerChanges": [
+    "Se conservan tipografías, colores, tarjetas de escritorio y filas compactas de móvil del tema actual.",
+    "La medida y viscosidad pasan a ser filtros reales tanto en la vista previa como al presionar Enter.",
+    "Las sugerencias no modifican la búsqueda de productos y se descartan las que contradicen una medida o repiten la misma búsqueda.",
+    "Las sugerencias se consultan en paralelo; no retrasan los productos ni se insertan después de iniciar una selección por teclado.",
+    "Los errores de carga se distinguen de una búsqueda sin coincidencias; Enter sigue disponible.",
+    "La paginación usa el tamaño configurado, sin omitir productos entre páginas."
+  ],
+  "deployment": "Publicado con autorización del usuario en el tema activo 189814309085; 12 archivos verificados por SHA-256 y caso 90/100-10 comprobado en la tienda pública.",
+  "updatedAt": "2026-11-03T00:42:04.767Z",
+  "revision": "original-design-preserved",
+  "design": {
+    "originalRenderer": "snippets/product-item-layout-1.liquid",
+    "unchangedFiles": [
+      "assets/header.css",
+      "assets/search-modal.css",
+      "snippets/product-item-layout-1.liquid",
+      "snippets/button-quick-view.liquid"
+    ],
+    "notes": "Original theme styles and product card renderer reused. Header search already hides purchase/quick-view actions through header.css; this behavior is preserved. Full result-page controls are unchanged. Technical suggestions contradicting explicit attributes or duplicating the same plan are excluded; general suggestions remain."
+  },
+  "files": [
+    {
+      "path": "snippets/scripts-tag.liquid",
+      "kind": "modified",
+      "sha256": "cbb1ce0e02632ded0cbd35e4a294f63ee3cb02ffca7750a79f08f3a03c026809"
+    },
+    {
+      "path": "assets/search-normalize.js",
+      "kind": "modified",
+      "sha256": "99ac6e84e1b6eb9c078f751fa7618f95d3559824cba06344e3ddfa4d05c27fd5"
+    },
+    {
+      "path": "assets/search-analytics.js",
+      "kind": "modified",
+      "sha256": "b9e2feadce1f585ef113c306e4a4944335b453185c9d1bf04ced9dc721495141"
+    },
+    {
+      "path": "snippets/search-display-term.liquid",
+      "kind": "modified",
+      "sha256": "9df6eab93710754931adf636a5a91fda591ba0e5a5e7e4fef1105e86093ee9c4"
+    },
+    {
+      "path": "snippets/search-results-metadata.liquid",
+      "kind": "modified",
+      "sha256": "70bd00cb9f65c8313933d2266e3efaed33e0506ef9269d99dba2d8903ebbdd87"
+    },
+    {
+      "path": "sections/main-search.liquid",
+      "kind": "modified",
+      "sha256": "59b8e4320ec90f18a2374449c6c0eb1a2ad132c49f24e9ea87941bfe2d824d43"
+    },
+    {
+      "path": "assets/search-policy.js",
+      "kind": "added",
+      "sha256": "9ad3d4b276403e4fd5442354d061f8c52dd83feab058bcfa4217061104ae6adf"
+    },
+    {
+      "path": "assets/search-preview.js",
+      "kind": "added",
+      "sha256": "a296fe473e04eb97525745974deec668afa1ebb75a3003472a9b0a890bf41c07"
+    },
+    {
+      "path": "assets/search-preview.css",
+      "kind": "added",
+      "sha256": "e9616e31c89636551ec5ea9460d6e36e66ddb9cb2b9899497d00c625b2fbb621"
+    },
+    {
+      "path": "snippets/search-catalog-config.liquid",
+      "kind": "added",
+      "sha256": "1ada383fba8bade232c2e80439f384ece5dd211ecf478f9b86fe3b5d3087ce54"
+    },
+    {
+      "path": "sections/search-preview.liquid",
+      "kind": "added",
+      "sha256": "2e570330f248e89d289ad8cf4ec2088cd9b5691473c6db2bfae8da34c1a6bb3a"
+    },
+    {
+      "path": "sections/search-query-suggestions.liquid",
+      "kind": "added",
+      "sha256": "dabf2d303eb273899e43d474ba0f72377cad31a55157630f39b6fb96dfe4fe48"
+    }
+  ],
+  "publication": {
+    "theme": 189814309085,
+    "site": "https://www.bikerz.cl/",
+    "remoteVerification": "../publication/remote-verification.json",
+    "browserVerification": "../publication/browser-verification.json",
+    "screenshot": "../publication/live-preview.jpg"
+  }
+}

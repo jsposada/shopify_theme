@@ -10,12 +10,17 @@
 
 | ID | Hallazgo | Severidad | Esfuerzo |
 | --- | --- | --- | --- |
-| AUD-A-01 | En móvil, el botón «Añadir al carrito» queda tapado por tres elementos flotantes | Crítica | S–M |
+| AUD-A-01 | En móvil, el botón «Añadir al carrito» queda tapado por el chat de Shopify Inbox y el aviso de Shopify Forms | Crítica | S |
 | AUD-A-02 | «Última unidad» depende de un metacampo de proveedor, no del stock, y aparece en productos agotados | Alta | S |
 | AUD-E-01 | Medición y remarketing activos sin banner de consentimiento y con consentimiento concedido por defecto | Alta | M |
 | AUD-E-02 | Las políticas publicadas se contradicen en plazos de cambio y de reembolso | Alta | S |
 | AUD-G-01 | El JSON-LD de producto emite una disponibilidad inválida en todos los productos con stock | Alta | S |
 | AUD-C-01 | Ninguno de los 624 neumáticos tiene código de barras (GTIN) | Alta | L |
+| AUD-F-01 | El hero del artículo «tube type vs tubeless» es un SVG de 5 MB (LCP de laboratorio 16,8 s) | Alta | S |
+| AUD-F-02 | Las páginas precargan ~1 MB de recursos del checkout de Shopify y distorsionan las mediciones de laboratorio | Media | S |
+| AUD-F-03 | Los heros de las landings SEO se sirven a resolución completa sin `srcset` | Media | S |
+| AUD-F-04 | Coste de terceros: etiquetas de Google, Web Pixels, Meta y Clarity dominan el hilo principal | Media | M |
+| AUD-F-05 | CLS menor en el buscador de neumáticos, iconos y logo; HTML de colecciones de ~700 KB | Media | S–M |
 | AUD-A-03 | La ficha no informa costo ni plazo de despacho, medios de pago ni garantía | Media | M |
 | AUD-B-01 | La búsqueda es demasiado amplia con medidas y no avisa cuando una marca no existe | Media | M |
 | AUD-E-03 | Hay dos políticas de privacidad y dos términos y condiciones distintos; el footer enlaza la versión más débil | Media | S |
@@ -32,8 +37,9 @@
 
 ### AUD-A-01 — Botón de compra tapado en móvil · Crítica
 
-- **Qué pasa:** al abrir una ficha con stock en móvil, el botón «Añadir al carrito» queda en la parte baja de la primera pantalla (y = 758–797 px de 812) y tres capas fijas lo cubren: el chip «¿Necesitas ayuda?» de Shopify Inbox, el aviso «10% de descuento» de Shopify Forms y la burbuja flotante de WhatsApp.
-- **Evidencia:** `document.elementFromPoint` sobre el botón, en x = 60, 150, 200 y 330, devuelve `SHOPIFY-CHAT`, `SHOPIFY-FORMS-EMBED#app-embed-container-1048885` y `a.bikerz-whatsapp-float`, nunca el botón. Ficha: `/products/dunlop-q-lite-110-70r17-54h`. El chip de Inbox también tapa el botón «Ver neumáticos» del buscador en `/collections/neumaticos`.
+- **Qué pasa:** al abrir una ficha con stock en móvil, el botón «Añadir al carrito» queda en la parte baja de la primera pantalla (y = 758–797 px de 812) y dos capas fijas lo cubren: el chip «¿Necesitas ayuda?» de Shopify Inbox y el aviso «10% de descuento» de Shopify Forms. La burbuja de WhatsApp queda pegada al botón (x = 307–363), pero no lo tapa.
+- **Evidencia:** `document.elementFromPoint` en 5 puntos del botón: 4 de 5 devuelven `SHOPIFY-CHAT` o `SHOPIFY-FORMS-EMBED`. Con ambos ocultos, los 5 devuelven el botón; ocultando solo el chat, siguen 3 tapados por Forms. Ficha: `/products/dunlop-q-lite-110-70r17-54h`. El chip de Inbox también tapa el botón «Ver neumáticos» del buscador en `/collections/neumaticos`.
+- **Detalle técnico:** el aviso de Forms vive dentro del shadow DOM de la app (`#app-embed`, fijo abajo al centro, `z-index` máximo) y su posición se configura en la app Shopify Forms. El chip de Inbox se configura en Editor de temas › Incrustaciones de apps › Shopify Inbox (hoy `bottom_left` / `lowest`).
 - **Por qué importa:** un toque en la zona del botón abre el chat o el formulario en lugar de agregar al carrito. Es la primera hipótesis concreta para explicar la brecha de conversión móvil (0,076% frente a 0,332% en escritorio).
 - **Recomendación** (Shopify Forms se conserva, D-016):
   1. Mover o retrasar el aviso de Shopify Forms en móvil: mostrarlo solo después de desplazarse o al intentar salir, o excluirlo de las fichas de producto.
@@ -116,6 +122,62 @@
 
 - El footer enlaza privacidad, términos y FAQ, pero no devoluciones (`/policies/refund-policy`) ni despacho (`/policies/shipping-policy`). La identificación del proveedor (razón social, RUT, dirección) existe en `/policies/contact-information`, pero no está enlazada.
 
+## F. Rendimiento
+
+Evidencia en `outputs/auditoria-2026-10/lighthouse/`. Lighthouse 13.4.1 móvil: 3 corridas por URL en 11 URLs, más escritorio en 3. Los datos de campo salen de CrUX vía pagespeed.web.dev (ventana del 22 de septiembre al 19 de octubre).
+
+### Estado general: Core Web Vitals de campo aprobados
+
+| Fuente (móvil, p75) | LCP | INP | CLS |
+| --- | ---: | ---: | ---: |
+| Origen | 1,6 s | 130 ms | 0,01 |
+| Home (septiembre → hoy) | 2,1 → 1,6 s | 132 → 123 ms | 0,13 → 0,06 |
+| `/collections/neumaticos` | 1,3 s | 173 ms | 0,01 |
+
+- El CLS de campo, que en septiembre impedía aprobar, quedó corregido (escritorio 0,28 → 0,02). **El criterio de campo de la fase 2.5 se puede cerrar.**
+- Solo home, la colección de neumáticos y la búsqueda tienen datos propios; las demás URLs usan los del origen.
+- Vigilar el INP de la colección de neumáticos (173 ms, cerca del umbral de 200).
+- El laboratorio móvil da 41–59 puntos, con TBT > 1 s en todas las plantillas. Es orientativo: se midió desde Colombia, en un equipo cargado (índice de CPU 1.736 frente a 590 en septiembre) y con la distorsión de AUD-F-02.
+
+### AUD-F-01 — Hero del artículo de 5 MB · Alta
+
+- `/blogs/motos-chile/tube-type-vs-tubeless` usa como imagen principal `Tube_Type_vs._Tubeless_….svg`: 5,09 MB descomprimido (1,87 MB transferido), verificado. LCP de laboratorio 16,8 s; CLS 0,11–0,18 por la carga tardía de las fuentes Oswald y Barlow.
+- Es uno de los artículos con más impresiones según el roadmap SEO.
+- **Recomendación:** reemplazarlo por un JPG/WebP (≤ 150 KB) servido con `image_url` y `srcset`; revisar si otros artículos usan SVG con bitmaps incrustados.
+
+### AUD-F-02 — Precargas del checkout · Media
+
+- Cada página descarga 164 recursos de `/cdn/shopifycloud/checkout-web/assets` (~984 KB, prioridad muy baja); en septiembre eran 49 (708 KB). La red sigue activa hasta ~37 s y Lighthouse llega a su límite en todas las corridas.
+- No viene del theme: probablemente lo disparan Shop Pay (`shop-js`) o las reglas de precarga de la plataforma. El usuario real no lo nota tanto (el LCP de campo es bueno), pero consume datos móviles e infla el laboratorio.
+- **Recomendación:** corrida de control bloqueando ese patrón para medir su efecto; consultar a soporte de Shopify si es configurable.
+
+### AUD-F-03 — Heros de landings sin versiones responsivas · Media
+
+- El hero de `/collections/neumaticos-trail-adventure` se sirve con `asset_url` (219 KB a resolución completa, sin `srcset`); aplica a las 5 landings. Los logos SVG de marcas de la home pesan 66–122 KB cada uno (428 KB en total), probablemente con bitmaps incrustados.
+- **Recomendación:** subir los heros a Archivos y usar `image_url` con anchos y `fetchpriority="high"`; optimizar los SVG o servirlos como WebP.
+
+### AUD-F-04 — Coste de terceros · Media
+
+| Recurso | Transferido | CPU (home / ficha) |
+| --- | ---: | ---: |
+| Etiquetas de Google (`G-PSM69XC45C`, `GT-MB6TJCMM`, `AW-…`) | 507–556 KB | 0,75–0,92 s |
+| Web Pixels de Shopify (sandbox) | — | 1,9–5,9 s |
+| Meta Pixel | 221 KB | 0,48–0,57 s |
+| Microsoft Clarity | 31 KB | 0,49–0,84 s |
+| Shopify Forms (se conserva, D-016) | 262 KB | 0,15–0,24 s |
+| `shop-js/client.js` | 186 KB | — |
+| WhatsApp (inline) | 0 | despreciable |
+
+- **Recomendación:** revisar en GTM y en la app Google & YouTube si `G-PSM69XC45C` mide lo mismo que la app (doble conteo posible, ligado al área D); inventariar los Web Pixels activos y quitar los que no se usen. Ninguna de estas etiquetas está en el theme: se gestionan desde el admin, GTM o las apps.
+
+### AUD-F-05 — Estabilidad visual y peso del HTML · Media
+
+- Colección de neumáticos: el `<style>` de `sections/tire-finder.liquid` (línea 189) va después del marcado (línea 98), así que el bloque se pinta sin estilo y se desplaza (CLS 0,028–0,047).
+- Fichas: iconos de `IconWithText` sin tamaño (CLS 0,016). Todas las plantillas: logo del header sin `width`/`height`.
+- HTML descomprimido de 711 KB en la colección de neumáticos y 706 KB en la landing, que el área de filtros explica en buena parte. Es coherente con el INP de 173 ms.
+- `swiper-bundle.js` se carga en todas las páginas y consume 1,77 s de CPU en la home (carruseles en autoplay); en colecciones, búsqueda y blog no se usa. Junto con AUD-J-03 (`animate.css`).
+- **Recomendación:** mover el CSS del buscador antes del marcado; dimensiones explícitas en iconos y logo; Swiper y `animate.css` solo donde se usan; reducir o diferir el marcado de filtros largos.
+
 ## G. SEO técnico
 
 ### AUD-G-01 — Disponibilidad inválida en el JSON-LD de producto · Alta
@@ -181,6 +243,22 @@ Theme Check completo en `outputs/auditoria-2026-10/theme/theme-check.json` (Shop
 - **Analítica de búsqueda:** toggle `search_analytics_enabled` (por defecto `false`), cambios en búsqueda y predictiva, nuevos `assets/search-analytics*.js`, snippets e `integrations/search-analytics/`.
 - **Encuadre de imágenes:** `product_aspect_ratio` pasa a 1/1, más `assets/product-image-fit.css` (se carga de forma global).
 - `.gitignore` ignora `outputs/` pero no `output/` (10 archivos de evidencia de PageSpeed).
+
+## Correcciones aplicadas en local (sin publicar)
+
+| Hallazgo | Archivo | Cambio |
+| --- | --- | --- |
+| AUD-G-01 | `sections/main-product.liquid:401-410` | Disponibilidad `https://schema.org/InStock` sin espacio; los GTIN se emiten con `| json` para no romper el JSON-LD cuando el código empiece con cero |
+| AUD-J-02 | `snippets/product-item-horizontal.liquid:166` | Se quitan las estrellas vacías de Opinew de las tarjetas |
+| AUD-J-01 | `templates/404.json` | 404 en español: «Página no encontrada» / «Volver al inicio» |
+| AUD-A-02 | `sections/main-product.liquid:150` | Decisión del propietario (2026-10-22): `proveedor` es una marca manual de última unidad. El texto solo se muestra si además la variante está disponible, con inventario gestionado por Shopify y exactamente 1 unidad. Los otros usos del metacampo (CTA de WhatsApp y «Confirmar» en agotados) no se tocaron |
+
+Decisiones del propietario sobre AUD-A-01 (las aplica él en el admin):
+
+- Shopify Inbox: subir el botón y dejarlo solo con el ícono, desde Editor de temas › Incrustaciones de apps › Shopify Inbox.
+- Shopify Forms: mover el aviso o retrasarlo en móvil desde la app Shopify Forms (la app se conserva, D-016).
+
+Pendiente de validación: Theme Check y vista previa en un theme no publicado (Rich Results Test sobre una ficha con stock, tarjetas de la home y una URL inexistente).
 
 ## Observaciones para las próximas fases
 

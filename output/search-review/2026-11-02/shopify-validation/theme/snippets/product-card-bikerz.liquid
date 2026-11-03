@@ -1,0 +1,165 @@
+{%- liquid
+  assign card_variant = card_product.selected_or_first_available_variant
+  assign card_brand = card_product.metafields.custom.marca.value
+  assign card_description = card_product.metafields.custom.descripcion_corta.value
+  assign card_tags = card_product.metafields.custom.product_tags.value
+  assign show_installments = shop.metafields.custom.badge_cuotas.value
+  assign installment_count = 3
+  assign installment_amount = card_variant.price | divided_by: installment_count
+  assign compare_at_price = card_variant.compare_at_price
+  assign is_on_sale = false
+  if compare_at_price != blank and compare_at_price > card_variant.price
+    assign is_on_sale = true
+  endif
+
+  assign is_available = card_variant.available
+  assign check_against_inventory = true
+  if card_variant.inventory_management != 'shopify' or card_variant.inventory_policy == 'continue'
+    assign check_against_inventory = false
+  endif
+  if card_variant.quantity_rule.min > card_variant.inventory_quantity and check_against_inventory
+    assign is_available = false
+  endif
+
+  assign product_form_id = 'bikerz-card-form-' | append: section.id | append: '-' | append: card_product.id
+-%}
+
+<div class="tp-prd-item bikerz-product-card flex-1 card-wrapper product-card-wrapper relative{% unless is_available %} is-sold-out{% endunless %}">
+  <article class="card bikerz-product-card__shell">
+    <div class="card__inner bikerz-product-card__media">
+      <div class="card__media">
+        <a
+          class="bikerz-product-card__image-link"
+          href="{{ card_product.url | within: collection }}"
+          aria-label="{{ card_product.title | escape }}">
+          <div class="tp__product-main-img">
+            {%- if card_product.featured_image != blank -%}
+              {%- render 'responsive-image',
+                image: card_product.featured_image,
+                aspect_ratio: '1/1',
+                type: 'product',
+                class: 'tp__product-grid bikerz-product-card__image',
+                alt_text: card_product.title
+              -%}
+            {%- else -%}
+              {%- render 'responsive-image',
+                aspect_ratio: '1/1',
+                type: 'product',
+                class: 'tp__product-grid-plh bikerz-product-card__image',
+                placeholder_image: 'product-apparel-2'
+              -%}
+            {%- endif -%}
+          </div>
+        </a>
+      </div>
+
+      {%- unless is_available -%}
+        <span class="bikerz-product-card__soldout-badge">
+          {{- 'products.product.sold_out' | t -}}
+        </span>
+      {%- endunless -%}
+    </div>
+
+    <div class="card__content bikerz-product-card__content">
+      <div class="card__information bikerz-product-card__information">
+        <div class="bikerz-product-card__details">
+          {%- if card_brand != blank -%}
+            <p class="bikerz-product-card__brand">{{ card_brand | escape }}</p>
+          {%- endif -%}
+
+          <h3 class="bikerz-product-card__title">
+            <a href="{{ card_product.url | within: collection }}">
+              {{- card_product.title | escape -}}
+            </a>
+          </h3>
+
+          {%- if card_description != blank -%}
+            <p class="bikerz-product-card__description">{{ card_description | escape }}</p>
+          {%- endif -%}
+
+          <div class="bikerz-product-card__tags" aria-label="Características y disponibilidad">
+            {%- if card_tags != blank -%}
+              {%- for card_tag in card_tags -%}
+                <span class="bikerz-product-card__tag">{{ card_tag | escape }}</span>
+              {%- endfor -%}
+            {%- endif -%}
+            <span class="bikerz-product-card__tag bikerz-product-card__stock{% unless is_available %} bikerz-product-card__stock--out{% endunless %}">
+              {%- if is_available -%}En stock{%- else -%}Agotado{%- endif -%}
+            </span>
+          </div>
+        </div>
+
+        <div class="bikerz-product-card__purchase">
+          <div class="bikerz-product-card__price-row">
+            <span class="bikerz-product-card__price">{{ card_variant.price | money }}</span>
+            <span class="bikerz-product-card__currency">{{ shop.currency }}</span>
+            {%- if is_on_sale -%}
+              <s class="bikerz-product-card__compare-price">{{ compare_at_price | money }}</s>
+            {%- endif -%}
+          </div>
+
+          {%- if show_installments == true -%}
+            <p class="bikerz-product-card__installments">
+              {{ installment_count }}x {{ installment_amount | money }} sin interés
+            </p>
+          {%- endif -%}
+
+          <div class="bikerz-product-card__actions">
+            <product-form class="product-form bikerz-product-card__product-form">
+              <div class="product-form__error-message-wrapper" role="alert" hidden>
+                <span class="product-form__error-message"></span>
+              </div>
+              {%- form 'product',
+                card_product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ card_variant.id }}"
+                  disabled
+                  class="product-variant-id">
+                <button
+                  type="submit"
+                  name="add"
+                  class="product-form__submit bikerz-product-card__add"
+                  aria-label="Agregar {{ card_product.title | escape }} al carrito"
+                  {% unless is_available %}disabled{% endunless %}>
+                  <span class="product-form-btn-text bikerz-product-card__button-content">
+                    {% render 'icon', icon_name: 'cart' %}
+                    <span>Agregar</span>
+                  </span>
+                  <span class="tp-loading opacity-0 pointer-events-none" loader>
+                    {% render 'icon', icon_name: 'icon-loading', color: 'var(--color-white)' %}
+                  </span>
+                </button>
+              {%- endform -%}
+            </product-form>
+
+            <button
+              button-quick-view
+              type="button"
+              class="button-quick-view bikerz-product-card__quick-view"
+              data-product-handle="{{ card_product.handle }}"
+              aria-label="Vista rápida de {{ card_product.title | escape }}">
+              <span class="icon-quick-view bikerz-product-card__button-content">
+                {% render 'icon', icon_name: 'icon-quickview' %}
+              </span>
+              <span class="text-add-to-cart">Vista rápida</span>
+              {% render 'icon',
+                icon_name: 'icon-loading',
+                class: 'loading-icon hidden',
+                width: 24,
+                height: 24,
+                color: 'var(--color-white)'
+              %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>

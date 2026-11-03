@@ -1,0 +1,89 @@
+{
+  "queries": [
+    {
+      "empty": false,
+      "expanded": "true",
+      "input": "motul 10w40",
+      "titles": [
+        "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+        "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+        "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+        "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+        "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO"
+      ],
+      "total": "6"
+    },
+    {
+      "empty": false,
+      "expanded": "true",
+      "input": "120/70ZR17",
+      "titles": [
+        "DUNLOP SPORTMAX ROADSMART IV 120/70ZR17 TL 58W",
+        "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+        "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+        "CONTINENTAL TKC 70 120/70ZR17 58W",
+        "MICHELIN POWER GP 120/70ZR17 58W TL"
+      ],
+      "total": "15"
+    },
+    {
+      "empty": false,
+      "expanded": "true",
+      "input": "90/100-1",
+      "titles": [
+        "DUNLOP GEOMAX MX53 90/100-16 TT 51M",
+        "DUNLOP GEOMAX MX53 90/100-14 TT 49M",
+        "MICHELIN STARCROSS 5 90/100-14",
+        "MICHELIN STARCROSS 5 SOFT 90/100-14",
+        "MICHELIN STARCROSS 5 SOFT 90/100-16"
+      ],
+      "total": "8"
+    },
+    {
+      "empty": false,
+      "expanded": "true",
+      "input": "casco integral",
+      "titles": [
+        "CASCO INTEGRAL IGNYTE IGN-32 NEGRO",
+        "CASCO INTEGRAL IGNYTE IGN-32 PANTHER NEGRO CON BLANCO",
+        "CASCO INTEGRAL IGNYTE IGN-32 PANTHER NEGRO CON ROJO",
+        "CASCO MT HELMETS THUNDER 4 SV PENTAL B4 NARANJA PERLA CASCO INTEGRAL ECE 22.06",
+        "CASCO CABERG AVALON X MATT BLACK CASCO INTEGRAL ECE 22.06"
+      ],
+      "total": "166"
+    }
+  ],
+  "mobile": {
+    "images": [
+      {
+        "loaded": true,
+        "width": 54
+      },
+      {
+        "loaded": true,
+        "width": 54
+      },
+      {
+        "loaded": true,
+        "width": 54
+      },
+      {
+        "loaded": true,
+        "width": 54
+      },
+      {
+        "loaded": true,
+        "width": 54
+      }
+    ],
+    "input": "120/70-17",
+    "items": 5,
+    "overflow": false,
+    "width": 390
+  },
+  "keyboardProductNavigation": true,
+  "immediateEnter": {
+    "heading": "Buscar MOTUL 10W-40",
+    "total": 6
+  }
+}

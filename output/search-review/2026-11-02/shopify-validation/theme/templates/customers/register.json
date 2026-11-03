@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "text_alignment": "text-left",
+        "position_content": "column",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "rg_heading": "First time at GearX",
+        "rg_subheading": "Sign up for early Sale access plus tailored new arrivals, trends and promotions. To opt out, click unsubscribe in our emails.",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main"
+  ]
+}

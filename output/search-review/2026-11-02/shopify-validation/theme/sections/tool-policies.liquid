@@ -1,0 +1,43 @@
+<div class="tool-policies--wapper">
+    <ul class="list-none flex items-center justify-center gap-12">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign policies = block.settings
+            assign title = policies.title
+            assign url = policies.url
+          -%}
+          {% case block.type %}
+            {% when 'items' %}
+              <li class="{% if title or url %}mt-20{% endif %} leading-none first:border first:border-solid first:border-slate-500 first:border-t-0 first:border-b-0 first:border-l-0 first:pr-12">
+                <a href="{{ url }}" target="_blank" title="{{ title }}" class="text-[15px] transition duration-300 hover:underline">{{ title }}</a>
+              </li>
+          {% endcase %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% schema %}
+  {
+  "name": "Policies",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "name": "Items",
+      "type": "items",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

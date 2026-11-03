@@ -1,0 +1,186 @@
+{% assign bikerz_mvp_ga4_mode = 'off' %}
+{% if settings.bikerz_mvp_live_cart and settings.bikerz_mvp_ga4 %}{% assign bikerz_mvp_ga4_mode = 'live' %}{% endif %}
+{%- liquid
+  comment
+    Scope is the 19 approved source IDs, not recommendation mappings.
+    Case 15 stays held even if stock returns. Native lists have no fallback.
+  endcomment
+  assign pilot_ids = '|9297972822237|8876458180829|8876548096221|8861874028765|10192858579165|8867637985501|9297658380509|8861873930461|9037392150749|9128648933597|9297982750941|10192858972381|8861873701085|9552279437533|9592944722141|9552289923293|9471075483869|9128648704221|8867637362909|'
+  assign source_token = product.id | prepend: '|' | append: '|'
+  assign source_variant = product.selected_or_first_available_variant
+  assign can_preview = false
+  assign native_state = 'outside_pilot_or_held'
+  assign native_fields = product.metafields['shopify--discovery--product_recommendation']
+  assign native_key = ''
+  if intent == 'related'
+    assign native_key = 'related_products'
+  elsif intent == 'complementary'
+    assign native_key = 'complementary_products'
+  endif
+  assign native_list = native_fields[native_key]
+  if pilot_ids contains source_token
+    assign native_state = 'source_unavailable'
+    if product.type == 'Neumáticos' and source_variant.available and source_variant.inventory_quantity > 0 and source_variant.price > 0
+      assign native_state = 'native_list_missing_or_wrong_type'
+      if native_list.type == 'list.product_reference'
+        assign native_state = 'empty_or_filtered'
+        assign can_preview = true
+        if intent == 'related' and native_fields.related_products_display.value != 'only manual'
+          assign native_state = 'display_not_manual'
+          assign can_preview = false
+        endif
+      endif
+    endif
+  endif
+-%}
+{% if can_preview %}
+  {% capture cards %}
+    {% assign tire_count = 0 %}{% assign helmet_count = 0 %}{% assign related_count = 0 %}
+    {% assign rendered_ids = '|' %}
+    {% assign cart_product_ids = cart.items | map: 'product_id' %}
+    {% for candidate in native_list.value limit: 10 %}
+      {% assign eligible = false %}
+      {% assign kind = '' %}
+      {% assign candidate_token = candidate.id | prepend: '|' | append: '|' %}
+      {% if candidate != blank and candidate.id != product.id and candidate.available and candidate.url != blank and candidate.published_at != blank %}
+        {% if rendered_ids contains candidate_token or cart_product_ids contains candidate.id %}{% continue %}{% endif %}
+        {% if intent == 'related' and related_count < 4 and candidate.type == 'Neumáticos' %}
+          {% assign same_specification = true %}
+          {% assign required_fields = 'ancho,aspecto,di_metro,uso,posicion_neumatico,construccion,tipo_de_montaje,indice_carga,indice_velocidad' | split: ',' %}
+          {% for field in required_fields %}
+            {% assign source_attribute = product.metafields.custom[field].value %}
+            {% assign candidate_attribute = candidate.metafields.custom[field].value %}
+            {% if field == 'tipo_de_montaje' %}
+              {% assign source_attribute = source_attribute | join: '|' %}
+              {% assign candidate_attribute = candidate_attribute | join: '|' %}
+            {% endif %}
+            {% if source_attribute == blank or candidate_attribute != source_attribute %}
+              {% assign same_specification = false %}
+              {% break %}
+            {% endif %}
+            {% if field == 'ancho' or field == 'aspecto' or field == 'di_metro' %}
+              {% assign numeric_attribute = source_attribute | plus: 0 %}
+              {% if numeric_attribute <= 0 %}{% assign same_specification = false %}{% break %}{% endif %}
+            {% endif %}
+          {% endfor %}
+          {% if same_specification %}
+            {% assign eligible = true %}{% assign kind = 'related' %}
+          {% endif %}
+        {% elsif intent == 'complementary' %}
+          {% if candidate.type == 'Cascos' and helmet_count < 1 %}
+            {% assign eligible = true %}{% assign kind = 'helmet' %}
+          {% elsif candidate.type == 'Neumáticos' and tire_count < 2 %}
+            {% assign candidate_model = candidate.metafields.custom.modelo.value | downcase | strip %}
+            {% assign source_model = product.metafields.custom.modelo.value | downcase | strip %}
+            {% assign candidate_vendor = candidate.vendor | downcase | strip %}
+            {% assign source_vendor = product.vendor | downcase | strip %}
+            {% assign source_position = product.metafields.custom.posicion_neumatico.value %}
+            {% assign candidate_position = candidate.metafields.custom.posicion_neumatico.value %}
+            {% assign opposite_axle = false %}
+            {% if source_position == 'Delantera' and candidate_position == 'Trasera' %}{% assign opposite_axle = true %}{% endif %}
+            {% if source_position == 'Trasera' and candidate_position == 'Delantera' %}{% assign opposite_axle = true %}{% endif %}
+            {% if source_model != blank and source_vendor != blank and candidate_model == source_model and candidate_vendor == source_vendor and opposite_axle %}
+              {% assign pair_specification = true %}
+              {% assign pair_fields = 'uso,construccion,tipo_de_montaje' | split: ',' %}
+              {% for field in pair_fields %}
+                {% assign source_attribute = product.metafields.custom[field].value %}
+                {% assign candidate_attribute = candidate.metafields.custom[field].value %}
+                {% if field == 'tipo_de_montaje' %}
+                  {% assign source_attribute = source_attribute | join: '|' %}
+                  {% assign candidate_attribute = candidate_attribute | join: '|' %}
+                {% endif %}
+                {% if source_attribute == blank or candidate_attribute != source_attribute %}{% assign pair_specification = false %}{% break %}{% endif %}
+              {% endfor %}
+              {% assign dimension_fields = 'ancho,aspecto,di_metro,indice_carga' | split: ',' %}
+              {% for field in dimension_fields %}
+                {% assign source_number = product.metafields.custom[field].value | plus: 0 %}
+                {% assign candidate_number = candidate.metafields.custom[field].value | plus: 0 %}
+                {% if source_number <= 0 or candidate_number <= 0 %}{% assign pair_specification = false %}{% break %}{% endif %}
+              {% endfor %}
+              {% if product.metafields.custom.indice_velocidad.value == blank or candidate.metafields.custom.indice_velocidad.value == blank %}{% assign pair_specification = false %}{% endif %}
+              {% if pair_specification %}
+                {% assign eligible = true %}{% assign kind = 'tire' %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+      {% if eligible %}
+        {% capture candidate_card %}{% render 'bikerz-mvp-card', card_product: candidate, kind: kind, section_id: section.id %}{% endcapture %}
+        {% assign candidate_content = candidate_card | strip %}
+        {% if candidate_content != blank %}
+          {{ candidate_card }}
+          {% assign rendered_ids = rendered_ids | append: candidate.id | append: '|' %}
+          {% case kind %}
+            {% when 'related' %}{% assign related_count = related_count | plus: 1 %}
+            {% when 'tire' %}{% assign tire_count = tire_count | plus: 1 %}
+            {% when 'helmet' %}{% assign helmet_count = helmet_count | plus: 1 %}
+          {% endcase %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if intent == 'complementary' %}
+      {% for candidate in section.settings.bikerz_mvp_helmet_fill limit: 8 %}
+        {% assign complement_count = tire_count | plus: helmet_count %}
+        {% if complement_count >= 5 %}{% break %}{% endif %}
+        {% assign candidate_token = candidate.id | prepend: '|' | append: '|' %}
+        {% if candidate == blank or candidate.type != 'Cascos' or candidate.id == product.id %}{% continue %}{% endif %}
+        {% if candidate.available == false or candidate.url == blank or candidate.published_at == blank %}{% continue %}{% endif %}
+        {% if rendered_ids contains candidate_token or cart_product_ids contains candidate.id %}{% continue %}{% endif %}
+        {% capture helmet_card %}{% render 'bikerz-mvp-card', card_product: candidate, kind: 'helmet', section_id: section.id %}{% endcapture %}
+        {% assign helmet_content = helmet_card | strip %}
+        {% if helmet_content != blank %}
+          {{ helmet_card }}
+          {% assign rendered_ids = rendered_ids | append: candidate.id | append: '|' %}
+          {% assign helmet_count = helmet_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endcapture %}
+  {% assign cards_content = cards | strip %}
+  {% if cards_content != blank %}
+    {% assign native_state = 'ready' %}
+    {{ 'bikerz-mvp-preview.css' | asset_url | stylesheet_tag }}
+    {% if bikerz_mvp_ga4_mode == 'live' %}<script src="{{ 'bikerz-mvp-measurement.js' | asset_url }}" defer="defer"></script>{% endif %}
+    {% if intent == 'related' %}
+      <div class="tp-prd-recom bikerz-mvp-section" data-preview-related data-source-product-id="{{ product.id }}"
+        data-recommendation-surface="alternative" data-recommendation-mode="staged" data-ga4-mode="{{ bikerz_mvp_ga4_mode }}" data-currency="{{ cart.currency.iso_code }}"
+>
+        <h2 class="tp-section-heading">Otras opciones de tu medida y uso</h2>
+        <div class="bikerz-mvp-related-grid">{{ cards }}</div>
+      </div>
+    {% else %}
+      <script src="{{ 'bikerz-mvp-bundle.js' | asset_url }}" defer="defer"></script>
+      <bikerz-mvp-bundle class="tp-upsell bikerz-mvp-section" data-preview="true" data-cart-enabled="true" data-cart-environment="pilot" data-live-cart-enabled="{{ settings.bikerz_mvp_live_cart | default: false }}"
+        data-recommendation-surface="complementary" data-recommendation-mode="staged" data-ga4-mode="{{ bikerz_mvp_ga4_mode }}" data-currency="{{ cart.currency.iso_code }}"
+
+        data-source-product-id="{{ product.id }}" data-base-variant-id="{{ source_variant.id }}" data-base-price="{{ source_variant.price }}" data-base-stock="{{ source_variant.inventory_quantity }}">
+        <h2 class="tp-section-heading">Completa tu compra</h2>
+        <p>Opcional: elige una medida para el otro eje y/o un casco con tu talla.</p>
+        <div class="tp-upsell__content bikerz-mvp-layout">
+          <div class="bikerz-mvp-carousel">
+            <div class="bikerz-mvp-carousel-controls" data-carousel-controls hidden>
+              <button type="button" data-carousel-prev aria-label="Ver productos anteriores" aria-controls="MvpComplements-{{ section.id }}">←</button>
+              <button type="button" data-carousel-next aria-label="Ver productos siguientes" aria-controls="MvpComplements-{{ section.id }}">→</button>
+            </div>
+            <div class="bikerz-mvp-complement-grid" data-carousel id="MvpComplements-{{ section.id }}" tabindex="0" role="group" aria-label="Opciones para completar tu compra">
+              {{ cards }}
+            </div>
+          </div>
+          <div class="total-product bikerz-mvp-total">
+            <p class="bikerz-mvp-preview-note">El total incluye 1 unidad del producto que estás viendo y los complementos que elijas.</p>
+            <p>Total con tu selección <strong data-total>{{ source_variant.price | money }}</strong></p>
+            <p class="bikerz-mvp-preview-note" data-measure-notice>Antes de comprar, verifica que la medida elegida corresponda al otro eje de tu moto.</p>
+            <p class="bikerz-mvp-error" data-error role="alert" hidden></p>
+            <button type="button" class="tp-btn tp-btn__primary" data-submit>Agregar selección al carrito</button>
+            <p class="bikerz-mvp-preview-note">Añade tu selección al carrito, sin realizar una compra. Verifica las medidas antes de continuar.</p>
+            <a href="{{ routes.cart_url }}" data-cart-link hidden>Revisar carrito</a>
+            <output data-result aria-live="polite" hidden></output>
+            <noscript>Activa JavaScript para agregar tu selección al carrito.</noscript>
+          </div>
+        </div>
+      </bikerz-mvp-bundle>
+    {% endif %}
+  {% endif %}
+{% endif %}
+<template data-bikerz-mvp-native-state="{{ native_state }}" data-native-key="{{ native_key }}" data-source-product-id="{{ product.id }}"></template>

@@ -1,0 +1,696 @@
+{
+  "capturedAt": "2026-11-02T23:12:01.823Z",
+  "methodology": {
+    "rounds": 4,
+    "warmupRounds": 1,
+    "concurrentRequests": 1,
+    "compression": "gzip",
+    "connection": "keep-alive; first warmup excluded",
+    "inputDebounceMs": 300,
+    "limitation": "Existing normal-results section is a heavy proxy, not the proposed compact preview. No production traffic data or real mobile connection."
+  },
+  "overall": {
+    "current_predictive": {
+      "samples": 24,
+      "errors": 24,
+      "medianCompressedKB": null,
+      "medianHtmlKB": null
+    },
+    "normal_section": {
+      "samples": 24,
+      "errors": 24,
+      "medianCompressedKB": null,
+      "medianHtmlKB": null
+    },
+    "filtered_section": {
+      "samples": 24,
+      "errors": 24,
+      "medianCompressedKB": null,
+      "medianHtmlKB": null
+    }
+  },
+  "byCase": {
+    "exact_tire": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    },
+    "common_tire": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    },
+    "partial_tire": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    },
+    "oil_brand": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    },
+    "free_text": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    },
+    "model": {
+      "current_predictive": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "normal_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      },
+      "filtered_section": {
+        "samples": 4,
+        "errors": 4,
+        "medianCompressedKB": null,
+        "medianHtmlKB": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "round": -1,
+      "case": "exact_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "exact_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "exact_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": -1,
+      "case": "common_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "common_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": -1,
+      "case": "common_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "partial_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "partial_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "partial_tire",
+      "mode": "normal_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": -1,
+      "case": "oil_brand",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "oil_brand",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "oil_brand",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": -1,
+      "case": "free_text",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "free_text",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "free_text",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "model",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "model",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": -1,
+      "case": "model",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "exact_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "exact_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "exact_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "common_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "common_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "common_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "partial_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "partial_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "partial_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "oil_brand",
+      "mode": "normal_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 0,
+      "case": "oil_brand",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "oil_brand",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "free_text",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 0,
+      "case": "free_text",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "free_text",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "model",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 0,
+      "case": "model",
+      "mode": "normal_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 0,
+      "case": "model",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "exact_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 1,
+      "case": "exact_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "exact_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "common_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "common_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "common_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "partial_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "partial_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "partial_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "oil_brand",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 1,
+      "case": "oil_brand",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "oil_brand",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "free_text",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "free_text",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "free_text",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "model",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 1,
+      "case": "model",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 1,
+      "case": "model",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "exact_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "exact_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "exact_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "common_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "common_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "common_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "partial_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "partial_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "partial_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "oil_brand",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "oil_brand",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "oil_brand",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "free_text",
+      "mode": "normal_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 2,
+      "case": "free_text",
+      "mode": "filtered_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 2,
+      "case": "free_text",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "model",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "model",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 2,
+      "case": "model",
+      "mode": "normal_section",
+      "error": "HTTP 429"
+    },
+    {
+      "round": 3,
+      "case": "exact_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "exact_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "exact_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "common_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "common_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "common_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "partial_tire",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "partial_tire",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "partial_tire",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "oil_brand",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "oil_brand",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "oil_brand",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "free_text",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "free_text",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "free_text",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "model",
+      "mode": "current_predictive",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "model",
+      "mode": "normal_section",
+      "error": "HTTP 301"
+    },
+    {
+      "round": 3,
+      "case": "model",
+      "mode": "filtered_section",
+      "error": "HTTP 301"
+    }
+  ]
+}

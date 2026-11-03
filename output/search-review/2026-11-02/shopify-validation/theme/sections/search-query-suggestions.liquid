@@ -1,0 +1,23 @@
+{%- if predictive_search.performed -%}
+<div data-search-query-suggestions-response data-query="{{ predictive_search.terms | escape }}">
+    {%- assign shown_queries = 0 -%}
+    {%- if predictive_search.resources.queries.size > 0 -%}
+      <ul class="predictive-search__suggestions list-none" role="group" aria-label="{{ 'templates.search.suggestions' | t | escape }}">
+        {%- for query in predictive_search.resources.queries -%}
+          {%- assign query_text = query.text | downcase | strip -%}
+          {%- assign typed_text = predictive_search.terms | downcase | strip -%}
+          {%- if query_text != typed_text and shown_queries < 3 -%}
+            {%- assign shown_queries = shown_queries | plus: 1 -%}
+            <li id="predictive-search-option-query-{{ forloop.index }}" role="option" aria-selected="false">
+              <a href="{{ query.url }}" class="predictive-search__suggestion" tabindex="-1">
+                <span class="predictive-search__suggestion-text">{{ query.styled_text }}</span>
+                {%- render 'icon', icon_name: 'arrow-right' -%}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+</div>
+{%- endif -%}
+{% schema %}{"name":"Search query suggestions","settings":[]}{% endschema %}

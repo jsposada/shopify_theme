@@ -1,0 +1,72 @@
+[
+  {
+    "label": "oil_exact",
+    "url": "https://bikerz.cl/search?q=*&type=product&filter.v.t.shopify.viscosity=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F16685",
+    "status": 200,
+    "total": 15,
+    "products": [
+      "ACEITE VISTONY RAYVON 4T 10W-40 JASO MA2",
+      "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "ACEITE CHAMPION PRORACING FULL SINTÉTICO GP 10W-40 1 LITRO",
+      "PACK 2 ACEITES CHAMPION PRORACING FULL SINTÉTICO GP 10W-40 1 LITRO",
+      "PACK 3 ACEITES CHAMPION PRORACING FULL SINTÉTICO GP 10W-40 1 LITRO",
+      "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "ACEITE CASTROL ACTEVO SEMI SINTÉTICO 10W-40 1L",
+      "ACEITE IPONE KATANA 10W-40 1L 100% SINTETICO",
+      "ACEITE CASTROL POWER 1 RACING 4T 10W-40 H C1 1 LITRO",
+      "ACEITE MOBIL RACING 4T SINTÉTICO 10W-40 JASO",
+      "ACEITE LIQUI MOLY STREET 10W-40 1 LITRO"
+    ]
+  },
+  {
+    "label": "oil_brand",
+    "url": "https://bikerz.cl/search?q=*&type=product&filter.v.t.shopify.viscosity=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F16685&filter.p.m.custom.marca=MOTUL",
+    "status": 200,
+    "total": 6,
+    "products": [
+      "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO"
+    ]
+  },
+  {
+    "label": "oil_with_text",
+    "url": "https://bikerz.cl/search?q=motul+10W-40&type=product&filter.v.t.shopify.viscosity=gid%3A%2F%2Fshopify%2FTaxonomyValue%2F16685&filter.p.m.custom.marca=MOTUL",
+    "status": 200,
+    "total": 6,
+    "products": [
+      "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "PACK 3 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO"
+    ]
+  },
+  {
+    "label": "partial_dimensions",
+    "url": "https://bikerz.cl/search?q=*&type=product&filter.p.m.custom.ancho=90.0&filter.p.m.custom.aspecto=100",
+    "status": 200,
+    "total": 11,
+    "products": [
+      "DUNLOP GEOMAX MX53 90/100-16 TT 51M",
+      "DUNLOP GEOMAX MX53 90/100-14 TT 49M",
+      "MICHELIN STARCROSS 5 HARD 90/100-21",
+      "MICHELIN STARCROSS 5 MEDIUM 90/100-21",
+      "MICHELIN STARCROSS 5 90/100-14",
+      "MICHELIN STARCROSS 5 SOFT 90/100-14",
+      "MICHELIN STARCROSS 5 SOFT 90/100-16",
+      "MICHELIN STARCROSS 5 SOFT 90/100-21",
+      "CEAT ZOOM D 90/100-10 TL 53J",
+      "MICHELIN STARCROSS MH3 90/100-16",
+      "MICHELIN STARCROSS MH3 90/100-16"
+    ]
+  }
+]

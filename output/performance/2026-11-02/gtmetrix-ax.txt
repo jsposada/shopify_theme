@@ -1,0 +1,241 @@
+Browser tab: 7, Title: "Latest Performance Report for: https://www.bikerz.cl/ | GTmetrix", URL: "https://gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/".
+1 AXWebArea Latest Performance Report for: https://www.bikerz.cl/ | GTmetrix, URL: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/
+	2 container Cookie Consent Prompt
+		3 container
+			4 text We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic. By clicking “Accept,” you agree to our website's cookie use as described in our 
+			5 pop up button Cookie Policy
+			6 text  and 
+			7 link Description: Privacy Policy, Value: gtmetrix.com/privacy-policy.html
+			8 text . You can change your cookie settings at any time by clicking “
+			9 pop up button Preferences
+			10 text .”
+		11 container
+			12 pop up button Preferences
+			13 button Accept
+	14 container
+		15 link gtmetrix.com/
+		16 container Main Navigation
+			17 content list
+				18 link Description: Why GTmetrix, Value: gtmetrix.com/features/
+				19 link Description: Explore PRO, Value: gtmetrix.com/why-gtmetrix-pro/
+				20 link Description: AI-Built Sites, Value: gtmetrix.com/ai-mcp/
+				21 link Description: Pricing, Value: gtmetrix.com/pricing/, ID: gtmetrix-pricing
+				22 container
+					23 text Resources
+					24 image
+		25 link Description: Log In, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+		26 link Description: Try for FREE, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+	27 container
+		28 container
+			29 link Description: Re-Test, Help: Re-test this page, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			30 link Description: Compare, Help: Compare report to another URL, Value: gtmetrix.com/signup?job_limit=1&redirect=/reports/www.bikerz.cl/zJFMqspm
+		31 container
+			32 link Description: Page Settings, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			33 link Description: Monitor, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			34 link Description: Set Up Alerts, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			35 link Description: Tags, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			36 link Description: Share, Help: Share this report, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+		37 container Description: Anuncio, Help: Contenido de anuncios de terceros, ID: google_ads_iframe_/103512698,22819611845/22875175489_0
+			38 AXWebArea gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/
+				39 container
+					40 AXWebArea onetag-sys.com/static/creative-sandbox.html?0.4.63
+						41 container
+							42 container qc-ad-size
+								43 container ftdiv8412600
+									44 link Description: Click Here, Help: Click to learn more, ID: ftalt8412600, Value: exch.quantserve.com/r?&a=p-1RYxePXT9bCS2&labels=_qc.clk,_click.adserver.rtb,_click.rand.1228253393&rtbip=192.184.73.164&rtb_id=CWZoJHkhOMwVEQGgJHkhOMwVGDzfSwXxM2x74bigF64&redirecturl3=https://servedby.flashtalking.com/click/8/225751;8412600;6329427;210;0/?gdpr=0&ft_impID=1EA39ECF-9C6F-82F4-9D28-C2D9EFF83A05&ft_custom=sHQMZLQgCGSvIQo_4D0NOLNxE2SxdQxx4SRaaLZ1CD60KAY-nC3PbA==&g=68687587DE049E&random=791222.4238535336&ft_width=300&ft_height=600&url=https://www.adobe.com/la/creativecloud/plans.html?sdid=WPHDHWG1&mv=display&mv2=display
+									45 link Description: AdChoices arrow, Help: Click here to learn more about AdChoices, Value: flashtalking.com/consumer-privacy
+								46 link pixel.quantcount.com/r?a=p-9fYuixa7g_Hm2;rand=1228253393;labels=_click.creative.iab,_qc.iab.clk.p-1RYxePXT9bCS2.$%7BLINE_ITEM_ID%7D.10545854;redirecturl2=http://www.quantcast.com/adchoices
+							47 AXWebArea onetag-sys.com/static/creative-sandbox.html?0.4.63
+							48 AXWebArea about:blank
+					49 image
+					50 image
+		51 heading Uncover full report details with a FREE GTmetrix account, Value: 3
+			52 text Uncover full report details with a FREE GTmetrix account
+		53 text Get full report details and more testing capacity with a FREE GTmetrix account.
+		54 container
+			55 link Description: Log in, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			56 link Description: Create a FREE account, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+		57 container
+			58 heading Latest Performance Report for:, Value: 1
+				59 text Latest Performance Report for:
+			60 heading https://www.bikerz.cl/, Value: 2
+				61 link Description: https://www.bikerz.cl/, Value: bikerz.cl/, ID: report-url
+			62 text Report generated:
+			63 text Mon, Nov 2, 2026 4:54 AM -0700
+			64 text Test Server Location:
+			65 image
+			66 text Seattle, WA, USA
+			67 text Using:
+			68 image
+			69 text Chrome 154.0.0.0, Lighthouse 12.6.1
+		70 heading GTmetrix Grade , Value: 3
+			71 text GTmetrix Grade 
+		72 container
+			73 heading Performance , Value: 4
+				74 text Performance 
+			75 text 75%
+		76 heading Structure , Value: 4
+			77 text Structure 
+		78 text 91%
+		79 heading Web Vitals , Value: 3
+			80 text Web Vitals 
+		81 heading LCP  , Value: 4
+			82 container Largest Contentful Paint
+				83 text LCP
+		84 text 635ms
+		85 heading TBT  , Value: 4
+			86 container Total Blocking Time
+				87 text TBT
+		88 text 613ms
+		89 heading CLS  , Value: 4
+			90 container Cumulative Layout Shift
+				91 text CLS
+		92 text 0.02
+		93 content list
+			94 text Summary
+			95 text Performance
+			96 text Structure
+			97 text CrUX
+			98 text Waterfall
+			99 text Video
+			100 text History
+			101 text Alerts
+		102 container summary
+			103 heading Log in or Sign up to see the rest of the Report, Value: 3
+				104 text Log in or Sign up to see the rest of the Report
+			105 text Try out GTmetrix for FREE and get full report details, more tests, monitoring, locations, and more!
+			106 container
+				107 link Description: Log in, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+				108 text or
+				109 link Description: Create a FREE account, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			110 heading More from GTmetrix, Value: 3
+				111 text More from GTmetrix
+			112 text Additional tips and suggestions based on your page analysis.
+			113 container
+				114 image
+				115 image
+				116 heading JavaScript is affecting performance, Value: 5
+					117 text JavaScript is affecting performance
+				118 text Learn how using too much JS hurts performance.
+				119 link Description: Read the guide, Value: gtmetrix.com/blog/slow-website-performance-you-might-be-using-too-much-javascript/
+			120 container
+				121 image
+				122 image
+				123 heading Third-party requests are affecting your performance, Value: 5
+					124 text Third-party requests are affecting your performance
+				125 text Learn why and potential solutions.
+				126 link Description: Read the guide, Value: gtmetrix.com/reduce-the-impact-of-third-party-code.html
+			127 container
+				128 image
+				129 image
+				130 heading Need optimization guides and advice?, Value: 5
+					131 text Need optimization guides and advice?
+				132 text Check out the GTmetrix blog for tips and how-tos!
+				133 link Description: Read the guide, Value: gtmetrix.com/blog/
+			134 link Description: Need help with optimization? Find a developer with our partner Fiverr to optimize your performance, Value: gtmetrix.com/go/fiverr-sum-shop
+			135 link Value: gtmetrix.com/go/shopvert-more, Description: Your Shopify performance could be improved Optimize your Shopify performance with Shopvert optimization services
+			136 link Value: gtmetrix.com/blog/category/using-gtmetrix/, Description: Tips and Tricks for using GTmetrix Shortcuts, guides and pointers for making the most out of GTmetrix
+			137 link Value: gtmetrix.com/blog/how-to-read-a-waterfall-chart-for-beginners/, Description: Understand and assess Waterfall Charts Learn to identify and point out potential issues in your page load
+			138 link Description: Test your page in multiple locations Analyze your page globally with a free GTmetrix account, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			139 link Description: Read our blog for more performance tips and advice., Value: gtmetrix.com/blog/
+		140 container menu-compare
+			141 heading Compare with another URL, Value: 3
+				142 text Compare with another URL
+			143 link gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			144 container
+				145 text Analyze the following URL and compare it to the current report. 
+				146 text field (settable)
+				147 text Options:  Seattle, WA, USA  using  Chrome .
+				148 link Description: Change Options, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+				149 button Compare
+		150 container menu-report-history
+			151 heading Export History, Value: 3
+				152 text Export History
+			153 text Get report history for this page in CSV format based on selected settings.
+			154 container
+				155 text Select Format 
+				156 pop up button (collapsed, settable) Value: Download CSV file, ID: rh-format, Secondary Actions: Expand
+					157 menu
+						158 (selected) Download CSV file
+						159 (disabled) Link to CSV file (requires API key)
+				160 text Select time range
+				161 pop up button (collapsed, settable) Value: Last 25 Reports, ID: rh-range, Secondary Actions: Expand
+					162 menu
+						163 Last 5 Reports
+						164 Last 10 Reports
+						165 (selected) Last 25 Reports
+						166 Last 50 Reports
+						167 (disabled) Last 100 Reports (PRO Only)
+						168 (disabled) Last 250 Reports (PRO Only)
+						169 (disabled) Last 500 Reports (PRO Only)
+						170 (disabled) All available reports (PRO Only)
+				171 text Select columns
+				172 content list
+					173 button (collapsed) Select columns, Secondary Actions: Expand
+						174 text Select columns
+				175 container
+					176 checkbox (settable, integer) ON OFF Use Legacy Columns, Value: 0, ID: rh-legacy
+					177 text ON OFF
+				178 text  Use Legacy Columns 
+			179 link Description: Download CSV, Value: gtmetrix.com/pages/www.bikerz.cl/ehkhdxPd/history.csv
+			180 link gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+		181 container menu-report-share
+			182 heading Share this Report, Value: 4
+				183 text Share this Report
+			184 content list menu-report-share-links
+				185 link Description: Share on X, Help: Tweet, Value: twitter.com/intent/tweet?text=Check%20out%20the%20performance%20of%20my%20website!&url=https%3A%2F%2Fgtmetrix.com%2Freports%2Fwww.bikerz.cl%2FzJFMqspm%2F&hashtags=webperf,optimization
+				186 link Description: Share on Facebook, Value: facebook.com/dialog/share?app_id=384867481567740&href=https%3A%2F%2Fgtmetrix.com%2Freports%2Fwww.bikerz.cl%2FzJFMqspm%2F&display=popup
+				187 link Description: Copy Report Link, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			188 heading Download PDF, Value: 4
+				189 text Download PDF
+			190 heading Download this PDF Report with a GTmetrix account, Value: 4
+				191 text Download this PDF Report with a GTmetrix account
+			192 text Log in to download a PDF version of this GTmetrix Report.
+			193 link Description: Get started for FREE, Value: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+			194 link gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/#
+	195 container
+		196 link gtmetrix.com/
+		197 text GTmetrix was developed for website owners to easily test the performance of their webpages.
+		198 link Description: Learn more about us, Value: gtmetrix.com/about-us/
+		199 text  or 
+		200 link Description: Check out Careers, Value: gtmetrix.com/careers/
+		201 text . Got questions? 
+		202 link Description: Contact us, Value: gtmetrix.com/contact/
+		203 heading Product, Value: 4
+			204 text Product
+		205 content list
+			206 link Description: Why GTmetrix, Value: gtmetrix.com/features/
+			207 link Description: Explore PRO, Value: gtmetrix.com/why-gtmetrix-pro/
+			208 link Description: Test Server Locations, Value: gtmetrix.com/locations/
+			209 link Description: GTmetrix REST API, Value: gtmetrix.com/api/docs/2.0/
+			210 link Description: GTmetrix MCP, Value: gtmetrix.com/ai-mcp/
+		211 heading Pricing, Value: 4
+			212 text Pricing
+		213 content list
+			214 link Description: Plans, Value: gtmetrix.com/pricing/
+		215 heading Resources, Value: 4
+			216 text Resources
+		217 content list
+			218 link Description: Guides, Value: gtmetrix.com/guides/
+			219 link Description: Metrics & Audits, Value: gtmetrix.com/recommendations.html
+			220 link Description: How to Guides, Value: gtmetrix.com/blog/category/how-to-guides/
+			221 link Description: Using GTmetrix, Value: gtmetrix.com/blog/category/using-gtmetrix/
+			222 link Description: FAQ, Value: gtmetrix.com/faq.html
+		223 heading Blog, Value: 4
+			224 text Blog
+		225 content list
+			226 link Description: Changes, Value: gtmetrix.com/blog/category/changes/
+			227 link Description: Case Studies, Value: gtmetrix.com/blog/category/case-studies/
+			228 link Description: Optimization Explained, Value: gtmetrix.com/blog/category/optimization-explained/
+		229 text © 2026 GTmetrix. All rights reserved.
+		230 link Description: Facebook, Value: facebook.com/gtmetrix
+		231 link Description: X (formerly Twitter), Value: x.com/gtmetrix
+		232 link Description: LinkedIn, Value: linkedin.com/company/gtmetrix
+		233 content list
+			234 link Description: Terms of Service, Value: gtmetrix.com/terms-of-service.html
+			235 link Description: Privacy Policy, Value: gtmetrix.com/privacy-policy.html
+			236 link Description: Legal, Value: gtmetrix.com/legal.html
+			237 link Description: Cookies, Value: gtmetrix.com/cookies.html
+			238 link Description: VAT, Value: gtmetrix.com/vat/
+
+The focused UI element is 1 AXWebArea Latest Performance Report for: https://www.bikerz.cl/ | GTmetrix, URL: gtmetrix.com/reports/www.bikerz.cl/zJFMqspm/

@@ -1,0 +1,29 @@
+{
+  "desktopVisible": false,
+  "images": [
+    {
+      "loaded": false,
+      "width": 54
+    },
+    {
+      "loaded": false,
+      "width": 54
+    },
+    {
+      "loaded": false,
+      "width": 54
+    },
+    {
+      "loaded": false,
+      "width": 54
+    },
+    {
+      "loaded": false,
+      "width": 54
+    }
+  ],
+  "inputFont": "16px",
+  "overflow": false,
+  "rows": 5,
+  "width": 390
+}

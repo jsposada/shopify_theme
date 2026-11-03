@@ -1,0 +1,66 @@
+<details class="tp-faq__item brd-1 mb-20" open="">
+  <summary class="tp-collap-tab__sm">
+    <h6 class="summary-heading tp-bg flex items-center justify-between mb-0 px-16 py-16">
+      <span>Características</span>
+      <span class="icon-toggle relative"></span>
+    </h6>
+  </summary>
+  <div class="tp-faq__item-content content-animation px-24 py-16">
+    <div class="tab-panel">
+      {% assign motos_compatibles = product.metafields.custom.motos_compatibles.value %}
+      {% assign moto_fallback = product.metafields.custom.moto.value | default: product.metafields.custom.moto %}
+
+      {% if product.metafields.custom.material_pastillas != blank %}
+        <p><strong>Material pastillas:</strong> {{ product.metafields.custom.material_pastillas.value | default: product.metafields.custom.material_pastillas }}</p>
+      {% endif %}
+      {% if product.metafields.custom.marca != blank %}
+        <p><strong>Marca:</strong> {{ product.metafields.custom.marca.value | default: product.metafields.custom.marca }}</p>
+      {% endif %}
+      {% if moto_fallback != blank %}
+        <p><strong>Moto compatible:</strong> {{ moto_fallback }}</p>
+      {% endif %}
+      {% if product.metafields.custom.posicion != blank %}
+        <p><strong>Posición:</strong> {{ product.metafields.custom.posicion.value | default: product.metafields.custom.posicion }}</p>
+      {% endif %}
+
+      {% if motos_compatibles != blank %}
+        <p>
+          <strong>Otras motos compatibles:</strong>
+          <select class="field__input" aria-label="Otras motos compatibles">
+            <option value="" selected>Ver otras motos compatibles</option>
+            {% for moto in motos_compatibles %}
+              {% liquid
+                assign moto_nombre = moto.nombre.value | default: moto.nombre
+                assign moto_titulo = moto.titulo.value | default: moto.titulo
+                assign moto_name = moto.name.value | default: moto.name
+                assign moto_marca = moto.marca.value | default: moto.marca
+                assign moto_modelo = moto.modelo.value | default: moto.modelo
+                assign moto_anio = moto.anio.value | default: moto.anio | default: moto.ano.value | default: moto.ano | default: moto.year.value | default: moto.year
+                assign moto_handle = moto.system.handle | replace: '-', ' '
+              %}
+              {% capture moto_label %}
+                {% if moto_nombre != blank %}
+                  {{ moto_nombre }}
+                {% elsif moto_titulo != blank %}
+                  {{ moto_titulo }}
+                {% elsif moto_name != blank %}
+                  {{ moto_name }}
+                {% elsif moto_marca != blank or moto_modelo != blank %}
+                  {{ moto_marca }} {{ moto_modelo }} {{ moto_anio }}
+                {% elsif moto_handle != blank %}
+                  {{ moto_handle }}
+                {% else %}
+                  {{ moto }}
+                {% endif %}
+              {% endcapture %}
+              {% assign moto_label = moto_label | strip %}
+              {% unless moto_label == blank or moto_label == 'MetaobjectDrop' %}
+                <option value="{{ moto_label | escape }}">{{ moto_label }}</option>
+              {% endunless %}
+            {% endfor %}
+          </select>
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</details>

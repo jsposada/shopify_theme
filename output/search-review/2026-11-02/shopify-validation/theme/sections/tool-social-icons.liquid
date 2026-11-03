@@ -1,0 +1,52 @@
+<div class="tool-socials--wapper">
+  <ul class="list-none flex items-center justify-center gap-12">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign social = block.settings
+          assign url = social.url
+          assign image = social.image
+        -%}
+        {% case block.type %}
+          {% when 'items' %}
+            <li class="{% if url or image %}mt-20{% endif %} rounded-full bg-slate-200 transition duration-300 group">
+              <a href="{{ url }}" target="_blank" title="" class="block p-8">
+                <img
+                  src="{{ image | image_url: width: image.width }}"
+                  alt="socials icons"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  loading="lazy"
+                  class="transition duration-300 scale-90 group-hover:scale-110"
+                >
+              </a>
+            </li>
+        {% endcase %}
+      {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+  "name": "Social icons",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "name": "Items",
+      "type": "items",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

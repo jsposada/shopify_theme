@@ -1,0 +1,186 @@
+[
+  {
+    "label": "90/100-10",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100",
+    "status": 200,
+    "count": null,
+    "products": [
+      "CEAT ZOOM D 90/100-10 TL 53J"
+    ]
+  },
+  {
+    "label": "90/100-10",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100&q=90%2F100-10&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 1,
+    "products": [
+      "CEAT ZOOM D 90/100-10 TL 53J"
+    ]
+  },
+  {
+    "label": "120/70-17",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70",
+    "status": 200,
+    "count": null,
+    "products": [
+      "CONTINENTAL ContiRoad 120/70ZR17 58W",
+      "CONTINENTAL TKC 70 120/70ZR17 58W",
+      "MICHELIN PILOT ROAD 5 120/70ZR17 58W",
+      "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+      "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+      "DUNLOP SPORTMAX GPR300 120/70R17  58W",
+      "HEIDENAU K73 120/70-17  TL 58H",
+      "MICHELIN ANAKEE ADVENTURE 120/70R17 58V",
+      "MICHELIN PILOT STREET 120/70-17 58S",
+      "MICHELIN SCORCHER 21 120/70R17 58V",
+      "MICHELIN POWER GP 120/70ZR17 58W TL",
+      "DUNLOP TRAILMAX MIXTOUR 120/70R17",
+      "MICHELIN POWER 6 120/70ZR17 58W TL",
+      "DUNLOP D609 120/70R17 58W",
+      "DUNLOP Q-LITE 120/70-17 58S TL",
+      "MICHELIN PILOT STREET RADIAL 120/70ZR17 TL/TT 58W",
+      "CONTINENTAL CONTITRAILATTACK 3 120/70ZR17 58W TL",
+      "MICHELIN PILOT STREET RADIAL 120/70R17 TL/TT 58H",
+      "TIMSUN TS-860F 120/70-17 TL 60H",
+      "MICHELIN ROAD 6 120/70ZR17 58W F TL"
+    ]
+  },
+  {
+    "label": "120/70-17",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70&q=120%2F70-17&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 33,
+    "products": [
+      "DUNLOP ARROWMAX GT601 120/70-17 TL 58H",
+      "DUNLOP Q-LITE 120/70-17 58S TL",
+      "TIMSUN TS-860F 120/70-17 TL 60H",
+      "HEIDENAU K73 120/70-17  TL 58H",
+      "XCELINK KRATOS 120/70-17 TL 58H",
+      "MICHELIN POWER 6 120/70ZR17 58W TL",
+      "EUROGRIP REMORA ATT455 120/70-17 TL 58P",
+      "Pareja Dunlop Sportmax GPR300 120/70R17 y 180/55R17",
+      "Pareja Dunlop Sportmax GPR300 120/70R17 y 160/60R17",
+      "DUNLOP TRAILMAX MIXTOUR 120/70R17",
+      "CEAT GRIPP XL RAD STEEL F 120/70R17 TL 58H",
+      "BRIDGESTONE BATTLAX S23 120/70R17 TL 58W",
+      "MICHELIN SCORCHER 21 120/70R17 58V",
+      "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+      "SHINKO TRAIL MASTER E705 120/70R17 TL 58H",
+      "MICHELIN POWER GP 120/70ZR17 58W TL"
+    ]
+  },
+  {
+    "label": "140/70-17",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=140.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70",
+    "status": 200,
+    "count": null,
+    "products": [
+      "DUNLOP Q-LITE 140/70R17 66H",
+      "DUNLOP ARROWMAX GT601 140/70-17  66H",
+      "DUNLOP SPORTMAX GPR300 140/70R17  66H",
+      "MICHELIN PILOT STREET RADIAL 140/70R17 66H",
+      "RINALDI HB37 140/70-17 66T",
+      "MICHELIN PILOT STREET 140/70-17 TL/TT 66S",
+      "VIPAL STREET ST500 140/70-17 TL 66S",
+      "TIMSUN TS-822 140/70-17 66P TL",
+      "MICHELIN POWER 6 140/70ZR17 66W TL",
+      "CONTINENTAL CONTIMOTION 140/70ZR17 TL 66W",
+      "XCELINK KRATOS 140/70-17 TL 66H",
+      "CEAT ZOOM XL 140/70-17 TL 66H",
+      "Pareja Dunlop Arrowmax GT601 140/70-17 y 100/80-17",
+      "MICHELIN PILOT STREET 140/70-17 66H",
+      "TIMSUN TS-659A 140/70-17 66H TL",
+      "Pareja Dunlop Arrowmax GT601 140/70-17 y 110/70-17",
+      "EUROGRIP EEG BEAMER HS 140/70-17 TL 66S",
+      "CEAT GRIPP X5 140/70-17 TL 66H",
+      "DUNLOP SPORTMAX Q5A  140/70R17 66H TL",
+      "NEUMÁTICO SEIPRO SPORT CIUDAD 140/70-17 TL 66P"
+    ]
+  },
+  {
+    "label": "140/70-17",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=140.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70&q=140%2F70-17&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 20,
+    "products": [
+      "MICHELIN PILOT STREET RADIAL 140/70R17 66H",
+      "MICHELIN PILOT STREET 140/70-17 66H",
+      "VIPAL STREET ST500 140/70-17 TL 66S",
+      "MICHELIN PILOT STREET 140/70-17 TL/TT 66S",
+      "CEAT ZOOM XL 140/70-17 TL 66H",
+      "RINALDI HB37 140/70-17 66T",
+      "DUNLOP Q-LITE 140/70R17 66H",
+      "EUROGRIP EEG BEAMER HS 140/70-17 TL 66S",
+      "DUNLOP SPORTMAX GPR300 140/70R17  66H",
+      "CEAT GRIPP X5 140/70-17 TL 66H",
+      "DUNLOP SPORTMAX Q5A  140/70R17 66H TL",
+      "TIMSUN TS-659A 140/70-17 66H TL",
+      "MICHELIN POWER 6 140/70ZR17 66W TL",
+      "CONTINENTAL CONTIMOTION 140/70ZR17 TL 66W",
+      "NEUMÁTICO SEIPRO SPORT CIUDAD 140/70-17 TL 66P",
+      "DUNLOP ARROWMAX GT601 140/70-17  66H"
+    ]
+  },
+  {
+    "label": "3.00-10",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=3.0&filter.p.m.custom.di_metro=10",
+    "status": 200,
+    "count": null,
+    "products": [
+      "MICHELIN S1 3.00-10 TL/TT 42J"
+    ]
+  },
+  {
+    "label": "3.00-10",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=3.0&filter.p.m.custom.di_metro=10&q=3.00-10&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 1,
+    "products": [
+      "MICHELIN S1 3.00-10 TL/TT 42J"
+    ]
+  },
+  {
+    "label": "90/100-10 ceat",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100",
+    "status": 200,
+    "count": null,
+    "products": [
+      "CEAT ZOOM D 90/100-10 TL 53J"
+    ]
+  },
+  {
+    "label": "90/100-10 ceat",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100&q=ceat&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 1,
+    "products": [
+      "CEAT ZOOM D 90/100-10 TL 53J"
+    ]
+  },
+  {
+    "label": "120/70-99",
+    "path": "/collections/neumaticos",
+    "url": "https://bikerz.cl/collections/neumaticos?filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=99&filter.p.m.custom.aspecto=70",
+    "status": 200,
+    "count": null,
+    "products": []
+  },
+  {
+    "label": "120/70-99",
+    "path": "/search",
+    "url": "https://bikerz.cl/search?filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=99&filter.p.m.custom.aspecto=70&q=120%2F70-99&type=product&options%5Bprefix%5D=last",
+    "status": 200,
+    "count": 0,
+    "products": []
+  }
+]

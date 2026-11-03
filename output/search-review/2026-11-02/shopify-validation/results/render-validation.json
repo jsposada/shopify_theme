@@ -1,0 +1,433 @@
+{
+  "capturedAt": "2026-11-02T23:50:01.118Z",
+  "config": {
+    "version": "search-v2-qa-1",
+    "searchUrl": "/search",
+    "language": "es",
+    "country": "CL",
+    "currency": "CLP",
+    "theme": 190293868765,
+    "profiles": [
+      "40",
+      "50",
+      "55",
+      "60",
+      "65",
+      "70",
+      "75",
+      "80",
+      "90",
+      "100"
+    ],
+    "rims": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21"
+    ],
+    "viscosities": {
+      "5W-40": "gid://shopify/TaxonomyValue/16682",
+      "10W-40": "gid://shopify/TaxonomyValue/16685",
+      "10W-50": "gid://shopify/TaxonomyValue/16686",
+      "15W-50": "gid://shopify/TaxonomyValue/16689",
+      "20W-50": "gid://shopify/TaxonomyValue/16691"
+    },
+    "brands": [
+      "ANLAS",
+      "AVON",
+      "BRIDGESTONE",
+      "CASTROL",
+      "CEAT",
+      "CHAMPION",
+      "CONTINENTAL",
+      "DUNLOP",
+      "EUROGRIP",
+      "HEIDENAU",
+      "IPONE",
+      "LIQUI MOLY",
+      "MAGGION",
+      "MAXIMA",
+      "MEFO",
+      "METZELER",
+      "MICHELIN",
+      "MITAS",
+      "MOBIL",
+      "MOTOZ",
+      "MOTUL",
+      "RINALDI",
+      "SEIPRO",
+      "SHINKO",
+      "SUPER RUN",
+      "TIMSUN",
+      "VIPAL",
+      "VISTONY",
+      "XCELINK"
+    ]
+  },
+  "validation": [
+    {
+      "raw": "90/100-10",
+      "total": 1,
+      "shown": 1,
+      "bytes": 3532,
+      "checks": [
+        {
+          "id": "9592944885981",
+          "title": "CEAT ZOOM D 90/100-10 TL 53J",
+          "price": 4679000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "90 100 10",
+      "total": 1,
+      "shown": 1,
+      "bytes": 3532,
+      "checks": [
+        {
+          "id": "9592944885981",
+          "title": "CEAT ZOOM D 90/100-10 TL 53J",
+          "price": 4679000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "120/70ZR17",
+      "total": 15,
+      "shown": 5,
+      "bytes": 9592,
+      "checks": [
+        {
+          "id": "10192859529437",
+          "title": "DUNLOP SPORTMAX ROADSMART IV 120/70ZR17 TL 58W",
+          "price": 18940000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "8876458180829",
+          "title": "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+          "price": 14519000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "8876547866845",
+          "title": "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+          "price": 24700000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "8876552159453",
+          "title": "CONTINENTAL TKC 70 120/70ZR17 58W",
+          "price": 22099000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9005056262365",
+          "title": "MICHELIN POWER GP 120/70ZR17 58W TL",
+          "price": 24487400,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "motul 10w40",
+      "total": 6,
+      "shown": 5,
+      "bytes": 9036,
+      "checks": [
+        {
+          "id": "9449874063581",
+          "title": "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+          "price": 1460000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9458304745693",
+          "title": "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+          "price": 1969000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9459219628253",
+          "title": "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+          "price": 2930000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9459659047133",
+          "title": "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+          "price": 4400000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9464251744477",
+          "title": "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+          "price": 3969000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "90/100-1",
+      "total": 8,
+      "shown": 5,
+      "bytes": 10474,
+      "checks": [
+        {
+          "id": "15434153066717",
+          "title": "DUNLOP GEOMAX MX53 90/100-16 TT 51M",
+          "price": 10690000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "15434153132253",
+          "title": "DUNLOP GEOMAX MX53 90/100-14 TT 49M",
+          "price": 8790000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9037387301085",
+          "title": "MICHELIN STARCROSS 5 90/100-14",
+          "price": 8501800,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9037387563229",
+          "title": "MICHELIN STARCROSS 5 SOFT 90/100-14",
+          "price": 7565200,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9037387792605",
+          "title": "MICHELIN STARCROSS 5 SOFT 90/100-16",
+          "price": 9954600,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "casco nolan",
+      "total": 159,
+      "shown": 5,
+      "bytes": 8753,
+      "checks": [
+        {
+          "id": "9519299264733",
+          "title": "CASCO NOLAN N80-8 KOSMOS NEGRO/BLANCO",
+          "price": 29919000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9502135124189",
+          "title": "CASCO NOLAN N80-8 CLASSICO 302",
+          "price": 24900000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9502134304989",
+          "title": "CASCO NOLAN N60-6 NOBILE",
+          "price": 23900000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9502134370525",
+          "title": "CASCO NOLAN N60-6 NOBILE",
+          "price": 23900000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        },
+        {
+          "id": "9519298379997",
+          "title": "CASCO NOLAN N100-6 ASSOLUTO NEGRO/AZUL",
+          "price": 50619000,
+          "available": true,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "title:\"DUNLOP SPORTMAX Q5A 120/70ZR17\"",
+      "total": 1,
+      "shown": 1,
+      "bytes": 3681,
+      "checks": [
+        {
+          "id": "9562180518109",
+          "title": "DUNLOP SPORTMAX Q5A 120/70ZR17 58W TL",
+          "price": 17279100,
+          "available": true,
+          "sale": true,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "title:\"MICHELIN PILOT ROAD 5 180/55ZR17\"",
+      "total": 1,
+      "shown": 1,
+      "bytes": 3496,
+      "checks": [
+        {
+          "id": "8896951648477",
+          "title": "MICHELIN PILOT ROAD 5 180/55ZR17 73W",
+          "price": 27283800,
+          "available": false,
+          "sale": false,
+          "variantMatches": true
+        }
+      ]
+    },
+    {
+      "raw": "90/100-99",
+      "total": 0,
+      "shown": 0,
+      "bytes": 2171,
+      "checks": []
+    }
+  ],
+  "pagination": [
+    {
+      "page": 1,
+      "total": 33,
+      "ids": [
+        "10192859529437",
+        "8826003488989",
+        "8861873766621",
+        "8866486812893",
+        "8876458180829",
+        "8876547866845",
+        "8876552159453",
+        "8896991264989",
+        "9005056262365",
+        "9010328273117",
+        "9013632139485",
+        "9013634236637",
+        "9025292730589",
+        "9128648605917",
+        "9244287729885",
+        "9252325327069"
+      ],
+      "positions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "page": 2,
+      "total": 33,
+      "ids": [
+        "9297972822237",
+        "9388675104989",
+        "9403550826717",
+        "9443339337949",
+        "9495224778973",
+        "9495268360413",
+        "9507356475613",
+        "9552256663773",
+        "9562180518109",
+        "9592944591069",
+        "8876547703005",
+        "8876603179229",
+        "8876605243613",
+        "9010328371421",
+        "9025292632285",
+        "9079963844829"
+      ],
+      "positions": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "page": 3,
+      "total": 33,
+      "ids": [
+        "9257314779357"
+      ],
+      "positions": [
+        33
+      ]
+    }
+  ],
+  "pass": true
+}

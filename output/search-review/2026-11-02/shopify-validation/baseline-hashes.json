@@ -1,0 +1,8 @@
+{
+  "snippets/scripts-tag.liquid": "0b18f7af46e3c048a45bd9484eaed8207fb3554d2ca6dbf7b2644c55d037f247",
+  "assets/search-normalize.js": "80fc30cfa87a752c0479c0f62d5a7383a2033ed1028fc0f5806f1df04418b40b",
+  "assets/search-analytics.js": "d6ccb258c0bda33e24d084fb75a74aa38f2737401758fad3e951347c6a9d2c01",
+  "snippets/search-display-term.liquid": "df62219570a0f0fa0c92aea8db7f32aea17d6440d6292cc1770186413a7540d0",
+  "snippets/search-results-metadata.liquid": "7a7d1c714fcc1c38df0be6e899652e2d5e683549ed9b231ebfdb1ba44cc352e7",
+  "sections/main-search.liquid": "ed49b1e1fa47453571995a77ff0cdba05ecde65f6797c0bde3a45d8c5a8e3e54"
+}

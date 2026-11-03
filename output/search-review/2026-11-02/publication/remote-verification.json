@@ -1,0 +1,85 @@
+{
+  "verifiedAt": "2026-11-03T00:50:55.372Z",
+  "store": "996356-ea.myshopify.com",
+  "theme": 189814309085,
+  "publishedFiles": [
+    {
+      "path": "snippets/scripts-tag.liquid",
+      "sha256": "cbb1ce0e02632ded0cbd35e4a294f63ee3cb02ffca7750a79f08f3a03c026809",
+      "matches": true
+    },
+    {
+      "path": "assets/search-normalize.js",
+      "sha256": "99ac6e84e1b6eb9c078f751fa7618f95d3559824cba06344e3ddfa4d05c27fd5",
+      "matches": true
+    },
+    {
+      "path": "assets/search-analytics.js",
+      "sha256": "b9e2feadce1f585ef113c306e4a4944335b453185c9d1bf04ced9dc721495141",
+      "matches": true
+    },
+    {
+      "path": "snippets/search-display-term.liquid",
+      "sha256": "9df6eab93710754931adf636a5a91fda591ba0e5a5e7e4fef1105e86093ee9c4",
+      "matches": true
+    },
+    {
+      "path": "snippets/search-results-metadata.liquid",
+      "sha256": "70bd00cb9f65c8313933d2266e3efaed33e0506ef9269d99dba2d8903ebbdd87",
+      "matches": true
+    },
+    {
+      "path": "sections/main-search.liquid",
+      "sha256": "59b8e4320ec90f18a2374449c6c0eb1a2ad132c49f24e9ea87941bfe2d824d43",
+      "matches": true
+    },
+    {
+      "path": "assets/search-policy.js",
+      "sha256": "9ad3d4b276403e4fd5442354d061f8c52dd83feab058bcfa4217061104ae6adf",
+      "matches": true
+    },
+    {
+      "path": "assets/search-preview.js",
+      "sha256": "a296fe473e04eb97525745974deec668afa1ebb75a3003472a9b0a890bf41c07",
+      "matches": true
+    },
+    {
+      "path": "assets/search-preview.css",
+      "sha256": "e9616e31c89636551ec5ea9460d6e36e66ddb9cb2b9899497d00c625b2fbb621",
+      "matches": true
+    },
+    {
+      "path": "snippets/search-catalog-config.liquid",
+      "sha256": "1ada383fba8bade232c2e80439f384ece5dd211ecf478f9b86fe3b5d3087ce54",
+      "matches": true
+    },
+    {
+      "path": "sections/search-preview.liquid",
+      "sha256": "2e570330f248e89d289ad8cf4ec2088cd9b5691473c6db2bfae8da34c1a6bb3a",
+      "matches": true
+    },
+    {
+      "path": "sections/search-query-suggestions.liquid",
+      "sha256": "dabf2d303eb273899e43d474ba0f72377cad31a55157630f39b6fb96dfe4fe48",
+      "matches": true
+    }
+  ],
+  "otherPendingChanges": [
+    {
+      "path": "sections/main-product.liquid",
+      "productionUnchanged": true,
+      "includedInGit": true
+    },
+    {
+      "path": "snippets/product-item-horizontal.liquid",
+      "productionUnchanged": true,
+      "includedInGit": true
+    },
+    {
+      "path": "templates/404.json",
+      "productionUnchanged": true,
+      "includedInGit": true
+    }
+  ],
+  "pass": true
+}

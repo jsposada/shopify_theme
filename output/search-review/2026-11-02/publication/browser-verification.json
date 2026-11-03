@@ -1,0 +1,20 @@
+{
+  "verifiedAt": "2026-11-03T00:51:41.573Z",
+  "preview": {
+    "configTheme": 189814309085,
+    "input": "90/100-10",
+    "suggestions": [],
+    "titles": [
+      "CEAT ZOOM D 90/100-10 TL 53J"
+    ],
+    "total": "1",
+    "url": "https://www.bikerz.cl/"
+  },
+  "fullSearch": {
+    "heading": "Buscar “ 90/100-10 ”",
+    "pageSize": "16",
+    "total": "1",
+    "url": "https://www.bikerz.cl/search?q=*&type=product&options%5Bprefix%5D=last&filter.p.m.custom.ancho=90.0&filter.p.m.custom.aspecto=100&filter.p.m.custom.di_metro=10"
+  },
+  "pass": true
+}

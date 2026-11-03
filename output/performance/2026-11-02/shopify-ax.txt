@@ -1,0 +1,697 @@
+Browser tab: 8, Title: "Bikerz · Informes · Bikerz - rendimiento real por URL y dispositivo · Shopify", URL: "https://admin.shopify.com/store/996356-ea/analytics/reports/441057501?ql=FROM+web_performance%0A++SHOW+percent_of_page_loads%2C+page_loads%2C+inp_p75_ms%2C+inp_distribution%2C%0A++++lcp_p75_ms%2C+p75_cls%0A++GROUP+BY+page_path%2C+device_type+WITH+GROUP_TOTALS%2C+TOTALS%0A++SINCE+startOfDay%28-30d%29+UNTIL+endOfDay%28-1d%29%0A++ORDER+BY+percent_of_page_loads__page_path_totals+DESC%2C+percent_of_page_loads%0A++++DESC%2C+page_path+ASC%2C+device_type+ASC%0A++LIMIT+1000".
+0 AXWebArea Bikerz · Informes · Bikerz - rendimiento real por URL y dispositivo · Shopify, URL: admin.shopify.com/store/996356-ea/analytics/reports/441057501?ql=FROM+web_performance%0A++SHOW+percent_of_page_loads%2C+page_loads%2C+inp_p75_ms%2C+inp_distribution%2C%0A++++lcp_p75_ms%2C+p75_cls%0A++GROUP+BY+page_path%2C+device_type+WITH+GROUP_TOTALS%2C+TOTALS%0A++SINCE+startOfDay%28-30d%29+UNTIL+endOfDay%28-1d%29%0A++ORDER+BY+percent_of_page_loads__page_path_totals+DESC%2C+percent_of_page_loads%0A++++DESC%2C+page_path+ASC%2C+device_type+ASC%0A++LIMIT+1000
+	1 container app
+		2 container AppFrame
+			3 container AppFrameChrome
+				4 link Description: Saltar al contenido, Value: admin.shopify.com/store/996356-ea/analytics/reports/441057501?ql=FROM+web_performance%0A++SHOW+percent_of_page_loads%2C+page_loads%2C+inp_p75_ms%2C+inp_distribution%2C%0A++++lcp_p75_ms%2C+p75_cls%0A++GROUP+BY+page_path%2C+device_type+WITH+GROUP_TOTALS%2C+TOTALS%0A++SINCE+startOfDay%28-30d%29+UNTIL+endOfDay%28-1d%29%0A++ORDER+BY+percent_of_page_loads__page_path_totals+DESC%2C+percent_of_page_loads%0A++++DESC%2C+page_path+ASC%2C+device_type+ASC%0A++LIMIT+1000#AppFrameMain
+				5 container AppFrameBevel
+					6 container Description: Navegación, ID: AppFrameNav
+						7 container
+							8 image Shopify
+							9 button (expanded) Description: Contraer navegación, Secondary Actions: Collapse
+							10 button Buscar
+								11 text Buscar
+							12 container scroll-container
+								13 content list
+									14 link Description: Inicio, Value: admin.shopify.com/store/996356-ea
+									15 container
+										16 link (collapsed) Description: Pedidos 1, Value: admin.shopify.com/store/996356-ea/orders, Secondary Actions: Expand
+									17 container
+										18 link (collapsed) Description: Productos, Value: admin.shopify.com/store/996356-ea/products, Secondary Actions: Expand
+									19 container
+										20 link (collapsed) Description: Clientes, Value: admin.shopify.com/store/996356-ea/customers, Secondary Actions: Expand
+									21 container
+										22 link (collapsed) Description: Crecimiento, Value: admin.shopify.com/store/996356-ea/growth, Secondary Actions: Expand
+									23 link Description: Descuentos, Value: admin.shopify.com/store/996356-ea/discounts
+									24 container
+										25 link (collapsed) Description: Contenido, Value: admin.shopify.com/store/996356-ea/content/metaobjects, Secondary Actions: Expand
+									26 container
+										27 link (collapsed) Description: Mercados, Value: admin.shopify.com/store/996356-ea/markets, Secondary Actions: Expand
+									28 container
+										29 link (expanded) Description: Informes y estadísticas, Value: admin.shopify.com/store/996356-ea/analytics, Secondary Actions: Collapse
+										30 content list
+											31 link Description: Informes, Value: admin.shopify.com/store/996356-ea/analytics/reports
+											32 link Description: Vista en tiempo real, Value: admin.shopify.com/store/996356-ea/analytics/live
+								33 content list
+									34 container
+										35 button Canales de ventas
+											36 text Canales de ventas
+										37 content list
+											38 sortable Tienda online
+												39 content list
+													40 link Description: Tienda online, Value: admin.shopify.com/store/996356-ea/themes?appLoadId=926bbb19-7d78-4927-b8b9-e9cbb050e3fe
+											41 sortable Falabella
+												42 content list
+													43 link Description: Falabella, Value: admin.shopify.com/store/996356-ea/apps/linio-store?appLoadId=79ecc779-0f12-49e7-a469-60e6642c7975
+											44 sortable Google & YouTube
+												45 content list
+													46 link Description: Google & YouTube, Value: admin.shopify.com/store/996356-ea/apps/google?appLoadId=ec1b9425-c1fc-4d7d-b45d-4b4628c3b18a
+											47 sortable Shop
+												48 content list
+													49 link Description: Shop, Value: admin.shopify.com/store/996356-ea/apps/shop-72?appLoadId=a6411cd3-7e17-4789-bb12-658605b416c6
+											50 sortable Agéntico
+												51 content list
+													52 link Description: Agéntico, Value: admin.shopify.com/store/996356-ea/apps/agentic?appLoadId=cfec8055-20cf-43a8-8ab8-fbb4a524c620
+											53 sortable Inbox Fijar en la navegación 1
+												54 content list
+													55 container
+														56 link Description: Inbox, Value: admin.shopify.com/store/996356-ea/apps/shopify-inbox?appLoadId=fb07c05e-fdd5-4968-9a39-f45ddd862361
+														57 button Fijar en la navegación
+															58 text •
+														59 text 1
+									60 container
+										61 button Apps
+											62 text Apps
+										63 content list
+											64 sortable Search & Discovery
+												65 content list
+													66 link Description: Search & Discovery, Value: admin.shopify.com/store/996356-ea/apps/search-and-discovery?appLoadId=62234335-624f-4fe3-b2eb-318d8d93044a
+											67 sortable Translate & Adapt
+												68 content list
+													69 link Description: Translate & Adapt, Value: admin.shopify.com/store/996356-ea/apps/translate-and-adapt?appLoadId=9a4f19b6-8a0f-4fb0-aa83-1eb820af9db8
+											70 sortable Messaging
+												71 content list
+													72 link Description: Messaging, Value: admin.shopify.com/store/996356-ea/apps/shopify-messaging?appLoadId=028a5605-1fc2-4490-92c2-9de3f830a3fd
+											73 sortable Dondy: WhatsApp
+												74 content list
+													75 link Description: Dondy: WhatsApp, Value: admin.shopify.com/store/996356-ea/apps/dondy-whatsapp-chat-widget?appLoadId=301a0de3-bb24-48e7-a668-07431022410f
+											76 sortable Flow
+												77 content list
+													78 link Description: Flow, Value: admin.shopify.com/store/996356-ea/apps/flow?appLoadId=927833a3-1169-4438-9b32-7d5453e28aac
+											79 sortable Microsoft Clarity
+												80 content list
+													81 link Description: Microsoft Clarity, Value: admin.shopify.com/store/996356-ea/apps/microsoft-clarity-prod?appLoadId=9c1ba0ae-0af5-405a-90c9-86f5234d722a
+											82 sortable Forms Fijar en la navegación
+												83 content list
+													84 container
+														85 link Description: Forms, Value: admin.shopify.com/store/996356-ea/apps/shopify-forms?appLoadId=80552ea3-2e32-4b59-bad0-6b892d07e42a
+														86 button Fijar en la navegación
+															87 text •
+							88 content list
+								89 link Description: Configuración, Value: admin.shopify.com/store/996356-ea/settings
+								90 container
+									91 button (collapsed) Description: Bikerz Chile, Secondary Actions: Expand
+										92 image Bikerz
+										93 text Bikerz
+									94 button (collapsed) Description: Feed de alertas - 0 alertas no leídas, Secondary Actions: Expand
+					95 container AppFrameMain
+						96 container
+							97 container
+								98 container
+									99 link Description: Informes, Value: admin.shopify.com/store/996356-ea/analytics/reports
+									100 link Description: Informes, Value: admin.shopify.com/store/996356-ea/analytics/reports
+								101 heading Bikerz - rendimiento real por URL y dispositivo, Value: 1
+									102 text Bikerz - rendimiento real por URL y dispositivo
+								103 text Última actualización: 8:54 a. m.
+								104 button (disabled) Activar actualización automática
+									105 text Activar actualización automática
+								106 button Cambiar nombre
+									107 text Cambiar nombre
+								108 button Exportar
+									109 text Exportar
+								110 button Imprimir
+									111 text Imprimir
+								112 button Eliminar
+									113 text Eliminar
+							114 container
+								115 button (collapsed) Control de fecha: Último 30 días, Secondary Actions: Expand
+									116 checkbox Description: Control de fecha: Último 30 días, Value: 0
+										117 text Último 30 días
+								118 button (collapsed) Control de comparación: Sin comparación, Secondary Actions: Expand
+									119 checkbox Description: Control de comparación: Sin comparación, Value: 0
+										120 text Sin comparación
+								121 button (collapsed) CLP $, Secondary Actions: Expand
+									122 text CLP $
+							123 checkbox (disabled) Description: Abrir panel de anotaciones, Value: 0
+								124 text Anotaciones
+							125 checkbox Description: Activar panel de exploración, Value: 1
+								126 text Controles
+							127 container
+								128 container Contenido del informe
+									129 container
+										130 container
+											131 text entry area (settable) Description: Refina la consulta, ID: :rn:
+											132 button (disabled) Enviar
+												133 image
+									134 container
+										135 text Los datos de Distribución de INP pueden muestrearse dependiendo del volumen de tráfico de Shop
+										136 image
+										137 button (collapsed) Description: Anidar tabla, Secondary Actions: Expand
+									138 table Tabla de métricas
+										139 container
+											140 row
+												141 cell Ordenar Ruta de la página ascendente, ID: :rr:
+													142 cell
+														143 button Ordenar Ruta de la página ascendente
+															144 text Ruta de la página
+													145 splitter Description: Cambiar el tamaño de la columna Ruta de la página, Value: 200
+												146 cell Ordenar Tipo de dispositivo ascendente, ID: :ru:
+													147 cell
+														148 button Ordenar Tipo de dispositivo ascendente
+															149 text Tipo de dispositivo
+													150 splitter Description: Cambiar el tamaño de la columna Tipo de dispositivo, Value: 200
+												151 cell Ordenar Porcentaje de cargas de página ascendente, ID: :r11:
+													152 cell
+														153 button Ordenar Porcentaje de cargas de página ascendente
+															154 text Porcentaje de cargas de página
+													155 splitter Description: Cambiar el tamaño de la columna Porcentaje de cargas de página, Value: 140
+												156 cell Ordenar Cargas de página ascendente, ID: :r15:
+													157 cell
+														158 button Ordenar Cargas de página ascendente
+															159 text Cargas de página
+													160 splitter Description: Cambiar el tamaño de la columna Cargas de página, Value: 140
+												161 cell Ordenar INP P75 ascendente, ID: :r18:
+													162 cell
+														163 button Ordenar INP P75 ascendente
+															164 text INP P75
+													165 splitter Description: Cambiar el tamaño de la columna INP P75, Value: 140
+												166 cell Ordenar Distribución de INP ascendente, ID: :r1b:
+													167 cell
+														168 button Ordenar Distribución de INP ascendente
+															169 text Distribución de INP
+													170 splitter Description: Cambiar el tamaño de la columna Distribución de INP, Value: 140
+												171 cell Ordenar LCP P75 ascendente, ID: :r1e:
+													172 cell
+														173 button Ordenar LCP P75 ascendente
+															174 text LCP P75
+													175 splitter Description: Cambiar el tamaño de la columna LCP P75, Value: 140
+												176 cell Ordenar CLS P75 ascendente, ID: :r1h:
+													177 cell
+														178 button Ordenar CLS P75 ascendente
+															179 text CLS P75
+											180 row
+												181 cell
+													182 text Resumen
+												183 cell
+													184 text 100%
+												185 cell
+													186 text 3.815
+												187 cell
+													188 text 112 milisegundos
+												189 cell
+													190 image Gráfico de distribución
+												191 cell
+													192 text 1772 milisegundos
+												193 cell
+													194 text 0,02
+											195 container
+												196 row
+													197 cell
+														198 text /
+													199 cell
+														200 text Total
+													201 cell
+														202 text 17,9%
+													203 cell
+														204 text 684
+													205 cell
+														206 text 104 milisegundos
+													207 cell
+														208 image Gráfico de distribución
+													209 cell
+														210 text 1802 milisegundos
+													211 cell
+														212 text 0,06
+												213 row
+													214 cell
+														215 text Móvil
+													216 cell
+														217 text 13,8%
+													218 cell
+														219 text 525
+													220 cell
+														221 text 120 milisegundos
+													222 cell
+														223 image Gráfico de distribución
+													224 cell
+														225 text 1808 milisegundos
+													226 cell
+														227 text 0,12
+												228 row
+													229 cell
+														230 text Escritorio
+													231 cell
+														232 text 4,2%
+													233 cell
+														234 text 159
+													235 cell
+														236 text 64 milisegundos
+													237 cell
+														238 image Gráfico de distribución
+													239 cell
+														240 text 1755 milisegundos
+													241 cell
+														242 text 0,02
+												243 row
+													244 cell
+														245 text /collections/neumaticos
+													246 cell
+														247 text Total
+													248 cell
+														249 text 14,6%
+													250 cell
+														251 text 556
+													252 cell
+														253 text 160 milisegundos
+													254 cell
+														255 image Gráfico de distribución
+													256 cell
+														257 text 1632 milisegundos
+													258 cell
+														259 text 0,03
+												260 row
+													261 cell
+														262 text Móvil
+													263 cell
+														264 text 11,6%
+													265 cell
+														266 text 443
+													267 cell
+														268 text 168 milisegundos
+													269 cell
+														270 image Gráfico de distribución
+													271 cell
+														272 text 1664 milisegundos
+													273 cell
+														274 text 0,03
+												275 row
+													276 cell
+														277 text Escritorio
+													278 cell
+														279 text 3%
+													280 cell
+														281 text 113
+													282 cell
+														283 text 80 milisegundos
+													284 cell
+														285 image Gráfico de distribución
+													286 cell
+														287 text 1485 milisegundos
+													288 cell
+														289 text 0,04
+												290 row
+													291 cell
+														292 text /collections/cascos
+													293 cell
+														294 text Total
+													295 cell
+														296 text 6,5%
+													297 cell
+														298 text 249
+													299 cell
+														300 text 72 milisegundos
+													301 cell
+														302 image Gráfico de distribución
+													303 cell
+														304 text 1562 milisegundos
+													305 cell
+														306 text 0
+												307 row
+													308 cell
+														309 text Móvil
+													310 cell
+														311 text 5%
+													312 cell
+														313 text 192
+													314 cell
+														315 text 72 milisegundos
+													316 cell
+														317 image Gráfico de distribución
+													318 cell
+														319 text 1440 milisegundos
+													320 cell
+														321 text 0
+												322 row
+													323 cell
+														324 text Escritorio
+													325 cell
+														326 text 1,5%
+													327 cell
+														328 text 57
+													329 cell
+														330 text 64 milisegundos
+													331 cell
+														332 image Gráfico de distribución
+													333 cell
+														334 text 1837 milisegundos
+													335 cell
+														336 text 0
+												337 row
+													338 cell
+														339 text /search
+													340 cell
+														341 text Total
+													342 cell
+														343 text 5%
+													344 cell
+														345 text 192
+													346 cell
+														347 text 148 milisegundos
+													348 cell
+														349 image Gráfico de distribución
+													350 cell
+														351 text 1279 milisegundos
+													352 cell
+														353 text 0
+												354 row
+													355 cell
+														356 text Móvil
+													357 cell
+														358 text 3,9%
+													359 cell
+														360 text 149
+													361 cell
+														362 text 192 milisegundos
+													363 cell
+														364 image Gráfico de distribución
+													365 cell
+														366 text 1285 milisegundos
+													367 cell
+														368 text 0
+												369 row
+													370 cell
+														371 text Escritorio
+													372 cell
+														373 text 1,1%
+													374 cell
+														375 text 43
+													376 cell
+														377 text 56 milisegundos
+													378 cell
+														379 image Gráfico de distribución
+													380 cell
+														381 text 1259 milisegundos
+													382 cell
+														383 text 0
+												384 row
+													385 cell
+														386 text /collections/ofertas
+													387 cell
+														388 text Total
+													389 cell
+														390 text 2,8%
+													391 cell
+														392 text 105
+													393 cell
+														394 text 96 milisegundos
+													395 cell
+														396 image Gráfico de distribución
+													397 cell
+														398 text 1828 milisegundos
+													399 cell
+														400 text 0
+												401 row
+													402 cell
+														403 text Móvil
+													404 cell
+														405 text 2,1%
+													406 cell
+														407 text 80
+													408 cell
+														409 text 112 milisegundos
+													410 cell
+														411 image Gráfico de distribución
+													412 cell
+														413 text 1606 milisegundos
+													414 cell
+														415 text 0
+												416 row
+													417 cell
+														418 text Escritorio
+													419 cell
+														420 text 0,7%
+													421 cell
+														422 text 25
+													423 cell
+														424 text 44 milisegundos
+													425 cell
+														426 image Gráfico de distribución
+													427 cell
+														428 text 2135 milisegundos
+													429 cell
+														430 text 0,02
+												431 row
+													432 cell
+														433 text /products/casco-nolan-n70-2-x-ruvido-negro-amarillo
+													434 cell
+														435 text Total
+													436 cell
+														437 text 1,1%
+													438 cell
+														439 text 43
+													440 cell
+														441 text 124 milisegundos
+													442 cell
+														443 image Gráfico de distribución
+													444 cell
+														445 text 1762 milisegundos
+													446 cell
+														447 text 0,01
+												448 row
+													449 cell
+														450 text Móvil
+													451 cell
+														452 text 1,1%
+													453 cell
+														454 text 41
+													455 cell
+														456 text 120 milisegundos
+													457 cell
+														458 image Gráfico de distribución
+													459 cell
+														460 text 1766 milisegundos
+													461 cell
+														462 text 0,01
+												463 row
+													464 cell
+														465 text Escritorio
+													466 cell
+														467 text 0,1%
+													468 cell
+														469 text 2
+													470 cell
+														471 text 112 milisegundos
+													472 cell
+														473 image Gráfico de distribución
+													474 cell
+														475 text 1007 milisegundos
+													476 cell
+														477 text 0,01
+												478 row
+													479 cell
+														480 text /collections/repuestos
+													481 cell
+														482 text Total
+													483 cell
+														484 text 1,1%
+													485 cell
+														486 text 42
+													487 cell
+														488 text 184 milisegundos
+													489 cell
+														490 image Gráfico de distribución
+													491 cell
+														492 text 1300 milisegundos
+													493 cell
+														494 text 0,01
+												495 row
+													496 cell
+														497 text Móvil
+													498 cell
+														499 text 0,7%
+													500 cell
+														501 text 26
+													502 cell
+														503 text 220 milisegundos
+													504 cell
+														505 image Gráfico de distribución
+													506 cell
+														507 text 1316 milisegundos
+													508 cell
+														509 text 0
+												510 row
+													511 cell
+														512 text Escritorio
+													513 cell
+														514 text 0,4%
+													515 cell
+														516 text 16
+													517 cell
+														518 text 72 milisegundos
+													519 cell
+														520 image Gráfico de distribución
+													521 cell
+														522 text 1300 milisegundos
+													523 cell
+														524 text 0,02
+												525 row
+													526 cell
+														527 text /products/casco-nolan-n70-2-x-convinto
+													528 cell
+														529 text Total
+													530 cell
+														531 text 1%
+													532 cell
+														533 text 38
+													534 cell
+														535 text 182 milisegundos
+													536 cell
+														537 image Gráfico de distribución
+													538 cell
+														539 text 2167 milisegundos
+													540 cell
+														541 text 0,03
+												542 row
+													543 cell
+														544 text Móvil
+													545 cell
+														546 text 1%
+													547 cell
+														548 text 37
+													549 cell
+														550 text 212 milisegundos
+													551 cell
+														552 image Gráfico de distribución
+													553 cell
+														554 text 2170 milisegundos
+													555 cell
+														556 text 0,04
+												557 row
+													558 cell
+														559 text Escritorio
+													560 cell
+														561 text 0%
+													562 cell
+														563 text 1
+													564 cell
+														565 text 8 milisegundos
+													566 cell
+														567 image Gráfico de distribución
+													568 cell
+														569 text 604 milisegundos
+													570 cell
+														571 text 0,01
+												572 row
+													573 cell
+														574 text /collections/lubricantes
+													575 cell
+														576 text Total
+													577 cell
+														578 text 1%
+													579 cell
+														580 text 38
+													581 cell
+														582 text 88 milisegundos
+													583 cell
+														584 image Gráfico de distribución
+													585 cell
+														586 text 1726 milisegundos
+													587 cell
+														588 text 0
+												589 row
+													590 cell
+														591 text Móvil
+													592 cell
+														593 text 0,7%
+													594 cell
+														595 text 25
+													596 cell
+														597 text 96 milisegundos
+													598 cell
+														599 image Gráfico de distribución
+													600 cell
+														601 text 1780 milisegundos
+													602 cell
+														603 text 0
+												604 row
+													605 cell
+														606 text Escritorio
+													607 cell
+														608 text 0,3%
+													609 cell
+														610 text 13
+													611 cell
+														612 text 28 milisegundos
+													613 cell
+														614 image Gráfico de distribución
+													615 cell
+														616 text 1528 milisegundos
+													617 cell
+														618 text 0
+										619 text 940 filas
+								620 container
+									621 tab group Método de exploración
+										622 tab (selected, settable, boolean) Libre, ID: freeForm-tab, Value: 1
+Libre
+										623 tab (selectable, settable, boolean) Cohortes, ID: cohorts-tab, Value: 0
+Cohortes
+									624 container Description: Libre, ID: freeForm-panel
+										625 container Métricas
+											626 container
+												627 heading Métricas, Value: 2
+													628 text Métricas
+												629 button Description: Agregar métrica, ID: analytics-metric-report-metrics-add-button
+												630 button Métricas
+											631 container
+												632 checkbox (settable, integer) Description: Visualizar Porcentaje de cargas de página, Value: 0
+												633 button Porcentaje de cargas de página
+													634 text Porcentaje de cargas de página
+											635 container
+												636 checkbox (settable, integer) Description: Visualizar Cargas de página, Value: 0
+												637 button Cargas de página
+													638 text Cargas de página
+											639 container
+												640 checkbox (settable, integer) Description: Visualizar INP P75, Value: 0
+												641 button INP P75
+													642 text INP P75
+											643 container
+												644 checkbox (settable, integer) Description: Visualizar Distribución de INP, Value: 0
+												645 button Distribución de INP
+													646 text Distribución de INP
+											647 container
+												648 checkbox (settable, integer) Description: Visualizar LCP P75, Value: 0
+												649 button LCP P75
+													650 text LCP P75
+											651 container
+												652 checkbox (settable, integer) Description: Visualizar CLS P75, Value: 0
+												653 button CLS P75
+													654 text CLS P75
+										655 container Dimensiones
+											656 container
+												657 heading Dimensiones, Value: 2
+													658 text Dimensiones
+												659 button Agregar dimensión
+												660 button Dimensiones
+											661 container
+												662 button Ruta de la página
+													663 text Ruta de la página
+											664 container
+												665 button Tipo de dispositivo
+													666 text Tipo de dispositivo
+										667 container Visualización
+											668 container
+												669 heading Visualización, Value: 2
+													670 text Visualización
+												671 button Visualización
+											672 button Mostrar tabla
+												673 text Mostrar tabla
+											674 text Mostrar todas las filas
+											675 container
+												676 checkbox (settable, integer) Description: Mostrar todas las filas, Value: 1
+												677 text Mostrar todas las filas
+										678 container Filtros
+											679 container
+												680 heading Filtros, Value: 2
+													681 text Filtros
+												682 button Añadir filtro
+												683 button Filtros
+				684 container
+					685 container Sidekick
+						686 container
+							687 container
+								688 text field (settable) Description: Trabaja con Sidekick, ID: :rbk:
+								689 button Agregar archivos y más
+								690 button Dictar
+								691 button Abrir Sidekick
+
+The focused UI element is 115 button (collapsed) Control de fecha: Último 30 días, Secondary Actions: Expand

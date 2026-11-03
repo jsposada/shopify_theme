@@ -1,14 +1,59 @@
-{%- comment -%}
-  Human-readable version of a search query built by assets/search-normalize.js.
-  Oil viscosities are searched as "(10W40 OR 10W-40)" so both catalogue spellings
-  match; customers should read "10W-40". Outputs plain text; escape it where needed.
-
-  Usage:
-  {% render 'search-display-term', terms: search.terms %}
-{%- endcomment -%}
 {%- liquid
   assign display_term = terms | default: ''
-  if display_term contains ' OR '
+  if display_term == '*'
+    assign width = ''
+    assign profile = ''
+    assign rim = ''
+    assign viscosity = ''
+    assign brand = ''
+    for filter in search.filters
+      if filter.active_values.size == 1
+        assign active = filter.active_values.first
+        case filter.param_name
+          when 'filter.p.m.custom.ancho'
+            assign width = active.label | plus: 0
+          when 'filter.p.m.custom.aspecto'
+            assign profile = active.label
+          when 'filter.p.m.custom.di_metro'
+            assign rim = active.label
+          when 'filter.v.t.shopify.viscosity'
+            assign viscosity = active.label
+          when 'filter.p.m.custom.marca'
+            assign brand = active.label
+        endcase
+      endif
+    endfor
+    assign display_term = ''
+    if width != ''
+      if width < 20
+        assign inch_parts = width | append: '' | split: '.'
+        assign inch_fraction = inch_parts[1] | default: '00'
+        if inch_fraction.size == 1
+          assign inch_fraction = inch_fraction | append: '0'
+        endif
+        assign width = inch_parts[0] | append: '.' | append: inch_fraction
+      else
+        assign width = width | round: 0
+      endif
+      assign display_term = width
+      if profile != ''
+        assign display_term = display_term | append: '/' | append: profile
+      endif
+      if rim != ''
+        assign display_term = display_term | append: '-' | append: rim
+      endif
+    elsif viscosity != ''
+      assign display_term = viscosity
+    endif
+    if brand != ''
+      assign display_term = brand | append: ' ' | append: display_term
+    endif
+    if display_term == ''
+      assign display_term = terms
+    endif
+  elsif display_term contains 'title:"'
+    assign display_term = display_term | replace: 'title:"', '' | remove: '"'
+  elsif display_term contains ' OR '
     assign display_parts = display_term | split: ' OR '
     assign display_before = display_parts[0] | split: '(' | first
     assign display_after = display_parts[1] | remove: ')'

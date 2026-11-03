@@ -1,0 +1,73 @@
+{
+  "status": "evaluation_only_no_store_changes",
+  "validNetworkMeasurements": 72,
+  "network": {
+    "current_predictive": {
+      "samples": 24,
+      "errors": 0,
+      "medianMs": 364,
+      "p90Ms": 423,
+      "medianCompressedKB": 5.9,
+      "medianHtmlKB": 90.4
+    },
+    "normal_section": {
+      "samples": 24,
+      "errors": 0,
+      "medianMs": 444,
+      "p90Ms": 509,
+      "medianCompressedKB": 14.4,
+      "medianHtmlKB": 407.9
+    },
+    "filtered_section": {
+      "samples": 24,
+      "errors": 0,
+      "medianMs": 432,
+      "p90Ms": 462,
+      "medianCompressedKB": 15,
+      "medianHtmlKB": 407.9
+    }
+  },
+  "mobileSimulation": {
+    "cpuSlowdown": 4,
+    "current": {
+      "cases": 6,
+      "medianParseAndLayoutMs": 12.75,
+      "minParseAndLayoutMs": 8.200000001117587,
+      "maxParseAndLayoutMs": 16.999999998137355
+    },
+    "fullSection": {
+      "cases": 6,
+      "medianParseAndLayoutMs": 57.25,
+      "minParseAndLayoutMs": 40,
+      "maxParseAndLayoutMs": 68.29999999888241
+    },
+    "limitations": "Synthetic rendering of captured HTML with images/network blocked. Mobile uses a viewport and CPU throttle, not physical hardware. Compact links omit production price/badge/accessibility details and have no measured Shopify render time."
+  },
+  "baselineFunctionalTests": {
+    "command": "node --test scripts/test-search-analytics.mjs",
+    "passed": 19,
+    "failed": 0,
+    "scope": "Existing implementation and real compiled theme search classes with synthetic responses, not the future implementation"
+  },
+  "decision": "Do not inject the full results section into the preview. Share retrieval rules while rendering a dedicated compact product section.",
+  "experienceRequirements": [
+    "Keep existing 300ms debounce rather than adding delay",
+    "Use one product request per settled query",
+    "Resolve technical attributes from a small cached catalog dictionary, never scan catalog while typing",
+    "Abort superseded requests and verify query revision before painting",
+    "Keep Enter independent from preview completion",
+    "Preserve input value, focus, visible options and mobile compact layout",
+    "Keep the number of images bounded and correctly sized",
+    "Separate empty matches from network errors; do not display another measure as an exact match"
+  ],
+  "remainingValidation": [
+    "Actual compact Liquid section server render time",
+    "End-to-end paint and input response on representative mobile network/hardware",
+    "Screen-reader and keyboard behavior of the final renderer",
+    "Uncached new queries and sustained traffic behavior"
+  ],
+  "notes": [
+    "Initial raw-HTTPS benchmark was excluded because it did not follow the canonical redirect. Valid comparison uses the canonical www hostname with warmup and paced requests.",
+    "Measurements are exploratory from this workstation, with reused connections and potentially warm server caches."
+  ]
+}

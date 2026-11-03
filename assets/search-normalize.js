@@ -78,8 +78,10 @@
     if (!(form instanceof HTMLFormElement) || !/\/search\/?$/.test(new URL(form.action, location.href).pathname)) return;
     const input = form.querySelector('input[name="q"]');
     if (!input) return;
-    const { submitQuery } = normalize(input.value);
-    if (submitQuery && submitQuery !== input.value) input.value = submitQuery;
+    if (!window.bikerzSearchV2) {
+      const { submitQuery } = normalize(input.value);
+      if (submitQuery && submitQuery !== input.value) input.value = submitQuery;
+    }
 
     // Product cards inside the results carry their own form fields (product-id, section-id,
     // form_type, utf8) that would otherwise ride along in the search URL. Keep them out,
@@ -114,6 +116,7 @@
   }
 
   function enhance(container) {
+    if (window.bikerzSearchV2) return;
     const root = container.closest('predictive-search');
     const input = root && root.querySelector('input[name="q"]');
     if (!input || !input.value.trim()) return;

@@ -39,7 +39,8 @@
 >
   <span id="a11y-refresh-page-message" class="visually-hidden" role="status" aria-live="polite"></span>
   <div class="{{ container }}">
-    {% paginate search.results by 24 %}
+    {% assign search_page_size = sst.products_per_page | default: 16 %}
+    {% paginate search.results by search_page_size %}
       <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
         {% if settings.search_analytics_enabled and search.performed and search.results_count == 0 %}
           {% render 'search-results-metadata', search_paginate: paginate, display_limit: sst.products_per_page %}

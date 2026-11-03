@@ -1,0 +1,143 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "product": "CEAT ZOOM D 90/100-10 TL 53J",
+      "variant": "48274399527133",
+      "imageMatches": true,
+      "image": "CEAT-ZOOMD_Portada.png"
+    },
+    {
+      "product": "DUNLOP SPORTMAX ROADSMART IV 120/70ZR17 TL 58W",
+      "variant": "50207957057757",
+      "imageMatches": true,
+      "image": "dunlop-sportmax-roadsmart-iv-120-70zr17-tl-58w-portada.jpg"
+    },
+    {
+      "product": "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+      "variant": "45941372879069",
+      "imageMatches": true,
+      "image": "Contimotion_M_Delantero_portada.png"
+    },
+    {
+      "product": "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+      "variant": "45941673591005",
+      "imageMatches": true,
+      "image": "CONTINENTAL-CONTIROADATTACK4-Delantero-Portada.jpg"
+    },
+    {
+      "product": "CONTINENTAL TKC 70 120/70ZR17 58W",
+      "variant": "45941699772637",
+      "imageMatches": true,
+      "image": "Continental-TKC70-Delantero-portada.png"
+    },
+    {
+      "product": "MICHELIN POWER GP 120/70ZR17 58W TL",
+      "variant": "46471500202205",
+      "imageMatches": true,
+      "image": "Delantero_tire_michelin_power-gp_120-slash-70-zr17-58w_c_main_1-30_ac96b90e-b600-42f3-83ec-d2c9a98c0f9c.jpg"
+    },
+    {
+      "product": "ACEITE MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "variant": "47730571608285",
+      "imageMatches": true,
+      "image": "MOTUL-5100-10W40-PORTADA.jpg"
+    },
+    {
+      "product": "ACEITE MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "variant": "47774112088285",
+      "imageMatches": true,
+      "image": "MOTUL-7100-10W40-PORTADA.jpg"
+    },
+    {
+      "product": "PACK 2 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "variant": "47776968245469",
+      "imageMatches": true,
+      "image": "MOTUL_5100_10W40_PACK2.png"
+    },
+    {
+      "product": "PACK 3 ACEITES MOTUL 5100 SEMI SINTÉTICO 10W-40 4T 1 LITRO",
+      "variant": "47778781724893",
+      "imageMatches": true,
+      "image": "MOTUL_5100_10W40_PACK3_507b01b3-976e-42a5-985a-5cafd4f15fbd.png"
+    },
+    {
+      "product": "PACK 2 ACEITES MOTUL 7100 FULL SINTÉTICO 10W-40 4T 1 LITRO",
+      "variant": "47792453583069",
+      "imageMatches": true,
+      "image": "MOTUL_7100_10W40_PACK2.png"
+    },
+    {
+      "product": "DUNLOP GEOMAX MX53 90/100-16 TT 51M",
+      "variant": "68203112267997",
+      "imageMatches": true,
+      "image": "dunlop-geomax-mx53-90-100-16-tt-51m-trasero-1.jpg"
+    },
+    {
+      "product": "DUNLOP GEOMAX MX53 90/100-14 TT 49M",
+      "variant": "68203112333533",
+      "imageMatches": true,
+      "image": "dunlop-geomax-mx53-90-100-14-tt-49m-trasero-1.jpg"
+    },
+    {
+      "product": "MICHELIN STARCROSS 5 90/100-14",
+      "variant": "46564266508509",
+      "imageMatches": true,
+      "image": "tire_michelin_starcross-5-medium_portada_trasero_9e7f6263-61b0-4146-81ce-de0517213836.jpg"
+    },
+    {
+      "product": "MICHELIN STARCROSS 5 SOFT 90/100-14",
+      "variant": "46564267524317",
+      "imageMatches": true,
+      "image": "tire_michelin_starcross-5-soft_portada_trasero.jpg"
+    },
+    {
+      "product": "MICHELIN STARCROSS 5 SOFT 90/100-16",
+      "variant": "46564268114141",
+      "imageMatches": true,
+      "image": "tire_michelin_starcross-5-soft_portada_trasero_6ee8ae94-57e9-4d10-98d0-4ac5f4dad449.jpg"
+    },
+    {
+      "product": "CASCO NOLAN N80-8 KOSMOS NEGRO/BLANCO",
+      "variant": "48012305891549",
+      "imageMatches": true,
+      "image": "01_f82a0026-0ac0-443c-b043-8e443051deb7.jpg"
+    },
+    {
+      "product": "CASCO NOLAN N80-8 CLASSICO 302",
+      "variant": "47945422700765",
+      "imageMatches": true,
+      "image": "01_4a4c4772-5910-4650-be7c-88a8acf590d8.jpg"
+    },
+    {
+      "product": "CASCO NOLAN N60-6 NOBILE",
+      "variant": "47945419489501",
+      "imageMatches": true,
+      "image": "01_e21337e9-b780-46ab-9f10-2c0713de6f41.jpg"
+    },
+    {
+      "product": "CASCO NOLAN N60-6 NOBILE",
+      "variant": "47945419817181",
+      "imageMatches": true,
+      "image": "01_93364d5e-f8c0-482c-b140-81cd9fd53f3f.jpg"
+    },
+    {
+      "product": "CASCO NOLAN N100-6 ASSOLUTO NEGRO/AZUL",
+      "variant": "48012302352605",
+      "imageMatches": true,
+      "image": "01_27c82686-ff8c-454b-9c02-bfcbd970b7a5.jpg"
+    },
+    {
+      "product": "DUNLOP SPORTMAX Q5A 120/70ZR17 58W TL",
+      "variant": "48177511858397",
+      "imageMatches": true,
+      "image": "Q5ADUNLOPPRSPORTRADIALTL-Delantero_Portada.png"
+    },
+    {
+      "product": "MICHELIN PILOT ROAD 5 180/55ZR17 73W",
+      "variant": "46017343226077",
+      "imageMatches": true,
+      "image": "MICHELIN-PILOT_ROAD_5-Trasera-portada.png"
+    }
+  ]
+}

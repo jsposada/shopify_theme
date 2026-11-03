@@ -1,0 +1,1835 @@
+{
+  "capturedAt": "2026-11-02T23:21:15.090Z",
+  "rows": [
+    {
+      "label": "80/100-21:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=80.0&filter.p.m.custom.di_metro=21&filter.p.m.custom.aspecto=100",
+      "total": 3,
+      "displayLimit": 16,
+      "ids": [
+        "15434153099485",
+        "9037388218589",
+        "9037387104477"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP GEOMAX MX53 80/100-21 TT 51M",
+          "url": "/products/dunlop-geomax-mx53-80-100-21-tt-51m?_pos=1&_sid=67032f3e6&_ss=r&_fid=edc6bcd64",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN STARCROSS 6MS 80/100-21",
+          "url": "/products/michelin-starcross-6ms-80-100-21?_pos=2&_sid=67032f3e6&_ss=r&_fid=edc6bcd64",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN STARCROSS 5 MEDIUM 80/100-21",
+          "url": "/products/michelin-starcross-5-medium-80-100-21?_pos=3&_sid=67032f3e6&_ss=r&_fid=edc6bcd64",
+          "position": 3
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 957
+    },
+    {
+      "label": "80/100-21:with-text",
+      "url": "https://www.bikerz.cl/search?q=80%2F100-21&type=product&page=1&filter.p.m.custom.ancho=80.0&filter.p.m.custom.di_metro=21&filter.p.m.custom.aspecto=100",
+      "total": 3,
+      "displayLimit": 16,
+      "ids": [
+        "15434153099485",
+        "9037388218589",
+        "9037387104477"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP GEOMAX MX53 80/100-21 TT 51M",
+          "url": "/products/dunlop-geomax-mx53-80-100-21-tt-51m?_pos=1&_sid=fd7bd6c85&_ss=r&_fid=516496b08",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN STARCROSS 6MS 80/100-21",
+          "url": "/products/michelin-starcross-6ms-80-100-21?_pos=2&_sid=fd7bd6c85&_ss=r&_fid=516496b08",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN STARCROSS 5 MEDIUM 80/100-21",
+          "url": "/products/michelin-starcross-5-medium-80-100-21?_pos=3&_sid=fd7bd6c85&_ss=r&_fid=516496b08",
+          "position": 3
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 458
+    },
+    {
+      "label": "100/80-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=100.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=80",
+      "total": 12,
+      "displayLimit": 16,
+      "ids": [
+        "8861872685277",
+        "8956504080605",
+        "9005057638621",
+        "9138991759581",
+        "9237386363101",
+        "9443337076957",
+        "9628727640285",
+        "8861872980189",
+        "8876608880861",
+        "9003325784285",
+        "9507364208861",
+        "9552198533341"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP ARROWMAX GT601 100/80-17  52H",
+          "url": "/products/dunlop-arrowmax-gt601-100-80-17-52h?_pos=1&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP TRAILMAX  D604 100/80-17 52P",
+          "url": "/products/dunlop-mc-touring-on-off-tl-d604-100-80-17-52p?_pos=2&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN COMMANDER 100/80-17 52H",
+          "url": "/products/michelin-commander-100-80-17-52h?_pos=3&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 3
+        },
+        {
+          "title": "VIPAL STREET ST500 100/80-17 TL 52S",
+          "url": "/products/vipal-street-st500-100-80-17-tl-52s?_pos=4&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 4
+        },
+        {
+          "title": "TIMSUN TS-823 100/80-17 52P TL",
+          "url": "/products/timsun-ts-823-100-80-17-52p-tl?_pos=5&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 5
+        },
+        {
+          "title": "XCELINK KRATOS 100/80-17 TL 57S",
+          "url": "/products/xcelink-kratos-110-80-17-tl-57s?_pos=6&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 6
+        },
+        {
+          "title": "NEUMÁTICO SEIPRO SPORT CIUDAD 100/80-17 TL 54N",
+          "url": "/products/neumatico-seipro-sport-ciudad-100-80-17-tl-54n?_pos=7&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 7
+        },
+        {
+          "title": "RINALDI HB37 100/80-17 52T",
+          "url": "/products/rinaldi-100-80-17-52t-hb37-tubuless?_pos=8&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN PILOT STREET 2 100/80-17 52S",
+          "url": "/products/michelin-pilot-street-2-100-80-17-52s?_pos=9&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 9
+        },
+        {
+          "title": "MICHELIN SCORCHER 11 100/80-17 52H",
+          "url": "/products/michelin-scorcher-11-100-80-17-52h?_pos=10&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 10
+        },
+        {
+          "title": "EUROGRIP EEG BEAMER HS 100/80-17 TL 52P",
+          "url": "/products/eurogrip-eeg-beamer-hs-100-80-17-tl-52p?_pos=11&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 11
+        },
+        {
+          "title": "CEAT ZOOM PLUS 100/80-17 TL 52P",
+          "url": "/products/ceat-zoom-plus-100-80-17-tl-52p?_pos=12&_sid=67032f3e6&_ss=r&_fid=4370fe5e9",
+          "position": 12
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 694
+    },
+    {
+      "label": "100/80-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=100%2F80-17&type=product&page=1&filter.p.m.custom.ancho=100.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=80",
+      "total": 12,
+      "displayLimit": 16,
+      "ids": [
+        "8861872685277",
+        "9005057638621",
+        "9628727640285",
+        "8956504080605",
+        "9138991759581",
+        "9237386363101",
+        "9443337076957",
+        "9552198533341",
+        "8876608880861",
+        "8861872980189",
+        "9003325784285",
+        "9507364208861"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP ARROWMAX GT601 100/80-17  52H",
+          "url": "/products/dunlop-arrowmax-gt601-100-80-17-52h?_pos=1&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN COMMANDER 100/80-17 52H",
+          "url": "/products/michelin-commander-100-80-17-52h?_pos=2&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 2
+        },
+        {
+          "title": "NEUMÁTICO SEIPRO SPORT CIUDAD 100/80-17 TL 54N",
+          "url": "/products/neumatico-seipro-sport-ciudad-100-80-17-tl-54n?_pos=3&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 3
+        },
+        {
+          "title": "DUNLOP TRAILMAX  D604 100/80-17 52P",
+          "url": "/products/dunlop-mc-touring-on-off-tl-d604-100-80-17-52p?_pos=4&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 4
+        },
+        {
+          "title": "VIPAL STREET ST500 100/80-17 TL 52S",
+          "url": "/products/vipal-street-st500-100-80-17-tl-52s?_pos=5&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 5
+        },
+        {
+          "title": "TIMSUN TS-823 100/80-17 52P TL",
+          "url": "/products/timsun-ts-823-100-80-17-52p-tl?_pos=6&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 6
+        },
+        {
+          "title": "XCELINK KRATOS 100/80-17 TL 57S",
+          "url": "/products/xcelink-kratos-110-80-17-tl-57s?_pos=7&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 7
+        },
+        {
+          "title": "CEAT ZOOM PLUS 100/80-17 TL 52P",
+          "url": "/products/ceat-zoom-plus-100-80-17-tl-52p?_pos=8&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN PILOT STREET 2 100/80-17 52S",
+          "url": "/products/michelin-pilot-street-2-100-80-17-52s?_pos=9&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 9
+        },
+        {
+          "title": "RINALDI HB37 100/80-17 52T",
+          "url": "/products/rinaldi-100-80-17-52t-hb37-tubuless?_pos=10&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 10
+        },
+        {
+          "title": "MICHELIN SCORCHER 11 100/80-17 52H",
+          "url": "/products/michelin-scorcher-11-100-80-17-52h?_pos=11&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 11
+        },
+        {
+          "title": "EUROGRIP EEG BEAMER HS 100/80-17 TL 52P",
+          "url": "/products/eurogrip-eeg-beamer-hs-100-80-17-tl-52p?_pos=12&_sid=b2d5e779c&_ss=r&_fid=687e8a1d6",
+          "position": 12
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 516
+    },
+    {
+      "label": "110/80-19:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=110.0&filter.p.m.custom.di_metro=19&filter.p.m.custom.aspecto=80",
+      "total": 23,
+      "displayLimit": 16,
+      "ids": [
+        "8861874225373",
+        "8864567558365",
+        "8867637493981",
+        "8867638116573",
+        "8876481183965",
+        "8876589252829",
+        "9001488842973",
+        "9037392380125",
+        "9128648704221",
+        "9139205865693",
+        "9283342205149",
+        "9388610748637",
+        "9402422755549",
+        "9495148527837",
+        "8866486747357",
+        "8866486911197"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP TRAILMAX MIXTOUR 110/80R19 59H",
+          "url": "/products/dunlop-mixtour-trailmax-110-80r19-59h?_pos=1&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP TRAILMAX RAID 110/80R19 59T",
+          "url": "/products/dunlop-trailmax-raid-110-80r19-59t?_pos=2&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 2
+        },
+        {
+          "title": "CONTINENTAL TKC 70 110/80R19 59V",
+          "url": "/products/continental-tkc-70-110-80r19-59v?_pos=3&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL TKC 80 Twinduro 110/80B19 59Q",
+          "url": "/products/continental-tkc-80-twinduro-110-80b19-59q?_pos=4&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 4
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 110/80B19 59R",
+          "url": "/products/heidenau-k60-ranger-110-80r19-59r?_pos=5&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 110/80R19 59V",
+          "url": "/products/michelin-anakee-adventure-110-80r19-59v?_pos=6&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 110/80R19 59R",
+          "url": "/products/michelin-anakee-wild-110-80r19-59r?_pos=7&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 7
+        },
+        {
+          "title": "ANLAS CAPRA X 110/80R19 59Q",
+          "url": "/products/anlas-capra-x-110-80r19-59q?_pos=8&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 8
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 110/80R19 59VTL",
+          "url": "/products/continental-contitrailattack-3-110-80r-19-59vtl?_pos=9&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 9
+        },
+        {
+          "title": "SHINKO TRAIL MASTER E705 110/80R19 TL 58H",
+          "url": "/products/shinko-trail-master-e705-110-80r19-tl-58h?_pos=10&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 10
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 110/80B19 TL 59H",
+          "url": "/products/neumatico-moto-mitas-trail-e-07-110-80b19-59h-tl-delantero?_pos=11&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 11
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 110/80R19 TL 59V",
+          "url": "/products/bridgestone-battlax-at41-110-80-19-tl-59v?_pos=12&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 12
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR GPS 110/80B19 TL 59T",
+          "url": "/products/motoz-tractionator-gps-110-80b19-tl-59t?_pos=13&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 13
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR DUALVENTURE 110/80B19 TL 59Q",
+          "url": "/products/motoz-tractionator-dualventure-110-80b19-tl-59q?_pos=14&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 14
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 110/80B19 59T",
+          "url": "/products/heidenau-k60-scout-110-80b19-59t?_pos=15&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 15
+        },
+        {
+          "title": "HEIDENAU K76 110/80B19 59H",
+          "url": "/products/heidenau-k76-110-80b19-59h?_pos=16&_sid=67032f3e6&_ss=r&_fid=4fe65d743",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 889
+    },
+    {
+      "label": "110/80-19:with-text",
+      "url": "https://www.bikerz.cl/search?q=110%2F80-19&type=product&page=1&filter.p.m.custom.ancho=110.0&filter.p.m.custom.di_metro=19&filter.p.m.custom.aspecto=80",
+      "total": 23,
+      "displayLimit": 16,
+      "ids": [
+        "8861874225373",
+        "8876589252829",
+        "9139205865693",
+        "9128648704221",
+        "8867637493981",
+        "9388610748637",
+        "8876481183965",
+        "8864567558365",
+        "8867638116573",
+        "9037392380125",
+        "9001488842973",
+        "9402422755549",
+        "9495148527837",
+        "9283342205149",
+        "9443337961693",
+        "9205442773213"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP TRAILMAX MIXTOUR 110/80R19 59H",
+          "url": "/products/dunlop-mixtour-trailmax-110-80r19-59h?_pos=1&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 110/80R19 59V",
+          "url": "/products/michelin-anakee-adventure-110-80r19-59v?_pos=2&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 2
+        },
+        {
+          "title": "SHINKO TRAIL MASTER E705 110/80R19 TL 58H",
+          "url": "/products/shinko-trail-master-e705-110-80r19-tl-58h?_pos=3&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 110/80R19 59VTL",
+          "url": "/products/continental-contitrailattack-3-110-80r-19-59vtl?_pos=4&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 4
+        },
+        {
+          "title": "CONTINENTAL TKC 70 110/80R19 59V",
+          "url": "/products/continental-tkc-70-110-80r19-59v?_pos=5&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 5
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 110/80R19 TL 59V",
+          "url": "/products/bridgestone-battlax-at41-110-80-19-tl-59v?_pos=6&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 6
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 110/80B19 59R",
+          "url": "/products/heidenau-k60-ranger-110-80r19-59r?_pos=7&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 7
+        },
+        {
+          "title": "DUNLOP TRAILMAX RAID 110/80R19 59T",
+          "url": "/products/dunlop-trailmax-raid-110-80r19-59t?_pos=8&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 8
+        },
+        {
+          "title": "CONTINENTAL TKC 80 Twinduro 110/80B19 59Q",
+          "url": "/products/continental-tkc-80-twinduro-110-80b19-59q?_pos=9&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 9
+        },
+        {
+          "title": "ANLAS CAPRA X 110/80R19 59Q",
+          "url": "/products/anlas-capra-x-110-80r19-59q?_pos=10&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 10
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 110/80R19 59R",
+          "url": "/products/michelin-anakee-wild-110-80r19-59r?_pos=11&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 11
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR GPS 110/80B19 TL 59T",
+          "url": "/products/motoz-tractionator-gps-110-80b19-tl-59t?_pos=12&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 12
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR DUALVENTURE 110/80B19 TL 59Q",
+          "url": "/products/motoz-tractionator-dualventure-110-80b19-tl-59q?_pos=13&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 13
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 110/80B19 TL 59H",
+          "url": "/products/neumatico-moto-mitas-trail-e-07-110-80b19-59h-tl-delantero?_pos=14&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 14
+        },
+        {
+          "title": "XCELINK KRATOS 110/80-19 TL 59H",
+          "url": "/products/xcelink-kratos-110-80-19-tl-59h?_pos=15&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 15
+        },
+        {
+          "title": "TIMSUN TS-823 110/80-19 59P TL",
+          "url": "/products/timsun-ts-823-110-80-19-59p-tl?_pos=16&_sid=c31ab4a52&_ss=r&_fid=409d6373d",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 547
+    },
+    {
+      "label": "130/80-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=130.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=80",
+      "total": 15,
+      "displayLimit": 16,
+      "ids": [
+        "15433938403549",
+        "8861873635549",
+        "8896997392605",
+        "8919917854941",
+        "9004006605021",
+        "9201406410973",
+        "9206469558493",
+        "9261575471325",
+        "9471071092957",
+        "9508420813021",
+        "9552293724381",
+        "8866486550749",
+        "8867637297373",
+        "8876626542813",
+        "9244301525213"
+      ],
+      "products": [
+        {
+          "title": "SHINKO E705 130/80-17 TL 65H",
+          "url": "/products/shinko-e705-130-80-17-tl-65h?_pos=1&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 1
+        },
+        {
+          "title": "RINALDI R34 130/80-17 65P",
+          "url": "/products/rinaldi-130-80-17-65p-tt-r34?_pos=2&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 130/80R17 65H",
+          "url": "/products/michelin-anakee-adventure-130-80r17-65h?_pos=3&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 3
+        },
+        {
+          "title": "DUNLOP TMX-TRAILMAX 130/80-17 65S",
+          "url": "/products/dunlop-tmx-trailmax-130-80-17-65s?_pos=4&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN ANAKEE 3 130/80-17 65H",
+          "url": "/products/michelin-anakee-3-130-80-17-65h?_pos=5&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 5
+        },
+        {
+          "title": "HEIDENAU K76 130/80-17 TL 65H",
+          "url": "/products/heidenau-k76-130-80-17-tl-65h?_pos=6&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 6
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 130/80R17 TL 65T",
+          "url": "/products/heidenau-k60-scout-130-80r17-tl-65t?_pos=7&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 7
+        },
+        {
+          "title": "VIPAL TRAIL TR300 130/80-17 65T TT",
+          "url": "/products/vipal-trail-tr300-130-80-17-65t-tt?_pos=8&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 8
+        },
+        {
+          "title": "CONTINENTAL TKC 70 130/80-17 TL 65T",
+          "url": "/products/continental-tkc-70-130-80-17-tl-65t?_pos=9&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 9
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 130/80B17 TL 65H",
+          "url": "/products/mitas-enduro-trail-e07-130-80b17-tl-65h?_pos=10&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 10
+        },
+        {
+          "title": "EUROGRIP TRAILHOUND SCR 130/80R17 TL 65H",
+          "url": "/products/eurogrip-trailhound-scr-130-80r17-tl-65h?_pos=11&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 11
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 130/80-17 TL 65T",
+          "url": "/products/heidenau-k60-130-80-17-65t?_pos=12&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 12
+        },
+        {
+          "title": "CONTINENTAL TKC 70 130/80-17 65T",
+          "url": "/products/continental-tkc-70-130-80-17-65t?_pos=13&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 13
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 130/80-17 65R",
+          "url": "/products/heidenau-k60-ranger-130-80-17-65r?_pos=14&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 14
+        },
+        {
+          "title": "MICHELIN SCORCHER 31 130/80B17 TT/TL 65H",
+          "url": "/products/michelin-scorcher-31-130-80b17-tt-tl-65h?_pos=15&_sid=67032f3e6&_ss=r&_fid=fed8464e2",
+          "position": 15
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 653
+    },
+    {
+      "label": "130/80-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=130%2F80-17&type=product&page=1&filter.p.m.custom.ancho=130.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=80",
+      "total": 15,
+      "displayLimit": 16,
+      "ids": [
+        "15433938403549",
+        "8919917854941",
+        "9004006605021",
+        "8861873635549",
+        "9201406410973",
+        "9471071092957",
+        "9206469558493",
+        "9261575471325",
+        "8896997392605",
+        "9508420813021",
+        "9552293724381",
+        "8867637297373",
+        "8866486550749",
+        "8876626542813",
+        "9244301525213"
+      ],
+      "products": [
+        {
+          "title": "SHINKO E705 130/80-17 TL 65H",
+          "url": "/products/shinko-e705-130-80-17-tl-65h?_pos=1&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP TMX-TRAILMAX 130/80-17 65S",
+          "url": "/products/dunlop-tmx-trailmax-130-80-17-65s?_pos=2&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN ANAKEE 3 130/80-17 65H",
+          "url": "/products/michelin-anakee-3-130-80-17-65h?_pos=3&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 3
+        },
+        {
+          "title": "RINALDI R34 130/80-17 65P",
+          "url": "/products/rinaldi-130-80-17-65p-tt-r34?_pos=4&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 4
+        },
+        {
+          "title": "HEIDENAU K76 130/80-17 TL 65H",
+          "url": "/products/heidenau-k76-130-80-17-tl-65h?_pos=5&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 5
+        },
+        {
+          "title": "CONTINENTAL TKC 70 130/80-17 TL 65T",
+          "url": "/products/continental-tkc-70-130-80-17-tl-65t?_pos=6&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 6
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 130/80R17 TL 65T",
+          "url": "/products/heidenau-k60-scout-130-80r17-tl-65t?_pos=7&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 7
+        },
+        {
+          "title": "VIPAL TRAIL TR300 130/80-17 65T TT",
+          "url": "/products/vipal-trail-tr300-130-80-17-65t-tt?_pos=8&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 130/80R17 65H",
+          "url": "/products/michelin-anakee-adventure-130-80r17-65h?_pos=9&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 9
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 130/80B17 TL 65H",
+          "url": "/products/mitas-enduro-trail-e07-130-80b17-tl-65h?_pos=10&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 10
+        },
+        {
+          "title": "EUROGRIP TRAILHOUND SCR 130/80R17 TL 65H",
+          "url": "/products/eurogrip-trailhound-scr-130-80r17-tl-65h?_pos=11&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 11
+        },
+        {
+          "title": "CONTINENTAL TKC 70 130/80-17 65T",
+          "url": "/products/continental-tkc-70-130-80-17-65t?_pos=12&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 12
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 130/80-17 TL 65T",
+          "url": "/products/heidenau-k60-130-80-17-65t?_pos=13&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 13
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 130/80-17 65R",
+          "url": "/products/heidenau-k60-ranger-130-80-17-65r?_pos=14&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 14
+        },
+        {
+          "title": "MICHELIN SCORCHER 31 130/80B17 TT/TL 65H",
+          "url": "/products/michelin-scorcher-31-130-80b17-tt-tl-65h?_pos=15&_sid=1ec60f3fd&_ss=r&_fid=c453fe2fa",
+          "position": 15
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 501
+    },
+    {
+      "label": "150/70-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=150.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70",
+      "total": 26,
+      "displayLimit": 16,
+      "ids": [
+        "8861872849117",
+        "8861873864925",
+        "8861874258141",
+        "8867637592285",
+        "8876476793053",
+        "8899918921949",
+        "9001485926621",
+        "9010328600797",
+        "9025292861661",
+        "9037392150749",
+        "9106015748317",
+        "9128648933597",
+        "9159682392285",
+        "9252159750365",
+        "9283346170077",
+        "9388672483549"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP ARROWMAX GT601 150/70-17 69H",
+          "url": "/products/dunlop-arrowmax-gt601-150-70-17-69h?_pos=1&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 150/70R17  69W",
+          "url": "/products/dunlop-sportmax-gpr300-150-70r17-69w?_pos=2&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 2
+        },
+        {
+          "title": "DUNLOP TRAILMAX MIXTOUR 150/70R17 69V",
+          "url": "/products/dunlop-mixtour-trailmax-150-70r17-69v?_pos=3&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL TKC 70 150/70R17 69V",
+          "url": "/products/continental-tkc-70-150-70r17-69v?_pos=4&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 4
+        },
+        {
+          "title": "CONTINENTAL TKC 70 ROCKS 150/70R17 69S",
+          "url": "/products/continental-tkc-70-rocks-150-70r17-69s?_pos=5&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 150/70R17 69V",
+          "url": "/products/michelin-anakee-adventure-150-70-r17-69v?_pos=6&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 150/70R17 69R",
+          "url": "/products/michelin-anakee-wild-150-70r17-69r?_pos=7&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN ROAD CLASSIC R 150/70R17 69H",
+          "url": "/products/michelin-road-classic-r-150-70-r-17-69h?_pos=8&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 8
+        },
+        {
+          "title": "DUNLOP TRAILMAX RAID 150/70R17 69T TL",
+          "url": "/products/dunlop-trailmax-raid-150-70-r17-69t-tl?_pos=9&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 9
+        },
+        {
+          "title": "ANLAS CAPRA R 150/70R17 69V",
+          "url": "/products/anlas-capra-r-150-70r17-69v?_pos=10&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 10
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 150/70R17 TL 69R",
+          "url": "/products/heidenau-k60-ranger-150-70r17-tl-69r?_pos=11&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 11
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 150/70R17 69VTL",
+          "url": "/products/continental-contitrailattack-3-150-70r17-69vtl?_pos=12&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 12
+        },
+        {
+          "title": "SHINKO TRAIL MASTER E705 150/70-17 TL 69Q",
+          "url": "/products/shinko-trail-master-e705-150-70-17-tl-69q?_pos=13&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 13
+        },
+        {
+          "title": "MICHELIN ROAD 6 150/70ZR17 69W R TL",
+          "url": "/products/michelin-road-6-150-70zr17-69w-r-tl?_pos=14&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 14
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 150/70B17 TL/TT 69H",
+          "url": "/products/mitas-enduro-trail-e07-150-70b17-tl-tt-69h?_pos=15&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 15
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 150/70R17 TL 69V",
+          "url": "/products/bridgestone-battlax-at41-150-70-17-tl-69v?_pos=16&_sid=67032f3e6&_ss=r&_fid=1e8567bbc",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1,
+        2
+      ],
+      "elapsedMs": 619
+    },
+    {
+      "label": "150/70-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=150%2F70-17&type=product&page=1&filter.p.m.custom.ancho=150.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=70",
+      "total": 26,
+      "displayLimit": 16,
+      "ids": [
+        "9025292861661",
+        "8861872849117",
+        "9388672483549",
+        "9443342319837",
+        "9010328600797",
+        "8899918921949",
+        "8876476793053",
+        "9001485926621",
+        "9159682392285",
+        "9128648933597",
+        "9252159750365",
+        "8867637592285",
+        "8861874258141",
+        "8861873864925",
+        "9283346170077",
+        "9037392150749"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP TRAILMAX RAID 150/70R17 69T TL",
+          "url": "/products/dunlop-trailmax-raid-150-70-r17-69t-tl?_pos=1&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP ARROWMAX GT601 150/70-17 69H",
+          "url": "/products/dunlop-arrowmax-gt601-150-70-17-69h?_pos=2&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 2
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 150/70R17 TL 69V",
+          "url": "/products/bridgestone-battlax-at41-150-70-17-tl-69v?_pos=3&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 3
+        },
+        {
+          "title": "XCELINK KRATOS 150/70-17 TL 69H",
+          "url": "/products/xcelink-kratos-150-70-17-tl-69h?_pos=4&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN ROAD CLASSIC R 150/70R17 69H",
+          "url": "/products/michelin-road-classic-r-150-70-r-17-69h?_pos=5&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 150/70R17 69V",
+          "url": "/products/michelin-anakee-adventure-150-70-r17-69v?_pos=6&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 6
+        },
+        {
+          "title": "CONTINENTAL TKC 70 ROCKS 150/70R17 69S",
+          "url": "/products/continental-tkc-70-rocks-150-70r17-69s?_pos=7&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 150/70R17 69R",
+          "url": "/products/michelin-anakee-wild-150-70r17-69r?_pos=8&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 8
+        },
+        {
+          "title": "SHINKO TRAIL MASTER E705 150/70-17 TL 69Q",
+          "url": "/products/shinko-trail-master-e705-150-70-17-tl-69q?_pos=9&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 9
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 150/70R17 69VTL",
+          "url": "/products/continental-contitrailattack-3-150-70r17-69vtl?_pos=10&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 10
+        },
+        {
+          "title": "MICHELIN ROAD 6 150/70ZR17 69W R TL",
+          "url": "/products/michelin-road-6-150-70zr17-69w-r-tl?_pos=11&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 11
+        },
+        {
+          "title": "CONTINENTAL TKC 70 150/70R17 69V",
+          "url": "/products/continental-tkc-70-150-70r17-69v?_pos=12&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 12
+        },
+        {
+          "title": "DUNLOP TRAILMAX MIXTOUR 150/70R17 69V",
+          "url": "/products/dunlop-mixtour-trailmax-150-70r17-69v?_pos=13&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 13
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 150/70R17  69W",
+          "url": "/products/dunlop-sportmax-gpr300-150-70r17-69w?_pos=14&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 14
+        },
+        {
+          "title": "MITAS ENDURO TRAIL E07+ 150/70B17 TL/TT 69H",
+          "url": "/products/mitas-enduro-trail-e07-150-70b17-tl-tt-69h?_pos=15&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 15
+        },
+        {
+          "title": "ANLAS CAPRA R 150/70R17 69V",
+          "url": "/products/anlas-capra-r-150-70r17-69v?_pos=16&_sid=c170fa640&_ss=r&_fid=470d87b17",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1,
+        2
+      ],
+      "elapsedMs": 633
+    },
+    {
+      "label": "170/60-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=170.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=60",
+      "total": 19,
+      "displayLimit": 16,
+      "ids": [
+        "10192861659357",
+        "8861873963229",
+        "8864567394525",
+        "8867637559517",
+        "8876517228765",
+        "9002353819869",
+        "9005685539037",
+        "9025293058269",
+        "9037392249053",
+        "9119483822301",
+        "9128649130205",
+        "9257320087773",
+        "9388672909533",
+        "9402425835741",
+        "9495141810397",
+        "8876486787293"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 170/60ZR17 TL 72W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-170-60zr17-tl-72w?_pos=1&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 170/60R17 72W",
+          "url": "/products/dunlop-sportmax-gpr300-170-60r17-72w?_pos=2&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 2
+        },
+        {
+          "title": "DUNLOP TRAILMAX MERIDIAN 170/60R17 72W",
+          "url": "/products/dunlop-trailmax-meridian-170-60r17-72w?_pos=3&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL TKC 70 170/60R17 72V",
+          "url": "/products/continental-tkc-70-170-60r17-72v?_pos=4&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 4
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 170/60R17 TL 72T",
+          "url": "/products/heidenau-k60-scout-170-60r17-72t?_pos=5&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 170/60R17 72R",
+          "url": "/products/michelin-anakee-wild-170-60r17-trasero-72r?_pos=6&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN PILOT ROAD 4 GT 170/60ZR17 72W",
+          "url": "/products/michelin-pilot-road-4-gt170-60zr17-72w?_pos=7&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 7
+        },
+        {
+          "title": "DUNLOP TRAILMAX-MIXTOUR 170/60-17 72V TL",
+          "url": "/products/dunlop-trailmax-mixtour-170-60-17-72v-tl?_pos=8&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 8
+        },
+        {
+          "title": "ANLAS CAPRA X 170/60R17 72T",
+          "url": "/products/anlas-capra-x-170-60r17-72t?_pos=9&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 9
+        },
+        {
+          "title": "CONTINENTAL TKC 70 ROCKS 170/60R17 72S",
+          "url": "/products/continental-tkc-70-rocks-170-60-17-72s?_pos=10&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 10
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 170/60ZR17 72W TL",
+          "url": "/products/continental-contitrailattack-3-170-60zr17-72w-tl?_pos=11&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 11
+        },
+        {
+          "title": "MICHELIN ROAD 6 170/60ZR17 75W R TL",
+          "url": "/products/michelin-road-6-170-60zr17-75w-r-tl?_pos=12&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 12
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 170/60R17 TL 72V",
+          "url": "/products/bridgestone-battlax-at41-170-60-17-tl-72v?_pos=13&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 13
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR GPS 170/60B17 TL 72Q",
+          "url": "/products/motoz-tractionator-gps-170-60-17-tl-70-t?_pos=14&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 14
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR ADVENTURE 170/60B17 TL 72Q",
+          "url": "/products/motoz-tractionator-adventure-170-60b17-tl-72q?_pos=15&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 15
+        },
+        {
+          "title": "HEIDENAU K60 RANGER 170/60R17 72R",
+          "url": "/products/heidenau-k60-ranger-170-60r17-72r?_pos=16&_sid=67032f3e6&_ss=r&_fid=1b4e796e2",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 615
+    },
+    {
+      "label": "170/60-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=170%2F60-17&type=product&page=1&filter.p.m.custom.ancho=170.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=60",
+      "total": 19,
+      "displayLimit": 16,
+      "ids": [
+        "9037392249053",
+        "9025293058269",
+        "9119483822301",
+        "8867637559517",
+        "9002353819869",
+        "9388672909533",
+        "8876517228765",
+        "9257320087773",
+        "9128649130205",
+        "8864567394525",
+        "9402425835741",
+        "9005685539037",
+        "10192861659357",
+        "9495141810397",
+        "8861873963229",
+        "8902893797597"
+      ],
+      "products": [
+        {
+          "title": "ANLAS CAPRA X 170/60R17 72T",
+          "url": "/products/anlas-capra-x-170-60r17-72t?_pos=1&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP TRAILMAX-MIXTOUR 170/60-17 72V TL",
+          "url": "/products/dunlop-trailmax-mixtour-170-60-17-72v-tl?_pos=2&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 2
+        },
+        {
+          "title": "CONTINENTAL TKC 70 ROCKS 170/60R17 72S",
+          "url": "/products/continental-tkc-70-rocks-170-60-17-72s?_pos=3&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL TKC 70 170/60R17 72V",
+          "url": "/products/continental-tkc-70-170-60r17-72v?_pos=4&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN ANAKEE WILD 170/60R17 72R",
+          "url": "/products/michelin-anakee-wild-170-60r17-trasero-72r?_pos=5&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 5
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX AT41 170/60R17 TL 72V",
+          "url": "/products/bridgestone-battlax-at41-170-60-17-tl-72v?_pos=6&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 6
+        },
+        {
+          "title": "HEIDENAU K60 SCOUT 170/60R17 TL 72T",
+          "url": "/products/heidenau-k60-scout-170-60r17-72t?_pos=7&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN ROAD 6 170/60ZR17 75W R TL",
+          "url": "/products/michelin-road-6-170-60zr17-75w-r-tl?_pos=8&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 8
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 170/60ZR17 72W TL",
+          "url": "/products/continental-contitrailattack-3-170-60zr17-72w-tl?_pos=9&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 9
+        },
+        {
+          "title": "DUNLOP TRAILMAX MERIDIAN 170/60R17 72W",
+          "url": "/products/dunlop-trailmax-meridian-170-60r17-72w?_pos=10&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 10
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR GPS 170/60B17 TL 72Q",
+          "url": "/products/motoz-tractionator-gps-170-60-17-tl-70-t?_pos=11&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 11
+        },
+        {
+          "title": "MICHELIN PILOT ROAD 4 GT 170/60ZR17 72W",
+          "url": "/products/michelin-pilot-road-4-gt170-60zr17-72w?_pos=12&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 12
+        },
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 170/60ZR17 TL 72W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-170-60zr17-tl-72w?_pos=13&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 13
+        },
+        {
+          "title": "MOTOZ TRACTIONATOR ADVENTURE 170/60B17 TL 72Q",
+          "url": "/products/motoz-tractionator-adventure-170-60b17-tl-72q?_pos=14&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 14
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 170/60R17 72W",
+          "url": "/products/dunlop-sportmax-gpr300-170-60r17-72w?_pos=15&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 15
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 170/60R17 72V",
+          "url": "/products/michelin-anakee-adventure-180-55r17-73v?_pos=16&_sid=b8deab7e6&_ss=r&_fid=42849308a",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 484
+    },
+    {
+      "label": "180/55-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=180.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=55",
+      "total": 18,
+      "displayLimit": 16,
+      "ids": [
+        "10192858579165",
+        "10192862314717",
+        "8826006765789",
+        "8861873995997",
+        "8867637985501",
+        "8876475515101",
+        "8899924820189",
+        "9005682524381",
+        "9013634564317",
+        "9128649228509",
+        "9244340453597",
+        "9257313763549",
+        "9552962978013",
+        "9552973267165",
+        "9562202898653",
+        "9671989952733"
+      ],
+      "products": [
+        {
+          "title": "CONTINENTAL CONTIROADATTACK 4 180/55ZR17 TL 73W",
+          "url": "/products/continental-contiroadattack-4-180-55zr17-tl-73w?_pos=1&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 1
+        },
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 180/55ZR17 TL 73W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-180-55zr17-tl-73w?_pos=2&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN PILOT STREET 180/55ZR17 73W",
+          "url": "/products/michelin-pilot-street-180-55-zr17?_pos=3&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 3
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 180/55R17  73W",
+          "url": "/products/dunlop-sportmax-gpr300-180-55r17-73w?_pos=4&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 4
+        },
+        {
+          "title": "CONTINENTAL ContiRoad 180/55ZR17 73W",
+          "url": "/products/continental-contiroadattack-180-55-17-73w?_pos=5&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 5
+        },
+        {
+          "title": "CONTINENTAL TKC 70 180/55ZR17 73W",
+          "url": "/products/continental-tkc-70-180-55zr17-73w?_pos=6&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 180/55R17 73V",
+          "url": "/products/michelin-anakee-adventure-150-70r18-70v?_pos=7&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN POWER CUP 2 180/55ZR17 73W",
+          "url": "/products/michelin-power-cup-2-180-55zr17-73w?_pos=8&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN POWER GP 180/55ZR17",
+          "url": "/products/michelin-power-gp-180-55zr17?_pos=9&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 9
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 180/55ZR17 73W TL",
+          "url": "/products/continental-contitrailattack-3-180-55zr17-73w-tl?_pos=10&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 10
+        },
+        {
+          "title": "MICHELIN POWER 6 180/55ZR17 73W TL",
+          "url": "/products/michelin-power-6-180-55zr17-73w-tl?_pos=11&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 11
+        },
+        {
+          "title": "MICHELIN ROAD 6 180/55ZR17 73W R TL",
+          "url": "/products/michelin-road-6-180-55zr17-73w-r-tl?_pos=12&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 12
+        },
+        {
+          "title": "MICHELIN ROAD 5 GT 180/55ZR17 TL 73W",
+          "url": "/products/michelin-road-5-gt-180-55zr17-tl-73w?_pos=13&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 13
+        },
+        {
+          "title": "MICHELIN POWER CUP EVO 180/55ZR17 73W",
+          "url": "/products/michelin-power-cup-evo-180-55zr17-73w?_pos=14&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 14
+        },
+        {
+          "title": "DUNLOP SPORTMAX Q5A 180/55ZR17 73W TL",
+          "url": "/products/dunlop-sportmax-q5a-180-55r17-73w-tl?_pos=15&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 15
+        },
+        {
+          "title": "NEUMÁTICO BRIDGESTONE BATTLAX S23 180/55ZR17 TL 73W",
+          "url": "/products/neumatico-bridgestone-battlax-s23-180-55zr17-tl-73w?_pos=16&_sid=67032f3e6&_ss=r&_fid=13714d6d9",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 708
+    },
+    {
+      "label": "180/55-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=180%2F55-17&type=product&page=1&filter.p.m.custom.ancho=180.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=55",
+      "total": 18,
+      "displayLimit": 16,
+      "ids": [
+        "9244340453597",
+        "8899924820189",
+        "9128649228509",
+        "9005682524381",
+        "9013634564317",
+        "9552962978013",
+        "8876475515101",
+        "9257313763549",
+        "8826006765789",
+        "8861873995997",
+        "10192858579165",
+        "8867637985501",
+        "9552973267165",
+        "9562202898653",
+        "9671989952733",
+        "10192862314717"
+      ],
+      "products": [
+        {
+          "title": "MICHELIN POWER 6 180/55ZR17 73W TL",
+          "url": "/products/michelin-power-6-180-55zr17-73w-tl?_pos=1&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 180/55R17 73V",
+          "url": "/products/michelin-anakee-adventure-150-70r18-70v?_pos=2&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 2
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 180/55ZR17 73W TL",
+          "url": "/products/continental-contitrailattack-3-180-55zr17-73w-tl?_pos=3&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 3
+        },
+        {
+          "title": "MICHELIN POWER CUP 2 180/55ZR17 73W",
+          "url": "/products/michelin-power-cup-2-180-55zr17-73w?_pos=4&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN POWER GP 180/55ZR17",
+          "url": "/products/michelin-power-gp-180-55zr17?_pos=5&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN ROAD 5 GT 180/55ZR17 TL 73W",
+          "url": "/products/michelin-road-5-gt-180-55zr17-tl-73w?_pos=6&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 6
+        },
+        {
+          "title": "CONTINENTAL TKC 70 180/55ZR17 73W",
+          "url": "/products/continental-tkc-70-180-55zr17-73w?_pos=7&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN ROAD 6 180/55ZR17 73W R TL",
+          "url": "/products/michelin-road-6-180-55zr17-73w-r-tl?_pos=8&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN PILOT STREET 180/55ZR17 73W",
+          "url": "/products/michelin-pilot-street-180-55-zr17?_pos=9&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 9
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 180/55R17  73W",
+          "url": "/products/dunlop-sportmax-gpr300-180-55r17-73w?_pos=10&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 10
+        },
+        {
+          "title": "CONTINENTAL CONTIROADATTACK 4 180/55ZR17 TL 73W",
+          "url": "/products/continental-contiroadattack-4-180-55zr17-tl-73w?_pos=11&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 11
+        },
+        {
+          "title": "CONTINENTAL ContiRoad 180/55ZR17 73W",
+          "url": "/products/continental-contiroadattack-180-55-17-73w?_pos=12&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 12
+        },
+        {
+          "title": "MICHELIN POWER CUP EVO 180/55ZR17 73W",
+          "url": "/products/michelin-power-cup-evo-180-55zr17-73w?_pos=13&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 13
+        },
+        {
+          "title": "DUNLOP SPORTMAX Q5A 180/55ZR17 73W TL",
+          "url": "/products/dunlop-sportmax-q5a-180-55r17-73w-tl?_pos=14&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 14
+        },
+        {
+          "title": "NEUMÁTICO BRIDGESTONE BATTLAX S23 180/55ZR17 TL 73W",
+          "url": "/products/neumatico-bridgestone-battlax-s23-180-55zr17-tl-73w?_pos=15&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 15
+        },
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 180/55ZR17 TL 73W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-180-55zr17-tl-73w?_pos=16&_sid=906700ade&_ss=r&_fid=b9b33cfc7",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 735
+    },
+    {
+      "label": "190/55-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=190.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=55",
+      "total": 12,
+      "displayLimit": 16,
+      "ids": [
+        "10192863035613",
+        "10195023331549",
+        "8861874028765",
+        "8876548096221",
+        "9005054787805",
+        "9005650247901",
+        "9005688455389",
+        "9010328731869",
+        "9074670207197",
+        "9128649261277",
+        "9257345450205",
+        "9562209255645"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 190/55ZR17 TL 75W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-190-55zr17-tl-75w?_pos=1&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 1
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX HYPERSPORT S23 190/55ZR17 TL 75W",
+          "url": "/products/bridgestone-battlax-hypersport-s23-190-55zr17-tl-75w?_pos=2&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 2
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 190/55R17 75W",
+          "url": "/products/dunlop-sportmax-gpr300-190-55r17-75w?_pos=3&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 3
+        },
+        {
+          "title": "CONTINENTAL ContiRoadAttack 4 190/55ZR17 75W",
+          "url": "/products/continental-contiroadattack-4-190-55zr17-75w?_pos=4&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN POWER CUP 2 190/55ZR17 (75W) TL",
+          "url": "/products/michelin-power-cup-2-190-55zr17-75w-tl?_pos=5&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN POWER GP 190/55ZR17  75W",
+          "url": "/products/michelin-power-gp-190-55zr17-75w?_pos=6&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN PILOT POWER CUP EVO 190/55ZR17 75W",
+          "url": "/products/michelin-pilot-power-cup-evo-190-55zr17-75w?_pos=7&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN POWER RS 190/55ZR17 73W",
+          "url": "/products/michelin-power-rs-r-tl-190-55-zr-17-73w?_pos=8&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN POWER 6 190/55ZR17 75W TL",
+          "url": "/products/michelin-power-6-190-55zr17-tl-75w?_pos=9&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 9
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 190/55ZR17 75W TL",
+          "url": "/products/continental-contitrailattack-3-190-55zr17-75w-tl?_pos=10&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 10
+        },
+        {
+          "title": "MICHELIN ROAD 6 190/55ZR17 75W R TL",
+          "url": "/products/michelin-road-6-190-55zr17-75w-r-tl?_pos=11&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 11
+        },
+        {
+          "title": "DUNLOP SPORTMAX Q5A 190/55R17 75W TL",
+          "url": "/products/dunlop-sportmax-q5a-190-55r17-75w-tl?_pos=12&_sid=67032f3e6&_ss=r&_fid=d20f83aac",
+          "position": 12
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 603
+    },
+    {
+      "label": "190/55-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=190%2F55-17&type=product&page=1&filter.p.m.custom.ancho=190.0&filter.p.m.custom.di_metro=17&filter.p.m.custom.aspecto=55",
+      "total": 12,
+      "displayLimit": 16,
+      "ids": [
+        "9562209255645",
+        "9074670207197",
+        "9005054787805",
+        "9257345450205",
+        "9005688455389",
+        "9005650247901",
+        "9010328731869",
+        "8861874028765",
+        "8876548096221",
+        "9128649261277",
+        "10192863035613",
+        "10195023331549"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP SPORTMAX Q5A 190/55R17 75W TL",
+          "url": "/products/dunlop-sportmax-q5a-190-55r17-75w-tl?_pos=1&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN POWER 6 190/55ZR17 75W TL",
+          "url": "/products/michelin-power-6-190-55zr17-tl-75w?_pos=2&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 2
+        },
+        {
+          "title": "MICHELIN POWER CUP 2 190/55ZR17 (75W) TL",
+          "url": "/products/michelin-power-cup-2-190-55zr17-75w-tl?_pos=3&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 3
+        },
+        {
+          "title": "MICHELIN ROAD 6 190/55ZR17 75W R TL",
+          "url": "/products/michelin-road-6-190-55zr17-75w-r-tl?_pos=4&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 4
+        },
+        {
+          "title": "MICHELIN PILOT POWER CUP EVO 190/55ZR17 75W",
+          "url": "/products/michelin-pilot-power-cup-evo-190-55zr17-75w?_pos=5&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 5
+        },
+        {
+          "title": "MICHELIN POWER GP 190/55ZR17  75W",
+          "url": "/products/michelin-power-gp-190-55zr17-75w?_pos=6&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 6
+        },
+        {
+          "title": "MICHELIN POWER RS 190/55ZR17 73W",
+          "url": "/products/michelin-power-rs-r-tl-190-55-zr-17-73w?_pos=7&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 7
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 190/55R17 75W",
+          "url": "/products/dunlop-sportmax-gpr300-190-55r17-75w?_pos=8&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 8
+        },
+        {
+          "title": "CONTINENTAL ContiRoadAttack 4 190/55ZR17 75W",
+          "url": "/products/continental-contiroadattack-4-190-55zr17-75w?_pos=9&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 9
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 190/55ZR17 75W TL",
+          "url": "/products/continental-contitrailattack-3-190-55zr17-75w-tl?_pos=10&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 10
+        },
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 190/55ZR17 TL 75W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-190-55zr17-tl-75w?_pos=11&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 11
+        },
+        {
+          "title": "BRIDGESTONE BATTLAX HYPERSPORT S23 190/55ZR17 TL 75W",
+          "url": "/products/bridgestone-battlax-hypersport-s23-190-55zr17-tl-75w?_pos=12&_sid=b9b5efd44&_ss=r&_fid=b8677187c",
+          "position": 12
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 480
+    },
+    {
+      "label": "2.75-17:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=2.75&filter.p.m.custom.di_metro=17",
+      "total": 1,
+      "displayLimit": 16,
+      "ids": [
+        "8876672680157"
+      ],
+      "products": [
+        {
+          "title": "CONTINENTAL ContiGo! 2.75-17 47P",
+          "url": "/products/continental-contigo-2-75-17-47p?_pos=1&_sid=67032f3e6&_ss=r&_fid=f71fa1d16",
+          "position": 1
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 565
+    },
+    {
+      "label": "2.75-17:with-text",
+      "url": "https://www.bikerz.cl/search?q=2.75-17&type=product&page=1&filter.p.m.custom.ancho=2.75&filter.p.m.custom.di_metro=17",
+      "total": 1,
+      "displayLimit": 16,
+      "ids": [
+        "8876672680157"
+      ],
+      "products": [
+        {
+          "title": "CONTINENTAL ContiGo! 2.75-17 47P",
+          "url": "/products/continental-contigo-2-75-17-47p?_pos=1&_sid=0ff1e59e2&_ss=r&_fid=570f61e7b",
+          "position": 1
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 386
+    },
+    {
+      "label": "3.50-18:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=3.5&filter.p.m.custom.di_metro=18",
+      "total": 0,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 437
+    },
+    {
+      "label": "3.50-18:with-text",
+      "url": "https://www.bikerz.cl/search?q=3.50-18&type=product&page=1&filter.p.m.custom.ancho=3.5&filter.p.m.custom.di_metro=18",
+      "total": 0,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 380
+    },
+    {
+      "label": "90/100-10:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100",
+      "total": 1,
+      "displayLimit": 16,
+      "ids": [
+        "9592944885981"
+      ],
+      "products": [
+        {
+          "title": "CEAT ZOOM D 90/100-10 TL 53J",
+          "url": "/products/ceat-zoom-d-90-100-10-tl-53j-73132364347939?_pos=1&_sid=67032f3e6&_ss=r&_fid=edf57a657",
+          "position": 1
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 610
+    },
+    {
+      "label": "90/100-10:with-text",
+      "url": "https://www.bikerz.cl/search?q=90%2F100-10&type=product&page=1&filter.p.m.custom.ancho=90.0&filter.p.m.custom.di_metro=10&filter.p.m.custom.aspecto=100",
+      "total": 1,
+      "displayLimit": 16,
+      "ids": [
+        "9592944885981"
+      ],
+      "products": [
+        {
+          "title": "CEAT ZOOM D 90/100-10 TL 53J",
+          "url": "/products/ceat-zoom-d-90-100-10-tl-53j-73132364347939?_pos=1&_sid=7cd3db1bb&_ss=r&_fid=c70853e4f",
+          "position": 1
+        }
+      ],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 477
+    },
+    {
+      "label": "120/70-99:attributes",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=99&filter.p.m.custom.aspecto=70",
+      "total": 0,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 495
+    },
+    {
+      "label": "120/70-99:with-text",
+      "url": "https://www.bikerz.cl/search?q=120%2F70-99&type=product&page=1&filter.p.m.custom.ancho=120.0&filter.p.m.custom.di_metro=99&filter.p.m.custom.aspecto=70",
+      "total": 0,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 515
+    },
+    {
+      "label": "90/100-1:rim-prefix",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=90.0&filter.p.m.custom.aspecto=100&filter.p.m.custom.di_metro=10%2C14%2C16%2C17%2C18%2C19",
+      "total": 0,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        1
+      ],
+      "elapsedMs": 665
+    },
+    {
+      "label": "pagination:1",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=1&filter.p.m.custom.ancho=120.0&filter.p.m.custom.aspecto=70&filter.p.m.custom.di_metro=17",
+      "total": 33,
+      "displayLimit": 16,
+      "ids": [
+        "10192859529437",
+        "8826003488989",
+        "8861873766621",
+        "8866486812893",
+        "8876458180829",
+        "8876547866845",
+        "8876552159453",
+        "8896991264989",
+        "9005056262365",
+        "9010328273117",
+        "9013632139485",
+        "9013634236637",
+        "9025292730589",
+        "9128648605917",
+        "9244287729885",
+        "9252325327069"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP SPORTMAX ROADSMART IV 120/70ZR17 TL 58W",
+          "url": "/products/dunlop-sportmax-roadsmart-iv-120-70zr17-tl-58w?_pos=1&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 1
+        },
+        {
+          "title": "MICHELIN SCORCHER 21 120/70R17 58V",
+          "url": "/products/michelin-scorcher-21-120-70-r17-58v-f-tl?_pos=2&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 2
+        },
+        {
+          "title": "DUNLOP SPORTMAX GPR300 120/70R17  58W",
+          "url": "/products/dunlop-sportmax-gpr300-120-70r17-58w?_pos=3&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 3
+        },
+        {
+          "title": "HEIDENAU K73 120/70-17  TL 58H",
+          "url": "/products/heidenau-k73-120-70-17-58h?_pos=4&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 4
+        },
+        {
+          "title": "CONTINENTAL ContiMotion M 120/70ZR17 58W",
+          "url": "/products/continental-contimotion-m-120-70zr17-58w?_pos=5&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 5
+        },
+        {
+          "title": "CONTINENTAL ContiRoadAttack 4 120/70ZR17 58W",
+          "url": "/products/continental-contiroadattack-4-120-70zr17-58w?_pos=6&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 6
+        },
+        {
+          "title": "CONTINENTAL TKC 70 120/70ZR17 58W",
+          "url": "/products/continental-tkc-70-120-70zr17-58w?_pos=7&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 7
+        },
+        {
+          "title": "MICHELIN ANAKEE ADVENTURE 120/70R17 58V",
+          "url": "/products/michelin-anakee-adventure-120-70-r17-58v?_pos=8&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 8
+        },
+        {
+          "title": "MICHELIN POWER GP 120/70ZR17 58W TL",
+          "url": "/products/michelin-power-gp-120-70-17zr-58w-tl?_pos=9&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 9
+        },
+        {
+          "title": "MICHELIN POWER RS 120/70ZR17 58W",
+          "url": "/products/michelin-power-rs-120-70-zr-17-58w?_pos=10&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 10
+        },
+        {
+          "title": "DUNLOP TRAILMAX MIXTOUR 120/70R17",
+          "url": "/products/dunlop-trailmax-mixtour-120-70r17?_pos=11&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 11
+        },
+        {
+          "title": "MICHELIN POWER 6 120/70ZR17 58W TL",
+          "url": "/products/michelin-power-6-120-70zr17?_pos=12&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 12
+        },
+        {
+          "title": "DUNLOP Q-LITE 120/70-17 58S TL",
+          "url": "/products/dunlop-q-lite-120-70-17-58s-tl?_pos=13&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 13
+        },
+        {
+          "title": "CONTINENTAL CONTITRAILATTACK 3 120/70ZR17 58W TL",
+          "url": "/products/continental-contitrailattack-3-120-70zr17-58w-tl?_pos=14&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 14
+        },
+        {
+          "title": "MICHELIN PILOT STREET RADIAL 120/70R17 TL/TT 58H",
+          "url": "/products/michelin-pilot-street-radial-120-70r17-tt-58h?_pos=15&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 15
+        },
+        {
+          "title": "TIMSUN TS-860F 120/70-17 TL 60H",
+          "url": "/products/timsun-ts-860f-120-70-17-tl-60h?_pos=16&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 16
+        }
+      ],
+      "pageLinks": [
+        1,
+        2
+      ],
+      "elapsedMs": 499
+    },
+    {
+      "label": "pagination:2",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=2&filter.p.m.custom.ancho=120.0&filter.p.m.custom.aspecto=70&filter.p.m.custom.di_metro=17",
+      "total": 33,
+      "displayLimit": 16,
+      "ids": [
+        "9562180518109",
+        "9592944591069",
+        "8876547703005",
+        "8876603179229",
+        "8876605243613",
+        "9010328371421",
+        "9025292632285",
+        "9079963844829",
+        "9257314779357"
+      ],
+      "products": [
+        {
+          "title": "DUNLOP SPORTMAX Q5A 120/70ZR17 58W TL",
+          "url": "/products/dunlop-sportmax-q5a-120-70zr17-58w-tl?_pos=25&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 25
+        },
+        {
+          "title": "CEAT GRIPP XL RAD STEEL F 120/70R17 TL 58H",
+          "url": "/products/ceat-gripp-xl-rad-steel-f-120-70r-17-tl-58h-74429789118296?_pos=26&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 26
+        },
+        {
+          "title": "CONTINENTAL ContiRoad 120/70ZR17 58W",
+          "url": "/products/continental-contiroadattack-120-70zr17-58w?_pos=27&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 27
+        },
+        {
+          "title": "MICHELIN PILOT ROAD 5 120/70ZR17 58W",
+          "url": "/products/michelin-pilot-road-5-120-70zr17-58w?_pos=28&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 28
+        },
+        {
+          "title": "MICHELIN PILOT STREET 120/70-17 58S",
+          "url": "/products/michelin-pilot-street-120-70-17-58s?_pos=29&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 29
+        },
+        {
+          "title": "MICHELIN POWER 5 120/70ZR17 58W",
+          "url": "/products/michelin-power-5-120-70-zr-17-58w?_pos=30&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 30
+        },
+        {
+          "title": "DUNLOP D609 120/70R17 58W",
+          "url": "/products/dunlop-d609-120-70r17-58w?_pos=31&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 31
+        },
+        {
+          "title": "MICHELIN PILOT STREET RADIAL 120/70ZR17 TL/TT 58W",
+          "url": "/products/michelin-pilot-street-radial-120-70zr17-tl-tt-58w?_pos=32&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 32
+        },
+        {
+          "title": "MICHELIN ROAD 6 120/70ZR17 58W F TL",
+          "url": "/products/michelin-road-6-120-70zr17-58w-f-tl?_pos=33&_sid=67032f3e6&_ss=r&_fid=4979e8666",
+          "position": 33
+        }
+      ],
+      "pageLinks": [
+        2,
+        1
+      ],
+      "elapsedMs": 520
+    },
+    {
+      "label": "pagination:3",
+      "url": "https://www.bikerz.cl/search?q=*&type=product&page=3&filter.p.m.custom.ancho=120.0&filter.p.m.custom.aspecto=70&filter.p.m.custom.di_metro=17",
+      "total": 33,
+      "displayLimit": 16,
+      "ids": [],
+      "products": [],
+      "pageLinks": [
+        3
+      ],
+      "elapsedMs": 511
+    }
+  ]
+}

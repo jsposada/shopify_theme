@@ -1,0 +1,16 @@
+{%- comment -%}
+  Outputs a phone number for tel: links, keeping only "+" and digits.
+  Pasted numbers often carry invisible characters (direction marks,
+  non-breaking spaces) that stop phones from opening the dialer.
+
+  Usage:
+  <a href="tel:{% render 'phone-href', phone: settings.store_phone %}">
+{%- endcomment -%}
+{%- liquid
+  assign phone_chars = phone | split: ''
+  for phone_char in phone_chars
+    if '+0123456789' contains phone_char
+      echo phone_char
+    endif
+  endfor
+-%}

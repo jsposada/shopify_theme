@@ -1,0 +1,264 @@
+{{ 'tp-testi-blog.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign sst = section.settings
+  assign container = sst.container
+  assign blog = sst.blog
+%}
+{%- capture style -%}
+    --section-padding-top: {{ sst.padding_top }}px; 
+    --section-padding-bottom: {{ sst.padding_bottom }}px; 
+  {%- endcapture -%}
+
+<div class="tp-testi-blog color-{{ sst.color_scheme }} gradient section-py {% if sst.reset_spacing == false %}section-mb{% endif %}" style="{{ style | strip | strip_newlines }}">
+  <div class="{{ container }}">
+    <div class="tp-testi-blog__wrap tp-grid tp-grid--1-col-mobile tp-grid--2-col-desktop">
+      <div class="tp-testi tp-grid__item">
+        {% if sst.title_testi != blank %}
+          <h2 class="mb-30 md:mb-50 line-clamp-1">{{ sst.title_testi }}</h2>
+        {% endif %}
+        {% if sst.description != blank %}
+          <div class="rsmb-p mb-30 md:mb-50">{{ sst.description }}</div>
+        {% endif %}
+        <div class="tp-testi-blog__inner swiper mb-30">
+          <div class="swiper-wrapper">
+            {%- for block in section.blocks limit: sst.limit_products -%}
+              {% liquid
+                assign bst = block.settings
+              %}
+              <div class="swiper-slide">
+                <div class="tp-testimonial__wrapper text-left ">
+                  <div class="testi-content text-left mb-20">
+                    {% if bst.title != blank %}
+                      <h6 class="mb-15">{{ bst.title }}</h6>
+                    {% endif %}
+                    {% if bst.content != blank %}
+                      <div class="testi-desc rsmb-p">
+                        {{ bst.content }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="testi-top flex items-center justify-between">
+                    <div class="flex items-center gap-20">
+                      <div class="tp-testimonial__image w-50 md:w-60">
+                        <div class="relative">
+                          {% render 'responsive-image'
+                            , image: bst.image
+                            , aspect_ratio: sst.image_ratio
+                            , custom_ratio: sst.custom_ratio
+                            , class: 'h-full'
+                            , w_default: 280
+                            , h_default: 300
+                          %}
+                        </div>
+                      </div>
+                      <div class="content-bottom">
+                        {% if bst.name != blank %}
+                          <h5 class="mb-8 line-clamp-1">{{ bst.name }}</h5>
+                        {% endif %}
+                        {% if bst.city != blank %}
+                          <span class="line-clamp-1">{{ bst.city }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="testi-star flex items-center gap-2">
+                      {% render 'icon'
+                        , icon_name: 'star' %}
+                      {% render 'icon'
+                        , icon_name: 'star' %}
+                      {% render 'icon'
+                        , icon_name: 'star' %}
+                      {% render 'icon'
+                        , icon_name: 'star' %}
+                      {% render 'icon'
+                        , icon_name: 'star' %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+        <div class="tp-testi-blog--pagi">
+          <div class="swiper-pagination tp-testi-blog__inner-pagination"></div>
+        </div>
+      </div>
+      <div class="tp-blog tp-grid__item">
+        {% if sst.title_blog != blank %}
+          <h2 class="mb-30 line-clamp-1">{{ sst.title_blog }}</h2>
+        {% endif %}
+        <div class="tp-blog-posts__inner">
+          {%- for article in blog.articles limit: sst.posts_to_show -%}
+            <div class="{% unless forloop.last  %} bdb-1 pb-30 mb-30{% endunless %}">
+              {%- render 'article-card'
+                , article: article -%}
+            </div>
+          {% else %}
+            {%- for i in (1..sst.posts_to_show) -%}
+              <div class="{% unless forloop.last  %} bdb-1 pb-30 mb-30{% endunless %}">
+                {% liquid
+                  assign diff = 4 | minus: 1
+                  assign randomNumber = 'now' | date: '%N' | modulo: diff | plus: 1
+                  assign placeholder_image = 'product-apparel-' | append: randomNumber
+                  render 'article-card', placeholder_image: placeholder_image
+                %}
+              </div>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+        <div class="tp-blog__btn mt-30">
+          <a href="{{ blog.url | default: '#' }}" class="flex tp-btn tp-btn__primary n-hvr items-center gap-12">
+            {{ sst.text_btn_blog }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Testimonial with blog",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "select",
+        "id": "container",
+        "label": "Layout",
+        "default": "container",
+        "options": [
+          {
+            "value": "container",
+            "label": "Default"
+          }, {
+            "value": "container-fluid",
+            "label": "Fluid container"
+          }, {
+            "value": "full-width",
+            "label": "Full width"
+          }
+        ]
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      },
+      {
+        "type": "header",
+        "content": "Config testimonials"
+      }, {
+        "type": "text",
+        "id": "title_testi",
+        "label": "Title testimonials",
+        "default": "What Our Clients Says?"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p></p>"
+      }, {
+        "type": "header",
+        "content": "Config Blog"
+      }, {
+        "type": "text",
+        "id": "title_blog",
+        "label": "Title Blog",
+        "default": "Our news & Guides"
+      }, {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog category"
+      }, {
+        "type": "text",
+        "id": "text_btn_blog",
+        "label": "Text button",
+        "default": "View All Articles"
+      }, {
+        "type": "number",
+        "id": "posts_to_show",
+        "label": "Posts to show",
+        "default": 3
+      }, {
+        "type": "header",
+        "content": "Section padding"
+      }, {
+        "type": "header",
+        "content": "Desktop"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "default": 90,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "default": 100,
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px"
+      }, {
+        "type": "paragraph",
+        "content": "---------------------"
+      }, {
+        "type": "checkbox",
+        "id": "reset_spacing",
+        "label": "Remove default space between sections",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Testimonial",
+        "type": "testimonial_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "default": "Title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Good quality and print for the training shirts I use at my martial arts school. I've ordered these several times and have always been pleased with the results. They're still going strong.</p>"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default": "BrandonJr"
+          }, {
+            "type": "text",
+            "id": "city",
+            "label": "City",
+            "default": "New York, USA"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial with blog"
+      }
+    ]
+  }
+{% endschema %}

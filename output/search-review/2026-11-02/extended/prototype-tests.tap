@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: exact attributes, unchanged visible input and compact cap (desktop)
+ok 1 - exact attributes, unchanged visible input and compact cap (desktop)
+  ---
+  duration_ms: 1646.1197
+  type: 'test'
+  ...
+# Subtest: keyboard options have unique visible IDs and Enter opens selected product (desktop)
+ok 2 - keyboard options have unique visible IDs and Enter opens selected product (desktop)
+  ---
+  duration_ms: 647.1321
+  type: 'test'
+  ...
+# Subtest: Enter before preview sends the same attribute plan immediately (desktop)
+ok 3 - Enter before preview sends the same attribute plan immediately (desktop)
+  ---
+  duration_ms: 307.2332
+  type: 'test'
+  ...
+# Subtest: changing text removes the previous product selection before Enter (desktop)
+ok 4 - changing text removes the previous product selection before Enter (desktop)
+  ---
+  duration_ms: 643.5941
+  type: 'test'
+  ...
+# Subtest: rapid writing makes one settled request (desktop)
+ok 5 - rapid writing makes one settled request (desktop)
+  ---
+  duration_ms: 762.9714
+  type: 'test'
+  ...
+# Subtest: cached queries do not make another request (desktop)
+ok 6 - cached queries do not make another request (desktop)
+  ---
+  duration_ms: 1249.1242
+  type: 'test'
+  ...
+# Subtest: late responses cannot replace a newer query (desktop)
+ok 7 - late responses cannot replace a newer query (desktop)
+  ---
+  duration_ms: 1912.7267
+  type: 'test'
+  ...
+# Subtest: reset aborts a pending query and never reopens results (desktop)
+ok 8 - reset aborts a pending query and never reopens results (desktop)
+  ---
+  duration_ms: 1638.6246
+  type: 'test'
+  ...
+# Subtest: exact attributes, unchanged visible input and compact cap (mobile)
+ok 9 - exact attributes, unchanged visible input and compact cap (mobile)
+  ---
+  duration_ms: 903.9368
+  type: 'test'
+  ...
+# Subtest: keyboard options have unique visible IDs and Enter opens selected product (mobile)
+ok 10 - keyboard options have unique visible IDs and Enter opens selected product (mobile)
+  ---
+  duration_ms: 638.9126
+  type: 'test'
+  ...
+# Subtest: Enter before preview sends the same attribute plan immediately (mobile)
+ok 11 - Enter before preview sends the same attribute plan immediately (mobile)
+  ---
+  duration_ms: 311.9635
+  type: 'test'
+  ...
+# Subtest: changing text removes the previous product selection before Enter (mobile)
+ok 12 - changing text removes the previous product selection before Enter (mobile)
+  ---
+  duration_ms: 647.4245
+  type: 'test'
+  ...
+# Subtest: rapid writing makes one settled request (mobile)
+ok 13 - rapid writing makes one settled request (mobile)
+  ---
+  duration_ms: 779.3054
+  type: 'test'
+  ...
+# Subtest: cached queries do not make another request (mobile)
+ok 14 - cached queries do not make another request (mobile)
+  ---
+  duration_ms: 1248.7555
+  type: 'test'
+  ...
+# Subtest: late responses cannot replace a newer query (mobile)
+ok 15 - late responses cannot replace a newer query (mobile)
+  ---
+  duration_ms: 1934.7444
+  type: 'test'
+  ...
+# Subtest: reset aborts a pending query and never reopens results (mobile)
+ok 16 - reset aborts a pending query and never reopens results (mobile)
+  ---
+  duration_ms: 1676.3892
+  type: 'test'
+  ...
+# Subtest: composition input does not send intermediate IME queries
+ok 17 - composition input does not send intermediate IME queries
+  ---
+  duration_ms: 1025.7348
+  type: 'test'
+  ...
+# Subtest: technical failure remains distinct from zero matches: error
+ok 18 - technical failure remains distinct from zero matches: error
+  ---
+  duration_ms: 635.7684
+  type: 'test'
+  ...
+# Subtest: technical failure remains distinct from zero matches: invalid
+ok 19 - technical failure remains distinct from zero matches: invalid
+  ---
+  duration_ms: 632.4368
+  type: 'test'
+  ...
+# Subtest: technical failure remains distinct from zero matches: timeout
+ok 20 - technical failure remains distinct from zero matches: timeout
+  ---
+  duration_ms: 735.915
+  type: 'test'
+  ...
+# Subtest: zero results have a real empty state and working search action
+ok 21 - zero results have a real empty state and working search action
+  ---
+  duration_ms: 593.9864
+  type: 'test'
+  ...
+# Subtest: locale and currency changes never reuse formatted cache from another context
+ok 22 - locale and currency changes never reuse formatted cache from another context
+  ---
+  duration_ms: 588.6359
+  type: 'test'
+  ...
+# Subtest: ambiguous or unsupported specifications are not silently relaxed
+ok 23 - ambiguous or unsupported specifications are not silently relaxed
+  ---
+  duration_ms: 687.0933
+  type: 'test'
+  ...
+# Subtest: explicit construction does not become another technical code
+ok 24 - explicit construction does not become another technical code
+  ---
+  duration_ms: 612.9682
+  type: 'test'
+  ...
+# Subtest: partial rims use repeated values and do not include a different prefix
+ok 25 - partial rims use repeated values and do not include a different prefix
+  ---
+  duration_ms: 614.6969
+  type: 'test'
+  ...
+# Subtest: blurred pending queries never reopen the preview
+ok 26 - blurred pending queries never reopen the preview
+  ---
+  duration_ms: 1601.5049
+  type: 'test'
+  ...
+# Subtest: slow mobile simulation retains one request and immediate typing feedback
+ok 27 - slow mobile simulation retains one request and immediate typing feedback
+  ---
+  duration_ms: 1069.7869
+  type: 'test'
+  ...
+# Subtest: equivalent complete size: 90/100-10
+ok 28 - equivalent complete size: 90/100-10
+  ---
+  duration_ms: 1.6478
+  type: 'test'
+  ...
+# Subtest: equivalent complete size: 90x100x10
+ok 29 - equivalent complete size: 90x100x10
+  ---
+  duration_ms: 0.1675
+  type: 'test'
+  ...
+# Subtest: equivalent complete size: 90×100×10
+ok 30 - equivalent complete size: 90×100×10
+  ---
+  duration_ms: 0.1378
+  type: 'test'
+  ...
+# Subtest: equivalent complete size: 90 100 10
+ok 31 - equivalent complete size: 90 100 10
+  ---
+  duration_ms: 0.9222
+  type: 'test'
+  ...
+# Subtest: equivalent complete size:   90 / 100 - 10  
+ok 32 - equivalent complete size:   90 / 100 - 10  
+  ---
+  duration_ms: 0.1352
+  type: 'test'
+  ...
+# Subtest: equivalent inch size: 2.50-17
+ok 33 - equivalent inch size: 2.50-17
+  ---
+  duration_ms: 0.1092
+  type: 'test'
+  ...
+# Subtest: equivalent inch size: 2,50-17
+ok 34 - equivalent inch size: 2,50-17
+  ---
+  duration_ms: 0.0802
+  type: 'test'
+  ...
+# Subtest: equivalent inch size: 250-17
+ok 35 - equivalent inch size: 250-17
+  ---
+  duration_ms: 0.0964
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: honda 125 150
+ok 36 - ambiguous text remains text: honda 125 150
+  ---
+  duration_ms: 0.756
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: kit 140 60
+ok 37 - ambiguous text remains text: kit 140 60
+  ---
+  duration_ms: 0.1927
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: cadena 120 70
+ok 38 - ambiguous text remains text: cadena 120 70
+  ---
+  duration_ms: 0.0725
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: cb 190
+ok 39 - ambiguous text remains text: cb 190
+  ---
+  duration_ms: 0.0688
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: SR999
+ok 40 - ambiguous text remains text: SR999
+  ---
+  duration_ms: 0.053
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: 10w
+ok 41 - ambiguous text remains text: 10w
+  ---
+  duration_ms: 0.0357
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: NGK CR8E
+ok 42 - ambiguous text remains text: NGK CR8E
+  ---
+  duration_ms: 0.045
+  type: 'test'
+  ...
+# Subtest: ambiguous text remains text: kit 250-17
+ok 43 - ambiguous text remains text: kit 250-17
+  ---
+  duration_ms: 0.0387
+  type: 'test'
+  ...
+# Subtest: construction is preserved as an exact technical clause: 120/70ZR17
+ok 44 - construction is preserved as an exact technical clause: 120/70ZR17
+  ---
+  duration_ms: 0.1316
+  type: 'test'
+  ...
+# Subtest: construction is preserved as an exact technical clause: 120/70R17
+ok 45 - construction is preserved as an exact technical clause: 120/70R17
+  ---
+  duration_ms: 0.0467
+  type: 'test'
+  ...
+# Subtest: construction is preserved as an exact technical clause: 100/90B19
+ok 46 - construction is preserved as an exact technical clause: 100/90B19
+  ---
+  duration_ms: 0.0442
+  type: 'test'
+  ...
+# Subtest: equivalent viscosity: 10w40
+ok 47 - equivalent viscosity: 10w40
+  ---
+  duration_ms: 0.0552
+  type: 'test'
+  ...
+# Subtest: equivalent viscosity: 10W-40
+ok 48 - equivalent viscosity: 10W-40
+  ---
+  duration_ms: 0.0363
+  type: 'test'
+  ...
+# Subtest: equivalent viscosity: 10w 40
+ok 49 - equivalent viscosity: 10w 40
+  ---
+  duration_ms: 0.0276
+  type: 'test'
+  ...
+# Subtest: equivalent viscosity: 10 w - 40
+ok 50 - equivalent viscosity: 10 w - 40
+  ---
+  duration_ms: 0.0385
+  type: 'test'
+  ...
+# Subtest: brand and viscosity compose: motul 10w40
+ok 51 - brand and viscosity compose: motul 10w40
+  ---
+  duration_ms: 0.043
+  type: 'test'
+  ...
+# Subtest: brand and viscosity compose: 10w40 motul
+ok 52 - brand and viscosity compose: 10w40 motul
+  ---
+  duration_ms: 0.0274
+  type: 'test'
+  ...
+# Subtest: brand and viscosity compose: MOTUL 10W-40
+ok 53 - brand and viscosity compose: MOTUL 10W-40
+  ---
+  duration_ms: 0.0378
+  type: 'test'
+  ...
+# Subtest: free text and explicit syntax are preserved: casco integral
+ok 54 - free text and explicit syntax are preserved: casco integral
+  ---
+  duration_ms: 0.035
+  type: 'test'
+  ...
+# Subtest: free text and explicit syntax are preserved: integral casco
+ok 55 - free text and explicit syntax are preserved: integral casco
+  ---
+  duration_ms: 0.0272
+  type: 'test'
+  ...
+# Subtest: free text and explicit syntax are preserved: honda cb 190
+ok 56 - free text and explicit syntax are preserved: honda cb 190
+  ---
+  duration_ms: 0.023
+  type: 'test'
+  ...
+# Subtest: free text and explicit syntax are preserved: title:"90/100-10"
+ok 57 - free text and explicit syntax are preserved: title:"90/100-10"
+  ---
+  duration_ms: 0.0221
+  type: 'test'
+  ...
+# Subtest: free text and explicit syntax are preserved: 120/70-17 OR 140/70-17
+ok 58 - free text and explicit syntax are preserved: 120/70-17 OR 140/70-17
+  ---
+  duration_ms: 0.0227
+  type: 'test'
+  ...
+# Subtest: partial profile expands only matching known values
+ok 59 - partial profile expands only matching known values
+  ---
+  duration_ms: 0.0753
+  type: 'test'
+  ...
+# Subtest: a complete profile never expands to a different value
+ok 60 - a complete profile never expands to a different value
+  ---
+  duration_ms: 0.0493
+  type: 'test'
+  ...
+# Subtest: partial rim expands only its prefix
+ok 61 - partial rim expands only its prefix
+  ---
+  duration_ms: 0.0431
+  type: 'test'
+  ...
+# Subtest: blank partial attributes remain open
+ok 62 - blank partial attributes remain open
+  ---
+  duration_ms: 0.0536
+  type: 'test'
+  ...
+# Subtest: unknown complete rim is not replaced
+ok 63 - unknown complete rim is not replaced
+  ---
+  duration_ms: 0.0549
+  type: 'test'
+  ...
+# Subtest: multiple dimensions cannot form an accidental cross-product
+ok 64 - multiple dimensions cannot form an accidental cross-product
+  ---
+  duration_ms: 0.0343
+  type: 'test'
+  ...
+# Subtest: unknown viscosity mapping is never fabricated
+ok 65 - unknown viscosity mapping is never fabricated
+  ---
+  duration_ms: 0.0538
+  type: 'test'
+  ...
+# Subtest: incomplete construction is never silently completed to an exact code
+ok 66 - incomplete construction is never silently completed to an exact code
+  ---
+  duration_ms: 0.0443
+  type: 'test'
+  ...
+# Subtest: multi-value numeric filters use repeated parameters rather than encoded commas
+ok 67 - multi-value numeric filters use repeated parameters rather than encoded commas
+  ---
+  duration_ms: 0.0476
+  type: 'test'
+  ...
+# Subtest: empty input has a separate state
+ok 68 - empty input has a separate state
+  ---
+  duration_ms: 0.0225
+  type: 'test'
+  ...
+# Subtest: cache identity includes filters, locale and currency
+ok 69 - cache identity includes filters, locale and currency
+  ---
+  duration_ms: 0.0933
+  type: 'test'
+  ...
+# Subtest: equivalent measurements share the canonical cache identity
+ok 70 - equivalent measurements share the canonical cache identity
+  ---
+  duration_ms: 0.072
+  type: 'test'
+  ...
+1..70
+# tests 70
+# suites 0
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 26240.7621

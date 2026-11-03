@@ -1,0 +1,439 @@
+{
+  "method": "Both sections rendered by actual Shopify through the same official CLI development proxy; four rounds after warmup. Excludes production connection and cache guarantees.",
+  "summary": {
+    "legacy": {
+      "samples": 24,
+      "medianMs": 486,
+      "p90Ms": 561,
+      "medianKB": 89.1
+    },
+    "compact": {
+      "samples": 24,
+      "medianMs": 454,
+      "p90Ms": 553,
+      "medianKB": 8.8
+    }
+  },
+  "rows": [
+    {
+      "round": -1,
+      "raw": "90/100-10",
+      "mode": "compact",
+      "ms": 456,
+      "bytes": 3532
+    },
+    {
+      "round": -1,
+      "raw": "90/100-10",
+      "mode": "legacy",
+      "ms": 547,
+      "bytes": 94710
+    },
+    {
+      "round": -1,
+      "raw": "120/70-17",
+      "mode": "compact",
+      "ms": 443,
+      "bytes": 9146
+    },
+    {
+      "round": -1,
+      "raw": "120/70-17",
+      "mode": "legacy",
+      "ms": 561,
+      "bytes": 91125
+    },
+    {
+      "round": -1,
+      "raw": "90/100",
+      "mode": "compact",
+      "ms": 468,
+      "bytes": 9604
+    },
+    {
+      "round": -1,
+      "raw": "90/100",
+      "mode": "legacy",
+      "ms": 508,
+      "bytes": 94650
+    },
+    {
+      "round": -1,
+      "raw": "motul 10w40",
+      "mode": "compact",
+      "ms": 452,
+      "bytes": 9036
+    },
+    {
+      "round": -1,
+      "raw": "motul 10w40",
+      "mode": "legacy",
+      "ms": 518,
+      "bytes": 91206
+    },
+    {
+      "round": -1,
+      "raw": "casco integral",
+      "mode": "compact",
+      "ms": 595,
+      "bytes": 9107
+    },
+    {
+      "round": -1,
+      "raw": "casco integral",
+      "mode": "legacy",
+      "ms": 477,
+      "bytes": 92198
+    },
+    {
+      "round": -1,
+      "raw": "honda cb 190",
+      "mode": "compact",
+      "ms": 790,
+      "bytes": 8719
+    },
+    {
+      "round": -1,
+      "raw": "honda cb 190",
+      "mode": "legacy",
+      "ms": 534,
+      "bytes": 90427
+    },
+    {
+      "round": 0,
+      "raw": "90/100-10",
+      "mode": "legacy",
+      "ms": 493,
+      "bytes": 94710
+    },
+    {
+      "round": 0,
+      "raw": "90/100-10",
+      "mode": "compact",
+      "ms": 436,
+      "bytes": 3532
+    },
+    {
+      "round": 0,
+      "raw": "120/70-17",
+      "mode": "legacy",
+      "ms": 488,
+      "bytes": 91125
+    },
+    {
+      "round": 0,
+      "raw": "120/70-17",
+      "mode": "compact",
+      "ms": 553,
+      "bytes": 9146
+    },
+    {
+      "round": 0,
+      "raw": "90/100",
+      "mode": "legacy",
+      "ms": 474,
+      "bytes": 94650
+    },
+    {
+      "round": 0,
+      "raw": "90/100",
+      "mode": "compact",
+      "ms": 427,
+      "bytes": 9604
+    },
+    {
+      "round": 0,
+      "raw": "motul 10w40",
+      "mode": "legacy",
+      "ms": 445,
+      "bytes": 91206
+    },
+    {
+      "round": 0,
+      "raw": "motul 10w40",
+      "mode": "compact",
+      "ms": 433,
+      "bytes": 9036
+    },
+    {
+      "round": 0,
+      "raw": "casco integral",
+      "mode": "legacy",
+      "ms": 507,
+      "bytes": 92198
+    },
+    {
+      "round": 0,
+      "raw": "casco integral",
+      "mode": "compact",
+      "ms": 529,
+      "bytes": 9107
+    },
+    {
+      "round": 0,
+      "raw": "honda cb 190",
+      "mode": "legacy",
+      "ms": 561,
+      "bytes": 90427
+    },
+    {
+      "round": 0,
+      "raw": "honda cb 190",
+      "mode": "compact",
+      "ms": 560,
+      "bytes": 8719
+    },
+    {
+      "round": 1,
+      "raw": "90/100-10",
+      "mode": "compact",
+      "ms": 442,
+      "bytes": 3532
+    },
+    {
+      "round": 1,
+      "raw": "90/100-10",
+      "mode": "legacy",
+      "ms": 486,
+      "bytes": 94710
+    },
+    {
+      "round": 1,
+      "raw": "120/70-17",
+      "mode": "compact",
+      "ms": 468,
+      "bytes": 9146
+    },
+    {
+      "round": 1,
+      "raw": "120/70-17",
+      "mode": "legacy",
+      "ms": 468,
+      "bytes": 91125
+    },
+    {
+      "round": 1,
+      "raw": "90/100",
+      "mode": "compact",
+      "ms": 595,
+      "bytes": 9604
+    },
+    {
+      "round": 1,
+      "raw": "90/100",
+      "mode": "legacy",
+      "ms": 486,
+      "bytes": 94650
+    },
+    {
+      "round": 1,
+      "raw": "motul 10w40",
+      "mode": "compact",
+      "ms": 447,
+      "bytes": 9036
+    },
+    {
+      "round": 1,
+      "raw": "motul 10w40",
+      "mode": "legacy",
+      "ms": 422,
+      "bytes": 91206
+    },
+    {
+      "round": 1,
+      "raw": "casco integral",
+      "mode": "compact",
+      "ms": 500,
+      "bytes": 9107
+    },
+    {
+      "round": 1,
+      "raw": "casco integral",
+      "mode": "legacy",
+      "ms": 486,
+      "bytes": 92198
+    },
+    {
+      "round": 1,
+      "raw": "honda cb 190",
+      "mode": "compact",
+      "ms": 549,
+      "bytes": 8719
+    },
+    {
+      "round": 1,
+      "raw": "honda cb 190",
+      "mode": "legacy",
+      "ms": 561,
+      "bytes": 90427
+    },
+    {
+      "round": 2,
+      "raw": "90/100-10",
+      "mode": "legacy",
+      "ms": 433,
+      "bytes": 94710
+    },
+    {
+      "round": 2,
+      "raw": "90/100-10",
+      "mode": "compact",
+      "ms": 460,
+      "bytes": 3532
+    },
+    {
+      "round": 2,
+      "raw": "120/70-17",
+      "mode": "legacy",
+      "ms": 610,
+      "bytes": 91125
+    },
+    {
+      "round": 2,
+      "raw": "120/70-17",
+      "mode": "compact",
+      "ms": 428,
+      "bytes": 9146
+    },
+    {
+      "round": 2,
+      "raw": "90/100",
+      "mode": "legacy",
+      "ms": 488,
+      "bytes": 94650
+    },
+    {
+      "round": 2,
+      "raw": "90/100",
+      "mode": "compact",
+      "ms": 420,
+      "bytes": 9604
+    },
+    {
+      "round": 2,
+      "raw": "motul 10w40",
+      "mode": "legacy",
+      "ms": 444,
+      "bytes": 91206
+    },
+    {
+      "round": 2,
+      "raw": "motul 10w40",
+      "mode": "compact",
+      "ms": 468,
+      "bytes": 9036
+    },
+    {
+      "round": 2,
+      "raw": "casco integral",
+      "mode": "legacy",
+      "ms": 470,
+      "bytes": 92198
+    },
+    {
+      "round": 2,
+      "raw": "casco integral",
+      "mode": "compact",
+      "ms": 506,
+      "bytes": 9107
+    },
+    {
+      "round": 2,
+      "raw": "honda cb 190",
+      "mode": "legacy",
+      "ms": 476,
+      "bytes": 90427
+    },
+    {
+      "round": 2,
+      "raw": "honda cb 190",
+      "mode": "compact",
+      "ms": 445,
+      "bytes": 8719
+    },
+    {
+      "round": 3,
+      "raw": "90/100-10",
+      "mode": "compact",
+      "ms": 453,
+      "bytes": 3532
+    },
+    {
+      "round": 3,
+      "raw": "90/100-10",
+      "mode": "legacy",
+      "ms": 444,
+      "bytes": 94710
+    },
+    {
+      "round": 3,
+      "raw": "120/70-17",
+      "mode": "compact",
+      "ms": 411,
+      "bytes": 9146
+    },
+    {
+      "round": 3,
+      "raw": "120/70-17",
+      "mode": "legacy",
+      "ms": 448,
+      "bytes": 91125
+    },
+    {
+      "round": 3,
+      "raw": "90/100",
+      "mode": "compact",
+      "ms": 437,
+      "bytes": 9604
+    },
+    {
+      "round": 3,
+      "raw": "90/100",
+      "mode": "legacy",
+      "ms": 493,
+      "bytes": 94650
+    },
+    {
+      "round": 3,
+      "raw": "motul 10w40",
+      "mode": "compact",
+      "ms": 549,
+      "bytes": 9036
+    },
+    {
+      "round": 3,
+      "raw": "motul 10w40",
+      "mode": "legacy",
+      "ms": 473,
+      "bytes": 91206
+    },
+    {
+      "round": 3,
+      "raw": "casco integral",
+      "mode": "compact",
+      "ms": 454,
+      "bytes": 9107
+    },
+    {
+      "round": 3,
+      "raw": "casco integral",
+      "mode": "legacy",
+      "ms": 506,
+      "bytes": 92198
+    },
+    {
+      "round": 3,
+      "raw": "honda cb 190",
+      "mode": "compact",
+      "ms": 490,
+      "bytes": 8719
+    },
+    {
+      "round": 3,
+      "raw": "honda cb 190",
+      "mode": "legacy",
+      "ms": 607,
+      "bytes": 90427
+    }
+  ]
+}

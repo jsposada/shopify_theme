@@ -17,7 +17,7 @@
   const resultViews = new Set();
   const resultStates = new WeakMap();
   const uuid = () => window.crypto.randomUUID();
-  const normalize = (raw) => window.bikerzSearch ? window.bikerzSearch.normalize(raw) : { query: raw, submitQuery: raw };
+  const normalize = (raw) => window.bikerzSearchV2 ? window.bikerzSearchV2.normalize(raw) : window.bikerzSearch ? window.bikerzSearch.normalize(raw) : { query: raw, submitQuery: raw };
   const keyFor = (raw) => normalize(raw).submitQuery.trim().toLowerCase();
   const allowed = () => {
     try { return window.Shopify?.customerPrivacy?.analyticsProcessingAllowed() === true; } catch (_) { return false; }
@@ -75,13 +75,14 @@
       request_id: null, preview_request_id: state.preview?.request_id || null,
       surface: form?.closest('main-search') ? 'results' : form?.closest('.header__search') ? 'header' : 'general',
       ...contract.queries(raw, normalized.query, submittedQuery), context_redacted: false,
-      normalization_version: '1', theme_version: 'search-analytics-1',
+      normalization_version: window.bikerzSearchV2 ? '2' : '1', theme_version: window.bikerzSearchV2 ? 'search-v2-qa-1' : 'search-analytics-1',
       language: config.language || 'unknown', country: config.country || 'unknown',
       submission_method: 'unknown', correlation_status: 'interaction', status: 'success',
       product_ids: [], products_returned: null, products_shown: null, suggestions_shown: null,
-      result_count: null, result_scope: 'unknown', resource_types: ['store_settings'],
+      result_count: null, result_scope: 'unknown', resource_types: window.bikerzSearchV2 ? ['product'] : ['store_settings'],
       page: null, page_size: null, display_limit: null, duration_ms: null, source: null,
       error_code: null, http_status: null, search_options: [],
+      ...(window.bikerzSearchV2 ? contract.options(new URLSearchParams(window.bikerzSearchV2.plan(raw).params).entries()) : {}),
     };
   }
   function ids(value) { return [...new Set((value || '').split(',').filter((id) => /^[1-9]\d{0,23}$/.test(id)))].slice(0, 24); }
@@ -123,7 +124,7 @@
 
   // Replace only the predictive fetch method: keep the theme's keyboard, focus,
   // rendering and reset methods. Own request provenance instead of scraping text.
-  customElements.whenDefined('predictive-search').then(() => {
+  if (!window.bikerzSearchV2) customElements.whenDefined('predictive-search').then(() => {
     const prototype = customElements.get('predictive-search').prototype;
     prototype.getSearchResults = async function (raw) {
       const state = stateFor(this.input.form, raw);
@@ -175,6 +176,16 @@
       }
     };
   }).catch(() => {});
+
+  document.addEventListener('bikerz:search-preview-v2', event => {
+    const {element,raw,requestId,source,started}=event.detail;
+    const state=stateFor(element.input.form,raw);
+    observePreview(element,state,raw,requestId,source,started);
+  });
+  document.addEventListener('bikerz:search-preview-v2-error', event => {
+    const {element,raw,requestId,code,httpStatus}=event.detail;
+    previewError(element,stateFor(element.input.form,raw),raw,requestId,code,httpStatus);
+  });
 
   document.addEventListener('input', (event) => {
     const input = event.target;
@@ -257,7 +268,7 @@
       request_id: null, product_ids: productIds, products_returned: null,
       products_shown: productIds.length, suggestions_shown: null, result_count: count,
       result_scope: types.length === 1 && types[0] === 'product' ? 'product' : 'mixed',
-      resource_types: types.length ? types : ['store_settings'], page, page_size: 24,
+      resource_types: types.length ? types : ['store_settings'], page, page_size: number(metadata.dataset.pageSize) || 24,
       display_limit: number(metadata.dataset.displayLimit), duration_ms: null, source: 'page',
       status: count === 0 ? 'no_products' : 'success',
     };

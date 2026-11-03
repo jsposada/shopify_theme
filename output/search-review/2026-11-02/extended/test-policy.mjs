@@ -1,0 +1,27 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { planSearch } from './query-policy-prototype.mjs';
+const catalog = { profiles: [55, 60, 70, 80, 90, 100], rims: [10, 14, 16, 17, 18, 19, 21], brands: ['MOTUL', 'CEAT'], viscosities: { '10W-40': 'viscosity-10w40' } };
+const plan = raw => planSearch(raw, catalog);
+const filter = (raw, name) => { const values = new URLSearchParams(plan(raw).params).getAll(`filter.p.m.custom.${name}`); return values.length ? values.join(',') : null; };
+for (const raw of ['90/100-10', '90x100x10', '90×100×10', '90 100 10', '  90 / 100 - 10  ']) test(`equivalent complete size: ${raw}`, () => {
+  assert.equal(filter(raw, 'ancho'), '90.0'); assert.equal(filter(raw, 'aspecto'), '100'); assert.equal(filter(raw, 'di_metro'), '10'); assert.equal(plan(raw).raw, raw);
+});
+for (const raw of ['2.50-17', '2,50-17', '250-17']) test(`equivalent inch size: ${raw}`, () => { assert.equal(filter(raw, 'ancho'), '2.5'); assert.equal(filter(raw, 'di_metro'), '17'); assert.equal(filter(raw, 'aspecto'), null); });
+for (const raw of ['honda 125 150', 'kit 140 60', 'cadena 120 70', 'cb 190', 'SR999', '10w', 'NGK CR8E', 'kit 250-17']) test(`ambiguous text remains text: ${raw}`, () => { assert.equal(plan(raw).mode, 'text'); assert.equal(plan(raw).query, raw); assert.deepEqual(plan(raw).constraints, {}); });
+for (const raw of ['120/70ZR17', '120/70R17', '100/90B19']) test(`construction is preserved as an exact technical clause: ${raw}`, () => { assert.equal(plan(raw).mode, 'structured'); assert.ok(plan(raw).constraints.tire.construction); assert.equal(plan(raw).query, `title:"${raw}"`); });
+for (const raw of ['10w40', '10W-40', '10w 40', '10 w - 40']) test(`equivalent viscosity: ${raw}`, () => { assert.equal(plan(raw).constraints.viscosity, '10W-40'); assert.equal(new URLSearchParams(plan(raw).params).get('filter.v.t.shopify.viscosity'), 'viscosity-10w40'); });
+for (const raw of ['motul 10w40', '10w40 motul', 'MOTUL 10W-40']) test(`brand and viscosity compose: ${raw}`, () => { assert.equal(plan(raw).constraints.brand, 'MOTUL'); assert.equal(plan(raw).query, '*'); });
+for (const raw of ['casco integral', 'integral casco', 'honda cb 190', 'title:"90/100-10"', '120/70-17 OR 140/70-17']) test(`free text and explicit syntax are preserved: ${raw}`, () => { assert.equal(plan(raw).mode, 'text'); assert.equal(plan(raw).query, raw); });
+test('partial profile expands only matching known values', () => { assert.equal(filter('90/1', 'aspecto'), '100'); assert.equal(filter('90/10', 'aspecto'), '100'); });
+test('a complete profile never expands to a different value', () => { assert.equal(filter('90/10-10', 'aspecto'), '10'); });
+test('partial rim expands only its prefix', () => { assert.equal(filter('90/100-1', 'di_metro'), '10,14,16,17,18,19'); });
+test('blank partial attributes remain open', () => { assert.equal(filter('90/', 'aspecto'), null); assert.equal(filter('90/100-', 'di_metro'), null); });
+test('unknown complete rim is not replaced', () => assert.equal(filter('90/100-99', 'di_metro'), '99'));
+test('multiple dimensions cannot form an accidental cross-product', () => { assert.equal(plan('120/70-17 140/70-17').mode, 'ambiguous'); });
+test('unknown viscosity mapping is never fabricated', () => { assert.equal(plan('5w30').mode, 'unsupported'); assert.equal(new URLSearchParams(plan('5w30').params).get('filter.v.t.shopify.viscosity'), null); });
+test('incomplete construction is never silently completed to an exact code', () => assert.equal(plan('120/70ZR1').mode, 'unsupported'));
+test('multi-value numeric filters use repeated parameters rather than encoded commas', () => { assert.ok(!plan('90/100-1').params.includes('%2C')); assert.equal(new URLSearchParams(plan('90/100-1').params).getAll('filter.p.m.custom.di_metro').length, 6); });
+test('empty input has a separate state', () => assert.equal(plan(' ').mode, 'empty'));
+test('cache identity includes filters, locale and currency', () => { const a = plan('90/100-10'); for (const context of [{ language: 'en' }, { country: 'AR' }, { currency: 'USD' }]) assert.notEqual(a.key, planSearch('90/100-10', catalog, context).key); assert.notEqual(a.key, plan('90/100-14').key); });
+test('equivalent measurements share the canonical cache identity', () => { assert.equal(plan('90/100-10').key, plan('90 100 10').key); assert.equal(plan('2,50-17').key, plan('2.50-17').key); });

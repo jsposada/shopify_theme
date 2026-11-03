@@ -1,0 +1,13 @@
+{
+  "inputFrames": [
+    0.8999999985098839,
+    12.700000001117587,
+    13.599999999627471,
+    1.099999999627471,
+    2.5
+  ],
+  "visibleOptions": 5,
+  "elapsedMs": 782.6520999999993,
+  "requests": 1,
+  "limitation": "Synthetic fixture, 150ms simulated network latency and CPU4x. Excludes actual Shopify server work, production pricing/images and physical mobile keyboard."
+}
