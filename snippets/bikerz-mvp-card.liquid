@@ -1,0 +1,51 @@
+{%- liquid
+  assign card_variant = nil
+  for variant in card_product.variants
+    if variant.available and variant.inventory_quantity > 0 and variant.price > 0
+      assign card_variant = variant
+      break
+    endif
+  endfor
+-%}
+{%- if card_variant != blank -%}
+  <article class="tp-prd-upsell bikerz-mvp-card{% if kind == 'base' %} upsell-checked{% endif %}"
+    {% unless kind == 'base' or kind == 'related' %}data-complement data-kind="{{ kind }}"{% endunless %}
+    data-product-id="{{ card_product.id }}" data-variant-id="{{ card_variant.id }}"
+    data-price="{{ card_variant.price }}" data-stock="{{ card_variant.inventory_quantity }}">
+    {% if kind == 'related' %}<a class="bikerz-mvp-card__link" data-alternative-link href="{{ card_product.url | escape }}" aria-label="{{ card_product.title | escape }}">{% endif %}
+    <div class="bikerz-mvp-card__media">
+      {%- if card_product.featured_image != blank -%}
+        <img src="{{ card_product.featured_image | image_url: width: 360 }}"
+          width="360" height="360" loading="lazy" alt="{{ card_product.title | escape }}">
+      {%- else -%}
+        <span class="bikerz-mvp-card__placeholder">{{ card_product.type | escape }}</span>
+      {%- endif -%}
+    </div>
+    <div class="tp-prd-upsell__content bikerz-mvp-card__content">
+      {% if kind == 'base' %}<p class="bikerz-mvp-card__badge">Producto actual · 1 unidad</p>{% endif %}
+      <h3 class="card__heading bikerz-mvp-card__title">{{ card_product.title | escape }}</h3>
+      {% if card_product.metafields.custom.medida.value != blank %}
+        <p class="bikerz-mvp-card__measure">{{ card_product.metafields.custom.medida.value | escape }}</p>
+      {% endif %}
+      <p class="bikerz-mvp-card__price" data-card-price>{{ card_variant.price | money }}</p>
+      {% unless kind == 'base' or kind == 'related' %}
+        <label class="bikerz-mvp-card__choice">
+          <input type="checkbox" data-include aria-label="Incluir {{ card_product.title | escape }}">
+          <span>{% if kind == 'helmet' %}Incluir casco{% else %}Incluir este neumático{% endif %}</span>
+        </label>
+        {% if kind == 'helmet' %}
+          <label class="bikerz-mvp-card__size" for="MvpSize-{{ section_id }}-{{ card_product.id }}">Talla</label>
+          <select id="MvpSize-{{ section_id }}-{{ card_product.id }}" data-size aria-label="Talla del casco">
+            <option value="" selected>Elige una talla</option>
+            {% for variant in card_product.variants %}
+              {% if variant.available and variant.inventory_quantity > 0 and variant.price > 0 %}
+                <option value="{{ variant.id }}" data-price="{{ variant.price }}" data-stock="{{ variant.inventory_quantity }}">{{ variant.title | escape }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        {% endif %}
+      {% endunless %}
+    </div>
+    {% if kind == 'related' %}</a>{% endif %}
+  </article>
+{%- endif -%}

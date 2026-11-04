@@ -1,3 +1,12 @@
+{% capture bikerz_mvp_scope %}{% render 'bikerz-mvp-pilot-scope', source_id: product.id %}{% endcapture %}
+{% assign bikerz_mvp_scope = bikerz_mvp_scope | strip %}
+{% if section.settings.bikerz_mvp_integration and bikerz_mvp_scope == 'pilot' %}
+  <div class="color-{{ section.settings.color_scheme }} gradient section-py section-mb" style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;">
+    <div class="{{ section.settings.container }}">
+      {% render 'bikerz-mvp-section', product: product, section: section, intent: 'related' %}
+    </div>
+  </div>
+{% else %}
 {% liquid
   assign sst = section.settings
   assign container = sst.container
@@ -72,12 +81,15 @@
   </div>
 </div>
 
+{% endif %}
 {% schema %}
   {
     "name": "t:sections.related-products.name",
     "tag": "section",
     "class": "section",
     "settings": [
+{"type":"checkbox","id":"bikerz_mvp_integration","label":"MVP: vista integrada piloto","default":false},
+
       {
         "type": "paragraph",
         "content": "t:sections.related-products.settings.paragraph__1.content"

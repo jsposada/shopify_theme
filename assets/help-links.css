@@ -1,0 +1,53 @@
+.bikerz-help {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bikerz-help__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 6px 0;
+  color: var(--heading-color, #1c1c1c);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.bikerz-help__link svg {
+  flex: 0 0 18px;
+}
+
+.bikerz-help__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.bikerz-help--cart {
+  text-align: center;
+}
+
+.bikerz-help--cart .bikerz-help__link {
+  justify-content: center;
+}
+
+.bikerz-help--footer {
+  margin-top: 0;
+}
+
+.bikerz-help-menu__short {
+  display: none;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .bikerz-help-menu__full {
+    display: none;
+  }
+
+  .bikerz-help-menu__short {
+    display: inline;
+  }
+}

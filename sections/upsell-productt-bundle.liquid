@@ -1,3 +1,12 @@
+{% capture bikerz_mvp_scope %}{% render 'bikerz-mvp-pilot-scope', source_id: product.id %}{% endcapture %}
+{% assign bikerz_mvp_scope = bikerz_mvp_scope | strip %}
+{% if section.settings.bikerz_mvp_integration and bikerz_mvp_scope == 'pilot' %}
+  <div class="color-{{ section.settings.color_scheme }} gradient section-py section-mb" style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;">
+    <div class="{{ section.settings.container }}">
+      {% render 'bikerz-mvp-section', product: product, section: section, intent: 'complementary' %}
+    </div>
+  </div>
+{% else %}
 {% liquid
 assign gst = settings
 assign sst = section.settings
@@ -108,11 +117,15 @@ tp-grid tp-grid--{{ sst.columns_mobile }}-col-mobile tp-grid--{{ sst.columns_tab
   </div>
 </div>
 {% endif %}
+{% endif %}
 {% schema %}
 {
   "name": "Upsell Product Bundle",
   "tag": "section",
   "settings": [
+{"type":"checkbox","id":"bikerz_mvp_integration","label":"MVP: vista integrada piloto","default":false},
+{"type":"product_list","id":"bikerz_mvp_helmet_fill","label":"MVP: cascos para completar el carrusel","limit":8,"info":"Se usan después de las recomendaciones de neumáticos, hasta mostrar cinco productos. Solo cascos con tallas disponibles."},
+
     {
       "type": "header",
       "content": "Section header"

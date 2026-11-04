@@ -1,0 +1,297 @@
+{
+  "date": "2026-11-04",
+  "store": "996356-ea.myshopify.com",
+  "theme_id": 189814309085,
+  "backup_directory": "C:\\JS\\shopify\\.tmp\\help-links-deploy-20261104\\live-before",
+  "deployment_directory": "C:\\JS\\shopify\\.tmp\\help-links-deploy-20261104\\deploy",
+  "files": [
+    {
+      "path": "assets/help-links.css",
+      "baseline_sha256": null,
+      "candidate_sha256": "a1dba0c70fb6589e3b77f2f1224fdf190f48bbf623d8257176be5b34fbd19811",
+      "remote_sha256": "a1dba0c70fb6589e3b77f2f1224fdf190f48bbf623d8257176be5b34fbd19811"
+    },
+    {
+      "path": "snippets/whatsapp-help-link.liquid",
+      "baseline_sha256": null,
+      "candidate_sha256": "7cbc4b1f976ac293de32f1a55f159051c95c47d54af398c7be708e5cb46a6cea",
+      "remote_sha256": "7cbc4b1f976ac293de32f1a55f159051c95c47d54af398c7be708e5cb46a6cea"
+    },
+    {
+      "path": "layout/theme.liquid",
+      "baseline_sha256": "5321386dda5702e597710bdc55b24b0019e5f9b07af9db6dd1959839b706d7a4",
+      "candidate_sha256": "b00d3130b0eae30edadf5379647749e3f5f1fe8687dc7cd238e1ef69ed36eb2b",
+      "remote_sha256": "b00d3130b0eae30edadf5379647749e3f5f1fe8687dc7cd238e1ef69ed36eb2b"
+    },
+    {
+      "path": "snippets/head-assets.liquid",
+      "baseline_sha256": "dcd9ed8098fc551a96c18a9f9362987b556c0999692fc5e0f473159b00eef8cb",
+      "candidate_sha256": "4399abd0f38875186d1583758a9cb044fe130768d696e619747d48202254495d",
+      "remote_sha256": "4399abd0f38875186d1583758a9cb044fe130768d696e619747d48202254495d"
+    },
+    {
+      "path": "snippets/product-form.liquid",
+      "baseline_sha256": "8ee5a588d017cb6a5899800b92f53de527734a306cb8b3cf1209ea4e0c628c76",
+      "candidate_sha256": "6384e2159172fcfd30d5a237d26232adebcf103561cbdf4745696f27bb96fd0c",
+      "remote_sha256": "6384e2159172fcfd30d5a237d26232adebcf103561cbdf4745696f27bb96fd0c"
+    },
+    {
+      "path": "snippets/cart-drawer.liquid",
+      "baseline_sha256": "925518d89584830cdadc1962fd5aa8d7b6e81d53d5bbdbe02a7f3851f17f907e",
+      "candidate_sha256": "16e86c320d4dfc00a45d0259417f31c44cb2345171eb1a6710e3a8009b4bdf9a",
+      "remote_sha256": "16e86c320d4dfc00a45d0259417f31c44cb2345171eb1a6710e3a8009b4bdf9a"
+    },
+    {
+      "path": "snippets/main-cart-footer.liquid",
+      "baseline_sha256": "fd8eafcbd7c40224159be398c28fc823714b139d59a7b01481048bcec745ee70",
+      "candidate_sha256": "cd5d652d2418381aabc92d6b6081630111d0a236d9e864690635790d911b55ce",
+      "remote_sha256": "cd5d652d2418381aabc92d6b6081630111d0a236d9e864690635790d911b55ce"
+    },
+    {
+      "path": "snippets/horizontal-menu.liquid",
+      "baseline_sha256": "b375c22032c32c7d7d2db8ed1d968a66fd4ca871032e2e355ea8589ca320d85e",
+      "candidate_sha256": "9a57f88f8d4c0f9c9cc6095e0b8a0105c9ee2ba54799c41b20511cb177653362",
+      "remote_sha256": "9a57f88f8d4c0f9c9cc6095e0b8a0105c9ee2ba54799c41b20511cb177653362"
+    },
+    {
+      "path": "sections/footer.liquid",
+      "baseline_sha256": "07d03465c9de80a7d64a6e016582740a1cb131ba130fdcbfcae836c5ede39354",
+      "candidate_sha256": "0e8dac0f5590728f7c8b48dee5634b2be788ccc6117e422300f613abf2da0150",
+      "remote_sha256": "0e8dac0f5590728f7c8b48dee5634b2be788ccc6117e422300f613abf2da0150"
+    },
+    {
+      "path": "sections/footer-2.liquid",
+      "baseline_sha256": "e5050cb2e7ee7fd8f571b86c1970e89b3ce6d6f73584eec909fed62bec67db25",
+      "candidate_sha256": "51650a891f5d958246a2ee5c6a330f074f3535a61330d45e1dba3e6ad9f9af68",
+      "remote_sha256": "51650a891f5d958246a2ee5c6a330f074f3535a61330d45e1dba3e6ad9f9af68"
+    },
+    {
+      "path": "config/settings_data.json",
+      "baseline_sha256": "384b55dee9bf56df834042663c852476eb109f9929f09061bf5c551312d20b9a",
+      "candidate_sha256": "6fa4236c66fa2b0fcd74bfe231083b547ec089b8691d171fabbeccec3da3c799",
+      "remote_sha256": "1b09abd0118d186d19c190c60b954d4620f59794c57c53a398010f6cd2adf3b3"
+    },
+    {
+      "path": "assets/product-purchase.css",
+      "baseline_sha256": null,
+      "candidate_sha256": "fdc52f8c33b3a7e1fa61ed9db5b08116c78d89f2b8d559defed9923a37f71538",
+      "remote_sha256": "fdc52f8c33b3a7e1fa61ed9db5b08116c78d89f2b8d559defed9923a37f71538"
+    },
+    {
+      "path": "templates/product.accesorios-v1.json",
+      "baseline_sha256": "7f14ba706c5000cd428baed52501a01e526d6e469220e202af9a6d2746873678",
+      "candidate_sha256": "fc59b8cff8eeae1f0634738e5afe8a2d6f5a468b96ebff1b1afb5e4c6f1bc343",
+      "remote_sha256": "fc59b8cff8eeae1f0634738e5afe8a2d6f5a468b96ebff1b1afb5e4c6f1bc343"
+    },
+    {
+      "path": "templates/product.cadena-motos.json",
+      "baseline_sha256": "3cc91ec8cd37369c5cd1eaf5be315fdf63728844f758d32e621d07a645ca7cf8",
+      "candidate_sha256": "c865edd35e3b6f4922c2068de5909e46a8df6b30106672f74e98bbe8ea743082",
+      "remote_sha256": "c865edd35e3b6f4922c2068de5909e46a8df6b30106672f74e98bbe8ea743082"
+    },
+    {
+      "path": "templates/product.casco.json",
+      "baseline_sha256": "000e7068d4fc7bee91bad20f651125a3db774b1879791b8ed1374205abeeae07",
+      "candidate_sha256": "a41ec61979ce079656e309df6743d1e582f28b4e3fd255fbd3f48f72804b0e11",
+      "remote_sha256": "a41ec61979ce079656e309df6743d1e582f28b4e3fd255fbd3f48f72804b0e11"
+    },
+    {
+      "path": "templates/product.json",
+      "baseline_sha256": "0c1034c454fa8259cd5e27e4ca41800924be26a3fbdf145534ac7ed8f470886f",
+      "candidate_sha256": "3fd8ca22c03ed21c3a832f0b89c42ae17816b786eb77e7737c5efb652ebb9d5c",
+      "remote_sha256": "3fd8ca22c03ed21c3a832f0b89c42ae17816b786eb77e7737c5efb652ebb9d5c"
+    },
+    {
+      "path": "templates/product.lubricantes.json",
+      "baseline_sha256": "22cd92ab57869edf8829196535ba9b545c59aa52529740f8cd63bfc130cc25f7",
+      "candidate_sha256": "3b5976cccda41611e9cb81804d508c7774f8fa5fb8194484b6926f7849a2b712",
+      "remote_sha256": "3b5976cccda41611e9cb81804d508c7774f8fa5fb8194484b6926f7849a2b712"
+    },
+    {
+      "path": "templates/product.neumaticos.json",
+      "baseline_sha256": "56325a378a64a50a4b279f26e6a8115aab040e3f4b01e9a32ebf6d16ea2cca0a",
+      "candidate_sha256": "ec8f16e54b9895dff2ccf6cafe4b7f2ed64a203145cd3001ea341c8fe7527742",
+      "remote_sha256": "ec8f16e54b9895dff2ccf6cafe4b7f2ed64a203145cd3001ea341c8fe7527742"
+    },
+    {
+      "path": "templates/product.pastillas-frenos.json",
+      "baseline_sha256": "34fbe96cc0b1ca85d127ab44bd1864840520e80f9e75b98a1777d9a4d8d3fdd7",
+      "candidate_sha256": "a195fcf8c80541f89091f8a2566c8245ffcf4f094dac0506a7a1e0a656a244bd",
+      "remote_sha256": "a195fcf8c80541f89091f8a2566c8245ffcf4f094dac0506a7a1e0a656a244bd"
+    },
+    {
+      "path": "templates/product.producto-predeterminadov2.json",
+      "baseline_sha256": "15b57d6113a3673ec1017f902bb40927488f2f90300fae41b0f48241adec50e2",
+      "candidate_sha256": "7fe46734b274bf4c1b205086109d45999d21ef0fe9c0102b63daa749986bebd6",
+      "remote_sha256": "7fe46734b274bf4c1b205086109d45999d21ef0fe9c0102b63daa749986bebd6"
+    },
+    {
+      "path": "templates/product.repuesto.json",
+      "baseline_sha256": "12de966d0df4de82ef5bf8ad362abea16e00e274b8c3f4c2d91ca394f1a37e46",
+      "candidate_sha256": "541bb96df7bd0864555940ddc52c0d0decd746949e39fc8cf9c6464a8a8141a9",
+      "remote_sha256": "541bb96df7bd0864555940ddc52c0d0decd746949e39fc8cf9c6464a8a8141a9"
+    },
+    {
+      "path": "templates/product.respuestov2.json",
+      "baseline_sha256": "80bad127483d02321d66b9bfdda83039df473d523fbf37d180cccc0bbf0aceb7",
+      "candidate_sha256": "eebe2b63f2caf30e7438676244616a46370ed91fd154c9c8b82786a9a938ea5d",
+      "remote_sha256": "eebe2b63f2caf30e7438676244616a46370ed91fd154c9c8b82786a9a938ea5d"
+    }
+  ],
+  "semantic_checks": [
+    {
+      "path": "config/settings_data.json",
+      "semantic_changes": [
+        {
+          "path": "/current/blocks/15683396631634586217/disabled",
+          "before": false,
+          "after": true
+        }
+      ]
+    },
+    {
+      "path": "templates/product.accesorios-v1.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.cadena-motos.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.casco.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.lubricantes.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.neumaticos.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.pastillas-frenos.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.producto-predeterminadov2.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.repuesto.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "path": "templates/product.respuestov2.json",
+      "semantic_changes": [
+        {
+          "path": "/sections/main/blocks/e941e332-baff-4652-9625-d45a740935b2/settings/show_dynamic_checkout",
+          "before": true,
+          "after": false
+        }
+      ]
+    }
+  ],
+  "published": true,
+  "verification": {
+    "changed_files": [
+      "assets/help-links.css",
+      "assets/product-purchase.css",
+      "config/settings_data.json",
+      "layout/theme.liquid",
+      "sections/footer-2.liquid",
+      "sections/footer.liquid",
+      "snippets/cart-drawer.liquid",
+      "snippets/head-assets.liquid",
+      "snippets/horizontal-menu.liquid",
+      "snippets/main-cart-footer.liquid",
+      "snippets/product-form.liquid",
+      "snippets/whatsapp-help-link.liquid",
+      "templates/product.accesorios-v1.json",
+      "templates/product.cadena-motos.json",
+      "templates/product.casco.json",
+      "templates/product.json",
+      "templates/product.lubricantes.json",
+      "templates/product.neumaticos.json",
+      "templates/product.pastillas-frenos.json",
+      "templates/product.producto-predeterminadov2.json",
+      "templates/product.repuesto.json",
+      "templates/product.respuestov2.json"
+    ],
+    "unchanged_files": 385,
+    "deleted_files": [],
+    "unexpected_changes": [],
+    "remote_content_matches": true,
+    "line_ending_normalization": [
+      "config/settings_data.json"
+    ],
+    "browser_checks": [
+      "Public URL, no preview bar",
+      "Product desktop 1280x720 and mobile 390x844",
+      "Add to cart enabled, black background, white text, 54px height",
+      "No buy now button or floating chat/WhatsApp",
+      "Mobile cart drawer with checkout and help unobstructed",
+      "Full cart loads with original item, quantity and discount"
+    ],
+    "cart_mutations": false,
+    "evidence_directory": "output/help-links-deploy-2026-11-04"
+  }
+}

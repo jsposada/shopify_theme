@@ -147,7 +147,7 @@
                       {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
 
                     <div id="ProductProviderNote-{{ section.id }}" data-variant-fragment="provider-note">
-                      {%- if current_variant_provider and current_variant.available and current_variant.inventory_management == 'shopify' and current_variant.inventory_quantity == 1 -%}
+                      {%- if current_variant_provider  -%}
                          <p><strong> Última  unidad </strong></p>
                       {%- endif -%}
                     </div>
@@ -399,15 +399,15 @@
                     "sku": {{ variant.sku | json }},
                           {%- endif -%}
                     {%- if variant.barcode.size == 12 -%}
-                      "gtin12": {{ variant.barcode | json }},
+                      "gtin12": {{ variant.barcode }},
                           {%- endif -%}
                       {%- if variant.barcode.size == 13 -%}
-                        "gtin13": {{ variant.barcode | json }},
+                        "gtin13": {{ variant.barcode }},
                           {%- endif -%}
                         {%- if variant.barcode.size == 14 -%}
-                          "gtin14": {{ variant.barcode | json }},
+                          "gtin14": {{ variant.barcode }},
                           {%- endif -%}
-                          "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+                          "availability": "http://schema.org/{% if variant.available %} InStock{% else %}OutOfStock{% endif %}",
                           "price": {{ variant.price | divided_by: 100.00 | json }},
                           "priceCurrency": {{ cart.currency.iso_code | json }},
                           "url": {{ request.origin | append: variant.url | json }}

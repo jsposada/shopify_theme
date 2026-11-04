@@ -256,6 +256,7 @@
             </div>
           {%- endform -%}
         </product-form>
+        {% render 'whatsapp-help-link', context: 'product', product: product %}
       {%- else -%}
         <div class="product-form">
           <div class="product-form__buttons form">

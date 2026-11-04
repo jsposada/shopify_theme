@@ -80,6 +80,8 @@
                     {%- endfor -%}
                   </ul>
                 {%- when 'about_us' -%}
+                  <a class="bikerz-help__link" href="{{ pages['contacto'].url | default: '/pages/contacto' }}">Contacto y ayuda</a>
+                  {% render 'whatsapp-help-link', context: 'footer' %}
                   {%- if block.settings.description != blank -%}
                     <div class="{% unless forloop.first %}footer__menu{% endunless %} mb-12 rsmb-p">{{ block.settings.description }}</div>
                   {%- endif -%}

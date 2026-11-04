@@ -1977,4 +1977,27 @@
       }
     ]
   }
+,
+{
+  "name": "Bikerz: piloto recomendaciones",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Mantener apagado hasta aprobar publicación y medición. Solo aplica a los 19 productos del piloto; ANLAS retenido no se activa."
+    },
+    {
+      "type": "checkbox",
+      "id": "bikerz_mvp_live_cart",
+      "label": "Habilitar carrito al publicar piloto",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "bikerz_mvp_ga4",
+      "label": "Enviar eventos del piloto a GA4",
+      "default": false,
+      "info": "Requiere carrito habilitado, tema publicado y permiso de analítica. No envía eventos desde el borrador."
+    }
+  ]
+}
 ]

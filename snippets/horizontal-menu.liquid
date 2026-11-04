@@ -34,7 +34,12 @@
                 {%- capture menuLevel0 -%}
                     <a class="relative n-hvr flex items-center gap-10  {% if block.type != 'single_link' %}pointer-events-none{% endif %}"
                        href="{%- if bst.url != blank -%}{{ bst.url }}{%- else -%}#{%- endif -%}" {% if bst.open_link != blank %} target="_blank"{% endif %}>
-                        <span>{{ bst.title }}</span>
+                        {% if bst.url contains '/pages/contacto' %}
+                          <span class="bikerz-help-menu__full">CONTACTO Y AYUDA</span>
+                          <span class="bikerz-help-menu__short">AYUDA</span>
+                        {% else %}
+                          <span>{{ bst.title }}</span>
+                        {% endif %}
                         {% if block.type != 'single_link' %}
                             {% render 'icon', icon_name: 'dropdown' %}
                         {% endif %}

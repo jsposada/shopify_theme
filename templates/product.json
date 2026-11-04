@@ -69,7 +69,7 @@
         "e941e332-baff-4652-9625-d45a740935b2": {
           "type": "product_form",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_pickup_availability": false,
             "show_gift_card_recipient": false,
             "confirm_terms": false,

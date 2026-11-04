@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "bikerz_mvp_live_cart": true,
+    "bikerz_mvp_ga4": true,
     "logo": "shopify://shop_images/BIKERZ_DM-03.png",
     "logo_width": 140,
     "logo_width_mobile": 120,
@@ -1376,7 +1378,7 @@
       },
       "15683396631634586217": {
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "greeting_message": "Hola, soy el asistente de IA de Bikerz, ¿tienes alguna duda?",
           "show_featured_products": true,
