@@ -1,0 +1,252 @@
+{{ 'service-evaluation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'service-evaluation.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign form_id = 'ServiceEvaluation-' | append: section.id
+  assign rating_labels = 'Muy deficiente|Deficiente|Regular|Bueno|Excelente' | split: '|'
+  assign anonymous_sender_email = section.settings.anonymous_sender_email | default: 'hola@bikerz.cl'
+  assign improvement_url = section.settings.improvement_page.url
+  assign excellent_url = section.settings.excellent_page.url
+  if improvement_url == blank
+    assign improvement_url = page.url | append: '?view=gracias-evaluacion'
+  endif
+  if excellent_url == blank
+    assign excellent_url = page.url | append: '?view=gracias-evaluacion-excelente'
+  endif
+-%}
+
+<bikerz-service-evaluation
+  class="bikerz-evaluation color-{{ section.settings.color_scheme }}"
+  data-improvement-url="{{ improvement_url | escape }}"
+  data-excellent-url="{{ excellent_url | escape }}"
+>
+  <div class="bikerz-evaluation__layout">
+    <header class="bikerz-evaluation__intro">
+      <p class="bikerz-evaluation__eyebrow">Tu experiencia en Bikerz</p>
+      <h1>{{ section.settings.heading | escape }}</h1>
+      <div class="bikerz-evaluation__description">{{ section.settings.description }}</div>
+      <p class="bikerz-evaluation__time">Solo te tomará un minuto.</p>
+    </header>
+
+    <div class="bikerz-evaluation__card">
+      {%- form 'contact', id: form_id, class: 'bikerz-evaluation__form', return_to: improvement_url -%}
+        {%- if form.posted_successfully? -%}
+          <div class="bikerz-evaluation__success" role="status" tabindex="-1" autofocus>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+              <path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <h2>¡Gracias por tu evaluación!</h2>
+            <p>{{ section.settings.success_message | escape }}</p>
+            <a class="bikerz-evaluation__submit" href="{{ routes.collections_url }}/ofertas">Ver más ofertas</a>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="bikerz-evaluation__errors" role="alert" tabindex="-1" autofocus>
+              <p>No pudimos enviar tu evaluación. Revisa los siguientes datos:</p>
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <input type="hidden" name="contact[Formulario]" value="Evaluación de vendedor y mecánico Bikerz">
+          {% comment %}Shopify requires contact[email]. This is a business address, never a customer identity.{% endcomment %}
+          <input type="hidden" name="contact[email]" value="{{ anonymous_sender_email | escape }}" data-evaluation-sender>
+          {%- assign utm_keys = 'utm_source,utm_medium,utm_campaign,utm_content,utm_term,utm_id' | split: ',' -%}
+          {%- for utm_key in utm_keys -%}
+            <input type="hidden" name="contact[{{ utm_key }}]" data-evaluation-utm="{{ utm_key }}" disabled>
+          {%- endfor -%}
+
+          <p class="bikerz-evaluation__required-note">Los campos con * son obligatorios.</p>
+
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign rating_id = form_id | append: '-' | append: block.id
+              assign contact_key = 'Pregunta ' | append: forloop.index | append: ' - ' | append: block.settings.question
+            -%}
+            <fieldset class="bikerz-evaluation__rating" {{ block.shopify_attributes }}>
+              <legend>
+                {{ block.settings.question | escape }}
+                {% if block.settings.required %}<span aria-hidden="true">*</span>{% else %}<span class="bikerz-evaluation__optional">(opcional)</span>{% endif %}
+              </legend>
+              <div class="bikerz-evaluation__scale">
+                {%- for score in (1..5) -%}
+                  {%- assign label_index = forloop.index0 -%}
+                  <div class="bikerz-evaluation__choice">
+                    <input
+                      type="radio"
+                      id="{{ rating_id }}-{{ score }}"
+                      name="contact[{{ contact_key | escape }}]"
+                      value="{{ score }} de 5 - {{ rating_labels[label_index] }}"
+                      data-evaluation-score="{{ score }}"
+                      {% if block.settings.required %}required{% endif %}
+                    >
+                    <label for="{{ rating_id }}-{{ score }}">
+                      <span aria-hidden="true">{{ score }}</span>
+                      <span class="bikerz-evaluation__sr-only">{{ score }} de 5: {{ rating_labels[label_index] }}</span>
+                    </label>
+                  </div>
+                {%- endfor -%}
+              </div>
+              <div class="bikerz-evaluation__scale-labels" aria-hidden="true">
+                <span>Muy deficiente</span>
+                <span>Excelente</span>
+              </div>
+              {%- if block.settings.allow_not_applicable -%}
+                <label class="bikerz-evaluation__not-applicable" for="{{ rating_id }}-na">
+                  <input type="radio" id="{{ rating_id }}-na" name="contact[{{ contact_key | escape }}]" value="No aplica: no recibí esta atención" {% if block.settings.required %}required{% endif %}>
+                  No aplica: no recibí esta atención
+                </label>
+              {%- endif -%}
+            </fieldset>
+          {%- endfor -%}
+
+          <div class="bikerz-evaluation__field">
+            <label for="{{ form_id }}-body">¿Qué hicimos bien o qué podríamos mejorar? <span class="bikerz-evaluation__optional">(opcional)</span></label>
+            <textarea id="{{ form_id }}-body" name="contact[body]" rows="4" maxlength="3000" placeholder="Cuéntanos cómo fue tu experiencia.">{{ form.body | escape }}</textarea>
+          </div>
+
+          <details class="bikerz-evaluation__details">
+            <summary>¿Quieres dejarnos tus datos? <span class="bikerz-evaluation__optional">(opcional)</span></summary>
+            {% comment %}The theme accordion measures .content-animation when opening details.{% endcomment %}
+            <div class="bikerz-evaluation__details-content content-animation">
+              <p class="bikerz-evaluation__details-note">Puedes enviar tu evaluación sin completar estos campos.</p>
+              <div class="bikerz-evaluation__field-grid">
+                <div class="bikerz-evaluation__field">
+                  <label for="{{ form_id }}-name">Nombre <span class="bikerz-evaluation__optional">(opcional)</span></label>
+                  <input type="text" id="{{ form_id }}-name" name="contact[name]" autocomplete="off" maxlength="120">
+                </div>
+                <div class="bikerz-evaluation__field">
+                  <label for="{{ form_id }}-order">N.º de pedido o boleta <span class="bikerz-evaluation__optional">(opcional)</span></label>
+                  <input type="text" id="{{ form_id }}-order" name="contact[Pedido o boleta]" autocomplete="off" maxlength="80" placeholder="Ej.: #1234">
+                </div>
+              </div>
+              <div class="bikerz-evaluation__field">
+                <label for="{{ form_id }}-email">Correo electrónico <span class="bikerz-evaluation__optional">(opcional)</span></label>
+                <input
+                  type="email"
+                  id="{{ form_id }}-email"
+                  name="contact[Correo de contacto opcional]"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  maxlength="254"
+                  aria-describedby="{{ form_id }}-privacy"
+                  data-evaluation-email
+                >
+              </div>
+              <p id="{{ form_id }}-privacy" class="bikerz-evaluation__privacy">Solo usaremos los datos que decidas dejar para dar seguimiento a tu evaluación.</p>
+            </div>
+          </details>
+
+          <p class="bikerz-evaluation__privacy bikerz-evaluation__campaign-note">
+            El enlace puede incluir el origen de la campaña que te invitó a responder.
+            {%- if shop.privacy_policy != blank %}
+              <a href="{{ shop.privacy_policy.url }}">Política de privacidad</a>.
+            {%- endif %}
+          </p>
+
+          <button class="bikerz-evaluation__submit" type="submit">Enviar mi evaluación</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</bikerz-service-evaluation>
+
+{% schema %}
+{
+  "name": "Evaluación de compra",
+  "tag": "section",
+  "enabled_on": { "templates": ["page"] },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿Cómo estuvo tu experiencia?"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Cuéntanos cómo fue la atención de nuestro equipo. Puedes responder sin dejar tus datos personales.</p>"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Mensaje después del envío",
+      "default": "Recibimos tu opinión. Nos ayudará a mejorar la experiencia de tu próxima compra."
+    },
+    {
+      "type": "text",
+      "id": "anonymous_sender_email",
+      "label": "Correo técnico de Bikerz",
+      "default": "hola@bikerz.cl",
+      "info": "Permite procesar respuestas sin correo del cliente. No cambia el destinatario de las respuestas."
+    },
+    {
+      "type": "header",
+      "content": "Páginas después del envío"
+    },
+    {
+      "type": "page",
+      "id": "improvement_page",
+      "label": "Página de agradecimiento",
+      "info": "Destino para notas de 1 a 4 o cuando ambas respuestas son No aplica."
+    },
+    {
+      "type": "page",
+      "id": "excellent_page",
+      "label": "Página para notas de 5",
+      "info": "Se muestra si todas las notas numéricas son 5. No aplica no cuenta como nota."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de colores",
+      "default": "background-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rating",
+      "name": "Pregunta de calificación",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta",
+          "default": "¿Cómo fue la atención y el profesionalismo del vendedor?"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Respuesta obligatoria",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "allow_not_applicable",
+          "label": "Permitir responder No aplica",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Evaluación de compra",
+      "blocks": [
+        {
+          "type": "rating",
+          "settings": { "question": "¿Cómo fue la atención y el profesionalismo del vendedor?", "required": true, "allow_not_applicable": true }
+        },
+        {
+          "type": "rating",
+          "settings": { "question": "¿Cómo fue la atención y el profesionalismo del mecánico?", "required": true, "allow_not_applicable": true }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+{{ 'service-evaluation.css' | asset_url | stylesheet_tag }}
+
+<div class="bikerz-evaluation-result color-{{ section.settings.color_scheme }}">
+  <div class="bikerz-evaluation-result__card">
+    <p class="bikerz-evaluation__eyebrow">Tu experiencia en Bikerz</p>
+    <svg class="bikerz-evaluation-result__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+      <path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="1.5" />
+    </svg>
+    <h1>{{ section.settings.heading | escape }}</h1>
+    <div class="bikerz-evaluation-result__message">{{ section.settings.message }}</div>
+    {% if section.settings.show_review_link and section.settings.review_url != blank %}
+      <a class="bikerz-evaluation__submit" href="{{ section.settings.review_url | escape }}" target="_blank" rel="noopener noreferrer">
+        Dejar una reseña en Google Maps
+        <span class="bikerz-evaluation__sr-only">(se abre en otra pestaña)</span>
+      </a>
+    {% endif %}
+    <a class="bikerz-evaluation-result__back" href="{{ routes.collections_url }}/ofertas">Ver más ofertas</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gracias por tu evaluación",
+  "tag": "section",
+  "enabled_on": { "templates": ["page"] },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Gracias por ayudarnos a mejorar"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Mensaje",
+      "default": "<p>Gracias por compartir tu experiencia. Tomamos en cuenta tu opinión y haremos lo posible por mejorar nuestro servicio.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_review_link",
+      "label": "Mostrar enlace de Google Maps",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "review_url",
+      "label": "Enlace para escribir una reseña"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de colores",
+      "default": "background-1"
+    }
+  ],
+  "presets": [{ "name": "Gracias por tu evaluación" }]
+}
+{% endschema %}

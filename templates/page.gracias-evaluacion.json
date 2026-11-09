@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "evaluation-thank-you",
+      "settings": {
+        "heading": "Gracias por ayudarnos a mejorar",
+        "message": "<p>Gracias por compartir tu experiencia con nosotros. Tu opinión es importante y haremos lo posible por mejorar nuestro servicio.</p><p>Esperamos tener la oportunidad de ofrecerte una mejor experiencia en tu próxima visita.</p>",
+        "show_review_link": false,
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": ["main"]
+}

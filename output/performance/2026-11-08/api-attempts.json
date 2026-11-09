@@ -1,0 +1,34 @@
+[
+  {
+    "strategy": "mobile",
+    "started": "2026-11-08T15:20:44.974Z",
+    "finished": "2026-11-08T15:20:45.009Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo"
+  },
+  {
+    "strategy": "desktop",
+    "started": "2026-11-08T15:20:45.000Z",
+    "finished": "2026-11-08T15:20:45.008Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo"
+  },
+  {
+    "strategy": "mobile",
+    "started": "2026-11-08T15:21:47.955Z",
+    "finished": "2026-11-08T15:21:47.962Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo"
+  },
+  {
+    "strategy": "desktop",
+    "started": "2026-11-08T15:21:47.957Z",
+    "finished": "2026-11-08T15:21:47.963Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo"
+  }
+]

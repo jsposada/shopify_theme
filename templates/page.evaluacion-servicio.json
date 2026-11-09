@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "main": {
+      "type": "service-evaluation",
+      "blocks": {
+        "seller": {
+          "type": "rating",
+          "settings": {
+            "question": "¿Cómo fue la atención y el profesionalismo del vendedor?",
+            "required": true,
+            "allow_not_applicable": true
+          }
+        },
+        "mechanic": {
+          "type": "rating",
+          "settings": {
+            "question": "¿Cómo fue la atención y el profesionalismo del mecánico?",
+            "required": true,
+            "allow_not_applicable": true
+          }
+        }
+      },
+      "block_order": ["seller", "mechanic"],
+      "settings": {
+        "heading": "¿Cómo estuvo tu experiencia?",
+        "description": "<p>Cuéntanos cómo fue la atención de nuestro equipo. Puedes responder sin dejar tus datos personales.</p>",
+        "success_message": "Recibimos tu opinión. Nos ayudará a mejorar la experiencia de tu próxima compra.",
+        "anonymous_sender_email": "hola@bikerz.cl",
+        "improvement_page": "gracias-evaluacion",
+        "excellent_page": "gracias-evaluacion-excelente",
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": ["main"]
+}

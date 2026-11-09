@@ -1,0 +1,18 @@
+[
+  {
+    "strategy": "mobile",
+    "started": "2026-11-04T12:03:45.933Z",
+    "finished": "2026-11-04T12:03:45.938Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo"
+  },
+  {
+    "strategy": "desktop",
+    "started": "2026-11-04T12:03:45.935Z",
+    "finished": "2026-11-04T12:03:45.939Z",
+    "error": "TypeError: fetch failed",
+    "causeCode": "ENOTFOUND",
+    "url": "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.bikerz.cl%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo"
+  }
+]

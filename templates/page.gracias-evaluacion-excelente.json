@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "evaluation-thank-you",
+      "settings": {
+        "heading": "¡Gracias por tu confianza!",
+        "message": "<p>Nos alegra mucho saber que tuviste una buena experiencia con nuestro equipo. Gracias por tu tiempo y por confiar en Bikerz.</p><p>Si tienes un momento, nos serviría mucho que nos dejaras tu opinión en Google Maps. Tu experiencia ayuda a otros motociclistas a conocernos y nos anima a seguir dando lo mejor cada día.</p>",
+        "show_review_link": true,
+        "review_url": "https://g.page/r/CQEVf_GfkwkXEBM/review",
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": ["main"]
+}

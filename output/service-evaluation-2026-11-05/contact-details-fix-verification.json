@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-05",
+  "url": "https://www.bikerz.cl/pages/evaluacion-servicio",
+  "liveThemeId": "189814309085",
+  "deployedFiles": [
+    "sections/service-evaluation.liquid"
+  ],
+  "fix": "Add content-animation class required by global theme accordion animation",
+  "before": {
+    "open": true,
+    "height": 57,
+    "contentHeight": 265.5,
+    "fieldsClipped": true
+  },
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "fields": [
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[name]",
+        "required": false
+      },
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[Pedido o boleta]",
+        "required": false
+      },
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[Correo de contacto opcional]",
+        "required": false
+      }
+    ],
+    "fixedHeightCleared": true,
+    "height": 346,
+    "open": true,
+    "allThreeFieldsWritable": true
+  },
+  "closeCheck": {
+    "closed": true,
+    "height": 56.5,
+    "inlineHeight": ""
+  },
+  "mobile": {
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "allThreeFieldsWritable": true,
+    "fields": [
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[name]",
+        "required": false
+      },
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[Pedido o boleta]",
+        "required": false
+      },
+      {
+        "fullyInsidePanel": true,
+        "name": "contact[Correo de contacto opcional]",
+        "required": false
+      }
+    ],
+    "fixedHeightCleared": true,
+    "height": 493,
+    "noHorizontalOverflow": true,
+    "open": true
+  },
+  "testDataCleared": true,
+  "formSubmitted": false,
+  "screenshots": [
+    "contact-details-fixed.jpg",
+    "contact-details-fixed-mobile.jpg"
+  ]
+}

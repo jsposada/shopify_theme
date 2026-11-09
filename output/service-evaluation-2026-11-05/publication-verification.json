@@ -1,0 +1,54 @@
+{
+  "beforeFiles": 407,
+  "afterFiles": 414,
+  "added": [
+    "assets/service-evaluation.css",
+    "assets/service-evaluation.js",
+    "sections/evaluation-thank-you.liquid",
+    "sections/service-evaluation.liquid",
+    "templates/page.evaluacion-servicio.json",
+    "templates/page.gracias-evaluacion-excelente.json",
+    "templates/page.gracias-evaluacion.json"
+  ],
+  "changed": [],
+  "missing": [],
+  "localMismatch": [],
+  "jsonEquivalent": [
+    "templates/page.evaluacion-servicio.json",
+    "templates/page.gracias-evaluacion-excelente.json",
+    "templates/page.gracias-evaluacion.json"
+  ],
+  "semanticMismatch": [],
+  "byteDifferentFromLocal": [
+    "templates/page.evaluacion-servicio.json",
+    "templates/page.gracias-evaluacion-excelente.json",
+    "templates/page.gracias-evaluacion.json"
+  ],
+  "liveThemeId": 189814309085,
+  "publicPages": [
+    {
+      "id": "166615122141",
+      "url": "https://www.bikerz.cl/pages/evaluacion-servicio",
+      "template": "evaluacion-servicio"
+    },
+    {
+      "id": "166615023837",
+      "url": "https://www.bikerz.cl/pages/gracias-evaluacion",
+      "template": "gracias-evaluacion"
+    },
+    {
+      "id": "166615089373",
+      "url": "https://www.bikerz.cl/pages/gracias-evaluacion-excelente",
+      "template": "gracias-evaluacion-excelente"
+    }
+  ],
+  "publicBrowserChecks": {
+    "previewBarAbsent": true,
+    "formDestinationPagesAssigned": true,
+    "personalDataOptional": true,
+    "offersLinkText": "Ver más ofertas",
+    "offersLinkNavigationVerified": "https://www.bikerz.cl/collections/ofertas",
+    "mapsLinkVerified": "https://g.page/r/CQEVf_GfkwkXEBM/review"
+  },
+  "emailDeliveryTested": false
+}
