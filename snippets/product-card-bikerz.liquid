@@ -19,7 +19,11 @@
   endunless
   if promo_variant
     assign card_variant = promo_variant
-    assign card_url = card_url | append: '?variant=' | append: promo_variant.id
+    assign card_url_separator = '?'
+    if card_url contains '?'
+      assign card_url_separator = '&'
+    endif
+    assign card_url = card_url | append: card_url_separator | append: 'variant=' | append: promo_variant.id
   endif
   assign card_brand = card_product.metafields.custom.marca.value
   assign card_description = card_product.metafields.custom.descripcion_corta.value

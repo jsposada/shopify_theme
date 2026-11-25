@@ -35,7 +35,11 @@
   endunless
   if promo_variant
     assign card_variant = promo_variant
-    assign card_url = card_url | append: '?variant=' | append: promo_variant.id
+    assign card_url_separator = '?'
+    if card_url contains '?'
+      assign card_url_separator = '&'
+    endif
+    assign card_url = card_url | append: card_url_separator | append: 'variant=' | append: promo_variant.id
   endif
   assign compare_at_price = card_variant.compare_at_price
   assign price = card_variant.price
