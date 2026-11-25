@@ -16,6 +16,27 @@
   assign enable_sale_label = gst.enable_sale_label
   assign promo_badge_label = card_product.metafields.custom.promo_badge_label.value
   assign card_variant = card_product.selected_or_first_available_variant
+  assign card_url = card_product.url | within: collection
+  # Si la variante por defecto no está en oferta pero otra talla disponible sí,
+  # la tarjeta usa esa variante (badge, precio y carrito) y enlaza con ?variant=
+  # para que quede preseleccionada en la ficha de producto.
+  assign promo_variant = nil
+  unless card_variant.compare_at_price > card_variant.price
+    assign best_promo_pct = 0
+    for promo_candidate in card_product.variants
+      if promo_candidate.available and promo_candidate.compare_at_price > promo_candidate.price
+        assign promo_candidate_pct = promo_candidate.compare_at_price | minus: promo_candidate.price | times: 100.0 | divided_by: promo_candidate.compare_at_price
+        if promo_candidate_pct > best_promo_pct
+          assign best_promo_pct = promo_candidate_pct
+          assign promo_variant = promo_candidate
+        endif
+      endif
+    endfor
+  endunless
+  if promo_variant
+    assign card_variant = promo_variant
+    assign card_url = card_url | append: '?variant=' | append: promo_variant.id
+  endif
   assign compare_at_price = card_variant.compare_at_price
   assign price = card_variant.price
   assign sale = false
@@ -60,18 +81,18 @@
 
   assign pre_order = false
   assign soldout = false
-  if card_product.selected_or_first_available_variant.available and card_product.selected_or_first_available_variant.inventory_quantity < 1
+  if card_variant.available and card_variant.inventory_quantity < 1
     assign pre_order = true
   endif
 
   assign check_against_inventory = true
-  if card_product.selected_or_first_available_variant.inventory_management != 'shopify' or card_product.selected_or_first_available_variant.inventory_policy == 'continue'
+  if card_variant.inventory_management != 'shopify' or card_variant.inventory_policy == 'continue'
     assign check_against_inventory = false
   endif
-  if card_product.selected_or_first_available_variant.quantity_rule.min > card_product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+  if card_variant.quantity_rule.min > card_variant.inventory_quantity and check_against_inventory
     assign quantity_rule_soldout = true
   endif
-  if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout
+  if card_variant.available == false or quantity_rule_soldout
     assign soldout = true
   endif
   for variant in card_product.variants limit: 1
@@ -94,7 +115,7 @@
       <div class="card__inner bd-radius {% if border == 'border_img' %}prd-item-border{% endif %} {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}">
         {%- if card_product.featured_media -%}
           <div class="card__media">
-            <a class="tp__img-url{% if enable_hover_image and img[1] != blank %} tp__hover-image{% endif %}" href="{{ card_product.url | within: collection }}">
+            <a class="tp__img-url{% if enable_hover_image and img[1] != blank %} tp__hover-image{% endif %}" href="{{ card_url }}">
               <div class="tp__product-main-img">
                 {%- if card_product.has_only_default_variant -%}
                   {%- if img[0] != blank -%}
@@ -182,9 +203,9 @@
                       data-product-handle="{{ card_product.handle }}">
                       <span class="text-add-to-cart prd-item-3-action pointer-events-none line-clamp-1">
                         <span class="hidden">
-                          {%- if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                          {%- if card_variant.available == false or quantity_rule_soldout -%}
                             {{ 'products.product.sold_out' | t }}
-                          {% elsif card_product.selected_or_first_available_variant.available and card_product.selected_or_first_available_variant.inventory_quantity < 1 %}
+                          {% elsif card_variant.available and card_variant.inventory_quantity < 1 %}
                             {{ 'products.product.pre_order' | t }}
                           {%- else -%}
                             {{ 'products.product.add_to_cart' | t }}
@@ -218,7 +239,7 @@
                           <input
                             type="hidden"
                             name="id"
-                            value="{{ card_product.selected_or_first_available_variant.id }}"
+                            value="{{ card_variant.id }}"
                             disabled
                             class="product-variant-id">
                           <div class="product-form__buttons">
@@ -226,15 +247,15 @@
                               type="submit"
                               name="add"
                               class="product-form__submit shadow"
-                              data-ds="{{ card_product.selected_or_first_available_variant.available }}"
-                              {% if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                              data-ds="{{ card_variant.available }}"
+                              {% if card_variant.available == false or quantity_rule_soldout %}
                               disabled
                               {% endif %}>
                               <span class="text-add-to-cart product-form-btn-text prd-item-3-action pointer-events-none line-clamp-1">
                                 <span class="hidden">
-                                  {%- if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                                  {%- if card_variant.available == false or quantity_rule_soldout -%}
                                     {{ 'products.product.sold_out' | t }}
-                                  {% elsif card_product.selected_or_first_available_variant.available and card_product.selected_or_first_available_variant.inventory_quantity < 1 %}
+                                  {% elsif card_variant.available and card_variant.inventory_quantity < 1 %}
                                     {{ 'products.product.pre_order' | t }}
                                   {%- else -%}
                                     {{ 'products.product.add_to_cart' | t }}
@@ -284,9 +305,9 @@
                   class="tp-prd-item__atc"
                   flow="{{ positonTollTip }}"
                   tooltip="
-              {%- if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- if card_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
-              {% elsif card_product.selected_or_first_available_variant.available and card_product.selected_or_first_available_variant.inventory_quantity < 1 %}
+              {% elsif card_variant.available and card_variant.inventory_quantity < 1 %}
                 {{ 'products.product.pre_order' | t }}
               {%- else -%}
               {{ 'products.product.add_to_cart' | t }}
@@ -328,7 +349,7 @@
                           <input
                             type="hidden"
                             name="id"
-                            value="{{ card_product.selected_or_first_available_variant.id }}"
+                            value="{{ card_variant.id }}"
                             disabled
                             class="product-variant-id">
                           <div class="product-form__buttons">
@@ -336,8 +357,8 @@
                               type="submit"
                               name="add"
                               class="product-form__submit shadow"
-                              data-ds="{{ card_product.selected_or_first_available_variant.available }}"
-                              {% if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                              data-ds="{{ card_variant.available }}"
+                              {% if card_variant.available == false or quantity_rule_soldout %}
                               disabled
                               {% endif %}>
 
@@ -422,7 +443,7 @@
           {% endif %}
           <div class="card__heading {{ text_transform }} h6 mb-10">
             <a
-              href="{{ card_product.url }}"
+              href="{{ card_url }}"
               class="limited-line"
               style="--line-clamp: {{ product_name_line }}">
               {{ card_product.title | escape }}
@@ -436,6 +457,7 @@
               {% render 'price'
                 , product: card_product
                 , use_variant: true
+                , variant: card_variant
                 , %}
             </div>
             <div class="card_description mb-10 font-light hidden">
@@ -468,16 +490,16 @@
                         <input
                           type="hidden"
                           name="id"
-                          value="{{ card_product.selected_or_first_available_variant.id }}"
+                          value="{{ card_variant.id }}"
                           disabled
                           class="product-variant-id">
                         <div class="product-form__buttons">
                           {%- liquid
                             assign check_against_inventory = true
-                            if card_product.selected_or_first_available_variant.inventory_management != 'shopify' or card_product.selected_or_first_available_variant.inventory_policy == 'continue'
+                            if card_variant.inventory_management != 'shopify' or card_variant.inventory_policy == 'continue'
                               assign check_against_inventory = false
                             endif
-                            if card_product.selected_or_first_available_variant.quantity_rule.min > card_product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                            if card_variant.quantity_rule.min > card_variant.inventory_quantity and check_against_inventory
                               assign quantity_rule_soldout = true
                             endif
                           -%}
@@ -485,13 +507,13 @@
                             type="submit"
                             name="add"
                             class="product-form__submit w-full tp-btn tp-btn__primary"
-                            {% if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                            {% if card_variant.available == false or quantity_rule_soldout %}
                             disabled
                             {% endif %}>
                             <span class="product-form-btn-text pointer-events-none">
-                              {%- if card_product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                              {%- if card_variant.available == false or quantity_rule_soldout -%}
                                 {{ 'products.product.sold_out' | t }}
-                              {% elsif card_product.selected_or_first_available_variant.available and card_product.selected_or_first_available_variant.inventory_quantity < 1 %}
+                              {% elsif card_variant.available and card_variant.inventory_quantity < 1 %}
                                 {{ 'products.product.pre_order' | t }}
                               {%- else -%}
                                 {{ 'products.product.add_to_cart' | t }}

@@ -1,5 +1,26 @@
 {%- liquid
   assign card_variant = card_product.selected_or_first_available_variant
+  assign card_url = card_product.url | within: collection
+  # Si la variante por defecto no está en oferta pero otra talla disponible sí,
+  # la tarjeta usa esa variante (badge, precio y carrito) y enlaza con ?variant=
+  # para que quede preseleccionada en la ficha de producto.
+  assign promo_variant = nil
+  unless card_variant.compare_at_price > card_variant.price
+    assign best_promo_pct = 0
+    for promo_candidate in card_product.variants
+      if promo_candidate.available and promo_candidate.compare_at_price > promo_candidate.price
+        assign promo_candidate_pct = promo_candidate.compare_at_price | minus: promo_candidate.price | times: 100.0 | divided_by: promo_candidate.compare_at_price
+        if promo_candidate_pct > best_promo_pct
+          assign best_promo_pct = promo_candidate_pct
+          assign promo_variant = promo_candidate
+        endif
+      endif
+    endfor
+  endunless
+  if promo_variant
+    assign card_variant = promo_variant
+    assign card_url = card_url | append: '?variant=' | append: promo_variant.id
+  endif
   assign card_brand = card_product.metafields.custom.marca.value
   assign card_description = card_product.metafields.custom.descripcion_corta.value
   assign card_tags = card_product.metafields.custom.product_tags.value
@@ -8,9 +29,12 @@
   assign installment_amount = card_variant.price | divided_by: installment_count
   assign compare_at_price = card_variant.compare_at_price
   assign is_on_sale = false
+  assign sale_percentage = 0
   if compare_at_price != blank and compare_at_price > card_variant.price
     assign is_on_sale = true
+    assign sale_percentage = compare_at_price | minus: card_variant.price | times: 100.0 | divided_by: compare_at_price | round
   endif
+  assign promo_badge_label = card_product.metafields.custom.promo_badge_label.value
 
   assign is_available = card_variant.available
   assign check_against_inventory = true
@@ -30,7 +54,7 @@
       <div class="card__media">
         <a
           class="bikerz-product-card__image-link"
-          href="{{ card_product.url | within: collection }}"
+          href="{{ card_url }}"
           aria-label="{{ card_product.title | escape }}">
           <div class="tp__product-main-img">
             {%- if card_product.featured_image != blank -%}
@@ -53,6 +77,16 @@
         </a>
       </div>
 
+      {%- if is_on_sale and is_available -%}
+        <span class="bikerz-product-card__sale-badge">
+          {%- if promo_badge_label != blank -%}
+            {{- promo_badge_label -}}
+          {%- else -%}
+            -{{ sale_percentage }}%
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+
       {%- unless is_available -%}
         <span class="bikerz-product-card__soldout-badge">
           {{- 'products.product.sold_out' | t -}}
@@ -68,7 +102,7 @@
           {%- endif -%}
 
           <h3 class="bikerz-product-card__title">
-            <a href="{{ card_product.url | within: collection }}">
+            <a href="{{ card_url }}">
               {{- card_product.title | escape -}}
             </a>
           </h3>

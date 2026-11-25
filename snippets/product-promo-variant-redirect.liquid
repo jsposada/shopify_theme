@@ -1,0 +1,37 @@
+{%- comment -%}
+  Si se abre una ficha de producto sin ?variant= y la variante por defecto no
+  está en oferta, pero otra talla disponible sí lo está, redirige a esa talla
+  (?variant=ID) antes de pintar la página para que quede preseleccionada.
+  Se elige la talla disponible con mayor % de descuento.
+{%- endcomment -%}
+{%- liquid
+  assign promo_variant = nil
+  assign default_variant = product.selected_or_first_available_variant
+  assign default_on_sale = false
+  if default_variant.compare_at_price > default_variant.price
+    assign default_on_sale = true
+  endif
+
+  if request.design_mode == false and product != blank and product.selected_variant == blank and default_on_sale == false
+    assign best_promo_pct = 0
+    for promo_candidate in product.variants
+      if promo_candidate.available and promo_candidate.compare_at_price > promo_candidate.price
+        assign promo_candidate_pct = promo_candidate.compare_at_price | minus: promo_candidate.price | times: 100.0 | divided_by: promo_candidate.compare_at_price
+        if promo_candidate_pct > best_promo_pct
+          assign best_promo_pct = promo_candidate_pct
+          assign promo_variant = promo_candidate
+        endif
+      endif
+    endfor
+  endif
+-%}
+{%- if promo_variant -%}
+  <script>
+    (function () {
+      var url = new URL(window.location.href);
+      if (url.searchParams.has('variant')) return;
+      url.searchParams.set('variant', '{{ promo_variant.id }}');
+      window.location.replace(url.toString());
+    })();
+  </script>
+{%- endif -%}

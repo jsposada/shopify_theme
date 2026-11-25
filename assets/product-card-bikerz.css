@@ -71,6 +71,22 @@
   z-index: 2;
 }
 
+.bikerz-product-card__sale-badge {
+  background: var(--color-sale, #d62828);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  left: 0.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.55rem 0.8rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0.8rem;
+  z-index: 2;
+}
+
 .bikerz-product-card__content {
   display: flex;
   flex: 1 1 auto;
